@@ -1,0 +1,23 @@
+$default_margin: 16px;
+
+.services-item {
+  margin: $default_margin;
+  width: 30%;
+  display: inline-block;
+}
+
+.services-item-title {
+  margin: 32px 0 !important;
+}
+
+.services-item-body {
+  margin: $default_margin 0 !important;
+}
+
+.icon-container {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  display: inline-block;
+}

@@ -1,0 +1,17 @@
+#img {
+  float: left;
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  margin: 0 16px 0 0;
+}
+
+#container {
+  width: 530px;
+  display: table-cell;
+  margin: 0 16px;
+}
+
+#btn-text {
+  color: #000;
+}
