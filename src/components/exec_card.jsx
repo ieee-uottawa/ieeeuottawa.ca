@@ -10,7 +10,7 @@ import './exec_card.scss';
 const ExecCard = (props) => {
   const imageURL = props.imageURL || `http://identicon.org/?t=${props.name}&s=256`;
   return (
-    <Card>
+    <Card style={{ margin: '16px 16px', width: '280px' }}>
       <CardMedia component="img" height="166" image={imageURL} title={props.name} id="exec-img" />
       <CardContent>
         <Typography gutterBottom variant="headline" className="center-horizontal">{props.name}</Typography>

@@ -62,17 +62,16 @@ const execs = [
 const AboutUs = () => (
   <div>
     <Typography variant="headline" gutterBottom className="center-horizontal">About Us</Typography>
-    <p>The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG
+    <p className="p-margins">The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG
       under the ESS.
     </p>
-    <p>The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus.
+    <p className="p-margins">The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus.
       This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment.
     </p>
-    <p>*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.</p>
-
+    <p className="p-margins">*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.</p>
 
     <Typography variant="title" gutterBottom className="center-horizontal">Our Execs</Typography>
-    <GridList cols={3}>
+    <GridList cols={5} style={{ margin: '0 7.5% 0' }}>
       {execs.map(({ name, position }) => <ExecCard name={name} position={position} />)}
     </GridList>
   </div>
