@@ -4,7 +4,7 @@ import Link from 'gatsby-link';
 import GridListTile from '@material-ui/core/GridListTile';
 import Typography from '@material-ui/core/Typography';
 
-import IEEEButton from '../components/buttons';
+import { IEEEButton } from '../components/buttons';
 
 import './event.scss';
 

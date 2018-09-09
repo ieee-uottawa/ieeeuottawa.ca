@@ -4,7 +4,7 @@ import GridList from '@material-ui/core/GridList';
 import Typography from '@material-ui/core/Typography';
 
 import Event from '../components/event';
-import IEEEButton from '../components/buttons';
+import { IEEEButton } from '../components/buttons';
 import ParallaxItem from '../components/parallax';
 import ServiceItem from '../components/service-item';
 import { FlaskIcon, LeadPencilIcon, LightBulbIcon } from '../components/icons';
