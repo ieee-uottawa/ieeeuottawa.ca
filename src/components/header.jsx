@@ -58,7 +58,7 @@ class Header extends Component {
 
   render() {
     return (
-      <AppBar position="static" style={{ padding: '32px 0 0' }}>
+      <AppBar position="sticky" style={{ padding: '32px 0 0' }}>
         <Toolbar>
           <Link to="/" href="/" style={{ flexGrow: 1 }}><img src={logo} alt="IEEE uOttawa Logo" style={{ maxHeight: 60 }} /></Link>
           {navItems.map(({ title, link, items }) => {
