@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import Link from 'gatsby-link';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 
@@ -10,6 +9,7 @@ import logo from '../images/uottawa_branch_logo-1.png';
 import { NavButton, NavDropDown } from './buttons';
 import { MenuIcon, CloseIcon } from './icons';
 import MaterialMenu from './material-menu';
+import Link from './link';
 
 const navItems = [
   {

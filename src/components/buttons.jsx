@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Link from 'gatsby-link';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 
-import { ChevronDownIcon, ChevronUpIcon, ChevronRightIcon } from './icons';
+import { ChevronDownIcon, ChevronUpIcon } from './icons';
 import MaterialMenu from './material-menu';
+import Link from './link';
 
 function IEEEButton(props) {
   return (
@@ -107,7 +106,6 @@ const styles = theme => ({
 });
 
 const ieeeButton = withStyles(styles)(IEEEButton);
-const navButton = withWidth()(NavButton);
 
 export { ieeeButton as IEEEButton, NavDropDown, NavButton };
 

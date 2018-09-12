@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import GridListTile from '@material-ui/core/GridListTile';
 import Typography from '@material-ui/core/Typography';
 
 import { IEEEButton } from '../components/buttons';
+import Link from '../components/link';
 
 import './event.scss';
 
