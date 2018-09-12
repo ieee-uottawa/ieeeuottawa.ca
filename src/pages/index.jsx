@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import GridList from '@material-ui/core/GridList';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -7,6 +6,7 @@ import withWidth, { isWidthUp, isWidthDown } from '@material-ui/core/withWidth';
 
 import Event from '../components/event';
 import { IEEEButton } from '../components/buttons';
+import Link from '../components/link';
 import ParallaxItem from '../components/parallax';
 import ServiceItem from '../components/service-item';
 import { FlaskIcon, LeadPencilIcon, LightBulbIcon } from '../components/icons';
@@ -113,7 +113,7 @@ const IndexPage = ({ width }) => {
         imageURL={mailingListImg}
         messageText="Don't Miss Out! Join The Mailing List Today"
         buttonText="Subscribe"
-        buttonURL="http://www.ieeeuottawa.ca/mailing-list-sign-up/"
+        buttonURL="/mailing-list-sign-up"
       />
     </div>
   );
