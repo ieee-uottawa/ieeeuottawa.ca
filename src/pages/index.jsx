@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 import GridList from '@material-ui/core/GridList';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import withWidth, { isWidthUp, isWidthDown } from '@material-ui/core/withWidth';
 
 import Event from '../components/event';
 import { IEEEButton } from '../components/buttons';
@@ -21,7 +21,7 @@ import './index.scss';
 
 const IndexPage = ({ width }) => {
   let gridStyle = { margin: '0 25%' };
-  if (isWidthUp('lg', width, true)) {
+  if (isWidthUp('lg', width, true) || isWidthDown('sm', width, false)) {
     gridStyle = {};
   }
 
