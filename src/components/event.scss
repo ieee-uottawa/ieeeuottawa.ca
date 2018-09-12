@@ -7,9 +7,22 @@
 }
 
 #container {
-  width: 530px;
+  width: 44.4%;
   display: table-cell;
-  margin: 0 16px;
+  margin: 16px;
+}
+
+@media only screen and (max-width: 570px) {
+  #container {
+    width: 92%;
+    margin: 16px;
+  }
+
+  #img {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
 }
 
 #btn-text {

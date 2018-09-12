@@ -1,5 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 import './footer.scss';
 
@@ -25,32 +26,40 @@ const Footer = () => (
     backgroundColor: '#1f2021',
   }}
   >
-    <div style={{
+    <Grid
+      container
+      style={{
       margin: '0 auto',
       maxWidth: '1100px',
     }}
     >
-      <section className="column">
-        <Typography variant="title">Call Us!</Typography>
-        <Typography variant="caption">613-562-5800 ext. 6196</Typography>
-      </section>
-      <section className="column">
-        <Typography variant="title">Visit Our Office!</Typography>
-        <Typography variant="caption">STE 4026 <br />800 King Edward Avenue</Typography>
-      </section>
-      <section className="column">
-        <Typography variant="title">Social Media!</Typography>
-        <ul style={{ margin: '0' }}>
-          {socialMedia.map(({ link, title }) => (
-            <li>
-              <Typography variant="caption">
-                <a href={link} className="footer-url-txt">{title}</a>
-              </Typography>
-            </li>
+      <Grid xs={4}>
+        <section className="column">
+          <Typography variant="title">Call Us!</Typography>
+          <Typography variant="caption">613-562-5800 ext. 6196</Typography>
+        </section>
+      </Grid>
+      <Grid xs={4}>
+        <section className="column">
+          <Typography variant="title">Visit Our Office!</Typography>
+          <Typography variant="caption">STE 4026 <br />800 King Edward Avenue</Typography>
+        </section>
+      </Grid>
+      <Grid xs={4}>
+        <section className="column">
+          <Typography variant="title">Social Media!</Typography>
+          <ul style={{ margin: '0' }}>
+            {socialMedia.map(({ link, title }) => (
+              <li>
+                <Typography variant="caption">
+                  <a href={link} className="footer-url-txt">{title}</a>
+                </Typography>
+              </li>
           ))}
-        </ul>
-      </section>
-    </div>
+          </ul>
+        </section>
+      </Grid>
+    </Grid>
   </footer>
 );
 

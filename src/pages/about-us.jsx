@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import GridList from '@material-ui/core/GridList';
 
-import ExecCard from '../components/exec_card';
+import ExecCard from '../components/exec-card';
 
 const execs = [
   {
