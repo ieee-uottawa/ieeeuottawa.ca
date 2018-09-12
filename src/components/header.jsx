@@ -36,7 +36,10 @@ const navItems = [
         title: 'Services - McNaughton Centre',
         link: '/mcnaughton-centre',
       },
-      { title: 'Volunteer Opportunities' },
+      {
+        title: 'Volunteer Opportunities',
+        link: '/volunteering',
+      },
       { title: 'Photos' },
     ],
   },
