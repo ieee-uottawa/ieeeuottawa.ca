@@ -24,7 +24,7 @@ class MaterialMenu extends Component {
     const { isOpen, anchorEl, onClose, ...MenuProps } = this.props;
     const { items, menuLevel } = this.state;
     return (
-      <Menu {...MenuProps} key={`menu-lvl-${menuLevel}`} open={isOpen} anchorEl={anchorEl} onClose={onClose} disablePortal>
+      <Menu {...MenuProps} key={`menu-lvl-${menuLevel}`} open={isOpen} anchorEl={anchorEl} onClose={onClose}>
         {items.map(({ title, link, items: navItems }) => {
           if (!navItems) return <NavButton title={title} link={link} component={MenuItem} onClick={onClose} />;
           return (

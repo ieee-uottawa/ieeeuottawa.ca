@@ -30,20 +30,6 @@ NavButton.propTypes = {
   component: PropTypes.element.isRequired,
 };
 
-function unhideMenu(ref) {
-  if (ref != null) {
-    Array.from(ref.children)
-      .filter(child => Array.from(child.classList)
-        .some(clazz => clazz.indexOf('MuiModal-hidden') > -1))
-      .forEach((child) => {
-        for (let i = 0; i < child.classList.length; i += 1) {
-          const clazz = child.classList.item(i);
-          if (clazz != null && clazz.indexOf('MuiModal-hidden') > -1) child.classList.remove(clazz);
-        }
-      });
-  }
-}
-
 class NavDropDown extends Component {
   constructor(props) {
     super(props);
@@ -77,7 +63,7 @@ class NavDropDown extends Component {
     const icon = isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
 
     return (
-      <span ref={unhideMenu}>
+      <span>
         <DropdownComponent
           {...this.props}
           onClick={(e) => {
