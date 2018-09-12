@@ -3,25 +3,28 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 
 import { IEEEButton } from './buttons';
+import Link from './link';
 
-const ParallaxItem = (props) => {
+const ParallaxItem = ({ buttonText, buttonURL, imageURL, messageText }) => {
   const alphaOverlay = 0.25;
   let button = null;
-  if (props.buttonText != null) {
-    let child;
-    if (props.buttonURL != null) {
-      child = <a href={props.buttonURL} className="white-url-txt" style={{ margin: '20px 16px' }}>{props.buttonText}</a>;
+  if (buttonText != null) {
+    if (buttonURL != null) {
+      button = (
+        <IEEEButton variant="outlined" color="secondary" className="white-btn white-url-txt" style={{ margin: '20px 16px' }} component={Link} to={buttonURL}>
+          {buttonText}
+        </IEEEButton>
+      );
     } else {
-      child = props.buttonText;
+      button = <IEEEButton variant="outlined" color="secondary" className="white-btn" style={{ margin: '20px 16px' }}>{buttonText}</IEEEButton>;
     }
-    button = <IEEEButton variant="outlined" color="secondary" className="white-btn" style={{ margin: '20px 16px' }}>{child}</IEEEButton>;
   }
 
   return (
     <div
       style={{
         height: '240px',
-        background: `linear-gradient(rgba(0, 0, 0, ${alphaOverlay}), rgba(0, 0, 0, ${alphaOverlay})), url(${props.imageURL})`,
+        background: `linear-gradient(rgba(0, 0, 0, ${alphaOverlay}), rgba(0, 0, 0, ${alphaOverlay})), url(${imageURL})`,
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
@@ -30,12 +33,12 @@ const ParallaxItem = (props) => {
       }}
     >
       <div className="center">
-        {props.messageText != null && (
+        {messageText != null && (
         <Typography
           variant="headline"
           style={{ color: 'white' }}
         >
-          {props.messageText}
+          {messageText}
           {button != null && button}
         </Typography>
         )}
