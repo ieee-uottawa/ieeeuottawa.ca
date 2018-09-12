@@ -2,14 +2,26 @@ $overlay: 0.25;
 $image_path: '../images/ieeesantapic-1.jpg';
 
 #santa-pic {
-  background: linear-gradient(rgba(0, 0, 0, $overlay), rgba(0, 0, 0, $overlay)), url($image_path);
+  background: linear-gradient(rgba(0, 0, 0, $overlay), rgba(0, 0, 0, $overlay)), url($image_path) center;
   background-size: cover;
   height: 600px;
   position: relative;
 }
 
-#text-container {
-  width: 60%;
+@media only screen and (min-width: 1047px) {
+  #text-container {
+    width: 60%;
+  }
+
+  #services-row {
+    margin: 32px;
+  }
+}
+
+@media only screen and (max-width: 1047px) {
+  #text-container {
+    width: 80%;
+  }
 }
 
 #about-us-image-text {
@@ -25,7 +37,7 @@ $image_path: '../images/ieeesantapic-1.jpg';
 }
 
 #services-row {
-  margin: 32px;
+  margin: 32px 0;
   text-align: center;
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import GridList from '@material-ui/core/GridList';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 import Event from '../components/event';
 import { IEEEButton } from '../components/buttons';
@@ -36,23 +37,29 @@ const IndexPage = () => (
     <Typography variant="subheading" className="center-horizontal">
       Check out all the services we offer in our office!
     </Typography>
-    <div id="services-row">
-      <ServiceItem
-        icon={<FlaskIcon className="icon" />}
-        title="Purchase Lab Supplies"
-        body="Check out what we have for sale on our Services page, under About Us."
-      />
-      <ServiceItem
-        icon={<LightBulbIcon className="icon" />}
-        title="Homework Help"
-        body="Is there a course you are struggling with? Contact the VP Academic to find out how we can help you succeed."
-      />
-      <ServiceItem
-        icon={<LeadPencilIcon className="icon" />}
-        title="Study"
-        body="Need a chill place to study? Come make use of our library and study in the office anytime we are open."
-      />
-    </div>
+    <Grid id="services-row" container>
+      <Grid item xs={12} sm={6} lg={4}>
+        <ServiceItem
+          icon={<FlaskIcon className="icon" />}
+          title="Purchase Lab Supplies"
+          body="Check out what we have for sale on our Services page, under About Us."
+        />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={4}>
+        <ServiceItem
+          icon={<LightBulbIcon className="icon" />}
+          title="Homework Help"
+          body="Is there a course you are struggling with? Contact the VP Academic to find out how we can help you succeed."
+        />
+      </Grid>
+      <Grid item xs={12} lg={4} style={{ margin: '0 25%' }}>
+        <ServiceItem
+          icon={<LeadPencilIcon className="icon" />}
+          title="Study"
+          body="Need a chill place to study? Come make use of our library and study in the office anytime we are open."
+        />
+      </Grid>
+    </Grid>
     <ParallaxItem imageURL={wineAndCheese} messageText="Buy your ticket today!" buttonText="Tickets" buttonURL="http://celebratewie.eventbrite.ca/" />
     <Typography variant="headline" className="title">
       Latest Events

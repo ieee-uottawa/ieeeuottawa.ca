@@ -10,11 +10,11 @@ const ParallaxItem = (props) => {
   if (props.buttonText != null) {
     let child;
     if (props.buttonURL != null) {
-      child = <a href={props.buttonURL} className="white-url-txt">{props.buttonText}</a>;
+      child = <a href={props.buttonURL} className="white-url-txt" style={{ margin: '20px 16px' }}>{props.buttonText}</a>;
     } else {
       child = props.buttonText;
     }
-    button = <IEEEButton variant="outlined" color="secondary" className="white-btn">{child}</IEEEButton>;
+    button = <IEEEButton variant="outlined" color="secondary" className="white-btn" style={{ margin: '20px 16px' }}>{child}</IEEEButton>;
   }
 
   return (
@@ -31,19 +31,14 @@ const ParallaxItem = (props) => {
     >
       <div className="center">
         {props.messageText != null && (
-          <Typography
-            variant="headline"
-            style={{
-              display: 'inline',
-              position: 'relative',
-              right: '64px',
-              color: 'white',
-            }}
-          >
-            {props.messageText}
-          </Typography>
+        <Typography
+          variant="headline"
+          style={{ color: 'white' }}
+        >
+          {props.messageText}
+          {button != null && button}
+        </Typography>
         )}
-        {button != null && button}
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 $default_margin: 16px;
 
-.services-item {
-  margin: $default_margin;
-  width: 30%;
-  display: inline-block;
+@media only screen and (max-width: 1330px) {
+  .services-item {
+    margin: $default_margin;
+  }
 }
 
 .services-item-title {
@@ -11,7 +11,7 @@ $default_margin: 16px;
 }
 
 .services-item-body {
-  margin: $default_margin 0 !important;
+  margin: $default_margin !important;
 }
 
 .icon-container {
