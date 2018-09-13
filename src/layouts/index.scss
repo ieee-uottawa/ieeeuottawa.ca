@@ -7,6 +7,17 @@ html {
 body {
   margin: 0;
   padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body > div {
+  min-height: 100%
 }
 
 article,
