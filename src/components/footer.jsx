@@ -24,6 +24,7 @@ const Footer = () => (
     padding: '50px 0 20px',
     overflow: 'auto',
     backgroundColor: '#1f2021',
+    flexShrink: '0',
   }}
   >
     <Grid

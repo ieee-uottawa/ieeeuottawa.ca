@@ -19,7 +19,7 @@ const theme = createMuiTheme({
 
 const Layout = ({ children, data }) => (
   <MuiThemeProvider theme={theme}>
-    <div>
+    <div style={{ minHeight: '100%', display: 'flex', flexDirection: 'column' }}>
       <Helmet
         title={data.site.siteMetadata.title}
         meta={[
@@ -32,6 +32,8 @@ const Layout = ({ children, data }) => (
         style={{
           margin: '1em auto 0',
           paddingTop: '0',
+          flex: '1 0 auto',
+          width: '100%',
         }}
       >
         {children()}
