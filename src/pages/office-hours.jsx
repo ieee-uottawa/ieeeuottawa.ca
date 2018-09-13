@@ -1,17 +1,15 @@
 import React from 'react';
 
 const OfficeHours = () => (
-  <div>
-    <iframe
-      src="https://calendar.google.com/calendar/embed?src=ieeeuottawa.ca_qmt88ivf3m7vetpfagn66mgl8g%40group.calendar.google.com&ctz=America%2FToronto"
-      style={{ border: 0 }}
-      width="100%"
-      height="981"
-      frameBorder="0"
-      title="Office Hours Calendar"
-      scrolling="no"
-    />
-  </div>
+  <iframe
+    src="https://calendar.google.com/calendar/embed?src=ieeeuottawa.ca_qmt88ivf3m7vetpfagn66mgl8g%40group.calendar.google.com&ctz=America%2FToronto"
+    style={{ border: 0 }}
+    width="100%"
+    height="981"
+    frameBorder="0"
+    title="Office Hours Calendar"
+    scrolling="no"
+  />
 );
 
 export default OfficeHours;
