@@ -30,7 +30,7 @@ class ExternalRedirect extends Component {
     return (
       <div className="p-margins center-horizontal">
         <Typography variant="display1" gutterBottom>
-          You will be redirected to <Link id="external-link" to={url} href={url}>{urlDescription || url}</Link> in {seconds} seconds.
+          You will be redirected to {urlDescription || url} in {seconds} seconds.
         </Typography>
         <Typography variant="display1" gutterBottom><Link to={url} href={url}>Click here</Link> to be redirected there now.</Typography>
       </div>
