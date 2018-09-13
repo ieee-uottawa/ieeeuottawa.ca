@@ -7,7 +7,23 @@ const Volunteering = () => (
       out this form to let us know!
     </p>
 
-    <p className="p-margins" style={{ fontWeight: '700' }}>Form is currently unavailable! Email <a href="mailto:exec@ieeeuottawa.ca">exec@ieeeuottawa.ca</a> for more info.</p>
+    <iframe
+      title="Volunteer Form"
+      id="JotFormIFrame-82546672983269"
+      onLoad="window.parent.scrollTo(0,0)"
+      allowTransparency="true"
+      allowFullScreen="true"
+      allow="geolocation; microphone; camera"
+      src="https://form.jotform.com/82546672983269"
+      frameBorder="0"
+      style={{
+        width: '1px',
+        minWidth: '100%',
+        height: '981px',
+        border: 'none',
+      }}
+      scrolling="no"
+    />
   </div>
 );
 
