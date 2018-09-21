@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import GridList from '@material-ui/core/GridList';
 
-import ExecCard from '../components/exec-card';
+import { ExecCard } from '../components/cards';
 
 const execs = [
   {
@@ -62,10 +62,14 @@ const execs = [
 const AboutUs = () => (
   <div>
     <Typography variant="headline" gutterBottom className="center-horizontal">About Us</Typography>
-    <p className="p-margins">The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG
+    <p className="p-margins">
+      The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official
+      Sub-Association for ELG/CEG/SEG
       under the ESS.
     </p>
-    <p className="p-margins">The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus.
+    <p className="p-margins">
+      The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s
+      experience on campus.
       This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment.
     </p>
     <p className="p-margins">*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.</p>

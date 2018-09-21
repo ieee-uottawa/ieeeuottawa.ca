@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import logo from '../images/uottawa_branch_logo-1.png';
 import { NavButton, NavDropDown } from './buttons';
 import { MenuIcon, CloseIcon } from './icons';
-import MaterialMenu from './material-menu';
+import MaterialMenu from './material-components';
 import Link from './link';
 
 const navItems = [
@@ -47,7 +47,7 @@ const navItems = [
     title: 'Shop',
     items: [
       { title: 'Shop' },
-      { title: 'Our Cart' },
+      { title: 'Cart' },
     ],
   },
 ];

@@ -5,7 +5,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-import './mcnaughton-centre.scss';
+import { moneyFormatter } from '../util';
 
 const services = [
   {
@@ -44,26 +44,24 @@ const services = [
   { name: 'Altera DE2 Board' },
 ];
 
-const McNaughtonCentre = () => {
-  const moneyFormatter = new Intl.NumberFormat('en-CA', { currency: 'CAD', style: 'currency' });
-  return (
-    <div>
-      <p className="p-margins">
+const McNaughtonCentre = () => (
+  <div>
+    <p className="p-margins">
         Located in SITE 4026, the McNaughton Centre is intended to enhance the learning experiences of IEEE student members at Canadian Universities
         and Colleges, as well as encouraging IEEE membership and activities, and interaction between the Student Branch and the Ottawa Section. Ted
         Glass (in 1979) created the first centre at the University of Manitoba in memory of General Andrew G. L. McNaughton, one of Canada’s most
         distinguished electrical engineers.
-      </p>
-      <p className="p-margins">The McNaughton Centre at uOttawa is proud to announce services available to all IEEE student members and SITE students.</p>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Service</TableCell>
-            <TableCell>Cost</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {services.map(({ name, cost }) => {
+    </p>
+    <p className="p-margins">The McNaughton Centre at uOttawa is proud to announce services available to all IEEE student members and SITE students.</p>
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell>Service</TableCell>
+          <TableCell>Cost</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {services.map(({ name, cost }) => {
             let costStr;
             if (!cost) {
               costStr = 'FREE';
@@ -80,11 +78,10 @@ const McNaughtonCentre = () => {
               </TableRow>
             );
           })}
-        </TableBody>
-      </Table>
-    </div>
-  );
-};
+      </TableBody>
+    </Table>
+  </div>
+);
 
 export default McNaughtonCentre;
 

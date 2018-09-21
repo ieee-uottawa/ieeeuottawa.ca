@@ -676,20 +676,7 @@ th {
   -moz-font-feature-settings: "tnum";
   -ms-font-feature-settings: "tnum";
   -webkit-font-feature-settings: "tnum";
-  padding-left: 0.96667rem;
-  padding-right: 0.96667rem;
-  padding-top: 0.725rem;
-  padding-bottom: calc(0.725rem - 1px);
-}
-
-th:first-child,
-td:first-child {
-  padding-left: 0;
-}
-
-th:last-child,
-td:last-child {
-  padding-right: 0;
+  padding: 0.725rem 0.96667rem calc(0.725rem - 1px) !important;
 }
 
 tt,
@@ -698,9 +685,7 @@ code {
   border-radius: 3px;
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
   "Liberation Mono", Menlo, Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding: 0.2em 0;
 }
 
 pre code {
@@ -767,4 +752,13 @@ pre tt:after {
 
 a {
   text-decoration: none;
+}
+
+.hide-border {
+  border: 0 !important;
+}
+
+.paypal-button {
+  padding: 32px;
+  max-height: 25px;
 }

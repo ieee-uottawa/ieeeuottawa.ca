@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import Paypal from 'paypal-checkout';
+import { connect } from 'react-redux';
 
-import { ChevronDownIcon, ChevronUpIcon } from './icons';
-import MaterialMenu from './material-menu';
 import Link from './link';
+import { ChevronDownIcon, ChevronUpIcon } from './icons';
+import { MaterialMenu } from './material-components';
+import { clearCart } from '../redux/actions/cart_actions';
 
 function IEEEButton(props) {
   return (
@@ -17,8 +21,8 @@ function IEEEButton(props) {
 
 function NavButton({ link, title, component: NavComponent, ...other }) {
   if (!link) {
-    link = title.toLowerCase()
-      .replace(/ /g, '-');
+    link = `/${title.toLowerCase()
+      .replace(/ /g, '-')}`;
   }
   return <NavComponent color="inherit" component={Link} to={link} {...other}>{title}</NavComponent>;
 }
@@ -92,6 +96,71 @@ NavDropDown.defaultProps = {
   clickBubbleDown: false,
 };
 
+class PaypalButton extends Component {
+  constructor(props) {
+    super(props);
+
+    this.payment = this.payment.bind(this);
+    this.onAuthorize = this.onAuthorize.bind(this);
+  }
+
+  onAuthorize(data, actions) {
+    console.log('onAuthorize', this.props);
+    return actions.payment.execute()
+      .then(() => {
+        this.props.dispatch(clearCart());
+      });
+  }
+
+  payment(data, actions) {
+    const { cart, total } = this.props;
+    return actions.payment.create({
+      transactions: [{
+        amount: {
+          total,
+          currency: 'CAD',
+        },
+        item_list: {
+          items: cart.map(({ name, description, price, quantity }) => ({
+            name,
+            description,
+            price,
+            quantity,
+            currency: 'CAD',
+          })),
+        },
+      }],
+    });
+  }
+
+  render() {
+    const PayPalButton = Paypal.Button.driver('react', {
+      React,
+      ReactDOM,
+    });
+    const { env, cart, total, ...props } = this.props;
+    return (
+      <PayPalButton
+        {...props}
+        env={env}
+        client={{
+          sandbox: 'AdJ-PCd6wDNtqZ0TpJhspUUdeL5j6gK_X8IQrc4SS2JT8UCjNdTKyvC8FwcsyQ2WNbfYj9IoSpY63CfJ',
+          production: 'Ae0vCniajtMtUi6LOXL24iS7N8sxz8vjweJUL-wwCCEHjNXFx6Pi--GS_uyHGxWrt8WFVnV9VyDR3O7R',
+        }}
+        payment={this.payment}
+        onAuthorize={this.onAuthorize}
+        locale="en_CA"
+      />
+    );
+  }
+}
+
+PaypalButton.propTypes = {
+  env: PropTypes.oneOf(['sandbox', 'production']).isRequired,
+  cart: PropTypes.array.isRequired,
+  total: PropTypes.number.isRequired,
+};
+
 const styles = theme => ({
   root: {
     '&:hover': {
@@ -106,6 +175,7 @@ const styles = theme => ({
 });
 
 const ieeeButton = withStyles(styles)(IEEEButton);
+const paypalButton = connect()(PaypalButton);
 
-export { ieeeButton as IEEEButton, NavDropDown, NavButton };
+export { ieeeButton as IEEEButton, NavDropDown, NavButton, paypalButton as PaypalButton };
 
