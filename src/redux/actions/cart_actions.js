@@ -12,10 +12,11 @@ function addItemToCart(id, name, imageURL, price, quantity, options) {
   };
 }
 
-function removeItemFromCart(id) {
+function removeItemFromCart(id, options) {
   return {
     type: RemoveFromCart,
     id,
+    options
   };
 }
 

@@ -48,6 +48,37 @@ function updateOrAdd(state, { id, name, imageURL, price, quantity, options }) {
   });
 }
 
+function remove(state, { id, options }) {
+  const index = state.items.findIndex(({ id: productID }) => id === productID);
+  if (index === -1) return state;
+
+  const item = JSON.parse(JSON.stringify(state.items[index]));
+  const optionsIndex = item.options.findIndex(option => Object.keys(option)
+    .some(key => Object.prototype.hasOwnProperty.call(options, key) && option[key] === options[key]));
+
+  if (item.options.length > 1) {
+    if (optionsIndex > -1) {
+      item.options = [
+        ...item.options.slice(0, optionsIndex),
+        ...item.options.slice(optionsIndex + 1),
+      ];
+    }
+    return Object.assign({}, state, {
+      items: [
+        ...state.items.slice(0, index),
+        item,
+        ...state.items.slice(index + 1),
+      ],
+    });
+  }
+  return Object.assign({}, state, {
+    items: [
+      ...state.items.slice(0, index),
+      ...state.items.slice(index + 1),
+    ],
+  });
+}
+
 function cart(state = initialState, action) {
   const { id, type } = action;
 
@@ -59,15 +90,7 @@ function cart(state = initialState, action) {
     if (index === -1) return state;
     return updateOrAdd(state, action);
   } else if (type === RemoveFromCart) {
-    const index = state.items.findIndex(({ id: productID }) => id === productID);
-
-    if (index === -1) return state;
-    return Object.assign({}, state, {
-      items: [
-        ...state.items.slice(0, index),
-        ...state.items.slice(index + 1),
-      ],
-    });
+    return remove(state, action);
   } else if (type === ClearCart) {
     return Object.assign({}, state, { items: [] });
   }

@@ -4,10 +4,15 @@ import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
+import { connect } from 'react-redux';
 
 import ProductRow from '../components/product-row';
 import { PaypalButton } from '../components/buttons';
-import { capitalize, moneyFormatter } from '../util';
+import { capitalize, isEmojiSupported, moneyFormatter } from '../util';
+import { removeItemFromCart } from '../redux/actions/cart_actions';
+
+import sadEmoji from '../images/emoji_sad.svg';
+import './cart.scss';
 
 const optionsSum = price => (sum, { quantity }) => sum + (price * quantity);
 
@@ -17,6 +22,7 @@ class Cart extends Component {
 
     this.state = { items: [] };
     this.updateState = this.updateState.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -46,13 +52,17 @@ class Cart extends Component {
     }
   }
 
+  handleDelete(id, options) {
+    const { dispatch } = this.props;
+    dispatch(removeItemFromCart(id, options));
+  }
+
   render() {
     const { items } = this.state;
     const total = items.reduce((sum, { price, options }) => sum + options.reduce(optionsSum(price), 0), 0);
     const cart = items
       .map(({ id, name, imageURL, price, options }) => options.map(({ quantity, ...itemOptions }) => ({
-        id: `${id}-${Object.values(itemOptions)
-          .join('-')}`,
+        id,
         description: `${name} (${Object.keys(itemOptions)
           .map(key => `${capitalize(key)}: ${itemOptions[key]}`)
           .join(', ')})`,
@@ -64,12 +74,11 @@ class Cart extends Component {
       })))
       .flat();
 
+    const cardID = cart.length > 0 ? 'cart-not-empty' : 'cart-empty';
+
     return (
-      <Card style={{
-        width: '80%',
-        margin: '0 auto 32px',
-      }}
-      >
+      <Card id={cardID}>
+        {cart.length > 0 &&
         <Grid container>
           <Grid container lg={10} md={9} xs={12} style={{ padding: '16px' }}>
             <Hidden xsDown>
@@ -86,14 +95,16 @@ class Cart extends Component {
               cart
                 .map(({ id, name, imageURL, price, options, quantity }) => (
                   <ProductRow
-                    key={id}
+                    key={`${id}-${Object.values(options)
+                      .join('-')}`}
                     name={name}
                     price={price}
                     quantity={quantity}
                     imageURL={imageURL}
                     options={options}
+                    handleDeleteClick={() => this.handleDelete(id, options)}
                   />
-                  ))
+                ))
                 .flat()
             }
           </Grid>
@@ -119,6 +130,27 @@ class Cart extends Component {
             {total > 0 && <PaypalButton env="sandbox" cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
           </Grid>
         </Grid>
+        }
+        {cart.length === 0 &&
+        <div>
+          {isEmojiSupported('😞') ?
+            <span
+              role="img"
+              className="center-horizontal"
+              aria-label="I'm sad"
+              style={{
+                lineHeight: '200px',
+                fontSize: '160px',
+                display: 'block',
+              }}
+            >
+              😞
+            </span> :
+            <img src={sadEmoji} alt="Sad emoji" height="200" style={{ display: 'block', margin: '0 auto' }} />
+          }
+          <Typography className="center-horizontal" variant="display1">Your cart is empty</Typography>
+        </div>
+        }
       </Card>
     );
   }
@@ -128,5 +160,5 @@ Cart.contextTypes = {
   store: PropTypes.object,
 };
 
-export default Cart;
+export default connect()(Cart);
 

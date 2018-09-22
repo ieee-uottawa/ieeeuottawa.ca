@@ -69,9 +69,9 @@ class ProductCard extends Component {
       let value = Number(event.target.value);
       if (isNaN(value)) ({ value } = event.target);
       this.setState({ [name]: value }, () => {
-        this.setState({ isValidForm: this.state.count > 0 && Object.keys(this.props.options)
-            .some(option => Object.keys(this.state)
-              .indexOf(option) > -1),
+        this.setState({ isValidForm: this.state.count > 0 && (!this.props.options || Object.keys(this.props.options)
+          .some(option => Object.keys(this.state)
+            .indexOf(option) > -1)),
         });
       });
     };
