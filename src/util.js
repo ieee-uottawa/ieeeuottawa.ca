@@ -35,4 +35,6 @@ const isEmojiSupported = (text) => {
   return feature1 && feature2 && compareFeatures(feature1, feature2);
 };
 
-export { moneyFormatter, capitalize, isEmojiSupported };
+const flattenDeep = arr => arr.reduce((acc, val) => (Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val)), []);
+
+export { moneyFormatter, capitalize, isEmojiSupported, flattenDeep };
