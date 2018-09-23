@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Paypal from 'paypal-checkout';
 import { connect } from 'react-redux';
 
 import Link from './link';
@@ -134,24 +133,27 @@ class PaypalButton extends Component {
   }
 
   render() {
-    const PayPalButton = Paypal.Button.driver('react', {
-      React,
-      ReactDOM,
-    });
-    const { env, cart, total, ...props } = this.props;
-    return (
-      <PayPalButton
-        {...props}
-        env={env}
-        client={{
+    if (typeof window !== 'undefined') {
+      const Paypal = require('paypal-checkout');
+      const PayPalButton = Paypal.Button.driver('react', {
+        React,
+        ReactDOM,
+      });
+      const { env, cart, total, ...props } = this.props;
+      return (
+        <PayPalButton
+          {...props}
+          env={env}
+          client={{
           sandbox: 'AdJ-PCd6wDNtqZ0TpJhspUUdeL5j6gK_X8IQrc4SS2JT8UCjNdTKyvC8FwcsyQ2WNbfYj9IoSpY63CfJ',
           production: 'Ae0vCniajtMtUi6LOXL24iS7N8sxz8vjweJUL-wwCCEHjNXFx6Pi--GS_uyHGxWrt8WFVnV9VyDR3O7R',
         }}
-        payment={this.payment}
-        onAuthorize={this.onAuthorize}
-        locale="en_CA"
-      />
-    );
+          payment={this.payment}
+          onAuthorize={this.onAuthorize}
+          locale="en_CA"
+        />
+      );
+    }
   }
 }
 

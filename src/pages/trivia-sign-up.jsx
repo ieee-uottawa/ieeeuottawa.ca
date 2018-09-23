@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TriviaSignUp = () => (
+const TriviaSignUp = () => (typeof window !== 'undefined' &&
   <iframe
     title="The Office Trivia Sign Up"
     id="JotFormIFrame-82485020233246"

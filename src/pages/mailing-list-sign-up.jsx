@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MailingListSignUp = () => (
+const MailingListSignUp = () => (typeof window !== 'undefined' &&
   <iframe
     title="Mailing List Sign Up"
     id="JotFormIFrame-82547117883263"

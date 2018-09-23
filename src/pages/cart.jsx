@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 import ProductRow from '../components/product-row';
 import { PaypalButton } from '../components/buttons';
-import { capitalize, isEmojiSupported, moneyFormatter } from '../util';
+import { capitalize, isEmojiSupported, moneyFormatter, flattenDeep } from '../util';
 import { removeItemFromCart } from '../redux/actions/cart_actions';
 
 import sadEmoji from '../images/emoji_sad.svg';
@@ -60,7 +60,7 @@ class Cart extends Component {
   render() {
     const { items } = this.state;
     const total = items.reduce((sum, { price, options }) => sum + options.reduce(optionsSum(price), 0), 0);
-    const cart = items
+    const cart = flattenDeep(items
       .map(({ id, name, imageURL, price, options }) => options.map(({ quantity, ...itemOptions }) => ({
         id,
         description: `${name} (${Object.keys(itemOptions)
@@ -71,8 +71,7 @@ class Cart extends Component {
         price,
         options: itemOptions,
         quantity,
-      })))
-      .flat();
+      }))));
 
     const cardID = cart.length > 0 ? 'cart-not-empty' : 'cart-empty';
 
