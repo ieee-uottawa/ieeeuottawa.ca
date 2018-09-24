@@ -60,7 +60,7 @@ ProductRow.propTypes = {
   options: PropTypes.shape({
     size: PropTypes.string.isRequired,
     colour: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
   price: PropTypes.number.isRequired,
   quantity: PropTypes.number.isRequired,
   handleDeleteClick: PropTypes.func,
@@ -68,6 +68,7 @@ ProductRow.propTypes = {
 
 ProductRow.defaultProps = {
   handleDeleteClick: () => {},
+  options: {},
 };
 
 export default withWidth()(ProductRow);

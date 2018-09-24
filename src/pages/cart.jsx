@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 import ProductRow from '../components/product-row';
 import { PaypalButton } from '../components/buttons';
-import { capitalize, isEmojiSupported, moneyFormatter, flattenDeep } from '../util';
+import { capitalize, flattenDeep, isEmojiSupported, moneyFormatter } from '../util';
 import { removeItemFromCart } from '../redux/actions/cart_actions';
 
 import sadEmoji from '../images/emoji_sad.svg';
@@ -45,10 +45,10 @@ class Cart extends Component {
     if (useSetState) {
       this.setState(state);
     } else {
-      Object.entries(state)
-        .forEach(([key, value]) => {
-          this.state[key] = value;
-        });
+      this.state = {
+        ...this.state,
+        ...state,
+      };
     }
   }
 
