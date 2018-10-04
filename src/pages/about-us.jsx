@@ -15,7 +15,7 @@ const AboutUs = () => (
               node {
                 name
                 position
-                imageURL {
+                image {
                   childImageSharp {
                     fixed(width: 166, height: 166) {
                       ...GatsbyImageSharpFixed
@@ -45,7 +45,7 @@ const AboutUs = () => (
 
         <Typography variant="title" gutterBottom className="center-horizontal">Our Execs</Typography>
         <GridList cols={5} style={{ margin: '0 7.5% 0' }}>
-          {edges.map(({ node: { name, position, imageURL } }) => <ExecCard name={name} position={position} imageURL={imageURL} />)}
+          {edges.map(({ node: { name, position, image } }) => <ExecCard name={name} position={position} image={image} />)}
         </GridList>
       </div>
     )}
