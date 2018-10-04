@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Heemel Saha",
+    "position": "Chair",
+    "imageURL": "../images/chair.jpg"
+  },
+  {
+    "name": "Amar Jasarbasic",
+    "position": "Vice Chair",
+    "imageURL": "../images/vice-chair.jpg"
+  },
+  {
+    "name": "Robert Conrad",
+    "position": "VP Finance",
+    "imageURL": "../images/finance.jpg"
+  },
+  {
+    "name": "John Zhao",
+    "position": "VP Social",
+    "imageURL": "../images/social.jpg"
+  },
+  {
+    "name": "Anushka Paliwal",
+    "position": "VP Internal",
+    "imageURL": "../images/internal.jpg"
+  },
+  {
+    "name": "Madison Smrtka",
+    "position": "VP Communications",
+    "imageURL": "../images/communications.jpg"
+  },
+  {
+    "name": "Melody Habbouche",
+    "position": "VP Academic",
+    "imageURL": "../images/academic.jpg"
+  },
+  {
+    "name": "Aly Abdelrahman",
+    "position": "VP External",
+    "imageURL": "../images/external.jpg"
+  },
+  {
+    "name": "Linda Tang",
+    "position": "WIE Chair",
+    "imageURL": "../images/wie-chair.jpg"
+  },
+  {
+    "name": "Mikeli Habash",
+    "position": "WIE Vice Chair",
+    "imageURL": "../images/wie-vice-chair.jpg"
+  },
+  {
+    "name": "Rushil Perera",
+    "position": "Webmaster"
+  },
+  {
+    "name": "Michal Ridner",
+    "position": "Secretary",
+    "imageURL": "../images/secretary.jpg"
+  },
+  {
+    "name": "Ivor Benderavage",
+    "position": "McNaughton Centre Director",
+    "imageURL": "../images/mcnaughton-director.jpg"
+  }
+]
