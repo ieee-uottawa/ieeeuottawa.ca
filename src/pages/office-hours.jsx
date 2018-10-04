@@ -1,14 +1,10 @@
 import React from 'react';
 
 const OfficeHours = () => (
-  <iframe
-    src="https://calendar.google.com/calendar/embed?src=ieeeuottawa.ca_qmt88ivf3m7vetpfagn66mgl8g%40group.calendar.google.com&ctz=America%2FToronto"
-    style={{ border: 0 }}
-    width="100%"
-    height="981"
-    frameBorder="0"
-    title="Office Hours Calendar"
-    scrolling="no"
+  <img
+    src="https://instagram.fyyz1-1.fna.fbcdn.net/vp/9369a4436708ca5ec626af3ca93da12d/5C492081/t51.2885-15/e35/40419866_452999755222668_4001511463938572787_n.jpg"
+    alt="IEEE Office Hours Fall 2018"
+    style={{ marginLeft: '25%' }}
   />
 );
 
