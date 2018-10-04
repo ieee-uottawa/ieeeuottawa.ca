@@ -27,8 +27,8 @@ const ExecCard = (props) => {
     webkitBoxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
     boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
   };
-  const imageComponent = props.imageURL ?
-    <CardMedia component={Img} fixed={props.imageURL.childImageSharp.fixed} title={props.name} style={imageStyle} /> :
+  const imageComponent = props.image ?
+    <CardMedia component={Img} fixed={props.image.childImageSharp.fixed} title={props.name} style={imageStyle} /> :
     <CardMedia component="img" height="166" image={`http://identicon.org/?t=${props.name}&s=166`} title={props.name} style={imageStyle} />;
 
   return (
@@ -49,7 +49,7 @@ const ExecCard = (props) => {
 ExecCard.propTypes = {
   name: PropTypes.string.isRequired,
   // eslint-disable-next-line react/require-default-props
-  imageURL: PropTypes.string,
+  image: PropTypes.object,
   position: PropTypes.string.isRequired,
 };
 
@@ -107,7 +107,7 @@ class ProductCard extends Component {
     const { count, isValidForm } = this.state;
     return (
       <Card id="product-card">
-        <CardMedia id="product-img" component={Img} title={name} fluid={imageURL.childImageSharp.fluid} />
+        <CardMedia id="product-img" component="img" title={name} image={imageURL.childImageSharp.resolutions.src} />
         <CardContent>
           <Typography gutterBottom variant="headline" className="center-horizontal">{name}</Typography>
           <Typography component="p" className="center-horizontal">${price}</Typography>
