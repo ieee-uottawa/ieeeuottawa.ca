@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Breadboard (Small)",
+    "cost": 8
+  },
+  {
+    "name": "Breadboard (Medium)",
+    "cost": 24
+  },
+  {
+    "name": "Breadboard (Large)",
+    "cost": 30
+  },
+  {
+    "name": "Wire Strippers (Small)",
+    "cost": 12
+  },
+  {
+    "name": "Wire Strippers (Large)",
+    "cost": 15
+  },
+  {
+    "name": "CD-Rs",
+    "cost": 1
+  },
+  {
+    "name": "Printing (Black ink only)",
+    "cost": 0.05,
+    "suffix": "/page"
+  },
+  {
+    "name": "Scanning"
+  },
+  {
+    "name": "Internet Access"
+  },
+  {
+    "name": "Microwave"
+  },
+  {
+    "name": "Oscilloscope"
+  },
+  {
+    "name": "HCS12 Dragon12 Plus Board (onsite use only)"
+  },
+  {
+    "name": "Altera DE2 Board"
+  }
+]
