@@ -8,6 +8,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { connect } from 'react-redux';
+import Img from 'gatsby-image';
 
 import { MaterialSelect } from './material-components';
 import { addItemToCart } from '../redux/actions/cart_actions';
@@ -15,14 +16,28 @@ import { addItemToCart } from '../redux/actions/cart_actions';
 import './exec-card.scss';
 
 const ExecCard = (props) => {
-  const imageURL = props.imageURL || `http://identicon.org/?t=${props.name}&s=256`;
+  const imageStyle = {
+    margin: '16px auto 0',
+    borderRadius: '50%',
+    width: '166px',
+    maxWidth: '100%',
+    height: '166px',
+    display: 'block',
+    webkitBorderRadius: '50%',
+    webkitBoxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
+    boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
+  };
+  const imageComponent = props.imageURL ?
+    <CardMedia component={Img} fixed={props.imageURL.childImageSharp.fixed} title={props.name} style={imageStyle} /> :
+    <CardMedia component="img" height="166" image={`http://identicon.org/?t=${props.name}&s=166`} title={props.name} style={imageStyle} />;
+
   return (
     <Card style={{
       margin: '16px 16px',
       width: '280px',
     }}
     >
-      <CardMedia component="img" height="166" image={imageURL} title={props.name} id="exec-img" />
+      {imageComponent}
       <CardContent>
         <Typography gutterBottom variant="headline" className="center-horizontal">{props.name}</Typography>
         <Typography component="p" className="center-horizontal">{props.position}</Typography>
@@ -69,9 +84,10 @@ class ProductCard extends Component {
       let value = Number(event.target.value);
       if (isNaN(value)) ({ value } = event.target);
       this.setState({ [name]: value }, () => {
-        this.setState({ isValidForm: this.state.count > 0 && (!this.props.options || Object.keys(this.props.options)
-          .some(option => Object.keys(this.state)
-            .indexOf(option) > -1)),
+        this.setState({
+          isValidForm: this.state.count > 0 && (!this.props.options || Object.keys(this.props.options)
+            .some(option => Object.keys(this.state)
+              .indexOf(option) > -1)),
         });
       });
     };
@@ -87,11 +103,11 @@ class ProductCard extends Component {
   }
 
   render() {
-    const { name, imageURL, imageHeight, price, options } = this.props;
+    const { name, imageURL, price, options } = this.props;
     const { count, isValidForm } = this.state;
     return (
       <Card id="product-card">
-        <CardMedia id="product-img" component="img" height={imageHeight} image={imageURL} title={name} />
+        <CardMedia id="product-img" component={Img} title={name} fluid={imageURL.childImageSharp.fluid} />
         <CardContent>
           <Typography gutterBottom variant="headline" className="center-horizontal">{name}</Typography>
           <Typography component="p" className="center-horizontal">${price}</Typography>
@@ -103,7 +119,7 @@ class ProductCard extends Component {
                   <MaterialSelect
                     style={{
                       margin,
-                      minWidth: '64px',
+                      minWidth: '72px',
                     }}
                     label={key.replace(/^\w/, c => c.toUpperCase())}
                     items={options[key]}

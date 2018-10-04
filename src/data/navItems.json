@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Home",
+    "link": "/"
+  },
+  {
+    "title": "Office Hours"
+  },
+  {
+    "title": "Trivia",
+    "link": "/trivia-sign-up"
+  },
+  {
+    "title": "Elections 2018-2019",
+    "link": "/elections"
+  },
+  {
+    "title": "About Us",
+    "items": [
+      {
+        "title": "About Us"
+      },
+      {
+        "title": "Budget"
+      },
+      {
+        "title": "Constitution"
+      },
+      {
+        "title": "IEEE Code of Conduct"
+      },
+      {
+        "title": "Services - McNaughton Centre",
+        "link": "/mcnaughton-centre"
+      },
+      {
+        "title": "Volunteer Opportunities",
+        "link": "/volunteering"
+      },
+      {
+        "title": "Photos"
+      }
+    ]
+  },
+  {
+    "title": "Shop",
+    "items": [
+      {
+        "title": "Shop"
+      },
+      {
+        "title": "Cart"
+      }
+    ]
+  }
+]
