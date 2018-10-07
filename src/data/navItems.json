@@ -11,8 +11,17 @@
     "link": "/events"
   },
   {
-    "title": "Elections 2018-2019",
-    "link": "/elections"
+    "title": "Contact Us",
+    "items": [
+      {
+        "title": "Mailing List",
+        "link": "/mailing-list-sign-up"
+      },
+      {
+        "title": "Volunteer Opportunities",
+        "link": "/volunteering"
+      }
+    ]
   },
   {
     "title": "About Us",
@@ -32,10 +41,6 @@
       {
         "title": "Services - McNaughton Centre",
         "link": "/mcnaughton-centre"
-      },
-      {
-        "title": "Volunteer Opportunities",
-        "link": "/volunteering"
       },
       {
         "title": "Photos"
