@@ -31,13 +31,15 @@ const Events = () => (
     }
     render={({ allEventsJson: { edges } }) => (
       <GridList id="event-grid" cols={2}>
-        {edges.map(({ node: { id, image: { childImageSharp: { fixed: image } }, name, description, url } }) => (<Event
-          key={id}
-          image={image}
-          name={name}
-          description={description}
-          url={url}
-        />))}
+        {edges.map(({ node: { id, image: { childImageSharp: { fixed: image } }, name, description, url } }) => (
+          <Event
+            key={id}
+            image={image}
+            name={name}
+            description={description}
+            url={url}
+          />
+        ))}
       </GridList>
     )}
   />
