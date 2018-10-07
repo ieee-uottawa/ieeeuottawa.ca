@@ -4,7 +4,15 @@
     "link": "/"
   },
   {
-    "title": "Office Hours"
+    "title": "Execs",
+    "items": [
+      {
+        "title": "Execs"
+      },
+      {
+        "title": "Office Hours"
+      }
+    ]
   },
   {
     "title": "Events",
@@ -26,9 +34,6 @@
   {
     "title": "About Us",
     "items": [
-      {
-        "title": "About Us"
-      },
       {
         "title": "Budget"
       },

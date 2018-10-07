@@ -5,7 +5,7 @@ import { graphql, StaticQuery } from 'gatsby';
 
 import { ExecCard } from '../components/cards';
 
-const AboutUs = () => (
+const Execs = () => (
   <StaticQuery
     query={
       graphql`
@@ -50,7 +50,6 @@ const AboutUs = () => (
       </div>
     )}
   />
-
 );
 
-export default AboutUs;
+export default Execs;
