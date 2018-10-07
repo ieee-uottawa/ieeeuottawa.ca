@@ -753,3 +753,9 @@ pre tt:after {
 a {
   text-decoration: none;
 }
+
+#event-grid {
+  display: flex;
+  justify-content: center;
+  margin: 0 !important;
+}

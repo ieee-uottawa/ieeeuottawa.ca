@@ -1,43 +1,47 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import GridList from '@material-ui/core/GridList';
-import { connect } from 'react-redux';
+import { graphql, StaticQuery } from 'gatsby';
 
 import Event from '../components/event';
 
-class Events extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
-  componentDidMount() {
-    const { store } = this.context;
-    console.log(store.getState());
-    this.state = store.getState();
-    this.state.unsubscribe = store.subscribe(() => console.log(store.getState()));
-  }
-
-  componentWillUnmount() {
-    this.state.unsubscribe();
-  }
-
-  render() {
-    console.log(this.state);
-    const { events } = this.state;
-
-    return (
+const Events = () => (
+  <StaticQuery
+    query={
+      graphql`
+      query {
+        allEventsJson {
+          edges {
+            node {
+              id
+              name
+              description
+              url
+              image {
+                childImageSharp {
+                  fixed(width: 230, height: 230) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+    }
+    render={({ allEventsJson: { edges } }) => (
       <GridList id="event-grid" cols={2}>
-        {events.map(({ imageURL, name, description, url }) => <Event imageURL={imageURL} name={name} description={description} url={url} />)}
+        {edges.map(({ node: { id, image: { childImageSharp: { fixed: image } }, name, description, url } }) => (<Event
+          key={id}
+          image={image}
+          name={name}
+          description={description}
+          url={url}
+        />))}
       </GridList>
-    );
-  }
-}
+    )}
+  />
+);
 
-Events.contextTypes = {
-  store: PropTypes.object,
-};
-
-export default connect()(Events);
+export default Events;
 
