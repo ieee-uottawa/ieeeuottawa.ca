@@ -1,25 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import ExternalRedirect from '../components/external-redirect';
 
-const MailingListSignUp = () => (typeof window !== 'undefined' &&
-  <iframe
-    title="Mailing List Sign Up"
-    id="JotFormIFrame-82547117883263"
-    onLoad={window.parent.scrollTo(0, 0)}
-    allowTransparency="true"
-    allowFullScreen="true"
-    allow="geolocation; microphone; camera"
-    src="https://form.jotform.com/82547117883263"
-    frameBorder="0"
-    style={{
-      width: '1px',
-      minWidth: '100%',
-      height: '539px',
-      border: 'none',
-    }}
-    scrolling="no"
+const MailingListSignUp = () => (
+  <ExternalRedirect
+    url="https://docs.google.com/forms/d/e/1FAIpQLSfdkrNopk9srS4CDYP3QSpadzOcCAXcqVMzG6ryVi-CZBWRtw/viewform"
+    urlDescription="our mailing list signup form"
   />
 );
 
 export default MailingListSignUp;
-
