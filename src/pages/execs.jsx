@@ -30,7 +30,7 @@ const Execs = () => (
     }
     render={({ allExecsJson: { edges } }) => (
       <div>
-        <Typography variant="headline" gutterBottom className="center-horizontal">About Us</Typography>
+        <Typography variant="h5" gutterBottom className="center-horizontal">About Us</Typography>
         <p className="p-margins">
           The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official
           Sub-Association for ELG/CEG/SEG
@@ -43,7 +43,7 @@ const Execs = () => (
         </p>
         <p className="p-margins">*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.</p>
 
-        <Typography variant="title" gutterBottom className="center-horizontal">Our Execs</Typography>
+        <Typography variant="h6" gutterBottom className="center-horizontal">Our Execs</Typography>
         <GridList cols={5} style={{ margin: '0 7.5% 0' }}>
           {edges.map(({ node: { name, position, image } }) => <ExecCard name={name} position={position} image={image} />)}
         </GridList>

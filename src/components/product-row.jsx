@@ -26,7 +26,7 @@ const ProductRow = ({ imageURL, name, options, price, quantity, handleDeleteClic
         />
       </Grid>
       <Grid item xs={6} sm={3} className="hide-border">
-        <Typography variant="title">{name}</Typography>
+        <Typography variant="h6">{name}</Typography>
         {Object.keys(options)
           .map(key => <Typography variant="caption">{capitalize(key)}: {options[key]}</Typography>)}
       </Grid>

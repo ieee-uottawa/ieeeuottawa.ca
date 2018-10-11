@@ -30,25 +30,25 @@ const Footer = () => (
     <Grid
       container
       style={{
-      margin: '0 auto',
-      maxWidth: '1100px',
-    }}
+        margin: '0 auto',
+        maxWidth: '1100px',
+      }}
     >
       <Grid xs={4}>
         <section className="column">
-          <Typography variant="title">Call Us!</Typography>
+          <Typography variant="h6">Call Us!</Typography>
           <Typography variant="caption">613-562-5800 ext. 6196</Typography>
         </section>
       </Grid>
       <Grid xs={4}>
         <section className="column">
-          <Typography variant="title">Visit Our Office!</Typography>
+          <Typography variant="h6">Visit Our Office!</Typography>
           <Typography variant="caption">STE 4026 <br />800 King Edward Avenue</Typography>
         </section>
       </Grid>
       <Grid xs={4}>
         <section className="column">
-          <Typography variant="title">Social Media!</Typography>
+          <Typography variant="h6">Social Media!</Typography>
           <ul style={{ margin: '0' }}>
             {socialMedia.map(({ link, title }) => (
               <li>
@@ -56,7 +56,7 @@ const Footer = () => (
                   <a href={link} className="footer-url-txt">{title}</a>
                 </Typography>
               </li>
-          ))}
+            ))}
           </ul>
         </section>
       </Grid>
@@ -65,4 +65,3 @@ const Footer = () => (
 );
 
 export default Footer;
-
