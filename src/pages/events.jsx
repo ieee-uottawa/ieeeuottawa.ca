@@ -9,7 +9,7 @@ const Events = () => (
     query={
       graphql`
       query {
-        allEventsJson {
+        allEventsJson(sort: { fields: id, order: DESC }) {
           edges {
             node {
               id
