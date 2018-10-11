@@ -25,24 +25,24 @@ const IndexPage = ({ width }) => {
       query={
         graphql`
         query {
-        allEventsJson(limit: 4, sort: { fields: id, order: DESC }) {
-          edges {
-            node {
-              id
-              name
-              description
-              url
-              image {
-                childImageSharp {
-                  fixed(width: 230, height: 230) {
-                    ...GatsbyImageSharpFixed
+          allEventsJson(limit: 4, sort: { fields: id, order: DESC }) {
+            edges {
+              node {
+                id
+                name
+                description
+                url
+                image {
+                  childImageSharp {
+                    fixed(width: 230, height: 230) {
+                      ...GatsbyImageSharpFixed
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
         `
       }
       render={({ allEventsJson: { edges } }) => (

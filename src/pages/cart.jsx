@@ -67,7 +67,7 @@ class Cart extends Component {
           .map(key => `${capitalize(key)}: ${itemOptions[key]}`)
           .join(', ')})`,
         name,
-        imageURL,
+        imageURL: imageURL.childImageSharp.resolutions.src,
         price,
         options: itemOptions,
         quantity,
