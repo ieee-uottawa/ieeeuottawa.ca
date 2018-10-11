@@ -93,7 +93,14 @@ class Header extends Component {
                   <IconButton onClick={this.handleMenuClick}>
                     {isOpen ? <CloseIcon /> : <MenuIcon />}
                   </IconButton>
-                  {isOpen && <MaterialMenu anchorEl={anchorEl} items={navItems} isOpen={isOpen} onClose={this.handleMenuClose} />}
+                  {isOpen && (
+                    <MaterialMenu
+                      anchorEl={anchorEl}
+                      items={edges.map(({ node: { title, link, items } }) => ({ title, link, items }))}
+                      isOpen={isOpen}
+                      onClose={this.handleMenuClose}
+                    />
+                  )}
                 </div>
               </Hidden>
             </Toolbar>
