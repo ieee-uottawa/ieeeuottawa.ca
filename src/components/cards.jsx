@@ -39,7 +39,7 @@ const ExecCard = (props) => {
     >
       {imageComponent}
       <CardContent>
-        <Typography gutterBottom variant="headline" className="center-horizontal">{props.name}</Typography>
+        <Typography gutterBottom variant="h5" className="center-horizontal">{props.name}</Typography>
         <Typography component="p" className="center-horizontal">{props.position}</Typography>
       </CardContent>
     </Card>
@@ -109,7 +109,7 @@ class ProductCard extends Component {
       <Card id="product-card">
         <CardMedia id="product-img" component="img" title={name} image={imageURL.childImageSharp.resolutions.src} />
         <CardContent>
-          <Typography gutterBottom variant="headline" className="center-horizontal">{name}</Typography>
+          <Typography gutterBottom variant="h5" className="center-horizontal">{name}</Typography>
           <Typography component="p" className="center-horizontal">${price}</Typography>
           {
             options && Object.keys(options)

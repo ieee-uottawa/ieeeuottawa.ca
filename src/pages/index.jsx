@@ -49,7 +49,7 @@ const IndexPage = ({ width }) => {
         <div>
           <div id="santa-pic">
             <div id="text-container" className="center">
-              <Typography variant="display2" className="uppercase" id="about-us-image-text">
+              <Typography variant="h3" className="uppercase" id="about-us-image-text">
                 <Link to="/about-us" href="/about-us" className="white-url-txt">Powering Your Student Experience</Link>
               </Typography>
               <IEEEButton
@@ -65,10 +65,10 @@ const IndexPage = ({ width }) => {
             </div>
           </div>
 
-          <Typography variant="headline" className="title">
+          <Typography variant="h5" className="title">
             Why come to our office?
           </Typography>
-          <Typography variant="subheading" className="center-horizontal">
+          <Typography variant="subtitle1" className="center-horizontal">
             Check out all the services we offer in our office!
           </Typography>
           <Grid id="services-row" container>
@@ -100,7 +100,7 @@ const IndexPage = ({ width }) => {
             buttonText="Tickets"
             buttonURL="http://celebratewie.eventbrite.ca/"
           />
-          <Typography variant="headline" className="title">
+          <Typography variant="h5" className="title">
             Latest Events
           </Typography>
           <GridList id="event-grid" cols={2}>

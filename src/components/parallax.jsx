@@ -35,7 +35,7 @@ const ParallaxItem = ({ buttonText, buttonURL, imageURL, messageText }) => {
       <div className="center">
         {messageText != null && (
         <Typography
-          variant="headline"
+          variant="h5"
           style={{ color: 'white' }}
         >
           {messageText}

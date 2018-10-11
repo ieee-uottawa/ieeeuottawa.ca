@@ -9,10 +9,10 @@ const ServiceItem = props => (
     <span className="icon-container">
       {props.icon}
     </span>
-    <Typography variant="title" className="services-item-title">
+    <Typography variant="h6" className="services-item-title">
       {props.title}
     </Typography>
-    <Typography variant="subheading" className="services-item-body">
+    <Typography variant="subtitle1" className="services-item-body">
       {props.body}
     </Typography>
   </span>

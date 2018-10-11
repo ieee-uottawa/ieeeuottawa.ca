@@ -120,10 +120,10 @@ class Cart extends Component {
               background: 'rgba(0, 0, 0, 0.08)',
             }}
           >
-            <Typography className="center-horizontal" variant="title" style={{ margin: '32px 16px 16px' }}>
+            <Typography className="center-horizontal" variant="h6" style={{ margin: '32px 16px 16px' }}>
               Cart Total
             </Typography>
-            <Typography className="center-horizontal" variant="display1" style={{ margin: '0 16px' }}>
+            <Typography className="center-horizontal" variant="h4" style={{ margin: '0 16px' }}>
               {moneyFormatter.format(total)}
             </Typography>
             {total > 0 && <PaypalButton env="sandbox" cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
@@ -147,7 +147,7 @@ class Cart extends Component {
             </span> :
             <img src={sadEmoji} alt="Sad emoji" height="200" style={{ display: 'block', margin: '0 auto' }} />
           }
-          <Typography className="center-horizontal" variant="display1">Your cart is empty</Typography>
+          <Typography className="center-horizontal" variant="h4">Your cart is empty</Typography>
         </div>
         }
       </Card>

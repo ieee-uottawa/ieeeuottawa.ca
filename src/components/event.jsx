@@ -4,8 +4,8 @@ import GridListTile from '@material-ui/core/GridListTile';
 import Typography from '@material-ui/core/Typography';
 import Img from 'gatsby-image';
 
-import { IEEEButton } from '../components/buttons';
-import Link from '../components/link';
+import { IEEEButton } from './buttons';
+import Link from './link';
 
 import './event.scss';
 
@@ -15,11 +15,11 @@ const Event = props => (
       <Img fixed={props.image} className="event-img" />
     </Link>
     <Link to={props.url} href={props.url}>
-      <Typography variant="headline">
+      <Typography variant="h5" style={{ paddingBottom: '8px' }}>
         {props.name}
       </Typography>
     </Link>
-    <Typography variant="subheading" style={{ whiteSpace: 'pre-line' }}>
+    <Typography variant="subtitle1" style={{ whiteSpace: 'pre-line' }}>
       {`${props.description.substring(0, 250).trim()}\u2026`}
     </Typography>
     <br />
@@ -37,4 +37,3 @@ Event.propTypes = {
 };
 
 export default Event;
-
