@@ -60,6 +60,15 @@ const Footer = () => (
           </ul>
         </section>
       </Grid>
+      <Grid xs={12} className="center-horizontal">
+        <Typography variant="caption" id="copyright-txt">
+          Copyright ©
+          {` ${new Date().getFullYear()}`}
+          {' '}
+          <a href="http://www.ieeeuottawa.ca" id="copyright-link">IEEE uOttawa Student Branch</a>
+          .
+        </Typography>
+      </Grid>
     </Grid>
   </footer>
 );
