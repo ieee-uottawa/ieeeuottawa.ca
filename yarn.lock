@@ -752,6 +752,47 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
+"@sentry/browser@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-4.1.1.tgz#9db1e765bf2afcbe0fb44b028abdf5c74d6e77b0"
+  dependencies:
+    "@sentry/core" "4.1.1"
+    "@sentry/types" "4.1.0"
+    "@sentry/utils" "4.1.1"
+
+"@sentry/core@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-4.1.1.tgz#013ee6ee32033b9a404da5bd27f5a2417dcb1a89"
+  dependencies:
+    "@sentry/hub" "4.1.1"
+    "@sentry/minimal" "4.1.1"
+    "@sentry/types" "4.1.0"
+    "@sentry/utils" "4.1.1"
+
+"@sentry/hub@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-4.1.1.tgz#ef093fe4f42587c7868b66299584b5a9f9d67fc6"
+  dependencies:
+    "@sentry/types" "4.1.0"
+    "@sentry/utils" "4.1.1"
+
+"@sentry/minimal@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-4.1.1.tgz#46d8a35e0d82b0903ed83dba21d8344b601145a5"
+  dependencies:
+    "@sentry/hub" "4.1.1"
+    "@sentry/types" "4.1.0"
+
+"@sentry/types@4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-4.1.0.tgz#ebffb9857abbecaad5d1c00152a50f72ac9757a5"
+
+"@sentry/utils@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-4.1.1.tgz#5624517d582c870348f234df27c509db95d4fdc6"
+  dependencies:
+    "@sentry/types" "4.1.0"
+
 "@types/configstore@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
@@ -5101,7 +5142,7 @@ global-prefix@^1.0.1:
     is-windows "^1.0.1"
     which "^1.2.14"
 
-global@^4.3.0, global@^4.3.2, global@~4.3.0:
+global@^4.3.0, global@~4.3.0:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/global/-/global-4.3.2.tgz#e76989268a6c74c38908b1305b10fc0e394e9d0f"
   dependencies:
