@@ -43,7 +43,6 @@ const McNaughtonCentre = () => (
           </TableHead>
           <TableBody>
             {edges.map(({ node: { name, cost, suffix } }) => {
-              console.log(name, cost);
               let costStr;
               if (!cost) {
                 costStr = 'FREE';

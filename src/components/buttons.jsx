@@ -145,9 +145,9 @@ class PaypalButton extends Component {
           {...props}
           env={env}
           client={{
-          sandbox: 'AdJ-PCd6wDNtqZ0TpJhspUUdeL5j6gK_X8IQrc4SS2JT8UCjNdTKyvC8FwcsyQ2WNbfYj9IoSpY63CfJ',
-          production: 'Ae0vCniajtMtUi6LOXL24iS7N8sxz8vjweJUL-wwCCEHjNXFx6Pi--GS_uyHGxWrt8WFVnV9VyDR3O7R',
-        }}
+            sandbox: 'AdJ-PCd6wDNtqZ0TpJhspUUdeL5j6gK_X8IQrc4SS2JT8UCjNdTKyvC8FwcsyQ2WNbfYj9IoSpY63CfJ',
+            production: 'Ae0vCniajtMtUi6LOXL24iS7N8sxz8vjweJUL-wwCCEHjNXFx6Pi--GS_uyHGxWrt8WFVnV9VyDR3O7R',
+          }}
           payment={this.payment}
           onAuthorize={this.onAuthorize}
           locale="en_CA"
