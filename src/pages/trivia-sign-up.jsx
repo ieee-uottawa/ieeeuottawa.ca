@@ -1,6 +1,8 @@
 import React from 'react';
 
-const TriviaSignUp = () => (typeof window !== 'undefined' &&
+import { isServerSideRendering } from '../util';
+
+const TriviaSignUp = () => (!isServerSideRendering() &&
   <iframe
     title="The Office Trivia Sign Up"
     id="JotFormIFrame-82485020233246"

@@ -1,4 +1,5 @@
 const moneyFormatter = new Intl.NumberFormat('en-CA', { currency: 'CAD', style: 'currency' });
+const isDevEnvironment = process.env.NODE_ENV === 'development';
 
 const capitalize = str => str.substring(0, 1).toUpperCase() + str.substring(1);
 
@@ -37,4 +38,6 @@ const isEmojiSupported = (text) => {
 
 const flattenDeep = arr => arr.reduce((acc, val) => (Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val)), []);
 
-export { moneyFormatter, capitalize, isEmojiSupported, flattenDeep };
+const isServerSideRendering = () => typeof window === 'undefined';
+
+export { moneyFormatter, capitalize, isEmojiSupported, flattenDeep, isServerSideRendering, isDevEnvironment };
