@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^3.0.3",
+    "@sentry/browser": "^4.1.1",
     "gatsby": "^2.0.0-rc.28",
     "gatsby-image": "^2.0.0-rc.4",
     "gatsby-node-helpers": "^0.3.0",
@@ -27,6 +28,7 @@
     "prop-types": "^15.6.2",
     "react": "16.4.2",
     "react-dom": "16.4.2",
+    "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
     "react-jss": "^8.6.1",
     "react-redux": "^5.0.7",

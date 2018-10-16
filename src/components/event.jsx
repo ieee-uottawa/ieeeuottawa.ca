@@ -11,10 +11,10 @@ import './event.scss';
 
 const Event = props => (
   <GridListTile cols={1} id="container">
-    <Link to={props.url} href={props.url}>
+    <Link to={props.url} href={props.url} eventLabel={`Clicked ${props.name}`}>
       <Img fixed={props.image} className="event-img" />
     </Link>
-    <Link to={props.url} href={props.url}>
+    <Link to={props.url} href={props.url} eventLabel={`Clicked ${props.name}`}>
       <Typography variant="h5" style={{ paddingBottom: '8px' }}>
         {props.name}
       </Typography>
@@ -23,7 +23,7 @@ const Event = props => (
       {`${props.description.substring(0, 250).trim()}\u2026`}
     </Typography>
     <br />
-    <IEEEButton variant="outlined" color="secondary" component={Link} to={props.url}>
+    <IEEEButton variant="outlined" color="secondary" component={Link} to={props.url} eventLabel={`Clicked ${props.name}`}>
       <span id="btn-text">Read more</span>
     </IEEEButton>
   </GridListTile>

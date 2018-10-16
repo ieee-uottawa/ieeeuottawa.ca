@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Link from './link';
 
 import './footer.scss';
 
@@ -53,7 +54,7 @@ const Footer = () => (
             {socialMedia.map(({ link, title }) => (
               <li>
                 <Typography variant="caption">
-                  <a href={link} className="footer-url-txt">{title}</a>
+                  <Link to={link} className="footer-url-txt">{title}</Link>
                 </Typography>
               </li>
             ))}
@@ -65,7 +66,7 @@ const Footer = () => (
           Copyright ©
           {` ${new Date().getFullYear()}`}
           {' '}
-          <a href="http://www.ieeeuottawa.ca" id="copyright-link">IEEE uOttawa Student Branch</a>
+          <Link to="/" id="copyright-link">IEEE uOttawa Student Branch</Link>
           .
         </Typography>
       </Grid>
