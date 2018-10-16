@@ -156,3 +156,5 @@ fabric.properties
 # Build directory
 /public
 .DS_Store
+
+.env.*
