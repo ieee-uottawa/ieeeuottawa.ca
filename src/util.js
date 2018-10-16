@@ -37,4 +37,6 @@ const isEmojiSupported = (text) => {
 
 const flattenDeep = arr => arr.reduce((acc, val) => (Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val)), []);
 
-export { moneyFormatter, capitalize, isEmojiSupported, flattenDeep };
+const isServerSideRendering = () => typeof window === 'undefined';
+
+export { moneyFormatter, capitalize, isEmojiSupported, flattenDeep, isServerSideRendering };
