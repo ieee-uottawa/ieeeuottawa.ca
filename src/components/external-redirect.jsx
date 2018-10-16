@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
+import { event } from 'react-ga';
 
 import Link from './link';
 
@@ -27,12 +28,20 @@ class ExternalRedirect extends Component {
   render() {
     const { url, urlDescription } = this.props;
     const { seconds } = this.state;
+    const description = urlDescription || url;
+
     return (
       <div className="p-margins center-horizontal">
         <Typography variant="h4" gutterBottom>
-          You will be redirected to {urlDescription || url} in {seconds} seconds.
+          You will be redirected to {description} in {seconds} seconds.
         </Typography>
-        <Typography variant="h4" gutterBottom><Link to={url} href={url}>Click here</Link> to be redirected there now.</Typography>
+        <Typography variant="h4" gutterBottom>
+          <Link to={url} href={url} onClick={() => event({ category: 'Waiting', action: 'Clicked link early', value: description })}>
+            Click here
+          </Link>
+          {' '}
+          to be redirected there now.
+        </Typography>
       </div>
     );
   }
@@ -43,9 +52,8 @@ ExternalRedirect.propTypes = {
   urlDescription: PropTypes.string,
 };
 
-ExternalRedirect.propTypes = {
+ExternalRedirect.defaultProps = {
   urlDescription: null,
 };
 
 export default ExternalRedirect;
-
