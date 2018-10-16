@@ -50,14 +50,14 @@ const IndexPage = ({ width }) => {
           <div id="santa-pic">
             <div id="text-container" className="center">
               <Typography variant="h3" className="uppercase" id="about-us-image-text">
-                <Link to="/about-us" href="/about-us" className="white-url-txt">Powering Your Student Experience</Link>
+                <Link to="/execs" href="/execs" className="white-url-txt">Powering Your Student Experience</Link>
               </Typography>
               <IEEEButton
                 variant="outlined"
                 color="secondary"
                 className="white-btn white-url-txt"
                 component={Link}
-                to="/about-us"
+                to="/execs"
                 style={{ marginTop: '32px' }}
               >
                 About Us
