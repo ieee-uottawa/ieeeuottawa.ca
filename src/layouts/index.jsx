@@ -43,35 +43,34 @@ const Layout = ({ children }) => (
       display: 'flex',
       flexDirection: 'column',
     }}
+    >
+      <Helmet
+        title="IEEE uOttawa Student Branch – Powering your student experience!"
+        meta={[
+          {
+            name: 'description',
+            content: 'Sample',
+          },
+          {
+            name: 'keywords',
+            content: 'sample, something',
+          },
+        ]}
+      />
+      <Header />
+      <div
+        style={{
+          margin: '1em auto 0',
+          paddingTop: '0',
+          flex: '1 0 auto',
+          width: '100%',
+        }}
       >
-        <Helmet
-          title="IEEE uOttawa Student Branch – Powering your student experience!"
-          meta={[
-            {
-              name: 'description',
-              content: 'Sample',
-            },
-            {
-              name: 'keywords',
-              content: 'sample, something',
-            },
-          ]}
-        />
-        <Header />
-        <div
-          style={{
-            margin: '1em auto 0',
-            paddingTop: '0',
-            flex: '1 0 auto',
-            width: '100%',
-          }}
-        >
-          {children}
-        </div>
-        <Footer />
+        {children}
       </div>
-    </Provider>
-  );
-};
+      <Footer />
+    </div>
+  </Provider>
+);
 
 export default withRoot(Layout);

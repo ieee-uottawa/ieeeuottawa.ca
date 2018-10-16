@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'react-ga';
 
 const Link = ({ children, to, ...other }) => {
   // Tailor the following test to your environment.
