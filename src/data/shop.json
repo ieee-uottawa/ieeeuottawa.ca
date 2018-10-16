@@ -1,46 +1,8 @@
 [
   {
-    "name": "Crewneck",
-    "price": 28,
-    "image": "../images/ieeebluecrewneck.png",
-    "options": {
-      "size": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "colour": [
-        "Black",
-        "Blue",
-        "Maroon"
-      ]
-    }
-  },
-  {
     "name": "Hoodie",
-    "price": 35,
+    "price": 40,
     "image": "../images/ieeebluehoodie.png",
-    "options": {
-      "size": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "colour": [
-        "Black",
-        "Blue",
-        "Maroon"
-      ]
-    }
-  },
-  {
-    "name": "T-Shirt",
-    "price": 12,
-    "image": "../images/ieeebluetshirt-1.png",
     "options": {
       "size": [
         "S",

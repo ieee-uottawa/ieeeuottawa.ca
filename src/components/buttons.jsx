@@ -9,6 +9,7 @@ import Link from './link';
 import { ChevronDownIcon, ChevronUpIcon } from './icons';
 import { MaterialMenu } from './material-components';
 import { clearCart } from '../redux/actions/cart_actions';
+import { isServerSideRendering } from '../util';
 
 function IEEEButton(props) {
   return (
@@ -104,7 +105,6 @@ class PaypalButton extends Component {
   }
 
   onAuthorize(data, actions) {
-    console.log('onAuthorize', this.props);
     return actions.payment.execute()
       .then(() => {
         this.props.dispatch(clearCart());
@@ -133,7 +133,7 @@ class PaypalButton extends Component {
   }
 
   render() {
-    if (typeof window !== 'undefined') {
+    if (!isServerSideRendering()) {
       const Paypal = require('paypal-checkout');
       const PayPalButton = Paypal.Button.driver('react', {
         React,
@@ -145,8 +145,8 @@ class PaypalButton extends Component {
           {...props}
           env={env}
           client={{
-            sandbox: 'AdJ-PCd6wDNtqZ0TpJhspUUdeL5j6gK_X8IQrc4SS2JT8UCjNdTKyvC8FwcsyQ2WNbfYj9IoSpY63CfJ',
-            production: 'Ae0vCniajtMtUi6LOXL24iS7N8sxz8vjweJUL-wwCCEHjNXFx6Pi--GS_uyHGxWrt8WFVnV9VyDR3O7R',
+            sandbox: process.env.GATSBY_PAYPAL_DEV_KEY,
+            production: process.env.GATSBY_PAYPAL_PROD_KEY,
           }}
           payment={this.payment}
           onAuthorize={this.onAuthorize}
