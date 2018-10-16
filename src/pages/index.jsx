@@ -94,12 +94,6 @@ const IndexPage = ({ width }) => {
               />
             </Grid>
           </Grid>
-          <ParallaxItem
-            imageURL={wineAndCheese}
-            messageText="Buy your ticket today!"
-            buttonText="Tickets"
-            buttonURL="http://celebratewie.eventbrite.ca/"
-          />
           <Typography variant="h5" className="title">
             Latest Events
           </Typography>
