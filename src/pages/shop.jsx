@@ -50,7 +50,7 @@ class Shop extends Component {
             marginRight: '16px',
           }}
           >
-            <Typography variant="h5">Shop</Typography>
+            <Typography variant="h5" gutterBottom className="title">Shop</Typography>
             <GridList style={{ justifyContent: 'space-evenly' }}>
               {edges.map(({ node: { name, price, image, options } }) => (
                 <GridListTile style={{

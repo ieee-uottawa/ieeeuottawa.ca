@@ -1,5 +1,6 @@
 import React from 'react';
 import GridList from '@material-ui/core/GridList';
+import Typography from '@material-ui/core/Typography';
 import { graphql, StaticQuery } from 'gatsby';
 
 import Event from '../components/event';
@@ -30,17 +31,20 @@ const Events = () => (
     `
     }
     render={({ allEventsJson: { edges } }) => (
-      <GridList id="event-grid" cols={2}>
-        {edges.map(({ node: { id, image: { childImageSharp: { fixed: image } }, name, description, url } }) => (
-          <Event
-            key={id}
-            image={image}
-            name={name}
-            description={description}
-            url={url}
-          />
-        ))}
-      </GridList>
+      <div>
+        <Typography variant="h5" gutterBottom className="title">Events</Typography>
+        <GridList id="event-grid" cols={2}>
+          {edges.map(({ node: { id, image: { childImageSharp: { fixed: image } }, name, description, url } }) => (
+            <Event
+              key={id}
+              image={image}
+              name={name}
+              description={description}
+              url={url}
+            />
+          ))}
+        </GridList>
+      </div>
     )}
   />
 );

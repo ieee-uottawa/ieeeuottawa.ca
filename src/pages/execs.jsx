@@ -30,7 +30,7 @@ const Execs = () => (
     }
     render={({ allExecsJson: { edges } }) => (
       <div>
-        <Typography variant="h5" gutterBottom className="center-horizontal">About Us</Typography>
+        <Typography variant="h5" gutterBottom className="title">About Us</Typography>
         <p className="p-margins">
           The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official
           Sub-Association for ELG/CEG/SEG

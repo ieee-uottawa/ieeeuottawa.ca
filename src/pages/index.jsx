@@ -9,7 +9,6 @@ import Event from '../components/event';
 import Link from '../components/link';
 import ParallaxItem from '../components/parallax';
 import ServiceItem from '../components/service-item';
-import wineAndCheese from '../images/wine-and-cheese-1.jpg';
 import mailingListImg from '../images/compsci-1.jpg';
 import { IEEEButton } from '../components/buttons';
 import { FlaskIcon, LeadPencilIcon, LightBulbIcon } from '../components/icons';
@@ -65,7 +64,7 @@ const IndexPage = ({ width }) => {
             </div>
           </div>
 
-          <Typography variant="h5" className="title">
+          <Typography variant="h5" className="title" style={{ margin: '32px 0 16px' }}>
             Why come to our office?
           </Typography>
           <Typography variant="subtitle1" className="center-horizontal">
@@ -94,7 +93,7 @@ const IndexPage = ({ width }) => {
               />
             </Grid>
           </Grid>
-          <Typography variant="h5" className="title">
+          <Typography variant="h5" className="title" style={{ margin: '32px 0 16px' }}>
             Latest Events
           </Typography>
           <GridList id="event-grid" cols={2}>
