@@ -76,81 +76,84 @@ class Cart extends Component {
     const cardID = cart.length > 0 ? 'cart-not-empty' : 'cart-empty';
 
     return (
-      <Card id={cardID}>
-        {cart.length > 0 &&
-        <Grid container>
-          <Grid container lg={10} md={9} xs={12} style={{ padding: '16px' }}>
-            <Hidden xsDown>
-              <Grid container direction="row">
-                <Grid sm={3} />
-                <Grid sm={3}>Product</Grid>
-                <Grid sm={2}>Price</Grid>
-                <Grid sm={1}>Qty</Grid>
-                <Grid sm={2}>Total</Grid>
-                <Grid sm={1} />
+      <div>
+        <Typography variant="h5" gutterBottom className="title" style={{ marginBottom: '16px' }}>Cart</Typography>
+        <Card id={cardID}>
+          {cart.length > 0 &&
+            <Grid container>
+              <Grid container lg={10} md={9} xs={12} style={{ padding: '16px' }}>
+                <Hidden xsDown>
+                  <Grid container direction="row">
+                    <Grid sm={3} />
+                    <Grid sm={3}>Product</Grid>
+                    <Grid sm={2}>Price</Grid>
+                    <Grid sm={1}>Qty</Grid>
+                    <Grid sm={2}>Total</Grid>
+                    <Grid sm={1} />
+                  </Grid>
+                </Hidden>
+                {
+                  cart
+                    .map(({ id, name, imageURL, price, options, quantity }) => (
+                      <ProductRow
+                        key={`${id}-${Object.values(options)
+                          .join('-')}`}
+                        name={name}
+                        price={price}
+                        quantity={quantity}
+                        imageURL={imageURL}
+                        options={options}
+                        handleDeleteClick={() => this.handleDelete(id, options)}
+                      />
+                    ))
+                    .flat()
+                }
               </Grid>
-            </Hidden>
-            {
-              cart
-                .map(({ id, name, imageURL, price, options, quantity }) => (
-                  <ProductRow
-                    key={`${id}-${Object.values(options)
-                      .join('-')}`}
-                    name={name}
-                    price={price}
-                    quantity={quantity}
-                    imageURL={imageURL}
-                    options={options}
-                    handleDeleteClick={() => this.handleDelete(id, options)}
-                  />
-                ))
-                .flat()
-            }
-          </Grid>
-          <Grid
-            item
-            lg={2}
-            md={3}
-            xs={12}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              padding: total > 0 ? '0' : '32px',
-              background: 'rgba(0, 0, 0, 0.08)',
-            }}
-          >
-            <Typography className="center-horizontal" variant="h6" style={{ margin: '32px 16px 16px' }}>
-              Cart Total
+              <Grid
+                item
+                lg={2}
+                md={3}
+                xs={12}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  padding: total > 0 ? '0' : '32px',
+                  background: 'rgba(0, 0, 0, 0.08)',
+                }}
+              >
+                <Typography className="center-horizontal" variant="h6" style={{ margin: '32px 16px 16px' }}>
+                  Cart Total
             </Typography>
-            <Typography className="center-horizontal" variant="h4" style={{ margin: '0 16px' }}>
-              {moneyFormatter.format(total)}
-            </Typography>
-            {total > 0 && <PaypalButton env="sandbox" cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
-          </Grid>
-        </Grid>
-        }
-        {cart.length === 0 &&
-        <div>
-          {isEmojiSupported('😞') ?
-            <span
-              role="img"
-              className="center-horizontal"
-              aria-label="I'm sad"
-              style={{
-                lineHeight: '200px',
-                fontSize: '160px',
-                display: 'block',
-              }}
-            >
-              😞
-            </span> :
-            <img src={sadEmoji} alt="Sad emoji" height="200" style={{ display: 'block', margin: '0 auto' }} />
+                <Typography className="center-horizontal" variant="h4" style={{ margin: '0 16px' }}>
+                  {moneyFormatter.format(total)}
+                </Typography>
+                {total > 0 && <PaypalButton env="sandbox" cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
+              </Grid>
+            </Grid>
           }
-          <Typography className="center-horizontal" variant="h4">Your cart is empty</Typography>
-        </div>
-        }
-      </Card>
+          {cart.length === 0 &&
+            <div>
+              {isEmojiSupported('😞') ?
+                <span
+                  role="img"
+                  className="center-horizontal"
+                  aria-label="I'm sad"
+                  style={{
+                    lineHeight: '200px',
+                    fontSize: '160px',
+                    display: 'block',
+                  }}
+                >
+                  😞
+            </span> :
+                <img src={sadEmoji} alt="Sad emoji" height="200" style={{ display: 'block', margin: '0 auto' }} />
+              }
+              <Typography className="center-horizontal" variant="h4">Your cart is empty</Typography>
+            </div>
+          }
+        </Card>
+      </div>
     );
   }
 }
