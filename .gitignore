@@ -158,3 +158,4 @@ fabric.properties
 .DS_Store
 
 .env.*
+.firebase
