@@ -4,6 +4,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Typography from '@material-ui/core/Typography';
 import { graphql, StaticQuery } from 'gatsby';
 
 import { moneyFormatter } from '../util';
@@ -25,6 +26,7 @@ const McNaughtonCentre = () => (
   `}
     render={({ allServicesJson: { edges } }) => (
       <div>
+        <Typography variant="h5" gutterBottom className="title">McNaughton Centre</Typography>
         <p className="p-margins">
           Located in SITE 4026, the McNaughton Centre is intended to enhance the learning experiences of IEEE student members at Canadian Universities
           and Colleges, as well as encouraging IEEE membership and activities, and interaction between the Student Branch and the Ottawa Section. Ted
