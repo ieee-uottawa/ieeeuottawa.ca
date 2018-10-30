@@ -16,6 +16,7 @@ import './index.scss';
 const store = createStore(cart);
 
 if (!isDevEnvironment) {
+  console.log('Initialized DSN');
   init({
     dsn: process.env.GATSBY_SENTRY_DSN,
     environment: process.env.NODE_ENV,
