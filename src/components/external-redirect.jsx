@@ -15,6 +15,7 @@ class ExternalRedirect extends Component {
   componentDidMount() {
     this.state.intervalID = setInterval(() => {
       if (this.state.seconds === 1) {
+        this.stopTimer();
         window.location.replace(this.props.url);
       }
       this.setState({ seconds: this.state.seconds - 1 });
@@ -22,6 +23,10 @@ class ExternalRedirect extends Component {
   }
 
   componentWillUnmount() {
+    this.stopTimer();
+  }
+
+  stopTimer() {
     clearInterval(this.state.intervalID);
   }
 
