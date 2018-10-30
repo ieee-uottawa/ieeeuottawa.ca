@@ -1,8 +1,12 @@
 language: node_js
 node_js:
-  - "10"
+- '10'
 cache: yarn
 script:
-  - yarn add firebase-tools
-  - yarn build
-  - firebase deploy
+- yarn build
+deploy:
+  provider: firebase
+  on:
+    branch: master
+  token:
+    secure: "HcwokfRcqx6QOquuz1ldmgeB4epRQiwFHWRXz/WSSHuH0BAN2fw4WCq5UoypfP/r/5d4IklYdmj5i4klII05vy+siXiR+M7Aynq8OxdtCsPqxh0CSGzU38M4u4q84YBRhwiUkFjzgeSh2z8AqbbVC49PKf+V3PxItQJiL3dPCJwaJ6vErFg07vK2YeQDszmVOhwMPKpTqUufDEFKASB2Fj6o0VF5OUgiXpkPAkFuoet8RQYEY+f46oaNUUbmpXepcxJnY12RCCF7p4gDO2dmESHUXOTmebNbCt9seMGC43aeLfnFTonFRN62Bczjd0r/jR8/hRoyMMmpkp0JeICDp89+DOZ67Y//Rjr+1Z90jElyVzv9ayPq1TQ6pyPRvnGVXEUubrC9JsPM2+c2NcWw401NlbvQMsTW+ppcUkioDVtbY5+2oAxCpMlFnA3fNvErieDKgrc/HOmua8+ZCB+GUM0/pGnyWwqRpwZAh+Y3jUR+iHfq4xAYSDbCdlh5WSdC4PipB6edvYihAZXw5V+OU06yWYfhvh5n9IM/tyhSHp9YVvkeo78zIbQrsgkTSjEZhiM0jw0UzS8ZarMJGaiQ/2haeln25JEaqI7d/gTwNhyeyBp+V0trvppxJeWzDBbNWYI0gwgDQ5POaJ3CNOgU/hWDgtsDx+Ng1iHlbGUvYig="
