@@ -2,12 +2,6 @@ language: node_js
 node_js:
 - '10'
 cache: yarn
-script:
-- yarn build
 deploy:
-  provider: firebase
-  project: "ieee-uottawa"
-  on:
-    branch: master
-  token:
-    secure: qlotpR32umSdMoCR2e/RKXDy1Zfqum6hS0PIFMWT4lRrFYz+9ixW9oX0OK29HCSz7cNysoLo8dEE9qYafbT6YIWw9jdmRhvoxe5a/nGpvCTY4Fk8LwqPBbPQKrx/FBitRJaVq/Q/H4hya17vqEQlKpnz7cNCjK2We2NCX5x0WJ6SXI2tKaeWjmnGf7LO5H5p0tYTllyxEhuu2IeLq+KcVzp9yEm6ypjZTfedRpWkTZP2n64L/5eoHSJwLMbFPbbtEBWwOVz1bGDhPKPX6rRao9eBsPqXtobk9rc1lM8vUHPcgntJQc3LkSvkMm9gidaQFbQ11f+3JZuvXLSPHirvPlO8xLtYvBNDSCbvfs7Zr8ATGQc/gQnGaICrCgXFwsE9uvgwG2oWvyhZ+CqOksuQmxTJzRYXy7NAruiw1ltABLGq4lYyBHyNQNOH9pYx85s3iiDMjlsfnJDcP6Zdfnf6wZ1bHCeC944OLzGK5Q7EyE7AYCXfS0ugJZP+RrNKZIkNRRW5CaIlF6q5CfbZDrIogcv3nIiDFFnopfzfgclW7MZ0RTgUygyA3q1mw2W0+241Gt5mKVzkpQxk6kelz9yrPDzm40dxUZtFW/NSpveM7c48wNCg8nrxwre5z9Bc4oSuQyBbLsewg7fm7yubxsuIL9Ur8HFOUw36sLSETgtRWSY=
+  provider: script
+  script: bash scripts/deploy.sh
