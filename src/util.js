@@ -44,9 +44,9 @@ const flattenDeep = arr => arr.reduce((acc, val) => (Array.isArray(val) ? acc.co
 
 const isServerSideRendering = () => typeof window === 'undefined';
 
-const showPricing = (moneyFormatter, pricing) => pricing.map(({ quantity, price }) => {
-  if (quantity === 1) return moneyFormatter.format(price);
-  return `${quantity} for ${moneyFormatter.format(price)}`;
+const showPricing = (formatter, pricing) => pricing.map(({ quantity, price }) => {
+  if (quantity === 1) return formatter.format(price);
+  return `${quantity} for ${formatter.format(price)}`;
 })
   .join(' or ');
 
