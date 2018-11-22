@@ -8,13 +8,13 @@ import { connect } from 'react-redux';
 
 import ProductRow from '../components/product-row';
 import { PaypalButton } from '../components/buttons';
-import { capitalize, flattenDeep, isDevEnvironment, isEmojiSupported, moneyFormatter } from '../util';
+import { calculatePrice, capitalize, flattenDeep, isDevEnvironment, isEmojiSupported, moneyFormatter } from '../util';
 import { removeItemFromCart } from '../redux/actions/cart_actions';
 
 import sadEmoji from '../images/emoji_sad.svg';
 import './cart.scss';
 
-const optionsSum = price => (sum, { quantity }) => sum + (price * quantity);
+const optionsSum = price => (sum, { quantity }) => sum + calculatePrice(price, quantity);
 
 class Cart extends Component {
   constructor(props) {
