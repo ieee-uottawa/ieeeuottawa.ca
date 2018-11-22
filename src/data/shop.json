@@ -23,5 +23,19 @@
     "price": 3,
     "image": "../images/ieeepatch.png",
     "imageHeight": "auto"
+  {
+    "name": "Candygram",
+    "price": [
+      {
+        "quantity": 1,
+        "price": 1
+      },
+      {
+        "quantity": 3,
+        "price": 2
+      }
+    ],
+    "expiry": "2018-12-05",
+    "image": "../images/candygrams.png"
   }
 ]
