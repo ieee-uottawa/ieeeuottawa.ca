@@ -14,6 +14,7 @@ const onRouteUpdate = ({ location }) => {
       const lastSlashPos = path.lastIndexOf('/');
       path = path.substring(0, lastSlashPos) + path.substring(lastSlashPos + 1, path.length);
     }
+    console.log(path);
     GA.pageview(path);
   }
 };
