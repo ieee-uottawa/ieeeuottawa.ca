@@ -1,7 +1,11 @@
-const moneyFormatter = new Intl.NumberFormat('en-CA', { currency: 'CAD', style: 'currency' });
+const moneyFormatter = new Intl.NumberFormat('en-CA', {
+  currency: 'CAD',
+  style: 'currency',
+});
 const isDevEnvironment = process.env.NODE_ENV === 'development';
 
-const capitalize = str => str.substring(0, 1).toUpperCase() + str.substring(1);
+const capitalize = str => str.substring(0, 1)
+  .toUpperCase() + str.substring(1);
 
 const ArrayLikeToString = arg => Array.prototype.toString.call(arg);
 
@@ -40,4 +44,28 @@ const flattenDeep = arr => arr.reduce((acc, val) => (Array.isArray(val) ? acc.co
 
 const isServerSideRendering = () => typeof window === 'undefined';
 
-export { moneyFormatter, capitalize, isEmojiSupported, flattenDeep, isServerSideRendering, isDevEnvironment };
+const showPricing = (moneyFormatter, pricing) => pricing.map(({ quantity, price }) => {
+  if (quantity === 1) return moneyFormatter.format(price);
+  return `${quantity} for ${moneyFormatter.format(price)}`;
+})
+  .join(' or ');
+
+const calculatePrice = (price, qty) => {
+  let quantity = qty;
+  if (price.length === 1) return price[0].price * quantity;
+
+  let total = 0;
+  const filterPricing = ({ quantity: count }) => count <= quantity;
+  const sortPricing = (a, b) => b.quantity - a.quantity;
+  do {
+    const { price: pricePer, quantity: quantityPer } = price
+      .filter(filterPricing)
+      .sort(sortPricing)[0];
+    total += pricePer;
+    quantity -= quantityPer;
+  } while (quantity > 0);
+
+  return total;
+};
+
+export { moneyFormatter, capitalize, isEmojiSupported, flattenDeep, isServerSideRendering, isDevEnvironment, showPricing, calculatePrice };
