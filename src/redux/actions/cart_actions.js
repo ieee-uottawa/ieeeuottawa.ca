@@ -16,7 +16,7 @@ function removeItemFromCart(id, options) {
   return {
     type: RemoveFromCart,
     id,
-    options
+    options,
   };
 }
 

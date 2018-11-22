@@ -11,7 +11,8 @@ const ParallaxItem = ({ buttonText, buttonURL, imageURL, messageText }) => {
   if (buttonText != null) {
     if (buttonURL != null) {
       button = (
-        <IEEEButton variant="outlined" color="secondary" className="white-btn white-url-txt" style={{ margin: '20px 16px' }} component={Link} to={buttonURL}>
+        <IEEEButton variant="outlined" color="secondary" className="white-btn white-url-txt" style={{ margin: '20px 16px' }} component={Link}
+                    to={buttonURL}>
           {buttonText}
         </IEEEButton>
       );
@@ -34,13 +35,13 @@ const ParallaxItem = ({ buttonText, buttonURL, imageURL, messageText }) => {
     >
       <div className="center">
         {messageText != null && (
-        <Typography
-          variant="h5"
-          style={{ color: 'white' }}
-        >
-          {messageText}
-          {button != null && button}
-        </Typography>
+          <Typography
+            variant="h5"
+            style={{ color: 'white' }}
+          >
+            {messageText}
+            {button != null && button}
+          </Typography>
         )}
       </div>
     </div>

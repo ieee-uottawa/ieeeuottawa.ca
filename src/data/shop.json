@@ -1,7 +1,12 @@
 [
   {
     "name": "Hoodie",
-    "price": 40,
+    "price": [
+      {
+        "quantity": 1,
+        "price": 40
+      }
+    ],
     "image": "../images/ieeebluehoodie.png",
     "options": {
       "size": [
@@ -20,8 +25,28 @@
   },
   {
     "name": "Patch",
-    "price": 3,
+    "price": [
+      {
+        "quantity": 1,
+        "price": 3
+      }
+    ],
     "image": "../images/ieeepatch.png",
     "imageHeight": "auto"
+  },
+  {
+    "name": "Candygram",
+    "price": [
+      {
+        "quantity": 1,
+        "price": 1
+      },
+      {
+        "quantity": 3,
+        "price": 2
+      }
+    ],
+    "expiry": "2018-12-05",
+    "image": "../images/candygrams.png"
   }
 ]

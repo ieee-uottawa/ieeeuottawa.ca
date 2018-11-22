@@ -3,6 +3,7 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Typography from '@material-ui/core/Typography';
 import { graphql, StaticQuery } from 'gatsby';
+import dayjs from 'dayjs';
 
 import { ProductCard } from '../components/cards';
 
@@ -26,7 +27,11 @@ class Shop extends Component {
                 edges {
                   node {
                     name
-                    price
+                    price {
+                      quantity
+                      price
+                    }
+                    expiry
                     image {
                       childImageSharp {
                         resolutions(width: 382) {
@@ -52,27 +57,30 @@ class Shop extends Component {
           >
             <Typography variant="h5" gutterBottom className="title">Shop</Typography>
             <GridList style={{ justifyContent: 'space-evenly' }}>
-              {edges.map(({ node: { name, price, image, options } }) => (
-                <GridListTile style={{
-                  width: 'inherit',
-                  height: 'inherit',
-                  padding: 'inherit',
-                  flexDirection: 'column',
-                  alignSelf: 'center',
-                }}
-                >
-                  <ProductCard
-                    price={price}
-                    name={name}
-                    imageURL={image}
-                    options={options}
-                    itemCount={itemCount}
-                    onChange={({ target: { value } }) => {
-                      if (value) this.setState({ itemCount: Number(value) });
-                    }}
-                  />
-                </GridListTile>
-              ))}
+              {edges
+                .filter(({ node: { expiry } }) => !expiry || (expiry && dayjs(new Date()).isBefore(dayjs(expiry).add(1, 'day'))))
+                .map(({ node: { name, price, expiry, image, options } }) => (
+                  <GridListTile style={{
+                    width: 'inherit',
+                    height: 'inherit',
+                    padding: 'inherit',
+                    flexDirection: 'column',
+                    alignSelf: 'center',
+                  }}
+                  >
+                    <ProductCard
+                      price={price}
+                      name={name}
+                      expiry={expiry}
+                      imageURL={image}
+                      options={options}
+                      itemCount={itemCount}
+                      onChange={({ target: { value } }) => {
+                        if (value) this.setState({ itemCount: Number(value) });
+                      }}
+                    />
+                  </GridListTile>
+                ))}
             </GridList>
           </div>
         )}
@@ -82,4 +90,3 @@ class Shop extends Component {
 }
 
 export default Shop;
-
