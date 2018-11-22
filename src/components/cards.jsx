@@ -9,9 +9,11 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { connect } from 'react-redux';
 import Img from 'gatsby-image';
+import dayjs from 'dayjs';
 
 import { MaterialSelect } from './material-components';
 import { addItemToCart } from '../redux/actions/cart_actions';
+import { showPricing } from '../util';
 
 import './exec-card.scss';
 
@@ -103,14 +105,16 @@ class ProductCard extends Component {
   }
 
   render() {
-    const { name, imageURL, price, options } = this.props;
+    const { name, imageURL, price, expiry, options } = this.props;
     const { count, isValidForm } = this.state;
     return (
       <Card id="product-card">
         <CardMedia id="product-img" component="img" title={name} image={imageURL.childImageSharp.resolutions.src} />
         <CardContent>
           <Typography gutterBottom variant="h5" className="center-horizontal">{name}</Typography>
-          <Typography component="p" className="center-horizontal">${price}</Typography>
+          <Typography component="p" className="center-horizontal">{showPricing(price)}</Typography>
+          {expiry && <Typography component="p" variant="caption" className="center-horizontal">LIMITED TIME! Get your {name} before {dayjs(expiry)
+            .format('MMMM D')}!</Typography>}
           {
             options && Object.keys(options)
               .map((key, index) => {
@@ -153,7 +157,11 @@ ProductCard.propTypes = {
   name: PropTypes.string.isRequired,
   imageURL: PropTypes.string.isRequired,
   imageHeight: PropTypes.string,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.arrayOf(PropTypes.shape({
+    quantity: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+  })).isRequired,
+  expiry: PropTypes.string,
   itemCount: PropTypes.number,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.any,

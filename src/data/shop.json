@@ -1,7 +1,12 @@
 [
   {
     "name": "Hoodie",
-    "price": 40,
+    "price": [
+      {
+        "quantity": 1,
+        "price": 40
+      }
+    ],
     "image": "../images/ieeebluehoodie.png",
     "options": {
       "size": [
@@ -20,9 +25,15 @@
   },
   {
     "name": "Patch",
-    "price": 3,
+    "price": [
+      {
+        "quantity": 1,
+        "price": 3
+      }
+    ],
     "image": "../images/ieeepatch.png",
     "imageHeight": "auto"
+  },
   {
     "name": "Candygram",
     "price": [

@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 
 import { CloseIcon } from './icons';
-import { capitalize, moneyFormatter } from '../util';
+import { calculatePrice, capitalize, moneyFormatter, showPricing } from '../util';
 
 import './product-row.scss';
 
@@ -32,12 +32,12 @@ const ProductRow = ({ imageURL, name, options, price, quantity, handleDeleteClic
       </Grid>
       <Grid container xs={12} sm={6} alignItems="center" style={{ padding: '8px 0 0' }}>
         <Grid item xs={3} sm={4} className={horizontalCellClass}>
-          <Typography variant={isWidthDown('xs', width) ? 'caption' : 'body2'}>{moneyFormatter.format(price)}</Typography>
+          <Typography variant={isWidthDown('xs', width) ? 'caption' : 'body2'}>{showPricing(price)}</Typography>
         </Grid>
         <Hidden smUp><Grid item xs={1} className="center-horizontal"><Typography variant="caption">x</Typography></Grid></Hidden>
         <Grid item xs={2} sm={2} className={horizontalCellClass}><Typography variant="body2">{quantity}</Typography></Grid>
         <Grid item xs={4} sm={5} className={horizontalCellClass} style={{ flex: 1 }}>
-          <Typography variant={isWidthDown('xs', width) ? 'title' : 'body2'}>{moneyFormatter.format(price * quantity)}</Typography>
+          <Typography variant={isWidthDown('xs', width) ? 'title' : 'body2'}>{moneyFormatter.format(calculatePrice(price, quantity))}</Typography>
         </Grid>
         <Hidden xsDown>
           <Grid item sm={2} className="hide-border center-horizontal">
