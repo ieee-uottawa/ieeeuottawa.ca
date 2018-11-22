@@ -40,4 +40,28 @@ const flattenDeep = arr => arr.reduce((acc, val) => (Array.isArray(val) ? acc.co
 
 const isServerSideRendering = () => typeof window === 'undefined';
 
-export { moneyFormatter, capitalize, isEmojiSupported, flattenDeep, isServerSideRendering, isDevEnvironment };
+const showPricing = (pricing) => pricing.map(({ quantity, price }) => {
+  if (quantity === 1) return `\$${price}`;
+  return `${quantity} for \$${price}`;
+})
+  .join(' or ');
+
+const calculatePrice = (price, qty) => {
+  let quantity = qty;
+  if (price.length === 1) return price[0].price * quantity;
+
+  let total = 0;
+  const filterPricing = ({ quantity: count }) => count <= quantity;
+  const sortPricing = (a, b) => b.quantity - a.quantity;
+  do {
+    const { price: pricePer, quantity: quantityPer } = price
+      .filter(filterPricing)
+      .sort(sortPricing)[0];
+    total += pricePer;
+    quantity -= quantityPer;
+  } while (quantity > 0);
+
+  return total;
+};
+
+export { moneyFormatter, capitalize, isEmojiSupported, flattenDeep, isServerSideRendering, isDevEnvironment, showPricing, calculatePrice };
