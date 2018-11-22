@@ -737,7 +737,7 @@ pre tt:after {
 }
 
 .title::after {
-  content: ""; /* This is necessary for the pseudo element to work. */ 
+  content: ""; /* This is necessary for the pseudo element to work. */
   display: block; /* This will put the pseudo element on its own line. */
   margin: 0 auto; /* This will center the border. */
   width: 32px; /* Change this to whatever width you want. */

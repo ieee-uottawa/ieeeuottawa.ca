@@ -9,7 +9,10 @@ class ExternalRedirect extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { seconds: 5, intervalID: null };
+    this.state = {
+      seconds: 5,
+      intervalID: null,
+    };
   }
 
   componentDidMount() {
@@ -41,7 +44,11 @@ class ExternalRedirect extends Component {
           You will be redirected to {description} in {seconds} seconds.
         </Typography>
         <Typography variant="h4" gutterBottom>
-          <Link to={url} href={url} onClick={() => event({ category: 'Waiting', action: 'Clicked link early', value: description })}>
+          <Link to={url} href={url} onClick={() => event({
+            category: 'Waiting',
+            action: 'Clicked link early',
+            value: description,
+          })}>
             Click here
           </Link>
           {' '}
