@@ -134,7 +134,7 @@ class Cart extends Component {
               <Typography className="center-horizontal" variant="h4" style={{ margin: '0 16px' }}>
                 {moneyFormatter.format(total)}
               </Typography>
-              {total > 0 && <PaypalButton env={isDevEnvironment ? 'sandbox' : 'live'} cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
+              {total > 0 && <PaypalButton env={isDevEnvironment ? 'sandbox' : 'production'} cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
             </Grid>
           </Grid>
           )
