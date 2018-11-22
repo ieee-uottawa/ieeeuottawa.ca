@@ -28,11 +28,12 @@ const ProductRow = ({ imageURL, name, options, price, quantity, handleDeleteClic
       <Grid item xs={6} sm={3} className="hide-border">
         <Typography variant="h6">{name}</Typography>
         {Object.keys(options)
+          .filter(key => key !== 'quantity')
           .map(key => <Typography variant="caption">{capitalize(key)}: {options[key]}</Typography>)}
       </Grid>
       <Grid container xs={12} sm={6} alignItems="center" style={{ padding: '8px 0 0' }}>
         <Grid item xs={3} sm={4} className={horizontalCellClass}>
-          <Typography variant={isWidthDown('xs', width) ? 'caption' : 'body2'}>{showPricing(price)}</Typography>
+          <Typography variant={isWidthDown('xs', width) ? 'caption' : 'body2'}>{showPricing(price, moneyFormatter)}</Typography>
         </Grid>
         <Hidden smUp><Grid item xs={1} className="center-horizontal"><Typography variant="caption">x</Typography></Grid></Hidden>
         <Grid item xs={2} sm={2} className={horizontalCellClass}><Typography variant="body2">{quantity}</Typography></Grid>
@@ -67,9 +68,9 @@ ProductRow.propTypes = {
 };
 
 ProductRow.defaultProps = {
-  handleDeleteClick: () => {},
+  handleDeleteClick: () => {
+  },
   options: {},
 };
 
 export default withWidth()(ProductRow);
-

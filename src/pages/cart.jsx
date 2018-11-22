@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 import ProductRow from '../components/product-row';
 import { PaypalButton } from '../components/buttons';
-import { calculatePrice, capitalize, flattenDeep, isEmojiSupported, moneyFormatter } from '../util';
+import { calculatePrice, capitalize, flattenDeep, isDevEnvironment, isEmojiSupported, moneyFormatter } from '../util';
 import { removeItemFromCart } from '../redux/actions/cart_actions';
 
 import sadEmoji from '../images/emoji_sad.svg';
@@ -61,17 +61,22 @@ class Cart extends Component {
     const { items } = this.state;
     const total = items.reduce((sum, { price, options }) => sum + options.reduce(optionsSum(price), 0), 0);
     const cart = flattenDeep(items
-      .map(({ id, name, imageURL, price, options }) => options.map(({ quantity, ...itemOptions }) => ({
-        id,
-        description: `${name} (${Object.keys(itemOptions)
-          .map(key => `${capitalize(key)}: ${itemOptions[key]}`)
-          .join(', ')})`,
-        name,
-        imageURL: imageURL.childImageSharp.resolutions.src,
-        price,
-        options: itemOptions,
-        quantity,
-      }))));
+      .map(({ id, name, imageURL, price, options }) => options.map((itemOptions) => {
+        console.log(itemOptions);
+        return ({
+          id,
+          description: `${name} (${Object.keys(itemOptions)
+            .filter(option => price.length > 1 || (price.length === 1 && option !== 'quantity'))
+            .map(key => `${capitalize(key)}: ${itemOptions[key]}`)
+            .join(', ')})`
+            .replace(' ()', ''),
+          name,
+          imageURL: imageURL.childImageSharp.resolutions.src,
+          price,
+          options: itemOptions,
+          quantity: itemOptions.quantity,
+        });
+      })));
 
     const cardID = cart.length > 0 ? 'cart-not-empty' : 'cart-empty';
 
@@ -79,7 +84,8 @@ class Cart extends Component {
       <div>
         <Typography variant="h5" gutterBottom className="title" style={{ marginBottom: '16px' }}>Cart</Typography>
         <Card id={cardID}>
-          {cart.length > 0 &&
+          {cart.length > 0
+          && (
           <Grid container>
             <Grid container lg={10} md={9} xs={12} style={{ padding: '16px' }}>
               <Hidden xsDown>
@@ -128,32 +134,44 @@ class Cart extends Component {
               <Typography className="center-horizontal" variant="h4" style={{ margin: '0 16px' }}>
                 {moneyFormatter.format(total)}
               </Typography>
-              {total > 0 && <PaypalButton env="sandbox" cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
+              {total > 0 && <PaypalButton env={isDevEnvironment ? 'sandbox' : 'live'} cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
             </Grid>
           </Grid>
+          )
           }
-          {cart.length === 0 &&
+          {cart.length === 0
+          && (
           <div>
-            {isEmojiSupported('😞') ?
-              <span
-                role="img"
-                className="center-horizontal"
-                aria-label="I'm sad"
-                style={{
-                  lineHeight: '200px',
-                  fontSize: '160px',
-                  display: 'block',
-                }}
-              >
+            {isEmojiSupported('😞')
+              ? (
+                <span
+                  role="img"
+                  className="center-horizontal"
+                  aria-label="I'm sad"
+                  style={{
+                    lineHeight: '200px',
+                    fontSize: '160px',
+                    display: 'block',
+                  }}
+                >
                   😞
-            </span> :
-              <img src={sadEmoji} alt="Sad emoji" height="200" style={{
-                display: 'block',
-                margin: '0 auto',
-              }} />
+                </span>
+              )
+              : (
+                <img
+                  src={sadEmoji}
+                  alt="Sad emoji"
+                  height="200"
+                  style={{
+                    display: 'block',
+                    margin: '0 auto',
+                  }}
+                />
+              )
             }
             <Typography className="center-horizontal" variant="h4">Your cart is empty</Typography>
           </div>
+          )
           }
         </Card>
       </div>
@@ -166,4 +184,3 @@ Cart.contextTypes = {
 };
 
 export default connect()(Cart);
-

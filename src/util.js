@@ -1,7 +1,11 @@
-const moneyFormatter = new Intl.NumberFormat('en-CA', { currency: 'CAD', style: 'currency' });
+const moneyFormatter = new Intl.NumberFormat('en-CA', {
+  currency: 'CAD',
+  style: 'currency',
+});
 const isDevEnvironment = process.env.NODE_ENV === 'development';
 
-const capitalize = str => str.substring(0, 1).toUpperCase() + str.substring(1);
+const capitalize = str => str.substring(0, 1)
+  .toUpperCase() + str.substring(1);
 
 const ArrayLikeToString = arg => Array.prototype.toString.call(arg);
 
@@ -40,9 +44,9 @@ const flattenDeep = arr => arr.reduce((acc, val) => (Array.isArray(val) ? acc.co
 
 const isServerSideRendering = () => typeof window === 'undefined';
 
-const showPricing = (pricing) => pricing.map(({ quantity, price }) => {
-  if (quantity === 1) return `\$${price}`;
-  return `${quantity} for \$${price}`;
+const showPricing = (pricing, formatter = moneyFormatter) => pricing.map(({ quantity, price }) => {
+  if (quantity === 1) return formatter.format(price);
+  return `${quantity} for ${formatter.format(price)}`;
 })
   .join(' or ');
 

@@ -37,6 +37,8 @@ if (!isServerSideRendering()) {
   });
 }
 
+console.log(process.env.GATSBY_ANALYTICS_ID);
+
 const Layout = ({ children }) => (
   <Provider store={store}>
     <div style={{
