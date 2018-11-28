@@ -4,5 +4,7 @@ node_js:
 cache: yarn
 script: bash scripts/build.sh
 before_install:
-- openssl aes-256-cbc -K $encrypted_8d4c9ef1c494_key -iv $encrypted_8d4c9ef1c494_iv
-  -in .env.production.enc -out .env.production -d
+- echo $secret_decrypt_key | gpg --passphrase-fd 0 .env.production.gpg
+env:
+  global:
+    secure: WFzxbhjyZHxBD/OAFHscrTiPAhW+oWtOOG4IaI438DhzkhdgA25L/ZLMBqqvcr9kI+Er+mlaNZpbFzAd2CSN1oUjce6kcszDafyZGWhFWLOwdN0dNd9ElZfkjSk9YIFZliJnT7d96Af+O57zxlHV/1OtjglAei6thZJeo+Ohxe9ihDAfdlP2e+MdO0A/qtsEavYsqS6gIKZP/OYPBv8TRGHawI6OBMzZPxYBx8T+TNpMwVpqlcI3h3/lBbgIl9pXVYYyX0KfxJmpQiXTJzMQhCuNa4uzAghacCIe/acflJ5XGHAUVZ+w2tfdIdm29Ws8a2HniyvSYROljTNrzBMnEdNeXdeJR+fEjP+73UeW9Mzk0nvuqcDpX5Gj/01/uTJQCzukLxbdC7FjoGqmnf2NYkCFep0l17mD9GKw87O2Uh+w+sbPaJ68rBQbSz42VaVlX+ceclyeK3+XzUx+CGMjj9dzFVBUo1khMjbRSt7ps58BaNAcXJpGEZnfAbuTF19jR6sTrjrWPnipj/GU0RVZX7JpdDHr2KYNWJeJV7QIO9csm5A49uMWvdyNcI3kpoI6u95qlh22QVMic4m+C+RS3eSqOi7mTm/5kSGQaREGKjJXFwveTXnmexUxkb62vNKMhrUC+slmWiHmGqqys9C9JC7iGcz3wiK8R1vsCs1C7cg=
