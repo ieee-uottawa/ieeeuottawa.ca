@@ -23,8 +23,6 @@ if (!isDevEnvironment) {
   });
 }
 
-console.log(process.env.GATSBY_SENTRY_DSN);
-
 if (!isServerSideRendering()) {
   console.log('Initialized GA', isDevEnvironment ? `: ${process.env.GATSBY_ANALYTICS_ID}` : '');
   initialize({
@@ -38,8 +36,6 @@ if (!isServerSideRendering()) {
     },
   });
 }
-
-console.log(process.env.GATSBY_ANALYTICS_ID);
 
 const Layout = ({ children }) => (
   <Provider store={store}>
