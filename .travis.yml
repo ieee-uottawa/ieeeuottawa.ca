@@ -3,3 +3,5 @@ node_js:
 - '10'
 cache: yarn
 script: bash scripts/build.sh
+before_install:
+- echo $secret_decrypt_key | gpg --passphrase-fd 0 .env.production.gpg
