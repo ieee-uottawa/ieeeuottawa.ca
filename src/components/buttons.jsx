@@ -120,13 +120,16 @@ class PaypalButton extends Component {
           currency: 'CAD',
         },
         item_list: {
-          items: cart.map(({ name, description, price, quantity }) => ({
-            name,
-            description,
-            price,
-            quantity,
-            currency: 'CAD',
-          })),
+          items: cart.map(({ name, description, price, quantity }) => {
+            console.log('paypal qty: ', quantity - (Math.floor(quantity / 3)));
+            return ({
+              name,
+              description,
+              price: price[0].price,
+              quantity: price.length === 1 ? quantity : quantity - (Math.floor(quantity / 3)),
+              currency: 'CAD',
+            });
+          }),
         },
       }],
     });

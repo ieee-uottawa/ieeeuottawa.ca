@@ -6,3 +6,5 @@ script: bash scripts/build.sh
 branches:
   only:
     - master
+before_install:
+- echo $secret_decrypt_key | gpg --passphrase-fd 0 .env.production.gpg
