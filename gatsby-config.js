@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
+    siteUrl: 'https://www.ieeeuottawa.ca',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -26,5 +27,6 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sitemap',
   ],
 };
