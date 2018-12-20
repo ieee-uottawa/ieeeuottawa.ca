@@ -732,6 +732,10 @@ pre tt:after {
   text-align: center;
 }
 
+.center-vertical {
+  padding: 15.5vh 0;
+}
+
 .title {
   @extend .uppercase, .center-horizontal;
 }
