@@ -121,6 +121,5 @@ typings/
 /public
 .DS_Store
 
-.env.*
 .firebase
 !/.env.production.gpg
