@@ -65,6 +65,7 @@ const Layout = ({ children }) => (
           paddingTop: '0',
           flex: '1 0 auto',
           width: '100%',
+          minHeight: 'calc(100vh - 386px)',
         }}
       >
         {children}
