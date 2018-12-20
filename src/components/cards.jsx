@@ -58,11 +58,12 @@ ExecCard.propTypes = {
 class ProductCard extends Component {
   constructor(props) {
     super(props);
+    this.isValidForm = this.isValidForm.bind(this);
 
     this.state = {
       count: props.itemCount,
-      isValidForm: false,
     };
+    this.state.isValidForm = this.isValidForm();
     this.handleChange = this.handleChange.bind(this);
     this.handleAddToCartClick = this.handleAddToCartClick.bind(this);
   }
@@ -80,19 +81,24 @@ class ProductCard extends Component {
 
   handleChange(name) {
     return (event) => {
-      if (event.target.value < 1) event.target.value = 1;
-      this.props.onChange(event);
+      let value = event.target.value;
 
-      let value = Number(event.target.value);
-      if (isNaN(value)) ({ value } = event.target);
+      value = value < 1 ? 1 : Number(event.target.value);
+      if (event.target.value === '') value = '';
+      else if (isNaN(value)) ({ value } = event.target);
+      console.log(`value: ${value}`);
       this.setState({ [name]: value }, () => {
         this.setState({
-          isValidForm: this.state.count > 0 && (!this.props.options || Object.keys(this.props.options)
-            .some(option => Object.keys(this.state)
-              .indexOf(option) > -1)),
+          isValidForm: this.isValidForm(),
         });
       });
     };
+  }
+
+  isValidForm() {
+    return this.state.count > 0 && (!this.props.options || Object.keys(this.props.options)
+      .some(option => Object.keys(this.state)
+        .indexOf(option) > -1));
   }
 
   handleAddToCartClick() {
@@ -163,7 +169,6 @@ ProductCard.propTypes = {
   })).isRequired,
   expiry: PropTypes.string,
   itemCount: PropTypes.number,
-  onChange: PropTypes.func.isRequired,
   options: PropTypes.any,
 };
 
