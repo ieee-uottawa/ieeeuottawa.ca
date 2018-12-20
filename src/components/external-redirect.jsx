@@ -39,7 +39,7 @@ class ExternalRedirect extends Component {
     const description = urlDescription || url;
 
     return (
-      <div className="p-margins center-horizontal">
+      <div className="p-margins center-horizontal center-vertical">
         <Typography variant="h4" gutterBottom>
           You will be redirected to {description} in {seconds} seconds.
         </Typography>

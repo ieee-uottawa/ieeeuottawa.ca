@@ -13,6 +13,7 @@ body {
 
 html, body {
   margin: 0;
+  padding: 0;
   height: 100%;
 }
 
@@ -730,6 +731,10 @@ pre tt:after {
 
 .center-horizontal {
   text-align: center;
+}
+
+.center-vertical {
+  padding: 15.5vh 0;
 }
 
 .title {
