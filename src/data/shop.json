@@ -7,7 +7,7 @@
         "price": 40
       }
     ],
-    "image": "../images/ieeebluehoodie.png",
+    "image": "../../static/images/ieeebluehoodie.png",
     "options": {
       "size": [
         "S",
@@ -31,7 +31,7 @@
         "price": 3
       }
     ],
-    "image": "../images/ieeepatch.png",
+    "image": "../../static/images/ieeepatch.png",
     "imageHeight": "auto"
   },
   {
@@ -47,6 +47,6 @@
       }
     ],
     "expiry": "2018-12-05",
-    "image": "../images/candygrams.png"
+    "image": "../../static/images/candygrams.png"
   }
 ]

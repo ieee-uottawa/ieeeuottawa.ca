@@ -1,5 +1,5 @@
 $overlay: 0.25;
-$image_path: '../images/ieeesantapic-1.jpg';
+$image_path: '../../static/images/ieeesantapic-1.jpg';
 
 #santa-pic {
   background: linear-gradient(rgba(0, 0, 0, $overlay), rgba(0, 0, 0, $overlay)), url($image_path) center;

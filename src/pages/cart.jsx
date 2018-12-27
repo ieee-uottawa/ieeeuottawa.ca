@@ -11,7 +11,7 @@ import { PaypalButton } from '../components/buttons';
 import { calculatePrice, capitalize, flattenDeep, isDevEnvironment, moneyFormatter } from '../util';
 import { removeItemFromCart } from '../redux/actions/cart_actions';
 
-import sadEmoji from '../images/emoji_sad.svg';
+import sadEmoji from '../../static/images/emoji_sad.svg';
 import './cart.scss';
 
 const optionsSum = price => (sum, { quantity }) => sum + calculatePrice(price, quantity);

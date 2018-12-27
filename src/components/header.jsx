@@ -6,7 +6,7 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import { graphql, StaticQuery } from 'gatsby';
 
-import logo from '../images/uottawa_branch_logo-1.png';
+import logo from '../../static/images/uottawa_branch_logo-1.png';
 import { NavButton, NavDropDown } from './buttons';
 import { CloseIcon, MenuIcon } from './icons';
 import { MaterialMenu } from './material-components';

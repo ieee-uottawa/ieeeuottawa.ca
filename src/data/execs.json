@@ -2,66 +2,66 @@
   {
     "name": "Heemel Saha",
     "position": "Chair",
-    "image": "../images/chair.jpg"
+    "image": "../../static/images/chair.jpg"
   },
   {
     "name": "Amar Jasarbasic",
     "position": "Vice Chair",
-    "image": "../images/vice-chair.jpg"
+    "image": "../../static/images/vice-chair.jpg"
   },
   {
     "name": "Robert Conrad",
     "position": "VP Finance",
-    "image": "../images/finance.jpg"
+    "image": "../../static/images/finance.jpg"
   },
   {
     "name": "John Zhao",
     "position": "VP Social",
-    "image": "../images/social.jpg"
+    "image": "../../static/images/social.jpg"
   },
   {
     "name": "Anushka Paliwal",
     "position": "VP Internal",
-    "image": "../images/internal.jpg"
+    "image": "../../static/images/internal.jpg"
   },
   {
     "name": "Madison Smrtka",
     "position": "VP Communications",
-    "image": "../images/communications.jpg"
+    "image": "../../static/images/communications.jpg"
   },
   {
     "name": "Melody Habbouche",
     "position": "VP Academic",
-    "image": "../images/academic.jpg"
+    "image": "../../static/images/academic.jpg"
   },
   {
     "name": "Aly Abdelrahman",
     "position": "VP External",
-    "image": "../images/external.jpg"
+    "image": "../../static/images/external.jpg"
   },
   {
     "name": "Linda Tang",
     "position": "WIE Chair",
-    "image": "../images/wie-chair.jpg"
+    "image": "../../static/images/wie-chair.jpg"
   },
   {
     "name": "Mikeli Habash",
     "position": "WIE Vice Chair",
-    "image": "../images/wie-vice-chair.jpg"
+    "image": "../../static/images/wie-vice-chair.jpg"
   },
   {
     "name": "Rushil Perera",
     "position": "Webmaster",
-    "image": "../images/webmaster.jpg"
+    "image": "../../static/images/webmaster.jpg"
   },
   {
     "name": "Michal Ridner",
     "position": "Secretary",
-    "image": "../images/secretary.jpg"
+    "image": "../../static/images/secretary.jpg"
   },
   {
     "name": "Ivor Benderavage",
     "position": "McNaughton Centre Director",
-    "image": "../images/mcnaughton-director.jpg"
+    "image": "../../static/images/mcnaughton-director.jpg"
   }
 ]

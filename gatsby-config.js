@@ -14,15 +14,22 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'data',
+        name: 'dataPrivate',
         path: path.join(__dirname, 'src/data'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'dataPublic',
+        path: path.join(__dirname, 'static/data'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'images',
-        path: path.join(__dirname, 'src/images'),
+        path: path.join(__dirname, 'static/images'),
       },
     },
     'gatsby-plugin-sharp',

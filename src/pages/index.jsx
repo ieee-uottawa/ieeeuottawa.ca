@@ -9,7 +9,7 @@ import Event from '../components/event';
 import Link from '../components/link';
 import ParallaxItem from '../components/parallax';
 import ServiceItem from '../components/service-item';
-import mailingListImg from '../images/compsci-1.jpg';
+import mailingListImg from '../../static/images/compsci-1.jpg';
 import { IEEEButton } from '../components/buttons';
 import { FlaskIcon, LeadPencilIcon, LightBulbIcon } from '../components/icons';
 
