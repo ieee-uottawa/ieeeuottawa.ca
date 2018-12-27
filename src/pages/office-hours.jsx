@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 
+import { isServerSideRendering } from '../util';
+
 class OfficeHours extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { screenWidth: window.innerWidth };
+    this.state = { screenWidth: isServerSideRendering() ? 0 : window.innerWidth };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.updateDimensions);
+    if (!isServerSideRendering()) window.addEventListener('resize', this.updateDimensions);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions);
+    if (!isServerSideRendering()) window.removeEventListener('resize', this.updateDimensions);
   }
 
   updateDimensions() {
