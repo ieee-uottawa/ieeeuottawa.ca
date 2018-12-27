@@ -28,7 +28,7 @@ class OfficeHours extends Component {
     const imgStyle = {
       display: 'block',
       maxWidth: width > 712 ? '100%' : 'calc(100% - 32px)',
-      margin: width > 712 ? '0 auto' : '0 16px',
+      margin: width > 712 ? '0 auto 16px' : '0 16px 16px',
     };
 
     return (
