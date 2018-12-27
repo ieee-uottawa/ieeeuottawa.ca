@@ -7,11 +7,12 @@ class OfficeHours extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { screenWidth: isServerSideRendering() ? 0 : window.innerWidth };
+    this.state = { screenWidth: 713 };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
 
   componentDidMount() {
+    this.updateDimensions();
     if (!isServerSideRendering()) window.addEventListener('resize', this.updateDimensions);
   }
 
@@ -20,7 +21,7 @@ class OfficeHours extends Component {
   }
 
   updateDimensions() {
-    this.setState({ screenWidth: window.innerWidth });
+    this.setState({ screenWidth: isServerSideRendering() ? 0 : window.innerWidth });
   }
 
   render() {
