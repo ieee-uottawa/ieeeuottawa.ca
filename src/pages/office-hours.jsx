@@ -34,9 +34,9 @@ class OfficeHours extends Component {
 
     return (
       <div>
-        <Typography variant="h5" gutterBottom className="title">Office Hours (Fall 2018)</Typography>
+        <Typography variant="h5" gutterBottom className="title">Office Hours (Winter 2019)</Typography>
         <img
-          src="https://scontent-yyz1-1.cdninstagram.com/vp/ab14411baf2acd99518ff8ef7e679eac/5C4B2248/t51.2885-15/e35/42068664_1843225942398456_3717299338623716850_n.jpg"
+          src="https://scontent-yyz1-1.cdninstagram.com/vp/c2d1886c766cc1f58f1574a4d6cecd23/5CD13876/t51.2885-15/e35/50274568_315423955846548_7560457300602060458_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com"
           alt="IEEE Office Hours Fall 2018"
           style={imgStyle}
         />
