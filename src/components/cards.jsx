@@ -13,7 +13,7 @@ import dayjs from 'dayjs';
 
 import { MaterialSelect } from './material-components';
 import { addItemToCart } from '../redux/actions/cart_actions';
-import { showPricing } from '../util';
+import { showPricing, capitalize } from '../util';
 
 import './exec-card.scss';
 
@@ -84,8 +84,9 @@ class ProductCard extends Component {
       let value = event.target.value;
 
       value = value < 1 ? 1 : Number(event.target.value);
-      if (event.target.value === '') value = '';
-      else if (isNaN(value)) ({ value } = event.target);
+      if (event.target.value === '') {
+        value = '';
+      } else if (isNaN(value)) ({ value } = event.target);
       console.log(`value: ${value}`);
       this.setState({ [name]: value }, () => {
         this.setState({
@@ -103,11 +104,21 @@ class ProductCard extends Component {
 
   handleAddToCartClick() {
     // eslint-disable-next-line react/prop-types
-    const { dispatch, name, imageURL, price } = this.props;
+    const { dispatch, name, imageURL, price, onAddToCart: addToCart } = this.props;
     const { count, isValidForm, unsubscribe, ...options } = this.state;
 
-    dispatch(addItemToCart(name.toLowerCase()
-      .replace(/ /g, '-'), name, imageURL, price, count, options));
+
+    const key = name.toLowerCase().replace(/ /g, '-');
+    dispatch(addItemToCart(key, name, imageURL, price, count, options));
+    if (addToCart) {
+      addToCart({
+        name,
+        quantity: count,
+        options,
+        price,
+        key: new Date().getTime(),
+      });
+    }
   }
 
   render() {
@@ -119,8 +130,10 @@ class ProductCard extends Component {
         <CardContent>
           <Typography gutterBottom variant="h5" className="center-horizontal">{name}</Typography>
           <Typography component="p" className="center-horizontal">{showPricing(price)}</Typography>
-          {expiry && <Typography component="p" variant="caption" className="center-horizontal">LIMITED TIME! Get your {name} before {dayjs(expiry)
-            .format('MMMM D')}!</Typography>}
+          {expiry && <Typography component="p" variant="caption" className="center-horizontal">
+            LIMITED TIME! Get your {name} before {dayjs(expiry)
+            .format('MMMM D')}!
+          </Typography>}
           {
             options && Object.keys(options)
               .map((key, index) => {
@@ -170,12 +183,15 @@ ProductCard.propTypes = {
   expiry: PropTypes.string,
   itemCount: PropTypes.number,
   options: PropTypes.any,
+  onAddToCart: PropTypes.function,
 };
 
 ProductCard.defaultProps = {
   itemCount: 1,
   options: null,
   imageHeight: '166px',
+  onAddToCart: () => {
+  },
 };
 
 ProductCard.contextTypes = {
