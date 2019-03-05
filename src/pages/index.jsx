@@ -92,7 +92,7 @@ const IndexPage = ({ width }) => {
                     <div id="text-container" className="center">
                       {message && (
                       <Typography variant="h3" className="uppercase" id="about-us-image-text">
-                        <Link to={button.url} href={button.url} className="white-url-txt">{message}</Link>
+                        <Link to={button.url} href={button.url} eventLabel={button.url} className="white-url-txt">{message}</Link>
                       </Typography>
                       )}
                       <IEEEButton

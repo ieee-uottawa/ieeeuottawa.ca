@@ -44,10 +44,10 @@ class ExternalRedirect extends Component {
           You will be redirected to {description} in {seconds} seconds.
         </Typography>
         <Typography variant="h4" gutterBottom>
-          <Link to={url} href={url} onClick={() => event({
+          <Link to={url} href={url} eventLabel={url} onClick={() => event({
             category: 'Waiting',
             action: 'Clicked link early',
-            value: description,
+            label: description,
           })}>
             Click here
           </Link>

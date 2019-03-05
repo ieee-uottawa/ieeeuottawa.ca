@@ -58,7 +58,7 @@ const Footer = () => (
                 {socialMedia.map(({ node: { link, title } }) => (
                   <li>
                     <Typography variant="caption">
-                      <Link to={link} className="footer-url-txt">{title}</Link>
+                      <Link to={link} eventLabel={`Going to ${title} page`} className="footer-url-txt">{title}</Link>
                     </Typography>
                   </li>
                 ))}
