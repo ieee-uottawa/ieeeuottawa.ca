@@ -1,11 +1,21 @@
 $overlay: 0.15;
 $image_path: '../../static/images/ieeesantapic-1.jpg';
 
-#santa-pic {
-  background: linear-gradient(rgba(0, 0, 0, $overlay), rgba(0, 0, 0, $overlay)), url($image_path) 0 -8vh;
-  background-size: cover;
+.bg-image {
   height: 600px;
-  position: relative;
+  width: 100%;
+}
+
+.gatsby-background-image-santa-pic {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+}
+
+.gatsby-background-image-santa-pic::after {
+  background-position-y: -12vh;
+}
+
+.gatsby-background-image-wine-cheese-pic::after {
+  background-position-y: -47vh;
 }
 
 @media only screen and (min-width: 1047px) {

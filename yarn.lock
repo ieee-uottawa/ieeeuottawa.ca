@@ -716,6 +716,13 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.3.1", "@babel/runtime@^7.3.4":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.4.tgz#73d12ba819e365fcf7fd152aed56d6df97d21c83"
+  integrity sha512-IvfvnMdSaLBateu0jfsYIpZTxAc2cKEXEMiezGGN75QcBcecDUKd3PgLAncT0oOgxKy8dd8hrJKj9MfzgfZd6g==
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
@@ -920,6 +927,11 @@
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
   integrity sha1-zR6FU2M60xhcPy8jns/10mQ+krY=
+
+"@types/d3-timer@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@types/d3-timer/-/d3-timer-1.0.9.tgz#aed1bde0cf18920d33f5d44839d73de393633fd3"
+  integrity sha512-WvfJ3LFxBbWjqRGz9n7GJt08RrTHPJDVsIwwoCMROlqF+iDacYiAFjf9oqnq0mXpb2juA2N/qjKP+MKdal3YNQ==
 
 "@types/debug@^0.0.29":
   version "0.0.29"
@@ -3750,6 +3762,16 @@ cyclist@~0.2.2:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
+d3-ease@^1.0.3:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/d3-ease/-/d3-ease-1.0.5.tgz#8ce59276d81241b1b72042d6af2d40e76d936ffb"
+  integrity sha512-Ct1O//ly5y5lFM9YTdu+ygq7LleSgSE4oj7vUt9tPLHUi8VCV7QoizGpdWRWAwCO9LdYzIrQDg97+hGVdsSGPQ==
+
+d3-timer@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/d3-timer/-/d3-timer-1.0.9.tgz#f7bb8c0d597d792ff7131e1c24a36dd471a471ba"
+  integrity sha512-rT34J5HnQUHhcLvhSB9GjCkN0Ddd5Y8nCwDBG2u6wQEeYxT/Lf51fTFFkldeib/sE/J0clIe0pnCfs6g/lRbyg==
+
 damerau-levenshtein@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.4.tgz#03191c432cb6eea168bb77f3a55ffdccb8978514"
@@ -4951,7 +4973,7 @@ executable@^4.1.0:
   dependencies:
     pify "^2.2.0"
 
-exenv@^1.2.1:
+exenv@^1.2.0, exenv@^1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
   integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
@@ -5635,6 +5657,14 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
+
+gatsby-background-image@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/gatsby-background-image/-/gatsby-background-image-0.2.4.tgz#0c183b43e578f651409ce0ecf2e4d9e0258a446f"
+  integrity sha512-d2N5dywcvkcVs7Suf48BvliKo2PDoFP6UGcelca8ED1zdvI+23E3xLD9EGudqgfHlRgM+6ANkCzdzhOKJzYf3w==
+  dependencies:
+    "@babel/runtime" "^7.3.4"
+    prop-types "^15.7.2"
 
 gatsby-cli@^2.4.7:
   version "2.4.7"
@@ -7788,6 +7818,14 @@ jsx-ast-utils@^2.0.1:
   dependencies:
     array-includes "^3.0.3"
 
+kapellmeister@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/kapellmeister/-/kapellmeister-2.0.2.tgz#e99d97205f07cdd09b1729d8afa9d4172fd1bc97"
+  integrity sha512-Mk1IVuLFKb2704j3bX7CmCU8eqNFoiqPv/Z3tYRoFysg12mrVHKzKzmkP2eqf1W7do0c1Ekpc36L+hrE0PxAmg==
+  dependencies:
+    "@types/d3-timer" "^1.0.9"
+    d3-timer "^1.0.9"
+
 kebab-hash@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/kebab-hash/-/kebab-hash-0.1.2.tgz#dfb7949ba34d8e70114ea7d83e266e5e2a4abaac"
@@ -8962,6 +9000,16 @@ nth-check@^1.0.2, nth-check@~1.0.1:
   integrity sha512-WeBOdju8SnzPN5vTUJYxYUxLeXpCaVP5i5e0LF8fg7WORF2Wd7wFX/pk0tYZk7s8T+J7VLy0Da6J1+wCT0AtHg==
   dependencies:
     boolbase "~1.0.0"
+
+nuka-carousel@^4.4.9:
+  version "4.4.9"
+  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-4.4.9.tgz#a009e6453692d44998da853b46c3e51aa98b7ace"
+  integrity sha512-+gUPforTPMLYHgG9jM/Y77H1UTBne+lCjh81iWkfCJ8mUKdlpaq5M5gbBgAEIITIvSCg1AfNuxs6RNKvC6gBTg==
+  dependencies:
+    d3-ease "^1.0.3"
+    exenv "^1.2.0"
+    prop-types "^15.6.0"
+    react-move "^5.0.0"
 
 null-loader@^0.1.1:
   version "0.1.1"
@@ -10511,6 +10559,15 @@ prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, 
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+prop-types@^15.7.2:
+  version "15.7.2"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
+  integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.8.1"
+
 proto-list@~1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
@@ -10770,6 +10827,11 @@ react-is@^16.3.2, react-is@^16.6.0, react-is@^16.6.3:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
   integrity sha512-Z0VRQdF4NPDoI0tsXVMLkJLiwEBa+RP66g0xDHxgxysxSoCUccSten4RTF/UFvZF1dZvZ9Zu1sx+MDXwcOR34g==
 
+react-is@^16.8.1:
+  version "16.8.3"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
+  integrity sha512-Y4rC1ZJmsxxkkPuMLwvKvlL1Zfpbcu+Bf4ZigkHup3v9EfdYhAlWAaVyA19olXq2o2mGn0w+dFKvk3pVVlYcIA==
+
 react-jss@^8.6.1:
   version "8.6.1"
   resolved "https://registry.yarnpkg.com/react-jss/-/react-jss-8.6.1.tgz#a06e2e1d2c4d91b4d11befda865e6c07fbd75252"
@@ -10785,6 +10847,16 @@ react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2, react-lifecycles
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-move@^5.0.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/react-move/-/react-move-5.2.0.tgz#d9c7f70d6feb256dc850aa0eab5d1f238576c231"
+  integrity sha512-iWHIqEgfmVzFTBMpGqKvUhQcC7A7afaej6amUkrUu8ZTqwdccsrUW0bme4iZuW1Yp5yNBqus6Gq4cFbHxMWIyg==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    kapellmeister "^2.0.0"
+    prop-types "^15.7.2"
+    react-lifecycles-compat "^3.0.4"
 
 react-redux@^5.0.7:
   version "5.1.1"

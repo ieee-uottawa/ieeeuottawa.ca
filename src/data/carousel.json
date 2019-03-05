@@ -1,0 +1,23 @@
+[
+    {
+        "message": "Powering Your Student Experience",
+        "button": {
+            "text": "About Us",
+            "url": "/execs"
+        },
+        "imageFile": {
+            "id": "santa-pic",
+            "image": "../../static/images/ieeesantapic-1.jpg"
+        }
+    },
+    {
+        "button": {
+            "text": "Get Tickets",
+            "url": "https://www.celebratewie.ca/tickets"
+        },
+        "imageFile": {
+            "id": "wine-cheese-pic",
+            "image": "../../static/images/wine_and_cheese_2019_03_14.png"
+        }
+    }
+]
