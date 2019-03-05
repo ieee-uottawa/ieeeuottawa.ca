@@ -18,7 +18,7 @@ const Execs = () => (
                 image {
                   childImageSharp {
                     fixed(width: 166, height: 166) {
-                      ...GatsbyImageSharpFixed
+                      ...GatsbyImageSharpFixed_withWebp
                     }
                   }
                 }

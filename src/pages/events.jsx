@@ -20,7 +20,7 @@ const Events = () => (
               image {
                 childImageSharp {
                   fixed(width: 230, height: 230) {
-                    ...GatsbyImageSharpFixed
+                    ...GatsbyImageSharpFixed_withWebp
                   }
                 }
               }

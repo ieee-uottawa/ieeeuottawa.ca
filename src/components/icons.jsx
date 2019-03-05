@@ -41,6 +41,10 @@ function ChevronRightIcon(props) {
   return <Icon {...props} path="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />;
 }
 
+function ChevronLeftIcon(props) {
+  return <Icon {...props} path="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />;
+}
+
 function MenuIcon(props) {
   return <Icon {...props} path="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />;
 }
@@ -57,4 +61,4 @@ function Icon({ path, ...other }) {
   );
 }
 
-export { FlaskIcon, LeadPencilIcon, LightBulbIcon, ChevronDownIcon, ChevronUpIcon, ChevronRightIcon, MenuIcon, CloseIcon };
+export { FlaskIcon, LeadPencilIcon, LightBulbIcon, ChevronDownIcon, ChevronUpIcon, ChevronLeftIcon, ChevronRightIcon, MenuIcon, CloseIcon };
