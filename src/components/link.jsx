@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
-import { OutboundLink } from 'react-ga';
+import ReactGA from 'react-ga';
 
 const Link = ({ children, to, ...other }) => {
   // Tailor the following test to your environment.
@@ -18,9 +18,9 @@ const Link = ({ children, to, ...other }) => {
     );
   }
   return (
-    <OutboundLink to={to} {...other}>
+    <a href={to} {...other}>
       {children}
-    </OutboundLink>
+    </a>
   );
 };
 

@@ -11,8 +11,15 @@ const ParallaxItem = ({ buttonText, buttonURL, imageURL, messageText }) => {
   if (buttonText != null) {
     if (buttonURL != null) {
       button = (
-        <IEEEButton variant="outlined" color="secondary" className="white-btn white-url-txt" style={{ margin: '20px 16px' }} component={Link}
-                    to={buttonURL}>
+        <IEEEButton
+          variant="outlined"
+          color="secondary"
+          className="white-btn white-url-txt"
+          style={{ margin: '20px 16px' }}
+          component={Link}
+          to={buttonURL}
+          eventLabel={buttonURL}
+        >
           {buttonText}
         </IEEEButton>
       );
