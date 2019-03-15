@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import request from 'superagent';
 import Snackbar from '@material-ui/core/Snackbar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 
 import Form from '../components/form';
+import { isServerSideRendering } from '../util';
 
 class SubmitNomination extends Component {
     constructor(props) {
@@ -60,17 +60,20 @@ class SubmitNomination extends Component {
         }
 
         this.setState({ isLoading: true });
-        try {
-            const res = await request.post(`${process.env.GATSBY_API_URL}/nomination`)
-                .send(values);
-            if (res.ok) {
-                this.sendSnackbarMsg('submitted', 'Submitted nomination!');
-            } else {
+        if (!isServerSideRendering()) {
+            const request = require('superagent');
+            try {
+                const res = await request.post(`${process.env.GATSBY_API_URL}/nomination`)
+                    .send(values);
+                if (res.ok) {
+                    this.sendSnackbarMsg('submitted', 'Submitted nomination!');
+                } else {
+                    this.sendSnackbarMsg('error', 'Failed to submit nomination, try again in a few minutes');
+                }
+            } catch (e) {
+                console.error(e);
                 this.sendSnackbarMsg('error', 'Failed to submit nomination, try again in a few minutes');
             }
-        } catch (e) {
-            console.error(e);
-            this.sendSnackbarMsg('error', 'Failed to submit nomination, try again in a few minutes');
         }
         this.setState({ isLoading: false });
     }
