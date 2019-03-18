@@ -109,8 +109,8 @@ class SubmitNomination extends Component {
                 </p>
                 <p className="p-margins">
                     Positions: <br />
-                    -Chair(One year experience on the IEEE student association) <br />
-                    -Vice Chair (One year experience on the IEEE student association required) <br />
+                    -Chair(One year experience as an exec on the IEEE student association required) <br />
+                    -Vice Chair (One year experience as an exec on the IEEE student association required) <br />
                     -Treasurer <br />
                     -Secretary <br />
                     -VP Academic <br />
