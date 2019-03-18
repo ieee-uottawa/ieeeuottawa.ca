@@ -102,10 +102,10 @@ class SubmitNomination extends Component {
                 <p className="p-margins">
                     IEEE Elections: <br />
                     March 13th: First day to apply for positions/nomination period begins <br />
-                    March 21st, 23:59: Nomination period ends <br />
-                    March 22nd @ 7PM: Mandatory candidates meeting <br />
-                    March 25th - 28th: Campaigning period <br />
-                    March 29th: Election Day!
+                    March 25th, 23:59: Nomination period ends <br />
+                    March 26th @ 7PM: Mandatory candidates meeting <br />
+                    March 27th - April 2nd: Campaigning period <br />
+                    April 3rd: Election Day!
                 </p>
                 <p className="p-margins">
                     Positions: <br />
