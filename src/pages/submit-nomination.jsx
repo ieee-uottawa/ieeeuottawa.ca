@@ -128,7 +128,7 @@ class SubmitNomination extends Component {
                     -Photonics Vice-Chair (Grad Students Only) <br />
                 </p>
                 <p className="p-margins">
-                    <strong>Email <a href="mailto:chair@ieeeuottawa">chair@ieeeuottawa</a> with your 200-500 word platform in English and French</strong>
+                    <strong>Send your 200-500 word platform to <a href="mailto:chair@ieeeuottawa">chair@ieeeuottawa</a></strong>
                 </p>
                 {!isLoading && <Form inputs={inputs} onSubmit={values => this.onSubmit(values)} />}
                 {isLoading && <CircularProgress />}

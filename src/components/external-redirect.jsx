@@ -34,7 +34,7 @@ class ExternalRedirect extends Component {
   }
 
   render() {
-    const { url, urlDescription } = this.props;
+    const { url, urlDescription, forceExternal } = this.props;
     const { seconds } = this.state;
     const description = urlDescription || url;
 
@@ -44,7 +44,7 @@ class ExternalRedirect extends Component {
           You will be redirected to {description} in {seconds} seconds.
         </Typography>
         <Typography variant="h4" gutterBottom>
-          <Link to={url} href={url} eventLabel={url} onClick={() => event({
+          <Link to={url} href={url} eventLabel={url} forceExternal={forceExternal} onClick={() => event({
             category: 'Waiting',
             action: 'Clicked link early',
             label: description,
@@ -62,10 +62,12 @@ class ExternalRedirect extends Component {
 ExternalRedirect.propTypes = {
   url: PropTypes.string.isRequired,
   urlDescription: PropTypes.string,
+  forceExternal: PropTypes.bool,
 };
 
 ExternalRedirect.defaultProps = {
   urlDescription: null,
+  forceExternal: false,
 };
 
 export default ExternalRedirect;
