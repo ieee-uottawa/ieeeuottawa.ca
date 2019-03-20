@@ -8,6 +8,7 @@ const Link = ({ children, to, forceExternal, ...other }) => {
   // This example assumes that any internal link (intended for Gatsby)
   // will start with exactly one slash, and that anything else is external.
   const internal = /^\/(?!\/)/.test(to);
+  console.log(forceExternal);
 
   // Use gatsby-link for internal links, and <a> for others
   if (internal || !forceExternal) {
