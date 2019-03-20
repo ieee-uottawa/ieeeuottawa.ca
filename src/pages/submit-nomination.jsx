@@ -67,6 +67,7 @@ class SubmitNomination extends Component {
                     .send(values);
                 if (res.ok) {
                     this.sendSnackbarMsg('submitted', 'Submitted nomination!');
+                    setTimeout(() => this.sendSnackbarMsg('submitted', "Don't forget to email chair@ieeeuottawa.ca with your 200-500 word platform in English and French!"), 1000);           
                 } else {
                     this.sendSnackbarMsg('error', 'Failed to submit nomination, try again in a few minutes');
                 }
@@ -92,7 +93,6 @@ class SubmitNomination extends Component {
                 type: 'radio',
                 isRequired: true,
             },
-            { label: 'Platform (200 word min - 500 word max)', type: 'paragraph', isRequired: true }
         ];
 
         return (
@@ -126,6 +126,9 @@ class SubmitNomination extends Component {
                     ----- <br />
                     -Photonics Chair (Grad Students Only) <br />
                     -Photonics Vice-Chair (Grad Students Only) <br />
+                </p>
+                <p className="p-margins">
+                    <strong>Email <a href="mailto:chair@ieeeuottawa">chair@ieeeuottawa</a> with your 200-500 word platform in English and French</strong>
                 </p>
                 {!isLoading && <Form inputs={inputs} onSubmit={values => this.onSubmit(values)} />}
                 {isLoading && <CircularProgress />}
