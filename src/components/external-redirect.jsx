@@ -19,7 +19,7 @@ class ExternalRedirect extends Component {
     this.state.intervalID = setInterval(() => {
       if (this.state.seconds === 1) {
         this.stopTimer();
-        // window.location.replace(this.props.url);
+        window.location.replace(this.props.url);
       }
       this.setState({ seconds: this.state.seconds - 1 });
     }, 1000);
@@ -34,7 +34,7 @@ class ExternalRedirect extends Component {
   }
 
   render() {
-    const { url, urlDescription, forceExternal } = this.props;
+    const { url, urlDescription } = this.props;
     const { seconds } = this.state;
     const description = urlDescription || url;
 
@@ -44,7 +44,7 @@ class ExternalRedirect extends Component {
           You will be redirected to {description} in {seconds} seconds.
         </Typography>
         <Typography variant="h4" gutterBottom>
-          <Link to={url} href={url} eventLabel={url} forceExternal={forceExternal} onClick={() => event({
+          <Link to={url} href={url} eventLabel={url} onClick={() => event({
             category: 'Waiting',
             action: 'Clicked link early',
             label: description,
