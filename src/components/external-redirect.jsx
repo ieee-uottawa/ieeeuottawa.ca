@@ -62,10 +62,12 @@ class ExternalRedirect extends Component {
 ExternalRedirect.propTypes = {
   url: PropTypes.string.isRequired,
   urlDescription: PropTypes.string,
+  forceExternal: PropTypes.bool,
 };
 
 ExternalRedirect.defaultProps = {
   urlDescription: null,
+  forceExternal: false,
 };
 
 export default ExternalRedirect;
