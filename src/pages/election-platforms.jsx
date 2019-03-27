@@ -80,22 +80,16 @@ const ElectionPlatforms = () => (
                 }
             `
         }
-        render={({ dataJson }) => {
-            return (
-
-                Object.entries(dataJson)
-                    .sort(([position1,], [position2,]) => positions.indexOf(position1) > positions.indexOf(position2) ? 1 : -1)
-                    .map(([position, candidates]) => {
-                        console.log(position, candidates);
-                        return (
-                            <div>
-                                <Typography variant="h5" gutterBottom style={{ margin: '8px' }}>{position.replace(/_/g, ' ')}</Typography>
-                                {candidates.map(({ name, platform }) => <CandidateCard name={name} platform={platform} />)}
-                            </div>
-                        )
-                    })
-            );
-        }}
+        render={({ dataJson }) => (
+            Object.entries(dataJson)
+                .sort(([position1,], [position2,]) => positions.indexOf(position1) > positions.indexOf(position2) ? 1 : -1)
+                .map(([position, candidates]) => (
+                    <div>
+                        <Typography variant="h5" gutterBottom style={{ margin: '8px' }}>{position.replace(/_/g, ' ')}</Typography>
+                        {candidates.map(({ name, platform }) => <CandidateCard name={name} platform={platform} />)}
+                    </div>
+                ))
+        )}
     />
 );
 
