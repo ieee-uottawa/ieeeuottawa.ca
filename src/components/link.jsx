@@ -8,9 +8,10 @@ const Link = ({ children, to, forceExternal, ...other }) => {
   // This example assumes that any internal link (intended for Gatsby)
   // will start with exactly one slash, and that anything else is external.
   const internal = /^\/(?!\/)/.test(to);
+  const isFile = /\.[0-9a-z]+$/i.test(to);
 
   // Use gatsby-link for internal links, and <a> for others
-  if (internal || !forceExternal) {
+  if (internal && !isFile) {
     return (
       <GatsbyLink to={to} {...other}>
         {children}
