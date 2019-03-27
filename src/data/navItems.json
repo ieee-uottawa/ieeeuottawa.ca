@@ -52,7 +52,8 @@
     "title": "Elections",
     "items": [
       {
-        "title": "Submit Nomination"
+        "title": "Candidate Platforms",
+        "link": "/election-platforms"
       }
     ]
   },
