@@ -23,6 +23,7 @@ class CandidateCard extends Component {
 
     render() {
         const { name, platform } = this.props;
+        if (name === 'Nevin WS Ganesan') console.log(platform);
         return (
             <Card style={{ margin: '8px' }}>
                 <CardContent>
@@ -30,7 +31,7 @@ class CandidateCard extends Component {
                         <Typography variant="body1" color="textSecondary" gutterBottom style={{ flexGrow: 1, paddingTop: '8px' }}>
                             {name}
                         </Typography>
-                        {this.languages.length > 1 && <Button onClick={this.changeLanguage}>{this.state.otherLanguage}</Button>}
+                        {this.languages.length > 1 && platform[this.languages[1]] && <Button onClick={this.changeLanguage}>{this.state.otherLanguage}</Button>}
                     </div>
                     <Typography component="div" gutterBottom dangerouslySetInnerHTML={{ __html: platform[this.state.currentLanguage] }} />
                 </CardContent>
