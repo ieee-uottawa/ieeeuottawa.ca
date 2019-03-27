@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 import ReactGA from 'react-ga';
 
-const Link = ({ children, to, ...other }) => {
+const Link = ({ children, to, forceExternal, ...other }) => {
   // Tailor the following test to your environment.
   // This example assumes that any internal link (intended for Gatsby)
   // will start with exactly one slash, and that anything else is external.
@@ -27,6 +27,11 @@ const Link = ({ children, to, ...other }) => {
 
 Link.propTypes = {
   to: PropTypes.string.isRequired,
+  forceExternal: PropTypes.bool,
 };
+
+Link.defaultProps = {
+  forceExternal: false,
+}
 
 export default Link;
