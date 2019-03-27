@@ -76,6 +76,13 @@ const ElectionPlatforms = () => (
                                 fr
                             }
                         }
+                        VP_Academic {
+                            name
+                            platform {
+                                en
+                                fr
+                            }
+                        }
                     }
                 }
             `

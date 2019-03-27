@@ -17,7 +17,6 @@ class CandidateCard extends Component {
     }
 
     changeLanguage() {
-        console.log(this.languages);
         const currentIndex = this.languages.indexOf(this.state.currentLanguage);
         this.setState({ currentLanguage: this.languages[(currentIndex + 1) % 2], otherLanguage: this.languages[currentIndex] })
     }
@@ -33,7 +32,7 @@ class CandidateCard extends Component {
                         </Typography>
                         {this.languages.length > 1 && <Button onClick={this.changeLanguage}>{this.state.otherLanguage}</Button>}
                     </div>
-                    <Typography gutterBottom dangerouslySetInnerHTML={{ __html: platform[this.state.currentLanguage] }} />
+                    <Typography component="div" gutterBottom dangerouslySetInnerHTML={{ __html: platform[this.state.currentLanguage] }} />
                 </CardContent>
             </Card>
         );
