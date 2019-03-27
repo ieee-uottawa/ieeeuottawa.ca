@@ -1,9 +1,14 @@
-$overlay: 0.15;
-$image_path: '../../static/images/ieeesantapic-1.jpg';
-
 .bg-image {
   height: 600px;
   position: relative;
+}
+
+.gatsby-background-image-santa-pic::after {
+  background-position-y: -72px;
+}
+
+.gatsby-background-image-wine-cheese-pic::after {
+  background-position-y: -198px;
 }
 
 @media only screen and (min-width: 1047px) {
