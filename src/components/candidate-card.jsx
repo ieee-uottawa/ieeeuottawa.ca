@@ -23,7 +23,6 @@ class CandidateCard extends Component {
 
     render() {
         const { name, platform } = this.props;
-        if (name === 'Nevin WS Ganesan') console.log(platform);
         return (
             <Card style={{ margin: '8px' }}>
                 <CardContent>
