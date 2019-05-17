@@ -3,12 +3,12 @@
   position: relative;
 }
 
-.gatsby-background-image-santa-pic::after {
+.gatsby-background-image-santa-pic::before {
   background-position-y: -72px;
 }
 
-.gatsby-background-image-wine-cheese-pic::after {
-  background-position-y: -198px;
+.gatsby-background-image-wine-cheese-pic::before {
+  background-position-y: -350px;
 }
 
 @media only screen and (min-width: 1047px) {
