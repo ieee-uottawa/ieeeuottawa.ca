@@ -37,7 +37,7 @@ class Form extends Component {
         for (let input of this.props.inputs) {
             if (!input.isRequired) continue;
 
-            const key = input.label.toLowerCase().replace(/ /g, '-');
+            const key = input.key ||input.label.toLowerCase().replace(/ /g, '-');
             if (!this.state[key] || this.state[key] === '') {
                 this.setState({ error: 'You haven\'t entered some required information!' });
                 return;
@@ -53,9 +53,8 @@ class Form extends Component {
                 <CardContent>
                     <List>
                         {
-                            this.props.inputs.map(({ label, items, isRequired, type = 'short' }) => {
-                                const key = label.toLowerCase().replace(/ /g, '-');
-
+                            this.props.inputs.map(({ label, items, key: labelKey, isRequired, type = 'short' }) => {
+                                const key = labelKey || label.toLowerCase().replace(/ /g, '-');
                                 switch (type) {
                                     case 'radio':
                                         return (
