@@ -48,9 +48,10 @@ const Layout = ({ children }) => (
     >
       <Helmet title="IEEE uOttawa Student Branch">
         <meta property="og:image" content={`https://ieeeuottawa.ca${logo}`} />
-        <meta name="og:title" content="IEEE uOttawa Student Branch" />
-        <meta name="og:description" content="The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment." />
+        <meta property="og:title" content="IEEE uOttawa Student Branch" />
+        <meta property="og:description" content="The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment." />
         <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta name="twitter:site" content="@ieeeuottawa" />
       </Helmet>
       <Header />
       <div
