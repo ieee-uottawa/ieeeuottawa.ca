@@ -45,7 +45,7 @@ const Layout = ({ children }) => (
       flexDirection: 'column',
     }}
     >
-      {/* <Helmet
+      <Helmet
         title="IEEE uOttawa Student Branch"
         meta={[
           {
@@ -57,7 +57,7 @@ const Layout = ({ children }) => (
             content:'https://ieeeuottawa.ca/static/uottawa_branch_logo-1-3921a2598da3442d0529786dd407f274.png'
           },
         ]}
-      /> */}
+      />
       <Header />
       <div
         style={{
