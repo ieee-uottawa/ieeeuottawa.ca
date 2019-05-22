@@ -12,6 +12,7 @@ import cart from '../redux/reducers/cart_reducers';
 import { isDevEnvironment, isServerSideRendering } from '../util';
 
 import './index.scss';
+import logo from '../../static/images/uottawa_branch_logo-1.png';
 
 const store = createStore(cart);
 
@@ -52,12 +53,10 @@ const Layout = ({ children }) => (
             name: 'description',
             content: 'The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment.',
           },
-          {
-            property:'og:image',
-            content:'https://ieeeuottawa.ca/static/uottawa_branch_logo-1-3921a2598da3442d0529786dd407f274.png'
-          },
         ]}
-      />
+      >
+        <meta property="og:image" content={`https://ieeeuottawa.ca${logo}`} />
+      </Helmet>
       <Header />
       <div
         style={{
