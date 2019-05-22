@@ -34,6 +34,7 @@
     "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
     "react-jss": "^8.6.1",
+    "react-meta-tags": "^0.7.4",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "superagent": "^4.1.0"

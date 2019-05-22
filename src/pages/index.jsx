@@ -1,4 +1,5 @@
 import React from 'react';
+import MetaTags from 'react-meta-tags';
 import GridList from '@material-ui/core/GridList';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -75,6 +76,10 @@ const IndexPage = ({ width }) => {
         };
         return (
           <div>
+            <MetaTags>
+              <title>IEEE uOttawa Student Branch</title>
+              <meta property="og:image" content="https://ieeeuottawa.ca/static/uottawa_branch_logo-1-3921a2598da3442d0529786dd407f274.png" />
+            </MetaTags>
             <Carousel
               wrapAround
               autoplay
