@@ -1,5 +1,5 @@
 import React from 'react';
-import MetaTags from 'react-meta-tags';
+import Helmet from 'react-helmet';
 import GridList from '@material-ui/core/GridList';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -76,10 +76,19 @@ const IndexPage = ({ width }) => {
         };
         return (
           <div>
-            <MetaTags>
-              <title>IEEE uOttawa Student Branch</title>
-              <meta property="og:image" content="https://ieeeuottawa.ca/static/uottawa_branch_logo-1-3921a2598da3442d0529786dd407f274.png" />
-            </MetaTags>
+            <Helmet
+              title="IEEE uOttawa Student Branch"
+              meta={[
+                {
+                  name: 'description',
+                  content: 'The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment.',
+                },
+                {
+                  property: 'og:image',
+                  content: 'https://ieeeuottawa.ca/static/uottawa_branch_logo-1-3921a2598da3442d0529786dd407f274.png'
+                },
+              ]}
+            />
             <Carousel
               wrapAround
               autoplay
@@ -96,9 +105,9 @@ const IndexPage = ({ width }) => {
                   <BackgroundImage classId={imageID} className="bg-image" fluid={fluid}>
                     <div id="text-container" className="center">
                       {message && (
-                      <Typography variant="h3" className="uppercase" id="about-us-image-text">
-                        <Link to={button.url} href={button.url} eventLabel={button.url} className="white-url-txt">{message}</Link>
-                      </Typography>
+                        <Typography variant="h3" className="uppercase" id="about-us-image-text">
+                          <Link to={button.url} href={button.url} eventLabel={button.url} className="white-url-txt">{message}</Link>
+                        </Typography>
                       )}
                       <IEEEButton
                         variant="outlined"
