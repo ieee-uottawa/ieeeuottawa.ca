@@ -52,13 +52,12 @@ const Layout = ({ children }) => (
             name: 'description',
             content: 'The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment.',
           },
+          {
+            name:'og:image',
+            content:'https://ieeeuottawa.ca/static/uottawa_branch_logo-1-3921a2598da3442d0529786dd407f274.png'
+          },
         ]}
       />
-       <Helmet>
-          <meta property='og:title' content="IEEE uOttawa Student Branch – Powering your student experience!"/>
-          <meta property='og:image' content="https://ieeeuottawa.ca/static/uottawa_branch_logo-1-3921a2598da3442d0529786dd407f274.png"/>
-	        <meta property='og:url' content="https://ieeeuottawa.ca/" />
-       </Helmet>
       <Header />
       <div
         style={{
