@@ -54,6 +54,11 @@ const Layout = ({ children }) => (
           },
         ]}
       />
+       <Helmet>
+          <meta property='og:title' content="IEEE uOttawa Student Branch – Powering your student experience!"/>
+          <meta property='og:image' content="https://ieeeuottawa.ca/static/uottawa_branch_logo-1-3921a2598da3442d0529786dd407f274.png"/>
+	        <meta property='og:url' content="https://ieeeuottawa.ca/" />
+       </Helmet>
       <Header />
       <div
         style={{
