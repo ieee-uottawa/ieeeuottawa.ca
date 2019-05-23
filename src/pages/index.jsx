@@ -75,7 +75,7 @@ const IndexPage = ({ width }) => {
           width: '48px',
         };
         return (
-          <div>
+          <div style={{ marginTop: '-1em' }}>
             <Carousel
               wrapAround
               // autoplay
