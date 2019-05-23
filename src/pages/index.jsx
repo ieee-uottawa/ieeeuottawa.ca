@@ -78,7 +78,7 @@ const IndexPage = ({ width }) => {
           <div>
             <Carousel
               wrapAround
-              autoplay
+              // autoplay
               speed={500}
               slidesToShow={1}
               slidesToScroll={1}
@@ -88,24 +88,26 @@ const IndexPage = ({ width }) => {
               renderCenterRightControls={({ nextSlide: goToNext }) => <ChevronRightIcon onClick={goToNext} style={iconStyle} />}
             >
               {
-                carouselEdges.map(({ node: { message, button, imageFile: { id: imageID, image: { childImageSharp: { fluid } } } } }) => (
-                  <BackgroundImage classId={imageID} className="bg-image" fluid={fluid}>
-                    <div id="text-container" className="center">
-                      {message && (
-                        <Typography variant="h3" className="uppercase" id="about-us-image-text">
-                          <Link to={button.url} href={button.url} eventLabel={button.url} className="white-url-txt">{message}</Link>
-                        </Typography>
-                      )}
-                      <IEEEButton
-                        variant="outlined"
-                        color="secondary"
-                        className="white-btn white-url-txt"
-                        component={Link}
-                        to={button.url}
-                        style={{ marginTop: '32px' }}
-                      >
-                        {button.text}
-                      </IEEEButton>
+                carouselEdges.map(({ node: { message, button, imageFile: { image: { childImageSharp: { fluid } }, id: imageID, style: imageStyle } } }) => (
+                  <BackgroundImage className={`bg-image ${imageID}`} fluid={fluid} style={imageStyle}>
+                    <div id="image-overlay">
+                      <div id="text-container" className="center">
+                        {message && (
+                          <Typography variant="h3" className="uppercase" id="about-us-image-text">
+                            <Link to={button.url} href={button.url} eventLabel={button.url} className="white-url-txt">{message}</Link>
+                          </Typography>
+                        )}
+                        <IEEEButton
+                          variant="outlined"
+                          color="secondary"
+                          className="white-btn white-url-txt"
+                          component={Link}
+                          to={button.url}
+                          style={{ marginTop: '32px' }}
+                        >
+                          {button.text}
+                        </IEEEButton>
+                      </div>
                     </div>
                   </BackgroundImage>
                 ))
