@@ -67,7 +67,7 @@ class Header extends Component {
                   src={logo}
                   alt="IEEE uOttawa Logo"
                   style={{
-                    maxHeight: 60,
+                    maxWidth: '140px',
                     display: 'flex',
                     justifyContent: 'space-between',
                   }}
