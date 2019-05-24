@@ -7,17 +7,24 @@
     },
     "imageFile": {
       "id": "santa-pic",
-      "image": "../../static/images/ieeesantapic-1.jpg"
+      "image": "../../static/images/ieeesantapic-1.jpg",
+      "style": {
+        "backgroundPositionY": "-175px"
+      }
     }
   },
   {
+    "message": "Want to get involved with us?",
     "button": {
-      "text": "Get Tickets",
-      "url": "https://www.celebratewie.ca/tickets"
+      "text": "Get Involved!",
+      "url": "/volunteer"
     },
     "imageFile": {
-      "id": "wine-cheese-pic",
-      "image": "../../static/images/wine_and_cheese_2019_03_14.png"
+      "id": "volunteer-cover-pic",
+      "image": "../../static/images/volunteer_cover.jpg",
+      "style": {
+        "backgroundPositionY": "-275px"
+      }
     }
   }
 ]

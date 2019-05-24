@@ -1,14 +1,19 @@
-.bg-image {
+.bg-image #image-overlay {
   height: 600px;
   position: relative;
 }
 
-.gatsby-background-image-santa-pic::before {
-  background-position-y: -72px;
+#image-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
-.gatsby-background-image-wine-cheese-pic::before {
-  background-position-y: -350px;
+.santa-pic::before {
+  background-position-y: -75px;
+}
+
+.volunteer-cover-pic::before {
+  background-position-y: -175px;
 }
 
 @media only screen and (min-width: 1047px) {
