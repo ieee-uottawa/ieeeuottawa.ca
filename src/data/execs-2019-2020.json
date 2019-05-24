@@ -40,6 +40,11 @@
     "image": "../../static/images/execs-2019-2020/external.jpg"
   },
   {
+    "name": "Nevin WS Ganesan",
+    "position": "Webmaster",
+    "image": "../../static/images/execs-2019-2020/webmaster.jpg"
+  },
+  {
     "name": "Michal Ridner",
     "position": "WIE Chair",
     "image": "../../static/images/execs-2019-2020/wie-chair.jpg"
@@ -50,9 +55,14 @@
     "image": "../../static/images/execs-2019-2020/wie-vice-chair.jpg"
   },
   {
-    "name": "Nevin WS Ganesan",
-    "position": "Webmaster",
-    "image": "../../static/images/execs-2019-2020/webmaster.jpg"
+    "name": "Ellie Rumsey",
+    "position": "WIE Design",
+    "image": "../../static/images/execs-2019-2020/wie-design.jpg"
+  },
+  {
+    "name": "Scott Fulton",
+    "position": "McNaughton Centre Director",
+    "image": "../../static/images/execs-2019-2020/mcnaughton-director.jpg"
   },
   {
     "name": "Kimberley Charland",
@@ -60,8 +70,23 @@
     "image": "../../static/images/execs-2019-2020/secretary.jpg"
   },
   {
-    "name": "Scott Fulton",
-    "position": "McNaughton Centre Director",
-    "image": "../../static/images/execs-2019-2020/mcnaughton-director.jpg"
+    "name": "Alistair McCarten",
+    "position": "Design",
+    "image": "../../static/images/execs-2019-2020/design.jpg"
+  },
+  {
+    "name": "Erik Cassidy",
+    "position": "CEG Commissioner",
+    "image": "../../static/images/execs-2019-2020/ceg-com.jpg"
+  },
+  {
+    "name": "Alois Clerc",
+    "position": "SEG Commissioner",
+    "image": "../../static/images/execs-2019-2020/seg-com.jpg"
+  },
+  {
+    "name": "Murad Zurkiyeh",
+    "position": "ELG Commissioner",
+    "image": "../../static/images/execs-2019-2020/elg-com.jpg"
   }
 ]
