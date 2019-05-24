@@ -6,7 +6,7 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import { graphql, StaticQuery } from 'gatsby';
 
-import logo from '../../static/images/uottawa_branch_logo-1.png';
+import logo from '../../static/images/uottawa_branch_logo-2.png';
 import { NavButton, NavDropDown } from './buttons';
 import { CloseIcon, MenuIcon } from './icons';
 import { MaterialMenu } from './material-components';
@@ -60,7 +60,7 @@ class Header extends Component {
         `
         }
         render={({ allNavItemsJson: { edges } }) => (
-          <AppBar position="sticky" style={{ padding: '32px 0 0' }}>
+          <AppBar position="sticky" style={{ padding: '0px 0 0' }}>
             <Toolbar>
               <Link to="/" href="/" style={{ flexGrow: 1 }}>
                 <img
@@ -68,6 +68,8 @@ class Header extends Component {
                   alt="IEEE uOttawa Logo"
                   style={{
                     maxWidth: '140px',
+                    paddingTop:'15px',
+                    paddingLeft:'32px',
                     display: 'flex',
                     justifyContent: 'space-between',
                   }}
