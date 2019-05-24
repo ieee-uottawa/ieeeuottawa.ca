@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Heemel Saha",
+    "position": "Chair",
+    "image": "../../static/images/execs-2018-2019/chair.jpg"
+  },
+  {
+    "name": "Amar Jasarbasic",
+    "position": "Vice Chair",
+    "image": "../../static/images/execs-2018-2019/vice-chair.jpg"
+  },
+  {
+    "name": "Robert Conrad",
+    "position": "Treasurer",
+    "image": "../../static/images/execs-2018-2019/finance.jpg"
+  },
+  {
+    "name": "John Zhao",
+    "position": "VP Social",
+    "image": "../../static/images/execs-2018-2019/social.jpg"
+  },
+  {
+    "name": "Anushka Paliwal",
+    "position": "VP Internal",
+    "image": "../../static/images/execs-2018-2019/internal.jpg"
+  },
+  {
+    "name": "Madison Smrtka",
+    "position": "VP Communications",
+    "image": "../../static/images/execs-2018-2019/communications.jpg"
+  },
+  {
+    "name": "Melody Habbouche",
+    "position": "VP Academic",
+    "image": "../../static/images/execs-2018-2019/academic.jpg"
+  },
+  {
+    "name": "Aly Abdelrahman",
+    "position": "VP External",
+    "image": "../../static/images/execs-2018-2019/external.jpg"
+  },
+  {
+    "name": "Linda Tang",
+    "position": "WIE Chair",
+    "image": "../../static/images/execs-2018-2019/wie-chair.jpg"
+  },
+  {
+    "name": "Mikeli Habash",
+    "position": "WIE Vice Chair",
+    "image": "../../static/images/execs-2018-2019/wie-vice-chair.jpg"
+  },
+  {
+    "name": "Rushil Perera",
+    "position": "Webmaster",
+    "image": "../../static/images/execs-2018-2019/webmaster.jpg"
+  },
+  {
+    "name": "Michal Ridner",
+    "position": "Secretary",
+    "image": "../../static/images/execs-2018-2019/secretary.jpg"
+  },
+  {
+    "name": "Ivor Benderavage",
+    "position": "McNaughton Centre Director",
+    "image": "../../static/images/execs-2018-2019/mcnaughton-director.jpg"
+  }
+]

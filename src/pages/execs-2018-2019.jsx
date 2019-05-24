@@ -5,12 +5,12 @@ import { graphql, StaticQuery } from 'gatsby';
 
 import { ExecCard } from '../components/cards';
 
-const Execs = () => (
+const Execs_2018_2019= () => (
   <StaticQuery
     query={
       graphql`
         query {
-          allExecsJson {
+          allExecs20182019Json {
             edges {
               node {
                 name
@@ -28,7 +28,7 @@ const Execs = () => (
         }
       `
     }
-    render={({ allExecsJson: { edges } }) => (
+    render={({ allExecs20182019Json: { edges } }) => (
       <div>
         <Typography variant="h5" gutterBottom className="title">About Us</Typography>
         <p className="p-margins">
@@ -52,4 +52,4 @@ const Execs = () => (
   />
 );
 
-export default Execs;
+export default Execs_2018_2019;

@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Robert Conrad",
+    "position": "Chair",
+    "image": "../../static/images/execs-2019-2020/chair.jpg"
+  },
+  {
+    "name": "Amar Jasarbasic",
+    "position": "Vice Chair",
+    "image": "../../static/images/execs-2019-2020/vice-chair.jpg"
+  },
+  {
+    "name": "Sanat Nayar",
+    "position": "Treasurer",
+    "image": "../../static/images/execs-2019-2020/treasurer.jpg"
+  },
+  {
+    "name": "John Zhao",
+    "position": "VP Social",
+    "image": "../../static/images/execs-2019-2020/social.jpg"
+  },
+  {
+    "name": "Tae Kim",
+    "position": "VP Internal",
+    "image": "../../static/images/execs-2019-2020/internal.jpg"
+  },
+  {
+    "name": "Tony Kim",
+    "position": "VP Communications",
+    "image": "../../static/images/execs-2019-2020/communications.jpg"
+  },
+  {
+    "name": "Marla Jazzar",
+    "position": "VP Academic",
+    "image": "../../static/images/execs-2019-2020/academic.jpg"
+  },
+  {
+    "name": "Mahyar Gorji",
+    "position": "VP External",
+    "image": "../../static/images/execs-2019-2020/external.jpg"
+  },
+  {
+    "name": "Michal Ridner",
+    "position": "WIE Chair",
+    "image": "../../static/images/execs-2019-2020/wie-chair.jpg"
+  },
+  {
+    "name": "Shriya Gundala",
+    "position": "WIE Vice Chair",
+    "image": "../../static/images/execs-2019-2020/wie-vice-chair.jpg"
+  },
+  {
+    "name": "Nevin WS Ganesan",
+    "position": "Webmaster",
+    "image": "../../static/images/execs-2019-2020/webmaster.jpg"
+  },
+  {
+    "name": "Kimberley Charland",
+    "position": "Secretary",
+    "image": "../../static/images/execs-2019-2020/secretary.jpg"
+  },
+  {
+    "name": "Scott Fulton",
+    "position": "McNaughton Centre Director",
+    "image": "../../static/images/execs-2019-2020/mcnaughton-director.jpg"
+  }
+]
