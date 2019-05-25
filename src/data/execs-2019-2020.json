@@ -73,20 +73,5 @@
     "name": "Alistair McCarten",
     "position": "Design",
     "image": "../../static/images/execs-2019-2020/design.jpg"
-  },
-  {
-    "name": "Erik Cassidy",
-    "position": "CEG Commissioner",
-    "image": "../../static/images/execs-2019-2020/ceg-com.jpg"
-  },
-  {
-    "name": "Alois Clerc",
-    "position": "SEG Commissioner",
-    "image": "../../static/images/execs-2019-2020/seg-com.jpg"
-  },
-  {
-    "name": "Murad Zurkiyeh",
-    "position": "ELG Commissioner",
-    "image": "../../static/images/execs-2019-2020/elg-com.jpg"
   }
 ]

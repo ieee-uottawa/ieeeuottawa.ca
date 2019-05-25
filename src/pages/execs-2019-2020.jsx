@@ -23,10 +23,25 @@ const Execs_2019_2020 = () => (
               }
             }
           }
+          allComs20192020Json {
+            edges{
+              node{
+                name
+                position
+                image {
+                  childImageSharp {
+                    fixed(width: 166, height: 166) {
+                      ...GatsbyImageSharpFixed_withWebp
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       `
     }
-    render={({ allExecs20192020Json: { nodes } }) => (
+    render={({ allExecs20192020Json: { nodes }, allComs20192020Json: { edges } }) => (
       <div>
         <Typography variant="h5" gutterBottom className="title">About Us</Typography>
         <p className="p-margins">
@@ -43,7 +58,11 @@ const Execs_2019_2020 = () => (
 
         <Typography variant="h6" gutterBottom className="center-horizontal">Our Execs</Typography>
         <GridList cols={5} style={{ margin: '0 7.5% 0' }}>
-          { nodes.map(({ name, position, image  }) => <ExecCard name={name} position={position} image={image} />)}
+          {nodes.map(({ name, position, image }) => <ExecCard name={name} position={position} image={image} />)}
+        </GridList>
+        <Typography variant="h6" gutterBottom className="center-horizontal">Our Commissioners</Typography>
+        <GridList cols={5} style={{ margin: '0 7.5% 0' }}>
+          {edges.map(({ node: { name, position, image } }) => <ExecCard name={name} position={position} image={image} />)}
         </GridList>
       </div>
     )}
