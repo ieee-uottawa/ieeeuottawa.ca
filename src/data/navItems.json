@@ -15,7 +15,8 @@
         "link": "/execs-2018-2019"
       },
       {
-        "title": "Office Hours"
+        "title": "Election Platforms",
+        "link": "/election-platforms"
       }
     ]
   },
@@ -24,8 +25,14 @@
     "link": "/events"
   },
   {
+    "title": "Volunteer"
+  },
+  {
     "title": "Contact Us",
     "items": [
+      {
+        "title": "Office Hours"
+      },
       {
         "title": "Mailing List",
         "link": "/mailing-list-sign-up"
@@ -54,26 +61,15 @@
     ]
   },
   {
-    "title": "Elections",
+    "title": "Store",
     "items": [
       {
-        "title": "Candidate Platforms",
-        "link": "/election-platforms"
-      }
-    ]
-  },
-  {
-    "title": "Shop",
-    "items": [
-      {
-        "title": "Shop"
+        "title": "Shop",
+        "link": "/shop"
       },
       {
         "title": "Cart"
       }
     ]
-  },
-  {
-    "title": "Volunteer"
   }
 ]

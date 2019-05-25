@@ -42,7 +42,7 @@ const Execs_2019_2020 = () => (
       `
     }
     render={({ allExecs20192020Json: { nodes }, allComs20192020Json: { edges } }) => (
-      <div>
+      <div className="center-horizontal">
         <Typography variant="h5" gutterBottom className="title">About Us</Typography>
         <p className="p-margins">
           The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official
