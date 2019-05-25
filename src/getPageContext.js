@@ -10,19 +10,15 @@ let theme = createMuiTheme({
       main: '#FFFFFF',
     },
     secondary: blue,
-    type:'dark'
+    type: 'light'
   },
   typography: {
     useNextVariants: true,
   },
 });
 
-function toggleTheme(){
-  if(this.theme.palette.type ==='dark'){
-    this.theme.palette.type ='light';
-  } else{
-    this.theme.palette.type ='dark';
-  }
+function toggleTheme(mode) {
+  theme.palette.type = mode;
 }
 
 function createPageContext() {
@@ -37,9 +33,15 @@ function createPageContext() {
   };
 }
 
-export default function getPageContext() {
+export default function getPageContext(mode) {
   // Make sure to create a new context for every server-side request so that data
   // isn't shared between connections (which would be bad).
+  if (mode) {
+    toggleTheme(mode);
+    console.log(theme.palette.type);
+    global.__INIT_MATERIAL_UI__ = createPageContext();
+  }
+
   if (!process.browser) {
     return createPageContext();
   }

@@ -13,25 +13,26 @@ import { MaterialMenu } from './material-components';
 import Link from './link';
 import getPageContext from './../getPageContext';
 
-let muiPageContext = null;
-
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
       anchorEl: null,
-      darkMode: false,
+      theme: 'light',
     };
     this.handleMenuClick = this.handleMenuClick.bind(this);
     this.handleMenuClose = this.handleMenuClose.bind(this);
     this.handleMenuTheme = this.handleMenuTheme.bind(this);
-    muiPageContext = getPageContext();
-    console.log(muiPageContext.theme.palette.type);
   }
 
   handleMenuTheme({ currentTarget }) {
-    getPageContext().toggleTheme();
+    if (this.state.theme === 'light') {
+      this.setState({ theme: 'dark' });
+    } else {
+      this.setState({ theme: 'light' });
+    }
+    getPageContext(this.state.theme);
   }
 
   handleMenuClick({ currentTarget }) {
