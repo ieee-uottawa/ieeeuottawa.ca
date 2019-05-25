@@ -55,23 +55,13 @@
     "image": "../../static/images/execs-2019-2020/wie-vice-chair.jpg"
   },
   {
-    "name": "Ellie Rumsey",
-    "position": "WIE Design",
-    "image": "../../static/images/execs-2019-2020/wie-design.jpg"
-  },
-  {
-    "name": "Scott Fulton",
-    "position": "McNaughton Centre Director",
-    "image": "../../static/images/execs-2019-2020/mcnaughton-director.jpg"
-  },
-  {
     "name": "Kimberley Paradis",
     "position": "Secretary",
     "image": "../../static/images/execs-2019-2020/secretary.jpg"
   },
   {
-    "name": "Alistair McCarten",
-    "position": "Design",
-    "image": "../../static/images/execs-2019-2020/design.jpg"
+    "name": "Scott Fulton",
+    "position": "McNaughton Centre Director",
+    "image": "../../static/images/execs-2019-2020/mcnaughton-director.jpg"
   }
 ]

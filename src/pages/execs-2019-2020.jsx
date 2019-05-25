@@ -57,11 +57,11 @@ const Execs_2019_2020 = () => (
         <p className="p-margins">*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.</p>
 
         <Typography variant="h6" gutterBottom className="center-horizontal">Our Execs</Typography>
-        <GridList cols={5} style={{ margin: '0 7.5% 0' }}>
+        <GridList cols={5} style={{ margin: '0 5% 0' }}>
           {nodes.map(({ name, position, image }) => <ExecCard name={name} position={position} image={image} />)}
         </GridList>
         <Typography variant="h6" gutterBottom className="center-horizontal">Our Commissioners</Typography>
-        <GridList cols={5} style={{ margin: '0 7.5% 0' }}>
+        <GridList cols={5} style={{ margin: '0 5% 0' }}>
           {edges.map(({ node: { name, position, image } }) => <ExecCard name={name} position={position} image={image} />)}
         </GridList>
       </div>

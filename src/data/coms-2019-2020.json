@@ -1,5 +1,15 @@
 [
   {
+    "name": "Alistair McCarten",
+    "position": "Design",
+    "image": "../../static/images/execs-2019-2020/design.jpg"
+  },
+  {
+    "name": "Ellie Rumsey",
+    "position": "WIE Design",
+    "image": "../../static/images/execs-2019-2020/wie-design.jpg"
+  },
+  {
     "name": "Erik Cassidy",
     "position": "CEG Commissioner",
     "image": "../../static/images/execs-2019-2020/ceg-com.jpg"
