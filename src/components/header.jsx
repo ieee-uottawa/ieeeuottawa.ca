@@ -101,7 +101,7 @@ class Header extends Component {
                     return navItem;
                   })}
                 </div>
-                <Button onClick={this.handleMenuTheme}>Dark Mode</Button>
+                <Button onClick={this.handleMenuTheme}>{this.state.theme} Mode</Button>
               </Hidden>
               <Hidden mdUp>
                 <div>
