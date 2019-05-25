@@ -4,17 +4,26 @@ import blue from '@material-ui/core/colors/blue';
 
 // A theme with custom primary and secondary color.
 // It's optional.
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     primary: {
       main: '#FFFFFF',
     },
     secondary: blue,
+    type:'dark'
   },
   typography: {
     useNextVariants: true,
   },
 });
+
+function toggleTheme(){
+  if(this.theme.palette.type ==='dark'){
+    this.theme.palette.type ='light';
+  } else{
+    this.theme.palette.type ='dark';
+  }
+}
 
 function createPageContext() {
   return {

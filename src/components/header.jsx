@@ -11,6 +11,9 @@ import { NavButton, NavDropDown } from './buttons';
 import { CloseIcon, MenuIcon } from './icons';
 import { MaterialMenu } from './material-components';
 import Link from './link';
+import getPageContext from './../getPageContext';
+
+let muiPageContext = null;
 
 class Header extends Component {
   constructor(props) {
@@ -18,9 +21,17 @@ class Header extends Component {
     this.state = {
       isOpen: false,
       anchorEl: null,
+      darkMode: false,
     };
     this.handleMenuClick = this.handleMenuClick.bind(this);
     this.handleMenuClose = this.handleMenuClose.bind(this);
+    this.handleMenuTheme = this.handleMenuTheme.bind(this);
+    muiPageContext = getPageContext();
+    console.log(muiPageContext.theme.palette.type);
+  }
+
+  handleMenuTheme({ currentTarget }) {
+    getPageContext().toggleTheme();
   }
 
   handleMenuClick({ currentTarget }) {
@@ -60,7 +71,7 @@ class Header extends Component {
         `
         }
         render={({ allNavItemsJson: { edges } }) => (
-          <AppBar position="sticky" style={{ padding: '0px 0 0' }}>
+          <AppBar color="default" position="sticky" style={{ padding: '0px 0 0' }}>
             <Toolbar>
               <Link to="/" href="/" style={{ flexGrow: 1 }}>
                 <img
@@ -68,8 +79,8 @@ class Header extends Component {
                   alt="IEEE uOttawa Logo"
                   style={{
                     maxWidth: '140px',
-                    paddingTop:'15px',
-                    paddingLeft:'32px',
+                    paddingTop: '15px',
+                    paddingLeft: '32px',
                     display: 'flex',
                     justifyContent: 'space-between',
                   }}
@@ -89,6 +100,7 @@ class Header extends Component {
                     return navItem;
                   })}
                 </div>
+                <Button onClick={this.handleMenuTheme}>Dark Mode</Button>
               </Hidden>
               <Hidden mdUp>
                 <div>
