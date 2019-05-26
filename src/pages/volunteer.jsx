@@ -4,6 +4,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 
+import Title from '../components/title';
 import Form from '../components/form';
 import { isServerSideRendering } from '../util';
 
@@ -109,7 +110,7 @@ class Volunteer extends Component {
 
         return (
             <div>
-                <Typography variant="h5" gutterBottom className="title"> Volunteer Sign-Up! </Typography>
+                <Title variant="h5" gutterBottom className="title"> Volunteer Sign-Up! </Title>
                 <Typography className="center-horizontal" variant="body1" style={{ marginTop: '16px' }}>
                     <strong>Looking to get more involved with the IEEE uOttawa Student Branch?</strong>
                 </Typography>
