@@ -11,28 +11,39 @@ import { NavButton, NavDropDown } from './buttons';
 import { CloseIcon, MenuIcon } from './icons';
 import { MaterialMenu } from './material-components';
 import Link from './link';
-import getPageContext from './../getPageContext';
+
+const light = 'light';
+const dark = 'dark';
 
 class Header extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
       anchorEl: null,
-      theme: 'light',
+      theme: this.getCurrentTheme(),
     };
     this.handleMenuClick = this.handleMenuClick.bind(this);
     this.handleMenuClose = this.handleMenuClose.bind(this);
     this.handleMenuTheme = this.handleMenuTheme.bind(this);
   }
 
-  handleMenuTheme({ currentTarget }) {
-    if (this.state.theme === 'light') {
-      this.setState({ theme: 'dark' });
+  getCurrentTheme() {
+    var someVarName = localStorage.getItem("themeKey");
+    if (someVarName) return someVarName;
+    return light;
+  }
+
+  handleMenuTheme() {
+    if (this.state.theme === light) {
+      localStorage.setItem("themeKey", dark);
+      this.setState({ theme: dark });
     } else {
-      this.setState({ theme: 'light' });
+      localStorage.setItem("themeKey", light);
+      this.setState({ theme: light });
     }
-    getPageContext(this.state.theme);
+    window.location.reload();
   }
 
   handleMenuClick({ currentTarget }) {

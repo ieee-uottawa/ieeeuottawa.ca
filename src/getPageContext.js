@@ -10,15 +10,17 @@ let theme = createMuiTheme({
       main: '#FFFFFF',
     },
     secondary: blue,
-    type: 'light'
+    type: getCurrentTheme()
   },
   typography: {
     useNextVariants: true,
   },
 });
 
-function toggleTheme(mode) {
-  theme.palette.type = mode;
+function getCurrentTheme(){
+  var someVarName = localStorage.getItem("themeKey");
+  if(someVarName) return someVarName;
+  return 'light';
 }
 
 function createPageContext() {
@@ -33,15 +35,9 @@ function createPageContext() {
   };
 }
 
-export default function getPageContext(mode) {
+export default function getPageContext() {
   // Make sure to create a new context for every server-side request so that data
   // isn't shared between connections (which would be bad).
-  if (mode) {
-    toggleTheme(mode);
-    console.log(theme.palette.type);
-    global.__INIT_MATERIAL_UI__ = createPageContext();
-  }
-
   if (!process.browser) {
     return createPageContext();
   }
