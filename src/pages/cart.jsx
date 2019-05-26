@@ -10,6 +10,7 @@ import ProductRow from '../components/product-row';
 import { PaypalButton } from '../components/buttons';
 import { calculatePrice, capitalize, flattenDeep, isDevEnvironment, moneyFormatter } from '../util';
 import { removeItemFromCart } from '../redux/actions/cart_actions';
+import Title from '../components/title';
 
 import sadEmoji from '../../static/images/emoji_sad.svg';
 import './cart.scss';
@@ -84,7 +85,7 @@ class Cart extends Component {
 
     return (
       <div>
-        <Typography variant="h5" gutterBottom className="title" style={{ marginBottom: '16px' }}>Cart</Typography>
+        <Title style={{ marginBottom: '16px' }}>Cart</Title>
         <Card id={cardID}>
           {cart.length > 0
           && (
