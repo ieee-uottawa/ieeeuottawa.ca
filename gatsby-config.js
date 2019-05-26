@@ -33,7 +33,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: 'gatsby-plugin-favicon',
       options: {
         logo: './static/images/ieee_logo_circle.png',
         icons: {
@@ -44,12 +44,13 @@ module.exports = {
           favicons: true,
           firefox: true,
           yandex: true,
-          windows: true
-        }
-      }
+          windows: true,
+        },
+      },
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-dark-mode',
   ],
 };

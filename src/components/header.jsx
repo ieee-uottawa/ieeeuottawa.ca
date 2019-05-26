@@ -6,48 +6,31 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import { graphql, StaticQuery } from 'gatsby';
 
-import logo from '../../static/images/uottawa_branch_logo-2.png';
 import { NavButton, NavDropDown } from './buttons';
 import { CloseIcon, MenuIcon } from './icons';
 import { MaterialMenu } from './material-components';
 import Link from './link';
-
 import Toggle from './Toggle';
 import sun from '../../static/images/darkmode/sun.png';
 import moon from '../../static/images/darkmode/moon.png';
 
-const light = 'light';
-const dark = 'dark';
+import logo from '../../static/images/uottawa_branch_logo-2.png';
 
 class Header extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
       anchorEl: null,
-      theme: this.getCurrentTheme(),
     };
+
     this.handleMenuClick = this.handleMenuClick.bind(this);
     this.handleMenuClose = this.handleMenuClose.bind(this);
     this.handleMenuTheme = this.handleMenuTheme.bind(this);
   }
 
-  getCurrentTheme() {
-    var someVarName = localStorage.getItem("themeKey");
-    if (someVarName) return someVarName;
-    return light;
-  }
-
   handleMenuTheme() {
-    if (this.state.theme === light) {
-      localStorage.setItem("themeKey", dark);
-      this.setState({ theme: dark });
-    } else {
-      localStorage.setItem("themeKey", light);
-      this.setState({ theme: light });
-    }
-    window.location.reload();
+    this.props.toggleTheme(this.props.theme === 'light' ? 'dark' : 'light');
   }
 
   handleMenuClick({ currentTarget }) {
@@ -116,7 +99,6 @@ class Header extends Component {
                     return navItem;
                   })}
                 </div>
-
                 <Toggle
                   icons={{
                     checked: (
@@ -138,10 +120,9 @@ class Header extends Component {
                       />
                     ),
                   }}
-                  checked={this.state.theme === 'dark'}
+                  checked={this.props.theme === 'dark'}
                   onClick={this.handleMenuTheme}
                 />
-
               </Hidden>
               <Hidden mdUp>
                 <div>

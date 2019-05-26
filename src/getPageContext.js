@@ -1,34 +1,26 @@
 import { SheetsRegistry } from 'jss';
 import { createGenerateClassName, createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
-import { isServerSideRendering } from './util';
 
-// A theme with custom primary and secondary color.
-// It's optional.
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#FFFFFF',
+export function getCurrentTheme(mode) {
+  mode = mode || 'light';
+  return createMuiTheme({
+    palette: {
+      primary: {
+        main: '#FFFFFF',
+      },
+      secondary: blue,
+      type: mode,
     },
-    secondary: blue,
-    type: getCurrentTheme()
-  },
-  typography: {
-    useNextVariants: true,
-  },
-});
-
-function getCurrentTheme() { 
-  if (!isServerSideRendering()) { 
-    var someVarName = localStorage.getItem("themeKey"); 
-    if (someVarName) return someVarName; 
-  } 
-  return 'light'; 
+    typography: {
+      useNextVariants: true,
+    },
+  });
 }
 
 function createPageContext() {
   return {
-    theme,
+    theme: getCurrentTheme(),
     // This is needed in order to deduplicate the injection of CSS in the page.
     sheetsManager: new Map(),
     // This is needed in order to inject the critical CSS.
