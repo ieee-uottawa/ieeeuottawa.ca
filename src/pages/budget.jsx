@@ -1,9 +1,9 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import Title from '../components/title';
 
 const Budget = () => (
   <div>
-    <Typography variant="h5" gutterBottom className="title" style={{ marginBottom: '16px' }}>Budget</Typography>
+    <Title variant="h5" gutterBottom className="title" style={{ marginBottom: '16px' }}>Budget</Title>
     <iframe
       width="100%"
       title="IEEE uOttawa Budget"

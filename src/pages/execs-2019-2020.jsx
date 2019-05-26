@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import GridList from '@material-ui/core/GridList';
 import { graphql, StaticQuery } from 'gatsby';
 
+import Title from '../components/title';
 import { ExecCard } from '../components/cards';
 
 const Execs_2019_2020 = () => (
@@ -43,7 +44,7 @@ const Execs_2019_2020 = () => (
     }
     render={({ allExecs20192020Json: { nodes }, allComs20192020Json: { edges } }) => (
       <div className="center-horizontal">
-        <Typography variant="h5" gutterBottom className="title">About Us</Typography>
+        <Title variant="h5" gutterBottom className="title">About Us</Title>
         <div style={{ margin: '0 5% 0' }}>
           <Typography variant="body1" className="p-margins">
             The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official

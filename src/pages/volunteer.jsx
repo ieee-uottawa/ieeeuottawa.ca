@@ -10,7 +10,7 @@ import { isServerSideRendering } from '../util';
 
 const FormStyle = {
     width: "200px"
-  };
+};
 
 class Volunteer extends Component {
     constructor(props) {
@@ -72,7 +72,7 @@ class Volunteer extends Component {
                     .send(values);
                 if (res.ok) {
                     this.sendSnackbarMsg('submitted', 'Submitted Volunteer Form!');
-                    setTimeout(() => this.sendSnackbarMsg('submitted', "Don't forget to email chair@ieeeuottawa.ca with your 200-500 word platform in English and French!"), 1000);           
+                    setTimeout(() => this.sendSnackbarMsg('submitted', "Don't forget to email chair@ieeeuottawa.ca with your 200-500 word platform in English and French!"), 1000);
                 } else {
                     this.sendSnackbarMsg('error', 'Failed to submit volunteer form, try again in a few minutes');
                 }
@@ -94,12 +94,12 @@ class Volunteer extends Component {
             {
                 label: 'How would you like to get involved?',
                 items: [
-                    'General Volunteer', 
-                    'SPAC (Student Professional Awareness Conference)', 
-                    'Women in Engineering Wine and Cheese', 
-                    'Raspberry Pi Jam', 
-                    'Social Events (WII Nights, Trivia Nights, EngiBEERing, etc.)', 
-                    'Academic Events (WIE Tech Panel, Workshops, Cookies n Cram)', 
+                    'General Volunteer',
+                    'SPAC (Student Professional Awareness Conference)',
+                    'Women in Engineering Wine and Cheese',
+                    'Raspberry Pi Jam',
+                    'Social Events (WII Nights, Trivia Nights, EngiBEERing, etc.)',
+                    'Academic Events (WIE Tech Panel, Workshops, Cookies n Cram)',
                 ],
                 type: 'radio',
                 isRequired: true,
@@ -110,8 +110,12 @@ class Volunteer extends Component {
         return (
             <div>
                 <Typography variant="h5" gutterBottom className="title"> Volunteer Sign-Up! </Typography>
-                <p className="center-horizontal" style={{ marginTop: '16px' }}><strong>Looking to get more involved with the IEEE uOttawa Student Branch?</strong></p>
-                <p className="center-horizontal" style={{ marginTop: '1x' }}><strong>Sign-Up below to be a volunteer to one of the many events we hold throughout the school year!</strong></p>
+                <Typography className="center-horizontal" variant="body1" style={{ marginTop: '16px' }}>
+                    <strong>Looking to get more involved with the IEEE uOttawa Student Branch?</strong>
+                </Typography>
+                <Typography className="center-horizontal" variant="body1"  style={{ marginTop: '1x', marginBottom:'15px' }}>
+                    <strong>Sign-Up below to be a volunteer to one of the many events we hold throughout the school year!</strong>
+                </Typography>
                 {!isLoading && <Form inputs={inputs} style={FormStyle} onSubmit={values => this.onSubmit(values)} />}
                 {isLoading && <CircularProgress />}
                 <Snackbar

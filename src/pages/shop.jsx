@@ -8,6 +8,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import dayjs from 'dayjs';
 
 import { ProductCard } from '../components/cards';
+import Title from '../components/title';
 import Link from '../components/link';
 
 import '../components/product-card.scss';
@@ -102,7 +103,7 @@ class Shop extends Component {
             marginRight: '16px',
           }}
           >
-            <Typography variant="h5" gutterBottom className="title">Shop</Typography>
+            <Title variant="h5" gutterBottom className="title">Shop</Title>
             <GridList style={{ justifyContent: 'space-evenly' }}>
               {edges
                 .filter(({ node: { expiry } }) => !expiry || (expiry && dayjs(new Date())
