@@ -12,6 +12,10 @@ import { CloseIcon, MenuIcon } from './icons';
 import { MaterialMenu } from './material-components';
 import Link from './link';
 
+import Toggle from './Toggle';
+import sun from '../../static/images/darkmode/sun.png';
+import moon from '../../static/images/darkmode/moon.png';
+
 const light = 'light';
 const dark = 'dark';
 
@@ -112,7 +116,32 @@ class Header extends Component {
                     return navItem;
                   })}
                 </div>
-                <Button onClick={this.handleMenuTheme}>{this.state.theme} Mode</Button>
+
+                <Toggle
+                  icons={{
+                    checked: (
+                      <img
+                        src={moon}
+                        width="16"
+                        height="16"
+                        role="presentation"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                    ),
+                    unchecked: (
+                      <img
+                        src={sun}
+                        width="16"
+                        height="16"
+                        role="presentation"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                    ),
+                  }}
+                  checked={this.state.theme === 'dark'}
+                  onClick={this.handleMenuTheme}
+                />
+
               </Hidden>
               <Hidden mdUp>
                 <div>
