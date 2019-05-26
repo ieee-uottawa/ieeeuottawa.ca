@@ -17,10 +17,14 @@ let theme = createMuiTheme({
   },
 });
 
-function getCurrentTheme(){
-  var someVarName = localStorage.getItem("themeKey");
-  if(someVarName) return someVarName;
-  return 'light';
+const isServerSideRendering = () => typeof window === 'undefined';
+
+function getCurrentTheme() { 
+  if (!isServerSideRendering) { 
+    var someVarName = localStorage.getItem("themeKey"); 
+    if (someVarName) return someVarName; 
+  } 
+  return 'light'; 
 }
 
 function createPageContext() {
