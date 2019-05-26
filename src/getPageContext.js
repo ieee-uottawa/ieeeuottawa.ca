@@ -1,10 +1,11 @@
 import { SheetsRegistry } from 'jss';
 import { createGenerateClassName, createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
+import { isServerSideRendering } from './util';
 
 // A theme with custom primary and secondary color.
 // It's optional.
-let theme = createMuiTheme({
+const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#FFFFFF',
@@ -17,10 +18,8 @@ let theme = createMuiTheme({
   },
 });
 
-const isServerSideRendering = () => typeof window === 'undefined';
-
 function getCurrentTheme() { 
-  if (!isServerSideRendering) { 
+  if (!isServerSideRendering()) { 
     var someVarName = localStorage.getItem("themeKey"); 
     if (someVarName) return someVarName; 
   } 
