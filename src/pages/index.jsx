@@ -10,6 +10,7 @@ import BackgroundImage from 'gatsby-background-image';
 
 import Event from '../components/event';
 import Link from '../components/link';
+import Title from '../components/title';
 import ParallaxItem from '../components/parallax';
 import ServiceItem from '../components/service-item';
 import mailingListImg from '../../static/images/compsci-1.jpg';
@@ -113,10 +114,11 @@ const IndexPage = ({ width }) => {
                 ))
               }
             </Carousel>
-
-            <Typography variant="h5" className="title" style={{ margin: '32px 0 16px' }}>
-              Why come to our office?
-            </Typography>
+            <div style={{ margin: '32px 0px 16px' }}>
+              <Title variant="h5" className="title">
+                Why come to our office?
+              </Title>
+            </div>
             <Typography variant="subtitle1" className="center-horizontal">
               Check out all the services we offer in our office!
             </Typography>
