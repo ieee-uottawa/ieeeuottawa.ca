@@ -9,11 +9,11 @@ import BackgroundImage from 'gatsby-background-image';
 
 import Event from '../components/event';
 import Link from '../components/link';
+import Title from '../components/title';
 import ParallaxItem from '../components/parallax';
 import ServiceItem from '../components/service-item';
 import { IEEEButton } from '../components/buttons';
 import { ChevronLeftIcon, ChevronRightIcon, FlaskIcon, LeadPencilIcon, LightBulbIcon } from '../components/icons';
-import Title from '../components/title';
 
 import './index.scss';
 import mailingListImg from '../../static/images/compsci-1.jpg';
