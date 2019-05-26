@@ -24,7 +24,7 @@ const Event = props => (
     </Typography>
     <br />
     <IEEEButton variant="outlined" color="secondary" component={Link} to={props.url} eventLabel={`Clicked ${props.name}`}>
-      <span id="btn-text">Read more</span>
+      <Typography variant="button">Read more</Typography>
     </IEEEButton>
   </GridListTile>
 );

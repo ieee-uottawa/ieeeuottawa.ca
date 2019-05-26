@@ -11,7 +11,7 @@
     "gatsby-background-image": "^0.2.4",
     "gatsby-image": "^2.0.0-rc.4",
     "gatsby-node-helpers": "^0.3.0",
-    "gatsby-plugin-favicon": "^3.1.6",
+    "gatsby-plugin-dark-mode": "^1.1.0",
     "gatsby-plugin-layout": "^1.0.1",
     "gatsby-plugin-postcss": "^2.0.0-rc.5",
     "gatsby-plugin-react-helmet": "^3.0.0-rc.1",

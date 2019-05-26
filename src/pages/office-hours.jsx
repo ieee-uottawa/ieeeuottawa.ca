@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 
 import { isServerSideRendering } from '../util';
+import Title from '../components/title';
 
 class OfficeHours extends Component {
   constructor(props) {
@@ -37,11 +38,11 @@ class OfficeHours extends Component {
 
     return (
       <div>
-        <Typography variant="h5" gutterBottom className="title">Office Hours </Typography>
-        <p style={pStyle}> No office hours for summer semester,contact
-          <a href={"mailto:" + "chair@ieeeuottawa.ca"}> chair@ieeeuottawa.ca </a>
+        <Title variant="h5" gutterBottom className="title">Office Hours </Title>
+        <Typography className="center-horizontal" variant="body1" style={pStyle}> No office hours for summer semester,contact
+          <a href={"mailto:" + "chair@ieeeuottawa.ca"} style={{color: '#3498db'}}> chair@ieeeuottawa.ca </a>
           if you need access to Office
-          </p>
+          </Typography>
         {/* <img
           src="https://scontent.fxds1-1.fna.fbcdn.net/v/t1.15752-9/53435263_1497679790363311_4304661672842231808_n.png?_nc_cat=103&_nc_ht=scontent.fxds1-1.fna&oh=1c24b5a22e17e7d48143537dd3792920&oe=5CDE6ED1"
           alt="IEEE Office Hours Winter 2019"

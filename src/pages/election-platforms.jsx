@@ -3,6 +3,7 @@ import { graphql, StaticQuery } from 'gatsby';
 
 import CandidateCard from '../components/candidate-card';
 import { Typography } from '@material-ui/core';
+import Title from '../components/title';
 
 const positions = ['Chair', 'Vice_Chair', 'Treasurer', 'VP_Social', 'VP_Internal', 'VP_Communications', 'VP_Academic', 'VP_External', 'WIE_Chair', 'WIE_Vice_Chair', 'Webmaster', 'Secretary', 'McNaughton_Centre_Director']
 
@@ -88,14 +89,17 @@ const ElectionPlatforms = () => (
             `
         }
         render={({ dataJson }) => (
-            Object.entries(dataJson)
-                .sort(([position1,], [position2,]) => positions.indexOf(position1) > positions.indexOf(position2) ? 1 : -1)
-                .map(([position, candidates]) => (
-                    <div>
-                        <Typography variant="h5" gutterBottom style={{ margin: '8px' }}>{position.replace(/_/g, ' ')}</Typography>
-                        {candidates.map(({ name, platform }) => <CandidateCard name={name} platform={platform} />)}
-                    </div>
-                ))
+            <div>
+                <Title variant="h5" gutterBottom className="title">Election Platforms</Title>
+                {Object.entries(dataJson)
+                    .sort(([position1,], [position2,]) => positions.indexOf(position1) > positions.indexOf(position2) ? 1 : -1)
+                    .map(([position, candidates]) => (
+                        <div>
+                            <Typography variant="h5" gutterBottom style={{ margin: '8px' }}>{position.replace(/_/g, ' ')}</Typography>
+                            {candidates.map(({ name, platform }) => <CandidateCard name={name} platform={platform} />)}
+                        </div>
+                    ))}
+            </div>
         )}
     />
 );

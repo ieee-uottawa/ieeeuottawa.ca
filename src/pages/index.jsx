@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import GridList from '@material-ui/core/GridList';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -10,13 +9,14 @@ import BackgroundImage from 'gatsby-background-image';
 
 import Event from '../components/event';
 import Link from '../components/link';
+import Title from '../components/title';
 import ParallaxItem from '../components/parallax';
 import ServiceItem from '../components/service-item';
-import mailingListImg from '../../static/images/compsci-1.jpg';
 import { IEEEButton } from '../components/buttons';
 import { ChevronLeftIcon, ChevronRightIcon, FlaskIcon, LeadPencilIcon, LightBulbIcon } from '../components/icons';
 
 import './index.scss';
+import mailingListImg from '../../static/images/compsci-1.jpg';
 
 const IndexPage = ({ width }) => {
   let gridStyle = { margin: '0 25%' };
@@ -114,9 +114,7 @@ const IndexPage = ({ width }) => {
               }
             </Carousel>
 
-            <Typography variant="h5" className="title" style={{ margin: '32px 0 16px' }}>
-              Why come to our office?
-            </Typography>
+            <Title style={{ margin: '32px 0 16px' }}>Why come to our office?</Title>
             <Typography variant="subtitle1" className="center-horizontal">
               Check out all the services we offer in our office!
             </Typography>
@@ -143,9 +141,7 @@ const IndexPage = ({ width }) => {
                 />
               </Grid>
             </Grid>
-            <Typography variant="h5" className="title" style={{ margin: '32px 0 16px' }}>
-              Latest Events
-            </Typography>
+            <Title style={{ margin: '32px 0 16px' }}>Latest Events</Title>
             <GridList id="event-grid" cols={2}>
               {eventEdges.map(({ node: { id, image: { childImageSharp: { fixed: image } }, name, description, url } }) => (
                 <Event
