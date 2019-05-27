@@ -138,6 +138,30 @@ class Header extends Component {
                     />
                   )}
                 </div>
+                <Toggle
+                  icons={{
+                    checked: (
+                      <img
+                        src={moon}
+                        width="16"
+                        height="16"
+                        role="presentation"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                    ),
+                    unchecked: (
+                      <img
+                        src={sun}
+                        width="16"
+                        height="16"
+                        role="presentation"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                    ),
+                  }}
+                  checked={this.props.theme === 'dark'}
+                  onClick={this.handleMenuTheme}
+                />
               </Hidden>
             </Toolbar>
           </AppBar>
