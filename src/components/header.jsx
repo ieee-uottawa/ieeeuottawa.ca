@@ -125,20 +125,7 @@ class Header extends Component {
                 />
               </Hidden>
               <Hidden mdUp>
-                <div>
-                  <IconButton onClick={this.handleMenuClick}>
-                    {isOpen ? <CloseIcon /> : <MenuIcon />}
-                  </IconButton>
-                  {isOpen && (
-                    <MaterialMenu
-                      anchorEl={anchorEl}
-                      items={edges.map(({ node: { title, link, items } }) => ({ title, link, items }))}
-                      isOpen={isOpen}
-                      onClose={this.handleMenuClose}
-                    />
-                  )}
-                </div>
-                <Toggle
+              <Toggle
                   icons={{
                     checked: (
                       <img
@@ -162,6 +149,19 @@ class Header extends Component {
                   checked={this.props.theme === 'dark'}
                   onClick={this.handleMenuTheme}
                 />
+                <div>
+                  <IconButton onClick={this.handleMenuClick}>
+                    {isOpen ? <CloseIcon /> : <MenuIcon />}
+                  </IconButton>
+                  {isOpen && (
+                    <MaterialMenu
+                      anchorEl={anchorEl}
+                      items={edges.map(({ node: { title, link, items } }) => ({ title, link, items }))}
+                      isOpen={isOpen}
+                      onClose={this.handleMenuClose}
+                    />
+                  )}
+                </div>
               </Hidden>
             </Toolbar>
           </AppBar>
