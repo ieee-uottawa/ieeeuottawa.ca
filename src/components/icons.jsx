@@ -55,7 +55,7 @@ function CloseIcon(props) {
 
 function Icon({ path, ...other }) {
   return (
-    <SvgIcon {...other}>
+    <SvgIcon color={"primary"} {...other}>
       <path d={path} {...other} />
     </SvgIcon>
   );
