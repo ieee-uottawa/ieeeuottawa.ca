@@ -14,6 +14,7 @@ import { isDevEnvironment, isServerSideRendering } from '../util';
 
 import './index.scss';
 import logo from '../../static/images/uottawa_branch_logo-1.png';
+import favicon from '../../static/images/ieee_logo_circle.png';
 
 // favicons
 import appleTouchIcon from '../../static/favicon/apple-touch-icon.png';
@@ -54,7 +55,9 @@ const Layout = ({ children, theme = 'light', toggleTheme }) => (
       flexDirection: 'column',
     }}
     >
-      <Helmet title="IEEE uOttawa Student Branch">
+      <Helmet title="IEEE uOttawa Student Branch"
+        link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
+      >
         <meta property="og:image" content={`https://ieeeuottawa.ca${logo}`} />
         <meta property="og:title" content="IEEE uOttawa Student Branch" />
         <meta
