@@ -77,7 +77,7 @@ class NavDropDown extends Component {
           {children}
           {icon}
         </DropdownComponent>
-        <MaterialMenu anchorEl={anchorEl} isOpen={isOpen} onClose={this.handleClose} items={items} />
+        <MaterialMenu anchorEl={anchorEl} isOpen={isOpen} style={{marginTop:'40px'}} onClose={this.handleClose} items={items} />
       </span>
     );
   }
