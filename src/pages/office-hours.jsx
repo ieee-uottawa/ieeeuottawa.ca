@@ -36,7 +36,8 @@ class OfficeHours extends Component {
       margin: width > 712 ? '0 auto 16px' : '0 16px 16px',
     };
     const pStyle = {
-      textAlign: 'center'
+      textAlign: 'center',
+      marginBottom:'15px',
     };
 
     const imageStyle = {
