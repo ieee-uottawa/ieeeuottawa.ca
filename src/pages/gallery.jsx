@@ -25,14 +25,12 @@ const Gallery = () => (
         }
       `
     }
-    render={({ allGalleryJson: { nodes }}) => (
+    render={({ allGalleryJson: { nodes } }) => (
       <div className="center-horizontal">
         <Title variant="h5" gutterBottom className="title">Gallery</Title>
 
         {/* <Typography variant="h6" gutterBottom className="center-horizontal">Our Execs</Typography> */}
-        <GridList cols={5} 
-        style={{ margin: '0 5.0% 0' }}
-        >
+        <GridList cols={5} style={{ margin: '0 5.0% 0' }}>
           {nodes.map(({ image }) => <GalleryCard image={image} />)}
         </GridList>
       </div>
