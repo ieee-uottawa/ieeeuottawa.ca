@@ -13,8 +13,6 @@ const Gallery = () => (
         query {
           allGalleryJson {
             nodes {
-              name
-              position
               image {
                 childImageSharp {
                   fixed(width: 166, height: 166) {
