@@ -5,16 +5,16 @@ import { withStyles } from '@material-ui/core/styles';
 
 import './service-item.scss';
 
-const ServiceItem = (props, style) => (
+const ServiceItem = ({ icon, title, body, classes }) => (
   <span className="services-item">
-    <span className="icon-container" styles={style}>
-      {props.icon}
+    <span className={classes.iconContainer}>
+      {icon}
     </span>
     <Typography variant="h6" className="services-item-title">
-      {props.title}
+      {title}
     </Typography>
     <Typography variant="subtitle1" className="services-item-body">
-      {props.body}
+      {body}
     </Typography>
   </span>
 );
@@ -26,11 +26,13 @@ ServiceItem.propTypes = {
 };
 
 const styles = theme => ({
-  //root: {
-      border: `2px solid ${theme.palette.text.primary}`,
-  //},
+  iconContainer: {
+    width: '100px',
+    height: '100px',
+    border: `2px solid ${theme.palette.text.primary}`,
+    borderRadius: '50%',
+    display: 'inline-block',
+  },
 });
 
 export default withStyles(styles)(ServiceItem);
-
-//export default ServiceItem;
