@@ -55,6 +55,33 @@ ExecCard.propTypes = {
   position: PropTypes.string.isRequired,
 };
 
+
+const GalleryCard = (props) => {
+  const imageStyle = {
+    margin: '16px auto 0',
+    borderRadius: '25%',
+    width: '166px',
+    maxWidth: '100%',
+    height: '166px',
+    display: 'block',
+    webkitBorderRadius: '25%',
+    webkitBoxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
+    boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
+  };
+  const imageComponent = props.image ?
+    <CardMedia component={Img} fixed={props.image.childImageSharp.fixed} title={props.name} style={imageStyle} /> :
+    <CardMedia component="img" height="166" image={`http://identicon.org/?t=${props.name}&s=166`} title={props.name} style={imageStyle} />;
+
+  return (<CardContent> {imageComponent}</CardContent>);
+};
+
+GalleryCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  image: PropTypes.object,
+  position: PropTypes.string.isRequired,
+};
+
 class ProductCard extends Component {
   constructor(props) {
     super(props);
@@ -132,7 +159,7 @@ class ProductCard extends Component {
           <Typography component="p" className="center-horizontal">{showPricing(price)}</Typography>
           {expiry && <Typography component="p" variant="caption" className="center-horizontal">
             LIMITED TIME! Get your {name} before {dayjs(expiry)
-            .format('MMMM D')}!
+              .format('MMMM D')}!
           </Typography>}
           {
             options && Object.keys(options)
@@ -200,5 +227,5 @@ ProductCard.contextTypes = {
 
 const productCard = connect()(ProductCard);
 
-export { ExecCard, productCard as ProductCard };
+export { ExecCard, GalleryCard, productCard as ProductCard };
 

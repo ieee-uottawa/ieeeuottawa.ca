@@ -4,6 +4,9 @@ import Typography from '@material-ui/core/Typography';
 import { isServerSideRendering } from '../util';
 import Title from '../components/title';
 
+import siteImg from '../../static/images/office-hours/site.jpg';
+import execsImg from '../../static/images/office-hours/execs.jpg';
+
 class OfficeHours extends Component {
   constructor(props) {
     super(props);
@@ -33,22 +36,42 @@ class OfficeHours extends Component {
       margin: width > 712 ? '0 auto 16px' : '0 16px 16px',
     };
     const pStyle = {
-      textAlign: 'center'
+      textAlign: 'center',
+      marginBottom:'15px',
+    };
+
+    const imageStyle = {
+      margin: '16px auto 0',
+      borderRadius: '20%',
+      width: '296px',
+      maxWidth: '100%',
+      height: '296px',
+      display: 'block',
+      webkitBorderRadius: '20%',
+      webkitBoxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
+      boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
+      maxWidth: width > 712 ? '100%' : 'calc(100% - 32px)',
+      margin: width > 712 ? '0 auto 16px' : '0 16px 16px',
+      marginTop:'25px',
+      marginBottom:'55px',
     };
 
     return (
       <div>
+
         <Title variant="h5" gutterBottom className="title">Office Hours </Title>
+        
         <Typography className="center-horizontal" variant="body1" style={pStyle}> No office hours for summer semester,contact
-          <a href={"mailto:" + "chair@ieeeuottawa.ca"} style={{color: '#3498db'}}> chair@ieeeuottawa.ca </a>
+          <a href={"mailto:" + "chair@ieeeuottawa.ca"} style={{ color: '#3498db' }}> chair@ieeeuottawa.ca </a>
           if you need access to Office
-          </Typography>
+        </Typography>
+        <img src={siteImg} style={imageStyle} />
+
         {/* <img
           src="https://scontent.fxds1-1.fna.fbcdn.net/v/t1.15752-9/53435263_1497679790363311_4304661672842231808_n.png?_nc_cat=103&_nc_ht=scontent.fxds1-1.fna&oh=1c24b5a22e17e7d48143537dd3792920&oe=5CDE6ED1"
           alt="IEEE Office Hours Winter 2019"
           style={imgStyle}
         /> */}
-
       </div>
     );
   }

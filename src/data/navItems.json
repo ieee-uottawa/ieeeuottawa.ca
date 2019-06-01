@@ -25,6 +25,10 @@
     "link": "/events"
   },
   {
+    "title": "Gallery",
+    "link": "/gallery"
+  },
+  {
     "title": "Volunteer"
   },
   {
@@ -52,10 +56,6 @@
         "title": "IEEE Code of Conduct"
       },
       {
-        "title": "Services - McNaughton Centre",
-        "link": "/mcnaughton-centre"
-      },
-      {
         "title": "Photos"
       }
     ]
@@ -69,6 +69,10 @@
       },
       {
         "title": "Cart"
+      },
+      {
+        "title": "McNaughton Centre Services",
+        "link": "/mcnaughton-centre"
       }
     ]
   }
