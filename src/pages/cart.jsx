@@ -94,10 +94,18 @@ class Cart extends Component {
                 <Hidden xsDown>
                   <Grid container direction="row">
                     <Grid sm={3} />
-                    <Grid sm={3}>Product</Grid>
-                    <Grid sm={2}>Price</Grid>
-                    <Grid sm={1}>Qty</Grid>
-                    <Grid sm={2}>Total</Grid>
+                    <Grid sm={3}>
+                      <Typography>Product</Typography>
+                    </Grid>
+                    <Grid sm={2}>
+                      <Typography>Price</Typography>
+                    </Grid>
+                    <Grid sm={1}>
+                      <Typography>Qty</Typography>
+                    </Grid>
+                    <Grid sm={2}>
+                      <Typography>Total</Typography>
+                    </Grid>
                     <Grid sm={1} />
                   </Grid>
                 </Hidden>
@@ -138,8 +146,8 @@ class Cart extends Component {
                 <Typography className="center-horizontal" variant="h4" style={{ margin: '0 16px' }}>
                   {moneyFormatter.format(total)}
                 </Typography>
-                {total > 0 &&
-                <PaypalButton env={isDevEnvironment ? 'sandbox' : 'production'} cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
+                {total > 0
+                && <PaypalButton env={isDevEnvironment ? 'sandbox' : 'production'} cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
               </Grid>
             </Grid>
           )
