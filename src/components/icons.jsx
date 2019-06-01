@@ -1,5 +1,6 @@
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import { withStyles } from '@material-ui/core/styles';
 
 function FlaskIcon(props) {
   return (
@@ -53,12 +54,20 @@ function CloseIcon(props) {
   return <Icon {...props} path="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />;
 }
 
-function Icon({ path, ...other }) {
+function icon({ path, className, classes, ...other }) {
   return (
-    <SvgIcon {...other}>
+    <SvgIcon className={[className, classes.icon]} {...other}>
       <path d={path} {...other} />
     </SvgIcon>
   );
 }
+
+const iconStyles = theme => ({
+  icon: {
+    color: theme.palette.text.primary,
+  },
+});
+
+const Icon = withStyles(iconStyles)(icon);
 
 export { FlaskIcon, LeadPencilIcon, LightBulbIcon, ChevronDownIcon, ChevronUpIcon, ChevronLeftIcon, ChevronRightIcon, MenuIcon, CloseIcon };
