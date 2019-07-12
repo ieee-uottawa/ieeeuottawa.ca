@@ -15,6 +15,7 @@ const Execs_2019_2020 = () => (
             nodes {
               name
               position
+              email
               image {
                 childImageSharp {
                   fixed(width: 166, height: 166) {
@@ -43,7 +44,7 @@ const Execs_2019_2020 = () => (
       `
     }
     render={({ allExecs20192020Json: { nodes }, allComs20192020Json: { edges } }) => (
-      <div className="center-horizontal">
+      <div>
         <Title variant="h5" gutterBottom className="title">About Us</Title>
         <div style={{ margin: '0 5% 0' }}>
           <Typography variant="body1" className="p-margins">
@@ -63,7 +64,7 @@ const Execs_2019_2020 = () => (
 
         <Typography variant="h6" gutterBottom className="center-horizontal">Our Execs</Typography>
         <GridList cols={5} style={{ margin: '0 5% 0' }}>
-          {nodes.map(({ name, position, image }) => <ExecCard name={name} position={position} image={image} />)}
+          {nodes.map(({ name, position, image, email }) => <ExecCard name={name} email={email} position={position} image={image} />)}
         </GridList>
         <Typography variant="h6" gutterBottom className="center-horizontal">Our Commissioners</Typography>
         <GridList cols={5} style={{ margin: '0 5% 0' }}>

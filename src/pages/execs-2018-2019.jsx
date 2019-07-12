@@ -16,6 +16,7 @@ const Execs_2018_2019= () => (
               node {
                 name
                 position
+                email
                 image {
                   childImageSharp {
                     fixed(width: 166, height: 166) {
@@ -30,7 +31,7 @@ const Execs_2018_2019= () => (
       `
     }
     render={({ allExecs20182019Json: { edges } }) => (
-      <div className="center-horizontal">
+      <div>
         <Title variant="h5" gutterBottom className="title">About Us</Title>
         <div style={{ margin: '0 5% 0' }}>
           <Typography variant="body1" className="p-margins">
@@ -50,7 +51,7 @@ const Execs_2018_2019= () => (
 
         <Typography variant="h6" gutterBottom className="center-horizontal">Our Execs</Typography>
         <GridList cols={5} style={{ margin: '0 5% 0' }}>
-          {edges.map(({ node: { name, position, image } }) => <ExecCard name={name} position={position} image={image} />)}
+          {edges.map(({ node: { name, position, image, email } }) => <ExecCard name={name} email={email} position={position} image={image} />)}
         </GridList>
       </div>
     )}

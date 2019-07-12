@@ -4,6 +4,8 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import IconButton from '@material-ui/core/IconButton';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -16,6 +18,13 @@ import { addItemToCart } from '../redux/actions/cart_actions';
 import { showPricing, capitalize } from '../util';
 
 import './exec-card.scss';
+
+const AdapterLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
+
+const CollisionLink = React.forwardRef((props, ref) => (
+  <RouterLink innerRef={ref} to="mailto:"{...props} />
+));
+
 
 const ExecCard = (props) => {
   const imageStyle = {
@@ -33,7 +42,17 @@ const ExecCard = (props) => {
     <CardMedia component={Img} fixed={props.image.childImageSharp.fixed} title={props.name} style={imageStyle} /> :
     <CardMedia component="img" height="166" image={`http://identicon.org/?t=${props.name}&s=166`} title={props.name} style={imageStyle} />;
 
+  const openEmail = (email) =>
+    <div className="center-horizontal">
+      <FormControlLabel
+        control={<a target="_top" rel="noopener noreferrer" href={"mailto:" + email}>
+          <IconButton color="primary"></IconButton></a>}
+        label={email} labelPlacement="end"
+      />
+    </div>
+
   return (
+
     <Card style={{
       margin: '16px 16px',
       width: '280px',
@@ -43,6 +62,7 @@ const ExecCard = (props) => {
       <CardContent>
         <Typography gutterBottom variant="h5" className="center-horizontal">{props.name}</Typography>
         <Typography component="p" className="center-horizontal">{props.position}</Typography>
+        {props.email && openEmail(props.email)}
       </CardContent>
     </Card>
   );
@@ -53,6 +73,7 @@ ExecCard.propTypes = {
   // eslint-disable-next-line react/require-default-props
   image: PropTypes.object,
   position: PropTypes.string.isRequired,
+  email: PropTypes.object
 };
 
 
