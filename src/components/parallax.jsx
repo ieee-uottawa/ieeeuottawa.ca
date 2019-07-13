@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
-
+import { Typography } from '@material-ui/core';
 import { IEEEButton } from './buttons';
 import Link from './link';
 

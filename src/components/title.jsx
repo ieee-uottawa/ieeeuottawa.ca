@@ -1,6 +1,5 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import { Typography, withStyles } from '@material-ui/core/';
 
 const Title = ({ children, classes, style }) => (
   <Typography variant="h5" gutterBottom className={`title ${classes.root}`} style={style}>

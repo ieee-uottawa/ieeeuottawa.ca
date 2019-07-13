@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GridListTile from '@material-ui/core/GridListTile';
-import Typography from '@material-ui/core/Typography';
+import { Typography, GridListTile } from '@material-ui/core';
 import Img from 'gatsby-image';
 
 import { IEEEButton } from './buttons';

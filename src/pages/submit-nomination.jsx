@@ -67,7 +67,7 @@ class SubmitNomination extends Component {
                     .send(values);
                 if (res.ok) {
                     this.sendSnackbarMsg('submitted', 'Submitted nomination!');
-                    setTimeout(() => this.sendSnackbarMsg('submitted', "Don't forget to email chair@ieeeuottawa.ca with your 200-500 word platform in English and French!"), 1000);           
+                    setTimeout(() => this.sendSnackbarMsg('submitted', "Don't forget to email chair@ieeeuottawa.ca with your 200-500 word platform in English and French!"), 1000);
                 } else {
                     this.sendSnackbarMsg('error', 'Failed to submit nomination, try again in a few minutes');
                 }

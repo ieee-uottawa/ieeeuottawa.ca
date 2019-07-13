@@ -1,7 +1,5 @@
 import React from 'react';
-import GridList from '@material-ui/core/GridList';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+import { Grid, GridList, Typography } from '@material-ui/core';
 import withWidth, { isWidthDown, isWidthUp } from '@material-ui/core/withWidth';
 import { graphql, StaticQuery } from 'gatsby';
 import Carousel from 'nuka-carousel';

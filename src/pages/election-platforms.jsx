@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
-
-import CandidateCard from '../components/candidate-card';
 import { Typography } from '@material-ui/core';
+import CandidateCard from '../components/candidate-card';
 import Title from '../components/title';
 
-const positions = ['Chair', 'Vice_Chair', 'Treasurer', 'VP_Social', 'VP_Internal', 'VP_Communications', 'VP_Academic', 'VP_External', 'WIE_Chair', 'WIE_Vice_Chair', 'Webmaster', 'Secretary', 'McNaughton_Centre_Director']
+const positions = ['Chair', 'Vice_Chair', 'Treasurer', 'VP_Social', 'VP_Internal', 'VP_Communications', 'VP_Academic', 'VP_External', 'WIE_Chair', 'WIE_Vice_Chair', 'Webmaster', 'Secretary', 'McNaughton_Centre_Director'];
 
 const ElectionPlatforms = () => (
     <StaticQuery

@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
+import { AppBar, Toolbar, Button, Hidden, IconButton } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
 
 import { NavButton, NavDropDown } from './buttons';
@@ -23,7 +19,6 @@ class Header extends Component {
       isOpen: false,
       anchorEl: null,
     };
-
     this.handleMenuClick = this.handleMenuClick.bind(this);
     this.handleMenuClose = this.handleMenuClose.bind(this);
     this.handleMenuTheme = this.handleMenuTheme.bind(this);
@@ -101,50 +96,18 @@ class Header extends Component {
                 </div>
                 <Toggle
                   icons={{
-                    checked: (
-                      <img
-                        src={moon}
-                        width="16"
-                        height="16"
-                        role="presentation"
-                        style={{ pointerEvents: 'none' }}
-                      />
-                    ),
-                    unchecked: (
-                      <img
-                        src={sun}
-                        width="16"
-                        height="16"
-                        role="presentation"
-                        style={{ pointerEvents: 'none' }}
-                      />
-                    ),
+                    checked: (<img src={moon} width="16" height="16" role="presentation" style={{ pointerEvents: 'none' }} />),
+                    unchecked: (<img src={sun} width="16" height="16" role="presentation" style={{ pointerEvents: 'none' }} />),
                   }}
                   checked={this.props.theme === 'dark'}
                   onClick={this.handleMenuTheme}
                 />
               </Hidden>
               <Hidden mdUp>
-              <Toggle
+                <Toggle
                   icons={{
-                    checked: (
-                      <img
-                        src={moon}
-                        width="16"
-                        height="16"
-                        role="presentation"
-                        style={{ pointerEvents: 'none' }}
-                      />
-                    ),
-                    unchecked: (
-                      <img
-                        src={sun}
-                        width="16"
-                        height="16"
-                        role="presentation"
-                        style={{ pointerEvents: 'none' }}
-                      />
-                    ),
+                    checked: (<img src={moon} width="16" height="16" role="presentation" style={{ pointerEvents: 'none' }} />),
+                    unchecked: (<img src={sun} width="16" height="16" role="presentation" style={{ pointerEvents: 'none' }} />),
                   }}
                   checked={this.props.theme === 'dark'}
                   onClick={this.handleMenuTheme}
