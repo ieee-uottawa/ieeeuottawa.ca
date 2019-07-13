@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Snackbar from '@material-ui/core/Snackbar';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Typography from '@material-ui/core/Typography';
+import { Snackbar, CircularProgress, Typography } from '@material-ui/core';
 
 import Form from '../components/form';
 import Title from '../components/title';
 import { isServerSideRendering } from '../util';
-
 
 const FormStyle = {
   width: '200px',
@@ -26,7 +23,6 @@ class Volunteer extends Component {
         message: '',
       },
     };
-
     this.onSubmit = this.onSubmit.bind(this);
     this.sendSnackbarMsg = this.sendSnackbarMsg.bind(this);
     this.processQueue = this.processQueue.bind(this);
@@ -35,10 +31,7 @@ class Volunteer extends Component {
   }
 
   sendSnackbarMsg(key, message, processQueue = true) {
-    this.messageQueue.push({
-      key,
-      message,
-    });
+    this.messageQueue.push({ key, message, });
     if (processQueue) this.processQueue();
   }
 

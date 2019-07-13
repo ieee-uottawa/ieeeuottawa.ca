@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import Hidden from '@material-ui/core/Hidden';
-import Button from '@material-ui/core/Button';
+import { Grid, IconButton, Typography, Hidden, Button } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 
 import { CloseIcon } from './icons';

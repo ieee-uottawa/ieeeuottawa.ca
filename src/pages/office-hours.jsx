@@ -37,7 +37,7 @@ class OfficeHours extends Component {
     };
     const pStyle = {
       textAlign: 'center',
-      marginBottom:'15px',
+      marginBottom: '15px',
     };
 
     const imageStyle = {
@@ -52,15 +52,15 @@ class OfficeHours extends Component {
       boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
       maxWidth: width > 712 ? '100%' : 'calc(100% - 32px)',
       margin: width > 712 ? '0 auto 16px' : '0 16px 16px',
-      marginTop:'25px',
-      marginBottom:'55px',
+      marginTop: '25px',
+      marginBottom: '55px',
     };
 
     return (
       <div>
 
         <Title variant="h5" gutterBottom className="title">Office Hours </Title>
-        
+
         <Typography className="center-horizontal" variant="body1" style={pStyle}> No office hours for summer semester,contact
           <a href={"mailto:" + "chair@ieeeuottawa.ca"} style={{ color: '#3498db' }}> chair@ieeeuottawa.ca </a>
           if you need access to Office

@@ -37,7 +37,7 @@ class Form extends Component {
         for (let input of this.props.inputs) {
             if (!input.isRequired) continue;
 
-            const key = input.key ||input.label.toLowerCase().replace(/ /g, '-');
+            const key = input.key || input.label.toLowerCase().replace(/ /g, '-');
             if (!this.state[key] || this.state[key] === '') {
                 this.setState({ error: 'You haven\'t entered some required information!' });
                 return;

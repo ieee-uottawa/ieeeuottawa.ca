@@ -1,30 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import IconButton from '@material-ui/core/IconButton';
-import CardActions from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+
+import { Card, CardMedia, CardContent, Typography, FormControlLabel, IconButton, CardActions, Button, TextField } from '@material-ui/core';
 import { connect } from 'react-redux';
 import Img from 'gatsby-image';
 import dayjs from 'dayjs';
 
 import { MaterialSelect } from './material-components';
 import { addItemToCart } from '../redux/actions/cart_actions';
-import { showPricing, capitalize } from '../util';
+import { showPricing } from '../util';
 
 import './exec-card.scss';
-
-const AdapterLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
-
-const CollisionLink = React.forwardRef((props, ref) => (
-  <RouterLink innerRef={ref} to="mailto:"{...props} />
-));
-
 
 const ExecCard = (props) => {
   const imageStyle = {

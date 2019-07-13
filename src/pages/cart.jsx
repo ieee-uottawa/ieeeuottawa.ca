@@ -88,69 +88,69 @@ class Cart extends Component {
         <Title style={{ marginBottom: '16px' }}>Cart</Title>
         <Card id={cardID}>
           {cart.length > 0
-          && (
-            <Grid container>
-              <Grid container lg={10} md={9} xs={12} style={{ padding: '16px' }}>
-                <Hidden xsDown>
-                  <Grid container direction="row">
-                    <Grid sm={3} />
-                    <Grid sm={3}>
-                      <Typography>Product</Typography>
+            && (
+              <Grid container>
+                <Grid container lg={10} md={9} xs={12} style={{ padding: '16px' }}>
+                  <Hidden xsDown>
+                    <Grid container direction="row">
+                      <Grid sm={3} />
+                      <Grid sm={3}>
+                        <Typography>Product</Typography>
+                      </Grid>
+                      <Grid sm={2}>
+                        <Typography>Price</Typography>
+                      </Grid>
+                      <Grid sm={1}>
+                        <Typography>Qty</Typography>
+                      </Grid>
+                      <Grid sm={2}>
+                        <Typography>Total</Typography>
+                      </Grid>
+                      <Grid sm={1} />
                     </Grid>
-                    <Grid sm={2}>
-                      <Typography>Price</Typography>
-                    </Grid>
-                    <Grid sm={1}>
-                      <Typography>Qty</Typography>
-                    </Grid>
-                    <Grid sm={2}>
-                      <Typography>Total</Typography>
-                    </Grid>
-                    <Grid sm={1} />
-                  </Grid>
-                </Hidden>
-                {
-                  flattenDeep(
-                    cart
-                      .map(({ id, name, imageURL, price, options, quantity }) => (
-                        <ProductRow
-                          key={`${id}-${Object.values(options)
-                            .join('-')}`}
-                          name={name}
-                          price={price}
-                          quantity={quantity}
-                          imageURL={imageURL}
-                          options={options}
-                          handleDeleteClick={() => this.handleDelete(id, options)}
-                        />
-                      )),
-                  )
-                }
-              </Grid>
-              <Grid
-                item
-                lg={2}
-                md={3}
-                xs={12}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  padding: total > 0 ? '0' : '32px',
-                  background: 'rgba(0, 0, 0, 0.08)',
-                }}
-              >
-                <Typography className="center-horizontal" variant="h6" style={{ margin: '32px 16px 16px' }}>
-                  Cart Total
+                  </Hidden>
+                  {
+                    flattenDeep(
+                      cart
+                        .map(({ id, name, imageURL, price, options, quantity }) => (
+                          <ProductRow
+                            key={`${id}-${Object.values(options)
+                              .join('-')}`}
+                            name={name}
+                            price={price}
+                            quantity={quantity}
+                            imageURL={imageURL}
+                            options={options}
+                            handleDeleteClick={() => this.handleDelete(id, options)}
+                          />
+                        )),
+                    )
+                  }
+                </Grid>
+                <Grid
+                  item
+                  lg={2}
+                  md={3}
+                  xs={12}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: total > 0 ? '0' : '32px',
+                    background: 'rgba(0, 0, 0, 0.08)',
+                  }}
+                >
+                  <Typography className="center-horizontal" variant="h6" style={{ margin: '32px 16px 16px' }}>
+                    Cart Total
                 </Typography>
-                <Typography className="center-horizontal" variant="h4" style={{ margin: '0 16px' }}>
-                  {moneyFormatter.format(total)}
-                </Typography>
-                {total > 0
-                && <PaypalButton env={isDevEnvironment ? 'sandbox' : 'production'} cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
+                  <Typography className="center-horizontal" variant="h4" style={{ margin: '0 16px' }}>
+                    {moneyFormatter.format(total)}
+                  </Typography>
+                  {total > 0
+                    && <PaypalButton env={isDevEnvironment ? 'sandbox' : 'production'} cart={cart} total={total} style={{ margin: '32px 16px 16px' }} />}
+                </Grid>
               </Grid>
-            </Grid>
-          )
+            )
           }
           {cart.length === 0 && (
             <div>

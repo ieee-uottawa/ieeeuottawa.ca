@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-
+import { Card, CardContent, Typography, Button } from '@material-ui/core';
 import './candidate-card.scss';
 
 class CandidateCard extends Component {
     constructor(props) {
         super(props);
-
         this.languages = Object.keys(props.platform);
         this.state = { currentLanguage: 'en', otherLanguage: 'fr' };
-
         this.changeLanguage = this.changeLanguage.bind(this);
     }
 

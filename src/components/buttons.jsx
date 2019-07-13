@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import { Button, withStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
 
 import Link from './link';
@@ -20,10 +19,7 @@ function IEEEButton(props) {
 }
 
 function NavButton({ link, title, component: NavComponent, ...other }) {
-  if (!link) {
-    link = `/${title.toLowerCase()
-      .replace(/ /g, '-')}`;
-  }
+  if (!link) link = `/${title.toLowerCase().replace(/ /g, '-')}`;
   return <NavComponent color="inherit" component={Link} to={link} {...other}>{title}</NavComponent>;
 }
 
@@ -36,12 +32,10 @@ NavButton.propTypes = {
 class NavDropDown extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       isOpen: false,
       anchorEl: null,
     };
-
     this.handleClick = this.handleClick.bind(this);
     this.handleClose = this.handleClose.bind(this);
   }
@@ -77,7 +71,7 @@ class NavDropDown extends Component {
           {children}
           {icon}
         </DropdownComponent>
-        <MaterialMenu anchorEl={anchorEl} isOpen={isOpen} style={{marginTop:'40px'}} onClose={this.handleClose} items={items} />
+        <MaterialMenu anchorEl={anchorEl} isOpen={isOpen} style={{ marginTop: '40px' }} onClose={this.handleClose} items={items} />
       </span>
     );
   }
@@ -105,10 +99,9 @@ class PaypalButton extends Component {
   }
 
   onAuthorize(data, actions) {
-    return actions.payment.execute()
-      .then(() => {
-        this.props.dispatch(clearCart());
-      });
+    return actions.payment.execute().then(() => {
+      this.props.dispatch(clearCart());
+    });
   }
 
   payment(data, actions) {
