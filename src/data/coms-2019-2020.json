@@ -2,26 +2,31 @@
   {
     "name": "Alistair McCarten",
     "position": "Design",
-    "image": "../../static/images/execs-2019-2020/design.jpg"
+    "image": "../../static/images/execs-2019-2020/design.jpg",
+    "email": "design@ieeeuottawa.ca"
   },
   {
     "name": "Ellie Rumsey",
     "position": "WIE Design",
-    "image": "../../static/images/execs-2019-2020/wie-design.jpg"
+    "image": "../../static/images/execs-2019-2020/wie-design.jpg",
+    "email": "wie-design@ieeeuottawa.ca"
   },
   {
     "name": "Erik Cassidy",
     "position": "CEG Commissioner",
-    "image": "../../static/images/execs-2019-2020/ceg-com.jpg"
+    "image": "../../static/images/execs-2019-2020/ceg-com.jpg",
+    "email": "ceg@ieeeuottawa.ca"
   },
   {
     "name": "Alois Clerc",
     "position": "SEG Commissioner",
-    "image": "../../static/images/execs-2019-2020/seg-com.jpg"
+    "image": "../../static/images/execs-2019-2020/seg-com.jpg",
+    "email": "seg@ieeeuottawa.ca"
   },
   {
     "name": "Murad Zurkiyeh",
     "position": "ELG Commissioner",
-    "image": "../../static/images/execs-2019-2020/elg-com.jpg"
+    "image": "../../static/images/execs-2019-2020/elg-com.jpg",
+    "email": "elg@ieeeuottawa.ca"
   }
 ]

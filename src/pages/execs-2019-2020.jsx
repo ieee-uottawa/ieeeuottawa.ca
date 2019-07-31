@@ -28,6 +28,7 @@ const Execs_2019_2020 = () => (
               node{
                 name
                 position
+                email
                 image {
                   childImageSharp {
                     fixed(width: 166, height: 166) {
@@ -67,7 +68,7 @@ const Execs_2019_2020 = () => (
           </GridList>
           <Typography variant="h6" gutterBottom className="center-horizontal">Our Commissioners</Typography>
           <GridList cols={5} style={{ margin: '0 5% 0' }}>
-            {edges.map(({ node: { name, position, image } }) => <ExecCard name={name} position={position} image={image} />)}
+            {edges.map(({ node: { name, position, image, email } }) => <ExecCard name={name} email={email} position={position} image={image} />)}
           </GridList>
         </div>
       )
