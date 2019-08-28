@@ -1,11 +1,11 @@
 import React from 'react';
 import ExternalRedirect from '../components/external-redirect';
 
-import constitutionPDF from '../../static/files/IEEE-Constitution.pdf';
+import constitutionPDF from '../../static/files/IEEE-Constitution-2019-2020.pdf';
 import { Typography } from '@material-ui/core';
 import Title from '../components/title';
 
-// const Constitution = () => <ExternalRedirect forceExternal={true} url={constitutionPDF} urlDescription="our constitution" />;
+const Constitution = () => <ExternalRedirect forceExternal={true} url={constitutionPDF} urlDescription="our constitution" />;
 
 const pStyle = {
     textAlign: 'center',
@@ -28,14 +28,14 @@ const pStyle = {
     marginBottom: '55px',
   };
 
-  import siteImg from '../../static/images/office-hours/site.jpg';
+// import siteImg from '../../static/images/office-hours/site.jpg';
 
-const Constitution = () =>
-    <div>
-        <Title variant="h5" gutterBottom className="title"> Constitution </Title>
-        <Typography className="center-horizontal" variant="body1" style={pStyle}> Contact <a href={"mailto:" + "chair@ieeeuottawa.ca"} style={{ color: '#3498db' }}> chair@ieeeuottawa.ca </a> for most recent copy</Typography>
-        <img src={siteImg} style={imageStyle} />
-    </div>;
+// const Constitution = () =>
+//     <div>
+//         <Title variant="h5" gutterBottom className="title"> Constitution </Title>
+//         <Typography className="center-horizontal" variant="body1" style={pStyle}> Contact <a href={"mailto:" + "chair@ieeeuottawa.ca"} style={{ color: '#3498db' }}> chair@ieeeuottawa.ca </a> for most recent copy</Typography>
+//         <img src={siteImg} style={imageStyle} />
+//     </div>;
 
 export default Constitution;
 
