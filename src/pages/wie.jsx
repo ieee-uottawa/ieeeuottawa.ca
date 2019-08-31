@@ -19,7 +19,7 @@ const imageStyle = {
   // height: '296px',
   height: '596px',
   display: 'block',
-  webkitBorderRadius: '20%',
+  webkitBorderRadius: '3%',
   webkitBoxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
   boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
   // maxWidth: width > 712 ? '100%' : 'calc(100% - 32px)',
