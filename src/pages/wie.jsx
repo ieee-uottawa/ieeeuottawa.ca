@@ -1,5 +1,4 @@
 import React from 'react';
-import ExternalRedirect from '../components/external-redirect';
 
 import flyer from '../../static/files/BELEFlyer.png';
 import { Typography } from '@material-ui/core';
@@ -30,7 +29,7 @@ const imageStyle = {
 
 const WIE = () =>
   <div>
-    <Title variant="h5" gutterBottom className="title"> Women In Engineering (WIE) </Title>
+    <Title variant="h5" gutterBottom className="title"> Big Eng Little Eng </Title>
     <Typography className="center-horizontal" variant="body1" style={pStyle}> Sign Up Now! </Typography>
     <Typography className="center-horizontal" variant="body1" style={pStyle}>
         <a href={"https://forms.gle/iARM4Cx7oq1FBrp18"} style={{ color: '#3498db' }}> Click here </a>
