@@ -82,7 +82,7 @@ class Shop extends Component {
                     expiry
                     image {
                       childImageSharp {
-                        resolutions(width: 382) {
+                        resolutions(width: 276) {
                           ...GatsbyImageSharpResolutions
                         }
                       }
