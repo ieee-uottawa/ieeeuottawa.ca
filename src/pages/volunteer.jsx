@@ -10,7 +10,15 @@ const FormStyle = {
   width: '200px',
 };
 
-class Volunteer extends Component {
+import ExternalRedirect from '../components/external-redirect';
+
+const url = "https://docs.google.com/forms/d/e/1FAIpQLSfIdHz-ORmtsCgjEp2WpOV5ssXaC60nNpFzAY_qeRH4f7uX1w/viewform";
+
+const Volunteer = () => <ExternalRedirect forceExternal={true} url={url} urlDescription="Volunteer form" />;
+
+export default Volunteer;
+
+class Volunteers extends Component {
   constructor(props) {
     super(props);
 
@@ -158,4 +166,4 @@ class Volunteer extends Component {
   }
 }
 
-export default connect()(Volunteer);
+// export default connect()(Volunteer);
