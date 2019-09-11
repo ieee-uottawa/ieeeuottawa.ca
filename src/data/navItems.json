@@ -57,19 +57,7 @@
     ]
   },
   {
-    "title": "Store",
-    "items": [
-      {
-        "title": "Shop",
-        "link": "/shop"
-      },
-      {
-        "title": "Cart"
-      },
-      {
-        "title": "McNaughton Centre Services",
-        "link": "/mcnaughton-centre"
-      }
-    ]
+    "title": "Our Services",
+    "link": "/mcnaughton-centre"
   }
 ]
