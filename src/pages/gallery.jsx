@@ -331,7 +331,7 @@ class Gallery extends Component {
             <ModalGateway>
               {this.state.modalIsOpen ? (
                 <Modal onClose={this.toggleModal}>
-                  <Carousel views={srcArray} />
+                  <Carousel onClick={this.toggleModal} views={srcArray} />
                 </Modal>
               ) : null}
             </ModalGateway>
