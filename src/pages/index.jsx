@@ -11,19 +11,25 @@ import Title from '../components/title';
 import ParallaxItem from '../components/parallax';
 import ServiceItem from '../components/service-item';
 import { IEEEButton } from '../components/buttons';
-import { ChevronLeftIcon, ChevronRightIcon, FlaskIcon, LeadPencilIcon, LightBulbIcon } from '../components/icons';
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  FlaskIcon,
+  LeadPencilIcon,
+  LightBulbIcon
+} from '../components/icons';
 
 import './index.scss';
 import mailingListImg from '../../static/images/compsci-1.jpg';
 
 const IndexPage = ({ width }) => {
   let gridStyle = { margin: '0 25%' };
-  if (isWidthUp('lg', width, true) || isWidthDown('sm', width, false)) gridStyle = {};
+  if (isWidthUp('lg', width, true) || isWidthDown('sm', width, false))
+    gridStyle = {};
 
   return (
     <StaticQuery
-      query={
-        graphql`
+      query={graphql`
         query {
           allCarouselJson {
             edges {
@@ -64,13 +70,15 @@ const IndexPage = ({ width }) => {
             }
           }
         }
-        `
-      }
-      render={({ allEventsJson: { edges: eventEdges }, allCarouselJson: { edges: carouselEdges } }) => {
+      `}
+      render={({
+        allEventsJson: { edges: eventEdges },
+        allCarouselJson: { edges: carouselEdges }
+      }) => {
         const iconStyle = {
           color: 'white',
           height: '48px',
-          width: '48px',
+          width: '48px'
         };
         return (
           <div style={{ marginTop: '-1em' }}>
@@ -82,17 +90,48 @@ const IndexPage = ({ width }) => {
               slidesToScroll={1}
               enableKeyboardControls
               swiping
-              renderCenterLeftControls={({ previousSlide: goToPrevious }) => <ChevronLeftIcon onClick={goToPrevious} style={iconStyle} />}
-              renderCenterRightControls={({ nextSlide: goToNext }) => <ChevronRightIcon onClick={goToNext} style={iconStyle} />}
+              renderCenterLeftControls={({ previousSlide: goToPrevious }) => (
+                <ChevronLeftIcon onClick={goToPrevious} style={iconStyle} />
+              )}
+              renderCenterRightControls={({ nextSlide: goToNext }) => (
+                <ChevronRightIcon onClick={goToNext} style={iconStyle} />
+              )}
             >
-              {
-                carouselEdges.map(({ node: { message, button, imageFile: { image: { childImageSharp: { fluid } }, id: imageID, style: imageStyle } } }) => (
-                  <BackgroundImage className={`bg-image ${imageID}`} fluid={fluid} style={imageStyle}>
+              {carouselEdges.map(
+                ({
+                  node: {
+                    message,
+                    button,
+                    imageFile: {
+                      image: {
+                        childImageSharp: { fluid }
+                      },
+                      id: imageID,
+                      style: imageStyle
+                    }
+                  }
+                }) => (
+                  <BackgroundImage
+                    className={`bg-image ${imageID}`}
+                    fluid={fluid}
+                    style={imageStyle}
+                  >
                     <div id="image-overlay">
                       <div id="text-container" className="center">
                         {message && (
-                          <Typography variant="h3" className="uppercase" id="about-us-image-text">
-                            <Link to={button.url} href={button.url} eventLabel={button.url} className="white-url-txt">{message}</Link>
+                          <Typography
+                            variant="h3"
+                            className="uppercase"
+                            id="about-us-image-text"
+                          >
+                            <Link
+                              to={button.url}
+                              href={button.url}
+                              eventLabel={button.url}
+                              className="white-url-txt"
+                            >
+                              {message}
+                            </Link>
                           </Typography>
                         )}
                         <IEEEButton
@@ -108,11 +147,13 @@ const IndexPage = ({ width }) => {
                       </div>
                     </div>
                   </BackgroundImage>
-                ))
-              }
+                )
+              )}
             </Carousel>
 
-            <Title style={{ margin: '32px 0 16px' }}>Why come to our office?</Title>
+            <Title style={{ margin: '32px 0 16px' }}>
+              Why come to our office?
+            </Title>
             <Typography variant="subtitle1" className="center-horizontal">
               Check out all the services we offer in our office!
             </Typography>
@@ -141,15 +182,27 @@ const IndexPage = ({ width }) => {
             </Grid>
             <Title style={{ margin: '32px 0 16px' }}>Latest Events</Title>
             <GridList id="event-grid" cols={2}>
-              {eventEdges.map(({ node: { id, image: { childImageSharp: { fixed: image } }, name, description, url } }) => (
-                <Event
-                  key={id}
-                  image={image}
-                  name={name}
-                  description={description}
-                  url={url}
-                />
-              ))}
+              {eventEdges.map(
+                ({
+                  node: {
+                    id,
+                    image: {
+                      childImageSharp: { fixed: image }
+                    },
+                    name,
+                    description,
+                    url
+                  }
+                }) => (
+                  <Event
+                    key={id}
+                    image={image}
+                    name={name}
+                    description={description}
+                    url={url}
+                  />
+                )
+              )}
             </GridList>
             <ParallaxItem
               imageURL={mailingListImg}

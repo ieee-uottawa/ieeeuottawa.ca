@@ -7,14 +7,21 @@ import Title from '../components/title';
 import { isServerSideRendering } from '../util';
 
 const FormStyle = {
-  width: '200px',
+  width: '200px'
 };
 
 import ExternalRedirect from '../components/external-redirect';
 
-const url = "https://docs.google.com/forms/d/e/1FAIpQLSfIdHz-ORmtsCgjEp2WpOV5ssXaC60nNpFzAY_qeRH4f7uX1w/viewform";
+const url =
+  'https://docs.google.com/forms/d/e/1FAIpQLSfIdHz-ORmtsCgjEp2WpOV5ssXaC60nNpFzAY_qeRH4f7uX1w/viewform';
 
-const Volunteer = () => <ExternalRedirect forceExternal={true} url={url} urlDescription="Volunteer form" />;
+const Volunteer = () => (
+  <ExternalRedirect
+    forceExternal={true}
+    url={url}
+    urlDescription="Volunteer form"
+  />
+);
 
 export default Volunteer;
 
@@ -28,8 +35,8 @@ class Volunteers extends Component {
       showSnackbar: false,
       messageInfo: {
         key: '',
-        message: '',
-      },
+        message: ''
+      }
     };
     this.onSubmit = this.onSubmit.bind(this);
     this.sendSnackbarMsg = this.sendSnackbarMsg.bind(this);
@@ -39,7 +46,7 @@ class Volunteers extends Component {
   }
 
   sendSnackbarMsg(key, message, processQueue = true) {
-    this.messageQueue.push({ key, message, });
+    this.messageQueue.push({ key, message });
     if (processQueue) this.processQueue();
   }
 
@@ -47,7 +54,7 @@ class Volunteers extends Component {
     if (this.messageQueue.length > 0) {
       this.setState({
         messageInfo: this.messageQueue.shift(),
-        showSnackbar: true,
+        showSnackbar: true
       });
     }
   }
@@ -77,17 +84,31 @@ class Volunteers extends Component {
       const request = require('superagent');
       try {
         console.log(process.env.GATSBY_API_URL);
-        const res = await request.post(`${process.env.GATSBY_API_URL}/volunteer`)
+        const res = await request
+          .post(`${process.env.GATSBY_API_URL}/volunteer`)
           .send(values);
         if (res.ok) {
           this.sendSnackbarMsg('submitted', 'Submitted Volunteer Form!');
-          setTimeout(() => this.sendSnackbarMsg('submitted', 'Don\'t forget to email chair@ieeeuottawa.ca with your 200-500 word platform in English and French!'), 1000);
+          setTimeout(
+            () =>
+              this.sendSnackbarMsg(
+                'submitted',
+                "Don't forget to email chair@ieeeuottawa.ca with your 200-500 word platform in English and French!"
+              ),
+            1000
+          );
         } else {
-          this.sendSnackbarMsg('error', 'Failed to submit volunteer form, try again in a few minutes');
+          this.sendSnackbarMsg(
+            'error',
+            'Failed to submit volunteer form, try again in a few minutes'
+          );
         }
       } catch (e) {
         console.error(e);
-        this.sendSnackbarMsg('error', 'Failed to submit volunteer form, try again in a few minutes');
+        this.sendSnackbarMsg(
+          'error',
+          'Failed to submit volunteer form, try again in a few minutes'
+        );
       }
     }
     this.setState({ isLoading: false });
@@ -98,21 +119,21 @@ class Volunteers extends Component {
     const inputs = [
       {
         label: 'Name',
-        isRequired: true,
+        isRequired: true
       },
       {
         label: 'Program',
-        isRequired: true,
+        isRequired: true
       },
       {
         label: 'Email',
-        isRequired: true,
+        isRequired: true
       },
       {
         label: 'Year',
         items: ['1', '2', '3', '4', '5+'],
         type: 'radio',
-        isRequired: true,
+        isRequired: true
       },
       {
         label: 'How would you like to get involved?',
@@ -122,37 +143,52 @@ class Volunteers extends Component {
           'Women in Engineering Wine and Cheese',
           'Raspberry Pi Jam',
           'Social Events (WII Nights, Trivia Nights, EngiBEERing, etc.)',
-          'Academic Events (WIE Tech Panel, Workshops, Cookies n Cram)',
+          'Academic Events (WIE Tech Panel, Workshops, Cookies n Cram)'
         ],
         type: 'radio',
         isRequired: true,
-        key: 'involvement',
-      },
+        key: 'involvement'
+      }
     ];
 
     return (
       <div>
         <Title> Volunteer Sign-Up!</Title>
-        <Typography className="center-horizontal" variant="body1" style={{ marginTop: '16px' }}>
-          <strong>Looking to get more involved with the IEEE uOttawa Student Branch?</strong>
+        <Typography
+          className="center-horizontal"
+          variant="body1"
+          style={{ marginTop: '16px' }}
+        >
+          <strong>
+            Looking to get more involved with the IEEE uOttawa Student Branch?
+          </strong>
         </Typography>
         <Typography
           className="center-horizontal"
           variant="body1"
           style={{
             marginTop: '1x',
-            marginBottom: '15px',
+            marginBottom: '15px'
           }}
         >
-          <strong>Sign-Up below to be a volunteer to one of the many events we hold throughout the school year!</strong>
+          <strong>
+            Sign-Up below to be a volunteer to one of the many events we hold
+            throughout the school year!
+          </strong>
         </Typography>
-        {!isLoading && <Form inputs={inputs} style={FormStyle} onSubmit={values => this.onSubmit(values)} />}
+        {!isLoading && (
+          <Form
+            inputs={inputs}
+            style={FormStyle}
+            onSubmit={values => this.onSubmit(values)}
+          />
+        )}
         {isLoading && <CircularProgress />}
         <Snackbar
           key={messageInfo.key}
           anchorOrigin={{
             vertical: 'bottom',
-            horizontal: 'left',
+            horizontal: 'left'
           }}
           open={showSnackbar}
           autoHideDuration={2000}

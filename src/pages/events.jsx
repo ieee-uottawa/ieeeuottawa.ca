@@ -36,7 +36,7 @@ const Events = () => (
         <GridList id="event-grid" cols={2}>
           {edges.map(({ node: { id, image: { childImageSharp: { fixed: image } }, name, description, url } }) => (
             <Event
-              key={id}
+              key={String(id)}
               image={image}
               name={name}
               description={description}

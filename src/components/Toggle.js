@@ -2,13 +2,12 @@ import './Toggle.css';
 import React, { PureComponent } from 'react';
 
 function pointerCoord(event) {
+  const { changedTouches, pageX } = event;
   if (event) {
-    const changedTouches = event.changedTouches;
     if (changedTouches && changedTouches.length > 0) {
       const touch = changedTouches[0];
       return { x: touch.clientX, y: touch.clientY };
     }
-    const pageX = event.pageX;
     if (pageX !== undefined) {
       return { x: pageX, y: event.pageY };
     }
@@ -29,7 +28,7 @@ export default class Toggle extends PureComponent {
     this.previouslyChecked = !!(props.checked || props.defaultChecked);
     this.state = {
       checked: !!(props.checked || props.defaultChecked),
-      hasFocus: false,
+      hasFocus: false
     };
   }
 
@@ -38,6 +37,16 @@ export default class Toggle extends PureComponent {
       this.setState({ checked: !!nextProps.checked });
       this.previouslyChecked = !!nextProps.checked;
     }
+  }
+
+  getIcon(type) {
+    const { icons } = this.props;
+    if (!icons) {
+      return null;
+    }
+    return icons[type] === undefined
+      ? Toggle.defaultProps.icons[type]
+      : icons[type];
   }
 
   handleClick(event) {
@@ -56,7 +65,8 @@ export default class Toggle extends PureComponent {
   handleTouchStart(event) {
     this.startX = pointerCoord(event).x;
     this.touchStarted = true;
-    this.hadFocusAtTouchStart = this.state.hasFocus;
+    const { hasFocus } = this.state;
+    this.hadFocusAtTouchStart = hasFocus;
     this.setState({ hasFocus: true });
   }
 
@@ -65,11 +75,12 @@ export default class Toggle extends PureComponent {
     this.touchMoved = true;
 
     if (this.startX != null) {
-      let currentX = pointerCoord(event).x;
-      if (this.state.checked && currentX + 15 < this.startX) {
+      const currentX = pointerCoord(event).x;
+      const { checked } = this.state;
+      if (checked && currentX + 15 < this.startX) {
         this.setState({ checked: false });
         this.startX = currentX;
-      } else if (!this.state.checked && currentX - 15 > this.startX) {
+      } else if (!checked && currentX - 15 > this.startX) {
         this.setState({ checked: true });
         this.startX = currentX;
       }
@@ -82,7 +93,8 @@ export default class Toggle extends PureComponent {
     event.preventDefault();
 
     if (this.startX != null) {
-      if (this.previouslyChecked !== this.state.checked) {
+      const { checked } = this.state;
+      if (this.previouslyChecked !== checked) {
         checkbox.click();
       }
 
@@ -96,7 +108,7 @@ export default class Toggle extends PureComponent {
     }
   }
 
-  handleTouchCancel(event) {
+  handleTouchCancel() {
     if (this.startX != null) {
       this.touchStarted = false;
       this.startX = null;
@@ -110,11 +122,9 @@ export default class Toggle extends PureComponent {
 
   handleFocus(event) {
     const { onFocus } = this.props;
-
     if (onFocus) {
       onFocus(event);
     }
-
     this.hadFocusAtTouchStart = true;
     this.setState({ hasFocus: true });
   }
@@ -130,24 +140,13 @@ export default class Toggle extends PureComponent {
     this.setState({ hasFocus: false });
   }
 
-  getIcon(type) {
-    const { icons } = this.props;
-    if (!icons) {
-      return null;
-    }
-    return icons[type] === undefined
-      ? Toggle.defaultProps.icons[type]
-      : icons[type];
-  }
-
   render() {
     const { className, icons: _icons, ...inputProps } = this.props;
-    const classes =
-      'react-toggle' +
-      (this.state.checked ? ' react-toggle--checked' : '') +
-      (this.state.hasFocus ? ' react-toggle--focus' : '') +
-      (this.props.disabled ? ' react-toggle--disabled' : '') +
-      (className ? ' ' + className : '');
+    const classes = `react-toggle${
+      this.state.checked ? ' react-toggle--checked' : ''
+    }${this.state.hasFocus ? ' react-toggle--focus' : ''}${
+      this.props.disabled ? ' react-toggle--disabled' : ''
+    }${className ? ' ' + className : ''}`;
     return (
       <div
         className={classes}

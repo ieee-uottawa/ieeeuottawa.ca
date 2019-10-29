@@ -23,7 +23,16 @@ const ParallaxItem = ({ buttonText, buttonURL, imageURL, messageText }) => {
         </IEEEButton>
       );
     } else {
-      button = <IEEEButton variant="outlined" color="secondary" className="white-btn" style={{ margin: '20px 16px' }}>{buttonText}</IEEEButton>;
+      button = (
+        <IEEEButton
+          variant="outlined"
+          color="secondary"
+          className="white-btn"
+          style={{ margin: '20px 16px' }}
+        >
+          {buttonText}
+        </IEEEButton>
+      );
     }
   }
 
@@ -36,15 +45,12 @@ const ParallaxItem = ({ buttonText, buttonURL, imageURL, messageText }) => {
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        position: 'relative',
+        position: 'relative'
       }}
     >
       <div className="center">
         {messageText != null && (
-          <Typography
-            variant="h5"
-            style={{ color: 'white' }}
-          >
+          <Typography variant="h5" style={{ color: 'white' }}>
             {messageText}
             {button != null && button}
           </Typography>
@@ -58,13 +64,13 @@ ParallaxItem.propTypes = {
   imageURL: PropTypes.string.isRequired,
   messageText: PropTypes.string,
   buttonText: PropTypes.string,
-  buttonURL: PropTypes.string,
+  buttonURL: PropTypes.string
 };
 
 ParallaxItem.defaultProps = {
   messageText: null,
   buttonText: null,
-  buttonURL: null,
+  buttonURL: null
 };
 
 export default ParallaxItem;

@@ -9,4 +9,3 @@ const IEEECodeOfConduct = () => (
 );
 
 export default IEEECodeOfConduct;
-

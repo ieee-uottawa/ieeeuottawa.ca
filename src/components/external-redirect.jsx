@@ -11,17 +11,18 @@ class ExternalRedirect extends Component {
 
     this.state = {
       seconds: 5,
-      intervalID: null,
+      intervalID: null
     };
   }
 
   componentDidMount() {
+    const { seconds } = this.state;
     this.state.intervalID = setInterval(() => {
-      if (this.state.seconds === 1) {
+      if (seconds === 1) {
         this.stopTimer();
         window.location.replace(this.props.url);
       }
-      this.setState({ seconds: this.state.seconds - 1 });
+      this.setState({ seconds: seconds - 1 });
     }, 1000);
   }
 
@@ -30,7 +31,8 @@ class ExternalRedirect extends Component {
   }
 
   stopTimer() {
-    clearInterval(this.state.intervalID);
+    const { intervalID } = this.state;
+    clearInterval(intervalID);
   }
 
   render() {
@@ -44,14 +46,22 @@ class ExternalRedirect extends Component {
           You will be redirected to {description} in {seconds} seconds.
         </Typography>
         <Typography variant="h4" gutterBottom>
-          <Link to={url} href={url} eventLabel={url} forceExternal={forceExternal} style={{ color: '#3498db' }} onClick={() => event({
-            category: 'Waiting',
-            action: 'Clicked link early',
-            label: description,
-          })}>
+          <Link
+            to={url}
+            href={url}
+            eventLabel={url}
+            forceExternal={forceExternal}
+            style={{ color: '#3498db' }}
+            onClick={() =>
+              event({
+                category: 'Waiting',
+                action: 'Clicked link early',
+                label: description
+              })
+            }
+          >
             Click here
-          </Link>
-          {' '}
+          </Link>{' '}
           to be redirected there now.
         </Typography>
       </div>
@@ -62,12 +72,12 @@ class ExternalRedirect extends Component {
 ExternalRedirect.propTypes = {
   url: PropTypes.string.isRequired,
   urlDescription: PropTypes.string,
-  forceExternal: PropTypes.bool,
+  forceExternal: PropTypes.bool
 };
 
 ExternalRedirect.defaultProps = {
   urlDescription: null,
-  forceExternal: false,
+  forceExternal: false
 };
 
 export default ExternalRedirect;

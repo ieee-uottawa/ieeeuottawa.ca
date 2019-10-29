@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Snackbar from '@material-ui/core/Snackbar';
-import Typography from '@material-ui/core/Typography';
 import { graphql, StaticQuery } from 'gatsby';
 import dayjs from 'dayjs';
 
@@ -21,7 +20,7 @@ class Shop extends Component {
     this.messageQueue = [];
     this.state = {
       showSnackbar: false,
-      messageInfo: {},
+      messageInfo: {}
     };
 
     this.onAddToCart = this.onAddToCart.bind(this);
@@ -33,11 +32,13 @@ class Shop extends Component {
   onAddToCart({ key, name, options, quantity, price }) {
     this.messageQueue.push({
       message: `Added ${quantity} x ${name} (${Object.keys(options)
-        .filter(option => price.length > 1 || (price.length === 1 && option !== 'quantity'))
+        .filter(
+          option =>
+            price.length > 1 || (price.length === 1 && option !== 'quantity')
+        )
         .map(key => `${capitalize(key)}: ${options[key]}`)
-        .join(', ')})`
-        .replace(' ()', ''),
-      key,
+        .join(', ')})`.replace(' ()', ''),
+      key
     });
 
     if (this.state.showSnackbar) {
@@ -51,7 +52,7 @@ class Shop extends Component {
     if (this.messageQueue.length > 0) {
       this.setState({
         messageInfo: this.messageQueue.shift(),
-        showSnackbar: true,
+        showSnackbar: true
       });
     }
   }
@@ -68,55 +69,60 @@ class Shop extends Component {
     const { showSnackbar, messageInfo } = this.state;
     return (
       <StaticQuery
-        query={
-          graphql`
-            query {
-              allShopJson {
-                edges {
-                  node {
-                    name
-                    price {
-                      quantity
-                      price
-                    }
-                    expiry
-                    image {
-                      childImageSharp {
-                        resolutions(width: 276) {
-                          ...GatsbyImageSharpResolutions
-                        }
+        query={graphql`
+          query {
+            allShopJson {
+              edges {
+                node {
+                  name
+                  price {
+                    quantity
+                    price
+                  }
+                  expiry
+                  image {
+                    childImageSharp {
+                      resolutions(width: 276) {
+                        ...GatsbyImageSharpResolutions
                       }
                     }
-                    options {
-                      size
-                      colour
-                    }
+                  }
+                  options {
+                    size
+                    colour
                   }
                 }
               }
             }
-          `
-        }
+          }
+        `}
         render={({ allShopJson: { edges } }) => (
-          <div style={{
-            marginLeft: '16px',
-            marginRight: '16px',
-          }}
+          <div
+            style={{
+              marginLeft: '16px',
+              marginRight: '16px'
+            }}
           >
-            <Title variant="h5" gutterBottom className="title">Shop</Title>
+            <Title variant="h5" gutterBottom className="title">
+              Shop
+            </Title>
             <GridList style={{ justifyContent: 'space-evenly' }}>
               {edges
-                .filter(({ node: { expiry } }) => !expiry || (expiry && dayjs(new Date())
-                  .isBefore(dayjs(expiry)
-                    .add(1, 'day'))))
+                .filter(
+                  ({ node: { expiry } }) =>
+                    !expiry ||
+                    (expiry &&
+                      dayjs(new Date()).isBefore(dayjs(expiry).add(1, 'day')))
+                )
                 .map(({ node: { name, price, expiry, image, options } }) => (
-                  <GridListTile style={{
-                    width: 'inherit',
-                    height: 'inherit',
-                    padding: 'inherit',
-                    flexDirection: 'column',
-                    alignSelf: 'center',
-                  }}
+                  <GridListTile
+                    style={{
+                      width: 'inherit',
+                      height: 'inherit',
+                      padding: 'inherit',
+                      flexDirection: 'column',
+                      alignSelf: 'center'
+                    }}
                   >
                     <ProductCard
                       price={price}
@@ -134,17 +140,21 @@ class Shop extends Component {
               key={messageInfo.key}
               anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'left'
               }}
               open={showSnackbar}
               autoHideDuration={2000}
               onClose={this.handleSnackbarClose}
               onExited={this.handleSnackbarExit}
               ContentProps={{
-                'aria-describedby': 'message-id',
+                'aria-describedby': 'message-id'
               }}
               message={<span id="message-id">{messageInfo.message}</span>}
-              action={<Button component={Link} to="/cart" style={{ color: 'white' }}>Go to cart</Button>}
+              action={
+                <Button component={Link} to="/cart" style={{ color: 'white' }}>
+                  Go to cart
+                </Button>
+              }
             />
           </div>
         )}
