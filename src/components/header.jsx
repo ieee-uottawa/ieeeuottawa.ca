@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { AppBar, Toolbar, Button, Hidden, IconButton } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
-
 import { NavButton, NavDropDown } from './buttons';
 import { CloseIcon, MenuIcon } from './icons';
 import { MaterialMenu } from './material-components';
@@ -9,7 +8,6 @@ import Link from './link';
 import Toggle from './Toggle';
 import sun from '../../static/images/darkmode/sun.png';
 import moon from '../../static/images/darkmode/moon.png';
-
 import logo from '../../static/images/uottawa_branch_logo-2.png';
 
 class Header extends Component {
@@ -17,7 +15,7 @@ class Header extends Component {
     super(props);
     this.state = {
       isOpen: false,
-      anchorEl: null,
+      anchorEl: null
     };
     this.handleMenuClick = this.handleMenuClick.bind(this);
     this.handleMenuClose = this.handleMenuClose.bind(this);
@@ -25,20 +23,21 @@ class Header extends Component {
   }
 
   handleMenuTheme() {
-    this.props.toggleTheme(this.props.theme === 'light' ? 'dark' : 'light');
+    const { theme, toggleTheme } = this.props;
+    toggleTheme(theme === 'light' ? 'dark' : 'light');
   }
 
   handleMenuClick({ currentTarget }) {
     this.setState({
       isOpen: true,
-      anchorEl: currentTarget,
+      anchorEl: currentTarget
     });
   }
 
   handleMenuClose() {
     this.setState({
       isOpen: false,
-      anchorEl: null,
+      anchorEl: null
     });
   }
 
@@ -46,8 +45,7 @@ class Header extends Component {
     const { isOpen, anchorEl } = this.state;
     return (
       <StaticQuery
-        query={
-          graphql`
+        query={graphql`
           query {
             allNavItemsJson {
               edges {
@@ -62,10 +60,13 @@ class Header extends Component {
               }
             }
           }
-        `
-        }
+        `}
         render={({ allNavItemsJson: { edges } }) => (
-          <AppBar color="default" position="sticky" style={{ padding: '0px 0 0' }}>
+          <AppBar
+            color="default"
+            position="sticky"
+            style={{ padding: '0px 0 0' }}
+          >
             <Toolbar>
               <Link to="/" href="/" style={{ flexGrow: 1 }}>
                 <img
@@ -76,7 +77,7 @@ class Header extends Component {
                     paddingTop: '15px',
                     paddingLeft: '32px',
                     display: 'flex',
-                    justifyContent: 'space-between',
+                    justifyContent: 'space-between'
                   }}
                 />
               </Link>
@@ -86,9 +87,24 @@ class Header extends Component {
                     let navItem;
 
                     if (!items) {
-                      navItem = <NavButton title={title} link={link} component={Button} />;
+                      navItem = (
+                        <NavButton
+                          title={title}
+                          link={link}
+                          component={Button}
+                        />
+                      );
                     } else {
-                      navItem = <NavDropDown color="inherit" items={items} clickBubbleDown component={Button}>{title}</NavDropDown>;
+                      navItem = (
+                        <NavDropDown
+                          color="inherit"
+                          items={items}
+                          clickBubbleDown
+                          component={Button}
+                        >
+                          {title}
+                        </NavDropDown>
+                      );
                     }
 
                     return navItem;
@@ -96,8 +112,24 @@ class Header extends Component {
                 </div>
                 <Toggle
                   icons={{
-                    checked: (<img src={moon} width="16" height="16" role="presentation" style={{ pointerEvents: 'none' }} />),
-                    unchecked: (<img src={sun} width="16" height="16" role="presentation" style={{ pointerEvents: 'none' }} />),
+                    checked: (
+                      <img
+                        src={moon}
+                        width="16"
+                        height="16"
+                        alt="presentation"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                    ),
+                    unchecked: (
+                      <img
+                        src={sun}
+                        width="16"
+                        height="16"
+                        alt="presentation"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                    )
                   }}
                   checked={this.props.theme === 'dark'}
                   onClick={this.handleMenuTheme}
@@ -106,8 +138,24 @@ class Header extends Component {
               <Hidden mdUp>
                 <Toggle
                   icons={{
-                    checked: (<img src={moon} width="16" height="16" role="presentation" style={{ pointerEvents: 'none' }} />),
-                    unchecked: (<img src={sun} width="16" height="16" role="presentation" style={{ pointerEvents: 'none' }} />),
+                    checked: (
+                      <img
+                        src={moon}
+                        width="16"
+                        height="16"
+                        alt="presentation"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                    ),
+                    unchecked: (
+                      <img
+                        src={sun}
+                        width="16"
+                        height="16"
+                        alt="presentation"
+                        style={{ pointerEvents: 'none' }}
+                      />
+                    )
                   }}
                   checked={this.props.theme === 'dark'}
                   onClick={this.handleMenuTheme}
@@ -119,7 +167,11 @@ class Header extends Component {
                   {isOpen && (
                     <MaterialMenu
                       anchorEl={anchorEl}
-                      items={edges.map(({ node: { title, link, items } }) => ({ title, link, items }))}
+                      items={edges.map(({ node: { title, link, items } }) => ({
+                        title,
+                        link,
+                        items
+                      }))}
                       isOpen={isOpen}
                       onClose={this.handleMenuClose}
                     />
@@ -133,5 +185,6 @@ class Header extends Component {
     );
   }
 }
+
 
 export default Header;

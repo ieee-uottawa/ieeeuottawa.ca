@@ -3,7 +3,14 @@ import Title from '../components/title';
 
 const Budget = () => (
   <div>
-    <Title variant="h5" gutterBottom className="title" style={{ marginBottom: '16px' }}>Budget</Title>
+    <Title
+      variant="h5"
+      gutterBottom
+      className="title"
+      style={{ marginBottom: '16px' }}
+    >
+      Budget
+    </Title>
     <iframe
       width="100%"
       title="IEEE uOttawa Budget"
@@ -14,4 +21,3 @@ const Budget = () => (
 );
 
 export default Budget;
-

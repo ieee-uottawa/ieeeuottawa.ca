@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import stylePropType from 'react-style-proptype';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
 import { NavButton, NavDropDown } from './buttons';
 
 class MaterialMenu extends Component {
@@ -15,16 +15,18 @@ class MaterialMenu extends Component {
 
     this.state = {
       items: props.items,
-      menuLevel: 1,
+      menuLevel: 1
     };
     this.handleMobileDropdown = this.handleMobileDropdown.bind(this);
   }
 
   handleMobileDropdown(newItems) {
-    if (isWidthDown('sm', this.props.width)) {
+    const { width } = this.props;
+    const { menuLevel } = this.state;
+    if (isWidthDown('sm', width)) {
       this.setState({
         items: newItems,
-        menuLevel: this.state.menuLevel + 1,
+        menuLevel: menuLevel + 1
       });
     }
   }
@@ -33,11 +35,30 @@ class MaterialMenu extends Component {
     const { isOpen, anchorEl, onClose, ...MenuProps } = this.props;
     const { items, menuLevel } = this.state;
     return (
-      <Menu {...MenuProps} key={`menu-lvl-${menuLevel}`} open={isOpen} anchorEl={anchorEl} onClose={onClose}>
+      <Menu
+        {...MenuProps}
+        key={`menu-lvl-${menuLevel}`}
+        open={isOpen}
+        anchorEl={anchorEl}
+        onClose={onClose}
+      >
         {items.map(({ title, link, items: navItems }) => {
-          if (!navItems) return <NavButton title={title} link={link} component={MenuItem} onClick={onClose} />;
+          if (!navItems)
+            return (
+              <NavButton
+                title={title}
+                link={link}
+                component={MenuItem}
+                onClick={onClose}
+              />
+            );
           return (
-            <NavDropDown color="inherit" items={items} component={MenuItem} onClick={() => this.handleMobileDropdown(navItems)}>
+            <NavDropDown
+              color="inherit"
+              items={items}
+              component={MenuItem}
+              onClick={() => this.handleMobileDropdown(navItems)}
+            >
               {title}
             </NavDropDown>
           );
@@ -50,13 +71,13 @@ class MaterialMenu extends Component {
 MaterialMenu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   anchorEl: PropTypes.element.isRequired,
-  items: PropTypes.array.isRequired,
+  items: PropTypes.arrayOf.isRequired,
   onClose: PropTypes.func,
+  width: PropTypes.number.isRequired
 };
 
 MaterialMenu.defaultProps = {
-  onClose: () => {
-  },
+  onClose: () => {}
 };
 
 class MaterialSelect extends Component {
@@ -74,22 +95,25 @@ class MaterialSelect extends Component {
 
   render() {
     const { label, items, isRequired, style } = this.props;
-    const name = label.toLowerCase()
-      .replace(/ /g, '-');
+    const name = label.toLowerCase().replace(/ /g, '-');
 
     return (
       <FormControl required={isRequired} style={style}>
-        <InputLabel shrink htmlFor="select-placeholder">{label}</InputLabel>
+        <InputLabel shrink htmlFor="select-placeholder">
+          {label}
+        </InputLabel>
         <Select
           value={this.state.value}
           onChange={this.handleChange}
           inputProps={{
             name,
-            id: `${name}-input`,
+            id: `${name}-input`
           }}
           name={name}
         >
-          {Object.values(items).map(value => <MenuItem value={value}>{value}</MenuItem>)}
+          {Object.values(items).map(value => (
+            <MenuItem value={value}>{value}</MenuItem>
+          ))}
         </Select>
       </FormControl>
     );
@@ -98,20 +122,21 @@ class MaterialSelect extends Component {
 
 MaterialSelect.propTypes = {
   label: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(PropTypes.exact({
-    key: PropTypes.string.isRequired,
-    value: PropTypes.any.isRequired,
-  })).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      key: PropTypes.string.isRequired,
+      value: PropTypes.any.isRequired
+    })
+  ).isRequired,
   isRequired: PropTypes.bool,
   onChange: PropTypes.func,
-  style: PropTypes.any,
+  style: stylePropType
 };
 
 MaterialSelect.defaultProps = {
   isRequired: false,
-  onChange: () => {
-  },
-  style: {},
+  onChange: () => {},
+  style: {}
 };
 
 const materialMenu = withWidth()(MaterialMenu);

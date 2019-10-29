@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 
 const Link = ({ children, to, forceExternal, ...other }) => {
   // Tailor the following test to your environment.

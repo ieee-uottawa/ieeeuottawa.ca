@@ -1,5 +1,6 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
   "rules": {
     "max-len": [
       "warn",
@@ -9,6 +10,8 @@
     ],
     "linebreak-style": "off",
     "object-curly-newline": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "implicit-arrow-linebreak": "off",
+    "comma-dangle": "off"
   }
 }

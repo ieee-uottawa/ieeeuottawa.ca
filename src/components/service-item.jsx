@@ -6,9 +6,7 @@ import './service-item.scss';
 
 const ServiceItem = ({ icon, title, body, classes }) => (
   <span className="services-item">
-    <span className={classes.iconContainer}>
-      {icon}
-    </span>
+    <span className={classes.iconContainer}>{icon}</span>
     <Typography variant="h6" className="services-item-title">
       {title}
     </Typography>
@@ -22,6 +20,7 @@ ServiceItem.propTypes = {
   icon: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
+  classes: PropTypes.objectOf.isRequired
 };
 
 const styles = theme => ({
@@ -30,8 +29,8 @@ const styles = theme => ({
     height: '100px',
     border: `2px solid ${theme.palette.text.primary}`,
     borderRadius: '50%',
-    display: 'inline-block',
-  },
+    display: 'inline-block'
+  }
 });
 
 export default withStyles(styles)(ServiceItem);
