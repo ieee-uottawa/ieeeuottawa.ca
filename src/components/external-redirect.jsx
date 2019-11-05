@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
 import { event } from 'react-ga';
-
 import Link from './link';
 
 class ExternalRedirect extends Component {
@@ -16,11 +15,12 @@ class ExternalRedirect extends Component {
   }
 
   componentDidMount() {
-    const { seconds } = this.state;
     this.state.intervalID = setInterval(() => {
+      const { seconds } = this.state;
       if (seconds === 1) {
         this.stopTimer();
-        window.location.replace(this.props.url);
+        const { url } = this.props;
+        window.location.replace(url);
       }
       this.setState({ seconds: seconds - 1 });
     }, 1000);
