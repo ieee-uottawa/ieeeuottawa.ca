@@ -45,10 +45,10 @@ class OfficeHours extends Component {
     };
 
     const imageStyle = {
-      margin: '16px auto 0',
+      // margin: '16px auto 0',
       borderRadius: '20%',
       width: '296px',
-      maxWidth: '100%',
+      // maxWidth: '100%',
       height: '296px',
       display: 'block',
       webkitBorderRadius: '20%',

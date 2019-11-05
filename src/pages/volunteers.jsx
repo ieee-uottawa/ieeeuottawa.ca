@@ -9,7 +9,7 @@ const FormStyle = {
   width: '200px'
 };
 
-const request = require('superagent');
+
 
 class Volunteers extends Component {
   constructor(props) {
@@ -45,6 +45,7 @@ class Volunteers extends Component {
     this.setState({ isLoading: true });
     if (!isServerSideRendering()) {
       try {
+        const request = require('superagent');
         const res = await request
           .post(`${process.env.GATSBY_API_URL}/volunteer`)
           .send(values);
