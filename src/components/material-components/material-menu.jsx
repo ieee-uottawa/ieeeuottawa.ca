@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { isWidthDown } from '@material-ui/core/withWidth';
-import { NavButton, NavDropDown } from '../buttons';
+import NavButton from '../NavButton';
+import NavDropDown from '../NavDropDown';
 
 const MaterialMenu = ({
   items: originalItems,

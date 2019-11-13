@@ -3,7 +3,7 @@ import { GridList, Button } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import Title from '../components/title';
-import { GalleryCard } from '../components/cards';
+import GalleryCard from '../components/GalleryCard';
 import img1 from '../../static/images/gallery/01.jpg';
 import img2 from '../../static/images/gallery/02.jpg';
 import img3 from '../../static/images/gallery/03.jpg';

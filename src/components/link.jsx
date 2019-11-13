@@ -26,6 +26,7 @@ const Link = ({ children, to, forceExternal, ...other }) => {
 };
 
 Link.propTypes = {
+  children: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   forceExternal: PropTypes.bool,
 };

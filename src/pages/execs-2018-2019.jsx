@@ -1,8 +1,9 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import { Typography, GridList } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
 import Title from '../components/title';
-import { ExecCard } from '../components/cards';
+import ExecCard from '../components/ExecCard';
 
 const Execs_2018_2019 = () => (
   <StaticQuery

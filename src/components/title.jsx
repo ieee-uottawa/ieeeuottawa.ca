@@ -1,6 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Typography, withStyles } from '@material-ui/core/';
+import React from "react";
+import PropTypes from "prop-types";
+import { Typography, withStyles } from "@material-ui/core/";
+
+const stylePropType = require("react-style-proptype");
 
 const Title = ({ children, classes, style }) => (
   <Typography
@@ -15,7 +17,7 @@ const Title = ({ children, classes, style }) => (
 
 const styles = theme => ({
   root: {
-    '&:after': {
+    "&:after": {
       borderBottom: `2px solid ${theme.palette.text.primary}`
     }
   }
@@ -23,9 +25,8 @@ const styles = theme => ({
 
 Title.propTypes = {
   children: PropTypes.string.isRequired,
-  classes: PropTypes.string.isRequired
+  classes: PropTypes.string.isRequired,
+  style: stylePropType.isRequired
 };
-
-
 
 export default withStyles(styles)(Title);

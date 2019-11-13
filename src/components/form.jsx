@@ -12,13 +12,13 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import List from '@material-ui/core/List';
 import { Typography } from '@material-ui/core';
-
 import './form.scss';
 
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = this.props.inputs.reduce((obj, { label }) => {
+    const { inputs } = this.props;
+    this.state = inputs.reduce((obj, { label }) => {
       obj[label.toLowerCase().replace(/ /g, '-')] = null;
       return obj;
     });
@@ -33,9 +33,10 @@ class Form extends Component {
   }
 
   submitForm() {
-    for (let input of this.props.inputs) {
+    const { inputs, onSubmit } = this.props;
+    // eslint-disable-next-line no-restricted-syntax
+    for (const input of inputs) {
       if (!input.isRequired) continue;
-
       const key = input.key || input.label.toLowerCase().replace(/ /g, '-');
       if (!this.state[key] || this.state[key] === '') {
         this.setState({
@@ -44,16 +45,17 @@ class Form extends Component {
         return;
       }
     }
-    console.log(this.state);
-    this.props.onSubmit(this.state);
+    // console.log(this.state);
+    onSubmit(this.state);
   }
 
   render() {
+    const { inputs } = this.props;
     return (
       <Card id="form-card">
         <CardContent>
           <List>
-            {this.props.inputs.map(
+            {inputs.map(
               ({ label, items, key: labelKey, isRequired, type = 'short' }) => {
                 const key = labelKey || label.toLowerCase().replace(/ /g, '-');
                 switch (type) {

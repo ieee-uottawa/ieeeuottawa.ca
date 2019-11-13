@@ -8,7 +8,6 @@ import {
   Button
 } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
-
 import { CloseIcon } from './icons';
 import {
   calculatePrice,
@@ -16,7 +15,6 @@ import {
   moneyFormatter,
   showPricing
 } from '../util';
-
 import './product-row.scss';
 
 const ProductRow = ({

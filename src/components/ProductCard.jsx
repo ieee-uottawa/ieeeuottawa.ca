@@ -5,132 +5,16 @@ import {
   CardMedia,
   CardContent,
   Typography,
-  FormControlLabel,
-  IconButton,
   CardActions,
   Button,
   TextField
 } from '@material-ui/core';
 import { connect } from 'react-redux';
-import Img from 'gatsby-image';
 import dayjs from 'dayjs';
-
-import { MaterialSelect } from './material-components';
+import MaterialSelect from './MaterialSelect';
 import { addItemToCart } from '../redux/actions/cart_actions';
 import { showPricing } from '../util';
-
 import './exec-card.scss';
-
-const ExecCard = props => {
-  const imageStyle = {
-    margin: '16px auto 0',
-    borderRadius: '50%',
-    width: '166px',
-    maxWidth: '100%',
-    height: '166px',
-    display: 'block',
-    webkitBorderRadius: '50%',
-    webkitBoxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
-    boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)'
-  };
-  const imageComponent = props.image ? (
-    <CardMedia
-      component={Img}
-      fixed={props.image.childImageSharp.fixed}
-      title={props.name}
-      style={imageStyle}
-    />
-  ) : (
-    <CardMedia
-      component="img"
-      height="166"
-      image={`http://identicon.org/?t=${props.name}&s=166`}
-      title={props.name}
-      style={imageStyle}
-    />
-  );
-
-  const openEmail = email => (
-    <div className="center-horizontal">
-      <FormControlLabel
-        control={
-          <a target="_top" rel="noopener noreferrer" href={'mailto:' + email}>
-            <IconButton color="primary" />
-          </a>
-        }
-        label={email}
-        labelPlacement="end"
-      />
-    </div>
-  );
-
-  return (
-    <Card
-      style={{
-        margin: '16px 16px',
-        width: '280px'
-      }}
-    >
-      {imageComponent}
-      <CardContent>
-        <Typography gutterBottom variant="h5" className="center-horizontal">
-          {props.name}
-        </Typography>
-        <Typography component="p" className="center-horizontal">
-          {props.position}
-        </Typography>
-        {props.email && openEmail(props.email)}
-      </CardContent>
-    </Card>
-  );
-};
-
-ExecCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/require-default-props
-  image: PropTypes.object,
-  position: PropTypes.string.isRequired,
-  email: PropTypes.object
-};
-
-const GalleryCard = props => {
-  const imageStyle = {
-    margin: '16px auto 0',
-    borderRadius: '25%',
-    width: '166px',
-    maxWidth: '100%',
-    height: '166px',
-    display: 'block',
-    webkitBorderRadius: '25%',
-    webkitBoxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
-    boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)'
-  };
-  const imageComponent = props.image ? (
-    <CardMedia
-      component={Img}
-      fixed={props.image.childImageSharp.fixed}
-      title={props.name}
-      style={imageStyle}
-    />
-  ) : (
-    <CardMedia
-      component="img"
-      height="166"
-      image={`http://identicon.org/?t=${props.name}&s=166`}
-      title={props.name}
-      style={imageStyle}
-    />
-  );
-
-  return <CardContent> {imageComponent}</CardContent>;
-};
-
-GalleryCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/require-default-props
-  image: PropTypes.object,
-  position: PropTypes.string.isRequired
-};
 
 class ProductCard extends Component {
   constructor(props) {
@@ -153,18 +37,20 @@ class ProductCard extends Component {
   }
 
   componentWillUnmount() {
-    this.state.unsubscribe();
+    const { unsubscribe } = this.state;
+    unsubscribe();
   }
 
   handleChange(name) {
     return event => {
-      let value = event.target.value;
+      const { target } = event;
+      let { value } = target;
 
       value = value < 1 ? 1 : Number(event.target.value);
       if (event.target.value === '') {
         value = '';
-      } else if (isNaN(value)) ({ value } = event.target);
-      console.log(`value: ${value}`);
+      } else if (Number.isNaN(value)) ({ value } = event.target);
+      // console.log(`value: ${value}`);
       this.setState({ [name]: value }, () => {
         this.setState({
           isValidForm: this.isValidForm()
@@ -174,10 +60,12 @@ class ProductCard extends Component {
   }
 
   isValidForm() {
+    const { count } = this.state;
+    const { options } = this.props;
     return (
-      this.state.count > 0 &&
-      (!this.props.options ||
-        Object.keys(this.props.options).some(
+      count > 0 &&
+      (!options ||
+        Object.keys(options).some(
           option => Object.keys(this.state).indexOf(option) > -1
         ))
     );
@@ -302,6 +190,4 @@ ProductCard.contextTypes = {
   store: PropTypes.object
 };
 
-const productCard = connect()(ProductCard);
-
-export { ExecCard, GalleryCard, productCard as ProductCard };
+export default connect()(ProductCard);

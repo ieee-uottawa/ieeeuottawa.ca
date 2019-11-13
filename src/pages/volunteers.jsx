@@ -31,7 +31,9 @@ class Volunteers extends Component {
   }
 
   async onSubmit(values) {
+    // eslint-disable-next-line no-param-reassign
     values.studentNumber = values['student-number'];
+    // eslint-disable-next-line no-param-reassign
     delete values['student-number'];
 
     this.sendSnackbarMsg('submitting', 'Submitting Volunteer Form...', false);
@@ -45,6 +47,7 @@ class Volunteers extends Component {
     this.setState({ isLoading: true });
     if (!isServerSideRendering()) {
       try {
+        // eslint-disable-next-line global-require
         const request = require('superagent');
         const res = await request
           .post(`${process.env.GATSBY_API_URL}/volunteer`)

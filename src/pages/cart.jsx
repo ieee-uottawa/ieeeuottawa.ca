@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux';
 
 import ProductRow from '../components/product-row';
-import { PaypalButton } from '../components/buttons';
+import PaypalButton from '../components/PaypalButton';
 import {
   calculatePrice,
   capitalize,
@@ -46,7 +46,8 @@ class Cart extends Component {
   }
 
   componentWillUnmount() {
-    this.state.unsubscribe();
+    const { unsubscribe } = this.state;
+    unsubscribe();
   }
 
   updateState(state, useSetState = true) {
@@ -74,7 +75,7 @@ class Cart extends Component {
     const cart = flattenDeep(
       items.map(({ id, name, imageURL, price, options }) =>
         options.map(itemOptions => {
-          console.log(itemOptions);
+          // console.log(itemOptions);
           return {
             id,
             description: `${name} (${Object.keys(itemOptions)
@@ -205,7 +206,11 @@ class Cart extends Component {
 }
 
 Cart.contextTypes = {
-  store: PropTypes.object
+  // store: PropTypes.object,
+};
+
+Cart.propTypes = {
+  dispatch: PropTypes.func.isRequired
 };
 
 export default connect()(Cart);

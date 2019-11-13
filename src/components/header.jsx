@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { AppBar, Toolbar, Button, Hidden, IconButton } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
-import { NavButton, NavDropDown } from './buttons';
+import NavButton from './NavButton';
+import NavDropDown from './NavDropDown';
 import { CloseIcon, MenuIcon } from './icons';
-import { MaterialMenu } from './material-components';
+import MaterialMenu from './MaterialMenu';
 import Link from './link';
 import Toggle from './Toggle';
 import sun from '../../static/images/darkmode/sun.png';
@@ -43,6 +45,7 @@ class Header extends Component {
 
   render() {
     const { isOpen, anchorEl } = this.state;
+    const { theme } = this.props;
     return (
       <StaticQuery
         query={graphql`
@@ -131,7 +134,7 @@ class Header extends Component {
                       />
                     )
                   }}
-                  checked={this.props.theme === 'dark'}
+                  checked={theme === 'dark'}
                   onClick={this.handleMenuTheme}
                 />
               </Hidden>
@@ -157,7 +160,7 @@ class Header extends Component {
                       />
                     )
                   }}
-                  checked={this.props.theme === 'dark'}
+                  checked={theme === 'dark'}
                   onClick={this.handleMenuTheme}
                 />
                 <div>
@@ -186,5 +189,13 @@ class Header extends Component {
   }
 }
 
+Header.defaultProps = {
+  theme: null
+}
+
+Header.propTypes = {
+  theme: PropTypes.string,
+  toggleTheme: PropTypes.func.isRequired
+};
 
 export default Header;
