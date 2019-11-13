@@ -6,7 +6,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import { graphql, StaticQuery } from 'gatsby';
 import dayjs from 'dayjs';
 
-import { ProductCard } from '../components/cards';
+import ProductCard from '../components/ProductCard';
 import Title from '../components/title';
 import Link from '../components/link';
 
@@ -36,12 +36,12 @@ class Shop extends Component {
           option =>
             price.length > 1 || (price.length === 1 && option !== 'quantity')
         )
-        .map(key => `${capitalize(key)}: ${options[key]}`)
+        .map(key2 => `${capitalize(key2)}: ${options[key2]}`)
         .join(', ')})`.replace(' ()', ''),
       key
     });
-
-    if (this.state.showSnackbar) {
+    const { showSnackbar } = this.state;
+    if (showSnackbar) {
       this.setState({ showSnackbar: false });
     } else {
       this.processQueue();
@@ -151,6 +151,7 @@ class Shop extends Component {
               }}
               message={<span id="message-id">{messageInfo.message}</span>}
               action={
+                // eslint-disable-next-line react/jsx-wrap-multilines
                 <Button component={Link} to="/cart" style={{ color: 'white' }}>
                   Go to cart
                 </Button>

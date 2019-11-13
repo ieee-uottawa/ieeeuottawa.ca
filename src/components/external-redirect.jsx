@@ -61,7 +61,7 @@ class ExternalRedirect extends Component {
             }
           >
             Click here
-          </Link>{' '}
+          </Link>
           to be redirected there now.
         </Typography>
       </div>

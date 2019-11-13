@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Typography, GridListTile } from '@material-ui/core';
 import Img from 'gatsby-image';
-import { IEEEButton } from './buttons';
+import IEEEButton from './IEEEButton';
 import Link from './link';
 import './event.scss';
 

@@ -19,7 +19,7 @@ import favicon from '../../static/images/ieee_logo_circle.png';
 const store = createStore(cart);
 
 if (!isDevEnvironment) {
-  console.log('Initialized DSN');
+  // console.log('Initialized DSN');
   init({
     dsn: process.env.GATSBY_SENTRY_DSN,
     environment: process.env.NODE_ENV

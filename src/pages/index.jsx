@@ -1,16 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, GridList, Typography } from '@material-ui/core';
 import withWidth, { isWidthDown, isWidthUp } from '@material-ui/core/withWidth';
 import { graphql, StaticQuery } from 'gatsby';
 import Carousel from 'nuka-carousel';
 import BackgroundImage from 'gatsby-background-image';
-
 import Event from '../components/event';
 import Link from '../components/link';
 import Title from '../components/title';
 import ParallaxItem from '../components/parallax';
 import ServiceItem from '../components/service-item';
-import { IEEEButton } from '../components/buttons';
+import IEEEButton from '../components/IEEEButton';
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -22,7 +22,8 @@ import {
 import './index.scss';
 import mailingListImg from '../../static/images/compsci-1.jpg';
 
-const IndexPage = ({ width }) => {
+const IndexPage = props => {
+  const { width } = props;
   let gridStyle = { margin: '0 25%' };
   if (isWidthUp('lg', width, true) || isWidthDown('sm', width, false))
     gridStyle = {};
@@ -215,6 +216,10 @@ const IndexPage = ({ width }) => {
       }}
     />
   );
+};
+
+IndexPage.propTypes = {
+  width: PropTypes.number.isRequired
 };
 
 export default withWidth()(IndexPage);

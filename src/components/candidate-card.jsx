@@ -12,7 +12,7 @@ class CandidateCard extends Component {
   }
 
   changeLanguage() {
-    const {currentLanguage} = this.state;
+    const { currentLanguage } = this.state;
     const currentIndex = this.languages.indexOf(currentLanguage);
     this.setState({
       currentLanguage: this.languages[(currentIndex + 1) % 2],

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
-import { IEEEButton } from './buttons';
+// import { IEEEButton } from './buttons';
+import IEEEButton from './IEEEButton';
 import Link from './link';
 
 const ParallaxItem = ({ buttonText, buttonURL, imageURL, messageText }) => {
