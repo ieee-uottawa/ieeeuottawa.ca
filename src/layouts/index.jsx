@@ -92,6 +92,6 @@ Layout.propTypes = {
 Layout.defaultProps = {
   children: null,
   theme: 'light'
-}
+};
 
 export default withRoot(Layout);
