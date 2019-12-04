@@ -124,6 +124,7 @@ const IndexPage = props => {
                             variant="h3"
                             className="uppercase"
                             id="about-us-image-text"
+                            style={{ marginBottom: '20px' }}
                           >
                             <Link
                               to={button.url}
@@ -141,7 +142,7 @@ const IndexPage = props => {
                           className="white-btn white-url-txt"
                           component={Link}
                           to={button.url}
-                          style={{ marginTop: '32px' }}
+                          style={{ marginTop: '32px', marginBottom: '200px' }}
                         >
                           {button.text}
                         </IEEEButton>

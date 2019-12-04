@@ -7,7 +7,7 @@
     },
     "imageFile": {
       "id": "santa-pic",
-      "image": "../../static/images/ieeesantapic-1.jpg",
+      "image": "../../static/images/ieeesantapic-2.jpg",
       "style": {
         "backgroundPositionY": "-175px"
       }
