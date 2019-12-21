@@ -1,63 +1,63 @@
 [
-  {
-    "title": "Home",
-    "link": "/"
-  },
-  {
-    "title": "Execs",
-    "items": [
-      {
-        "title": "Execs 2019-2020",
-        "link": "/execs-2019-2020"
-      },
-      {
-        "title": "Execs 2018-2019",
-        "link": "/execs-2018-2019"
-      }
-    ]
-  },
-  {
-    "title": "Events",
-    "link": "/events"
-  },
-  {
-    "title": "Gallery",
-    "link": "/gallery"
-  },
-  {
-    "title": "WIE"
-  },
-  {
-    "title": "Volunteer"
-  },
-  {
-    "title": "Contact Us",
-    "items": [
-      {
-        "title": "Office Hours"
-      },
-      {
-        "title": "Mailing List",
-        "link": "/mailing-list-sign-up"
-      }
-    ]
-  },
-  {
-    "title": "About Us",
-    "items": [
-      {
-        "title": "Budget"
-      },
-      {
-        "title": "Constitution"
-      },
-      {
-        "title": "IEEE Code of Conduct"
-      },
-      {
-        "title": "Meeting Minutes",
-        "link": "/MeetingMinutes"
-      }
-    ]
-  }
+    {
+        "title": "Home",
+        "link": "/"
+    },
+    {
+        "title": "Execs",
+        "items": [
+            {
+                "title": "Execs 2019-2020",
+                "link": "/execs-2019-2020"
+            },
+            {
+                "title": "Execs 2018-2019",
+                "link": "/execs-2018-2019"
+            }
+        ]
+    },
+    {
+        "title": "Events",
+        "link": "/events"
+    },
+    {
+        "title": "Gallery",
+        "link": "/gallery"
+    },
+    {
+        "title": "WIE"
+    },
+    {
+        "title": "Volunteer"
+    },
+    {
+        "title": "Contact Us",
+        "items": [
+            {
+                "title": "Office Hours"
+            },
+            {
+                "title": "Mailing List",
+                "link": "/mailing-list-sign-up"
+            }
+        ]
+    },
+    {
+        "title": "About Us",
+        "items": [
+            {
+                "title": "Budget"
+            },
+            {
+                "title": "Constitution"
+            },
+            {
+                "title": "IEEE Code of Conduct"
+            },
+            {
+                "title": "Meeting Minutes",
+                "link": "/MeetingMinutes"
+            }
+        ]
+    }
 ]

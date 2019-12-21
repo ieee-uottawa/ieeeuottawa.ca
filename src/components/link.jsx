@@ -1,16 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
-// import ReactGA from 'react-ga';
 
-const Link = ({ children, to, forceExternal, ...other }) => {
-  // Tailor the following test to your environment.
-  // This example assumes that any internal link (intended for Gatsby)
-  // will start with exactly one slash, and that anything else is external.
+const Link = props => {
+  const { children, to, forceExternal, ...other } = props;
   const internal = /^\/(?!\/)/.test(to);
   const isFile = /\.[0-9a-z]+$/i.test(to);
 
-  // Use gatsby-link for internal links, and <a> for others
   if (internal && !isFile) {
     return (
       <GatsbyLink to={to} {...other}>
@@ -25,14 +21,16 @@ const Link = ({ children, to, forceExternal, ...other }) => {
   );
 };
 
-Link.propTypes = {
-  children: PropTypes.string.isRequired,
-  to: PropTypes.string.isRequired,
-  forceExternal: PropTypes.bool,
+Link.defaultProps = {
+  children: null,
+  to: null,
+  forceExternal: false
 };
 
-Link.defaultProps = {
-  forceExternal: false,
-}
+Link.propTypes = {
+  children: PropTypes.any,
+  to: PropTypes.string,
+  forceExternal: PropTypes.bool
+};
 
 export default Link;

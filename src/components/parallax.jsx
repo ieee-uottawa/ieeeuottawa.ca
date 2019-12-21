@@ -18,7 +18,7 @@ const ParallaxItem = ({ buttonText, buttonURL, imageURL, messageText }) => {
           style={{ margin: '20px 16px' }}
           component={Link}
           to={buttonURL}
-          eventLabel={buttonURL}
+          eventlabel={buttonURL}
         >
           {buttonText}
         </IEEEButton>

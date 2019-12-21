@@ -1,4 +1,6 @@
+/* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -10,7 +12,6 @@ function FlaskIcon(props) {
     />
   );
 }
-
 
 function LightBulbIcon(props) {
   return (
@@ -31,43 +32,92 @@ function LeadPencilIcon(props) {
 }
 
 function ChevronDownIcon(props) {
-  return <Icon {...props} path="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />;
+  return (
+    <Icon
+      {...props}
+      path="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+    />
+  );
 }
 
 function ChevronUpIcon(props) {
-  return <Icon {...props} path="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />;
+  return (
+    <Icon
+      {...props}
+      path="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"
+    />
+  );
 }
 
 function ChevronRightIcon(props) {
-  return <Icon {...props} path="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />;
+  return (
+    <Icon
+      {...props}
+      path="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
+    />
+  );
 }
 
 function ChevronLeftIcon(props) {
-  return <Icon {...props} path="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />;
+  return (
+    <Icon
+      {...props}
+      path="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"
+    />
+  );
 }
 
 function MenuIcon(props) {
-  return <Icon {...props} path="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />;
+  return (
+    <Icon {...props} path="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+  );
 }
 
 function CloseIcon(props) {
-  return <Icon {...props} path="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />;
+  return (
+    <Icon
+      {...props}
+      path="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+    />
+  );
 }
 
 function icon({ path, className, classes, ...other }) {
   return (
-    <SvgIcon className={[className, classes.icon]} {...other}>
+    <SvgIcon className={`${className} ${classes.icon}`} {...other}>
       <path d={path} {...other} />
     </SvgIcon>
   );
 }
 
+icon.defaultProps = {
+  path: null,
+  className: null,
+  classes: null
+};
+
+icon.propTypes = {
+  path: PropTypes.string,
+  className: PropTypes.string,
+  classes: PropTypes.object
+};
+
 const iconStyles = theme => ({
   icon: {
-    color: theme.palette.text.primary,
-  },
+    color: theme.palette.text.primary
+  }
 });
 
 const Icon = withStyles(iconStyles)(icon);
 
-export { FlaskIcon, LeadPencilIcon, LightBulbIcon, ChevronDownIcon, ChevronUpIcon, ChevronLeftIcon, ChevronRightIcon, MenuIcon, CloseIcon };
+export {
+  FlaskIcon,
+  LeadPencilIcon,
+  LightBulbIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  MenuIcon,
+  CloseIcon
+};

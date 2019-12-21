@@ -1,36 +1,37 @@
 .column {
-  margin: 0 16px;
+    margin: 0 16px;
 }
 
 section > h6 {
-  padding-bottom: 16px;
-  color: #b1b6b6 !important;
+    padding-bottom: 16px;
+    color: #b1b6b6 !important;
 }
 
 section > span {
-  color: #777 !important;
+    color: #777 !important;
 }
 
-ul, li {
-  list-style: none;
+ul,
+li {
+    list-style: none;
 }
 
 .footer-url-txt {
-  color: #777;
+    color: #777;
 }
 
 .footer-url-txt:hover {
-  color: #2979ff;
+    color: #2979ff;
 }
 
 #copyright-txt {
-  color: #777
+    color: #777;
 }
 
 #copyright-link {
-  color: #b1b6b6
+    color: #b1b6b6;
 }
 
 #copyright-link:hover {
-  color: #2979ff;
+    color: #2979ff;
 }

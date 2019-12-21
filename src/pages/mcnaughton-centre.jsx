@@ -12,28 +12,29 @@ import { graphql, StaticQuery } from 'gatsby';
 import { moneyFormatter } from '../util';
 import Title from '../components/title';
 
-const McNaughtonCentre = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allServicesJson {
-          edges {
-            node {
-              name
-              cost
-              suffix
-            }
-          }
+const query = graphql`
+  query {
+    allServicesJson {
+      edges {
+        node {
+          name
+          cost
+          suffix
         }
       }
-    `}
+    }
+  }
+`;
+
+const McNaughtonCentre = () => (
+  <StaticQuery
+    query={query}
     render={({ allServicesJson: { edges } }) => (
       <div>
         <Title variant="h5" gutterBottom className="title">
           McNaughton Centre
         </Title>
         <Typography
-          // className="center-horizontal"
           variant="body1"
           className="p-margins"
           style={{ margin: '15px' }}
@@ -47,7 +48,6 @@ const McNaughtonCentre = () => (
           distinguished electrical engineers.
         </Typography>
         <Typography
-          // className="center-horizontal"
           variant="body1"
           className="p-margins"
           style={{ margin: '15px' }}
@@ -65,13 +65,11 @@ const McNaughtonCentre = () => (
           <TableBody>
             {edges.map(({ node: { name, cost, suffix } }) => {
               let costStr;
-              if (!cost) {
-                costStr = 'FREE';
-              } else if (typeof cost === 'number') {
+              if (!cost) costStr = 'FREE';
+              else if (typeof cost === 'number')
                 costStr = moneyFormatter.format(cost);
-              } else if (typeof cost === 'string') {
-                costStr = cost;
-              }
+              else if (typeof cost === 'string') costStr = cost;
+
               if (suffix) costStr += suffix;
 
               return (

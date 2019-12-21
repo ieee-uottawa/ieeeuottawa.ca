@@ -19,7 +19,7 @@ ServiceItem.propTypes = {
   icon: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  classes: PropTypes.objectOf.isRequired
+  classes: PropTypes.any.isRequired
 };
 
 const styles = theme => ({

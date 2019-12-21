@@ -7,67 +7,67 @@ import NavButton from '../NavButton';
 import NavDropDown from '../NavDropDown';
 
 const MaterialMenu = ({
-  items: originalItems,
-  width,
-  isOpen,
-  anchorEl,
-  onClose,
-  ...menuProps
+    items: originalItems,
+    width,
+    isOpen,
+    anchorEl,
+    onClose,
+    ...menuProps
 }) => {
-  const [items, setItems] = useState(originalItems);
-  const [menuLevel, setMenuLevel] = useState(1);
+    const [items, setItems] = useState(originalItems);
+    const [menuLevel, setMenuLevel] = useState(1);
 
-  function handleMobileDropdown(newItems) {
-    if (isWidthDown('sm', width)) {
-      setItems(newItems);
-      setMenuLevel(prev => prev + 1);
+    function handleMobileDropdown(newItems) {
+        if (isWidthDown('sm', width)) {
+            setItems(newItems);
+            setMenuLevel(prev => prev + 1);
+        }
     }
-  }
 
-  return (
-    <Menu
-      {...menuProps}
-      key={`menu-lvl-${menuLevel}`}
-      open={isOpen}
-      anchorEl={anchorEl}
-      onClose={onClose}
-    >
-      {items.map(({ title, link, items: navItems }) => {
-        if (!navItems)
-          return (
-            <NavButton
-              key={`btn-${title}`}
-              title={title}
-              link={link}
-              component={MenuItem}
-              onClick={onClose}
-            />
-          );
-        return (
-          <NavDropDown
-            key={`menu-${title}`}
-            color="inherit"
-            items={items}
-            component={MenuItem}
-            onClick={() => handleMobileDropdown(navItems)}
-          >
-            {title}
-          </NavDropDown>
-        );
-      })}
-    </Menu>
-  );
-};
-
-MaterialMenu.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  anchorEl: PropTypes.objectOf,
-  items: PropTypes.arrayOf.isRequired,
-  onClose: PropTypes.func,
-  width: PropTypes.number.isRequired
+    return (
+        <Menu
+            {...menuProps}
+            key={`menu-lvl-${menuLevel}`}
+            open={isOpen}
+            anchorEl={anchorEl}
+            onClose={onClose}
+        >
+            {items.map(({ title, link, items: navItems }) => {
+                if (!navItems)
+                    return (
+                        <NavButton
+                            key={`btn-${title}`}
+                            title={title}
+                            link={link}
+                            component={MenuItem}
+                            onClick={onClose}
+                        />
+                    );
+                return (
+                    <NavDropDown
+                        key={`menu-${title}`}
+                        color="inherit"
+                        items={items}
+                        component={MenuItem}
+                        onClick={() => handleMobileDropdown(navItems)}
+                    >
+                        {title}
+                    </NavDropDown>
+                );
+            })}
+        </Menu>
+    );
 };
 
 MaterialMenu.defaultProps = {
-  onClose: () => {},
-  anchorEl: null
+    onClose: () => {},
+    anchorEl: null
+};
+
+MaterialMenu.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    anchorEl: PropTypes.objectOf,
+    items: PropTypes.arrayOf.isRequired,
+    onClose: PropTypes.func,
+    width: PropTypes.number.isRequired
 };
