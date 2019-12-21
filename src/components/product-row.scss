@@ -1,17 +1,17 @@
 #row-product-img {
-  max-width: 200px;
-  max-height: 150px;
-  margin: 0 auto;
+    max-width: 200px;
+    max-height: 150px;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 1070px) {
-  #row-product-img {
-    margin: 0 16px;
-  }
+    #row-product-img {
+        margin: 0 16px;
+    }
 }
 
 @media screen and (min-width: 1071px) {
-  #row-product-img {
-    margin: 0 auto;
-  }
+    #row-product-img {
+        margin: 0 auto;
+    }
 }

@@ -137,217 +137,224 @@ import img130 from '../../static/images/gallery/0130.jpg';
 import img131 from '../../static/images/gallery/0131.jpg';
 
 const archives = src => {
-  const blacklist = new Set(['0121.jpg', '0123.jpg']);
-  for (let item = 0; item < blacklist.length; item += 1) {
-    if (String(src).includes(blacklist[item])) return true;
-  }
-  return false;
+    const blacklist = new Set(['0121.jpg', '0123.jpg']);
+    for (let item = 0; item < blacklist.length; item += 1) {
+        if (String(src).includes(blacklist[item])) return true;
+    }
+    return false;
 };
 
 const srcArray = [
-  { src: img1 },
-  { src: img2 },
-  { src: img3 },
-  { src: img4 },
-  { src: img5 },
-  { src: img6 },
-  { src: img7 },
-  { src: img8 },
-  { src: img9 },
-  { src: img10 },
-  { src: img11 },
-  { src: img12 },
-  { src: img13 },
-  { src: img14 },
-  { src: img15 },
-  { src: img16 },
-  { src: img17 },
-  { src: img18 },
-  { src: img19 },
-  { src: img20 },
-  { src: img21 },
-  { src: img22 },
-  { src: img23 },
-  { src: img24 },
-  { src: img25 },
-  { src: img26 },
-  { src: img27 },
-  { src: img28 },
-  { src: img29 },
-  { src: img30 },
-  { src: img31 },
-  { src: img32 },
-  { src: img33 },
-  { src: img34 },
-  { src: img35 },
-  { src: img36 },
-  { src: img37 },
-  { src: img38 },
-  { src: img39 },
-  { src: img40 },
-  { src: img41 },
-  { src: img42 },
-  { src: img43 },
-  { src: img44 },
-  { src: img45 },
-  { src: img46 },
-  { src: img47 },
-  { src: img48 },
-  { src: img49 },
-  { src: img50 },
-  { src: img51 },
-  { src: img52 },
-  { src: img53 },
-  { src: img54 },
-  { src: img55 },
-  { src: img56 },
-  { src: img57 },
-  { src: img58 },
-  { src: img59 },
-  { src: img60 },
-  { src: img61 },
-  { src: img62 },
-  { src: img63 },
-  { src: img64 },
-  { src: img65 },
-  { src: img66 },
-  { src: img67 },
-  { src: img68 },
-  { src: img69 },
-  { src: img70 },
-  { src: img71 },
-  { src: img72 },
-  { src: img73 },
-  { src: img74 },
-  { src: img75 },
-  { src: img76 },
-  { src: img77 },
-  { src: img78 },
-  { src: img79 },
-  { src: img80 },
-  { src: img81 },
-  { src: img82 },
-  { src: img83 },
-  { src: img84 },
-  { src: img85 },
-  { src: img86 },
-  { src: img87 },
-  { src: img88 },
-  { src: img89 },
-  { src: img90 },
-  { src: img91 },
-  { src: img92 },
-  { src: img93 },
-  { src: img94 },
-  { src: img95 },
-  { src: img96 },
-  { src: img97 },
-  { src: img98 },
-  { src: img99 },
-  { src: img100 },
-  { src: img101 },
-  { src: img102 },
-  { src: img103 },
-  { src: img104 },
-  { src: img105 },
-  { src: img106 },
-  { src: img107 },
-  { src: img108 },
-  { src: img109 },
-  { src: img110 },
-  { src: img111 },
-  { src: img112 },
-  { src: img113 },
-  { src: img114 },
-  { src: img115 },
-  { src: img116 },
-  { src: img117 },
-  { src: img118 },
-  { src: img119 },
-  { src: img120 },
-  { src: img121 },
-  { src: img122 },
-  { src: img123 },
-  { src: img124 },
-  { src: img125 },
-  { src: img126 },
-  { src: img127 },
-  { src: img128 },
-  { src: img129 },
-  { src: img130 },
-  { src: img131 }
+    { src: img1 },
+    { src: img2 },
+    { src: img3 },
+    { src: img4 },
+    { src: img5 },
+    { src: img6 },
+    { src: img7 },
+    { src: img8 },
+    { src: img9 },
+    { src: img10 },
+    { src: img11 },
+    { src: img12 },
+    { src: img13 },
+    { src: img14 },
+    { src: img15 },
+    { src: img16 },
+    { src: img17 },
+    { src: img18 },
+    { src: img19 },
+    { src: img20 },
+    { src: img21 },
+    { src: img22 },
+    { src: img23 },
+    { src: img24 },
+    { src: img25 },
+    { src: img26 },
+    { src: img27 },
+    { src: img28 },
+    { src: img29 },
+    { src: img30 },
+    { src: img31 },
+    { src: img32 },
+    { src: img33 },
+    { src: img34 },
+    { src: img35 },
+    { src: img36 },
+    { src: img37 },
+    { src: img38 },
+    { src: img39 },
+    { src: img40 },
+    { src: img41 },
+    { src: img42 },
+    { src: img43 },
+    { src: img44 },
+    { src: img45 },
+    { src: img46 },
+    { src: img47 },
+    { src: img48 },
+    { src: img49 },
+    { src: img50 },
+    { src: img51 },
+    { src: img52 },
+    { src: img53 },
+    { src: img54 },
+    { src: img55 },
+    { src: img56 },
+    { src: img57 },
+    { src: img58 },
+    { src: img59 },
+    { src: img60 },
+    { src: img61 },
+    { src: img62 },
+    { src: img63 },
+    { src: img64 },
+    { src: img65 },
+    { src: img66 },
+    { src: img67 },
+    { src: img68 },
+    { src: img69 },
+    { src: img70 },
+    { src: img71 },
+    { src: img72 },
+    { src: img73 },
+    { src: img74 },
+    { src: img75 },
+    { src: img76 },
+    { src: img77 },
+    { src: img78 },
+    { src: img79 },
+    { src: img80 },
+    { src: img81 },
+    { src: img82 },
+    { src: img83 },
+    { src: img84 },
+    { src: img85 },
+    { src: img86 },
+    { src: img87 },
+    { src: img88 },
+    { src: img89 },
+    { src: img90 },
+    { src: img91 },
+    { src: img92 },
+    { src: img93 },
+    { src: img94 },
+    { src: img95 },
+    { src: img96 },
+    { src: img97 },
+    { src: img98 },
+    { src: img99 },
+    { src: img100 },
+    { src: img101 },
+    { src: img102 },
+    { src: img103 },
+    { src: img104 },
+    { src: img105 },
+    { src: img106 },
+    { src: img107 },
+    { src: img108 },
+    { src: img109 },
+    { src: img110 },
+    { src: img111 },
+    { src: img112 },
+    { src: img113 },
+    { src: img114 },
+    { src: img115 },
+    { src: img116 },
+    { src: img117 },
+    { src: img118 },
+    { src: img119 },
+    { src: img120 },
+    { src: img121 },
+    { src: img122 },
+    { src: img123 },
+    { src: img124 },
+    { src: img125 },
+    { src: img126 },
+    { src: img127 },
+    { src: img128 },
+    { src: img129 },
+    { src: img130 },
+    { src: img131 }
 ];
 
 class Gallery extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modalIsOpen: false
-    };
-    this.toggleModal = this.toggleModal.bind(this);
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalIsOpen: false
+        };
+        this.toggleModal = this.toggleModal.bind(this);
+    }
 
-  toggleModal() {
-    const { modalIsOpen } = this.state;
-    this.setState({ modalIsOpen: !modalIsOpen });
-  }
+    toggleModal() {
+        const { modalIsOpen } = this.state;
+        this.setState({ modalIsOpen: !modalIsOpen });
+    }
 
-  render() {
-    return (
-      <StaticQuery
-        query={graphql`
-          query {
-            allGalleryJson {
-              nodes {
-                image {
-                  childImageSharp {
-                    fixed(width: 186, height: 186) {
-                      ...GatsbyImageSharpFixed_withWebp
+    render() {
+        return (
+            <StaticQuery
+                query={graphql`
+                    query {
+                        allGalleryJson {
+                            nodes {
+                                image {
+                                    childImageSharp {
+                                        fixed(width: 186, height: 186) {
+                                            ...GatsbyImageSharpFixed_withWebp
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
-                  }
-                }
-              }
-            }
-          }
-        `}
-        render={({ allGalleryJson: { nodes } }) => {
-          // let srcArray = [];
-          // for (const item of nodes) {
-          //   const current = item.image.childImageSharp.fixed.src;
-          //   srcArray.push({ src: current });
-          // }
-          const { modalIsOpen } = this.state;
-          return (
-            <div className="center-horizontal">
-              <Title variant="h5" gutterBottom className="title">
-                Gallery
-              </Title>
-              <Button onClick={this.toggleModal}>Open Preview</Button>
-              <GridList
-                cols={5}
-                style={{ margin: '0 5.0% 0' }}
-                // onClick={console.log('test')}
-              >
-                {nodes.map(({ image }) => {
-                  const { childImageSharp } = image;
-                  const { fixed } = childImageSharp;
-                  const { src } = fixed;
-                  if (!archives(src)) return <GalleryCard image={image} />;
-                  return undefined;
-                })}
-              </GridList>
-              <ModalGateway>
-                {modalIsOpen ? (
-                  <Modal onClose={this.toggleModal}>
-                    <Carousel onClick={this.toggleModal} views={srcArray} />
-                  </Modal>
-                ) : null}
-              </ModalGateway>
-            </div>
-          );
-        }}
-      />
-    );
-  }
+                `}
+                render={({ allGalleryJson: { nodes } }) => {
+                    // let srcArray = [];
+                    // for (const item of nodes) {
+                    //   const current = item.image.childImageSharp.fixed.src;
+                    //   srcArray.push({ src: current });
+                    // }
+                    const { modalIsOpen } = this.state;
+                    return (
+                        <div className="center-horizontal">
+                            <Title variant="h5" gutterBottom className="title">
+                                Gallery
+                            </Title>
+                            <Button onClick={this.toggleModal}>
+                                Open Preview
+                            </Button>
+                            <GridList cols={5} style={{ margin: '0 5.0% 0' }}>
+                                {nodes.map(({ image }, key) => {
+                                    const { childImageSharp } = image;
+                                    const { fixed } = childImageSharp;
+                                    const { src } = fixed;
+                                    if (!archives(src))
+                                        return (
+                                            <GalleryCard
+                                                image={image}
+                                                key={String(key)}
+                                            />
+                                        );
+                                    return undefined;
+                                })}
+                            </GridList>
+                            <ModalGateway>
+                                {modalIsOpen ? (
+                                    <Modal onClose={this.toggleModal}>
+                                        <Carousel
+                                            onClick={this.toggleModal}
+                                            views={srcArray}
+                                        />
+                                    </Modal>
+                                ) : null}
+                            </ModalGateway>
+                        </div>
+                    );
+                }}
+            />
+        );
+    }
 }
 export default Gallery;

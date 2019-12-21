@@ -1,80 +1,80 @@
 [
-  {
-    "name": "Robert Conrad",
-    "position": "Chair",
-    "image": "../../static/images/execs-2019-2020/chair.jpg",
-    "email": "chair@ieeeuottawa.ca"
-  },
-  {
-    "name": "Amar Jasarbasic",
-    "position": "Vice Chair",
-    "image": "../../static/images/execs-2019-2020/vice-chair.jpg",
-    "email": "vicechair@ieeeuottawa.ca"
-  },
-  {
-    "name": "Sanat Nayar",
-    "position": "Treasurer",
-    "image": "../../static/images/execs-2019-2020/treasurer.jpg",
-    "email": "treasurer@ieeeuottawa.ca"
-  },
-  {
-    "name": "Madison Smrtka",
-    "position": "VP Social",
-    "image": "../../static/images/execs-2019-2020/social.jpg",
-    "email": "social@ieeeuottawa.ca"
-  },
-  {
-    "name": "Tae Kim",
-    "position": "VP Internal",
-    "image": "../../static/images/execs-2019-2020/internal.jpg",
-    "email": "internal@ieeeuottawa.ca"
-  },
-  {
-    "name": "Tony Kim",
-    "position": "VP Communications",
-    "image": "../../static/images/execs-2019-2020/communications.jpg",
-    "email": "communications@ieeeuottawa.ca"
-  },
-  {
-    "name": "Marla Jazzar",
-    "position": "VP Academic",
-    "image": "../../static/images/execs-2019-2020/academic.jpg",
-    "email": "academic@ieeeuottawa.ca"
-  },
-  {
-    "name": "Mahyar Gorji",
-    "position": "VP External",
-    "image": "../../static/images/execs-2019-2020/external.jpg",
-    "email": "external@ieeeuottawa.ca"
-  },
-  {
-    "name": "Nevin WS Ganesan",
-    "position": "Webmaster",
-    "image": "../../static/images/execs-2019-2020/webmaster.jpg",
-    "email": "webmaster@ieeeuottawa.ca"
-  },
-  {
-    "name": "Michal Ridner",
-    "position": "WIE Chair",
-    "image": "../../static/images/execs-2019-2020/wie-chair.jpg",
-    "email": "wie-chair@ieeeuottawa.ca"
-  },
-  {
-    "name": "Shriya Gundala",
-    "position": "WIE Vice Chair",
-    "image": "../../static/images/execs-2019-2020/wie-vice-chair.jpg",
-    "email": "wie-vicechair@ieeeuottawa.ca"
-  },
-  {
-    "name": "Sean McAsey",
-    "position": "Secretary",
-    "image": "../../static/images/execs-2019-2020/secretary.jpg",
-    "email": "secretary@ieeeuottawa.ca"
-  },
-  {
-    "name": "Scott Fulton",
-    "position": "McNaughton Centre Director",
-    "image": "../../static/images/execs-2019-2020/mcnaughton-director.jpg",
-    "email": "mcnaughton@ieeeuottawa.ca"
-  }
+    {
+        "name": "Robert Conrad",
+        "position": "Chair",
+        "image": "../../static/images/execs-2019-2020/chair.jpg",
+        "email": "chair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Amar Jasarbasic",
+        "position": "Vice Chair",
+        "image": "../../static/images/execs-2019-2020/vice-chair.jpg",
+        "email": "vicechair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Sanat Nayar",
+        "position": "Treasurer",
+        "image": "../../static/images/execs-2019-2020/treasurer.jpg",
+        "email": "treasurer@ieeeuottawa.ca"
+    },
+    {
+        "name": "Madison Smrtka",
+        "position": "VP Social",
+        "image": "../../static/images/execs-2019-2020/social.jpg",
+        "email": "social@ieeeuottawa.ca"
+    },
+    {
+        "name": "Tae Kim",
+        "position": "VP Internal",
+        "image": "../../static/images/execs-2019-2020/internal.jpg",
+        "email": "internal@ieeeuottawa.ca"
+    },
+    {
+        "name": "Tony Kim",
+        "position": "VP Communications",
+        "image": "../../static/images/execs-2019-2020/communications.jpg",
+        "email": "communications@ieeeuottawa.ca"
+    },
+    {
+        "name": "Marla Jazzar",
+        "position": "VP Academic",
+        "image": "../../static/images/execs-2019-2020/academic.jpg",
+        "email": "academic@ieeeuottawa.ca"
+    },
+    {
+        "name": "Mahyar Gorji",
+        "position": "VP External",
+        "image": "../../static/images/execs-2019-2020/external.jpg",
+        "email": "external@ieeeuottawa.ca"
+    },
+    {
+        "name": "Nevin WS Ganesan",
+        "position": "Webmaster",
+        "image": "../../static/images/execs-2019-2020/webmaster.jpg",
+        "email": "webmaster@ieeeuottawa.ca"
+    },
+    {
+        "name": "Michal Ridner",
+        "position": "WIE Chair",
+        "image": "../../static/images/execs-2019-2020/wie-chair.jpg",
+        "email": "wie-chair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Shriya Gundala",
+        "position": "WIE Vice Chair",
+        "image": "../../static/images/execs-2019-2020/wie-vice-chair.jpg",
+        "email": "wie-vicechair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Sean McAsey",
+        "position": "Secretary",
+        "image": "../../static/images/execs-2019-2020/secretary.jpg",
+        "email": "secretary@ieeeuottawa.ca"
+    },
+    {
+        "name": "Scott Fulton",
+        "position": "McNaughton Centre Director",
+        "image": "../../static/images/execs-2019-2020/mcnaughton-director.jpg",
+        "email": "mcnaughton@ieeeuottawa.ca"
+    }
 ]

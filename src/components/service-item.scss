@@ -1,23 +1,23 @@
 $default_margin: 16px;
 
 @media only screen and (max-width: 1330px) {
-  .services-item {
-    margin: $default_margin;
-  }
+    .services-item {
+        margin: $default_margin;
+    }
 }
 
 .services-item-title {
-  margin: 32px 0 !important;
+    margin: 32px 0 !important;
 }
 
 .services-item-body {
-  margin: $default_margin !important;
+    margin: $default_margin !important;
 }
 
 .icon-container {
-  width: 100px;
-  height: 100px;
-  border: 2px solid #000000;
-  border-radius: 50%;
-  display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    display: inline-block;
 }

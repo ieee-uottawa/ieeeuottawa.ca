@@ -1,38 +1,38 @@
 [
-  {
-    "name": "Ellie Rumsey",
-    "position": "Design",
-    "image": "../../static/images/execs-2019-2020/design.jpg",
-    "email": "design@ieeeuottawa.ca"
-  },
-  {
-    "name": "Michelle Tang",
-    "position": "WIE Design",
-    "image": "../../static/images/execs-2019-2020/wie-design.jpg",
-    "email": "wie-design@ieeeuottawa.ca"
-  },
-  {
-    "name": "Nicholas Morin",
-    "position": "Translation Commissioner",
-    "image": "../../static/images/execs-2019-2020/translation.jpg",
-    "email": "translation@ieeeuottawa.ca"
-  },
-  {
-    "name": "Erik Cassidy",
-    "position": "CEG Commissioner",
-    "image": "../../static/images/execs-2019-2020/ceg-com.jpg",
-    "email": "ceg@ieeeuottawa.ca"
-  },
-  {
-    "name": "Alois Clerc",
-    "position": "SEG Commissioner",
-    "image": "../../static/images/execs-2019-2020/seg-com.jpg",
-    "email": "seg@ieeeuottawa.ca"
-  },
-  {
-    "name": "Murad Zurkiyeh",
-    "position": "ELG Commissioner",
-    "image": "../../static/images/execs-2019-2020/elg-com.jpg",
-    "email": "elg@ieeeuottawa.ca"
-  }
+    {
+        "name": "Ellie Rumsey",
+        "position": "Design",
+        "image": "../../static/images/execs-2019-2020/design.jpg",
+        "email": "design@ieeeuottawa.ca"
+    },
+    {
+        "name": "Michelle Tang",
+        "position": "WIE Design",
+        "image": "../../static/images/execs-2019-2020/wie-design.jpg",
+        "email": "wie-design@ieeeuottawa.ca"
+    },
+    {
+        "name": "Nicholas Morin",
+        "position": "Translation Commissioner",
+        "image": "../../static/images/execs-2019-2020/translation.jpg",
+        "email": "translation@ieeeuottawa.ca"
+    },
+    {
+        "name": "Erik Cassidy",
+        "position": "CEG Commissioner",
+        "image": "../../static/images/execs-2019-2020/ceg-com.jpg",
+        "email": "ceg@ieeeuottawa.ca"
+    },
+    {
+        "name": "Alois Clerc",
+        "position": "SEG Commissioner",
+        "image": "../../static/images/execs-2019-2020/seg-com.jpg",
+        "email": "seg@ieeeuottawa.ca"
+    },
+    {
+        "name": "Murad Zurkiyeh",
+        "position": "ELG Commissioner",
+        "image": "../../static/images/execs-2019-2020/elg-com.jpg",
+        "email": "elg@ieeeuottawa.ca"
+    }
 ]

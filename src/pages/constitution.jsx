@@ -3,11 +3,11 @@ import ExternalRedirect from '../components/external-redirect';
 import constitutionPDF from '../../static/files/IEEE-Constitution-2019-2020.pdf';
 
 const Constitution = () => (
-  <ExternalRedirect
-    forceExternal
-    url={constitutionPDF}
-    urlDescription="our constitution"
-  />
+    <ExternalRedirect
+        forceExternal
+        url={constitutionPDF}
+        urlDescription="our constitution"
+    />
 );
 
 export default Constitution;

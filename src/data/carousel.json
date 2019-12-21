@@ -1,30 +1,30 @@
 [
-  {
-    "message": "Powering Your Student Experience",
-    "button": {
-      "text": "About Us",
-      "url": "/execs-2019-2020"
+    {
+        "message": "Powering Your Student Experience",
+        "button": {
+            "text": "About Us",
+            "url": "/execs-2019-2020"
+        },
+        "imageFile": {
+            "id": "santa-pic",
+            "image": "../../static/images/ieeesantapic-2.jpg",
+            "style": {
+                "backgroundPositionY": "-175px"
+            }
+        }
     },
-    "imageFile": {
-      "id": "santa-pic",
-      "image": "../../static/images/ieeesantapic-2.jpg",
-      "style": {
-        "backgroundPositionY": "-175px"
-      }
+    {
+        "message": "Want to get involved with us?",
+        "button": {
+            "text": "Get Involved!",
+            "url": "/volunteer"
+        },
+        "imageFile": {
+            "id": "volunteer-cover-pic",
+            "image": "../../static/images/volunteer_cover.jpg",
+            "style": {
+                "backgroundPositionY": "-275px"
+            }
+        }
     }
-  },
-  {
-    "message": "Want to get involved with us?",
-    "button": {
-      "text": "Get Involved!",
-      "url": "/volunteer"
-    },
-    "imageFile": {
-      "id": "volunteer-cover-pic",
-      "image": "../../static/images/volunteer_cover.jpg",
-      "style": {
-        "backgroundPositionY": "-275px"
-      }
-    }
-  }
 ]

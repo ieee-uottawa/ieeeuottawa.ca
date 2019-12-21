@@ -8,22 +8,24 @@ const GA = require('react-ga');
 const { isDevEnvironment } = require('./src/util');
 
 module.exports.onRouteUpdate = ({ location }) => {
-  if (!isDevEnvironment) {
-    let path = (location.pathname + location.search);
-    if (path.match(/\/.*(\/).*/g)) {
-      const lastSlashPos = path.lastIndexOf('/');
-      path = path.substring(0, lastSlashPos) + path.substring(lastSlashPos + 1, path.length);
+    if (!isDevEnvironment) {
+        let path = location.pathname + location.search;
+        if (path.match(/\/.*(\/).*/g)) {
+            const lastSlashPos = path.lastIndexOf('/');
+            path =
+                path.substring(0, lastSlashPos) +
+                path.substring(lastSlashPos + 1, path.length);
+        }
+        // console.log(path);
+        GA.pageview(path);
     }
-    console.log(path);
-    GA.pageview(path);
-  }
 };
 
 module.exports.onClientEntry = () => {
-  // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
-  if (typeof window.IntersectionObserver === 'undefined') {
-    // eslint-disable-next-line global-require
-    require('intersection-observer');
-    console.log('# IntersectionObserver is polyfilled!');
-  }
+    // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
+    if (typeof window.IntersectionObserver === 'undefined') {
+        // eslint-disable-next-line global-require
+        require('intersection-observer');
+        // console.log('# IntersectionObserver is polyfilled!');
+    }
 };

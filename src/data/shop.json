@@ -1,52 +1,42 @@
 [
-  {
-    "name": "Hoodie",
-    "price": [
-      {
-        "quantity": 1,
-        "price": 40
-      }
-    ],
-    "image": "../../static/images/ieeebluehoodie.png",
-    "options": {
-      "size": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "colour": [
-        "Black",
-        "Blue",
-        "Maroon"
-      ]
+    {
+        "name": "Hoodie",
+        "price": [
+            {
+                "quantity": 1,
+                "price": 40
+            }
+        ],
+        "image": "../../static/images/ieeebluehoodie.png",
+        "options": {
+            "size": ["S", "M", "L", "XL", "XXL"],
+            "colour": ["Black", "Blue", "Maroon"]
+        }
+    },
+    {
+        "name": "Patch",
+        "price": [
+            {
+                "quantity": 1,
+                "price": 3
+            }
+        ],
+        "image": "../../static/images/ieeepatch.png",
+        "imageHeight": "auto"
+    },
+    {
+        "name": "Candygram",
+        "price": [
+            {
+                "quantity": 1,
+                "price": 1
+            },
+            {
+                "quantity": 3,
+                "price": 2
+            }
+        ],
+        "expiry": "2018-12-05",
+        "image": "../../static/images/candygrams.png"
     }
-  },
-  {
-    "name": "Patch",
-    "price": [
-      {
-        "quantity": 1,
-        "price": 3
-      }
-    ],
-    "image": "../../static/images/ieeepatch.png",
-    "imageHeight": "auto"
-  },
-  {
-    "name": "Candygram",
-    "price": [
-      {
-        "quantity": 1,
-        "price": 1
-      },
-      {
-        "quantity": 3,
-        "price": 2
-      }
-    ],
-    "expiry": "2018-12-05",
-    "image": "../../static/images/candygrams.png"
-  }
 ]

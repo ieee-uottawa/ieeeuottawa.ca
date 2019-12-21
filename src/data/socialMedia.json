@@ -1,14 +1,14 @@
 [
-  {
-    "link": "https://www.facebook.com/ieeeuottawa",
-    "title": "Facebook"
-  },
-  {
-    "link": "http://www.twitter.com/ieeeuottawa",
-    "title": "Twitter"
-  },
-  {
-    "link": "http://www.instagram.com/ieeeuottawa",
-    "title": "Instagram"
-  }
+    {
+        "link": "https://www.facebook.com/ieeeuottawa",
+        "title": "Facebook"
+    },
+    {
+        "link": "http://www.twitter.com/ieeeuottawa",
+        "title": "Twitter"
+    },
+    {
+        "link": "http://www.instagram.com/ieeeuottawa",
+        "title": "Instagram"
+    }
 ]
