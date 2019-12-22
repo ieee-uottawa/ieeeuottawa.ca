@@ -5,12 +5,6 @@ const Loading = () => {
     return <>Loading...</>;
 };
 
-// Home
-// const Home = Loadable({
-//     loader: () => import('./pages/'),
-//     loading: Loading
-// });
-
 // Execs
 const Execs_2019_2020 = Loadable({
     loader: () => import('./pages/Execs/Execs-2019-2020'),
@@ -82,7 +76,6 @@ const routes = [
     {
         title: 'Home',
         link: '/'
-        // components: Home
     },
     {
         title: 'Execs',
