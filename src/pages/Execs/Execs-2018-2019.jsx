@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import React from 'react';
 import { Typography, GridList } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';

@@ -29,17 +29,19 @@
         "link": "/WIE/WIE"
     },
     {
-        "title": "Volunteer"
+        "title": "Volunteer",
+        "link": "/Volunteer/volunteer"
     },
     {
         "title": "Contact Us",
         "items": [
             {
-                "title": "Office Hours"
+                "title": "Office Hours",
+                "link": "/ContactUs/office-hours"
             },
             {
                 "title": "Mailing List",
-                "link": "/mailing-list-sign-up"
+                "link": "/ContactUs/mailing-list-sign-up"
             }
         ]
     },
@@ -55,7 +57,8 @@
                 "link": "/AboutUs/Constitution"
             },
             {
-                "title": "IEEE Code of Conduct"
+                "title": "IEEE Code of Conduct",
+                "link": "/AboutUs/ieee-code-of-conduct"
             },
             {
                 "title": "Meeting Minutes",

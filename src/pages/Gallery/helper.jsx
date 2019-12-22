@@ -264,4 +264,4 @@ const srcArray = [
     { src: img131 }
 ];
 
-export { srcArray };
+export default srcArray;

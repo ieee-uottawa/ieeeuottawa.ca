@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { isServerSideRendering } from '../util';
+import { isServerSideRendering } from '../../util';
 
 const TriviaSignUp = () =>
     !isServerSideRendering() && (

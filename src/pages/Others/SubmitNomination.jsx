@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
-import Form from '../components/Form/Form';
-import { isServerSideRendering } from '../util';
+import Form from '../../components/Form/Form';
+import { isServerSideRendering } from '../../util';
 
 class SubmitNomination extends Component {
     constructor(props) {

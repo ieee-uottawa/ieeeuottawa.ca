@@ -5,11 +5,11 @@ import GridListTile from '@material-ui/core/GridListTile';
 import Snackbar from '@material-ui/core/Snackbar';
 import { graphql, StaticQuery } from 'gatsby';
 import dayjs from 'dayjs';
-import ProductCard from '../components/Cards/ProductCard/ProductCard';
-import Title from '../components/Titles/Title';
-import Link from '../components/Routers/Link';
-import '../components/Cards/ProductCard/product-card.scss';
-import { capitalize } from '../util';
+import ProductCard from '../../components/Cards/ProductCard/ProductCard';
+import Title from '../../components/Titles/Title';
+import Link from '../../components/Routers/Link';
+import '../../components/Cards/ProductCard/product-card.scss';
+import { capitalize } from '../../util';
 
 class Shop extends Component {
     constructor(props) {

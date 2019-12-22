@@ -9,8 +9,8 @@ import {
 } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
 
-import { moneyFormatter } from '../util';
-import Title from '../components/Titles/Title';
+import { moneyFormatter } from '../../util';
+import Title from '../../components/Titles/Title';
 
 const query = graphql`
     query {

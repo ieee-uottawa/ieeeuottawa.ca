@@ -1,5 +1,5 @@
 import React from 'react';
-import ExternalRedirect from '../components/Routers/ExternalRedirect';
+import ExternalRedirect from '../../components/Routers/ExternalRedirect';
 
 const Photos = () => (
     <ExternalRedirect

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { isServerSideRendering } from '../util';
-import Title from '../components/Titles/Title';
-import officeHoursImg from '../../static/images/office-hours/office-hours.png';
+import { isServerSideRendering } from '../../util';
+import Title from '../../components/Titles/Title';
+import officeHoursImg from '../../../static/images/office-hours/office-hours.png';
 
 class OfficeHours extends Component {
     constructor(props) {

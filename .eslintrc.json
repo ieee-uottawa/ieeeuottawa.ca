@@ -3,8 +3,10 @@
         "browser": true
     },
     "extends": ["airbnb", "prettier"],
+    "parser": "babel-eslint",
     "plugins": ["prettier"],
     "rules": {
+        "camelcase": "off",
         "comma-dangle": "off",
         "implicit-arrow-linebreak": "off",
         "import/no-cycle": "off",
@@ -19,6 +21,12 @@
         "no-restricted-syntax": "off",
         "object-curly-newline": "off",
         "prettier/prettier": "error",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
         "react/forbid-prop-types": "off",
         "react/jsx-indent": "off",
         "react/jsx-indent-props": "off",
