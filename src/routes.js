@@ -83,34 +83,34 @@ const routes = [
             {
                 title: 'Execs 2019-2020',
                 link: '/Execs/Execs-2019-2020',
-                components: Execs_2019_2020
+                component: Execs_2019_2020
             },
             {
                 title: 'Execs 2018-2019',
                 link: '/Execs/Execs-2018-2019',
-                components: Execs_2018_2019
+                component: Execs_2018_2019
             }
         ]
     },
     {
         title: 'Events',
         link: '/Events/Events',
-        components: Events
+        component: Events
     },
     {
         title: 'Gallery',
         link: '/Gallery/Gallery',
-        components: Gallery
+        component: Gallery
     },
     {
         title: 'WIE',
         link: '/WIE/WIE',
-        components: WIE
+        component: WIE
     },
     {
         title: 'Volunteer',
         link: '/Volunteer/volunteer',
-        components: Volunteer
+        component: Volunteer
     },
     {
         title: 'Contact Us',
@@ -118,12 +118,12 @@ const routes = [
             {
                 title: 'Office Hours',
                 link: '/ContactUs/office-hours',
-                components: OfficeHours
+                component: OfficeHours
             },
             {
                 title: 'Mailing List',
                 link: '/ContactUs/mailing-list-sign-up',
-                components: MailingList
+                component: MailingList
             }
         ]
     },
@@ -133,22 +133,22 @@ const routes = [
             {
                 title: 'Budget',
                 link: '/AboutUs/Budget',
-                components: Budget
+                component: Budget
             },
             {
                 title: 'Constitution',
                 link: '/AboutUs/Constitution',
-                components: Constitution
+                component: Constitution
             },
             {
                 title: 'IEEE Code of Conduct',
                 link: '/AboutUs/ieee-code-of-conduct',
-                components: IEEECodeOfConduct
+                component: IEEECodeOfConduct
             },
             {
                 title: 'Meeting Minutes',
                 link: '/AboutUs/MeetingMinutes',
-                components: MeetingMinutes
+                component: MeetingMinutes
             }
         ]
     }

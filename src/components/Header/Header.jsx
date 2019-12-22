@@ -11,6 +11,7 @@ import Toggle from '../Buttons/Toggle/Toggle';
 import sun from '../../../static/images/darkmode/sun.png';
 import moon from '../../../static/images/darkmode/moon.png';
 import logo from '../../../static/images/uottawa_branch_logo-2.png';
+import routes from '../../routes';
 
 const query = graphql`
     query {
@@ -88,35 +89,29 @@ class Header extends Component {
                             </Link>
                             <Hidden smDown>
                                 <div>
-                                    {edges.map(
-                                        ({ node: { title, link, items } }) => {
-                                            let navItem;
-                                            if (!items) {
-                                                navItem = (
-                                                    <NavButton
-                                                        key={title}
-                                                        title={title}
-                                                        link={link}
-                                                        component={Button}
-                                                    />
-                                                );
-                                            } else {
-                                                navItem = (
-                                                    <NavDropDown
-                                                        key={title}
-                                                        color="inherit"
-                                                        items={items}
-                                                        clickbubbledown="true"
-                                                        component={Button}
-                                                    >
-                                                        {title}
-                                                    </NavDropDown>
-                                                );
-                                            }
-
-                                            return navItem;
+                                    {routes.map(({ title, link, items }) => {
+                                        if (!items) {
+                                            return (
+                                                <NavButton
+                                                    key={title}
+                                                    title={title}
+                                                    link={link}
+                                                    component={Button}
+                                                />
+                                            );
                                         }
-                                    )}
+                                        return (
+                                            <NavDropDown
+                                                key={title}
+                                                color="inherit"
+                                                items={items}
+                                                clickbubbledown="true"
+                                                component={Button}
+                                            >
+                                                {title}
+                                            </NavDropDown>
+                                        );
+                                    })}
                                 </div>
                                 <Toggle
                                     icons={{
