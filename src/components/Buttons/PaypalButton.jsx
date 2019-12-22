@@ -1,14 +1,14 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { clearCart } from '../redux/actions/cart_actions';
-import { isServerSideRendering } from '../util';
+import { clearCart } from '../../redux/actions/cart_actions';
+import { isServerSideRendering } from '../../util';
 
 class PaypalButton extends Component {
     constructor(props) {
         super(props);
-
         this.payment = this.payment.bind(this);
         this.onAuthorize = this.onAuthorize.bind(this);
     }

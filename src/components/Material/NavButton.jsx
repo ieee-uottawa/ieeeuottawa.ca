@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from './link';
+import Link from '../Routers/Link';
 
 const NavButton = ({ link, title, component: NavComponent, ...other }) => {
     const linker = link || `/${title.toLowerCase().replace(/ /g, '-')}`;

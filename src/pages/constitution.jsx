@@ -1,5 +1,5 @@
 import React from 'react';
-import ExternalRedirect from '../components/external-redirect';
+import ExternalRedirect from '../components/Routers/ExternalRedirect';
 import constitutionPDF from '../../static/files/IEEE-Constitution-2019-2020.pdf';
 
 const Constitution = () => (

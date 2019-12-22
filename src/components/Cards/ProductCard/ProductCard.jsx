@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-    Card,
-    CardMedia,
-    CardContent,
-    Typography,
-    CardActions,
     Button,
-    TextField
+    Card,
+    CardActions,
+    CardContent,
+    CardMedia,
+    TextField,
+    Typography
 } from '@material-ui/core';
 import { connect } from 'react-redux';
 import dayjs from 'dayjs';
-import MaterialSelect from './MaterialSelect';
-import { addItemToCart } from '../redux/actions/cart_actions';
-import { showPricing } from '../util';
-import './exec-card.scss';
+import MaterialSelect from '../../Material/MaterialSelect';
+import { addItemToCart } from '../../../redux/actions/cart_actions';
+import { showPricing } from '../../../util';
+import '../ExecCard/exec-card.scss';
 
 class ProductCard extends Component {
     constructor(props) {
         super(props);
         this.isValidForm = this.isValidForm.bind(this);
-
-        this.state = {
-            count: props.itemCount
-        };
+        this.state = { count: props.itemCount };
         this.state.isValidForm = this.isValidForm();
         this.handleChange = this.handleChange.bind(this);
         this.handleAddToCartClick = this.handleAddToCartClick.bind(this);
@@ -72,7 +69,6 @@ class ProductCard extends Component {
     }
 
     handleAddToCartClick() {
-        // eslint-disable-next-line react/prop-types
         const {
             dispatch,
             name,
@@ -170,27 +166,28 @@ class ProductCard extends Component {
     }
 }
 
+ProductCard.defaultProps = {
+    dispatch: null,
+    expiry: null,
+    itemCount: 1,
+    onAddToCart: () => {},
+    options: null
+};
+
 ProductCard.propTypes = {
-    name: PropTypes.string.isRequired,
+    dispatch: PropTypes.func,
+    expiry: PropTypes.string,
     imageURL: PropTypes.string.isRequired,
-    imageHeight: PropTypes.string,
+    itemCount: PropTypes.number,
+    name: PropTypes.string.isRequired,
+    onAddToCart: PropTypes.func,
+    options: PropTypes.any,
     price: PropTypes.arrayOf(
         PropTypes.shape({
             quantity: PropTypes.number.isRequired,
             price: PropTypes.number.isRequired
         })
-    ).isRequired,
-    expiry: PropTypes.string,
-    itemCount: PropTypes.number,
-    options: PropTypes.any,
-    onAddToCart: PropTypes.function
-};
-
-ProductCard.defaultProps = {
-    itemCount: 1,
-    options: null,
-    imageHeight: '166px',
-    onAddToCart: () => {}
+    ).isRequired
 };
 
 ProductCard.contextTypes = {

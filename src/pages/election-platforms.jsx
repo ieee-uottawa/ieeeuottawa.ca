@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import { Typography } from '@material-ui/core';
-import CandidateCard from '../components/candidate-card';
-import Title from '../components/title';
+import CandidateCard from '../components/Cards/CandidateCard/CandidateCard';
+import Title from '../components/Titles/Title';
 
 const positions = [
     'Chair',

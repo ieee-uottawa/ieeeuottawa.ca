@@ -5,19 +5,19 @@ import withWidth, { isWidthDown, isWidthUp } from '@material-ui/core/withWidth';
 import { graphql, StaticQuery } from 'gatsby';
 import Carousel from 'nuka-carousel';
 import BackgroundImage from 'gatsby-background-image';
-import Event from '../components/event';
-import Link from '../components/link';
-import Title from '../components/title';
-import ParallaxItem from '../components/parallax';
-import ServiceItem from '../components/service-item';
-import IEEEButton from '../components/IEEEButton';
+import Event from '../components/Event/Event';
+import Link from '../components/Routers/Link';
+import Title from '../components/Titles/Title';
+import Parallax from '../components/Buttons/Parallax';
+import ServiceItem from '../components/Buttons/ServiceItem/ServiceItem';
+import IEEEButton from '../components/Buttons/IEEEButton';
 import {
     ChevronLeftIcon,
     ChevronRightIcon,
     FlaskIcon,
     LeadPencilIcon,
     LightBulbIcon
-} from '../components/icons';
+} from '../components/Icons/icons';
 
 import './index.scss';
 import mailingListImg from '../../static/images/compsci-1.jpg';
@@ -232,7 +232,7 @@ const IndexPage = props => {
                                 )
                             )}
                         </GridList>
-                        <ParallaxItem
+                        <Parallax
                             imageURL={mailingListImg}
                             messageText="Don't Miss Out! Join The Mailing List Today"
                             buttonText="Subscribe"

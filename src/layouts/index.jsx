@@ -7,8 +7,8 @@ import { init } from '@sentry/browser';
 import { initialize } from 'react-ga';
 
 import withRoot from '../withRoot';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 import cart from '../redux/reducers/cart_reducers';
 import { isDevEnvironment, isServerSideRendering } from '../util';
 
@@ -19,7 +19,6 @@ import favicon from '../../static/images/ieee_logo_circle.png';
 const store = createStore(cart);
 
 if (!isDevEnvironment) {
-    // console.log('Initialized DSN');
     init({
         dsn: process.env.GATSBY_SENTRY_DSN,
         environment: process.env.NODE_ENV

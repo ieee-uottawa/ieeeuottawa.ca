@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Grid } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
-import Link from './link';
+import Link from '../Routers/Link';
 import './footer.scss';
 
 const query = graphql`

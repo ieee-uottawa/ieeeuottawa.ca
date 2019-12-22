@@ -49,7 +49,6 @@ const ExecCard = props => {
         <div className="center-horizontal">
             <FormControlLabel
                 control={
-                    // eslint-disable-next-line react/jsx-wrap-multilines
                     <a
                         target="_top"
                         rel="noopener noreferrer"

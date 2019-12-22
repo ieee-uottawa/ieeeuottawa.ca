@@ -1,9 +1,9 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
-
-import Form from '../components/form';
+import Form from '../components/Form/Form';
 import { isServerSideRendering } from '../util';
 
 class SubmitNomination extends Component {
@@ -24,32 +24,8 @@ class SubmitNomination extends Component {
         this.handleSnackbarExit = this.handleSnackbarExit.bind(this);
     }
 
-    sendSnackbarMsg(key, message, processQueue = true) {
-        this.messageQueue.push({
-            key,
-            message
-        });
-        if (processQueue) this.processQueue();
-    }
-
-    processQueue() {
-        if (this.messageQueue.length > 0) {
-            this.setState({
-                messageInfo: this.messageQueue.shift(),
-                showSnackbar: true
-            });
-        }
-    }
-
-    handleSnackbarClose() {
-        this.setState({ showSnackbar: false });
-    }
-
-    handleSnackbarExit() {
-        this.processQueue();
-    }
-
-    async onSubmit(values) {
+    async onSubmit(data) {
+        const values = data;
         values.studentNumber = values['student-number'];
         delete values['student-number'];
         values.platform = values['platform-(200-word-min---500-word-max)'];
@@ -57,14 +33,13 @@ class SubmitNomination extends Component {
 
         this.sendSnackbarMsg('submitting', 'Submitting nomination...', false);
 
-        if (this.state.showSnackbar) {
-            this.setState({ showSnackbar: false });
-        } else {
-            this.processQueue();
-        }
+        const { showSnackbar } = this.state;
+        if (showSnackbar) this.setState({ showSnackbar: false });
+        else this.processQueue();
 
         this.setState({ isLoading: true });
         if (!isServerSideRendering()) {
+            // eslint-disable-next-line global-require
             const request = require('superagent');
             try {
                 const res = await request
@@ -95,6 +70,31 @@ class SubmitNomination extends Component {
             }
         }
         this.setState({ isLoading: false });
+    }
+
+    sendSnackbarMsg(key, message, processQueue = true) {
+        this.messageQueue.push({
+            key,
+            message
+        });
+        if (processQueue) this.processQueue();
+    }
+
+    processQueue() {
+        if (this.messageQueue.length > 0) {
+            this.setState({
+                messageInfo: this.messageQueue.shift(),
+                showSnackbar: true
+            });
+        }
+    }
+
+    handleSnackbarClose() {
+        this.setState({ showSnackbar: false });
+    }
+
+    handleSnackbarExit() {
+        this.processQueue();
     }
 
     render() {

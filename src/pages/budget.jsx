@@ -1,5 +1,6 @@
+/* eslint-disable max-len */
 import React from 'react';
-import Title from '../components/title';
+import Title from '../components/Titles/Title';
 
 const Budget = () => (
     <div>

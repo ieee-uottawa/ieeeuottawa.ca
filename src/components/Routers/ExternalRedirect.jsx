@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
 import { event } from 'react-ga';
-import Link from './link';
+import Link from './Link';
 
 class ExternalRedirect extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             seconds: 5,
             intervalID: null
@@ -71,14 +70,14 @@ class ExternalRedirect extends Component {
 }
 
 ExternalRedirect.defaultProps = {
-    urlDescription: null,
-    forceExternal: false
+    forceExternal: false,
+    urlDescription: null
 };
 
 ExternalRedirect.propTypes = {
+    forceExternal: PropTypes.bool,
     url: PropTypes.string.isRequired,
-    urlDescription: PropTypes.string,
-    forceExternal: PropTypes.bool
+    urlDescription: PropTypes.string
 };
 
 export default ExternalRedirect;

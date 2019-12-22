@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { AppBar, Toolbar, Button, Hidden, IconButton } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
-import NavButton from './NavButton';
-import NavDropDown from './NavDropDown';
-import { CloseIcon, MenuIcon } from './icons';
-import MaterialMenu from './MaterialMenu';
-import Link from './link';
-import Toggle from './Toggle';
-import sun from '../../static/images/darkmode/sun.png';
-import moon from '../../static/images/darkmode/moon.png';
-import logo from '../../static/images/uottawa_branch_logo-2.png';
+import NavButton from '../Material/NavButton';
+import NavDropDown from '../Material/NavDropDown';
+import { CloseIcon, MenuIcon } from '../Icons/icons';
+import MaterialMenu from '../Material/MaterialMenu';
+import Link from '../Routers/Link';
+import Toggle from '../Buttons/Toggle/Toggle';
+import sun from '../../../static/images/darkmode/sun.png';
+import moon from '../../../static/images/darkmode/moon.png';
+import logo from '../../../static/images/uottawa_branch_logo-2.png';
 
 const query = graphql`
     query {

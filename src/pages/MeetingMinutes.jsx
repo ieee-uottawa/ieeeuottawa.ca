@@ -4,7 +4,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Title from '../components/title';
+import Title from '../components/Titles/Title';
 
 import pdf1 from '../../static/files/meeting-minutes/1. IEEE Executive Meeting Agenda (June 16).pdf';
 import pdf2 from '../../static/files/meeting-minutes/1.1 IEEE Executive Meeting Minutes.pdf';

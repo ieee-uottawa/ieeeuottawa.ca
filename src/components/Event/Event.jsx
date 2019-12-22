@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Typography, GridListTile } from '@material-ui/core';
 import Img from 'gatsby-image';
-import IEEEButton from './IEEEButton';
-import Link from './link';
+import IEEEButton from '../Buttons/IEEEButton';
+import Link from '../Routers/Link';
 import './event.scss';
 
 const Event = ({ url, name, description, image }) => (

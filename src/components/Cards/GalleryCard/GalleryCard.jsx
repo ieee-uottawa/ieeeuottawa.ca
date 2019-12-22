@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CardMedia, CardContent } from '@material-ui/core';
 import Img from 'gatsby-image';
-import './exec-card.scss';
+import '../ExecCard/exec-card.scss';
 
 const GalleryCard = props => {
     const imageStyle = {

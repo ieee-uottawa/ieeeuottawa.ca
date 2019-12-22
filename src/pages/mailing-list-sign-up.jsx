@@ -1,5 +1,5 @@
 import React from 'react';
-import ExternalRedirect from '../components/external-redirect';
+import ExternalRedirect from '../components/Routers/ExternalRedirect';
 
 const MailingListSignUp = () => (
     <ExternalRedirect

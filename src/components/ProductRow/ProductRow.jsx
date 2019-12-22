@@ -8,22 +8,22 @@ import {
     Button
 } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
-import { CloseIcon } from './icons';
+import { CloseIcon } from '../Icons/icons';
 import {
     calculatePrice,
     capitalize,
     moneyFormatter,
     showPricing
-} from '../util';
+} from '../../util';
 import './product-row.scss';
 
 const ProductRow = ({
+    handleDeleteClick,
     imageURL,
     name,
     options,
     price,
     quantity,
-    handleDeleteClick,
     width
 }) => {
     let horizontalCellClass = 'hide-border';
@@ -110,6 +110,11 @@ const ProductRow = ({
     );
 };
 
+ProductRow.defaultProps = {
+    handleDeleteClick: () => {},
+    options: {}
+};
+
 ProductRow.propTypes = {
     imageURL: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -121,11 +126,6 @@ ProductRow.propTypes = {
     quantity: PropTypes.number.isRequired,
     handleDeleteClick: PropTypes.func,
     width: PropTypes.number.isRequired
-};
-
-ProductRow.defaultProps = {
-    handleDeleteClick: () => {},
-    options: {}
 };
 
 export default withWidth()(ProductRow);

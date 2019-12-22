@@ -2,8 +2,8 @@ import React from 'react';
 import GridList from '@material-ui/core/GridList';
 import { graphql, StaticQuery } from 'gatsby';
 
-import Title from '../components/title';
-import Event from '../components/event';
+import Title from '../components/Titles/Title';
+import Event from '../components/Event/Event';
 
 const query = graphql`
     query {
