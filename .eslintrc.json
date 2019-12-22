@@ -10,6 +10,7 @@
         "comma-dangle": "off",
         "implicit-arrow-linebreak": "off",
         "import/no-cycle": "off",
+        "import/prefer-default-export": "off",
         "linebreak-style": "off",
         "max-len": [
             "warn",

@@ -130,7 +130,7 @@ import img129 from '../../../static/images/gallery/0129.jpg';
 import img130 from '../../../static/images/gallery/0130.jpg';
 import img131 from '../../../static/images/gallery/0131.jpg';
 
-const srcArray = [
+export const srcArray = [
     { src: img1 },
     { src: img2 },
     { src: img3 },
@@ -263,5 +263,3 @@ const srcArray = [
     { src: img130 },
     { src: img131 }
 ];
-
-export default srcArray;

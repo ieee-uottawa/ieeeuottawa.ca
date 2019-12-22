@@ -6,10 +6,10 @@ const Loading = () => {
 };
 
 // Home
-const Home = Loadable({
-    loader: () => import('./pages/index'),
-    loading: Loading
-});
+// const Home = Loadable({
+//     loader: () => import('./pages/'),
+//     loading: Loading
+// });
 
 // Execs
 const Execs_2019_2020 = Loadable({
@@ -81,8 +81,8 @@ const IEEECodeOfConduct = Loadable({
 const routes = [
     {
         title: 'Home',
-        link: '/',
-        components: Home
+        link: '/'
+        // components: Home
     },
     {
         title: 'Execs',

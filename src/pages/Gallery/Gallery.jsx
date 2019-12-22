@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import Title from '../../components/Titles/Title';
 import GalleryCard from '../../components/Cards/GalleryCard/GalleryCard';
-import srcArray from './helper';
+import { srcArray } from './helper';
 
 const archives = src => {
     const blacklist = new Set(['0121.jpg', '0123.jpg']);
