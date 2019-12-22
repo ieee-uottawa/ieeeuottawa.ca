@@ -6,19 +6,19 @@ import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux';
 
-import ProductRow from '../components/ProductRow/ProductRow';
-import PaypalButton from '../components/Buttons/PaypalButton';
+import ProductRow from '../../components/ProductRow/ProductRow';
+import PaypalButton from '../../components/Buttons/PaypalButton';
 import {
     calculatePrice,
     capitalize,
     flattenDeep,
     isDevEnvironment,
     moneyFormatter
-} from '../util';
-import { removeItemFromCart } from '../redux/actions/cart_actions';
-import Title from '../components/Titles/Title';
+} from '../../util';
+import { removeItemFromCart } from '../../redux/actions/cart_actions';
+import Title from '../../components/Titles/Title';
 
-import sadEmoji from '../../static/images/emoji_sad.svg';
+import sadEmoji from '../../../static/images/emoji_sad.svg';
 import './cart.scss';
 
 const optionsSum = price => (sum, { quantity }) =>

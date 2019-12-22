@@ -8,24 +8,25 @@
         "items": [
             {
                 "title": "Execs 2019-2020",
-                "link": "/execs-2019-2020"
+                "link": "/Execs/Execs-2019-2020"
             },
             {
                 "title": "Execs 2018-2019",
-                "link": "/execs-2018-2019"
+                "link": "/Execs/Execs-2018-2019"
             }
         ]
     },
     {
         "title": "Events",
-        "link": "/Events"
+        "link": "/Events/Events"
     },
     {
         "title": "Gallery",
-        "link": "/gallery"
+        "link": "/Gallery/Gallery"
     },
     {
-        "title": "WIE"
+        "title": "WIE",
+        "link": "/WIE/WIE"
     },
     {
         "title": "Volunteer"
@@ -46,17 +47,19 @@
         "title": "About Us",
         "items": [
             {
-                "title": "Budget"
+                "title": "Budget",
+                "link": "/AboutUs/Budget"
             },
             {
-                "title": "Constitution"
+                "title": "Constitution",
+                "link": "/AboutUs/Constitution"
             },
             {
                 "title": "IEEE Code of Conduct"
             },
             {
                 "title": "Meeting Minutes",
-                "link": "/MeetingMinutes"
+                "link": "/AboutUs/MeetingMinutes"
             }
         ]
     }

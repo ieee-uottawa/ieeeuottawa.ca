@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import flyer from '../../static/files/BELEFlyer.png';
-import Title from '../components/Titles/Title';
+import Title from '../../components/Titles/Title';
+import flyer from '../../../static/files/BELEFlyer.png';
 
 const pStyle = {
     textAlign: 'center',
