@@ -141,6 +141,7 @@ const languages = {
         EN: 'Mailing List Signup Form',
         FR: 'Liste de diffusion Inscrivez-vous Formulaire'
     },
+    'Read More': { EN: 'Read More', FR: 'Lire la suite' },
     Budget: { EN: 'Budget', FR: 'Budget' },
     Constitution: { EN: 'Constitution', FR: 'Constitution' },
     'IEEE Code of Conduct': {

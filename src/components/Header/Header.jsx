@@ -84,7 +84,7 @@ class Header extends Component {
     renderMenuItems() {
         return (
             <div>
-                {routes.map(({ title, link, items, component }) => {
+                {routes.map(({ title, path: link, items, component }) => {
                     if (!items) {
                         return (
                             <NavButton

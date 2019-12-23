@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography, GridListTile } from '@material-ui/core';
 import Img from 'gatsby-image';
-import IEEEButton from '../Buttons/IEEEButton';
-import Link from '../Routers/Link';
+import { Typography, GridListTile } from '../../helpers/material-ui';
+import { IEEEButton, Link } from '../../helpers/components';
+import { translate } from '../../helpers/translation';
 import './event.scss';
 
 const Event = ({ url, name, description, image }) => (
@@ -27,7 +27,7 @@ const Event = ({ url, name, description, image }) => (
             to={url}
             eventlabel={`Clicked ${name}`}
         >
-            <Typography variant="button">Read more</Typography>
+            <Typography variant="button">{translate('Read More')}</Typography>
         </IEEEButton>
     </GridListTile>
 );

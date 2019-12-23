@@ -3,6 +3,7 @@ import {
     CircularProgress,
     Grid,
     GridList,
+    GridListTile,
     Snackbar,
     Typography
 } from '@material-ui/core';
@@ -25,6 +26,7 @@ export {
     FormControl,
     Grid,
     GridList,
+    GridListTile,
     InputLabel,
     MenuItem,
     Paper,
