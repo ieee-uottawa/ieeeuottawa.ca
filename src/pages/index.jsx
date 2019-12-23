@@ -23,7 +23,7 @@ import {
     ServiceItem,
     Title
 } from '../helpers/components';
-import { languages } from '../helpers/translation';
+import { translate } from '../helpers/translation';
 import './index.scss';
 
 const query = graphql`
@@ -80,7 +80,7 @@ const IndexPage = props => {
     let gridStyle = { margin: '0 25%' };
     if (isWidthUp('lg', width, true) || isWidthDown('sm', width, false))
         gridStyle = {};
-
+    const { language: code } = props;
     return (
         <StaticQuery
             query={query}
@@ -182,20 +182,29 @@ const IndexPage = props => {
                         </Carousel>
 
                         <Title style={{ margin: '32px 0 16px' }}>
-                            Why come to our office?
+                            {translate('Why come to our office?', code)}
                         </Title>
                         <Typography
                             variant="subtitle1"
                             className="center-horizontal"
                         >
-                            Check out all the services we offer in our office!
+                            {translate(
+                                'Check out all the services we offer in our office!',
+                                code
+                            )}
                         </Typography>
                         <Grid id="services-row" container>
                             <Grid item xs={12} sm={6} lg={4}>
                                 <ServiceItem
                                     icon={<FlaskIcon className="icon" />}
-                                    title="Purchase Lab Supplies"
-                                    body="Check out what we have for sale on our Services page, under About Us."
+                                    title={translate(
+                                        'Purchase Lab Supplies',
+                                        code
+                                    )}
+                                    body={translate(
+                                        'Check out what we have for sale on our Services page, under About Us.',
+                                        code
+                                    )}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6} lg={4}>
@@ -253,9 +262,8 @@ const IndexPage = props => {
 };
 
 IndexPage.propTypes = {
-    width: PropTypes.any.isRequired
-    // allEventsJson: PropTypes.any.isRequired,
-    // allCarouselJson: PropTypes.any.isRequired
+    width: PropTypes.any.isRequired,
+    language: PropTypes.string.isRequired
 };
 
 export default withWidth()(IndexPage);

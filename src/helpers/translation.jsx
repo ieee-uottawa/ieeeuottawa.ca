@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const languages = {
     home: {
         EN: 'Powering your student experience',
@@ -42,51 +43,50 @@ const languages = {
         EN: "Don't Miss out! Join The Mailing List Today!",
         FR: "Ne manquez pas ça! Rejoignez la liste de diffusion aujourd'hui!"
     },
-    visit: {
+    'Visit Our Office': {
         EN: 'Visit Our Office',
         FR: 'Visitez notre bureau!'
     },
-    why: {
+    'Why come to our office?': {
         EN: 'Why come to our office?',
         FR: 'Pourquoi venir à notre bureau?'
     },
-    check: {
+    'Check out all the services we offer in our office!': {
         EN: 'Check out all the services we offer in our office!',
         FR: 'Découvrez tous les services que nous offrons dans notre bureau!'
     },
-    purchase: {
+    'Purchase Lab Supplies': {
         EN: 'Purchase Lab Supplies',
         FR: 'Acheter des fournitures de lab'
     },
-    checkout: {
+    'Check out what we have for sale on our Services page, under About Us.': {
         EN:
             'Check out what we have for sale on our Services page, under About Us.',
         FR:
             'Découvrez ce que nous avons à vendre sur notre page Services, sous À notre sujet.'
     },
-    homework: { EN: 'Homework Help', FR: 'Aide aux devoirs' },
-    course: {
+    'Homework Help': { EN: 'Homework Help', FR: 'Aide aux devoirs' },
+    'Is there a course you are struggling with? Contact the VP Academic to find out how we can help you succeed.': {
         EN:
             'Is there a course you are struggling with? Contact the VP Academic to find out how we can help you succeed.',
         FR:
             'Y a-t-il un cours avec lequel vous avez du mal? Contactez notre VP Académique pour savoir comment vous aider à réussir.'
     },
-    study: { EN: 'Study', FR: 'Étude' },
-    17: {
+    Study: { EN: 'Study', FR: 'Étude' },
+    'Need a chill place to study? Come make use of our library and study in the office anytime we are open.': {
         EN:
             'Need a chill place to study? Come make use of our library and study in the office anytime we are open.',
         FR:
             'Besoin d’un endroit relax pour étudier? Utilisez notre bibliothèque et étudiez au bureau à tous temps où nous sommes ouverts.'
     },
-    latest: { EN: 'Latest Events', FR: 'Derniers évènements' },
-    mailing: {
+    'Latest Events': { EN: 'Latest Events', FR: 'Derniers évènements' },
+    "Don't miss out! Join the mailing list today!": {
         EN: "Don't miss out! Join the mailing list today!",
         FR: "Ne manquez pas ça! Rejoignez la liste de diffusion aujourd'hui!"
     },
     Subscribe: { EN: 'Subscribe', FR: 'Abonnez-vous' },
-    'Call us': { EN: 'Call us!', FR: 'Appelez-nous!' },
-    'Visit Our Office': { EN: 'Visit Our Office', FR: 'Visitez notre bureau!' },
-    'Social Media': { EN: 'Social Media', FR: 'Médias sociaux' },
+    'Call Us!': { EN: 'Call Us!', FR: 'Appelez-nous!' },
+    'Social Media!': { EN: 'Social Media!', FR: 'Médias sociaux!' },
     official: {
         EN:
             'The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students by giving them access to up-to-date equipment, internet access, textbooks and a quiet work environment. *Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.',
@@ -124,4 +124,9 @@ const languages = {
     }
 };
 
-export { languages };
+const translate = (key, code) => {
+    if (languages[key] && languages[key][code]) return languages[key][code];
+    return key;
+};
+
+export { languages, translate };
