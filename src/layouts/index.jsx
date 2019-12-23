@@ -7,11 +7,13 @@ import { Provider } from 'react-redux';
 import { init } from '@sentry/browser';
 import { initialize } from 'react-ga';
 
+import { getCurrentLanguage } from '../helpers/translation';
 import withRoot from '../withRoot';
 import { Header, Footer } from '../helpers/components';
 import { logo1 as logo } from '../helpers/theme';
 import cart from '../redux/reducers/cart_reducers';
 import { isDevEnvironment, isServerSideRendering } from '../util';
+
 import './index.scss';
 import favicon from '../../static/images/ieee_logo_circle.png';
 
@@ -45,7 +47,7 @@ const Layout = ({
     children,
     theme = 'light',
     toggleTheme,
-    language = 'EN',
+    language = getCurrentLanguage(),
     toggleLanguage
 }) => {
     const AddExtraProps = Component => {

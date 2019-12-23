@@ -4,6 +4,7 @@ import Carousel, { Modal, ModalGateway } from 'react-images';
 import { Button, GridList } from '../../helpers/material-ui';
 import { GalleryCard, Title } from '../../helpers/components';
 import { srcArray } from '../../helpers/gallery';
+import { translate } from '../../helpers/translation';
 
 const archives = src => {
     const blacklist = new Set(['0121.jpg', '0123.jpg']);
@@ -50,10 +51,10 @@ class Gallery extends Component {
                     return (
                         <div className="center-horizontal">
                             <Title variant="h5" gutterBottom className="title">
-                                Gallery
+                                {translate('Gallery')}
                             </Title>
                             <Button onClick={this.toggleModal}>
-                                Open Preview
+                                {translate('Open Preview')}
                             </Button>
                             <GridList cols={5} style={{ margin: '0 5.0% 0' }}>
                                 {nodes.map(({ image }, key) => {
@@ -67,18 +68,18 @@ class Gallery extends Component {
                                                 key={String(key)}
                                             />
                                         );
-                                    return undefined;
+                                    return null;
                                 })}
                             </GridList>
                             <ModalGateway>
-                                {modalIsOpen ? (
+                                {modalIsOpen && (
                                     <Modal onClose={this.toggleModal}>
                                         <Carousel
                                             onClick={this.toggleModal}
                                             views={srcArray}
                                         />
                                     </Modal>
-                                ) : null}
+                                )}
                             </ModalGateway>
                         </div>
                     );

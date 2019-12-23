@@ -1,47 +1,52 @@
 /* eslint-disable max-len */
-const languages = {
-    'Powering Your Student Experience': {
-        EN: 'Powering Your Student Experience',
-        FR: 'Électrifier votre expérience étudiante'
+
+const menuItems = {
+    Home: {
+        EN: 'Home',
+        FR: 'Accueil'
     },
-    menuItems: {
-        Home: {
-            EN: 'Home',
-            FR: 'Accueil'
-        },
-        Execs: {
-            EN: 'Execs',
-            FR: 'Directeurs'
-        },
-        Events: {
-            EN: 'Events',
-            FR: 'Évènements'
-        },
-        Gallery: {
-            EN: 'Gallery',
-            FR: 'Galerie'
-        },
-        WIE: {
-            EN: 'WIE',
-            FR: 'WIE'
-        },
-        Volunteer: {
-            EN: 'Volunteer',
-            FR: 'Bénévole'
-        },
-        'Contact Us': {
-            EN: 'Contact Us',
-            FR: 'Contactez-nous'
-        },
-        'About Us': {
-            EN: 'About Us',
-            FR: 'À notre sujet'
-        }
+    Execs: {
+        EN: 'Execs',
+        FR: 'Directeurs'
+    },
+    Events: {
+        EN: 'Events',
+        FR: 'Évènements'
+    },
+    Gallery: {
+        EN: 'Gallery',
+        FR: 'Galerie'
+    },
+    WIE: {
+        EN: 'WIE',
+        FR: 'WIE'
+    },
+    Volunteer: {
+        EN: 'Volunteer',
+        FR: 'Bénévole'
+    },
+    'Contact Us': {
+        EN: 'Contact Us',
+        FR: 'Contactez-nous'
     },
     'About Us': {
         EN: 'About Us',
         FR: 'À notre sujet'
+    }
+};
+
+const gallery = {
+    'Open Preview': { EN: 'Open Preview', FR: "Ouvrir l'aperçu" }
+};
+
+const languages = {
+    ...menuItems,
+    ...gallery,
+    'Powering Your Student Experience': {
+        EN: 'Powering Your Student Experience',
+        FR: 'Électrifier votre expérience étudiante'
     },
+
     'Visit Our Office': {
         EN: 'Visit Our Office',
         FR: 'Visitez notre bureau!'
@@ -98,9 +103,14 @@ const languages = {
         FR:
             'La section étudiante IEEE de l’Université d’Ottawa a été créée pour fournir des services professionnels afin d’améliorer l’expérience de chaque étudiant sur le campus. Nous accommodons les étudiants en leur donnant accès à un équipement à jour, un accès Internet, des manuels scolaires et un environnement de travail calme.'
     },
+    '*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.': {
+        EN:
+            '*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.',
+        FR:
+            "* Avis de non-responsabilité: les opinions et le contenu véhiculés par cette page sont ceux de ses propriétaires ou opérateurs, et non ceux de l'IEEE."
+    },
     'Our Execs': { EN: 'Our Execs', FR: 'Nos directeurs' },
     Events: { EN: 'Events', FR: 'Évènements' },
-    Gallery: { EN: 'Gallery', FR: 'Galerie' },
     'Open Preview': { EN: 'Open Preview', FR: "Ouvrir l'aperçu" },
     'Big eng little eng': {
         EN: 'Big eng little eng',
@@ -129,10 +139,15 @@ const languages = {
     }
 };
 
-let code = 'EN';
+const getCurrentLanguage = () => {
+    return localStorage.getItem('SelectedLanguage') || 'EN';
+};
+
+let code = getCurrentLanguage();
 
 const toggleLanguage = () => {
     code = code === 'EN' ? 'FR' : 'EN';
+    localStorage.setItem('SelectedLanguage', code);
 };
 
 const translate = key => {
@@ -140,4 +155,4 @@ const translate = key => {
     return key;
 };
 
-export { languages, translate, toggleLanguage };
+export { menuItems, languages, translate, toggleLanguage, getCurrentLanguage };

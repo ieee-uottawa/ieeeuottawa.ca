@@ -13,12 +13,7 @@
         "import/no-cycle": "off",
         "import/prefer-default-export": "off",
         "linebreak-style": "off",
-        "max-len": [
-            "warn",
-            {
-                "code": 150
-            }
-        ],
+        "max-len": "off",
         "no-continue": "off",
         "no-restricted-syntax": "off",
         "object-curly-newline": "off",

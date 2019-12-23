@@ -12,7 +12,7 @@ import {
     Toggle
 } from '../../helpers/components';
 import { sun, moon, logo2 as logo } from '../../helpers/theme';
-import { languages } from '../../helpers/translation';
+import { translate, getCurrentLanguage } from '../../helpers/translation';
 import routes from '../../routes';
 
 const query = graphql`
@@ -81,17 +81,11 @@ class Header extends Component {
         );
     }
 
-    renderTitle(title) {
-        const { language } = this.props;
-        const translatedTitle = languages.menuItems[title][language];
-        return translatedTitle;
-    }
-
     renderMenuItems() {
         return (
             <div>
                 {routes.map(({ title, link, items, component }) => {
-                    const translatedTitle = this.renderTitle(title);
+                    const translatedTitle = translate(title);
                     if (!items) {
                         return (
                             <NavButton
@@ -132,7 +126,7 @@ class Header extends Component {
                         anchorEl={anchorEl}
                         items={edges.map(
                             ({ node: { title, link, items } }) => ({
-                                title: this.renderTitle(title),
+                                title: translate(title),
                                 link,
                                 items
                             })
@@ -174,8 +168,8 @@ class Header extends Component {
     }
 
     renderLanguageToggle() {
-        const { language, toggleLanguage } = this.props;
-        return <Button onClick={toggleLanguage}>{language}</Button>;
+        const { toggleLanguage } = this.props;
+        return <Button onClick={toggleLanguage}>{getCurrentLanguage()}</Button>;
     }
 
     render() {
@@ -209,13 +203,11 @@ class Header extends Component {
 }
 
 Header.defaultProps = {
-    theme: null,
-    language: 'EN'
+    theme: null
 };
 
 Header.propTypes = {
     theme: PropTypes.string,
-    language: PropTypes.string,
     toggleTheme: PropTypes.func.isRequired,
     toggleLanguage: PropTypes.func.isRequired
 };

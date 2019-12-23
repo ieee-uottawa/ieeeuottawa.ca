@@ -2,6 +2,7 @@ import React from 'react';
 import GridList from '@material-ui/core/GridList';
 import { graphql, StaticQuery } from 'gatsby';
 import { Event, Title } from '../../helpers/components';
+import { translate } from '../../helpers/translation';
 
 const query = graphql`
     query {
@@ -31,7 +32,7 @@ const Events = () => (
         render={({ allEventsJson: { edges } }) => (
             <div>
                 <Title variant="h5" gutterBottom className="title">
-                    Events
+                    {translate('Events')}
                 </Title>
                 <GridList id="event-grid" cols={2}>
                     {edges.map(
