@@ -22,9 +22,15 @@ export function getCurrentTheme(mode) {
     });
 }
 
+export function getCurrentLanguage(language) {
+    const currentLanguage = language || 'EN';
+    return currentLanguage;
+}
+
 function createPageContext() {
     return {
         theme: getCurrentTheme(),
+        language: getCurrentLanguage(),
         // This is needed in order to deduplicate the injection of CSS in the page.
         sheetsManager: new Map(),
         // This is needed in order to inject the critical CSS.

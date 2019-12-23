@@ -1,26 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, GridList, Typography } from '@material-ui/core';
-import withWidth, { isWidthDown, isWidthUp } from '@material-ui/core/withWidth';
 import { graphql, StaticQuery } from 'gatsby';
-import Carousel from 'nuka-carousel';
-import BackgroundImage from 'gatsby-background-image';
-import Event from '../components/event';
-import Link from '../components/link';
-import Title from '../components/title';
-import ParallaxItem from '../components/parallax';
-import ServiceItem from '../components/service-item';
-import IEEEButton from '../components/IEEEButton';
+import {
+    Grid,
+    GridList,
+    Typography,
+    isWidthDown,
+    isWidthUp,
+    withWidth
+} from '../helpers/material-ui';
+import { Carousel, BackgroundImage, mailingListImg } from '../helpers/theme';
 import {
     ChevronLeftIcon,
     ChevronRightIcon,
+    Event,
     FlaskIcon,
+    IEEEButton,
     LeadPencilIcon,
-    LightBulbIcon
-} from '../components/icons';
-
+    LightBulbIcon,
+    Link,
+    Parallax,
+    ServiceItem,
+    Title
+} from '../helpers/components';
+import { translate } from '../helpers/translation';
 import './index.scss';
-import mailingListImg from '../../static/images/compsci-1.jpg';
 
 const query = graphql`
     query {
@@ -65,6 +69,12 @@ const query = graphql`
     }
 `;
 
+const iconStyle = {
+    color: 'white',
+    height: '48px',
+    width: '48px'
+};
+
 const IndexPage = props => {
     const { width } = props;
     let gridStyle = { margin: '0 25%' };
@@ -74,15 +84,12 @@ const IndexPage = props => {
     return (
         <StaticQuery
             query={query}
-            render={({
-                allEventsJson: { edges: eventEdges },
-                allCarouselJson: { edges: carouselEdges }
-            }) => {
-                const iconStyle = {
-                    color: 'white',
-                    height: '48px',
-                    width: '48px'
-                };
+            render={queryProps => {
+                const {
+                    allEventsJson: { edges: eventEdges },
+                    allCarouselJson: { edges: carouselEdges }
+                } = queryProps;
+
                 return (
                     <div style={{ marginTop: '-1em' }}>
                         <Carousel
@@ -151,7 +158,7 @@ const IndexPage = props => {
                                                             }
                                                             className="white-url-txt"
                                                         >
-                                                            {message}
+                                                            {translate(message)}
                                                         </Link>
                                                     </Typography>
                                                 )}
@@ -165,7 +172,7 @@ const IndexPage = props => {
                                                         marginTop: '32px'
                                                     }}
                                                 >
-                                                    {button.text}
+                                                    {translate(button.text)}
                                                 </IEEEButton>
                                             </div>
                                         </div>
@@ -175,39 +182,47 @@ const IndexPage = props => {
                         </Carousel>
 
                         <Title style={{ margin: '32px 0 16px' }}>
-                            Why come to our office?
+                            {translate('Why come to our office?')}
                         </Title>
                         <Typography
                             variant="subtitle1"
                             className="center-horizontal"
                         >
-                            Check out all the services we offer in our office!
+                            {translate(
+                                'Check out all the services we offer in our office!'
+                            )}
                         </Typography>
                         <Grid id="services-row" container>
                             <Grid item xs={12} sm={6} lg={4}>
                                 <ServiceItem
                                     icon={<FlaskIcon className="icon" />}
-                                    title="Purchase Lab Supplies"
-                                    body="Check out what we have for sale on our Services page, under About Us."
+                                    title={translate('Purchase Lab Supplies')}
+                                    body={translate(
+                                        'Check out what we have for sale on our Services page, under About Us.'
+                                    )}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6} lg={4}>
                                 <ServiceItem
                                     icon={<LightBulbIcon className="icon" />}
-                                    title="Homework Help"
-                                    body="Is there a course you are struggling with? Contact the VP Academic to find out how we can help you succeed."
+                                    title={translate('Homework Help')}
+                                    body={translate(
+                                        'Is there a course you are struggling with? Contact the VP Academic to find out how we can help you succeed.'
+                                    )}
                                 />
                             </Grid>
                             <Grid item xs={12} lg={4} style={gridStyle}>
                                 <ServiceItem
                                     icon={<LeadPencilIcon className="icon" />}
-                                    title="Study"
-                                    body="Need a chill place to study? Come make use of our library and study in the office anytime we are open."
+                                    title={translate('Study')}
+                                    body={translate(
+                                        'Need a chill place to study? Come make use of our library and study in the office anytime we are open.'
+                                    )}
                                 />
                             </Grid>
                         </Grid>
                         <Title style={{ margin: '32px 0 16px' }}>
-                            Latest Events
+                            {translate('Latest Events')}
                         </Title>
                         <GridList id="event-grid" cols={2}>
                             {eventEdges.map(
@@ -232,11 +247,13 @@ const IndexPage = props => {
                                 )
                             )}
                         </GridList>
-                        <ParallaxItem
+                        <Parallax
                             imageURL={mailingListImg}
-                            messageText="Don't Miss Out! Join The Mailing List Today"
-                            buttonText="Subscribe"
-                            buttonURL="/mailing-list-sign-up"
+                            messageText={translate(
+                                "Don't Miss Out! Join The Mailing List Today!"
+                            )}
+                            buttonText={translate('Subscribe')}
+                            buttonURL="/ContactUs/mailing-list-sign-up"
                         />
                     </div>
                 );
