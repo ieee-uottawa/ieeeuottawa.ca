@@ -50,10 +50,41 @@ const execs = {
     }
 };
 
+const roles = {
+    Chair: { EN: 'Chair', FR: 'Président' },
+    'Vice Chair': { EN: 'Vice Chair', FR: 'Vice Président' },
+    Treasurer: { EN: 'Treasurer', FR: 'Trésorier' },
+    VP: { EN: 'VP', FR: 'VP' },
+    'VP Social': { EN: 'VP Social', FR: 'VP Social' },
+    'VP Internal': { EN: 'VP Internal', FR: 'VP Interne' },
+    'VP Communications': { EN: 'VP Communications', FR: 'VP Communications' },
+    'VP Academic': { EN: 'VP Academic', FR: 'VP Académique' },
+    'VP External': { EN: 'VP External', FR: 'VP Externe' },
+    'VP Webmaster': { EN: 'VP Webmaster', FR: 'VP Webmaster' },
+    'WIE Chair': { EN: 'WIE Chair', FR: 'Présidente WIE' },
+    'WIE Vice Chair': { EN: 'WIE Vice Chair', FR: 'Vice Présidente WIE' },
+    Secretary: { EN: 'Secretary', FR: 'Secrétaire' },
+    'McNaughton Centre Director': {
+        EN: 'McNaughton Centre Director',
+        FR: 'Directeur du centre McNaughton'
+    },
+    'Our Commissioners': { EN: 'Our Commissioners', FR: 'Nos commissaires' },
+    Design: { EN: 'Design', FR: 'Design' },
+    'WIE Design': { EN: 'WIE Design', FR: 'Design WIE' },
+    'Translation Commissioner': {
+        EN: 'Translation Commissioner',
+        FR: 'Commissaire aux traductions'
+    },
+    'CEG Commissioner': { EN: 'CEG Commissioner', FR: 'Commissaire CEG' },
+    'SEG Commissioner': { EN: 'SEG Commissioner', FR: 'Commissaire SEG' },
+    'ELG Commissioner': { EN: 'ELG Commissioner', FR: 'Commissaire ELG' }
+};
+
 const languages = {
     ...menuItems,
     ...gallery,
     ...execs,
+    ...roles,
     'to be redirected there now.': {
         EN: 'to be redirected there now.',
         FR: 'pour y être redirigé maintenant.'
@@ -185,10 +216,15 @@ const translateRedirect = (description, seconds) => {
     return map[code];
 };
 
+const translateDescription = (EN, FR) => {
+    return getCurrentLanguage() === 'FR' ? FR : EN;
+};
+
 export {
     menuItems,
     languages,
     translate,
+    translateDescription,
     translateRedirect,
     toggleLanguage,
     getCurrentLanguage

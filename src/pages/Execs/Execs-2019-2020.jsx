@@ -80,7 +80,7 @@ const Execs_2019_2020 = () => (
                                 name={name}
                                 email={email}
                                 key={email}
-                                position={position}
+                                position={translate(position)}
                                 image={image}
                             />
                         ))}
@@ -99,7 +99,7 @@ const Execs_2019_2020 = () => (
                                     name={name}
                                     email={email}
                                     key={email}
-                                    position={position}
+                                    position={translate(position)}
                                     image={image}
                                 />
                             )

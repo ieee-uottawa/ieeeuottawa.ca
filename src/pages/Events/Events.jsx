@@ -2,7 +2,7 @@ import React from 'react';
 import GridList from '@material-ui/core/GridList';
 import { graphql, StaticQuery } from 'gatsby';
 import { Event, Title } from '../../helpers/components';
-import { translate } from '../../helpers/translation';
+import { translate, translateDescription } from '../../helpers/translation';
 
 const query = graphql`
     query {
@@ -12,6 +12,7 @@ const query = graphql`
                     id
                     name
                     description
+                    FR
                     url
                     image {
                         childImageSharp {
@@ -43,7 +44,8 @@ const Events = () => (
                                     childImageSharp: { fixed: image }
                                 },
                                 name,
-                                description,
+                                description: EN,
+                                FR,
                                 url
                             }
                         }) => (
@@ -51,7 +53,7 @@ const Events = () => (
                                 key={String(id)}
                                 image={image}
                                 name={name}
-                                description={description}
+                                description={translateDescription(EN, FR)}
                                 url={url}
                             />
                         )

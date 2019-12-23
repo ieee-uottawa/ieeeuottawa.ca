@@ -64,7 +64,7 @@ const Execs_2018_2019 = () => (
                                     name={name}
                                     email={email}
                                     key={email}
-                                    position={position}
+                                    position={translate(position)}
                                     image={image}
                                 />
                             )
