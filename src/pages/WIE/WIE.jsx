@@ -1,7 +1,8 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
-import Title from '../../components/Titles/Title';
-import flyer from '../../../static/files/BELEFlyer.png';
+import { Typography } from '../../helpers/material-ui';
+import { WIEflyer as flyer } from '../../helpers/theme';
+import { Title } from '../../helpers/components';
+import { translate } from '../../helpers/translation';
 
 const pStyle = {
     textAlign: 'center',
@@ -21,7 +22,7 @@ const imageStyle = {
 };
 
 const WIE = () => (
-    <div>
+    <>
         <Title variant="h5" gutterBottom className="title">
             Big Eng Little Eng
         </Title>
@@ -30,7 +31,7 @@ const WIE = () => (
             variant="body1"
             style={pStyle}
         >
-            Sign Up Now!
+            {translate('Sign Up Now!')}
         </Typography>
         <Typography
             className="center-horizontal"
@@ -41,11 +42,11 @@ const WIE = () => (
                 href="https://forms.gle/iARM4Cx7oq1FBrp18"
                 style={{ color: '#3498db' }}
             >
-                Click here
+                {translate('Click here')}
             </a>
         </Typography>
         <img src={flyer} alt="big-eng-little-eng" style={imageStyle} />
-    </div>
+    </>
 );
 
 export default WIE;

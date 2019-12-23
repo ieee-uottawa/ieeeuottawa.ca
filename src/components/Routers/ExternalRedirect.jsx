@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Typography } from '@material-ui/core';
 import { event } from 'react-ga';
+import { Typography } from '../../helpers/material-ui';
 import { Link } from '../../helpers/components';
 import { translateRedirect, translate } from '../../helpers/translation';
 

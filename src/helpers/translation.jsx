@@ -45,8 +45,8 @@ const execs = {
         FR: 'Directeurs 2019-2020'
     },
     'Execs 2018-2019': {
-        EN: 'Execs 2019-2020',
-        FR: 'Directeurs 2019-2020'
+        EN: 'Execs 2018-2019',
+        FR: 'Directeurs 2018-2019'
     }
 };
 
@@ -132,7 +132,7 @@ const languages = {
         EN: 'Big eng little eng',
         FR: 'Big eng little eng'
     },
-    'Sign up now!': { EN: 'Sign up now!', FR: 'Inscrivez-vous maintenant!' },
+    'Sign Up Now!': { EN: 'Sign Up Now!', FR: 'Inscrivez-vous maintenant!' },
     'Click here': { EN: 'Click here', FR: 'Cliquez ici' },
     'Volunteer form': { EN: 'Volunteer form', FR: 'Formulaire de bénévolat' },
     'Office Hours': { EN: 'Office Hours', FR: 'Heures de bureau' },

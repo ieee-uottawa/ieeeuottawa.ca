@@ -5,7 +5,8 @@ import {
     GridList,
     GridListTile,
     Snackbar,
-    Typography
+    Typography,
+    withStyles
 } from '@material-ui/core';
 
 import FormControl from '@material-ui/core/FormControl';
@@ -39,5 +40,6 @@ export {
     Typography,
     isWidthDown,
     isWidthUp,
+    withStyles,
     withWidth
 };
