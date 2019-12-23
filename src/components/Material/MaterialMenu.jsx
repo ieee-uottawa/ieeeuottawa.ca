@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import NavButton from './NavButton';
 import NavDropDown from './NavDropDown';
+import { translate } from '../../helpers/translation';
 
 class MaterialMenu extends Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class MaterialMenu extends Component {
                         return (
                             <NavButton
                                 key={title}
-                                title={title}
+                                title={translate(title)}
                                 link={link}
                                 component={MenuItem}
                                 onClick={onClose}
@@ -57,7 +58,7 @@ class MaterialMenu extends Component {
                             component={MenuItem}
                             onClick={() => this.handleMobileDropdown(navItems)}
                         >
-                            {title}
+                            {translate(title)}
                         </NavDropDown>
                     );
                 })}

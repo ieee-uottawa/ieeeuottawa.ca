@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
 import { event } from 'react-ga';
-import Link from './Link';
+import { Link } from '../../helpers/components';
+import { translateRedirect, translate } from '../../helpers/translation';
 
 class ExternalRedirect extends Component {
     constructor(props) {
@@ -14,15 +15,15 @@ class ExternalRedirect extends Component {
     }
 
     componentDidMount() {
-        this.state.intervalID = setInterval(() => {
-            const { seconds } = this.state;
-            if (seconds === 1) {
-                this.stopTimer();
-                const { url } = this.props;
-                window.location.replace(url);
-            }
-            this.setState({ seconds: seconds - 1 });
-        }, 1000);
+        // this.state.intervalID = setInterval(() => {
+        //     const { seconds } = this.state;
+        //     if (seconds === 1) {
+        //         this.stopTimer();
+        //         const { url } = this.props;
+        //         window.location.replace(url);
+        //     }
+        //     this.setState({ seconds: seconds - 1 });
+        // }, 1000);
     }
 
     componentWillUnmount() {
@@ -38,12 +39,10 @@ class ExternalRedirect extends Component {
         const { url, urlDescription, forceExternal } = this.props;
         const { seconds } = this.state;
         const description = urlDescription || url;
-
         return (
             <div className="p-margins center-horizontal center-vertical">
                 <Typography variant="h4" gutterBottom>
-                    You will be redirected to {description} in {seconds}{' '}
-                    seconds.
+                    {translateRedirect(description, seconds)}
                 </Typography>
                 <Typography variant="h4" gutterBottom>
                     <Link
@@ -60,9 +59,9 @@ class ExternalRedirect extends Component {
                             })
                         }
                     >
-                        Click here{' '}
+                        {translate('Click here')}{' '}
                     </Link>
-                    to be redirected there now.
+                    {translate('to be redirected there now.')}
                 </Typography>
             </div>
         );

@@ -4,7 +4,7 @@ import ExternalRedirect from '../../components/Routers/ExternalRedirect';
 const IEEECodeOfConduct = () => (
     <ExternalRedirect
         url="http://www.ieee.org/about/ieee_code_of_conduct.pdf"
-        urlDescription="the IEEE Code of Conduct"
+        urlDescription="IEEE Code of Conduct"
     />
 );
 

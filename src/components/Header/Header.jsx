@@ -85,14 +85,13 @@ class Header extends Component {
         return (
             <div>
                 {routes.map(({ title, link, items, component }) => {
-                    const translatedTitle = translate(title);
                     if (!items) {
                         return (
                             <NavButton
                                 key={title}
                                 link={link}
                                 loadable={component}
-                                title={translatedTitle}
+                                title={translate(title)}
                                 component={Button}
                             />
                         );
@@ -106,7 +105,7 @@ class Header extends Component {
                             clickbubbledown="true"
                             component={Button}
                         >
-                            {translatedTitle}
+                            {translate(title)}
                         </NavDropDown>
                     );
                 })}

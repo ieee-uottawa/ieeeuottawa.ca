@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { isServerSideRendering } from '../../util';
 import Title from '../../components/Titles/Title';
 import officeHoursImg from '../../../static/images/office-hours/office-hours.png';
+import { translate } from '../../helpers/translation';
 
 class OfficeHours extends Component {
     constructor(props) {
@@ -38,11 +39,11 @@ class OfficeHours extends Component {
         return (
             <>
                 <Title variant="h5" gutterBottom className="title">
-                    Office Hours
+                    {translate('Office Hours')}
                 </Title>
                 <img
                     src={officeHoursImg}
-                    alt="IEEE Office Hours Winter 2019"
+                    alt="IEEE Office Hours"
                     style={imgStyle}
                 />
             </>

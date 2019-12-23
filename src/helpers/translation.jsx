@@ -39,9 +39,25 @@ const gallery = {
     'Open Preview': { EN: 'Open Preview', FR: "Ouvrir l'aperçu" }
 };
 
+const execs = {
+    'Execs 2019-2020': {
+        EN: 'Execs 2019-2020',
+        FR: 'Directeurs 2019-2020'
+    },
+    'Execs 2018-2019': {
+        EN: 'Execs 2019-2020',
+        FR: 'Directeurs 2019-2020'
+    }
+};
+
 const languages = {
     ...menuItems,
     ...gallery,
+    ...execs,
+    'to be redirected there now.': {
+        EN: 'to be redirected there now.',
+        FR: 'pour y être redirigé maintenant.'
+    },
     'Powering Your Student Experience': {
         EN: 'Powering Your Student Experience',
         FR: 'Électrifier votre expérience étudiante'
@@ -118,23 +134,21 @@ const languages = {
     },
     'Sign up now!': { EN: 'Sign up now!', FR: 'Inscrivez-vous maintenant!' },
     'Click here': { EN: 'Click here', FR: 'Cliquez ici' },
-    redirected: {
-        EN:
-            'You will be redirected to _ in _ seconds. Click here to be redirected there now.',
-        FR:
-            'Vous serez redirigé vers _ dans _ secondes. Cliquez ici pour y être redirigé maintenant.'
-    },
     'Volunteer form': { EN: 'Volunteer form', FR: 'Formulaire de bénévolat' },
     'Office Hours': { EN: 'Office Hours', FR: 'Heures de bureau' },
-    'Mailing list': { EN: 'Mailing list', FR: 'Liste de diffusion' },
+    'Mailing List': { EN: 'Mailing List', FR: 'Liste de diffusion' },
+    'Mailing List Signup Form': {
+        EN: 'Mailing List Signup Form',
+        FR: 'Liste de diffusion Inscrivez-vous Formulaire'
+    },
     Budget: { EN: 'Budget', FR: 'Budget' },
     Constitution: { EN: 'Constitution', FR: 'Constitution' },
     'IEEE Code of Conduct': {
         EN: 'IEEE Code of Conduct',
         FR: "Code de conduite de l'IEEE"
     },
-    'Meeting minutes': {
-        EN: 'Meeting minutes',
+    'Meeting Minutes': {
+        EN: 'Meeting Minutes',
         FR: 'Comptes rendus des réunions'
     }
 };
@@ -155,4 +169,23 @@ const translate = key => {
     return key;
 };
 
-export { menuItems, languages, translate, toggleLanguage, getCurrentLanguage };
+const translateRedirect = (description, seconds) => {
+    const map = {
+        EN: `You will be redirected to ${translate(
+            description
+        )} in ${seconds} seconds.`,
+        FR: `Vous serez redirigé vers ${translate(
+            description
+        )} dans ${seconds} secondes.`
+    };
+    return map[code];
+};
+
+export {
+    menuItems,
+    languages,
+    translate,
+    translateRedirect,
+    toggleLanguage,
+    getCurrentLanguage
+};
