@@ -57,7 +57,12 @@ const MeetingMinutes = () => {
                         {pdfs.map(item => (
                             <TableRow key={item}>
                                 <TableCell component="th" scope="row">
-                                    <a href={pdfMap[item]}>{item}</a>
+                                    <a
+                                        href={pdfMap[item]}
+                                        style={{ color: '#3498db' }}
+                                    >
+                                        {item}
+                                    </a>
                                 </TableCell>
                             </TableRow>
                         ))}
