@@ -23,6 +23,7 @@ import {
     ServiceItem,
     Title
 } from '../helpers/components';
+import { languages } from '../helpers/translation';
 import './index.scss';
 
 const query = graphql`
@@ -68,6 +69,12 @@ const query = graphql`
     }
 `;
 
+const iconStyle = {
+    color: 'white',
+    height: '48px',
+    width: '48px'
+};
+
 const IndexPage = props => {
     const { width } = props;
     let gridStyle = { margin: '0 25%' };
@@ -77,15 +84,12 @@ const IndexPage = props => {
     return (
         <StaticQuery
             query={query}
-            render={({
-                allEventsJson: { edges: eventEdges },
-                allCarouselJson: { edges: carouselEdges }
-            }) => {
-                const iconStyle = {
-                    color: 'white',
-                    height: '48px',
-                    width: '48px'
-                };
+            render={queryProps => {
+                const {
+                    allEventsJson: { edges: eventEdges },
+                    allCarouselJson: { edges: carouselEdges }
+                } = queryProps;
+
                 return (
                     <div style={{ marginTop: '-1em' }}>
                         <Carousel
@@ -250,6 +254,8 @@ const IndexPage = props => {
 
 IndexPage.propTypes = {
     width: PropTypes.any.isRequired
+    // allEventsJson: PropTypes.any.isRequired,
+    // allCarouselJson: PropTypes.any.isRequired
 };
 
 export default withWidth()(IndexPage);

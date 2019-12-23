@@ -4,10 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 
-import getPageContext, {
-    getCurrentTheme,
-    getCurrentLanguage
-} from './getPageContext';
+import getPageContext, { getCurrentTheme } from './getPageContext';
 
 function withRoot(Component) {
     let muiPageContext = null;
@@ -16,6 +13,8 @@ function withRoot(Component) {
         constructor(props) {
             super(props);
             muiPageContext = getPageContext();
+            this.state = { language: 'EN' };
+            this.toggleLanguage = this.toggleLanguage.bind(this);
         }
 
         componentDidMount() {
@@ -26,17 +25,21 @@ function withRoot(Component) {
             }
         }
 
+        toggleLanguage() {
+            const { language } = this.state;
+            const currentLanguage = language === 'EN' ? 'FR' : 'EN';
+            this.setState({ language: currentLanguage });
+        }
+
         render() {
+            const { language } = this.state;
             return (
                 <JssProvider
                     generateClassName={muiPageContext.generateClassName}
                 >
                     <ThemeToggler>
-                        {({ theme, toggleTheme, language }) => {
+                        {({ theme, toggleTheme }) => {
                             const currentTheme = getCurrentTheme(theme);
-                            const currentLanguage = getCurrentLanguage(
-                                language
-                            );
                             /* MuiThemeProvider makes the theme available down the React tree thanks to React context. */
                             return (
                                 <MuiThemeProvider
@@ -48,8 +51,9 @@ function withRoot(Component) {
                                     <Component
                                         {...this.props}
                                         theme={theme}
-                                        language={currentLanguage}
                                         toggleTheme={toggleTheme}
+                                        language={language}
+                                        toggleLanguage={this.toggleLanguage}
                                     />
                                 </MuiThemeProvider>
                             );
@@ -59,7 +63,6 @@ function withRoot(Component) {
             );
         }
     }
-
     return WithRoot;
 }
 

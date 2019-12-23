@@ -12,7 +12,6 @@ import { Header, Footer } from '../helpers/components';
 import { logo1 as logo } from '../helpers/theme';
 import cart from '../redux/reducers/cart_reducers';
 import { isDevEnvironment, isServerSideRendering } from '../util';
-
 import './index.scss';
 import favicon from '../../static/images/ieee_logo_circle.png';
 
@@ -46,74 +45,84 @@ const Layout = ({
     children,
     theme = 'light',
     toggleTheme,
-    language = 'EN'
-}) => (
-    <Provider store={store}>
-        <div
-            style={{
-                minHeight: '100%',
-                display: 'flex',
-                flexDirection: 'column'
-            }}
-        >
-            <Helmet
-                title="IEEE uOttawa Student Branch"
-                link={[
-                    {
-                        rel: 'shortcut icon',
-                        type: 'image/png',
-                        href: `${favicon}`
-                    }
-                ]}
-            >
-                <meta
-                    property="og:image"
-                    content={`https://ieeeuottawa.ca${logo}`}
-                />
-                <meta
-                    property="og:title"
-                    content="IEEE uOttawa Student Branch"
-                />
-                <meta
-                    property="og:description"
-                    content="The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment."
-                />
-                <meta property="og:url" content="https://ieeeuottawa.ca/" />
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@ieeeuottawa" />
-            </Helmet>
-            <Header
-                theme={theme}
-                toggleTheme={toggleTheme}
-                language={language}
-            />
+    language = 'EN',
+    toggleLanguage
+}) => {
+    const AddExtraProps = Component => {
+        return <Component.type {...Component.props} language={language} />;
+    };
+    const newComponent = AddExtraProps(children);
+
+    return (
+        <Provider store={store}>
             <div
                 style={{
-                    margin: '1em auto 0',
-                    paddingTop: '0',
-                    flex: '1 0 auto',
-                    width: '100%',
-                    minHeight: 'calc(100vh - 386px)'
+                    minHeight: '100%',
+                    display: 'flex',
+                    flexDirection: 'column'
                 }}
             >
-                {children}
+                <Helmet
+                    title="IEEE uOttawa Student Branch"
+                    link={[
+                        {
+                            rel: 'shortcut icon',
+                            type: 'image/png',
+                            href: `${favicon}`
+                        }
+                    ]}
+                >
+                    <meta
+                        property="og:image"
+                        content={`https://ieeeuottawa.ca${logo}`}
+                    />
+                    <meta
+                        property="og:title"
+                        content="IEEE uOttawa Student Branch"
+                    />
+                    <meta
+                        property="og:description"
+                        content="The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment."
+                    />
+                    <meta property="og:url" content="https://ieeeuottawa.ca/" />
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:site" content="@ieeeuottawa" />
+                </Helmet>
+                <Header
+                    theme={theme}
+                    toggleTheme={toggleTheme}
+                    language={language}
+                    toggleLanguage={toggleLanguage}
+                />
+                <div
+                    style={{
+                        margin: '1em auto 0',
+                        paddingTop: '0',
+                        flex: '1 0 auto',
+                        width: '100%',
+                        minHeight: 'calc(100vh - 386px)'
+                    }}
+                >
+                    {newComponent}
+                </div>
+                <Footer language={language} />
             </div>
-            <Footer />
-        </div>
-    </Provider>
-);
+        </Provider>
+    );
+};
 
 Layout.defaultProps = {
     children: null,
-    language: 'EN',
-    theme: 'light'
+    theme: 'light',
+    language: 'EN'
 };
 
 Layout.propTypes = {
     children: PropTypes.any,
-    language: PropTypes.string,
     theme: PropTypes.string,
-    toggleTheme: PropTypes.func.isRequired
+    language: PropTypes.string,
+    toggleTheme: PropTypes.func.isRequired,
+    toggleLanguage: PropTypes.func.isRequired
 };
 
 export default withRoot(Layout);

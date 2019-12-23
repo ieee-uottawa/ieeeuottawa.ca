@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { AppBar, Toolbar, Button, Hidden, IconButton } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
+import { AppBar, Toolbar, Button, Hidden, IconButton } from '@material-ui/core';
 import {
     CloseIcon,
     Link,
@@ -12,6 +12,7 @@ import {
     Toggle
 } from '../../helpers/components';
 import { sun, moon, logo2 as logo } from '../../helpers/theme';
+import { languages } from '../../helpers/translation';
 import routes from '../../routes';
 
 const query = graphql`
@@ -80,17 +81,24 @@ class Header extends Component {
         );
     }
 
+    renderTitle(title) {
+        const { language } = this.props;
+        const translatedTitle = languages.menuItems[title][language];
+        return translatedTitle;
+    }
+
     renderMenuItems() {
         return (
             <div>
                 {routes.map(({ title, link, items, component }) => {
+                    const translatedTitle = this.renderTitle(title);
                     if (!items) {
                         return (
                             <NavButton
                                 key={title}
                                 link={link}
                                 loadable={component}
-                                title={title}
+                                title={translatedTitle}
                                 component={Button}
                             />
                         );
@@ -104,7 +112,7 @@ class Header extends Component {
                             clickbubbledown="true"
                             component={Button}
                         >
-                            {title}
+                            {translatedTitle}
                         </NavDropDown>
                     );
                 })}
@@ -124,7 +132,7 @@ class Header extends Component {
                         anchorEl={anchorEl}
                         items={edges.map(
                             ({ node: { title, link, items } }) => ({
-                                title,
+                                title: this.renderTitle(title),
                                 link,
                                 items
                             })
@@ -166,7 +174,8 @@ class Header extends Component {
     }
 
     renderLanguageToggle() {
-        return <Button>EN</Button>;
+        const { language, toggleLanguage } = this.props;
+        return <Button onClick={toggleLanguage}>{language}</Button>;
     }
 
     render() {
@@ -187,6 +196,7 @@ class Header extends Component {
                                 {this.renderLanguageToggle()}
                             </Hidden>
                             <Hidden mdUp>
+                                {this.renderLanguageToggle()}
                                 {this.renderThemeToggle()}
                                 {this.renderMobileMenuItems(edges)}
                             </Hidden>
@@ -199,12 +209,15 @@ class Header extends Component {
 }
 
 Header.defaultProps = {
-    theme: null
+    theme: null,
+    language: 'EN'
 };
 
 Header.propTypes = {
     theme: PropTypes.string,
-    toggleTheme: PropTypes.func.isRequired
+    language: PropTypes.string,
+    toggleTheme: PropTypes.func.isRequired,
+    toggleLanguage: PropTypes.func.isRequired
 };
 
 export default Header;
