@@ -77,6 +77,11 @@ const routes = [
         title: 'Home',
         link: '/'
     },
+    // {
+    //     title: 'Switcher',
+    //     link: '/Switcher',
+    //     disabled: true
+    // },
     {
         title: 'Execs',
         items: [

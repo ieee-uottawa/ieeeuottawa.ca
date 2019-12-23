@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from '../Routers/Link';
 
-const NavButton = ({ link, title, component: NavComponent, ...other }) => {
+const NavButton = props => {
+    const { link, title, component: NavComponent, loadable, ...other } = props;
     const linker = link || `/${title.toLowerCase().replace(/ /g, '-')}`;
     return (
         <NavComponent color="inherit" component={Link} to={linker} {...other}>
@@ -13,12 +14,14 @@ const NavButton = ({ link, title, component: NavComponent, ...other }) => {
 
 NavButton.defaultProps = {
     component: null,
+    loadable: null,
     link: null,
     title: null
 };
 
 NavButton.propTypes = {
     component: PropTypes.func,
+    loadable: PropTypes.any,
     link: PropTypes.string,
     title: PropTypes.string
 };

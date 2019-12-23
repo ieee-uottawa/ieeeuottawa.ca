@@ -7,6 +7,7 @@
     "plugins": ["prettier"],
     "rules": {
         "camelcase": "off",
+        "class-methods-use-this": "off",
         "comma-dangle": "off",
         "implicit-arrow-linebreak": "off",
         "import/no-cycle": "off",

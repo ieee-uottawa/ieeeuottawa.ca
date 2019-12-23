@@ -175,7 +175,7 @@ class Toggle extends PureComponent {
                     }}
                     onFocus={this.handleFocus}
                     onBlur={this.handleBlur}
-                    onChange={null}
+                    readOnly
                     className="react-toggle-screenreader-only"
                     type="checkbox"
                     aria-label="Switch between Dark and Light mode"

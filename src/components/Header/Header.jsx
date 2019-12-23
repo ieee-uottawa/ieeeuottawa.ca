@@ -61,9 +61,116 @@ class Header extends Component {
         });
     }
 
-    render() {
+    renderLogo() {
+        return (
+            <Link to="/" href="/" style={{ flexGrow: 1 }}>
+                <img
+                    src={logo}
+                    alt="IEEE uOttawa Logo"
+                    style={{
+                        maxWidth: '140px',
+                        paddingTop: '15px',
+                        paddingLeft: '32px',
+                        display: 'flex',
+                        justifyContent: 'space-between'
+                    }}
+                />
+            </Link>
+        );
+    }
+
+    renderMenuItems() {
+        return (
+            <div>
+                {routes.map(({ title, link, items, component }) => {
+                    if (!items) {
+                        return (
+                            <NavButton
+                                key={title}
+                                link={link}
+                                loadable={component}
+                                title={title}
+                                component={Button}
+                            />
+                        );
+                    }
+                    return (
+                        <NavDropDown
+                            key={title}
+                            loadable={component}
+                            color="inherit"
+                            items={items}
+                            clickbubbledown="true"
+                            component={Button}
+                        >
+                            {title}
+                        </NavDropDown>
+                    );
+                })}
+            </div>
+        );
+    }
+
+    renderMobileMenuItems(edges) {
         const { isOpen, anchorEl } = this.state;
+        return (
+            <div>
+                <IconButton onClick={this.handleMenuClick}>
+                    {isOpen ? <CloseIcon /> : <MenuIcon />}
+                </IconButton>
+                {isOpen && (
+                    <MaterialMenu
+                        anchorEl={anchorEl}
+                        items={edges.map(
+                            ({ node: { title, link, items } }) => ({
+                                title,
+                                link,
+                                items
+                            })
+                        )}
+                        isOpen={isOpen}
+                        onClose={this.handleMenuClose}
+                    />
+                )}
+            </div>
+        );
+    }
+
+    renderThemeToggle() {
         const { theme } = this.props;
+        return (
+            <Toggle
+                icons={{
+                    checked: (
+                        <img
+                            src={moon}
+                            width="16"
+                            height="16"
+                            alt="presentation"
+                            style={{
+                                pointerEvents: 'none'
+                            }}
+                        />
+                    ),
+                    unchecked: (
+                        <img
+                            src={sun}
+                            width="16"
+                            height="16"
+                            alt="presentation"
+                            style={{
+                                pointerEvents: 'none'
+                            }}
+                        />
+                    )
+                }}
+                checked={theme === 'dark'}
+                onClick={this.handleMenuTheme}
+            />
+        );
+    }
+
+    render() {
         return (
             <StaticQuery
                 query={query}
@@ -74,124 +181,14 @@ class Header extends Component {
                         style={{ padding: '0px 0 0' }}
                     >
                         <Toolbar>
-                            <Link to="/" href="/" style={{ flexGrow: 1 }}>
-                                <img
-                                    src={logo}
-                                    alt="IEEE uOttawa Logo"
-                                    style={{
-                                        maxWidth: '140px',
-                                        paddingTop: '15px',
-                                        paddingLeft: '32px',
-                                        display: 'flex',
-                                        justifyContent: 'space-between'
-                                    }}
-                                />
-                            </Link>
+                            {this.renderLogo()}
                             <Hidden smDown>
-                                <div>
-                                    {routes.map(({ title, link, items }) => {
-                                        if (!items) {
-                                            return (
-                                                <NavButton
-                                                    key={title}
-                                                    title={title}
-                                                    link={link}
-                                                    component={Button}
-                                                />
-                                            );
-                                        }
-                                        return (
-                                            <NavDropDown
-                                                key={title}
-                                                color="inherit"
-                                                items={items}
-                                                clickbubbledown="true"
-                                                component={Button}
-                                            >
-                                                {title}
-                                            </NavDropDown>
-                                        );
-                                    })}
-                                </div>
-                                <Toggle
-                                    icons={{
-                                        checked: (
-                                            <img
-                                                src={moon}
-                                                width="16"
-                                                height="16"
-                                                alt="presentation"
-                                                style={{
-                                                    pointerEvents: 'none'
-                                                }}
-                                            />
-                                        ),
-                                        unchecked: (
-                                            <img
-                                                src={sun}
-                                                width="16"
-                                                height="16"
-                                                alt="presentation"
-                                                style={{
-                                                    pointerEvents: 'none'
-                                                }}
-                                            />
-                                        )
-                                    }}
-                                    checked={theme === 'dark'}
-                                    onClick={this.handleMenuTheme}
-                                />
+                                {this.renderMenuItems()}
+                                {this.renderThemeToggle()}
                             </Hidden>
                             <Hidden mdUp>
-                                <Toggle
-                                    icons={{
-                                        checked: (
-                                            <img
-                                                src={moon}
-                                                width="16"
-                                                height="16"
-                                                alt="presentation"
-                                                style={{
-                                                    pointerEvents: 'none'
-                                                }}
-                                            />
-                                        ),
-                                        unchecked: (
-                                            <img
-                                                src={sun}
-                                                width="16"
-                                                height="16"
-                                                alt="presentation"
-                                                style={{
-                                                    pointerEvents: 'none'
-                                                }}
-                                            />
-                                        )
-                                    }}
-                                    checked={theme === 'dark'}
-                                    onClick={this.handleMenuTheme}
-                                />
-                                <div>
-                                    <IconButton onClick={this.handleMenuClick}>
-                                        {isOpen ? <CloseIcon /> : <MenuIcon />}
-                                    </IconButton>
-                                    {isOpen && (
-                                        <MaterialMenu
-                                            anchorEl={anchorEl}
-                                            items={edges.map(
-                                                ({
-                                                    node: { title, link, items }
-                                                }) => ({
-                                                    title,
-                                                    link,
-                                                    items
-                                                })
-                                            )}
-                                            isOpen={isOpen}
-                                            onClose={this.handleMenuClose}
-                                        />
-                                    )}
-                                </div>
+                                {this.renderThemeToggle()}
+                                {this.renderMobileMenuItems(edges)}
                             </Hidden>
                         </Toolbar>
                     </AppBar>
