@@ -136,33 +136,27 @@ class Header extends Component {
         );
     }
 
+    renderThemeIcon(icon) {
+        return (
+            <img
+                src={icon}
+                width="16"
+                height="16"
+                alt="presentation"
+                style={{
+                    pointerEvents: 'none'
+                }}
+            />
+        );
+    }
+
     renderThemeToggle() {
         const { theme } = this.props;
         return (
             <Toggle
                 icons={{
-                    checked: (
-                        <img
-                            src={moon}
-                            width="16"
-                            height="16"
-                            alt="presentation"
-                            style={{
-                                pointerEvents: 'none'
-                            }}
-                        />
-                    ),
-                    unchecked: (
-                        <img
-                            src={sun}
-                            width="16"
-                            height="16"
-                            alt="presentation"
-                            style={{
-                                pointerEvents: 'none'
-                            }}
-                        />
-                    )
+                    checked: this.renderThemeIcon(moon),
+                    unchecked: this.renderThemeIcon(sun)
                 }}
                 checked={theme === 'dark'}
                 onClick={this.handleMenuTheme}
