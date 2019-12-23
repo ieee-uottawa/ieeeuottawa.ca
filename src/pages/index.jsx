@@ -23,7 +23,7 @@ import {
     ServiceItem,
     Title
 } from '../helpers/components';
-import { translate } from '../helpers/translation';
+import { translate, translateDescription } from '../helpers/translation';
 import './index.scss';
 
 const query = graphql`
@@ -55,6 +55,7 @@ const query = graphql`
                     id
                     name
                     description
+                    FR
                     url
                     image {
                         childImageSharp {
@@ -233,7 +234,8 @@ const IndexPage = props => {
                                             childImageSharp: { fixed: image }
                                         },
                                         name,
-                                        description,
+                                        description: EN,
+                                        FR,
                                         url
                                     }
                                 }) => (
@@ -241,7 +243,10 @@ const IndexPage = props => {
                                         key={id}
                                         image={image}
                                         name={name}
-                                        description={description}
+                                        description={translateDescription(
+                                            EN,
+                                            FR
+                                        )}
                                         url={url}
                                     />
                                 )
