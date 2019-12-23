@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+import { isServerSideRendering } from '../util';
 
 const menuItems = {
     Home: {
@@ -154,14 +154,17 @@ const languages = {
 };
 
 const getCurrentLanguage = () => {
-    return localStorage.getItem('SelectedLanguage') || 'EN';
+    if (!isServerSideRendering())
+        return localStorage.getItem('SelectedLanguage') || 'EN';
+    return 'EN';
 };
 
 let code = getCurrentLanguage();
 
 const toggleLanguage = () => {
     code = code === 'EN' ? 'FR' : 'EN';
-    localStorage.setItem('SelectedLanguage', code);
+    if (!isServerSideRendering())
+        localStorage.setItem('SelectedLanguage', code);
 };
 
 const translate = key => {

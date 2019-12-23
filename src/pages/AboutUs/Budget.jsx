@@ -1,6 +1,6 @@
-/* eslint-disable max-len */
 import React from 'react';
-import Title from '../../components/Titles/Title';
+import { Title } from '../../helpers/components';
+import { translate } from '../../helpers/translation';
 
 const Budget = () => (
     <div>
@@ -10,7 +10,7 @@ const Budget = () => (
             className="title"
             style={{ marginBottom: '16px' }}
         >
-            Budget
+            {translate('Budget')}
         </Title>
         <iframe
             width="100%"
