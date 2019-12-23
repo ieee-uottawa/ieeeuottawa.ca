@@ -86,11 +86,17 @@ const languages = {
     Subscribe: { EN: 'Subscribe', FR: 'Abonnez-vous' },
     'Call Us!': { EN: 'Call Us!', FR: 'Appelez-nous!' },
     'Social Media!': { EN: 'Social Media!', FR: 'Médias sociaux!' },
-    official: {
+    'The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS.': {
         EN:
-            'The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students by giving them access to up-to-date equipment, internet access, textbooks and a quiet work environment. *Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.',
+            'The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS.',
         FR:
-            "La division étudiante de l'IEEE uOttawa est la division étudiante officielle de l'Université d'Ottawa et la sous-association officielle pour ELG / CEG / SEG dans le cadre de l'ESS. La section étudiante IEEE de l’Université d’Ottawa a été créée pour fournir des services professionnels afin d’améliorer l’expérience de chaque étudiant sur le campus. Nous accommodons les étudiants en leur donnant accès à un équipement à jour, un accès Internet, des manuels scolaires et un environnement de travail calme. * Avis de non-responsabilité: les opinions et le contenu véhiculés par cette page sont ceux de ses propriétaires ou opérateurs, et non ceux de l'IEEE."
+            "La division étudiante de l'IEEE uOttawa est la division étudiante officielle de l'Université d'Ottawa et la sous-association officielle pour ELG / CEG / SEG dans le cadre de l'ESS."
+    },
+    'The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment.': {
+        EN:
+            'The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment.',
+        FR:
+            'La section étudiante IEEE de l’Université d’Ottawa a été créée pour fournir des services professionnels afin d’améliorer l’expérience de chaque étudiant sur le campus. Nous accommodons les étudiants en leur donnant accès à un équipement à jour, un accès Internet, des manuels scolaires et un environnement de travail calme.'
     },
     'Our Execs': { EN: 'Our Execs', FR: 'Nos directeurs' },
     Events: { EN: 'Events', FR: 'Évènements' },

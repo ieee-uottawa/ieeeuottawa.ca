@@ -1,7 +1,4 @@
 import React from 'react';
-// import { Button } from '@material-ui/core';
-// import NavButton from '../components/Material/NavButton';
-// import NavDropDown from '../components/Material/NavDropDown';
 import routes from '../routes';
 
 const Switcher = () => {

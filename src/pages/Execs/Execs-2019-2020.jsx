@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography, GridList } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
 import { ExecCard, Title } from '../../helpers/components';
+import { translate } from '../../helpers/translation';
 
 const Execs_2019_2020 = () => (
     <StaticQuery
@@ -75,7 +76,7 @@ const Execs_2019_2020 = () => (
                         gutterBottom
                         className="center-horizontal"
                     >
-                        Our Execs
+                        {translate('Our Execs')}
                     </Typography>
                     <GridList cols={5} style={{ margin: '0 5% 0' }}>
                         {nodes.map(({ name, position, image, email }) => (
