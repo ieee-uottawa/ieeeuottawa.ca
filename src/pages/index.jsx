@@ -222,7 +222,7 @@ const IndexPage = props => {
                             </Grid>
                         </Grid>
                         <Title style={{ margin: '32px 0 16px' }}>
-                            Latest Events
+                            {translate('Latest Events')}
                         </Title>
                         <GridList id="event-grid" cols={2}>
                             {eventEdges.map(
