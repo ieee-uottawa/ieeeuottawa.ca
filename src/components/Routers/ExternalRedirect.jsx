@@ -15,15 +15,15 @@ class ExternalRedirect extends Component {
     }
 
     componentDidMount() {
-        // this.state.intervalID = setInterval(() => {
-        //     const { seconds } = this.state;
-        //     if (seconds === 1) {
-        //         this.stopTimer();
-        //         const { url } = this.props;
-        //         window.location.replace(url);
-        //     }
-        //     this.setState({ seconds: seconds - 1 });
-        // }, 1000);
+        this.state.intervalID = setInterval(() => {
+            const { seconds } = this.state;
+            if (seconds === 1) {
+                this.stopTimer();
+                const { url } = this.props;
+                window.location.replace(url);
+            }
+            this.setState({ seconds: seconds - 1 });
+        }, 1000);
     }
 
     componentWillUnmount() {
