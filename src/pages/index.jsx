@@ -80,7 +80,7 @@ const IndexPage = props => {
     let gridStyle = { margin: '0 25%' };
     if (isWidthUp('lg', width, true) || isWidthDown('sm', width, false))
         gridStyle = {};
-    const { language: code } = props;
+
     return (
         <StaticQuery
             query={query}
@@ -158,7 +158,7 @@ const IndexPage = props => {
                                                             }
                                                             className="white-url-txt"
                                                         >
-                                                            {message}
+                                                            {translate(message)}
                                                         </Link>
                                                     </Typography>
                                                 )}
@@ -172,7 +172,7 @@ const IndexPage = props => {
                                                         marginTop: '32px'
                                                     }}
                                                 >
-                                                    {button.text}
+                                                    {translate(button.text)}
                                                 </IEEEButton>
                                             </div>
                                         </div>
@@ -182,43 +182,42 @@ const IndexPage = props => {
                         </Carousel>
 
                         <Title style={{ margin: '32px 0 16px' }}>
-                            {translate('Why come to our office?', code)}
+                            {translate('Why come to our office?')}
                         </Title>
                         <Typography
                             variant="subtitle1"
                             className="center-horizontal"
                         >
                             {translate(
-                                'Check out all the services we offer in our office!',
-                                code
+                                'Check out all the services we offer in our office!'
                             )}
                         </Typography>
                         <Grid id="services-row" container>
                             <Grid item xs={12} sm={6} lg={4}>
                                 <ServiceItem
                                     icon={<FlaskIcon className="icon" />}
-                                    title={translate(
-                                        'Purchase Lab Supplies',
-                                        code
-                                    )}
+                                    title={translate('Purchase Lab Supplies')}
                                     body={translate(
-                                        'Check out what we have for sale on our Services page, under About Us.',
-                                        code
+                                        'Check out what we have for sale on our Services page, under About Us.'
                                     )}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6} lg={4}>
                                 <ServiceItem
                                     icon={<LightBulbIcon className="icon" />}
-                                    title="Homework Help"
-                                    body="Is there a course you are struggling with? Contact the VP Academic to find out how we can help you succeed."
+                                    title={translate('Homework Help')}
+                                    body={translate(
+                                        'Is there a course you are struggling with? Contact the VP Academic to find out how we can help you succeed.'
+                                    )}
                                 />
                             </Grid>
                             <Grid item xs={12} lg={4} style={gridStyle}>
                                 <ServiceItem
                                     icon={<LeadPencilIcon className="icon" />}
-                                    title="Study"
-                                    body="Need a chill place to study? Come make use of our library and study in the office anytime we are open."
+                                    title={translate('Study')}
+                                    body={translate(
+                                        'Need a chill place to study? Come make use of our library and study in the office anytime we are open.'
+                                    )}
                                 />
                             </Grid>
                         </Grid>
@@ -250,9 +249,11 @@ const IndexPage = props => {
                         </GridList>
                         <Parallax
                             imageURL={mailingListImg}
-                            messageText="Don't Miss Out! Join The Mailing List Today"
-                            buttonText="Subscribe"
-                            buttonURL="/mailing-list-sign-up"
+                            messageText={translate(
+                                "Don't Miss Out! Join The Mailing List Today!"
+                            )}
+                            buttonText={translate('Subscribe')}
+                            buttonURL="/ContactUs/mailing-list-sign-up"
                         />
                     </div>
                 );
@@ -262,8 +263,7 @@ const IndexPage = props => {
 };
 
 IndexPage.propTypes = {
-    width: PropTypes.any.isRequired,
-    language: PropTypes.string.isRequired
+    width: PropTypes.any.isRequired
 };
 
 export default withWidth()(IndexPage);

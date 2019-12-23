@@ -3,8 +3,8 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
-
 import getPageContext, { getCurrentTheme } from './getPageContext';
+import { toggleLanguage } from './helpers/translation';
 
 function withRoot(Component) {
     let muiPageContext = null;
@@ -29,6 +29,7 @@ function withRoot(Component) {
             const { language } = this.state;
             const currentLanguage = language === 'EN' ? 'FR' : 'EN';
             this.setState({ language: currentLanguage });
+            toggleLanguage();
         }
 
         render() {

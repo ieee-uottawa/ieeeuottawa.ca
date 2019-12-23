@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Typography, Grid } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
 import { Link } from '../../helpers/components';
@@ -19,8 +18,7 @@ const query = graphql`
     }
 `;
 
-const Footer = props => {
-    const { language: code } = props;
+const Footer = () => {
     return (
         <StaticQuery
             query={query}
@@ -44,7 +42,7 @@ const Footer = props => {
                         <Grid xs={4} item>
                             <section className="column">
                                 <Typography variant="h6">
-                                    {translate('Call Us!', code)}
+                                    {translate('Call Us!')}
                                 </Typography>
                                 <Typography style={{ color: '#bdc3c7' }}>
                                     613-562-5800 ext. 6196
@@ -54,7 +52,7 @@ const Footer = props => {
                         <Grid xs={4} item>
                             <section className="column">
                                 <Typography variant="h6">
-                                    {translate('Visit Our Office', code)}
+                                    {translate('Visit Our Office')}
                                 </Typography>
                                 <Typography style={{ color: '#bdc3c7' }}>
                                     STE 4026 <br />
@@ -65,7 +63,7 @@ const Footer = props => {
                         <Grid xs={4} item>
                             <section className="column">
                                 <Typography variant="h6">
-                                    {translate('Social Media!', code)}
+                                    {translate('Social Media!')}
                                 </Typography>
                                 <ul style={{ margin: '0', color: '#bdc3c7' }}>
                                     {socialMedia.map(
@@ -106,14 +104,6 @@ const Footer = props => {
             )}
         />
     );
-};
-
-Footer.defaultProps = {
-    language: 'EN'
-};
-
-Footer.propTypes = {
-    language: PropTypes.string
 };
 
 export default Footer;

@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 const languages = {
-    home: {
-        EN: 'Powering your student experience',
+    'Powering Your Student Experience': {
+        EN: 'Powering Your Student Experience',
         FR: 'Électrifier votre expérience étudiante'
     },
     menuItems: {
@@ -38,10 +38,9 @@ const languages = {
             FR: 'À notre sujet'
         }
     },
-
-    parallax: {
-        EN: "Don't Miss out! Join The Mailing List Today!",
-        FR: "Ne manquez pas ça! Rejoignez la liste de diffusion aujourd'hui!"
+    'About Us': {
+        EN: 'About Us',
+        FR: 'À notre sujet'
     },
     'Visit Our Office': {
         EN: 'Visit Our Office',
@@ -80,8 +79,8 @@ const languages = {
             'Besoin d’un endroit relax pour étudier? Utilisez notre bibliothèque et étudiez au bureau à tous temps où nous sommes ouverts.'
     },
     'Latest Events': { EN: 'Latest Events', FR: 'Derniers évènements' },
-    "Don't miss out! Join the mailing list today!": {
-        EN: "Don't miss out! Join the mailing list today!",
+    "Don't Miss Out! Join The Mailing List Today!": {
+        EN: "Don't Miss Out! Join The Mailing List Today!",
         FR: "Ne manquez pas ça! Rejoignez la liste de diffusion aujourd'hui!"
     },
     Subscribe: { EN: 'Subscribe', FR: 'Abonnez-vous' },
@@ -124,9 +123,15 @@ const languages = {
     }
 };
 
-const translate = (key, code) => {
+let code = 'EN';
+
+const toggleLanguage = () => {
+    code = code === 'EN' ? 'FR' : 'EN';
+};
+
+const translate = key => {
     if (languages[key] && languages[key][code]) return languages[key][code];
     return key;
 };
 
-export { languages, translate };
+export { languages, translate, toggleLanguage };
