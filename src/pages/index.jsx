@@ -1,26 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, GridList, Typography } from '@material-ui/core';
-import withWidth, { isWidthDown, isWidthUp } from '@material-ui/core/withWidth';
 import { graphql, StaticQuery } from 'gatsby';
-import Carousel from 'nuka-carousel';
-import BackgroundImage from 'gatsby-background-image';
-import Event from '../components/Event/Event';
-import Link from '../components/Routers/Link';
-import Title from '../components/Titles/Title';
-import Parallax from '../components/Buttons/Parallax';
-import ServiceItem from '../components/Buttons/ServiceItem/ServiceItem';
-import IEEEButton from '../components/Buttons/IEEEButton';
+import {
+    Grid,
+    GridList,
+    Typography,
+    isWidthDown,
+    isWidthUp,
+    withWidth
+} from '../helpers/material-ui';
+import { Carousel, BackgroundImage, mailingListImg } from '../helpers/theme';
 import {
     ChevronLeftIcon,
     ChevronRightIcon,
+    Event,
     FlaskIcon,
+    IEEEButton,
     LeadPencilIcon,
-    LightBulbIcon
-} from '../components/Icons/icons';
-
+    LightBulbIcon,
+    Link,
+    Parallax,
+    ServiceItem,
+    Title
+} from '../helpers/components';
 import './index.scss';
-import mailingListImg from '../../static/images/compsci-1.jpg';
 
 const query = graphql`
     query {

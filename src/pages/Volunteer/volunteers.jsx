@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Snackbar, CircularProgress, Typography } from '@material-ui/core';
 import { connect } from 'react-redux';
-import Form from '../../components/Form/Form';
-import Title from '../../components/Titles/Title';
+import { Form, Title } from '../../helpers/components';
 import { isServerSideRendering } from '../../util';
 
 const FormStyle = {

@@ -4,7 +4,10 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 
-import getPageContext, { getCurrentTheme } from './getPageContext';
+import getPageContext, {
+    getCurrentTheme,
+    getCurrentLanguage
+} from './getPageContext';
 
 function withRoot(Component) {
     let muiPageContext = null;
@@ -29,8 +32,11 @@ function withRoot(Component) {
                     generateClassName={muiPageContext.generateClassName}
                 >
                     <ThemeToggler>
-                        {({ theme, toggleTheme }) => {
+                        {({ theme, toggleTheme, language }) => {
                             const currentTheme = getCurrentTheme(theme);
+                            const currentLanguage = getCurrentLanguage(
+                                language
+                            );
                             /* MuiThemeProvider makes the theme available down the React tree thanks to React context. */
                             return (
                                 <MuiThemeProvider
@@ -42,6 +48,7 @@ function withRoot(Component) {
                                     <Component
                                         {...this.props}
                                         theme={theme}
+                                        language={currentLanguage}
                                         toggleTheme={toggleTheme}
                                     />
                                 </MuiThemeProvider>

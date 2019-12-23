@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
     Card,
-    CardMedia,
     CardContent,
-    Typography,
+    CardMedia,
     FormControlLabel,
-    IconButton
+    IconButton,
+    Typography
 } from '@material-ui/core';
 import Img from 'gatsby-image';
 import './exec-card.scss';

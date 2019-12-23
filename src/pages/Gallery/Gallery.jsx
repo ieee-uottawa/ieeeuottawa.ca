@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { GridList, Button } from '@material-ui/core';
 import { StaticQuery, graphql } from 'gatsby';
 import Carousel, { Modal, ModalGateway } from 'react-images';
-import Title from '../../components/Titles/Title';
-import GalleryCard from '../../components/Cards/GalleryCard/GalleryCard';
+import { Button, GridList } from '../../helpers/material-ui';
+import { GalleryCard, Title } from '../../helpers/components';
 import { srcArray } from '../../helpers/gallery';
 
 const archives = src => {

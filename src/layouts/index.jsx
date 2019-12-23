@@ -8,13 +8,12 @@ import { init } from '@sentry/browser';
 import { initialize } from 'react-ga';
 
 import withRoot from '../withRoot';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+import { Header, Footer } from '../helpers/components';
+import { logo1 as logo } from '../helpers/theme';
 import cart from '../redux/reducers/cart_reducers';
 import { isDevEnvironment, isServerSideRendering } from '../util';
 
 import './index.scss';
-import logo from '../../static/images/uottawa_branch_logo-1.png';
 import favicon from '../../static/images/ieee_logo_circle.png';
 
 const store = createStore(cart);
@@ -43,7 +42,12 @@ if (!isServerSideRendering()) {
     });
 }
 
-const Layout = ({ children, theme = 'light', toggleTheme }) => (
+const Layout = ({
+    children,
+    theme = 'light',
+    toggleTheme,
+    language = 'EN'
+}) => (
     <Provider store={store}>
         <div
             style={{
@@ -78,7 +82,11 @@ const Layout = ({ children, theme = 'light', toggleTheme }) => (
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@ieeeuottawa" />
             </Helmet>
-            <Header theme={theme} toggleTheme={toggleTheme} />
+            <Header
+                theme={theme}
+                toggleTheme={toggleTheme}
+                language={language}
+            />
             <div
                 style={{
                     margin: '1em auto 0',
@@ -97,11 +105,13 @@ const Layout = ({ children, theme = 'light', toggleTheme }) => (
 
 Layout.defaultProps = {
     children: null,
+    language: 'EN',
     theme: 'light'
 };
 
 Layout.propTypes = {
     children: PropTypes.any,
+    language: PropTypes.string,
     theme: PropTypes.string,
     toggleTheme: PropTypes.func.isRequired
 };

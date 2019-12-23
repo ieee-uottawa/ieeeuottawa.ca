@@ -1,8 +1,7 @@
 import React from 'react';
 import { Typography, GridList } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
-import Title from '../../components/Titles/Title';
-import ExecCard from '../../components/Cards/ExecCard/ExecCard';
+import { ExecCard, Title } from '../../helpers/components';
 
 const Execs_2019_2020 = () => (
     <StaticQuery
