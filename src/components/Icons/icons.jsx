@@ -113,13 +113,13 @@ const iconStyles = theme => ({
 const Icon = withStyles(iconStyles)(icon);
 
 export {
+    ChevronDownIcon,
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    ChevronUpIcon,
+    CloseIcon,
     FlaskIcon,
     LeadPencilIcon,
     LightBulbIcon,
-    ChevronDownIcon,
-    ChevronUpIcon,
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    MenuIcon,
-    CloseIcon
+    MenuIcon
 };
