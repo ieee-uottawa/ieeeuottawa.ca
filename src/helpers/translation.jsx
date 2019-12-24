@@ -221,11 +221,11 @@ const translateDescription = (EN, FR) => {
 };
 
 export {
-    menuItems,
+    getCurrentLanguage,
     languages,
+    menuItems,
+    toggleLanguage,
     translate,
     translateDescription,
-    translateRedirect,
-    toggleLanguage,
-    getCurrentLanguage
+    translateRedirect
 };

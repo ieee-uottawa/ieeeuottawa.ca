@@ -90,7 +90,7 @@ const Execs_2019_2020 = () => (
                         gutterBottom
                         className="center-horizontal"
                     >
-                        Our Commissioners
+                        {translate('Our Commissioners')}
                     </Typography>
                     <GridList cols={5} style={{ margin: '0 5% 0' }}>
                         {edges.map(
