@@ -158,5 +158,45 @@
         "FR": "Ne ratez pas l’occasion de rencontrer et de réseauter avec quelques-unes des femmes les plus inspirantes et accomplies dans le domaine de la technologie!👩‍💻🗣️ La session de réseautage aura lieu après le panel avec les autres professionnels de l’industrie! 🚀 L’évènement est ouvert à TOUT LE MONDE, et il y aura de la NOURRITURE GRATUITE!😋",
         "url": "https://www.facebook.com/events/537231713776451/",
         "image": "../images/events/2019-2020/2019-11-18-Women-In-Tech-Panel.jpg"
+    },
+    {
+        "id": "2019-11-27-Cookies-n-Cram",
+        "name": "Cookies n Cram:CEG3136 & CEG3155",
+        "description": "What's the best way to study for finals? Cookies and Friends!! Join us for our CEG3136 and CEG3155 Cookies n Cram sessions where we will have some upper year students available to help you with questions you may have for the final, as well as delicious cookies!!",
+        "FR": "Quelle est la meilleure façon d’étudier pour les examens finaux? Biscuits et Amis!! Rejoignez-nous pour nos séances « Cookies n Cram » pour CEG3136 et CEG3155  ou nous aurons des étudiants d’années supérieures disponibles pour vous aider avec les questions que vous pourriez avoir pour l’examen final, ainsi que des biscuits délicieux!",
+        "url": "https://www.facebook.com/events/2049645762013536",
+        "image": "../images/events/2019-2020/2019-11-27-Cookies-n-Cram.jpg"
+    },
+    {
+        "id": "2019-11-28-Cookies-n-Cram",
+        "name": "Cookies n Cram:CEG2136",
+        "description": "What's the best way to study for finals? Cookies and Friends!! Join us for our CEG2136 Cookies n Cram sessions where we will have some upper year students available to help you with questions you may have for the final, as well as delicious cookies!!",
+        "FR": "Quelle est la meilleure façon d’étudier pour les examens finaux? Biscuits et Amis!! Rejoignez-nous pour nos séances « Cookies n Cram » pour CEG2136 ou nous aurons des étudiants d’années supérieures disponibles pour vous aider avec les questions que vous pourriez avoir pour l’examen final, ainsi que des biscuits délicieux!",
+        "url": "https://www.facebook.com/events/2049645762013536",
+        "image": "../images/events/2019-2020/2019-11-28-Cookies-n-Cram.jpg"
+    },
+    {
+        "id": "2019-11-29-Cookies-n-Cram",
+        "name": "Cookies n Cram:ITI1120 & GNG1106",
+        "description": "What's the best way to study for finals? Cookies and Friends!! Join us for our ITI1120 and GNG1106 Cookies n Cram sessions where we will have some upper year students available to help you with questions you may have for the final, as well as delicious cookies!!",
+        "FR": "Quelle est la meilleure façon d’étudier pour les examens finaux? Biscuits et Amis!! Rejoignez-nous pour nos séances « Cookies n Cram » pour CEG3136 et CEG3155  ou nous aurons des étudiants d’années supérieures disponibles pour vous aider avec les questions que vous pourriez avoir pour l’examen final, ainsi que des biscuits délicieux!",
+        "url": "https://www.facebook.com/events/2049645762013536",
+        "image": "../images/events/2019-2020/2019-11-29-Cookies-n-Cram.jpg"
+    },
+    {
+        "id": "2019-12-02-Cookies-n-Cram-1",
+        "name": "Cookies n Cram: CSI2110 & SEG2105",
+        "description": "What's the best way to study for finals? Cookies and Friends!! Join us for our CSI2110 and SEG2105 Cookies n Cram sessions where we will have some upper year students available to help you with questions you may have for the final, as well as delicious cookies!!",
+        "FR": "Quelle est la meilleure façon d’étudier pour les examens finaux? Biscuits et Amis!! Rejoignez-nous pour nos séances « Cookies n Cram » pour CSI2110 et SEG2105  ou nous aurons des étudiants d’années supérieures disponibles pour vous aider avec les questions que vous pourriez avoir pour l’examen final, ainsi que des biscuits délicieux!",
+        "url": "https://www.facebook.com/events/2049645762013536",
+        "image": "../images/events/2019-2020/2019-12-02-Cookies-n-Cram-1.jpg"
+    },
+    {
+        "id": "2019-12-02-Cookies-n-Cram-2",
+        "name": "Cookies n Cram:ELG2138",
+        "description": "What's the best way to study for finals? Cookies and Friends!! Join us for our ELG2138 Cookies n Cram sessions where we will have some upper year students available to help you with questions you may have for the final, as well as delicious cookies!!",
+        "FR": "Quelle est la meilleure façon d’étudier pour les examens finaux? Biscuits et Amis!! Rejoignez-nous pour nos séances « Cookies n Cram » pour ELG2138 ou nous aurons des étudiants d’années supérieures disponibles pour vous aider avec les questions que vous pourriez avoir pour l’examen final, ainsi que des biscuits délicieux!",
+        "url": "https://www.facebook.com/events/2049645762013536",
+        "image": "../images/events/2019-2020/2019-12-02-Cookies-n-Cram-2.jpg"
     }
 ]
