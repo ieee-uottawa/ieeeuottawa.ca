@@ -120,7 +120,7 @@ class Header extends Component {
                 <IconButton onClick={this.handleMenuClick}>
                     {isOpen ? <CloseIcon /> : <MenuIcon />}
                 </IconButton>
-                {isOpen && ( 
+                {isOpen && (
                     <MaterialMenu
                         anchorEl={anchorEl}
                         items={edges.map(
