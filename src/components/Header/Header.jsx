@@ -84,7 +84,7 @@ class Header extends Component {
     renderMenuItems() {
         return (
             <div>
-                {routes.map(({ title, path: link, items, component }) => {
+                {routes.map(({ title, link, items, component }) => {
                     if (!items) {
                         return (
                             <NavButton
@@ -120,7 +120,7 @@ class Header extends Component {
                 <IconButton onClick={this.handleMenuClick}>
                     {isOpen ? <CloseIcon /> : <MenuIcon />}
                 </IconButton>
-                {isOpen && (
+                {isOpen && ( 
                     <MaterialMenu
                         anchorEl={anchorEl}
                         items={edges.map(

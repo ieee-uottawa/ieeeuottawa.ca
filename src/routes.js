@@ -75,41 +75,41 @@ const IEEECodeOfConduct = Loadable({
 const routes = [
     {
         title: 'Home',
-        path: '/'
+        link: '/'
     },
     {
         title: 'Execs',
         items: [
             {
                 title: 'Execs 2019-2020',
-                path: '/Execs/Execs-2019-2020',
+                link: '/Execs/Execs-2019-2020',
                 component: Execs_2019_2020
             },
             {
                 title: 'Execs 2018-2019',
-                path: '/Execs/Execs-2018-2019',
+                link: '/Execs/Execs-2018-2019',
                 component: Execs_2018_2019
             }
         ]
     },
     {
         title: 'Events',
-        path: '/Events/Events',
+        link: '/Events/Events',
         component: Events
     },
     {
         title: 'Gallery',
-        path: '/Gallery/Gallery',
+        link: '/Gallery/Gallery',
         component: Gallery
     },
     {
         title: 'WIE',
-        path: '/WIE/WIE',
+        link: '/WIE/WIE',
         component: WIE
     },
     {
         title: 'Volunteer',
-        path: '/Volunteer/volunteer',
+        link: '/Volunteer/volunteer',
         component: Volunteer
     },
     {
@@ -117,12 +117,12 @@ const routes = [
         items: [
             {
                 title: 'Office Hours',
-                path: '/ContactUs/office-hours',
+                link: '/ContactUs/office-hours',
                 component: OfficeHours
             },
             {
                 title: 'Mailing List',
-                path: '/ContactUs/mailing-list-sign-up',
+                link: '/ContactUs/mailing-list-sign-up',
                 component: MailingList
             }
         ]
@@ -132,22 +132,22 @@ const routes = [
         items: [
             {
                 title: 'Budget',
-                path: '/AboutUs/Budget',
+                link: '/AboutUs/Budget',
                 component: Budget
             },
             {
                 title: 'Constitution',
-                path: '/AboutUs/Constitution',
+                link: '/AboutUs/Constitution',
                 component: Constitution
             },
             {
                 title: 'IEEE Code of Conduct',
-                path: '/AboutUs/ieee-code-of-conduct',
+                link: '/AboutUs/ieee-code-of-conduct',
                 component: IEEECodeOfConduct
             },
             {
                 title: 'Meeting Minutes',
-                path: '/AboutUs/MeetingMinutes',
+                link: '/AboutUs/MeetingMinutes',
                 component: MeetingMinutes
             }
         ]
