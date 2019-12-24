@@ -161,7 +161,7 @@
     },
     {
         "id": "2019-11-27-Cookies-n-Cram",
-        "name": "Cookies n Cram:CEG3136 & CEG3155",
+        "name": "Cookies n Cram: CEG3136 & CEG3155",
         "description": "What's the best way to study for finals? Cookies and Friends!! Join us for our CEG3136 and CEG3155 Cookies n Cram sessions where we will have some upper year students available to help you with questions you may have for the final, as well as delicious cookies!!",
         "FR": "Quelle est la meilleure façon d’étudier pour les examens finaux? Biscuits et Amis!! Rejoignez-nous pour nos séances « Cookies n Cram » pour CEG3136 et CEG3155  ou nous aurons des étudiants d’années supérieures disponibles pour vous aider avec les questions que vous pourriez avoir pour l’examen final, ainsi que des biscuits délicieux!",
         "url": "https://www.facebook.com/events/2049645762013536",
@@ -169,7 +169,7 @@
     },
     {
         "id": "2019-11-28-Cookies-n-Cram",
-        "name": "Cookies n Cram:CEG2136",
+        "name": "Cookies n Cram: CEG2136",
         "description": "What's the best way to study for finals? Cookies and Friends!! Join us for our CEG2136 Cookies n Cram sessions where we will have some upper year students available to help you with questions you may have for the final, as well as delicious cookies!!",
         "FR": "Quelle est la meilleure façon d’étudier pour les examens finaux? Biscuits et Amis!! Rejoignez-nous pour nos séances « Cookies n Cram » pour CEG2136 ou nous aurons des étudiants d’années supérieures disponibles pour vous aider avec les questions que vous pourriez avoir pour l’examen final, ainsi que des biscuits délicieux!",
         "url": "https://www.facebook.com/events/2049645762013536",
@@ -177,7 +177,7 @@
     },
     {
         "id": "2019-11-29-Cookies-n-Cram",
-        "name": "Cookies n Cram:ITI1120 & GNG1106",
+        "name": "Cookies n Cram: ITI1120 & GNG1106",
         "description": "What's the best way to study for finals? Cookies and Friends!! Join us for our ITI1120 and GNG1106 Cookies n Cram sessions where we will have some upper year students available to help you with questions you may have for the final, as well as delicious cookies!!",
         "FR": "Quelle est la meilleure façon d’étudier pour les examens finaux? Biscuits et Amis!! Rejoignez-nous pour nos séances « Cookies n Cram » pour CEG3136 et CEG3155  ou nous aurons des étudiants d’années supérieures disponibles pour vous aider avec les questions que vous pourriez avoir pour l’examen final, ainsi que des biscuits délicieux!",
         "url": "https://www.facebook.com/events/2049645762013536",
@@ -193,10 +193,18 @@
     },
     {
         "id": "2019-12-02-Cookies-n-Cram-2",
-        "name": "Cookies n Cram:ELG2138",
+        "name": "Cookies n Cram: ELG2138",
         "description": "What's the best way to study for finals? Cookies and Friends!! Join us for our ELG2138 Cookies n Cram sessions where we will have some upper year students available to help you with questions you may have for the final, as well as delicious cookies!!",
         "FR": "Quelle est la meilleure façon d’étudier pour les examens finaux? Biscuits et Amis!! Rejoignez-nous pour nos séances « Cookies n Cram » pour ELG2138 ou nous aurons des étudiants d’années supérieures disponibles pour vous aider avec les questions que vous pourriez avoir pour l’examen final, ainsi que des biscuits délicieux!",
         "url": "https://www.facebook.com/events/2049645762013536",
         "image": "../images/events/2019-2020/2019-12-02-Cookies-n-Cram-2.jpg"
+    },
+    {
+        "id": "2020-01-23-IEEE-SPAC-2020",
+        "name": "IEEE SPAC 2020",
+        "description": "You must be looking to get that next internship right!? Or maybe a new job as a graduate student? The IEEE Student Professional Awareness Conference (SPAC) is a formal dinner (buffet) event that aims to bridge the gap between students and their career goals. SPAC offers students and employers a unique opportunity to network with one another in a professional environment along with professionals and academics representing the fields of Engineering and Computer Science.",
+        "FR": "Vous devez chercher à réussir ce prochain stage!? Ou peut-être un nouvel emploi en tant qu'étudiant diplômé? La conférence IEEE Student Professional Awareness Conference (SPAC) est un dîner officiel (buffet) qui vise à combler l'écart entre les étudiants et leurs objectifs de carrière. SPAC offre aux étudiants et aux employeurs une occasion unique de réseauter dans un environnement professionnel avec des professionnels et des universitaires représentant les domaines de l'ingénierie et de l'informatique.",
+        "url": "https://www.facebook.com/events/2049645762013536",
+        "image": "../images/events/2019-2020/2020-01-23-IEEE-SPAC-2020.jpg"
     }
 ]
