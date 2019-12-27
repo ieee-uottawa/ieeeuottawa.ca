@@ -9,6 +9,7 @@
         "camelcase": "off",
         "class-methods-use-this": "off",
         "comma-dangle": "off",
+        "guard-for-in": "off",
         "implicit-arrow-linebreak": "off",
         "import/no-cycle": "off",
         "import/prefer-default-export": "off",

@@ -75,12 +75,12 @@ const calculatePrice = (price, qty) => {
 };
 
 export {
-    moneyFormatter,
+    calculatePrice,
     capitalize,
-    isEmojiSupported,
     flattenDeep,
-    isServerSideRendering,
     isDevEnvironment,
-    showPricing,
-    calculatePrice
+    isEmojiSupported,
+    isServerSideRendering,
+    moneyFormatter,
+    showPricing
 };

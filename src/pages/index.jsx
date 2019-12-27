@@ -258,7 +258,7 @@ const IndexPage = props => {
                                 "Don't Miss Out! Join The Mailing List Today!"
                             )}
                             buttonText={translate('Subscribe')}
-                            buttonURL="/ContactUs/mailing-list-sign-up"
+                            buttonURL="/mailing-list"
                         />
                     </div>
                 );

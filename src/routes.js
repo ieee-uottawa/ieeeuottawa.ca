@@ -39,11 +39,11 @@ const routes = [
         items: [
             {
                 title: 'Office Hours',
-                link: '/ContactUs/office-hours'
+                link: '/ContactUs/OfficeHours'
             },
             {
                 title: 'Mailing List',
-                link: '/ContactUs/mailing-list-sign-up'
+                link: '/ContactUs/MailingListSignUp'
             }
         ]
     },
@@ -60,7 +60,7 @@ const routes = [
             },
             {
                 title: 'IEEE Code of Conduct',
-                link: '/AboutUs/ieee-code-of-conduct'
+                link: '/AboutUs/IEEECodeOfConduct'
             },
             {
                 title: 'Meeting Minutes',

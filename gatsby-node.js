@@ -9,15 +9,18 @@
 const { getPages } = require(`./src/routes`);
 
 exports.createPages = ({ actions }) => {
-    const { createPage } = actions;
-    for (const { page } of getPages()) createPage(page);
-
-    const { createRedirect } = actions;
-
-    createRedirect({
-        fromPath: `/home`,
-        toPath: `/`,
-        redirectInBrowser: true,
-        isPermanent: true
-    });
+    const { createPage, createRedirect } = actions;
+    const redirectMap = { '/home': '/' };
+    for (const { page, path, link } of getPages()) {
+        redirectMap[link] = path;
+        createPage(page);
+    }
+    for (const fromPath in redirectMap) {
+        createRedirect({
+            fromPath,
+            toPath: redirectMap[fromPath],
+            redirectInBrowser: true,
+            isPermanent: true
+        });
+    }
 };
