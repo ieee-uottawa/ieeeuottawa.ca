@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { graphql, StaticQuery } from 'gatsby';
 import { AppBar, Toolbar, Button, Hidden, IconButton } from '@material-ui/core';
 import {
     CloseIcon,
@@ -13,24 +12,7 @@ import {
 } from '../../helpers/components';
 import { sun, moon, logo2 as logo } from '../../helpers/theme';
 import { translate, getCurrentLanguage } from '../../helpers/translation';
-import routes from '../../routes';
-
-const query = graphql`
-    query {
-        allNavItemsJson {
-            edges {
-                node {
-                    title
-                    link
-                    items {
-                        title
-                        link
-                    }
-                }
-            }
-        }
-    }
-`;
+import { routes } from '../../routes';
 
 class Header extends Component {
     constructor(props) {
@@ -84,13 +66,12 @@ class Header extends Component {
     renderMenuItems() {
         return (
             <div>
-                {routes.map(({ title, link, items, component }) => {
+                {routes.map(({ title, path: link, items }) => {
                     if (!items) {
                         return (
                             <NavButton
                                 key={title}
                                 link={link}
-                                loadable={component}
                                 title={translate(title)}
                                 component={Button}
                             />
@@ -99,7 +80,6 @@ class Header extends Component {
                     return (
                         <NavDropDown
                             key={title}
-                            loadable={component}
                             color="inherit"
                             items={items}
                             clickbubbledown="true"
@@ -113,7 +93,7 @@ class Header extends Component {
         );
     }
 
-    renderMobileMenuItems(edges) {
+    renderMobileMenuItems() {
         const { isOpen, anchorEl } = this.state;
         return (
             <div>
@@ -123,13 +103,11 @@ class Header extends Component {
                 {isOpen && (
                     <MaterialMenu
                         anchorEl={anchorEl}
-                        items={edges.map(
-                            ({ node: { title, link, items } }) => ({
-                                title: translate(title),
-                                link,
-                                items
-                            })
-                        )}
+                        items={routes.map(({ title, path: link, items }) => ({
+                            title: translate(title),
+                            link,
+                            items
+                        }))}
                         isOpen={isOpen}
                         onClose={this.handleMenuClose}
                     />
@@ -173,30 +151,25 @@ class Header extends Component {
 
     render() {
         return (
-            <StaticQuery
-                query={query}
-                render={({ allNavItemsJson: { edges } }) => (
-                    <AppBar
-                        color="default"
-                        position="sticky"
-                        style={{ padding: '0px 0 0' }}
-                    >
-                        <Toolbar>
-                            {this.renderLogo()}
-                            <Hidden smDown>
-                                {this.renderMenuItems()}
-                                {this.renderThemeToggle()}
-                                {this.renderLanguageToggle()}
-                            </Hidden>
-                            <Hidden mdUp>
-                                {this.renderLanguageToggle()}
-                                {this.renderThemeToggle()}
-                                {this.renderMobileMenuItems(edges)}
-                            </Hidden>
-                        </Toolbar>
-                    </AppBar>
-                )}
-            />
+            <AppBar
+                color="default"
+                position="sticky"
+                style={{ padding: '0px 0 0' }}
+            >
+                <Toolbar>
+                    {this.renderLogo()}
+                    <Hidden smDown>
+                        {this.renderMenuItems()}
+                        {this.renderThemeToggle()}
+                        {this.renderLanguageToggle()}
+                    </Hidden>
+                    <Hidden mdUp>
+                        {this.renderLanguageToggle()}
+                        {this.renderThemeToggle()}
+                        {this.renderMobileMenuItems()}
+                    </Hidden>
+                </Toolbar>
+            </AppBar>
         );
     }
 }

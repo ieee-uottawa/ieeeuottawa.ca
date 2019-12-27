@@ -39,7 +39,7 @@ class MaterialMenu extends Component {
                 anchorEl={anchorEl}
                 onClose={onClose}
             >
-                {items.map(({ title, link, items: navItems }) => {
+                {items.map(({ title, path: link, items: navItems }) => {
                     if (!navItems)
                         return (
                             <NavButton
