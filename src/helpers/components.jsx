@@ -1,3 +1,4 @@
+import Calendar from '../components/Event/Calendar';
 import Event from '../components/Event/Event';
 import ExecCard from '../components/Cards/ExecCard/ExecCard';
 import Footer from '../components/Footer/Footer';
@@ -24,6 +25,7 @@ import {
 } from '../components/Icons/icons';
 
 export {
+    Calendar,
     ChevronLeftIcon,
     ChevronRightIcon,
     CloseIcon,

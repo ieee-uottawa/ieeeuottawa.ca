@@ -241,6 +241,7 @@ const IndexPage = props => {
                                 }) => (
                                     <Event
                                         key={id}
+                                        id={id}
                                         image={image}
                                         name={name}
                                         description={translateDescription(

@@ -34,6 +34,7 @@
         "postcss-reporter": "^6.0.0",
         "prop-types": "^15.6.2",
         "react": "16.4.2",
+        "react-calendar-icon": "^0.9.3",
         "react-dom": "16.4.2",
         "react-ga": "^2.5.3",
         "react-helmet": "^5.2.0",
@@ -44,6 +45,8 @@
         "react-style-proptype": "^3.2.2",
         "react-with-styles": "^4.1.0",
         "redux": "^4.0.0",
+        "styled-components": "^4.4.1",
+        "styled-jss": "^2.2.3",
         "superagent": "^4.1.0"
     },
     "keywords": [

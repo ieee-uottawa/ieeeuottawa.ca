@@ -182,6 +182,14 @@ const languages = {
     'Meeting Minutes': {
         EN: 'Meeting Minutes',
         FR: 'Comptes rendus des réunions'
+    },
+    'Want to get involved with us?': {
+        EN: 'Want to get involved with us?',
+        FR: 'Vous voulez vous impliquer avec nous?'
+    },
+    'Get Involved!': {
+        EN: 'Get Involved!',
+        FR: 's’impliquer!'
     }
 };
 
@@ -189,6 +197,10 @@ const getCurrentLanguage = () => {
     if (!isServerSideRendering())
         return localStorage.getItem('SelectedLanguage') || 'EN';
     return 'EN';
+};
+
+const getCurrentLocale = () => {
+    return `${getCurrentLanguage().toLowerCase()}-ca`;
 };
 
 let code = getCurrentLanguage();
@@ -222,6 +234,7 @@ const translateDescription = (EN, FR) => {
 
 export {
     getCurrentLanguage,
+    getCurrentLocale,
     languages,
     menuItems,
     toggleLanguage,

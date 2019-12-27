@@ -51,6 +51,7 @@ const Events = () => (
                         }) => (
                             <Event
                                 key={String(id)}
+                                id={String(id)}
                                 image={image}
                                 name={name}
                                 description={translateDescription(EN, FR)}
