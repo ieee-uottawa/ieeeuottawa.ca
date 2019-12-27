@@ -1,129 +1,49 @@
-import React from 'react';
-import Loadable from 'react-loadable';
-
-const Loading = () => {
-    return <>Loading...</>;
-};
-
-// Execs
-const Execs_2019_2020 = Loadable({
-    loader: () => import('./pages/Execs/Execs-2019-2020'),
-    loading: Loading
-});
-
-const Execs_2018_2019 = Loadable({
-    loader: () => import('./pages/Execs/Execs-2018-2019'),
-    loading: Loading
-});
-
-// Events
-const Events = Loadable({
-    loader: () => import('./pages/Events/Events'),
-    loading: Loading
-});
-
-// Gallery
-const Gallery = Loadable({
-    loader: () => import('./pages/Gallery/Gallery'),
-    loading: Loading
-});
-
-// WIE
-const WIE = Loadable({
-    loader: () => import('./pages/WIE/WIE'),
-    loading: Loading
-});
-
-// Volunteer
-const Volunteer = Loadable({
-    loader: () => import('./pages/Volunteer/volunteer'),
-    loading: Loading
-});
-
-// Contact Us
-const OfficeHours = Loadable({
-    loader: () => import('./pages/ContactUs/office-hours'),
-    loading: Loading
-});
-
-const MailingList = Loadable({
-    loader: () => import('./pages/ContactUs/mailing-list-sign-up'),
-    loading: Loading
-});
-
-// About Us
-const Budget = Loadable({
-    loader: () => import('./pages/AboutUs/Budget'),
-    loading: Loading
-});
-
-const Constitution = Loadable({
-    loader: () => import('./pages/AboutUs/Constitution'),
-    loading: Loading
-});
-
-const MeetingMinutes = Loadable({
-    loader: () => import('./pages/AboutUs/MeetingMinutes'),
-    loading: Loading
-});
-
-const IEEECodeOfConduct = Loadable({
-    loader: () => import('./pages/AboutUs/ieee-code-of-conduct'),
-    loading: Loading
-});
+const loader = require('path');
 
 const routes = [
     {
         title: 'Home',
-        link: '/'
+        path: '/'
     },
     {
         title: 'Execs',
         items: [
             {
                 title: 'Execs 2019-2020',
-                link: '/Execs/Execs-2019-2020',
-                component: Execs_2019_2020
+                link: '/Execs/Execs-2019-2020'
             },
             {
                 title: 'Execs 2018-2019',
-                link: '/Execs/Execs-2018-2019',
-                component: Execs_2018_2019
+                link: '/Execs/Execs-2018-2019'
             }
         ]
     },
     {
         title: 'Events',
-        link: '/Events/Events',
-        component: Events
+        link: '/Events/Events'
     },
     {
         title: 'Gallery',
-        link: '/Gallery/Gallery',
-        component: Gallery
+        link: '/Gallery/Gallery'
     },
     {
         title: 'WIE',
-        link: '/WIE/WIE',
-        component: WIE
+        link: '/WIE/WIE'
     },
     {
         title: 'Volunteer',
-        link: '/Volunteer/volunteer',
-        component: Volunteer
+        link: '/Volunteer/volunteer'
     },
     {
         title: 'Contact Us',
         items: [
             {
                 title: 'Office Hours',
-                link: '/ContactUs/office-hours',
-                component: OfficeHours
+                link: '/ContactUs/office-hours'
             },
             {
                 title: 'Mailing List',
-                link: '/ContactUs/mailing-list-sign-up',
-                component: MailingList
+                link: '/ContactUs/mailing-list-sign-up'
             }
         ]
     },
@@ -132,26 +52,67 @@ const routes = [
         items: [
             {
                 title: 'Budget',
-                link: '/AboutUs/Budget',
-                component: Budget
+                link: '/AboutUs/Budget'
             },
             {
                 title: 'Constitution',
-                link: '/AboutUs/Constitution',
-                component: Constitution
+                link: '/AboutUs/Constitution'
             },
             {
                 title: 'IEEE Code of Conduct',
-                link: '/AboutUs/ieee-code-of-conduct',
-                component: IEEECodeOfConduct
+                link: '/AboutUs/ieee-code-of-conduct'
             },
             {
                 title: 'Meeting Minutes',
-                link: '/AboutUs/MeetingMinutes',
-                component: MeetingMinutes
+                link: '/AboutUs/MeetingMinutes'
             }
         ]
     }
 ];
 
-export default routes;
+const getPath = title => {
+    return `/${title.replace(/\s+/g, '-').toLowerCase()}`;
+};
+
+const getComponent = link => {
+    return loader.resolve(`./src/pages/${link}.jsx`);
+};
+
+const getPage = route => {
+    const { title, link } = route;
+    return {
+        path: getPath(title),
+        component: getComponent(link)
+    };
+};
+
+const getRoutes = () => {
+    for (let i = 1; i < routes.length; i += 1) {
+        const { items } = routes[i];
+        if (items) {
+            for (const item of items) {
+                item.page = getPage(item);
+                item.path = item.page.path;
+            }
+        } else {
+            routes[i].page = getPage(routes[i]);
+            routes[i].path = routes[i].page.path;
+        }
+    }
+    return routes;
+};
+
+const getPages = () => {
+    const results = [];
+    for (const route of getRoutes()) {
+        const { items } = route;
+        if (items) results.push(...items);
+        else results.push(route);
+    }
+    return results.slice(1);
+};
+
+module.exports = {
+    routes: getRoutes(),
+    getPages
+};
