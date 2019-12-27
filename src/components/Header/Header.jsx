@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { graphql, StaticQuery } from 'gatsby';
 import { AppBar, Toolbar, Button, Hidden, IconButton } from '@material-ui/core';
 import {
     CloseIcon,
@@ -14,23 +13,6 @@ import {
 import { sun, moon, logo2 as logo } from '../../helpers/theme';
 import { translate, getCurrentLanguage } from '../../helpers/translation';
 import { routes } from '../../routes';
-
-const query = graphql`
-    query {
-        allNavItemsJson {
-            edges {
-                node {
-                    title
-                    link
-                    items {
-                        title
-                        link
-                    }
-                }
-            }
-        }
-    }
-`;
 
 class Header extends Component {
     constructor(props) {
@@ -169,30 +151,25 @@ class Header extends Component {
 
     render() {
         return (
-            <StaticQuery
-                query={query}
-                render={() => (
-                    <AppBar
-                        color="default"
-                        position="sticky"
-                        style={{ padding: '0px 0 0' }}
-                    >
-                        <Toolbar>
-                            {this.renderLogo()}
-                            <Hidden smDown>
-                                {this.renderMenuItems()}
-                                {this.renderThemeToggle()}
-                                {this.renderLanguageToggle()}
-                            </Hidden>
-                            <Hidden mdUp>
-                                {this.renderLanguageToggle()}
-                                {this.renderThemeToggle()}
-                                {this.renderMobileMenuItems()}
-                            </Hidden>
-                        </Toolbar>
-                    </AppBar>
-                )}
-            />
+            <AppBar
+                color="default"
+                position="sticky"
+                style={{ padding: '0px 0 0' }}
+            >
+                <Toolbar>
+                    {this.renderLogo()}
+                    <Hidden smDown>
+                        {this.renderMenuItems()}
+                        {this.renderThemeToggle()}
+                        {this.renderLanguageToggle()}
+                    </Hidden>
+                    <Hidden mdUp>
+                        {this.renderLanguageToggle()}
+                        {this.renderThemeToggle()}
+                        {this.renderMobileMenuItems()}
+                    </Hidden>
+                </Toolbar>
+            </AppBar>
         );
     }
 }
