@@ -6,7 +6,6 @@ const Link = props => {
     const { children, to, forceExternal, ...other } = props;
     const internal = /^\/(?!\/)/.test(to);
     const isFile = /\.[0-9a-z]+$/i.test(to);
-
     if (internal && !isFile) {
         return (
             <GatsbyLink to={to} {...other}>
