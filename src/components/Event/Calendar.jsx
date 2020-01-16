@@ -19,6 +19,7 @@ const styles = {
 const Calendar = ({ id }) => {
     if (!id) return null;
     const date = new Date(id.substring(0, 10));
+    date.setHours(date.getHours() + 24);
     const dateOptions = {
         header: { weekday: 'long' },
         footer: { month: 'short', year: 'numeric' },
