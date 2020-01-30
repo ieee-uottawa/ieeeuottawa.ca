@@ -200,14 +200,6 @@
         "image": "../images/events/2019-2020/2019-12-02-Cookies-n-Cram-2.jpg"
     },
     {
-        "id": "2020-01-20-Minecraft-Monday",
-        "name": "Minecraft Monday",
-        "description": "ARE YOU MINECRAFTY ENOUGH??? \n Teams of 4 will compete for the \" ULTIMATE CRAFTER \" title. Each team will have the same amount of time to complete 4 tasks. The first to complete them all will be crowned the winner.",
-        "FR": "ES-TU MINECRAFTY??? \n Des équipes de 4 s'affronteront pour le titre de «Crafter Ultime». Chaque équipe aura le même montant de temps pour accomplir 4 défis. Le premier à terminer sera couronné vainqueur.",
-        "url": "https://www.facebook.com/events/501021027208917/",
-        "image": "../images/events/2019-2020/2020-01-20-Minecraft-Monday.jpg"
-    },
-    {
         "id": "2020-01-23-IEEE-SPAC-2020",
         "name": "IEEE SPAC 2020",
         "description": "You must be looking to get that next internship right!? Or maybe a new job as a graduate student? The IEEE Student Professional Awareness Conference (SPAC) is a formal dinner (buffet) event that aims to bridge the gap between students and their career goals. SPAC offers students and employers a unique opportunity to network with one another in a professional environment along with professionals and academics representing the fields of Engineering and Computer Science.",
@@ -216,11 +208,35 @@
         "image": "../images/events/2019-2020/2020-01-23-IEEE-SPAC-2020.jpg"
     },
     {
+        "id": "2020-01-26-Student-Branch-Meeting-#12",
+        "name": "Student Branch Meeting #12",
+        "description": "Want to get involved with the branch or see what we are working on? Come attend our branch meeting and get involved! Executive meetings of the student branch are open to all students. for more information, please contact the branch.",
+        "FR": "Vous voulez vous impliquer à la section ou voir sur quoi nous travaillions? Viens assister à la rencontre et implique toi avec la section! Les rencontres executives de la section étudiante sont ouvertes à tout les étudiants. Pour plus d’information, veuillez contacter la section.",
+        "url": "https://www.facebook.com/events/225831395081274/",
+        "image": "../images/events/2019-2020/2020-01-26-Student-Branch-Meeting-#12.jpg"
+    },
+    {
+        "id": "2020-01-27-Minecraft-Monday",
+        "name": "Minecraft Monday",
+        "description": "ARE YOU MINECRAFTY ENOUGH??? \n Teams of 4 will compete for the \" ULTIMATE CRAFTER \" title. Each team will have the same amount of time to complete 4 tasks. The first to complete them all will be crowned the winner.",
+        "FR": "ES-TU MINECRAFTY??? \n Des équipes de 4 s'affronteront pour le titre de «Crafter Ultime». Chaque équipe aura le même montant de temps pour accomplir 4 défis. Le premier à terminer sera couronné vainqueur.",
+        "url": "https://www.facebook.com/events/501021027208917/",
+        "image": "../images/events/2019-2020/2020-01-27-Minecraft-Monday.jpg"
+    },
+    {
         "id": "2020-01-29-Ciena-Open-House",
         "name": "Ciena Open House",
         "description": "Have you heard of Ciena before? Ciena is a global supplier of telecommunications networking equipment, software and services founded in 1992.One of the leading tech giants in Kanata, the IEEE Ottawa branch is giving students an inside look at Ciena’s facilities. Come join us on January 29th, have some food, and maybe walk away with an internship or a full time job!",
         "FR": "As-tu déjà entendu parler de Ciena? Fondé en 1992, Ciena est un fournisseur global d'équipement de réseau de télécommunications, de logiciels et de services. C'est un des géants de Tech à Kanata et la succursale de l'IEEE Ottawa donné aux étudiants un aperçu à l'intérieur des installations de Ciena. Venez nous rejoindre le 29 janvier, mangez de la bouffe, et ressortez possiblement avec un stage ou un emploi à temps plein!",
         "url": "https://www.facebook.com/events/459756808037906/",
         "image": "../images/events/2019-2020/2020-01-29-Ciena-Open-House.jpg"
+    },
+    {
+        "id": "2020-01-30-Introduction-to-Golang-(Go)-Workshop",
+        "name": "Introduction to Golang (Go) Workshop",
+        "description": "Ever heard of (Go)lang and wanted to know more about it? Come by and learn some valuable tools in golang and how to use it in your projects.",
+        "FR": "Avez-vous déjà entendu parler de (Go)lang? Si vous voudrez en-apprendre plus à propos des outils en Golang afin de les utiliser dans vos projets.",
+        "url": "https://www.facebook.com/events/902161386853721/",
+        "image": "../images/events/2019-2020/2020-01-30-Introduction-to-Golang-(Go)-Workshop.jpg"
     }
 ]
