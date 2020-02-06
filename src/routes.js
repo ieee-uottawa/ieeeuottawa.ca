@@ -35,17 +35,8 @@ const routes = [
         link: '/Volunteer/volunteer'
     },
     {
-        title: 'Contact Us',
-        items: [
-            {
-                title: 'Office Hours',
-                link: '/ContactUs/OfficeHours'
-            },
-            {
-                title: 'Mailing List',
-                link: '/ContactUs/MailingListSignUp'
-            }
-        ]
+        title: 'Office Hours',
+        link: '/OfficeHours/OfficeHours'
     },
     {
         title: 'About Us',
@@ -53,6 +44,10 @@ const routes = [
             {
                 title: 'Budget',
                 link: '/AboutUs/Budget'
+            },
+            {
+                title: 'Mailing List',
+                link: '/AboutUs/MailingListSignUp'
             },
             {
                 title: 'Constitution',
