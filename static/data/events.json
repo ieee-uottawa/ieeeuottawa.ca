@@ -254,5 +254,13 @@
         "FR": "Pas prêts pour votre mi-session de ITI 1121/1521? Venez au SITE 5084 le lundi 24 Janvier de 17h30 à 19h30 où nous allons couvrir des concepts clés pour votre examen!",
         "url": "https://www.facebook.com/events/2599043800194188/",
         "image": "../images/events/2019-2020/2020-02-24-Iti1121-Review-Session-Java.jpg"
+    },
+    {
+        "id": "2020-03-02-EngiBEERing",
+        "name": "2020-03-02-EngiBEERing",
+        "description": "JOIN US FOR $0.45 WINGS !! reading week is over and exams are just around the corner- come cry over some beer and wings with us!",
+        "FR": "REJOIGNEZ-NOUS POUR DES AILES À 0,45 $ !! La semaine de lecture est terminée et les examens approchent à grands pas. Venez pleurer avec nous en mangeant des ailes et buvant de la bière !",
+        "url": "https://www.facebook.com/events/922724771477814/",
+        "image": "../images/events/2019-2020/2020-03-02-EngiBEERing.jpg"
     }
 ]
