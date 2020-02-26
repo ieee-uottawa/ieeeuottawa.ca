@@ -264,6 +264,14 @@
         "image": "../images/events/2019-2020/2020-02-28-Dog-Therapy.jpg"
     },
     {
+        "id": "2020-03-02-EngiBEERing",
+        "name": "EngiBEERing",
+        "description": "JOIN US FOR $0.45 WINGS !! reading week is over and exams are just around the corner- come cry over some beer and wings with us!",
+        "FR": "REJOIGNEZ-NOUS POUR DES AILES À 0,45 $ !! La semaine de lecture est terminée et les examens approchent à grands pas. Venez pleurer avec nous en mangeant des ailes et buvant de la bière !",
+        "url": "https://www.facebook.com/events/922724771477814/",
+        "image": "../images/events/2019-2020/2020-03-02-EngiBEERing.jpg"
+    },
+    {
         "id": "2020-03-02-ELG-Specialization-Panel",
         "name": "ELG Specialization Panel",
         "description": "Hi everyone! Are you in electrical engineering and about to choose your specialization? Are you confused as to what each one entails, or are struggling to choose between ones you like? Come to the electrical engineering specialization panel on March 2nd at 6pm! We have both graduated and senior students from the faculty of electrical engineering from each specialty here to answer your questions! \n There will be food provided, so bring your questions and enthusiasm!",
@@ -272,11 +280,11 @@
         "image": "../images/events/2019-2020/2020-03-02-ELG-Specialization-Panel.jpg"
     },
     {
-        "id": "2020-03-02-EngiBEERing",
-        "name": "EngiBEERing",
-        "description": "JOIN US FOR $0.45 WINGS !! reading week is over and exams are just around the corner- come cry over some beer and wings with us!",
-        "FR": "REJOIGNEZ-NOUS POUR DES AILES À 0,45 $ !! La semaine de lecture est terminée et les examens approchent à grands pas. Venez pleurer avec nous en mangeant des ailes et buvant de la bière !",
-        "url": "https://www.facebook.com/events/922724771477814/",
-        "image": "../images/events/2019-2020/2020-03-02-EngiBEERing.jpg"
+        "id": "2020-03-05-Elections",
+        "name": "IEEE Elections 2020",
+        "description": "IEEE Elections are here!",
+        "FR": "Les Élections de l’IEEE sont arrivées!",
+        "url": "https://www.facebook.com/events/3054129084599547/",
+        "image": "../images/events/2019-2020/2020-03-05-Elections.jpg"
     }
 ]
