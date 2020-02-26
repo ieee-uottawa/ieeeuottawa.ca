@@ -286,5 +286,13 @@
         "FR": "Les Élections de l’IEEE sont arrivées!",
         "url": "https://www.facebook.com/events/3054129084599547/",
         "image": "../images/events/2019-2020/2020-03-05-Elections.jpg"
+    },
+    {
+        "id": "2020-03-05-Wine-and-Cheese",
+        "name": "11th Annual Wine and Cheese",
+        "description": "Introducing IEEE Women in Engineering 11th annual Wine and Cheese. A fantastic opportunity for students to practice their networking skills and build a network with industry professionals and academia from the Ottawa community.",
+        "FR": "La 11 ième annuelle soirée Vin et Fromage (organisée par IEEE Women In Engineering) est une excellente opportunité pour les étudiants d'établir des connexions avec des professionnels de l'industrie en provenance de partout en Ottawa.  ",
+        "url": "https://www.facebook.com/events/1526709784147976/",
+        "image": "../images/events/2019-2020/2020-03-05-Wine-and-Cheese.jpg"
     }
 ]
