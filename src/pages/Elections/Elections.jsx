@@ -1,112 +1,170 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {
+    Card,
+    CardContent,
+    CardMedia,
+    FormControlLabel,
+    IconButton,
+    Typography
+} from '@material-ui/core';
+import Img from 'gatsby-image';
+import { Title } from '../../helpers/components';
 
-const Elections = () => (
-    <div>
-        <p className="p-margins">
-            Here is the result of the annual general election! Congratulations
-            to elected Candidates and a huge thank you to all of you who came
-            out voted – we had the highest recorded voter turnout this year!
-        </p>
-        <p className="p-margins">
-            For the individuals who did not get elected, there are still many
-            ways to stay involved with the IEEE, both locally and on an
-            international scope! Everyone is welcome to attend our Annual
-            General Meeting (open to all students) this April 7th at 4PM in SITE
-            5084, where we will be holding by-elections for vacant executive
-            positions, and discussing other important topics –
-            <a href="https://tinyurl.com/IEEEUOAGM2018">see details</a>
-        </p>
-        <p className="p-margins">
-            So, without further ado, here is your incoming IEEE 2018-2019
-            University of Ottawa Student Branch Executives.
-        </p>
-        <p className="p-margins">
-            Chair:
-            <br />– Heemel Saha (117 Votes)
-            <br />– Ivor Benderavage (101 Votes)
-            <br />– No Confidence (25 Votes)
-            <br />– Abstain (79 Votes)
-            <br />– ELECTED CHAIR: Heemel Saha
-        </p>
-        <p className="p-margins">
-            Vice-Chair:
-            <br />– Amar Jasarbasic (180 Votes)
-            <br />– No Confidence (34 Votes)
-            <br />– Abstain (108 Votes)
-            <br />– ELECTED VICE CHAIR: Amar Jasarbasic
-        </p>
-        <p className="p-margins">
-            Treasurer:
-            <br />– Robert Andrew Conrad (83 Votes)
-            <br />– Sanat Nayer (70 Votes)
-            <br />– No Confidence (34 Votes)
-            <br />– Abstain (135 Votes)
-            <br />– ELECTED TREASURER: Robert Andrew Conrad
-        </p>
-        <p className="p-margins">
-            VP Academic:
-            <br />– Wei Qi Hu (47 Votes)
-            <br />– Michal Ridner (33 Votes)
-            <br />– Scott Fulton (51 Votes)
-            <br />– Melody Habbouche (121 Votes)
-            <br />– No Confidence (14 Votes)
-            <br />– Abstain (56 Votes)
-            <br />– ELECTED VICE-PRESIDENT OF ACADEMIC AFFAIRS: Melody Habbouche
-        </p>
-        <p className="p-margins">
-            VP Internal:
-            <br />– Sarah Rushdi Khalaf (65 Votes)
-            <br />– John (Tianyu) Zhao (55 Votes)
-            <br />– Anushka Paliwal (101 Votes)
-            <br />– No Confidence (15 Votes)
-            <br />– Abstain (86 Votes)
-            <br />– ELECTED VICE-PRESIDENT OF INTERNAL AFFAIRS: Anushka Paliwal
-        </p>
-        <p className="p-margins">
-            VP External:
-            <br />– Aly Abdelrahman (137 Votes)
-            <br />– Maisha Chowdhury (32 Votes)
-            <br />– Mithra Perera (34 Votes)
-            <br />– Ben Burk (32 Votes)
-            <br />– No Confidence (17 Votes)
-            <br />– Abstain (70 Votes)
-            <br />– ELECTED VICE-PRESIDENT OF EXTERNAL AFFAIRS: Aly Abdelrahman
-        </p>
-        <p className="p-margins">
-            Webmaster:
-            <br />– Rushil Perera (192 Votes)
-            <br />– No Confidence (22 Votes)
-            <br />– Abstain (108 Votes)
-            <br />– ELECTED WEBMASTER: Rushil Perera
-        </p>
-        <p className="p-margins">
-            Women in Engineering Chair:
-            <br />– Linda Ruswati Tang (208 Votes)
-            <br />– No Confidence (23 Votes)
-            <br />– Abstain (91 Votes)
-            <br />– ELECTED WOMEN IN ENGINEERING AFFINITY GROUP CHAIR: Linda
-            Ruswati Tang
-        </p>
-        <p className="p-margins">
-            Women in Engineering Vice-Chair:
-            <br />– Mikeli Habash (200 Votes)
-            <br />– No Confidence (19 Votes)
-            <br />– Abstain (103 Votes)
-            <br />– ELECTED WOMEN IN ENGINEERING AFFINITY GROUP VICE-CHAIR:
-            Mikeli Habash
-        </p>
-        <p className="p-margins">
-            Online Ballots: 278
-            <br />
-            Paper Ballots: 44
-            <br />
-            Total Ballots Counted: 322
-        </p>
-        <p className="p-margins">
-            To all elected Candidates, congratulations again! You will all be
-            receiving a very important email soon.
-        </p>
-    </div>
-);
+import voteImg from '../../../static/images/events/2019-2020/vote-ieee.jpg';
+
+const voteUrl = 'https://forms.gle/WZfBzf49KeU2bZVv5';
+
+const getVoteURL = () => {
+    return (
+        <a href={voteUrl} style={{ color: '#3498db' }}>
+            {' '}
+            {voteUrl}
+        </a>
+    );
+};
+
+const Elections = () => {
+    return (
+        <div>
+            <Title variant="h5" gutterBottom className="title">
+                {'Elections'}
+            </Title>
+            <div style={{ textAlign: 'center' }}>
+                <img
+                    src={voteImg}
+                    alt="vote"
+                    style={{
+                        borderRadius: '25px',
+                        height: '40%',
+                        width: '40%'
+                    }}
+                />
+            </div>
+            <Typography
+                variant="h5"
+                style={{ paddingBottom: '8px', textAlign: 'center' }}
+            >
+                **Traduction Française suit** <br />
+                IEEE Elections are here! <br /> <br />
+                Who can apply: Anyone in Computer Science, Engineering or
+                Science! <br /> <br />
+                How can you apply? <br />
+                At the following links: <br />
+                ieeeuottawa.ca/elections <br />
+                {getVoteURL()} <br /> <br />
+                IEEE Elections: <br />
+                Feb 26th: First day to apply for positions/nomination period
+                begins <br />
+                March 4th, 12pm: Nomination period ends <br />
+                March 4th @ 5:30pm or 8:30pm: Mandatory candidates meeting{' '}
+                <br />
+                March 5th 12:00am - March 12th 11:59pm: Campaigning period{' '}
+                <br />
+                March 13th 12:00am - March 14th 12:00pm: Election Period! <br />{' '}
+                <br />
+                Positions: <br />
+                -Chair(One year experience as an exec on the IEEE student
+                association required) <br />
+                -Vice Chair (One year experience as an exec on the IEEE student
+                association required) <br />
+                -Treasurer <br />
+                -Secretary <br />
+                -VP Academic <br />
+                -VP Communications <br />
+                -VP External
+                <br />
+                -VP Internal
+                <br />
+                -VP Social
+                <br />
+                -Webmaster
+                <br />
+                -McNaughton Center Director
+                <br />
+                -----
+                <br />
+                -WIE Chair
+                <br />
+                -WIE Vice-Chair
+                <br />
+                -----
+                <br />
+                -Photonics Chair (Grad Students Only)
+                <br />
+                -Photonics Vice-Chair (Grad Students Only)
+                <br />
+                <br />
+                *****************************************************************************
+                <br />
+                Les Élections de l’IEEE sont arrivées!
+                <br />
+                <br />
+                Qui peut postuler: Étudiants en Informatique, Ingénierie ou
+                Science
+                <br />
+                <br />
+                Comment postuler?
+                <br />
+                Aux liens suivants:
+                <br />
+                ieeeuottawa.ca/elections <br />
+                {getVoteURL()}
+                <br /> <br />
+                Élections IEEE:
+                <br />
+                26 Févr. : Premier jour pour postuler/Période de nomination
+                débute
+                <br />4 Mars, 12 h : Période de nomination termine
+                <br />4 Mars, @ 17 h 30 ou 20 h 30 : Réunion obligatoire des
+                candidats
+                <br />5 Mars, 0 h - 12 Mars, 23 h 59: Période de campagne
+                <br />
+                13 Mars, 0 h - 14 Mars, 12 h: Période d’élection
+                <br />
+                <br />
+                Positions:
+                <br />
+                -Président (Une année d’expérience au sein de l’association
+                étudiante de l’IEEE requise)
+                <br />
+                -Vice-Président (Une année d’expérience au sein de l’association
+                étudiante de l’IEEE requise)
+                <br />
+                -Trésorier
+                <br />
+                -Secrétaire
+                <br />
+                -VP Académique
+                <br />
+                -VP Communications
+                <br />
+                -VP Externe
+                <br />
+                -VP Interne
+                <br />
+                -VP Social
+                <br />
+                -Webmaster
+                <br />
+                -Directeur du centre McNaughton
+                <br />
+                -----
+                <br />
+                -Présidente WIE
+                <br />
+                -Vice-Présidente WIE
+                <br />
+                -----
+                <br />
+                -Président de photonique (étudiants diplômés uniquement)
+                <br />
+                -Vice-Président de photonique (étudiants diplômés uniquement)
+                <br />
+                <br />
+            </Typography>
+        </div>
+    );
+};
 
 export default Elections;

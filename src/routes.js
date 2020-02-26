@@ -23,6 +23,10 @@ const routes = [
         link: '/Events/Events'
     },
     {
+        title: 'Elections',
+        link: '/Elections/Elections'
+    },
+    {
         title: 'Gallery',
         link: '/Gallery/Gallery'
     },
