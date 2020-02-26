@@ -256,6 +256,22 @@
         "image": "../images/events/2019-2020/2020-02-24-Iti1121-Review-Session-Java.jpg"
     },
     {
+        "id": "2020-02-28-Dog-Therapy",
+        "name": "Dog Therapy",
+        "description": "Ever admire a stranger’s dog and wish to pet it ? Or simply need some love from a dog? IEEE, CSSA, and SESA have worked together to bring you Dog Therapy! At CBY A04 at 12pm on February 28th, we have partnered with Freedom Dog Rescue to help raise money for dogs without a home! There will be coffee, tea, and snacks available for everyone so feel free to come by and destress with the good boys and girls of Freedom Dog Rescue! Donations of any kind would be appreciated and all proceeds will go directly to Freedom Dog Rescue!",
+        "FR": "Avez-vous déjà admiré le chien d’un étranger et souhaité le caresser ? Ou simplement besoin de l’amour d’un chien ? IEEE, CSSA et SESA ont travaillé ensemble pour vous apporter la thérapie canine ! Au CBY A04, à 12 h, le 28 février, nous nous sommes associés à Freedom Dog Rescue pour aider à collecter des fonds pour des chiens sans foyers ! Il y aura du café, du thé et des collations pour tout le monde, alors n’hésitez pas à venir vous déstresser avec les bons chiens et les bonnes chiennes de Freedom Dog Rescue ! Nous serions reconnaissants des dons de toutes sortes et tous les bénéfices iront directement à Freedom Dog Rescue !",
+        "url": "https://www.facebook.com/events/490331604962893/",
+        "image": "../images/events/2019-2020/2020-02-28-Dog-Therapy.jpg"
+    },
+    {
+        "id": "2020-03-02-ELG-Specialization-Panel",
+        "name": "ELG Specialization Panel",
+        "description": "Hi everyone! Are you in electrical engineering and about to choose your specialization? Are you confused as to what each one entails, or are struggling to choose between ones you like? Come to the electrical engineering specialization panel on March 2nd at 6pm! We have both graduated and senior students from the faculty of electrical engineering from each specialty here to answer your questions! \n There will be food provided, so bring your questions and enthusiasm!",
+        "FR": "Salut à tous ! Êtes-vous en génie électrique et sur le point de choisir votre spécialisation ? Êtes-vous incertains quant à ce qu’implique chacune des spécialisations, ou avez-vous du mal à choisir entre celles qui vous plaisent ? Venez à la table ronde de spécialisation en génie électrique le 2 mars à 18 h ! Des étudiants seniors et des anciens de la faculté de génie électrique de chaque spécialisation seront présents pour répondre à vos questions ! \n La nourriture sera fournie, donc amenez vos questions et votre enthousiasme !",
+        "url": "https://www.facebook.com/events/2316505151979961/",
+        "image": "../images/events/2019-2020/2020-03-02-ELG-Specialization-Panel.jpg"
+    },
+    {
         "id": "2020-03-02-EngiBEERing",
         "name": "EngiBEERing",
         "description": "JOIN US FOR $0.45 WINGS !! reading week is over and exams are just around the corner- come cry over some beer and wings with us!",
