@@ -30,6 +30,10 @@ const routes = [
         title: 'Gallery',
         link: '/Gallery/Gallery'
     },
+    // {
+    //     title: 'Gallery ',
+    //     link: '/Gallery/IEEEGallery'
+    // },
     {
         title: 'WIE',
         link: '/WIE/WIE'
@@ -64,6 +68,10 @@ const routes = [
             {
                 title: 'Meeting Minutes',
                 link: '/AboutUs/MeetingMinutes'
+            },
+            {
+                title: 'McNaughton Centre',
+                link: '/AboutUs/McNaughtonCentre'
             }
         ]
     }

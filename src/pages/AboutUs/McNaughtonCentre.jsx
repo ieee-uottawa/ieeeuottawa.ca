@@ -75,7 +75,7 @@ const McNaughtonCentre = () => (
                             if (suffix) costStr += suffix;
 
                             return (
-                                <TableRow>
+                                <TableRow key={name}>
                                     <TableCell component="th" scope="row">
                                         {name}
                                     </TableCell>
