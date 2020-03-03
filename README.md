@@ -1,7 +1,8 @@
 # IEEE uOttawa Student Branch Website
 
-<img width="200" alt="portfolio_view" src="/static/images/ieee_logo_circle.png">
-
+<p align="center">
+  <img width="200" alt="portfolio_view" src="/static/images/ieee_logo_circle.png">
+</p>
 
 ## Install
 
