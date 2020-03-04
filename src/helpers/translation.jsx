@@ -9,6 +9,10 @@ const menuItems = {
         EN: 'Execs',
         FR: 'Directeurs'
     },
+    Elections: {
+        EN: 'Elections',
+        FR: 'Élections'
+    },
     Events: {
         EN: 'Events',
         FR: 'Évènements'
