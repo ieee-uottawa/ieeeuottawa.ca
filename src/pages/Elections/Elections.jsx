@@ -24,18 +24,24 @@ const ElectionsEN = () => {
             Who can apply: Anyone in Computer Science, Engineering or Science!{' '}
             <br /> <br />
             How can you apply? <br />
-            At the following links: <br />
-            ieeeuottawa.ca/elections <br />
+            At the following link: <br />
             {getVoteURL()} <br /> <br />
-            IEEE Elections: <br />
-            Feb 26th: First day to apply for positions/nomination period begins{' '}
+            <b>IEEE Elections: </b> <br />
+            <div style={{ display: 'inline-block', textAlign: 'left' }}>
+                Feb 26th: First day to apply for positions/nomination period
+                begins
+                <br />
+                March 11th 12:00pm: Nomination period ends <br />
+                March 11th 5:30pm or 8:30pm: Mandatory candidates meeting
+                <br />
+                March 16th 12:00am - March 12th 11:59pm: Campaigning period
+                <br />
+                March 20th 12:00am - March 14th 12:00pm: Election Period! <br />
+            </div>
             <br />
-            March 11th, 12pm: Nomination period ends <br />
-            March 11th @ 5:30pm or 8:30pm: Mandatory candidates meeting <br />
-            March 16th 12:00am - March 12th 11:59pm: Campaigning period <br />
-            March 20th 12:00am - March 14th 12:00pm: Election Period! <br />{' '}
             <br />
-            Positions: <br />
+            <b>Positions: </b>
+            <br />
             Chair(One year experience as an exec on the IEEE student association
             required) <br />
             Vice Chair (One year experience as an exec on the IEEE student
@@ -85,28 +91,31 @@ const ElectionsFR = () => {
             <br />
             Comment postuler?
             <br />
-            Aux liens suivants:
+            Aux lien suivants:
             <br />
-            ieeeuottawa.ca/elections <br />
             {getVoteURL()}
             <br /> <br />
-            Élections IEEE:
+            <b>Élections IEEE: </b>
             <br />
-            26 Févr. : Premier jour pour postuler/Période de nomination débute
+            <div style={{ display: 'inline-block', textAlign: 'left' }}>
+                26 Févr. : Premier jour pour postuler/Période de nomination
+                débute
+                <br />
+                11 Mars, 12 h : Période de nomination termine
+                <br />
+                11 Mars, 17 h 30 ou 20 h 30 : Réunion obligatoire des candidats
+                <br />
+                12 Mars, 0 h - 12 Mars, 23 h 59: Période de campagne
+                <br />
+                20 Mars, 0 h - 14 Mars, 12 h: Période d’élection
+                <br />
+            </div>
             <br />
-            11 Mars, 12 h : Période de nomination termine
             <br />
-            11 Mars, @ 17 h 30 ou 20 h 30 : Réunion obligatoire des candidats
+            <b>Positions: </b>
             <br />
-            12 Mars, 0 h - 12 Mars, 23 h 59: Période de campagne
-            <br />
-            20 Mars, 0 h - 14 Mars, 12 h: Période d’élection
-            <br />
-            <br />
-            Positions:
-            <br />
-            Président (Une année d’expérience au sein de l’association
-            étudiante de l’IEEE requise)
+            Président (Une année d’expérience au sein de l’association étudiante
+            de l’IEEE requise)
             <br />
             Vice-Président (Une année d’expérience au sein de l’association
             étudiante de l’IEEE requise)
