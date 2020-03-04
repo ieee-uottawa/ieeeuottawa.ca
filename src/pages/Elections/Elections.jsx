@@ -36,35 +36,35 @@ const ElectionsEN = () => {
             March 20th 12:00am - March 14th 12:00pm: Election Period! <br />{' '}
             <br />
             Positions: <br />
-            -Chair(One year experience as an exec on the IEEE student
+            Chair(One year experience as an exec on the IEEE student association
+            required) <br />
+            Vice Chair (One year experience as an exec on the IEEE student
             association required) <br />
-            -Vice Chair (One year experience as an exec on the IEEE student
-            association required) <br />
-            -Treasurer <br />
-            -Secretary <br />
-            -VP Academic <br />
-            -VP Communications <br />
-            -VP External
+            Treasurer <br />
+            Secretary <br />
+            VP Academic <br />
+            VP Communications <br />
+            VP External
             <br />
-            -VP Internal
+            VP Internal
             <br />
-            -VP Social
+            VP Social
             <br />
-            -Webmaster
+            Webmaster
             <br />
-            -McNaughton Center Director
+            McNaughton Center Director
             <br />
             -----
             <br />
-            -WIE Chair
+            WIE Chair
             <br />
-            -WIE Vice-Chair
+            WIE Vice-Chair
             <br />
             -----
             <br />
-            -Photonics Chair (Grad Students Only)
+            Photonics Chair (Grad Students Only)
             <br />
-            -Photonics Vice-Chair (Grad Students Only)
+            Photonics Vice-Chair (Grad Students Only)
             <br />
             <br />
         </Typography>
@@ -105,41 +105,41 @@ const ElectionsFR = () => {
             <br />
             Positions:
             <br />
-            -Président (Une année d’expérience au sein de l’association
+            Président (Une année d’expérience au sein de l’association
             étudiante de l’IEEE requise)
             <br />
-            -Vice-Président (Une année d’expérience au sein de l’association
+            Vice-Président (Une année d’expérience au sein de l’association
             étudiante de l’IEEE requise)
             <br />
-            -Trésorier
+            Trésorier
             <br />
-            -Secrétaire
+            Secrétaire
             <br />
-            -VP Académique
+            VP Académique
             <br />
-            -VP Communications
+            VP Communications
             <br />
-            -VP Externe
+            VP Externe
             <br />
-            -VP Interne
+            VP Interne
             <br />
-            -VP Social
+            VP Social
             <br />
-            -Webmaster
+            Webmaster
             <br />
-            -Directeur du centre McNaughton
+            Directeur du centre McNaughton
             <br />
             -----
             <br />
-            -Présidente WIE
+            Présidente WIE
             <br />
-            -Vice-Présidente WIE
+            Vice-Présidente WIE
             <br />
             -----
             <br />
-            -Président de photonique (étudiants diplômés uniquement)
+            Président de photonique (étudiants diplômés uniquement)
             <br />
-            -Vice-Président de photonique (étudiants diplômés uniquement)
+            Vice-Président de photonique (étudiants diplômés uniquement)
             <br />
             <br />
         </Typography>
