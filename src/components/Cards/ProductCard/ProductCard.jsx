@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 import dayjs from 'dayjs';
 import MaterialSelect from '../../Material/MaterialSelect';
 import { addItemToCart } from '../../../redux/actions/cart_actions';
-import { showPricing } from '../../../util';
+import { showPricing, isServerSideRendering } from '../../../util';
 import '../ExecCard/exec-card.scss';
 
 class ProductCard extends Component {
@@ -24,11 +24,12 @@ class ProductCard extends Component {
         this.state.isValidForm = this.isValidForm();
         this.handleChange = this.handleChange.bind(this);
         this.handleAddToCartClick = this.handleAddToCartClick.bind(this);
-
-        const { store } = this.context;
-        this.state.unsubscribe = store.subscribe(() => {
-            localStorage.setItem('cart', JSON.stringify(store.getState()));
-        });
+        if (!isServerSideRendering) {
+            const { store } = this.context;
+            this.state.unsubscribe = store.subscribe(() => {
+                localStorage.setItem('cart', JSON.stringify(store.getState()));
+            });
+        }
     }
 
     // componentDidMount() {
