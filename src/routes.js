@@ -30,10 +30,10 @@ const routes = [
         title: 'Gallery',
         link: '/Gallery/Gallery'
     },
-    // {
-    //     title: 'Gallery ',
-    //     link: '/Gallery/IEEEGallery'
-    // },
+    {
+        title: 'IEEEGallery',
+        link: '/Gallery/IEEEGallery'
+    },
     {
         title: 'WIE',
         link: '/WIE/WIE'
