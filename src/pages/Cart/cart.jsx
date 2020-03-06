@@ -13,7 +13,8 @@ import {
     capitalize,
     flattenDeep,
     isDevEnvironment,
-    moneyFormatter
+    moneyFormatter,
+    isServerSideRendering
 } from '../../util';
 import { removeItemFromCart } from '../../redux/actions/cart_actions';
 import Title from '../../components/Titles/Title';
@@ -31,28 +32,29 @@ class Cart extends Component {
         this.state = { items: [] };
         this.updateState = this.updateState.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        if (!isServerSideRendering) {
+            const { store } = this.context;
+            const unsubscribe = store.subscribe(() => {
+                const state = store.getState();
+                this.updateState(state);
+                localStorage.setItem('cart', JSON.stringify(state));
+            });
 
-        const { store } = this.context;
-        const unsubscribe = store.subscribe(() => {
-            const state = store.getState();
-            this.updateState(state);
-            localStorage.setItem('cart', JSON.stringify(state));
-        });
-
-        const state = JSON.parse(localStorage.getItem('cart'));
-        this.updateState({ unsubscribe, ...state });
+            const state = JSON.parse(localStorage.getItem('cart'));
+            this.updateState({ unsubscribe, ...state });
+        }
     }
 
-    //componentDidMount() {
-        // const { store } = this.context;
-        // const unsubscribe = store.subscribe(() => {
-        //     const state = store.getState();
-        //     this.updateState(state);
-        //     localStorage.setItem('cart', JSON.stringify(state));
-        // });
+    // componentDidMount() {
+    // const { store } = this.context;
+    // const unsubscribe = store.subscribe(() => {
+    //     const state = store.getState();
+    //     this.updateState(state);
+    //     localStorage.setItem('cart', JSON.stringify(state));
+    // });
 
-        // const state = JSON.parse(localStorage.getItem('cart'));
-        // this.updateState({ unsubscribe, ...state });
+    // const state = JSON.parse(localStorage.getItem('cart'));
+    // this.updateState({ unsubscribe, ...state });
     //}
 
     componentWillUnmount() {
