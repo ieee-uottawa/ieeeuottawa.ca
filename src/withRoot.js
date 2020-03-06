@@ -15,14 +15,19 @@ function withRoot(Component) {
             muiPageContext = getPageContext();
             this.state = { language: 'EN' };
             this.toggleLanguage = this.toggleLanguage.bind(this);
-        }
 
-        componentDidMount() {
             const jssStyles = document.querySelector('#server-side-jss');
             if (jssStyles && jssStyles.parentNode) {
                 jssStyles.parentNode.removeChild(jssStyles);
             }
         }
+
+        // componentDidMount() {
+        //     const jssStyles = document.querySelector('#server-side-jss');
+        //     if (jssStyles && jssStyles.parentNode) {
+        //         jssStyles.parentNode.removeChild(jssStyles);
+        //     }
+        // }
 
         toggleLanguage() {
             const { language } = this.state;

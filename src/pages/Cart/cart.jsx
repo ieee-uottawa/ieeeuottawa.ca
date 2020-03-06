@@ -31,9 +31,7 @@ class Cart extends Component {
         this.state = { items: [] };
         this.updateState = this.updateState.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
-    }
 
-    componentDidMount() {
         const { store } = this.context;
         const unsubscribe = store.subscribe(() => {
             const state = store.getState();
@@ -44,6 +42,18 @@ class Cart extends Component {
         const state = JSON.parse(localStorage.getItem('cart'));
         this.updateState({ unsubscribe, ...state });
     }
+
+    //componentDidMount() {
+        // const { store } = this.context;
+        // const unsubscribe = store.subscribe(() => {
+        //     const state = store.getState();
+        //     this.updateState(state);
+        //     localStorage.setItem('cart', JSON.stringify(state));
+        // });
+
+        // const state = JSON.parse(localStorage.getItem('cart'));
+        // this.updateState({ unsubscribe, ...state });
+    //}
 
     componentWillUnmount() {
         const { unsubscribe } = this.state;

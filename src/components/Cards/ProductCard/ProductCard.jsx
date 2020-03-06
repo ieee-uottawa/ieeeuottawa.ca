@@ -24,14 +24,19 @@ class ProductCard extends Component {
         this.state.isValidForm = this.isValidForm();
         this.handleChange = this.handleChange.bind(this);
         this.handleAddToCartClick = this.handleAddToCartClick.bind(this);
-    }
 
-    componentDidMount() {
         const { store } = this.context;
         this.state.unsubscribe = store.subscribe(() => {
             localStorage.setItem('cart', JSON.stringify(store.getState()));
         });
     }
+
+    // componentDidMount() {
+    //     const { store } = this.context;
+    //     this.state.unsubscribe = store.subscribe(() => {
+    //         localStorage.setItem('cart', JSON.stringify(store.getState()));
+    //     });
+    // }
 
     componentWillUnmount() {
         const { unsubscribe } = this.state;

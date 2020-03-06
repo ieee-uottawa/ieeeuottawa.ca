@@ -6,6 +6,17 @@
 
 // You can delete this file if you're not using it
 
+// https://github.com/gatsbyjs/gatsby/issues/11934
+exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+    const config = getConfig();
+    if (stage.startsWith('develop') && config.resolve) {
+        config.resolve.alias = {
+            ...config.resolve.alias,
+            'react-dom': '@hot-loader/react-dom'
+        };
+    }
+};
+
 const { getPages } = require(`./src/routes`);
 
 exports.createPages = ({ actions }) => {
