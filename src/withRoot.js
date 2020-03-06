@@ -5,6 +5,7 @@ import JssProvider from 'react-jss/lib/JssProvider';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import getPageContext, { getCurrentTheme } from './getPageContext';
 import { toggleLanguage } from './helpers/translation';
+import { isServerSideRendering } from './util';
 
 function withRoot(Component) {
     let muiPageContext = null;
@@ -15,10 +16,11 @@ function withRoot(Component) {
             muiPageContext = getPageContext();
             this.state = { language: 'EN' };
             this.toggleLanguage = this.toggleLanguage.bind(this);
-
-            const jssStyles = document.querySelector('#server-side-jss');
-            if (jssStyles && jssStyles.parentNode) {
-                jssStyles.parentNode.removeChild(jssStyles);
+            if (!isServerSideRendering) {
+                const jssStyles = document.querySelector('#server-side-jss');
+                if (jssStyles && jssStyles.parentNode) {
+                    jssStyles.parentNode.removeChild(jssStyles);
+                }
             }
         }
 
