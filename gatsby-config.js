@@ -3,7 +3,9 @@ const path = require('path');
 module.exports = {
     siteMetadata: {
         title: 'IEEE uOttawa Student Website',
-        siteUrl: 'https://www.ieeeuottawa.ca'
+        siteUrl: 'https://www.ieeeuottawa.ca',
+        description: `IEEE uOttawa Student Website`,
+        author: `@Nevin`
     },
     plugins: [
         'gatsby-plugin-react-helmet',
