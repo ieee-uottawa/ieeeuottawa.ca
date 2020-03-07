@@ -35,10 +35,7 @@ class Toggle extends PureComponent {
     }
 
     componentDidUpdate(nextProps) {
-        if ('checked' in nextProps) {
-            this.setState({ checked: !!nextProps.checked });
-            this.previouslyChecked = !!nextProps.checked;
-        }
+        this.checkState(nextProps);
     }
 
     getIcon(type) {
@@ -50,6 +47,13 @@ class Toggle extends PureComponent {
             : icons[type];
     }
 
+    checkState(nextProps) {
+        if ('checked' in nextProps) {
+            this.setState({ checked: !!nextProps.checked });
+            this.previouslyChecked = !!nextProps.checked;
+        }
+    }
+
     handleClick(event) {
         const checkbox = this.input;
         this.previouslyChecked = checkbox.checked;
@@ -59,7 +63,6 @@ class Toggle extends PureComponent {
             checkbox.click();
             return;
         }
-
         this.setState({ checked: checkbox.checked });
     }
 
@@ -98,12 +101,10 @@ class Toggle extends PureComponent {
             if (this.previouslyChecked !== checked) {
                 checkbox.click();
             }
-
             this.touchStarted = false;
             this.startX = null;
             this.touchMoved = false;
         }
-
         if (!this.hadFocusAtTouchStart) {
             this.setState({ hasFocus: false });
         }

@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Carousel, { Modal, ModalGateway } from 'react-images';
@@ -12,7 +13,7 @@ const photos = () => {
     const arr = [];
     if (isServerSideRendering()) return arr;
     for (let i = 131; i >= 1; i -= 1) {
-        // eslint-disable-next-line global-require eslint-disable-next-line import/no-dynamic-require
+        // eslint-disable-next-line import/no-dynamic-require
         const src = require(`../../../static/images/gallery/0${String(i)}.jpg`);
         let width = i + 3;
         let height = i + 4;
