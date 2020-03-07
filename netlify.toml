@@ -1,0 +1,3 @@
+[build]
+    publish = "public"
+    command = "(echo $secret_decrypt_key | gpg --passphrase-fd 0 .env.production.gpg) && npm run build"
