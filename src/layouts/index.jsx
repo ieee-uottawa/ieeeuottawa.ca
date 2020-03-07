@@ -26,10 +26,6 @@ if (!isDevEnvironment) {
 }
 
 if (!isServerSideRendering()) {
-    // console.log(
-    // 'Initialized GA',
-    // isDevEnvironment ? `: ${process.env.GATSBY_ANALYTICS_ID}` : ''
-    // );
     initialize({
         trackingId: process.env.GATSBY_ANALYTICS_ID,
         gaOptions: {
