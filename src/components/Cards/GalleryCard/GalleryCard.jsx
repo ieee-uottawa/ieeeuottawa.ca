@@ -7,10 +7,10 @@ import '../ExecCard/exec-card.scss';
 const GalleryCard = props => {
     const imageStyle = {
         margin: '16px auto 0',
-        borderRadius: '25%',
-        width: '166px',
+        borderRadius: '20%',
+        width: '180px',
         maxWidth: '100%',
-        height: '166px',
+        height: '180px',
         display: 'block',
         WebkitBorderRadius: '25%',
         WebkitBoxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',

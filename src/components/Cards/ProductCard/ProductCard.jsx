@@ -24,24 +24,21 @@ class ProductCard extends Component {
         this.state.isValidForm = this.isValidForm();
         this.handleChange = this.handleChange.bind(this);
         this.handleAddToCartClick = this.handleAddToCartClick.bind(this);
-        if (!isServerSideRendering) {
+        this.mount();
+    }
+
+    componentWillUnmount() {
+        const { unsubscribe } = this.state;
+        unsubscribe();
+    }
+
+    mount() {
+        if (!isServerSideRendering()) {
             const { store } = this.context;
             this.state.unsubscribe = store.subscribe(() => {
                 localStorage.setItem('cart', JSON.stringify(store.getState()));
             });
         }
-    }
-
-    // componentDidMount() {
-    //     const { store } = this.context;
-    //     this.state.unsubscribe = store.subscribe(() => {
-    //         localStorage.setItem('cart', JSON.stringify(store.getState()));
-    //     });
-    // }
-
-    componentWillUnmount() {
-        const { unsubscribe } = this.state;
-        unsubscribe();
     }
 
     handleChange(name) {
