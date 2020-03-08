@@ -12,7 +12,13 @@ class ExternalRedirect extends Component {
             seconds: 5,
             intervalID: null
         };
+    }
 
+    componentWillUnmount() {
+        this.stopTimer();
+    }
+
+    mount() {
         this.state.intervalID = setInterval(() => {
             const { seconds } = this.state;
             if (seconds === 1) {
@@ -22,22 +28,6 @@ class ExternalRedirect extends Component {
             }
             this.setState({ seconds: seconds - 1 });
         }, 1000);
-    }
-
-    // componentDidMount() {
-    //     this.state.intervalID = setInterval(() => {
-    //         const { seconds } = this.state;
-    //         if (seconds === 1) {
-    //             this.stopTimer();
-    //             const { url } = this.props;
-    //             window.location.replace(url);
-    //         }
-    //         this.setState({ seconds: seconds - 1 });
-    //     }, 1000);
-    // }
-
-    componentWillUnmount() {
-        this.stopTimer();
     }
 
     stopTimer() {

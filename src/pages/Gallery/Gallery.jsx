@@ -3,16 +3,8 @@ import { StaticQuery, graphql } from 'gatsby';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import { Button, GridList } from '../../helpers/material-ui';
 import { GalleryCard, Title } from '../../helpers/components';
-import { srcArray } from '../../helpers/gallery';
+import { getPhotos } from '../../helpers/gallery';
 import { translate } from '../../helpers/translation';
-
-const archives = src => {
-    const blacklist = new Set(['0121.jpg', '0123.jpg']);
-    for (let item = 0; item < blacklist.length; item += 1) {
-        if (String(src).includes(blacklist[item])) return true;
-    }
-    return false;
-};
 
 const query = graphql`
     query {
@@ -20,7 +12,7 @@ const query = graphql`
             nodes {
                 image {
                     childImageSharp {
-                        fixed(width: 186, height: 186) {
+                        fixed(width: 240, height: 240) {
                             ...GatsbyImageSharpFixed_withWebp
                         }
                     }
@@ -47,6 +39,7 @@ class Gallery extends Component {
             <StaticQuery
                 query={query}
                 render={({ allGalleryJson: { nodes } }) => {
+                    const photos = getPhotos(nodes);
                     const { modalIsOpen } = this.state;
                     return (
                         <div className="center-horizontal">
@@ -57,26 +50,19 @@ class Gallery extends Component {
                                 {translate('Open Preview')}
                             </Button>
                             <GridList cols={5} style={{ margin: '0 5.0% 0' }}>
-                                {nodes.map(({ image }, key) => {
-                                    const { childImageSharp } = image;
-                                    const { fixed } = childImageSharp;
-                                    const { src } = fixed;
-                                    if (!archives(src))
-                                        return (
-                                            <GalleryCard
-                                                image={image}
-                                                key={String(key)}
-                                            />
-                                        );
-                                    return null;
-                                })}
+                                {photos.map(({ image, src }) => (
+                                    <GalleryCard
+                                        image={image}
+                                        key={String(src)}
+                                    />
+                                ))}
                             </GridList>
                             <ModalGateway>
                                 {modalIsOpen && (
                                     <Modal onClose={this.toggleModal}>
                                         <Carousel
                                             onClick={this.toggleModal}
-                                            views={srcArray}
+                                            views={getPhotos(nodes)}
                                         />
                                     </Modal>
                                 )}

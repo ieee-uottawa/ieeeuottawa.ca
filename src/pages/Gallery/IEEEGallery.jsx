@@ -1,27 +1,30 @@
-/* eslint-disable global-require */
-import React, { Component } from 'react';
+import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import Carousel, { Modal, ModalGateway } from 'react-images';
 import Gallery from 'react-photo-gallery';
-import { Button, GridList } from '../../helpers/material-ui';
+import { GridList } from '../../helpers/material-ui';
 import { Title } from '../../helpers/components';
-import { srcArray } from '../../helpers/gallery';
 import { translate } from '../../helpers/translation';
 import { isServerSideRendering } from '../../util';
 
-const photos = () => {
+const archives = src => {
+    const blacklist = new Set(['0121.jpg', '0123.jpg']);
+    for (let item = 0; item < blacklist.length; item += 1) {
+        if (String(src).includes(blacklist[item])) return true;
+    }
+    return false;
+};
+
+const getPhotos = nodes => {
     const arr = [];
     if (isServerSideRendering()) return arr;
-    for (let i = 131; i >= 1; i -= 1) {
-        // eslint-disable-next-line import/no-dynamic-require
-        const src = require(`../../../static/images/gallery/0${String(i)}.jpg`);
-        let width = i + 3;
-        let height = i + 4;
-        if (i === 9) {
-            width = 5;
-            height = 4;
-        }
-        arr.push({ src, width, height });
+    for (const node of nodes) {
+        const { image } = node;
+        const { childImageSharp } = image;
+        const { fixed } = childImageSharp;
+        const { src } = fixed;
+        const width = 2;
+        const height = 2;
+        if (!archives(src)) arr.push({ src, width, height });
     }
     return arr;
 };
@@ -32,7 +35,7 @@ const query = graphql`
             nodes {
                 image {
                     childImageSharp {
-                        fixed(width: 186, height: 186) {
+                        fixed(width: 586, height: 586) {
                             ...GatsbyImageSharpFixed_withWebp
                         }
                     }
@@ -42,25 +45,25 @@ const query = graphql`
     }
 `;
 
-class IEEEGallery extends Component {
-    render() {
-        return (
-            <StaticQuery
-                query={query}
-                render={({ allGalleryJson: { nodes } }) => {
-                    return (
-                        <div className="center-horizontal">
-                            <Title variant="h5" gutterBottom className="title">
-                                {translate('Gallery')}
-                            </Title>
-                            <GridList cols={5} style={{ margin: '0 5.0% 0' }}>
-                                <Gallery photos={photos()} />;
-                            </GridList>
-                        </div>
-                    );
-                }}
-            />
-        );
-    }
-}
+const IEEEGallery = () => {
+    return (
+        <StaticQuery
+            query={query}
+            render={({ allGalleryJson: { nodes } }) => {
+                const photos = getPhotos(nodes);
+                return (
+                    <div className="center-horizontal">
+                        <Title variant="h5" gutterBottom className="title">
+                            {translate('Gallery')}
+                        </Title>
+                        <GridList cols={5} style={{ margin: '0 5.0% 0' }}>
+                            {photos && <Gallery photos={photos} />};
+                        </GridList>
+                    </div>
+                );
+            }}
+        />
+    );
+};
+
 export default IEEEGallery;
