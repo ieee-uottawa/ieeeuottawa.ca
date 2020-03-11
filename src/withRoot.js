@@ -16,11 +16,10 @@ function withRoot(Component) {
             muiPageContext = getPageContext();
             this.state = { language: 'EN' };
             this.toggleLanguage = this.toggleLanguage.bind(this);
-            this.mount();
         }
 
-        mount() {
-            if (!isServerSideRendering) {
+        componentDidMount() {
+            if (!isServerSideRendering()) {
                 const jssStyles = document.querySelector('#server-side-jss');
                 if (jssStyles && jssStyles.parentNode) {
                     jssStyles.parentNode.removeChild(jssStyles);

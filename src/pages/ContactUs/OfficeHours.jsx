@@ -9,18 +9,17 @@ class OfficeHours extends Component {
         super(props);
         this.state = { screenWidth: 713 };
         this.updateDimensions = this.updateDimensions.bind(this);
-        this.mount();
+    }
+
+    componentDidMount() {
+        this.updateDimensions();
+        if (!isServerSideRendering())
+            window.addEventListener('resize', this.updateDimensions);
     }
 
     componentWillUnmount() {
         if (!isServerSideRendering())
             window.removeEventListener('resize', this.updateDimensions);
-    }
-
-    mount() {
-        this.updateDimensions();
-        if (!isServerSideRendering())
-            window.addEventListener('resize', this.updateDimensions);
     }
 
     updateDimensions() {

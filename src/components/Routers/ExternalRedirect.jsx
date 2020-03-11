@@ -14,11 +14,7 @@ class ExternalRedirect extends Component {
         };
     }
 
-    componentWillUnmount() {
-        this.stopTimer();
-    }
-
-    mount() {
+    componentDidMount() {
         this.state.intervalID = setInterval(() => {
             const { seconds } = this.state;
             if (seconds === 1) {
@@ -28,6 +24,10 @@ class ExternalRedirect extends Component {
             }
             this.setState({ seconds: seconds - 1 });
         }, 1000);
+    }
+
+    componentWillUnmount() {
+        this.stopTimer();
     }
 
     stopTimer() {
