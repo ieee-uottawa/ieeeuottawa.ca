@@ -7,9 +7,10 @@ import { translate } from '../../helpers/translation';
 class OfficeHours extends Component {
     constructor(props) {
         super(props);
-        this.state = { screenWidth: 713 };
+        this.state = {
+            screenWidth: 713
+        };
         this.updateDimensions = this.updateDimensions.bind(this);
-
         this.mount();
     }
 
@@ -26,7 +27,7 @@ class OfficeHours extends Component {
 
     updateDimensions() {
         const screenWidth = isServerSideRendering() ? 0 : window.innerWidth;
-        this.setState({ screenWidth });
+        this.state = { screenWidth };
     }
 
     render() {
@@ -35,7 +36,9 @@ class OfficeHours extends Component {
             display: 'block',
             borderRadius: '12px',
             maxWidth: width > 712 ? '100%' : 'calc(100% - 32px)',
-            margin: width > 712 ? '0 auto 16px' : '0 16px 16px'
+            margin: width > 712 ? '0 auto 16px' : '0 16px 16px',
+            height: '70%',
+            width: '70%'
         };
 
         return (
