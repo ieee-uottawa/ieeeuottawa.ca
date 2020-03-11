@@ -46,11 +46,13 @@ class OfficeHours extends Component {
                 <Title variant="h5" gutterBottom className="title">
                     {translate('Office Hours')}
                 </Title>
-                <img
-                    src={officeHoursImg}
-                    alt="IEEE Office Hours"
-                    style={imgStyle}
-                />
+                <div style={{ textAlign: 'center' }}>
+                    <img
+                        src={officeHoursImg}
+                        alt="IEEE Office Hours"
+                        style={imgStyle}
+                    />
+                </div>
             </>
         );
     }
