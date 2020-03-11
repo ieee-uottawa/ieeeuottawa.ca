@@ -27,7 +27,7 @@ class OfficeHours extends Component {
 
     updateDimensions() {
         const screenWidth = isServerSideRendering() ? 0 : window.innerWidth;
-        this.state = { screenWidth };
+        this.setState({ screenWidth });
     }
 
     render() {
