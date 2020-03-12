@@ -22,6 +22,11 @@ class CandidateCard extends Component {
         });
     }
 
+    renderOtherLanguage() {
+        const { otherLanguage } = this.state;
+        return <>{otherLanguage}</>;
+    }
+
     renderImage(href, src) {
         return (
             <a href={href}>
