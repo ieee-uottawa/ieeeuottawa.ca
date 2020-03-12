@@ -13,6 +13,10 @@ const menuItems = {
         EN: 'Elections',
         FR: 'Élections'
     },
+    'Election Platforms': {
+        EN: 'Election Platforms',
+        FR: 'Plateformes'
+    },
     Events: {
         EN: 'Events',
         FR: 'Évènements'

@@ -28,12 +28,14 @@ const ElectionsEN = () => {
             {getVoteURL()} <br /> <br />
             <b>IEEE Elections: </b> <br />
             <div style={{ display: 'inline-block', textAlign: 'left' }}>
-                Feb 26th: First day to apply for positions/nomination period
-                begins
-                <br />
-                March 11th 12:00pm: Nomination period ends <br />
-                March 11th 5:30pm or 8:30pm: Mandatory candidates meeting
-                <br />
+                <s>
+                    Feb 26th: First day to apply for positions/nomination period
+                    begins
+                    <br />
+                    March 11th 12:00pm: Nomination period ends <br />
+                    March 11th 5:30pm or 8:30pm: Mandatory candidates meeting
+                    <br />
+                </s>
                 March 16th 12:00am - March 19th 11:59pm: Campaigning period
                 <br />
                 March 20th 12:00am - March 20th 12:00pm: Election Period! <br />
@@ -98,13 +100,16 @@ const ElectionsFR = () => {
             <b>Élections IEEE: </b>
             <br />
             <div style={{ display: 'inline-block', textAlign: 'left' }}>
-                26 Févr. : Premier jour pour postuler/Période de nomination
-                débute
-                <br />
-                11 Mars, 12 h : Période de nomination termine
-                <br />
-                11 Mars, 17 h 30 ou 20 h 30 : Réunion obligatoire des candidats
-                <br />
+                <s>
+                    26 Févr. : Premier jour pour postuler/Période de nomination
+                    débute
+                    <br />
+                    11 Mars, 12 h : Période de nomination termine
+                    <br />
+                    11 Mars, 17 h 30 ou 20 h 30 : Réunion obligatoire des
+                    candidats
+                    <br />
+                </s>
                 12 Mars, 0 h - 19 Mars, 23 h 59: Période de campagne
                 <br />
                 20 Mars, 0 h - 20 Mars, 12 h: Période d’élection

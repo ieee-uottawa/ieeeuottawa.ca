@@ -39,10 +39,6 @@ const routes = [
         link: '/WIE/WIE'
     },
     {
-        title: 'Volunteer',
-        link: '/Volunteer/volunteer'
-    },
-    {
         title: 'Office Hours',
         link: '/OfficeHours/OfficeHours'
     },
@@ -52,6 +48,10 @@ const routes = [
             {
                 title: 'Budget',
                 link: '/AboutUs/Budget'
+            },
+            {
+                title: 'Volunteer',
+                link: '/Volunteer/volunteer'
             },
             {
                 title: 'Mailing List',
