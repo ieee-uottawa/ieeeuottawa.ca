@@ -63,7 +63,6 @@ const ElectionPlatforms = () => (
                             name
                             platform {
                                 en
-                                fr
                             }
                         }
                         WIE_Chair {
@@ -88,14 +87,12 @@ const ElectionPlatforms = () => (
                             name
                             platform {
                                 en
-                                fr
                             }
                         }
                         VP_Academic {
                             name
                             platform {
                                 en
-                                fr
                             }
                         }
                         Webmaster {
@@ -109,7 +106,6 @@ const ElectionPlatforms = () => (
             }
         `}
         render={({ allDataJson }) => {
-            console.log('112: ', allDataJson);
             const dataJson = allDataJson.nodes[0];
             if (!dataJson) return null;
             return (
