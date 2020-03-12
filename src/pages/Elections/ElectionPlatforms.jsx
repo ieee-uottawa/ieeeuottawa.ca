@@ -32,6 +32,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                                 fr
@@ -41,6 +42,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                                 fr
@@ -50,6 +52,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -58,6 +61,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                                 fr
@@ -67,6 +71,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -75,6 +80,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -83,6 +89,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -91,6 +98,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -99,6 +107,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -107,6 +116,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -115,6 +125,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -123,6 +134,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -131,6 +143,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -139,6 +152,7 @@ const ElectionPlatforms = () => (
                             name
                             program
                             LinkedIn
+                            FB
                             platform {
                                 en
                             }
@@ -182,13 +196,20 @@ const ElectionPlatforms = () => (
                                     {position.replace(/_/g, ' ')}
                                 </Typography>
                                 {candidates.map(
-                                    ({ name, platform, program, LinkedIn }) => (
+                                    ({
+                                        name,
+                                        platform,
+                                        program,
+                                        LinkedIn,
+                                        FB
+                                    }) => (
                                         <CandidateCard
                                             key={name}
                                             name={name}
                                             platform={platform}
                                             program={program}
                                             LinkedIn={LinkedIn}
+                                            FB={FB}
                                         />
                                     )
                                 )}

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, CardContent, Typography, Button } from '@material-ui/core';
 import './candidate-card.scss';
 import linkedin from './linkedin.png';
+import fb from './fb-event.png';
 
 class CandidateCard extends Component {
     constructor(props) {
@@ -21,8 +22,32 @@ class CandidateCard extends Component {
         });
     }
 
+    renderImage(href, src) {
+        return (
+            <a href={href}>
+                <img
+                    src={src}
+                    alt={href}
+                    style={{ height: '30px', width: '30px' }}
+                />
+            </a>
+        );
+    }
+
+    renderSocial(hrefLinkedIn, hrefFb) {
+        return (
+            <>
+                <div style={{ paddingTop: '8px', fontWeight: 'bold' }}>
+                    {hrefLinkedIn.length > 1 &&
+                        this.renderImage(hrefLinkedIn, linkedin)}
+                    {hrefFb.length > 1 && this.renderImage(hrefFb, fb)}
+                </div>
+            </>
+        );
+    }
+
     render() {
-        const { name, platform, program, LinkedIn } = this.props;
+        const { name, platform, program, LinkedIn, FB } = this.props;
         const { currentLanguage, otherLanguage } = this.state;
         return (
             <Card style={{ margin: '8px' }}>
@@ -41,27 +66,6 @@ class CandidateCard extends Component {
                         >
                             {name}
                         </Typography>
-
-                        {LinkedIn.length > 1 && (
-                            <div
-                                style={{
-                                    paddingTop: '8px',
-                                    fontWeight: 'bold'
-                                }}
-                            >
-                                <a href={LinkedIn}>
-                                    <img
-                                        src={linkedin}
-                                        alt="LinkedIn Icon"
-                                        style={{
-                                            marginRight: '100px',
-                                            height: '30px',
-                                            width: '30px'
-                                        }}
-                                    />
-                                </a>
-                            </div>
-                        )}
 
                         <Typography
                             variant="body1"
@@ -82,6 +86,7 @@ class CandidateCard extends Component {
                                 </Button>
                             )}
                     </div>
+                    {this.renderSocial(LinkedIn, FB)}
                     <Typography
                         component="div"
                         gutterBottom
@@ -99,7 +104,8 @@ CandidateCard.propTypes = {
     name: PropTypes.string.isRequired,
     platform: PropTypes.any.isRequired,
     program: PropTypes.string.isRequired,
-    LinkedIn: PropTypes.string.isRequired
+    LinkedIn: PropTypes.string.isRequired,
+    FB: PropTypes.string.isRequired
 };
 
 export default CandidateCard;
