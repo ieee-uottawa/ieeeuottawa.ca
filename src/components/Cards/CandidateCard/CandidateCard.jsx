@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardContent, Typography, Button } from '@material-ui/core';
 import './candidate-card.scss';
+import linkedin from './linkedin.png';
 
 class CandidateCard extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class CandidateCard extends Component {
     }
 
     render() {
-        const { name, platform, program } = this.props;
+        const { name, platform, program, LinkedIn } = this.props;
         const { currentLanguage, otherLanguage } = this.state;
         return (
             <Card style={{ margin: '8px' }}>
@@ -34,11 +35,33 @@ class CandidateCard extends Component {
                             style={{
                                 flexGrow: 1,
                                 paddingTop: '8px',
-                                fontWeight: 'bold'
+                                fontWeight: 'bold',
+                                verticalAlign: 'middle'
                             }}
                         >
                             {name}
                         </Typography>
+
+                        {LinkedIn.length > 1 && (
+                            <div
+                                style={{
+                                    paddingTop: '8px',
+                                    fontWeight: 'bold'
+                                }}
+                            >
+                                <a href={LinkedIn}>
+                                    <img
+                                        src={linkedin}
+                                        alt="LinkedIn Icon"
+                                        style={{
+                                            marginRight: '100px',
+                                            height: '30px',
+                                            width: '30px'
+                                        }}
+                                    />
+                                </a>
+                            </div>
+                        )}
 
                         <Typography
                             variant="body1"
@@ -75,7 +98,8 @@ class CandidateCard extends Component {
 CandidateCard.propTypes = {
     name: PropTypes.string.isRequired,
     platform: PropTypes.any.isRequired,
-    program: PropTypes.string.isRequired
+    program: PropTypes.string.isRequired,
+    LinkedIn: PropTypes.string.isRequired
 };
 
 export default CandidateCard;

@@ -164,12 +164,13 @@ const ElectionPlatforms = () => (
                                     {position.replace(/_/g, ' ')}
                                 </Typography>
                                 {candidates.map(
-                                    ({ name, platform, program }) => (
+                                    ({ name, platform, program, LinkedIn }) => (
                                         <CandidateCard
                                             key={name}
                                             name={name}
                                             platform={platform}
                                             program={program}
+                                            LinkedIn={LinkedIn}
                                         />
                                     )
                                 )}
