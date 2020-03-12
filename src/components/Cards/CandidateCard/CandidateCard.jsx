@@ -27,6 +27,26 @@ class CandidateCard extends Component {
         return <>{otherLanguage}</>;
     }
 
+    renderProfileImage(src) {
+        const width = window.innerWidth;
+        const isMobile = width <= 960;
+        return (
+            <div style={{ textAlign: 'center' }}>
+                <img
+                    src={src}
+                    alt="profile"
+                    style={{
+                        borderRadius: '50%',
+                        float: isMobile ? null : 'left',
+                        height: '200px',
+                        width: '200px',
+                        marginRight: '2%'
+                    }}
+                />
+            </div>
+        );
+    }
+
     renderImage(href, src) {
         return (
             <a href={href}>
@@ -52,7 +72,7 @@ class CandidateCard extends Component {
     }
 
     render() {
-        const { name, platform, program, LinkedIn, FB } = this.props;
+        const { name, platform, program, profile, LinkedIn, FB } = this.props;
         const { currentLanguage } = this.state;
         return (
             <Card style={{ margin: '8px' }}>
@@ -92,6 +112,7 @@ class CandidateCard extends Component {
                             )}
                     </div>
                     {this.renderSocial(LinkedIn, FB)}
+                    {profile && this.renderProfileImage(profile)}
                     <Typography
                         component="div"
                         gutterBottom
@@ -109,6 +130,7 @@ CandidateCard.propTypes = {
     name: PropTypes.string.isRequired,
     platform: PropTypes.any.isRequired,
     program: PropTypes.string.isRequired,
+    profile: PropTypes.string.isRequired,
     LinkedIn: PropTypes.string.isRequired,
     FB: PropTypes.string.isRequired
 };
