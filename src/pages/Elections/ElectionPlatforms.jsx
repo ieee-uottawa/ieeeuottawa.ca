@@ -28,6 +28,7 @@ const ElectionPlatforms = () => (
                     nodes {
                         VP_Communications {
                             name
+                            program
                             platform {
                                 en
                                 fr
@@ -35,6 +36,7 @@ const ElectionPlatforms = () => (
                         }
                         Vice_Chair {
                             name
+                            program
                             platform {
                                 en
                                 fr
@@ -42,12 +44,14 @@ const ElectionPlatforms = () => (
                         }
                         McNaughton_Centre_Director {
                             name
+                            program
                             platform {
                                 en
                             }
                         }
                         VP_External {
                             name
+                            program
                             platform {
                                 en
                                 fr
@@ -55,48 +59,56 @@ const ElectionPlatforms = () => (
                         }
                         Treasurer {
                             name
+                            program
                             platform {
                                 en
                             }
                         }
                         VP_Internal {
                             name
+                            program
                             platform {
                                 en
                             }
                         }
                         WIE_Chair {
                             name
+                            program
                             platform {
                                 en
                             }
                         }
                         WIE_Vice_Chair {
                             name
+                            program
                             platform {
                                 en
                             }
                         }
                         Chair {
                             name
+                            program
                             platform {
                                 en
                             }
                         }
                         VP_Social {
                             name
+                            program
                             platform {
                                 en
                             }
                         }
                         VP_Academic {
                             name
+                            program
                             platform {
                                 en
                             }
                         }
                         Webmaster {
                             name
+                            program
                             platform {
                                 en
                             }
@@ -139,13 +151,16 @@ const ElectionPlatforms = () => (
                                 >
                                     {position.replace(/_/g, ' ')}
                                 </Typography>
-                                {candidates.map(({ name, platform }) => (
-                                    <CandidateCard
-                                        key={name}
-                                        name={name}
-                                        platform={platform}
-                                    />
-                                ))}
+                                {candidates.map(
+                                    ({ name, platform, program }) => (
+                                        <CandidateCard
+                                            key={name}
+                                            name={name}
+                                            platform={platform}
+                                            program={program}
+                                        />
+                                    )
+                                )}
                             </div>
                         ))}
                 </div>
