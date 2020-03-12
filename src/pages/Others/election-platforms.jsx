@@ -20,7 +20,7 @@ const positions = [
     'McNaughton_Centre_Director'
 ];
 
-const ElectionPlatforms = () => (
+const ElectionPlatforms2020 = () => (
     <StaticQuery
         query={graphql`
             query {
@@ -134,4 +134,4 @@ const ElectionPlatforms = () => (
     />
 );
 
-export default ElectionPlatforms;
+export default ElectionPlatforms2020;

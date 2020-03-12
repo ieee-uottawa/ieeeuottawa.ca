@@ -2,7 +2,7 @@
     "name": "ieee-uottawa-student-website",
     "description": "IEEE uOttawa Student Website",
     "version": "1.0.0",
-    "author": "Nevin WS Ganesan",
+    "author": "Nevin WS Ganesan | Rushil Perera",
     "dependencies": {
         "@material-ui/core": "^3.2.2",
         "@sentry/browser": "^4.1.1",

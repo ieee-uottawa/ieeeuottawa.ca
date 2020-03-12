@@ -27,13 +27,13 @@ const routes = [
         link: '/Elections/Elections'
     },
     {
+        title: 'Election Platforms',
+        link: '/Elections/ElectionPlatforms'
+    },
+    {
         title: 'Gallery',
         link: '/Gallery/Gallery'
     },
-    // {
-    //     title: 'IEEEGallery',
-    //     link: '/Gallery/IEEEGallery'
-    // },
     {
         title: 'WIE',
         link: '/WIE/WIE'

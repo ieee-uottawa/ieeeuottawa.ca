@@ -29,9 +29,13 @@ class CandidateCard extends Component {
                     <div style={{ display: 'flex' }}>
                         <Typography
                             variant="body1"
-                            color="textSecondary"
+                            color="textPrimary"
                             gutterBottom
-                            style={{ flexGrow: 1, paddingTop: '8px' }}
+                            style={{
+                                flexGrow: 1,
+                                paddingTop: '8px',
+                                fontWeight: 'bold'
+                            }}
                         >
                             {name}
                         </Typography>
@@ -57,7 +61,7 @@ class CandidateCard extends Component {
 
 CandidateCard.propTypes = {
     name: PropTypes.string.isRequired,
-    platform: PropTypes.arrayOf.isRequired
+    platform: PropTypes.any.isRequired
 };
 
 export default CandidateCard;
