@@ -110,7 +110,7 @@ const ElectionPlatforms = () => (
         `}
         render={({ allDataJson }) => {
             console.log('112: ', allDataJson);
-            const dataJson = allDataJson.nodes[1];
+            const dataJson = allDataJson.nodes[0];
             if (!dataJson) return null;
             return (
                 <div>
