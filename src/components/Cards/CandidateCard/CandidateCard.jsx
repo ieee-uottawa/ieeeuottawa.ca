@@ -48,7 +48,7 @@ class CandidateCard extends Component {
 
     render() {
         const { name, platform, program, LinkedIn, FB } = this.props;
-        const { currentLanguage, otherLanguage } = this.state;
+        const { currentLanguage } = this.state;
         return (
             <Card style={{ margin: '8px' }}>
                 <CardContent>
@@ -82,7 +82,7 @@ class CandidateCard extends Component {
                         {this.languages.length > 1 &&
                             platform[this.languages[1]] && (
                                 <Button onClick={this.changeLanguage}>
-                                    {otherLanguage}
+                                    {currentLanguage}
                                 </Button>
                             )}
                     </div>
