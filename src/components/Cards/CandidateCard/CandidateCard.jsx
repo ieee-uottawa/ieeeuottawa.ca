@@ -21,7 +21,7 @@ class CandidateCard extends Component {
     }
 
     render() {
-        const { name, platform } = this.props;
+        const { name, platform, program } = this.props;
         const { currentLanguage, otherLanguage } = this.state;
         return (
             <Card style={{ margin: '8px' }}>
@@ -39,6 +39,19 @@ class CandidateCard extends Component {
                         >
                             {name}
                         </Typography>
+
+                        <Typography
+                            variant="body1"
+                            color="textPrimary"
+                            gutterBottom
+                            style={{
+                                paddingTop: '8px',
+                                fontWeight: 'bold'
+                            }}
+                        >
+                            {program}
+                        </Typography>
+
                         {this.languages.length > 1 &&
                             platform[this.languages[1]] && (
                                 <Button onClick={this.changeLanguage}>
@@ -61,7 +74,8 @@ class CandidateCard extends Component {
 
 CandidateCard.propTypes = {
     name: PropTypes.string.isRequired,
-    platform: PropTypes.any.isRequired
+    platform: PropTypes.any.isRequired,
+    program: PropTypes.string.isRequired
 };
 
 export default CandidateCard;

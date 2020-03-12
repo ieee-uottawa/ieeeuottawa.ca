@@ -29,6 +29,7 @@ const ElectionPlatforms = () => (
                         VP_Communications {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                                 fr
@@ -37,6 +38,7 @@ const ElectionPlatforms = () => (
                         Vice_Chair {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                                 fr
@@ -45,6 +47,7 @@ const ElectionPlatforms = () => (
                         McNaughton_Centre_Director {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                             }
@@ -52,6 +55,7 @@ const ElectionPlatforms = () => (
                         VP_External {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                                 fr
@@ -60,6 +64,7 @@ const ElectionPlatforms = () => (
                         Treasurer {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                             }
@@ -67,6 +72,7 @@ const ElectionPlatforms = () => (
                         VP_Internal {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                             }
@@ -74,6 +80,7 @@ const ElectionPlatforms = () => (
                         WIE_Chair {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                             }
@@ -81,6 +88,7 @@ const ElectionPlatforms = () => (
                         WIE_Vice_Chair {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                             }
@@ -88,6 +96,7 @@ const ElectionPlatforms = () => (
                         Chair {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                             }
@@ -95,6 +104,7 @@ const ElectionPlatforms = () => (
                         VP_Social {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                             }
@@ -102,6 +112,7 @@ const ElectionPlatforms = () => (
                         VP_Academic {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                             }
@@ -109,6 +120,7 @@ const ElectionPlatforms = () => (
                         Webmaster {
                             name
                             program
+                            LinkedIn
                             platform {
                                 en
                             }
