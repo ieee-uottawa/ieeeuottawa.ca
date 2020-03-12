@@ -17,7 +17,9 @@ const positions = [
     'WIE_Vice_Chair',
     'Webmaster',
     'Secretary',
-    'McNaughton_Centre_Director'
+    'McNaughton_Centre_Director',
+    'Photonics_Chair',
+    'Photonics_Vice_Chair'
 ];
 
 const ElectionPlatforms = () => (
@@ -118,6 +120,22 @@ const ElectionPlatforms = () => (
                             }
                         }
                         Webmaster {
+                            name
+                            program
+                            LinkedIn
+                            platform {
+                                en
+                            }
+                        }
+                        Photonics_Chair {
+                            name
+                            program
+                            LinkedIn
+                            platform {
+                                en
+                            }
+                        }
+                        Photonics_Vice_Chair {
                             name
                             program
                             LinkedIn

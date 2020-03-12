@@ -153,5 +153,25 @@
                 "en": "<p>Hi, I am a third-year Computer Engineering (B.Eng) student. In my soon to be three years at UOttawa, I have learned skills and grown a lot as a person. I have competed, brain-stormed, innovated, socialized, and given it my all on multiple occasions as a participant. These endeavors have helped me understand life as a student in STEM. As an aspiring engineer, it is imperative to understand life as a professional and build connections in the community. I believe joining the IEEE student body is the best way to achieve this and to help my fellow engineering students as a contributor. My goal is to contribute to the best of my ability. Therefore, I have chosen to run for the position of Webmaster. I have experience with front end web development. I am adept at HTML, CSS, JavaScript, and React. I am an avid learner, so I look forward to the new skills I will learn through and for this role. My work experience has enabled me to work in varied industries and with people from diverse backgrounds, which has translated into exceptional communication and interpersonal skills. As a member of the UOttawa squash team, keeping up with my training and representing the university at tournaments has helped me develop my team-building skills, strengthened my time management, and developed discipline. I believe these skills are essential to be effective in a team, and I am confident in my ability to achieve the technical aspects of the role. I am passionate about making meaningful changes, which is why I chose to study Engineering. I will perform the duties for this role with the same passion if I am elected, and most definitely enjoy doing so! Thank you for your consideration, Sirjan Rekhi</p>"
             }
         }
+    ],
+    "Photonics Chair": [
+        {
+            "name": "VACANT",
+            "program": " ",
+            "LinkedIn": "",
+            "platform": {
+                "en": "<p> Available only for Grad Students </p>"
+            }
+        }
+    ],
+    "Photonics Vice-Chair": [
+        {
+            "name": "VACANT",
+            "program": " ",
+            "LinkedIn": "",
+            "platform": {
+                "en": "<p> Available only for Grad Students </p>"
+            }
+        }
     ]
 }
