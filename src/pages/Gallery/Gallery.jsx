@@ -12,7 +12,7 @@ const query = graphql`
             nodes {
                 image {
                     childImageSharp {
-                        fixed(width: 230, height: 230) {
+                        fixed(width: 220, height: 220) {
                             ...GatsbyImageSharpFixed_withWebp
                         }
                     }
