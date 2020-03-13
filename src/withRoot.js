@@ -7,7 +7,7 @@ import getPageContext, { getCurrentTheme } from './getPageContext';
 import { toggleLanguage } from './helpers/translation';
 import { isServerSideRendering } from './util';
 
-function withRoot(Component) {
+const withRoot = Component => {
     let muiPageContext = null;
 
     class WithRoot extends React.Component {
@@ -65,6 +65,6 @@ function withRoot(Component) {
         }
     }
     return WithRoot;
-}
+};
 
 export default withRoot;

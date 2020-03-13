@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, Button } from '@material-ui/core';
 import './candidate-card.scss';
 import linkedin from './linkedin.png';
 import fb from './fb-event.png';
-import { isServerSideRendering } from '../../../util';
+import { isServerSideRendering, isMobile } from '../../../util';
 
 class CandidateCard extends Component {
     constructor(props) {
@@ -30,7 +30,7 @@ class CandidateCard extends Component {
 
     renderProfileImage(src) {
         const width = isServerSideRendering() ? 1000 : window.innerWidth;
-        const isMobile = width <= 960;
+        const mobile = width <= 960 || isMobile();
         return (
             <div style={{ textAlign: 'center' }}>
                 <img
@@ -38,7 +38,7 @@ class CandidateCard extends Component {
                     alt="profile"
                     style={{
                         borderRadius: '50%',
-                        float: isMobile ? null : 'left',
+                        float: mobile ? null : 'left',
                         height: '200px',
                         width: '200px',
                         marginRight: '2%'
