@@ -1,9 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import { Typography } from '@material-ui/core';
 import CandidateCard from '../../components/Cards/CandidateCard/CandidateCard';
 import Title from '../../components/Titles/Title';
-import { positions } from './elections-helper';
+// import { positions } from './elections-helper';
+
+const positions = [
+    'Chair',
+    'Vice_Chair',
+    'Treasurer',
+    'VP_Social',
+    'VP_Internal',
+    'VP_Communications',
+    'VP_Academic',
+    'VP_External',
+    'WIE_Chair',
+    'WIE_Vice_Chair',
+    'Webmaster',
+    'Secretary',
+    'McNaughton_Centre_Director',
+    'Photonics_Chair',
+    'Photonics_Vice_Chair'
+];
 
 const ElectionPlatforms = () => (
     <StaticQuery
