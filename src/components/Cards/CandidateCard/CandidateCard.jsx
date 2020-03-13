@@ -29,8 +29,8 @@ class CandidateCard extends Component {
     }
 
     renderProfileImage(src) {
-        const width = isServerSideRendering() ? 1000 : window.innerWidth;
-        const mobile = width <= 960 || isMobile();
+        // const width = isServerSideRendering() ? 1000 : window.innerWidth;
+        // const mobile = width <= 960 || isMobile();
         return (
             <div style={{ textAlign: 'center' }}>
                 <img
@@ -38,7 +38,7 @@ class CandidateCard extends Component {
                     alt="profile"
                     style={{
                         borderRadius: '50%',
-                        float: mobile ? null : 'left',
+                        // float: mobile ? null : 'left',
                         height: '200px',
                         width: '200px',
                         marginRight: '2%'
