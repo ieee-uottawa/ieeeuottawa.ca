@@ -5,7 +5,7 @@ module.exports = {
         title: 'IEEE uOttawa Student Website',
         siteUrl: 'https://www.ieeeuottawa.ca',
         description: `IEEE uOttawa Student Website`,
-        author: `@Nevin`
+        author: `@Nevin, @Rushil`
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -37,6 +37,7 @@ module.exports = {
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
         'gatsby-plugin-sitemap',
-        'gatsby-plugin-dark-mode'
+        'gatsby-plugin-dark-mode',
+        `gatsby-plugin-remove-trailing-slashes`
     ]
 };

@@ -67,6 +67,7 @@
         "eslint-plugin-import": "^2.12.0",
         "eslint-plugin-jsx-a11y": "6.1.2",
         "eslint-plugin-react": "^7.9.1",
+        "gatsby-plugin-remove-trailing-slashes": "^2.1.22",
         "prettier": "1.14.3"
     },
     "resolutions": {
