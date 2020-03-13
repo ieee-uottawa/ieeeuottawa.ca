@@ -29,7 +29,7 @@ class CandidateCard extends Component {
     }
 
     renderProfileImage(src) {
-        const width = isServerSideRendering ? 1000 : window.innerWidth;
+        const width = isServerSideRendering() ? 1000 : window.innerWidth;
         const isMobile = width <= 960;
         return (
             <div style={{ textAlign: 'center' }}>
