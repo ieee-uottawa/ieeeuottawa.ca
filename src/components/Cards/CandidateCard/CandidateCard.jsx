@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, Button } from '@material-ui/core';
 import './candidate-card.scss';
 import linkedin from './linkedin.png';
 import fb from './fb-event.png';
-import { isServerSideRendering, isMobile } from '../../../util';
+// import { isServerSideRendering, isMobile } from '../../../util';
 
 class CandidateCard extends Component {
     constructor(props) {
