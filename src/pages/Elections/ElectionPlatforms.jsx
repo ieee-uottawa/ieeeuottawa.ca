@@ -5,159 +5,161 @@ import CandidateCard from '../../components/Cards/CandidateCard/CandidateCard';
 import Title from '../../components/Titles/Title';
 import { positions } from '../../helpers/elections';
 
-const ElectionPlatforms = () => (
-    <StaticQuery
-        query={graphql`
-            query {
-                allDataJson {
-                    nodes {
-                        VP_Communications {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                                fr
-                            }
-                        }
-                        Vice_Chair {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                                fr
-                            }
-                        }
-                        McNaughton_Centre_Director {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
-                        VP_External {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                                fr
-                            }
-                        }
-                        Treasurer {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
-                        VP_Internal {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
-                        WIE_Chair {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
-                        WIE_Vice_Chair {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
-                        Chair {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
-                        VP_Social {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
-                        VP_Academic {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
-                        Webmaster {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
-                        Photonics_Chair {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
-                        Photonics_Vice_Chair {
-                            name
-                            program
-                            LinkedIn
-                            FB
-                            profile
-                            platform {
-                                en
-                            }
-                        }
+const query = graphql`
+    query {
+        allDataJson {
+            nodes {
+                VP_Communications {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                        fr
+                    }
+                }
+                Vice_Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                        fr
+                    }
+                }
+                McNaughton_Centre_Director {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                VP_External {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                        fr
+                    }
+                }
+                Treasurer {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                VP_Internal {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                WIE_Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                WIE_Vice_Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                VP_Social {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                VP_Academic {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                Webmaster {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                Photonics_Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                Photonics_Vice_Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
                     }
                 }
             }
-        `}
+        }
+    }
+`;
+
+const ElectionPlatforms = () => (
+    <StaticQuery
+        query={query}
         render={({ allDataJson }) => {
             const dataJson = allDataJson.nodes[0];
             if (!dataJson) return null;
