@@ -7,6 +7,4 @@ branches:
   only:
     - master
 before_install:
-- cd frontend
-- echo $secret_decrypt_key | gpg --passphrase-fd 0 .env.production.gpg
-- cd ../
+- echo $secret_decrypt_key | gpg --passphrase-fd 0 frontend/.env.production.gpg
