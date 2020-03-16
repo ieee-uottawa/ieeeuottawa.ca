@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { init } from '@sentry/browser';
 import { initialize } from 'react-ga';
@@ -10,13 +9,17 @@ import { getCurrentLanguage } from '../helpers/translation';
 import withRoot from '../withRoot';
 import { Header, Footer } from '../helpers/components';
 import { logo1 as logo } from '../helpers/theme';
-import cart from '../redux/reducers/cart_reducers';
 import { isDevEnvironment, isServerSideRendering } from '../util';
 
 import './index.scss';
 import favicon from '../../static/images/ieee_logo_circle.png';
 
-const store = createStore(cart);
+// CART TEMPORARY DISABLED
+// import { createStore } from 'redux';
+// import cart from '../redux/reducers/cart_reducers';
+// const store = createStore(cart);
+
+import store from '../store';
 
 if (!isDevEnvironment) {
     init({

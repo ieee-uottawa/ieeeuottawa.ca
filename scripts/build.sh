@@ -1,3 +1,4 @@
+cd frontend
 yarn build
 
 if [ $? -ne 0 ]; then

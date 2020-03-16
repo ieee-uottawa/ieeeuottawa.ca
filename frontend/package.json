@@ -1,11 +1,12 @@
 {
     "name": "ieee-uottawa-student-website",
     "description": "IEEE uOttawa Student Website",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "author": "Nevin WS Ganesan | Rushil Perera",
     "dependencies": {
         "@material-ui/core": "^3.2.2",
         "@sentry/browser": "^4.1.1",
+        "axios": "^0.19.2",
         "dayjs": "^1.7.7",
         "eslint-config-prettier": "^6.5.0",
         "eslint-plugin-prettier": "^3.1.1",
@@ -45,6 +46,11 @@
         "react-style-proptype": "^3.2.2",
         "react-with-styles": "^4.1.0",
         "redux": "^4.0.0",
+        "redux-logger": "^3.0.6",
+        "redux-mock-store": "^1.5.4",
+        "redux-promise": "^0.6.0",
+        "redux-promise-middleware": "^6.1.2",
+        "redux-thunk": "^2.3.0",
         "styled-components": "^4.4.1",
         "styled-jss": "^2.2.3",
         "superagent": "^4.1.0"
@@ -56,6 +62,7 @@
     "scripts": {
         "build": "gatsby build",
         "develop": "gatsby develop",
+        "start": "gatsby develop",
         "format": "prettier --write 'src/**/*.js'",
         "test": "echo \"Error: no test specified\""
     },
