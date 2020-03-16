@@ -31,6 +31,18 @@ class Vote extends Component {
         });
     }
 
+    getCandidates() {
+        return [
+            { Chair: ['Michal Ridner'] },
+            { 'Vice Chair': ['Madison Smrtka'] },
+            { Treasurer: ['Madison Smrtka'] },
+            { 'VP Social': ['Madison Smrtka'] },
+            { 'VP Internal': ['Madison Smrtka'] },
+            { Chair: ['Madison Smrtka'] },
+            { Chair: ['Madison Smrtka'] }
+        ];
+    }
+
     renderForm() {}
 
     render() {
@@ -40,12 +52,16 @@ class Vote extends Component {
                     <Title variant="h5" gutterBottom className="title">
                         Vote
                     </Title>
-                    <div style={{ textAlign: 'center' }}>
-                        <FormControl
-                            component="fieldset"
-                            // className={classes.formControl}
-                        >
-                            <FormLabel component="legend">Gender</FormLabel>
+                    <div style={{ textAlign: 'center', marginTop: '30px' }}>
+                        <FormControl component="fieldset">
+                            <FormLabel
+                                style={{
+                                    fontSize: '30px',
+                                    color: '#000000'
+                                }}
+                            >
+                                Chair
+                            </FormLabel>
                             <RadioGroup
                                 aria-label="gender"
                                 name="gender2"

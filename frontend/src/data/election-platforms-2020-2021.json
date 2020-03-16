@@ -28,7 +28,7 @@
             "program": "Electrical Engineering",
             "LinkedIn": "https://www.linkedin.com/in/madismrtka/",
             "FB": "",
-            "profile": "https://raw.githubusercontent.com/ieee-uottawa/ieeeuottawa.ca/master/static/images/execs-2019-2020/social.jpg",
+            "profile": "https://raw.githubusercontent.com/ieee-uottawa/ieeeuottawa.ca/master/frontend/static/images/execs-2019-2020/social.jpg",
             "platform": {
                 "en": "<p> Hello, my name is Madison Smrtka and I will be going into my fourth year of ELG and I am running for the Vice-Chair position of our IEEE uOttawa branch. I have held an exec position on IEEE uOttawa for two years now, as VP Communication and VP Social, and would love to continue on next year in a more leadership role. I have learned a lot the past couple years about team dynamics within the branch as well as the dynamics of you, our audience. I hope to use my position to better organise and inspire our team in order for us to continue to provide you with resources, support and fun social events.</p>",
                 "fr": "<p> Salut, je m'appelle Madison Smrtka et je serais bien tôt dans ma quatrième année en génie électrique et je souhaite être votre vice-présidente de IEEE uOttawa. Durant les deux années précédentes, j'étais VP de communication et VP d'affaires sociales et j'aimerais assumer un rôle avec plus de qualités de dirigeant. À travers mes positions précédentes, j'ai appris plein à propos de la dynamique de notre équipe et aussi de vous, notre audience. J'espère utiliser ma position comme vice-présidente pour améliorer l'organisation et d'inspirer notre équipe pour que nous pourrions continuer d'assurer des ressources, d'appui et des soirées mondaines.</p>"
@@ -79,6 +79,18 @@
             "profile": "https://media-exp1.licdn.com/dms/image/C5603AQEd9jJ4hRLBWQ/profile-displayphoto-shrink_800_800/0?e=1589414400&v=beta&t=N4B5pVBlQCF372UUd9NbrWwjJfq5GSvt4541_DKc2A4",
             "platform": {
                 "en": "<p> My name is Sanat Nayar and I am a third year student in Computer Engineering and I wish to be re-elected for Treasurer at IEEE at the University of Ottawa for the 2020/2021 year. This past year I have served as the Treasurer for IEEE UOttawa and I have learned a lot about what the role entails. I have acquired knowledge relating to the audits, banking regulations, the square payment system and the budget making process. I believe the accumulation of my experiences over the past year will make me a better Treasurer for 2020/2021. My goals for this next year include: -Continue to push cashless Point-Of-Sale (POS) and cashless transactions through Square. -Investing in long-term, low-risk investments (ex. Guaranteed Investment Certificates (GICs)) for financial sustainability and to gain interest on cash sitting in the IEEE account. -Help more efficiently manage company finances to support better and bigger events. -Facilitate an incubation process with fellow executives to assist in ideation of effective events that are run with appropriate financing and benefit the students. Over the past 3 years, I have culminated a multitude of external experiences that would make me a perfect fit for this role at IEEE. I have been elected the VP of Finance for two student run businesses. In this role, I have learned not only the aspects of finance such as break-even analysis, balance sheets, and cash flow statements, but also how engineering and finance can be easily merged to manage an organization. In one of the student run companies called Swappable, the USP of the company was its platform for transfer of goods and services between students within my High School. Swappable gave me real-life experience on how engineering can be integrated with finance to create a successful product. It also gave me attributes such as money management and the ability to use effective cost-cutting strategies to increase the profits and reduce the liabilities of the company. I believe these experiences and the knowledge I gained from my mentors who initiated the student companies have helped me transition into the role as the treasurer at IEEE and will definitely help in the coming year. I also have experience with various University organizations and event committees. I am currently an Event Coordinator for Software Engineering Student Association (SESA) at UOttawa. I have a multitude of events I have helped organize through this association and some of them were coordinated with IEEE as well. IEEE is an association that plays an integral part in the Engineering ecosystem at UOttawa. It is a trustworthy organization that many students and staff look up to for new information, events and competitions. In order for it to run efficiently, finances have to be managed properly and costs must be accounted for. Based on my past experiences and my passion to contribute the IEEE platform, I believe I am the ideal candidate for this position. </p>"
+            }
+        }
+    ],
+    "Secretary": [
+        {
+            "name": "VACANT",
+            "program": " ",
+            "LinkedIn": "",
+            "FB": "",
+            "profile": "",
+            "platform": {
+                "en": "<p> Available, voting to be done at IEEE AGM </p>"
             }
         }
     ],

@@ -62,6 +62,16 @@ const query = graphql`
                         en
                     }
                 }
+                Secretary {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
                 VP_Internal {
                     name
                     program
