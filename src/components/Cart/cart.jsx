@@ -6,8 +6,8 @@ import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux';
 
-import ProductRow from '../../components/ProductRow/ProductRow';
-import PaypalButton from '../../components/Buttons/PaypalButton';
+import ProductRow from '../ProductRow/ProductRow';
+import PaypalButton from '../Buttons/PaypalButton';
 import {
     calculatePrice,
     capitalize,
@@ -17,7 +17,7 @@ import {
     isServerSideRendering
 } from '../../util';
 import { removeItemFromCart } from '../../redux/actions/cart_actions';
-import Title from '../../components/Titles/Title';
+import Title from '../Titles/Title';
 
 import sadEmoji from '../../../static/images/emoji_sad.svg';
 import './cart.scss';
