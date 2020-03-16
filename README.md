@@ -4,7 +4,7 @@
 </p -->
 
 <p align="center">
-  <img width="200" alt="portfolio_view" src="/static/images/ieee_logo_circle.png">
+  <img width="200" alt="portfolio_view" src="frontend/static/images/ieee_logo_circle.png">
 </p>
 
 ## Install
