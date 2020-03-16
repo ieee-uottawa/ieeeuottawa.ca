@@ -1,4 +1,5 @@
 cd frontend
+yarn install
 yarn build
 
 if [ $? -ne 0 ]; then
