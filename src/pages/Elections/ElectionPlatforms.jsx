@@ -130,6 +130,7 @@ const query = graphql`
                     profile
                     platform {
                         en
+                        fr
                     }
                 }
                 Photonics_Chair {
