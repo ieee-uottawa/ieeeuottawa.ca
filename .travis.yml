@@ -6,5 +6,7 @@ script: bash scripts/build.sh
 branches:
   only:
     - master
+before_script:
+  - npm install -g gatsby
 before_install:
 - echo $secret_decrypt_key | gpg --passphrase-fd 0 frontend/.env.production.gpg
