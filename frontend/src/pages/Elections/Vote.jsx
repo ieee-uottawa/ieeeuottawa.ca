@@ -218,8 +218,8 @@ class Vote extends Component {
 
     vote() {
         const { actions } = this.props;
-        const { form } = this.state;
-        actions.vote(form).then(() => {
+        const { form, email } = this.state;
+        actions.vote(form, email).then(() => {
             // eslint-disable-next-line no-console
             console.log('VOTE API is working: ');
         });

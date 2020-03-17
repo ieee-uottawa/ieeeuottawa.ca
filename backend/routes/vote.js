@@ -9,12 +9,32 @@ router.get('/', (req, res, next) => {
   res.send('Test Vote API calls!');
 });
 
+router.get('/voted', (req, res, next) => {
+  res.send('Has VOTED!');
+});
+
 router.post('/', (req, res, next) => {
-  const { form } = req.body;
+  const { form, email } = req.body;
+  if (!form || !email) return;
   const doc = { form };
   // Single Entry
   voteDb.insert(doc);
   // Updates Overall Election Results
+  updateRecords(form);
+  // Add current user to voted list
+  addToVotedList(email);
+  res.send('Test Vote POST API calls!');
+});
+
+function addToVotedList(email) {
+  voteDb.get('elections-voted').then(responseDoc => {
+    const students = responseDoc.students;
+    students.push(email);
+    voteDb.insert(responseDoc);
+  });
+}
+
+function updateRecords(form) {
   voteDb
     .get('election-results')
     .then(responseDoc => {
@@ -35,8 +55,7 @@ router.post('/', (req, res, next) => {
     .catch(error => {
       console.log('Form Error:', error);
     });
-  res.send('Test Vote POST API calls!');
-});
+}
 
 // .then(response => {
 //     console.log('Form Success:', response);

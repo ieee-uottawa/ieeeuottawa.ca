@@ -33,8 +33,8 @@ export function getVotes() {
     };
 }
 
-export function vote(form) {
-    const data = { form };
+export function vote(form, email) {
+    const data = { form, email };
     return dispatch => {
         return axios
             .post(`${BACKEND_URL}/vote`, data)
