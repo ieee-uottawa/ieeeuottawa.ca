@@ -8,7 +8,7 @@ class ForcedExternalRedirect extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            seconds: 3,
+            seconds: props.seconds,
             intervalID: null
         };
     }
@@ -62,13 +62,15 @@ class ForcedExternalRedirect extends Component {
 
 ForcedExternalRedirect.defaultProps = {
     forceExternal: false,
-    urlDescription: null
+    urlDescription: null,
+    seconds: 5
 };
 
 ForcedExternalRedirect.propTypes = {
     forceExternal: PropTypes.bool,
     url: PropTypes.string.isRequired,
-    urlDescription: PropTypes.string
+    urlDescription: PropTypes.string,
+    seconds: PropTypes.number
 };
 
 export default ForcedExternalRedirect;
