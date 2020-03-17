@@ -1,20 +1,27 @@
 import React from 'react';
-import Vote from './Elections/Vote';
-// import ExternalRedirect from '../components/Routers/ExternalRedirect';
-// import { isFacebookApp } from '../util';
+// import Vote from './Elections/Vote';
+import ForcedExternalRedirect from '../components/Routers/ForcedExternalRedirect';
+import { isFacebookApp } from '../util';
 
-// const browserUrl = 'googlechrome://ieeeuottawa.ca/vote';
+// const browserUrlAndroid = 'googlechrome://ieeeuottawa.ca/vote';
+const browserUrliOS = 'safari://ieeeuottawa.ca/vote';
 
 const vote = () => {
     return (
         <>
-            <Vote />
+            {/* <Vote /> */}
             {/* {isFacebookApp() && (
-                <ExternalRedirect
-                    url={browserUrl}
+                <ForcedExternalRedirect
+                    url={browserUrlAndroid}
                     urlDescription="our voting page"
                 />
             )} */}
+            {isFacebookApp() && (
+                <ForcedExternalRedirect
+                    url={browserUrliOS}
+                    urlDescription="our voting page"
+                />
+            )}
         </>
     );
 };
