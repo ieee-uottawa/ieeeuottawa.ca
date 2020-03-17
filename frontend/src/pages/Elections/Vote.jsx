@@ -223,7 +223,8 @@ class Vote extends Component {
         const { form, email } = this.state;
         actions.vote(form, email).then(() => {
             // eslint-disable-next-line no-console
-            console.log('VOTE API is working: ');
+            console.log('VOTE API is working! ');
+            if (!isServerSideRendering) window.location.reload();
         });
     }
 
