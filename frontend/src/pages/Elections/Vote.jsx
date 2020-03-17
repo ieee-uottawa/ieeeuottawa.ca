@@ -363,9 +363,9 @@ class Vote extends Component {
                                         }
                                     >
                                         {currentCandidates.map(candidate => {
-                                            const imgSrc = null;
-                                            // if (candidate in pictureMap)
-                                            //     imgSrc = pictureMap[candidate];
+                                            let imgSrc = null;
+                                            if (candidate in pictureMap)
+                                                imgSrc = pictureMap[candidate];
                                             return (
                                                 <FormControlLabel
                                                     key={candidate}
