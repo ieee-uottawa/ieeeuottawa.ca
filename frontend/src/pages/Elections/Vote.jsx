@@ -195,7 +195,7 @@ class Vote extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
-        console.log(process.env.GOOGLE_SIGNIN_CLIENTID);
+        console.log(process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID);
     }
 
     componentDidMount() {
@@ -387,7 +387,7 @@ class Vote extends Component {
             !loggedIn && (
                 <div style={{ textAlign: 'center' }}>
                     <GoogleLogin
-                        clientId={process.env.GOOGLE_SIGNIN_CLIENTID}
+                        clientId={process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID}
                         buttonText="Login"
                         onSuccess={this.handleLogin}
                         onFailure={responseGoogle}
@@ -405,7 +405,7 @@ class Vote extends Component {
             loggedIn && (
                 <div style={{ textAlign: 'center' }}>
                     <GoogleLogout
-                        clientId={process.env.GOOGLE_SIGNIN_CLIENTID}
+                        clientId={process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID}
                         buttonText="Logout"
                         onLogoutSuccess={this.handleLogout}
                     />
