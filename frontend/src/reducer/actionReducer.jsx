@@ -12,7 +12,7 @@ export default function actionReducer(state = defaultState, action) {
             return newState;
         }
         case 'getVotesSuccess': {
-            newState.votes = action.payload.result;
+            newState.votes = action.payload;
             return newState;
         }
         case 'getVotedSuccess': {

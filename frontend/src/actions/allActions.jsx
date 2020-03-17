@@ -24,7 +24,10 @@ export function getVotes() {
         return axios
             .get(`${BACKEND_URL}/vote`)
             .then(response => {
-                dispatch({ type: 'getVotesSuccess', payload: response.data });
+                dispatch({
+                    type: 'getVotesSuccess',
+                    payload: response.data.result
+                });
             })
             .catch(error => {
                 dispatch({ type: 'getVotesFailed', payload: error });

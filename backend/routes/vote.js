@@ -3,22 +3,25 @@ const router = express.Router();
 
 const { cloudant } = require('../helpers/cloudant');
 
+const { handleSuccess } = require('../helpers/payload');
+
 const voteDb = cloudant.db.use('vote-2020-2021');
 
 router.get('/', (req, res, next) => {
-  //   res.send('Test Vote API calls!');
-  res.status(200).send({ result: 'Vote API Connection' });
+  const results = 'Vote API Connection';
+  return handleSuccess(res, `Success`, { result: results });
 });
 
 router.get('/voted', (req, res, next) => {
   const { email } = req.query;
   voteDb.get('elections-voted').then(responseDoc => {
     const students = new Set(responseDoc.students);
-    console.log(email, students);
     if (students.has(email)) {
-      res.status(200).send({ result: true });
+      //   res.status(200).send({ result: true });
+      return handleSuccess(res, `Success`, { result: true });
     } else {
-      res.status(200).send({ result: false });
+      //   res.status(200).send({ result: false });
+      return handleSuccess(res, `Success`, { result: false });
     }
   });
 });

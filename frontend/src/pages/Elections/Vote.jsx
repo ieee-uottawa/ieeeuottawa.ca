@@ -204,14 +204,20 @@ class Vote extends Component {
         this.isFormCompleted = this.isFormCompleted.bind(this);
     }
 
-    componentDidMount() {}
+    componentDidMount() {
+        const { actions } = this.props;
+        actions.getVotes().then(() => {
+            const { votes } = this.props;
+            console.log('getVotes(): ', votes);
+        });
+    }
 
     getVoted(email) {
         const { actions } = this.props;
         actions.getVoted(email).then(() => {
             const { voted } = this.props;
             // eslint-disable-next-line no-console
-            console.log('API is working in browser? Voted:', voted);
+            console.log('API is working in browser? Voted API:', voted);
             this.setState({ voted });
             if (voted === true) this.handleLogout();
         });
@@ -537,16 +543,19 @@ class Vote extends Component {
 
 Vote.defaultProps = {
     actions: null,
+    votes: null,
     voted: null
 };
 
 Vote.propTypes = {
     actions: PropTypes.any,
+    votes: PropTypes.any,
     voted: PropTypes.any
 };
 
 const mapStateToProps = ({ actionReducer }) => {
     return {
+        votes: actionReducer.votes,
         voted: actionReducer.voted
     };
 };
