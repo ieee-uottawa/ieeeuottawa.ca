@@ -194,7 +194,8 @@ class Vote extends Component {
             displayForm: false,
             loggedIn: false,
             email: '',
-            username: ''
+            username: '',
+            voted: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -203,16 +204,17 @@ class Vote extends Component {
         this.isFormCompleted = this.isFormCompleted.bind(this);
     }
 
-    componentDidMount() {
-        this.getTestAPI();
-    }
+    componentDidMount() {}
 
-    getTestAPI() {
+    getVoted(email) {
         const { actions } = this.props;
-        actions.getVotes().then(() => {
-            const { votes } = this.props;
+        console.log('210', email);
+        actions.getVoted(email).then(() => {
+            const { voted } = this.props;
             // eslint-disable-next-line no-console
-            console.log('API is working in browser: ', votes);
+            console.log('API is working in browser? Voted:', voted);
+            this.setState({ voted });
+            if (voted === true) this.handleLogout();
         });
     }
 
@@ -271,6 +273,7 @@ class Vote extends Component {
                     email,
                     username: `${givenName} ${familyName}`
                 });
+                this.getVoted(email);
             } else {
                 this.setState({ displayForm: false, loggedIn: false });
             }
@@ -421,7 +424,7 @@ class Vote extends Component {
     }
 
     renderLoginButton() {
-        const { loggedIn } = this.state;
+        const { loggedIn, displayForm, voted } = this.state;
         return (
             !loggedIn &&
             !isFacebookApp() && (
@@ -434,6 +437,9 @@ class Vote extends Component {
                         cookiePolicy="single_host_origin"
                         isSignedIn={this.handleLogin}
                     />
+                    <div style={{ marginTop: '30px' }}>
+                        {!displayForm && !voted && this.renderLoginPage()}
+                    </div>
                 </div>
             )
         );
@@ -471,6 +477,23 @@ class Vote extends Component {
         );
     }
 
+    renderVoted() {
+        const { voted } = this.state;
+        return (
+            voted && (
+                <div style={{ textAlign: 'center' }}>
+                    <Typography
+                        variant="h5"
+                        gutterBottom
+                        style={{ margin: '20px' }}
+                    >
+                        Thank you for voting!
+                    </Typography>
+                </div>
+            )
+        );
+    }
+
     render() {
         const { displayForm } = this.state;
         return (
@@ -487,8 +510,8 @@ class Vote extends Component {
                             </Title>
                             {this.renderLoginButton()}
                             {this.renderLogoutButton()}
+                            {this.renderVoted()}
                             <div style={{ marginTop: '30px' }}>
-                                {!displayForm && this.renderLoginPage()}
                                 {this.renderUnsupportedBrowser()}
                                 <Grid container justify="center">
                                     {displayForm && (
@@ -513,17 +536,17 @@ class Vote extends Component {
 
 Vote.defaultProps = {
     actions: null,
-    votes: null
+    voted: null
 };
 
 Vote.propTypes = {
     actions: PropTypes.any,
-    votes: PropTypes.any
+    voted: PropTypes.any
 };
 
 const mapStateToProps = ({ actionReducer }) => {
     return {
-        votes: actionReducer.votes
+        voted: actionReducer.voted
     };
 };
 

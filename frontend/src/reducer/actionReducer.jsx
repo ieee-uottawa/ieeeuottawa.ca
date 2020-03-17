@@ -1,6 +1,7 @@
 const defaultState = {
     users: 'heree',
-    votes: 'votes'
+    votes: 'votes',
+    voted: null
 };
 
 export default function actionReducer(state = defaultState, action) {
@@ -12,6 +13,10 @@ export default function actionReducer(state = defaultState, action) {
         }
         case 'getVotesSuccess': {
             newState.votes = action.payload;
+            return newState;
+        }
+        case 'getVotedSuccess': {
+            newState.voted = action.payload;
             return newState;
         }
         default:

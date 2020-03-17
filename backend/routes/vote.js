@@ -10,7 +10,16 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/voted', (req, res, next) => {
-  res.send('Has VOTED!');
+  const { email } = req.query;
+  voteDb.get('elections-voted').then(responseDoc => {
+    const students = new Set(responseDoc.students);
+    console.log(email, students);
+    if (students.has(email)) {
+      res.send('true');
+    } else {
+      res.send('false');
+    }
+  });
 });
 
 router.post('/', (req, res, next) => {

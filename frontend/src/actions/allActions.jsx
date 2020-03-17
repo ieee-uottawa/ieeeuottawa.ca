@@ -33,6 +33,20 @@ export function getVotes() {
     };
 }
 
+export function getVoted(email) {
+    return dispatch => {
+        return axios
+            .get(`${BACKEND_URL}/vote/voted?email=${email}`)
+            .then(response => {
+                dispatch({ type: 'getVotedSuccess', payload: response.data });
+            })
+            .catch(error => {
+                dispatch({ type: 'getVotedFailed', payload: error });
+                throw error;
+            });
+    };
+}
+
 export function vote(form, email) {
     const data = { form, email };
     return dispatch => {
