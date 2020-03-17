@@ -1,37 +1,27 @@
 import React from 'react';
 // import Vote from './Elections/Vote';
+import ExternalRedirect from '../components/Routers/ExternalRedirect';
 import ForcedExternalRedirect from '../components/Routers/ForcedExternalRedirect';
-import { isFacebookApp, isServerSideRendering } from '../util';
+import { isFacebookApp } from '../util';
 
 const browserUrlAndroid = 'googlechrome://ieeeuottawa.ca/vote';
-const browserUrliOS = 'safari://ieeeuottawa.ca/vote';
+const browserUrliOS = 'x-web-search://?http://ieeeuottawa.ca/vote';
 
 const vote = () => {
-    // let text = 'tester';
-    // if (!isServerSideRendering() && isFacebookApp()) {
-    //     text += '1';
-    //     // window.location.href = 'https://ieeeuottawa.ca';
-    //     // window.open('https://ieeeuottawa.ca', '_blank');
-    //     text += '2';
-    // }
-    // text += '3';
     return (
         <>
             {/* <Vote /> */}
             {/* Android */}
-            {/* {isFacebookApp() && (
-                <ForcedExternalRedirect
+            {isFacebookApp() && (
+                <ExternalRedirect
                     url={browserUrlAndroid}
                     urlDescription="our voting page"
                 />
-            )} */}
+            )}
             {/* iOS */}
-            <a href="x-web-search://?http://ieeeuottawa.ca/vote">
-                Click Here web search
-            </a>
             {isFacebookApp() && (
                 <ForcedExternalRedirect
-                    url="x-web-search://?http://ieeeuottawa.ca/vote"
+                    url={browserUrliOS}
                     urlDescription="our voting page"
                 />
             )}

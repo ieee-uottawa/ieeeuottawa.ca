@@ -8,7 +8,7 @@ class ForcedExternalRedirect extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            seconds: 4,
+            seconds: 3,
             intervalID: null
         };
     }
