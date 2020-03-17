@@ -1,3 +1,5 @@
+const isServerSideRendering = () => typeof window === 'undefined';
+
 const moneyFormatter = new Intl.NumberFormat('en-CA', {
     currency: 'CAD',
     style: 'currency'
@@ -15,6 +17,12 @@ const isMobile = () => {
             navigator.userAgent.substr(0, 4)
         )
     );
+};
+
+const isFacebookApp = () => {
+    if (isServerSideRendering()) return false;
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    return ua.indexOf('FBAN') > -1 || ua.indexOf('FBAV') > -1;
 };
 
 // const ArrayLikeToString = arg => Array.prototype.toString.call(arg);
@@ -57,8 +65,6 @@ const flattenDeep = arr =>
         []
     );
 
-const isServerSideRendering = () => typeof window === 'undefined';
-
 const showPricing = (pricing, formatter = moneyFormatter) =>
     pricing
         .map(({ quantity, price }) => {
@@ -91,6 +97,7 @@ export {
     flattenDeep,
     isDevEnvironment,
     isMobile,
+    isFacebookApp,
     isServerSideRendering,
     moneyFormatter,
     showPricing

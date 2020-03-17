@@ -13,7 +13,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 import { Title } from '../../helpers/components';
 import { mapDispatchToProps } from '../../helpers/actions';
-import { isServerSideRendering } from '../../util';
+import { isServerSideRendering, isFacebookApp } from '../../util';
 import { candidates, sortPositions } from '../../helpers/elections';
 
 const query = graphql`
@@ -183,6 +183,8 @@ const responseGoogle = response => {
     console.log(response);
 };
 
+const browserUrl = 'googlechrome://navigate?url=ieeeuottawa.ca';
+
 class Vote extends Component {
     constructor(props) {
         super(props);
@@ -195,11 +197,11 @@ class Vote extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
-        console.log(process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID);
     }
 
     componentDidMount() {
         this.getTestAPI();
+        console.log(isFacebookApp());
     }
 
     getTestAPI() {
@@ -432,6 +434,12 @@ class Vote extends Component {
                             {this.renderLogoutButton()}
                             <div style={{ marginTop: '30px' }}>
                                 {!displayForm && this.renderLoginPage()}
+                                <div style={{ textAlign: 'center' }}>
+                                    <a href={browserUrl}>
+                                        {browserUrl} ....{' '}
+                                        {String(isFacebookApp())}
+                                    </a>
+                                </div>
                                 <Grid container justify="center">
                                     {displayForm && (
                                         <Paper
