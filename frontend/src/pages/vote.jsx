@@ -3,14 +3,15 @@ import React from 'react';
 import ForcedExternalRedirect from '../components/Routers/ForcedExternalRedirect';
 import { isFacebookApp, isServerSideRendering } from '../util';
 
-// const browserUrlAndroid = 'googlechrome://ieeeuottawa.ca/vote';
+const browserUrlAndroid = 'googlechrome://ieeeuottawa.ca/vote';
 const browserUrliOS = 'safari://ieeeuottawa.ca/vote';
 
 const vote = () => {
-    let text = 'test';
+    let text = 'tester';
     if (!isServerSideRendering() && isFacebookApp()) {
         text += '1';
-        window.location.href = 'https://ieeeuottawa.ca';
+        // window.location.href = 'https://ieeeuottawa.ca';
+        window.open('https://ieeeuottawa.ca', '_blank');
         text += '2';
     }
     text += '3';
@@ -24,12 +25,12 @@ const vote = () => {
                 />
             )} */}
             {text}
-            {isFacebookApp() && (
+            {/* {isFacebookApp() && (
                 <ForcedExternalRedirect
                     url={browserUrliOS}
                     urlDescription="our voting page"
                 />
-            )}
+            )} */}
         </>
     );
 };
