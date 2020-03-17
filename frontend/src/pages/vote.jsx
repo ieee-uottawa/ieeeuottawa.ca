@@ -11,7 +11,7 @@ const vote = () => {
     if (!isServerSideRendering() && isFacebookApp()) {
         text += '1';
         // window.location.href = 'https://ieeeuottawa.ca';
-        window.open('https://ieeeuottawa.ca', '_blank');
+        // window.open('https://ieeeuottawa.ca', '_blank');
         text += '2';
     }
     text += '3';
@@ -25,6 +25,9 @@ const vote = () => {
                 />
             )} */}
             {text}
+            <a href="http://www.google.com/" target="_blank">
+                Click Here
+            </a>
             {/* {isFacebookApp() && (
                 <ForcedExternalRedirect
                     url={browserUrliOS}
