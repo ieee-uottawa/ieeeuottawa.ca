@@ -317,7 +317,9 @@ class Vote extends Component {
         return (
             isFacebookApp() && (
                 <div style={{ textAlign: 'center' }}>
-                    Unsupported Browser
+                    <Typography variant="h5" gutterBottom color="secondary">
+                        Unsupported Browser
+                    </Typography>
                     <a href={browserUrl}>
                         <Typography variant="h5" gutterBottom color="secondary">
                             ieeeuottawa.ca/vote
