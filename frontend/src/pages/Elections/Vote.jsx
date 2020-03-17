@@ -191,17 +191,21 @@ class Vote extends Component {
         this.state = {
             form: {},
             displayForm: false,
-            loggedIn: false
+            loggedIn: false,
+            email: '',
+            username: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
+        this.isFormCompleted = this.isFormCompleted.bind(this);
     }
 
     componentDidMount() {
         this.getTestAPI();
-        console.log(isFacebookApp());
+        this.getVoteAPI();
+        // console.log(isFacebookApp());
     }
 
     getTestAPI() {
@@ -210,6 +214,15 @@ class Vote extends Component {
             const { users } = this.props;
             // eslint-disable-next-line no-console
             console.log('API is working: ', users);
+        });
+    }
+
+    getVoteAPI() {
+        const { actions } = this.props;
+        actions.getVotes().then(() => {
+            const { votes } = this.props;
+            // eslint-disable-next-line no-console
+            console.log('VOTE API is working: ', votes);
         });
     }
 
@@ -225,6 +238,11 @@ class Vote extends Component {
     handleSubmit() {
         const { form } = this.state;
         console.log('Form Submitted ', form);
+        if (this.isFormCompleted()) {
+            console.log('Success!');
+        } else {
+            console.log('Failure');
+        }
     }
 
     obtainPics(temp) {
@@ -247,11 +265,13 @@ class Vote extends Component {
 
     handleLogin(response) {
         if (response) {
-            const { email } = response.profileObj;
+            const { email, givenName, familyName } = response.profileObj;
             if (this.isSchoolEmail(email)) {
                 console.log('Valid', email);
                 this.setState({ displayForm: true });
                 this.setState({ loggedIn: true });
+                this.setState({ email });
+                this.setState({ username: `${givenName} ${familyName}` });
             } else {
                 console.log('Invalid School Email:', email);
                 this.setState({ displayForm: false });
@@ -270,6 +290,12 @@ class Vote extends Component {
         return email.toLowerCase().indexOf('@uottawa.ca') > -1;
     }
 
+    isFormCompleted() {
+        const { form } = this.state;
+        const submitted = Object.keys(form).length;
+        return submitted === 10;
+    }
+
     renderLoginPage() {
         return (
             <div style={{ textAlign: 'center' }}>
@@ -284,6 +310,7 @@ class Vote extends Component {
         return (
             isFacebookApp() && (
                 <div style={{ textAlign: 'center' }}>
+                    Unsupported Browser
                     <a href={browserUrl}>
                         <Typography variant="h5" gutterBottom color="secondary">
                             ieeeuottawa.ca/vote
@@ -375,6 +402,7 @@ class Vote extends Component {
                 })}
                 <div style={{ textAlign: 'center' }}>
                     <Button
+                        disabled={!this.isFormCompleted()}
                         onClick={this.handleSubmit}
                         size="large"
                         variant="contained"
@@ -400,7 +428,8 @@ class Vote extends Component {
     renderLoginButton() {
         const { loggedIn } = this.state;
         return (
-            !loggedIn && (
+            !loggedIn &&
+            !isFacebookApp() && (
                 <div style={{ textAlign: 'center' }}>
                     <GoogleLogin
                         clientId={process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID}
@@ -416,15 +445,32 @@ class Vote extends Component {
     }
 
     renderLogoutButton() {
-        const { loggedIn } = this.state;
+        const { loggedIn, username, email } = this.state;
         return (
-            loggedIn && (
+            loggedIn &&
+            !isFacebookApp() && (
                 <div style={{ textAlign: 'center' }}>
                     <GoogleLogout
                         clientId={process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID}
                         buttonText="Logout"
                         onLogoutSuccess={this.handleLogout}
                     />
+
+                    <Typography
+                        variant="h5"
+                        gutterBottom
+                        style={{ margin: '20px' }}
+                    >
+                        Welcome, {username}
+                    </Typography>
+
+                    <Typography
+                        variant="h5"
+                        gutterBottom
+                        style={{ margin: '20px' }}
+                    >
+                        {email}
+                    </Typography>
                 </div>
             )
         );
@@ -482,7 +528,8 @@ Vote.propTypes = {
 
 const mapStateToProps = ({ actionReducer }) => {
     return {
-        users: actionReducer.users
+        users: actionReducer.users,
+        votes: actionReducer.votes
     };
 };
 

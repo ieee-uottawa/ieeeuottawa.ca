@@ -8,6 +8,7 @@
     "develop": "nodemon app.js"
   },
   "dependencies": {
+    "@cloudant/cloudant": "^4.2.4",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",

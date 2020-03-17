@@ -18,3 +18,17 @@ export function getUsers() {
             });
     };
 }
+
+export function getVotes() {
+    return dispatch => {
+        return axios
+            .get(`${BACKEND_URL}/vote`)
+            .then(response => {
+                dispatch({ type: 'getVotesSuccess', payload: response.data });
+            })
+            .catch(error => {
+                dispatch({ type: 'getVotesFailed', payload: error });
+                throw error;
+            });
+    };
+}
