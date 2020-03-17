@@ -432,7 +432,8 @@ class Vote extends Component {
                 <div style={{ textAlign: 'center' }}>
                     <GoogleLogin
                         clientId={process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID}
-                        buttonText="Login"
+                        buttonText="Log in with your uOttawa email"
+                        hostedDomain="uottawa.ca"
                         onSuccess={this.handleLogin}
                         onFailure={responseGoogle}
                         cookiePolicy="single_host_origin"
