@@ -183,7 +183,7 @@ const responseGoogle = response => {
     console.log(response);
 };
 
-const browserUrl = 'googlechrome://navigate?url=ieeeuottawa.ca';
+const browserUrl = 'googlechrome://ieeeuottawa.ca/vote';
 
 class Vote extends Component {
     constructor(props) {
@@ -277,6 +277,20 @@ class Vote extends Component {
                     Please log in to continue
                 </Typography>
             </div>
+        );
+    }
+
+    renderUnsupportedBrowser() {
+        return (
+            !isFacebookApp() && (
+                <div style={{ textAlign: 'center' }}>
+                    <a href={browserUrl}>
+                        <Typography variant="h5" gutterBottom color="secondary">
+                            ieeeuottawa.ca/vote
+                        </Typography>
+                    </a>
+                </div>
+            )
         );
     }
 
@@ -434,12 +448,7 @@ class Vote extends Component {
                             {this.renderLogoutButton()}
                             <div style={{ marginTop: '30px' }}>
                                 {!displayForm && this.renderLoginPage()}
-                                <div style={{ textAlign: 'center' }}>
-                                    <a href={browserUrl}>
-                                        {browserUrl} ....{' '}
-                                        {String(isFacebookApp())}
-                                    </a>
-                                </div>
+                                {this.renderUnsupportedBrowser()}
                                 <Grid container justify="center">
                                     {displayForm && (
                                         <Paper
