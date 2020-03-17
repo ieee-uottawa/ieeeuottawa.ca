@@ -208,7 +208,6 @@ class Vote extends Component {
 
     getVoted(email) {
         const { actions } = this.props;
-        console.log('210', email);
         actions.getVoted(email).then(() => {
             const { voted } = this.props;
             // eslint-disable-next-line no-console

@@ -6,7 +6,8 @@ const { cloudant } = require('../helpers/cloudant');
 const voteDb = cloudant.db.use('vote-2020-2021');
 
 router.get('/', (req, res, next) => {
-  res.send('Test Vote API calls!');
+  //   res.send('Test Vote API calls!');
+  res.status(200).send({ result: 'Vote API Connection' });
 });
 
 router.get('/voted', (req, res, next) => {
@@ -15,9 +16,9 @@ router.get('/voted', (req, res, next) => {
     const students = new Set(responseDoc.students);
     console.log(email, students);
     if (students.has(email)) {
-      res.send('true');
+      res.status(200).send({ result: true });
     } else {
-      res.send('false');
+      res.status(200).send({ result: false });
     }
   });
 });
@@ -32,7 +33,7 @@ router.post('/', (req, res, next) => {
   updateRecords(form);
   // Add current user to voted list
   addToVotedList(email);
-  res.send('Test Vote POST API calls!');
+  res.status(200).send({ result: 'Voting completed' });
 });
 
 function addToVotedList(email) {
