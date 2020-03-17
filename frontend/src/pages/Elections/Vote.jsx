@@ -10,6 +10,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import ReactLoading from 'react-loading';
 
 import { Title } from '../../helpers/components';
 import { mapDispatchToProps } from '../../helpers/actions';
@@ -195,7 +196,8 @@ class Vote extends Component {
             loggedIn: false,
             email: '',
             username: '',
-            voted: false
+            voted: false,
+            loading: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -205,20 +207,21 @@ class Vote extends Component {
     }
 
     componentDidMount() {
+        this.setState({ loading: true });
         const { actions } = this.props;
         actions.getVotes().then(() => {
             const { votes } = this.props;
             console.log('getVotes(): ', votes);
+            this.setState({ loading: false });
         });
     }
 
     getVoted(email) {
         const { actions } = this.props;
+        this.setState({ loading: true });
         actions.getVoted(email).then(() => {
             const { voted } = this.props;
-            // eslint-disable-next-line no-console
-            console.log('API is working in browser? Voted API:', voted);
-            this.setState({ voted });
+            this.setState({ voted, loading: false });
             if (voted === true) this.handleLogout();
         });
     }
@@ -226,10 +229,12 @@ class Vote extends Component {
     vote() {
         const { actions } = this.props;
         const { form, email } = this.state;
+        this.setState({ loading: true });
         actions.vote(form, email).then(() => {
-            // eslint-disable-next-line no-console
-            console.log('VOTE API is working! ');
-            if (!isServerSideRendering) window.location.reload();
+            this.setState({ loading: false });
+            if (!isServerSideRendering()) {
+                this.getVoted(email);
+            }
         });
     }
 
@@ -502,7 +507,7 @@ class Vote extends Component {
     }
 
     render() {
-        const { displayForm } = this.state;
+        const { displayForm, loading } = this.state;
         return (
             <StaticQuery
                 query={query}
@@ -517,6 +522,17 @@ class Vote extends Component {
                             </Title>
                             {this.renderLoginButton()}
                             {this.renderLogoutButton()}
+
+                            {loading && (
+                                <div style={{ textAlign: 'center' }}>
+                                    <Grid container justify="center">
+                                        <ReactLoading
+                                            type="spin"
+                                            color="#3498db"
+                                        />
+                                    </Grid>
+                                </div>
+                            )}
                             {this.renderVoted()}
                             <div style={{ marginTop: '30px' }}>
                                 {this.renderUnsupportedBrowser()}
