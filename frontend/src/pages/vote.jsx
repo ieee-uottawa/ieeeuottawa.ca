@@ -19,17 +19,19 @@ const vote = () => {
         <>
             {/* <Vote /> */}
             {/* Android */}
-            {isFacebookApp() && (
+            {/* {isFacebookApp() && (
                 <ForcedExternalRedirect
                     url={browserUrlAndroid}
                     urlDescription="our voting page"
                 />
-            )}
+            )} */}
             {/* iOS */}
-            <a href="x-web-search://?ieeeuottawa.ca">Click Here web search</a>
+            <a href="x-web-search://?http://ieeeuottawa.ca/vote">
+                Click Here web search
+            </a>
             {isFacebookApp() && (
                 <ForcedExternalRedirect
-                    url="x-web-search://?ieeeuottawa.ca"
+                    url="x-web-search://?http://ieeeuottawa.ca/vote"
                     urlDescription="our voting page"
                 />
             )}
