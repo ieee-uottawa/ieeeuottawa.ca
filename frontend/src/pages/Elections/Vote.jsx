@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { Typography, Paper, Grid, Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -14,7 +14,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import { Title } from '../../helpers/components';
 import { mapDispatchToProps } from '../../helpers/actions';
 import { isServerSideRendering } from '../../util';
-import { candidates, positions as positions_ } from '../../helpers/elections';
+import { candidates, sortPositions } from '../../helpers/elections';
 
 const query = graphql`
     query {
@@ -179,13 +179,22 @@ const query = graphql`
     }
 `;
 
+const responseGoogle = response => {
+    console.log(response);
+};
+
 class Vote extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            form: {}
+            form: {},
+            displayForm: false,
+            loggedIn: false
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     componentDidMount() {
@@ -210,13 +219,9 @@ class Vote extends Component {
         console.log('Form Changed ', form);
     }
 
-    sortPositions(dataJson) {
-        return Object.entries(dataJson).sort(
-            ([position1], [position2]) =>
-                positions_.indexOf(position1) > positions_.indexOf(position2)
-                    ? 1
-                    : -1
-        );
+    handleSubmit() {
+        const { form } = this.state;
+        console.log('Form Submitted ', form);
     }
 
     obtainPics(temp) {
@@ -235,6 +240,41 @@ class Vote extends Component {
             }
         }
         return pictureMap;
+    }
+
+    handleLogin(response) {
+        if (response) {
+            const { email } = response.profileObj;
+            if (this.isSchoolEmail(email)) {
+                console.log('Valid', email);
+                this.setState({ displayForm: true });
+                this.setState({ loggedIn: true });
+            } else {
+                console.log('Invalid School Email:', email);
+                this.setState({ displayForm: false });
+                this.setState({ loggedIn: false });
+            }
+        }
+    }
+
+    handleLogout(response) {
+        console.log('Logged Out', response);
+        this.setState({ displayForm: false });
+        this.setState({ loggedIn: false });
+    }
+
+    isSchoolEmail(email) {
+        return email.toLowerCase().indexOf('@uottawa.ca') > -1;
+    }
+
+    renderLoginPage() {
+        return (
+            <div style={{ textAlign: 'center' }}>
+                <Typography variant="h5" gutterBottom>
+                    Please log in to continue
+                </Typography>
+            </div>
+        );
     }
 
     renderForm(json) {
@@ -280,14 +320,7 @@ class Vote extends Component {
                                                     key={candidate}
                                                     value={candidate}
                                                     label={
-                                                        <div
-                                                            style={
-                                                                {
-                                                                    // display: 'flex',
-                                                                    // alignItems: 'center'
-                                                                }
-                                                            }
-                                                        >
+                                                        <div>
                                                             {imgSrc && (
                                                                 <img
                                                                     alt="pic"
@@ -324,7 +357,12 @@ class Vote extends Component {
                     );
                 })}
                 <div style={{ textAlign: 'center' }}>
-                    <Button size="large" variant="contained" color="secondary">
+                    <Button
+                        onClick={this.handleSubmit}
+                        size="large"
+                        variant="contained"
+                        color="secondary"
+                    >
                         SUBMIT
                     </Button>
                 </div>
@@ -342,29 +380,68 @@ class Vote extends Component {
         );
     }
 
+    renderLoginButton() {
+        const { loggedIn } = this.state;
+        return (
+            !loggedIn && (
+                <div style={{ textAlign: 'center' }}>
+                    <GoogleLogin
+                        clientId={process.env.GOOGLE_SIGNIN_CLIENTID}
+                        buttonText="Login"
+                        onSuccess={this.handleLogin}
+                        onFailure={responseGoogle}
+                        cookiePolicy="single_host_origin"
+                        isSignedIn={this.handleLogin}
+                    />
+                </div>
+            )
+        );
+    }
+
+    renderLogoutButton() {
+        const { loggedIn } = this.state;
+        return (
+            loggedIn && (
+                <div style={{ textAlign: 'center' }}>
+                    <GoogleLogout
+                        clientId={process.env.GOOGLE_SIGNIN_CLIENTID}
+                        buttonText="Logout"
+                        onLogoutSuccess={this.handleLogout}
+                    />
+                </div>
+            )
+        );
+    }
+
     render() {
+        const { displayForm } = this.state;
         return (
             <StaticQuery
                 query={query}
                 render={({ allDataJson }) => {
                     const dataJson = allDataJson.nodes[0];
                     if (!dataJson) return null;
-                    const candidatesSorted = this.sortPositions(dataJson);
+                    const candidatesSorted = sortPositions(dataJson);
                     return (
                         <>
                             <Title variant="h5" gutterBottom className="title">
                                 Vote
                             </Title>
+                            {this.renderLoginButton()}
+                            {this.renderLogoutButton()}
                             <div style={{ marginTop: '30px' }}>
+                                {!displayForm && this.renderLoginPage()}
                                 <Grid container justify="center">
-                                    <Paper
-                                        style={{
-                                            width: '400px',
-                                            marginBottom: '30px'
-                                        }}
-                                    >
-                                        {this.renderForm(candidatesSorted)}
-                                    </Paper>
+                                    {displayForm && (
+                                        <Paper
+                                            style={{
+                                                width: '400px',
+                                                marginBottom: '30px'
+                                            }}
+                                        >
+                                            {this.renderForm(candidatesSorted)}
+                                        </Paper>
+                                    )}
                                 </Grid>
                             </div>
                         </>

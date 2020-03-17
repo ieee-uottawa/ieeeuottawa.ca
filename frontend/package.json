@@ -37,6 +37,7 @@
         "react": "^16.12.0",
         "react-calendar-icon": "^0.9.3",
         "react-ga": "^2.5.3",
+        "react-google-login": "^5.1.2",
         "react-helmet": "^5.2.0",
         "react-images": "^1.0.0",
         "react-jss": "^8.6.1",

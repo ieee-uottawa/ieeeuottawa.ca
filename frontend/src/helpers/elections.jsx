@@ -34,4 +34,11 @@ const candidates = {
     'Photonics Vice Chair': []
 };
 
-export { positions, candidates };
+const sortPositions = dataJson => {
+    return Object.entries(dataJson).sort(
+        ([position1], [position2]) =>
+            positions.indexOf(position1) > positions.indexOf(position2) ? 1 : -1
+    );
+};
+
+export { positions, candidates, sortPositions };
