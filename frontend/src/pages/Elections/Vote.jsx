@@ -3,13 +3,13 @@ import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { Typography, Paper, Grid, Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 // import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import { Paper, Grid } from '@material-ui/core';
 
 import { Title } from '../../helpers/components';
 import { mapDispatchToProps } from '../../helpers/actions';
@@ -257,9 +257,12 @@ class Vote extends Component {
                                 <FormControl>
                                     <FormLabel
                                         component="legend"
+                                        color="primary"
                                         style={formLabelStyle}
                                     >
-                                        {position}
+                                        <Typography variant="h5" gutterBottom>
+                                            {position}
+                                        </Typography>
                                     </FormLabel>
                                     <RadioGroup
                                         aria-label={position}
@@ -277,7 +280,14 @@ class Vote extends Component {
                                                     key={candidate}
                                                     value={candidate}
                                                     label={
-                                                        <div>
+                                                        <div
+                                                            style={
+                                                                {
+                                                                    // display: 'flex',
+                                                                    // alignItems: 'center'
+                                                                }
+                                                            }
+                                                        >
                                                             {imgSrc && (
                                                                 <img
                                                                     alt="pic"
@@ -313,6 +323,11 @@ class Vote extends Component {
                         )
                     );
                 })}
+                <div style={{ textAlign: 'center' }}>
+                    <Button size="large" variant="contained" color="secondary">
+                        SUBMIT
+                    </Button>
+                </div>
             </div>
         );
     }
