@@ -282,7 +282,7 @@ class Vote extends Component {
 
     renderUnsupportedBrowser() {
         return (
-            !isFacebookApp() && (
+            isFacebookApp() && (
                 <div style={{ textAlign: 'center' }}>
                     <a href={browserUrl}>
                         <Typography variant="h5" gutterBottom color="secondary">
