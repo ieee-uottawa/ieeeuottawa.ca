@@ -1,4 +1,25 @@
+import React from 'react';
+import { Typography } from './helpers/material-ui';
+
 const isServerSideRendering = () => typeof window === 'undefined';
+
+const isFacebookApp = () => {
+    if (isServerSideRendering()) return false;
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    return ua.indexOf('FBAN') > -1 || ua.indexOf('FBAV') > -1;
+};
+
+const renderUnsupportedBrowser = () => {
+    return (
+        isFacebookApp() && (
+            <div style={{ textAlign: 'center' }}>
+                <Typography variant="h5" gutterBottom color="primary">
+                    Unsupported Browser
+                </Typography>
+            </div>
+        )
+    );
+};
 
 const moneyFormatter = new Intl.NumberFormat('en-CA', {
     currency: 'CAD',
@@ -17,12 +38,6 @@ const isMobile = () => {
             navigator.userAgent.substr(0, 4)
         )
     );
-};
-
-const isFacebookApp = () => {
-    if (isServerSideRendering()) return false;
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
-    return ua.indexOf('FBAN') > -1 || ua.indexOf('FBAV') > -1;
 };
 
 // const ArrayLikeToString = arg => Array.prototype.toString.call(arg);
@@ -99,6 +114,7 @@ export {
     isMobile,
     isFacebookApp,
     isServerSideRendering,
+    renderUnsupportedBrowser,
     moneyFormatter,
     showPricing
 };
