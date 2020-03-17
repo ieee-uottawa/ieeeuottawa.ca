@@ -32,3 +32,18 @@ export function getVotes() {
             });
     };
 }
+
+export function vote(form) {
+    const data = { form };
+    return dispatch => {
+        return axios
+            .post(`${BACKEND_URL}/vote`, data)
+            .then(response => {
+                dispatch({ type: 'voteSuccess', payload: response });
+            })
+            .catch(error => {
+                dispatch({ type: 'voteFailed', payload: error });
+                throw error;
+            });
+    };
+}

@@ -180,7 +180,8 @@ const query = graphql`
 `;
 
 const responseGoogle = response => {
-    console.log(response);
+    // eslint-disable-next-line no-console
+    console.log('failure', response);
 };
 
 const browserUrl = 'googlechrome://ieeeuottawa.ca/vote';
@@ -204,25 +205,23 @@ class Vote extends Component {
 
     componentDidMount() {
         this.getTestAPI();
-        this.getVoteAPI();
-        // console.log(isFacebookApp());
     }
 
     getTestAPI() {
         const { actions } = this.props;
-        actions.getUsers().then(() => {
-            const { users } = this.props;
-            // eslint-disable-next-line no-console
-            console.log('API is working: ', users);
-        });
-    }
-
-    getVoteAPI() {
-        const { actions } = this.props;
         actions.getVotes().then(() => {
             const { votes } = this.props;
             // eslint-disable-next-line no-console
-            console.log('VOTE API is working: ', votes);
+            console.log('API is working in browser: ', votes);
+        });
+    }
+
+    vote() {
+        const { actions } = this.props;
+        const { form } = this.state;
+        actions.vote(form).then(() => {
+            // eslint-disable-next-line no-console
+            console.log('VOTE API is working: ');
         });
     }
 
@@ -236,12 +235,11 @@ class Vote extends Component {
     }
 
     handleSubmit() {
-        const { form } = this.state;
-        console.log('Form Submitted ', form);
-        if (this.isFormCompleted()) {
-            console.log('Success!');
+        const { email, loggedIn } = this.state;
+        if (this.isFormCompleted() && email && loggedIn) {
+            this.vote();
         } else {
-            console.log('Failure');
+            console.log('Failure, please try again later');
         }
     }
 
@@ -267,23 +265,20 @@ class Vote extends Component {
         if (response) {
             const { email, givenName, familyName } = response.profileObj;
             if (this.isSchoolEmail(email)) {
-                console.log('Valid', email);
-                this.setState({ displayForm: true });
-                this.setState({ loggedIn: true });
-                this.setState({ email });
-                this.setState({ username: `${givenName} ${familyName}` });
+                this.setState({
+                    displayForm: true,
+                    loggedIn: true,
+                    email,
+                    username: `${givenName} ${familyName}`
+                });
             } else {
-                console.log('Invalid School Email:', email);
-                this.setState({ displayForm: false });
-                this.setState({ loggedIn: false });
+                this.setState({ displayForm: false, loggedIn: false });
             }
         }
     }
 
-    handleLogout(response) {
-        console.log('Logged Out', response);
-        this.setState({ displayForm: false });
-        this.setState({ loggedIn: false });
+    handleLogout() {
+        this.setState({ displayForm: false, loggedIn: false });
     }
 
     isSchoolEmail(email) {
@@ -518,17 +513,16 @@ class Vote extends Component {
 
 Vote.defaultProps = {
     actions: null,
-    users: null
+    votes: null
 };
 
 Vote.propTypes = {
     actions: PropTypes.any,
-    users: PropTypes.any
+    votes: PropTypes.any
 };
 
 const mapStateToProps = ({ actionReducer }) => {
     return {
-        users: actionReducer.users,
         votes: actionReducer.votes
     };
 };
