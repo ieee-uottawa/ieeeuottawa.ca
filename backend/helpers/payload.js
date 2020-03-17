@@ -1,13 +1,13 @@
-module.exports.handleSuccess = (res, message, extra) => {
-  handler(res, message, extra, 200, true);
+module.exports.handleSuccess = (res, text, extra) => {
+  handler(res, text, extra, 200, true);
 };
 
-function handler(res, message, extra, code, success) {
-  if (!success) console.log(`ERROR CODE: ${code} ERROR MESSAGE: ${message}`);
+function handler(res, text, extra, code, success) {
+  if (!success) console.log(`ERROR CODE: ${code} ERROR MESSAGE: ${text}`);
   let payload = {};
   if (extra !== undefined) payload = extra;
-  if (message === undefined) message = '';
-  payload.message = message;
+  if (text === undefined) text = '';
+  payload.message = text;
   payload.success = success;
   res.statusCode = code;
   res.json(payload);

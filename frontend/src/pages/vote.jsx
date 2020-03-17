@@ -25,9 +25,7 @@ const vote = () => {
                 />
             )} */}
             {text}
-            <a href="http://www.google.com/" target="_blank">
-                Click Here
-            </a>
+            <a href="x-web-search://?ieeeottawa.ca">Click Here web search</a>
             {/* {isFacebookApp() && (
                 <ForcedExternalRedirect
                     url={browserUrliOS}
