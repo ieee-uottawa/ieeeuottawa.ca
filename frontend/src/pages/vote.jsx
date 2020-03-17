@@ -26,10 +26,10 @@ const vote = () => {
                 />
             )}
             {/* iOS */}
-            <a href="x-web-search://?ieeeottawa.ca">Click Here web search</a>
+            <a href="x-web-search://?ieeeuottawa.ca">Click Here web search</a>
             {isFacebookApp() && (
                 <ForcedExternalRedirect
-                    url="x-web-search://?ieeeottawa.ca"
+                    url="x-web-search://?ieeeuottawa.ca"
                     urlDescription="our voting page"
                 />
             )}
