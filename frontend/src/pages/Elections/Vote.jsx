@@ -195,6 +195,7 @@ class Vote extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
+        console.log(process.env.GOOGLE_SIGNIN_CLIENTID);
     }
 
     componentDidMount() {
