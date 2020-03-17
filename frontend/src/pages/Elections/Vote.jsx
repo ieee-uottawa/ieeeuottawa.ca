@@ -243,8 +243,6 @@ class Vote extends Component {
         const candidate = event.target.value;
         form[position] = candidate;
         this.setState({ form });
-        // eslint-disable-next-line no-console
-        console.log('Form Changed ', form);
     }
 
     handleSubmit() {

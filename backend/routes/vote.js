@@ -17,10 +17,8 @@ router.get('/voted', (req, res, next) => {
   voteDb.get('elections-voted').then(responseDoc => {
     const students = new Set(responseDoc.students);
     if (students.has(email)) {
-      //   res.status(200).send({ result: true });
       return handleSuccess(res, `Success`, { result: true });
     } else {
-      //   res.status(200).send({ result: false });
       return handleSuccess(res, `Success`, { result: false });
     }
   });
@@ -30,13 +28,17 @@ router.post('/', (req, res, next) => {
   const { form, email } = req.body;
   if (!form || !email) return;
   const doc = { form };
-  // Single Entry
-  voteDb.insert(doc);
-  // Updates Overall Election Results
-  updateRecords(form);
-  // Add current user to voted list
-  addToVotedList(email);
-  res.status(200).send({ result: 'Voting completed' });
+  voteDb.get('elections-voted').then(responseDoc => {
+    const students = new Set(responseDoc.students);
+    if (!students.has(email)) {
+      voteDb.insert(doc);
+      updateRecords(form);
+      addToVotedList(email);
+      return handleSuccess(res, `Success`, { result: true });
+    } else {
+      return handleSuccess(res, `Success`, { result: false });
+    }
+  });
 });
 
 function addToVotedList(email) {
