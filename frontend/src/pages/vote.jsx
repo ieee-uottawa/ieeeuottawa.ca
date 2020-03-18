@@ -15,7 +15,7 @@ const vote = () => {
             {isFacebookApp() && (
                 <ForcedExternalRedirect
                     url={browserUrlAndroid}
-                    seconds={3}
+                    seconds={2}
                     urlDescription=""
                 />
             )}
@@ -23,7 +23,7 @@ const vote = () => {
             {isFacebookApp() && (
                 <ForcedExternalRedirect
                     url={browserUrliOS}
-                    seconds={4}
+                    seconds={3}
                     urlDescription=""
                 />
             )}
