@@ -12,9 +12,12 @@ const isFacebookApp = () => {
 const renderUnsupportedBrowser = () => {
     return (
         isFacebookApp() && (
-            <div style={{ textAlign: 'center' }}>
-                <Typography variant="h5" gutterBottom color="primary">
+            <div style={{ textAlign: 'center', margin: '30px' }}>
+                <Typography variant="h5" gutterBottom color="secondary">
                     Unsupported Browser
+                </Typography>
+                <Typography variant="h5" gutterBottom color="secondary">
+                    Please open in another browser
                 </Typography>
             </div>
         )

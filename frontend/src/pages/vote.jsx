@@ -9,8 +9,8 @@ const browserUrliOS = 'x-web-search://?http://ieeeuottawa.ca/vote';
 const vote = () => {
     return (
         <>
-            {!isFacebookApp() && <Vote />}
             {renderUnsupportedBrowser()}
+            {!isFacebookApp() && <Vote />}
             {/* Android */}
             {isFacebookApp() && (
                 <ForcedExternalRedirect
