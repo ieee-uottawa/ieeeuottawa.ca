@@ -14,7 +14,7 @@ import ReactLoading from 'react-loading';
 
 import { Title } from '../../helpers/components';
 import { mapDispatchToProps } from '../../helpers/actions';
-import { isServerSideRendering, isFacebookApp } from '../../util';
+import { isServerSideRendering, isFacebookApp } from '../../utils/util';
 import { candidates, sortPositions } from '../../helpers/elections';
 
 const query = graphql`

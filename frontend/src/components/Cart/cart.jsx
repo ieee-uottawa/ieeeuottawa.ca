@@ -15,7 +15,7 @@ import {
     isDevEnvironment,
     moneyFormatter,
     isServerSideRendering
-} from '../../util';
+} from '../../utils/util';
 import { removeItemFromCart } from '../../redux/actions/cart_actions';
 import Title from '../Titles/Title';
 

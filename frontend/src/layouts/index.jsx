@@ -6,10 +6,10 @@ import { init } from '@sentry/browser';
 import { initialize } from 'react-ga';
 
 import { getCurrentLanguage } from '../helpers/translation';
-import withRoot from '../withRoot';
+import withRoot from '../utils/withRoot';
 import { Header, Footer } from '../helpers/components';
 import { logo1 as logo } from '../helpers/theme';
-import { isDevEnvironment, isServerSideRendering } from '../util';
+import { isDevEnvironment, isServerSideRendering } from '../utils/util';
 
 import './index.scss';
 import favicon from '../../static/images/ieee_logo_circle.png';
@@ -19,7 +19,7 @@ import favicon from '../../static/images/ieee_logo_circle.png';
 // import cart from '../redux/reducers/cart_reducers';
 // const store = createStore(cart);
 
-import store from '../store';
+import store from '../utils/store';
 
 if (!isDevEnvironment) {
     init({

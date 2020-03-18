@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { isServerSideRendering } from '../../util';
+import { isServerSideRendering } from '../../utils/util';
 import Title from '../../components/Titles/Title';
 import officeHoursImg from '../../../static/images/office-hours/office-hours.png';
 import { translate } from '../../helpers/translation';

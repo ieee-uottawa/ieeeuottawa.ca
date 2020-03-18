@@ -4,7 +4,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import Form from '../../components/Form/Form';
-import { isServerSideRendering } from '../../util';
+import { isServerSideRendering } from '../../utils/util';
 
 class SubmitNomination extends Component {
     constructor(props) {

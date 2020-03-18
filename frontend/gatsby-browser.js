@@ -5,7 +5,7 @@
  */
 
 const GA = require('react-ga');
-const { isDevEnvironment } = require('./src/util');
+const { isDevEnvironment } = require('./src/utils/util');
 
 module.exports.onRouteUpdate = ({ location }) => {
     if (!isDevEnvironment) {

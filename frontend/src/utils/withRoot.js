@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import getPageContext, { getCurrentTheme } from './getPageContext';
-import { toggleLanguage } from './helpers/translation';
+import { toggleLanguage } from '../helpers/translation';
 import { isServerSideRendering } from './util';
 
 const withRoot = Component => {

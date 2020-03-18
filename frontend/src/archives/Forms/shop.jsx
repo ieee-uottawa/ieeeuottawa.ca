@@ -9,7 +9,7 @@ import ProductCard from '../../components/Cards/ProductCard/ProductCard';
 import Title from '../../components/Titles/Title';
 import Link from '../../components/Routers/Link';
 import '../../components/Cards/ProductCard/product-card.scss';
-import { capitalize } from '../../util';
+import { capitalize } from '../../utils/util';
 
 class Shop extends Component {
     constructor(props) {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Snackbar, CircularProgress, Typography } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { Form, Title } from '../../helpers/components';
-import { isServerSideRendering } from '../../util';
+import { isServerSideRendering } from '../../utils/util';
 
 const FormStyle = {
     width: '200px'

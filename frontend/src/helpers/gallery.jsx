@@ -1,4 +1,4 @@
-import { isServerSideRendering } from '../util';
+import { isServerSideRendering } from '../utils/util';
 
 const archives = src => {
     const blacklist = new Set(['0121.jpg', '0123.jpg']);

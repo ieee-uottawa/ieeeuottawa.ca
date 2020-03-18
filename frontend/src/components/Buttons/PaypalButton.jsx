@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { clearCart } from '../../redux/actions/cart_actions';
-import { isServerSideRendering } from '../../util';
+import { isServerSideRendering } from '../../utils/util';
 
 class PaypalButton extends Component {
     constructor(props) {

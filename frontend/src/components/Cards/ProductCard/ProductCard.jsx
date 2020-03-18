@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 import dayjs from 'dayjs';
 import MaterialSelect from '../../Material/MaterialSelect';
 import { addItemToCart } from '../../../redux/actions/cart_actions';
-import { showPricing, isServerSideRendering } from '../../../util';
+import { showPricing, isServerSideRendering } from '../../../utils/util';
 import '../ExecCard/exec-card.scss';
 
 class ProductCard extends Component {

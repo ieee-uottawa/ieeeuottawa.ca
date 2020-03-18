@@ -12,7 +12,7 @@ import {
 } from '../../helpers/components';
 import { sun, moon, logo2 as logo } from '../../helpers/theme';
 import { translate, getCurrentLanguage } from '../../helpers/translation';
-import { routes } from '../../routes';
+import { routes } from '../../utils/routes';
 
 class Header extends Component {
     constructor(props) {

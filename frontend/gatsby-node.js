@@ -17,7 +17,7 @@ exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
     }
 };
 
-const { getPages } = require(`./src/routes`);
+const { getPages } = require(`./src/utils/routes`);
 
 exports.createPages = ({ actions }) => {
     const { createPage, createRedirect } = actions;

@@ -14,7 +14,7 @@ import {
     capitalize,
     moneyFormatter,
     showPricing
-} from '../../util';
+} from '../../utils/util';
 import './product-row.scss';
 
 const ProductRow = ({

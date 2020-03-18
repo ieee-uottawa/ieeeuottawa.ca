@@ -1,7 +1,7 @@
 import React from 'react';
 import Vote from './Elections/Vote';
 import ForcedExternalRedirect from '../components/Routers/ForcedExternalRedirect';
-import { isFacebookApp, renderUnsupportedBrowser } from '../util';
+import { isFacebookApp, renderUnsupportedBrowser } from '../utils/util';
 
 const browserUrlAndroid = 'googlechrome://ieeeuottawa.ca/vote';
 const browserUrliOS = 'x-web-search://?http://ieeeuottawa.ca/vote';

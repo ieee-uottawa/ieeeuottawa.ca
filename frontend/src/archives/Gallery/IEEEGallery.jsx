@@ -4,7 +4,7 @@ import Gallery from 'react-photo-gallery';
 import { GridList } from '../../helpers/material-ui';
 import { Title } from '../../helpers/components';
 import { translate } from '../../helpers/translation';
-import { isServerSideRendering } from '../../util';
+import { isServerSideRendering } from '../../utils/util';
 
 const archives = src => {
     const blacklist = new Set(['0121.jpg', '0123.jpg']);

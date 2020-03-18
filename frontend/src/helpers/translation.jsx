@@ -1,4 +1,4 @@
-import { isServerSideRendering } from '../util';
+import { isServerSideRendering } from '../utils/util';
 
 const menuItems = {
     Home: {
