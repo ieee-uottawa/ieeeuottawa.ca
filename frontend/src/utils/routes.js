@@ -27,6 +27,10 @@ const routes = [
         link: '/Elections/Elections'
     },
     {
+        title: 'Vote',
+        link: '/Elections/VoteMain'
+    },
+    {
         title: 'Election Platforms',
         link: '/Elections/ElectionPlatforms'
     },

@@ -3,7 +3,7 @@ import axios from 'axios';
 const httpClient = axios.create();
 httpClient.defaults.timeout = 600000;
 
-const BACKEND_URL = process.env.BACKEND_URL_DEV;
+const BACKEND_URL = process.env.GATSBY_BACKEND_URL_PROD;
 
 export function getUsers() {
     return dispatch => {
