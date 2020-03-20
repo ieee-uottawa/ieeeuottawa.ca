@@ -22,7 +22,7 @@ router.post('/login', async (req, res) => {
       return res.status(409).send(null);
     }
 
-    return res.status(200).send(jwt.sign({ email }, process.env.SECRET_KEY));
+    return res.status(200).send(jwt.sign({ email }, process.env.SECRET_KEY, { expiresIn: '1h' }));
   }
 
   return res.status(401).send(null);

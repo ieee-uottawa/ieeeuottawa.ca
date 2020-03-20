@@ -230,10 +230,9 @@ class Vote extends Component {
         const { form, email } = this.state;
         this.setState({ loading: true });
         actions.vote(form, email).then(() => {
-            this.setState({ loading: false });
-            if (!isServerSideRendering()) {
-                this.login(email);
-            }
+            const { voted } = this.props;
+            this.setState({ voted, loading: false });
+            if (voted === true) this.handleLogout();
         });
     }
 
