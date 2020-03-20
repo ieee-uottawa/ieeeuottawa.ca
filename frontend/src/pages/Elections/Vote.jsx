@@ -219,8 +219,10 @@ class Vote extends Component {
     login(googleToken) {
         const { actions } = this.props;
         this.setState({ loading: true });
+        console.log('Google Token Check: ', googleToken);
         actions.login(googleToken).then(() => {
             const { voted } = this.props;
+            console.log('Login Then: ', voted);
             this.setState({ voted, loading: false });
             if (voted === true) this.handleLogout();
         });
@@ -272,10 +274,13 @@ class Vote extends Component {
     }
 
     handleLogin(response) {
+        console.log('Handle Login: ', response);
         if (response) {
+            console.log('True Handle Login: ', response);
             const googleToken = response.tokenId;
             const { email, givenName, familyName } = response.profileObj;
             if (this.isSchoolEmail(email)) {
+                console.log('True isSchool Email Handle Login: ', response);
                 this.setState({
                     displayForm: true,
                     loggedIn: true,
@@ -284,6 +289,7 @@ class Vote extends Component {
                 });
                 this.login(googleToken);
             } else {
+                console.log('False Handle Login: ', response);
                 this.setState({ displayForm: false, loggedIn: false });
             }
         }
@@ -291,6 +297,7 @@ class Vote extends Component {
 
     handleLogout() {
         localStorage.removeItem('token');
+        console.log('Handle Logout');
         this.setState({ displayForm: false, loggedIn: false });
     }
 
