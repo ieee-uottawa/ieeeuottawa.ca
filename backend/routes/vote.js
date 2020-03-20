@@ -22,6 +22,10 @@ router.post('/', verifyToken, canVote, async (req, res, next) => {
 
     const { candidates } = await voteDb.get('election-results');
     for (const [position, candidate] of Object.entries(form)) {
+        if (candidate === 'Abstain' || candidate === 'No confidence') {
+            continue;
+        }
+
         if (candidates[position][candidate] === undefined) {
             return res.status(400).send(null);
         }
