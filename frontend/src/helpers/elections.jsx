@@ -22,7 +22,7 @@ const candidates = {
     Treasurer: ['Sanat Nayar'],
     Secretary: [],
     'VP Internal': [],
-    'VP Social': ['Mohit Kapur'],
+    'VP Social': ['Mohit Kapur', 'Sheena Verana'],
     'VP Communications': ['Nicholas Morin', 'Ajay Modagi'],
     'VP Academic': ['Vlad (Vladislav Jidkov)'],
     'VP External': ['Alois Clerc', 'Ali Jafri'],
