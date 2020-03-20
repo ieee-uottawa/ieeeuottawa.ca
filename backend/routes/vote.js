@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const { cloudant } = require('../helpers/cloudant');
-
 const { handleSuccess } = require('../helpers/payload');
+
+const { verifyToken } = require('../middleware/auth');
+const { canVote } = require('../middleware/canVote');
 
 const voteDb = cloudant.db.use('vote-2020-2021');
 
@@ -12,33 +14,23 @@ router.get('/', (req, res, next) => {
     return handleSuccess(res, `Success`, { result: results });
 });
 
-router.get('/voted', (req, res, next) => {
-    const { email } = req.query;
-    voteDb.get('elections-voted').then(responseDoc => {
-        const students = new Set(responseDoc.students);
-        if (students.has(email)) {
-            return handleSuccess(res, `Success`, { result: true });
-        } else {
-            return handleSuccess(res, `Success`, { result: false });
-        }
-    });
-});
-
-router.post('/', (req, res, next) => {
-    const { form, email } = req.body;
-    if (!form || !email) return;
+router.post('/', verifyToken, canVote, async (req, res, next) => {
+    const email = req.user;
+    const { form } = req.body;
+    if (!form || typeof form !== 'object') return res.status(400).send(null);
     const doc = { form };
-    voteDb.get('elections-voted').then(responseDoc => {
-        const students = new Set(responseDoc.students);
-        if (!students.has(email)) {
-            voteDb.insert(doc);
-            updateRecords(form);
-            addToVotedList(email);
-            return handleSuccess(res, `Success`, { result: true });
-        } else {
-            return handleSuccess(res, `Success`, { result: false });
+
+    const { candidates } = await voteDb.get('election-results');
+    for (const [position, candidate] of Object.entries(form)) {
+        if (candidates[position][candidate] === undefined) {
+            return res.status(400).send(null);
         }
-    });
+    }
+
+    voteDb.insert(doc);
+    updateRecords(form);
+    addToVotedList(email);
+    return handleSuccess(res, `Success`, { result: true });
 });
 
 function addToVotedList(email) {
@@ -72,12 +64,5 @@ function updateRecords(form) {
             console.log('Form Error:', error);
         });
 }
-
-// .then(response => {
-//     console.log('Form Success:', response);
-//   })
-//   .catch(error => {
-//     console.log('Form Error:', error);
-//   });
 
 module.exports = router;
