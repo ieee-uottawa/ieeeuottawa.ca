@@ -1,7 +1,8 @@
 const defaultState = {
     users: 'heree',
     votes: 'votes',
-    voted: null
+    voted: null,
+    sessionExpired: false
 };
 
 export default function actionReducer(state = defaultState, action) {
@@ -21,6 +22,10 @@ export default function actionReducer(state = defaultState, action) {
         }
         case 'voteSuccess': {
             newState.voted = true;
+            return newState;
+        }
+        case 'loginInvalid': {
+            newState.sessionExpired = action.payload.sessionExpired;
             return newState;
         }
         default:

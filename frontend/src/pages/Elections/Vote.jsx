@@ -197,6 +197,7 @@ class Vote extends Component {
             email: '',
             username: '',
             voted: false,
+            sessionExpired: false,
             loading: true
         };
         this.handleChange = this.handleChange.bind(this);
@@ -227,12 +228,12 @@ class Vote extends Component {
 
     vote() {
         const { actions } = this.props;
-        const { form, email } = this.state;
+        const { form } = this.state;
         this.setState({ loading: true });
-        actions.vote(form, email).then(() => {
-            const { voted } = this.props;
-            this.setState({ voted, loading: false });
-            if (voted === true) this.handleLogout();
+        actions.vote(form).then(() => {
+            const { voted, sessionExpired } = this.props;
+            this.setState({ voted, sessionExpired, loading: false });
+            if (voted || sessionExpired) this.handleLogout();
         });
     }
 
@@ -289,6 +290,7 @@ class Vote extends Component {
     }
 
     handleLogout() {
+        localStorage.removeItem('token');
         this.setState({ displayForm: false, loggedIn: false });
     }
 
@@ -434,25 +436,43 @@ class Vote extends Component {
     }
 
     renderLoginButton() {
-        const { loggedIn, displayForm, voted } = this.state;
+        const { loggedIn, displayForm, voted, sessionExpired } = this.state;
         return (
-            !loggedIn &&
-            !isFacebookApp() && (
-                <div style={{ textAlign: 'center' }}>
-                    <GoogleLogin
-                        clientId={process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID}
-                        buttonText="Log in with your uOttawa email"
-                        hostedDomain="uottawa.ca"
-                        onSuccess={this.handleLogin}
-                        onFailure={responseGoogle}
-                        cookiePolicy="single_host_origin"
-                        isSignedIn={this.handleLogin}
-                    />
-                    <div style={{ marginTop: '30px' }}>
-                        {!displayForm && !voted && this.renderLoginPage()}
-                    </div>
-                </div>
-            )
+            <>
+                {sessionExpired && (
+                    <Typography
+                        variant="body1"
+                        style={{
+                            textAlign: 'center',
+                            marginBottom: '20px',
+                            marginTop: '20px'
+                        }}
+                    >
+                        Your session expired so you need to log in again
+                    </Typography>
+                )}
+                {!loggedIn &&
+                    !isFacebookApp() && (
+                        <div style={{ textAlign: 'center' }}>
+                            <GoogleLogin
+                                clientId={
+                                    process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID
+                                }
+                                buttonText="Log in with your uOttawa email"
+                                hostedDomain="uottawa.ca"
+                                onSuccess={this.handleLogin}
+                                onFailure={responseGoogle}
+                                cookiePolicy="single_host_origin"
+                                isSignedIn={this.handleLogin}
+                            />
+                            <div style={{ marginTop: '30px' }}>
+                                {!displayForm &&
+                                    !voted &&
+                                    this.renderLoginPage()}
+                            </div>
+                        </div>
+                    )}
+            </>
         );
     }
 
@@ -563,20 +583,23 @@ class Vote extends Component {
 Vote.defaultProps = {
     actions: null,
     votes: null,
-    voted: null
+    voted: null,
+    sessionExpired: false
 };
 
 Vote.propTypes = {
     actions: PropTypes.any,
     votes: PropTypes.any,
-    voted: PropTypes.any
+    voted: PropTypes.any,
+    sessionExpired: PropTypes.bool
 };
 
 const mapStateToProps = ({ actionReducer }) => {
     return {
         votes: actionReducer.votes,
         login: actionReducer.login,
-        voted: actionReducer.voted
+        voted: actionReducer.voted,
+        sessionExpired: actionReducer.sessionExpired
     };
 };
 

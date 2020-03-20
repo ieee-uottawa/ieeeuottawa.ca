@@ -43,10 +43,10 @@ export function login(googleToken) {
                 headers: { Authorization: googleToken }
             })
             .then(response => {
-                dispatch({ type: 'loginSuccess', payload: response.data });
+                localStorage.setItem('token', response.data);
+                dispatch({ type: 'loginSuccess' });
             })
             .catch(error => {
-                console.log(error.response);
                 if (error.response) {
                     const { status } = error.response;
                     if (status === 401) {
@@ -71,11 +71,27 @@ export function vote(form, email) {
     const data = { form, email };
     return dispatch => {
         return axios
-            .post(`${BACKEND_URL}/vote`, data)
+            .post(`${BACKEND_URL}/vote`, data, {
+                headers: { Authorization: localStorage.getItem('token') }
+            })
             .then(response => {
                 dispatch({ type: 'voteSuccess', payload: response });
             })
             .catch(error => {
+                if (error.response) {
+                    const { status } = error.response;
+                    if (status === 401) {
+                        dispatch({
+                            type: 'loginInvalid',
+                            payload: { sessionExpired: true }
+                        });
+                        return;
+                    }
+                    if (status === 409) {
+                        dispatch({ type: 'voteSuccess' });
+                        return;
+                    }
+                }
                 dispatch({ type: 'voteFailed', payload: error });
                 throw error;
             });
