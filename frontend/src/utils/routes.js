@@ -1,5 +1,8 @@
 const loader = require('path');
 
+const march21st12pmEST = 1584806400;
+const currentTime = new Date().getTime() / 1000;
+
 const routes = [
     {
         title: 'Home',
@@ -8,6 +11,11 @@ const routes = [
     {
         title: 'Execs',
         items: [
+            {
+                title: 'Execs 2020-2021',
+                link: '/Execs/Execs-2020-2021',
+                hidden: currentTime < march21st12pmEST
+            },
             {
                 title: 'Execs 2019-2020',
                 link: '/Execs/Execs-2019-2020'
@@ -24,15 +32,26 @@ const routes = [
     },
     {
         title: 'Elections',
-        link: '/Elections/Elections'
-    },
-    {
-        title: 'Vote',
-        link: '/Elections/VoteMain'
-    },
-    {
-        title: 'Election Platforms',
-        link: '/Elections/ElectionPlatforms'
+        items: [
+            {
+                title: 'Election Info',
+                link: '/Elections/Elections',
+                exact: '/elections'
+            },
+            {
+                title: 'Vote',
+                link: '/Elections/VoteMain'
+            },
+            {
+                title: 'Election Platforms',
+                link: '/Elections/ElectionPlatforms'
+            },
+            {
+                title: 'Election Results',
+                link: '/Elections/ElectionResults',
+                hidden: currentTime < march21st12pmEST
+            }
+        ]
     },
     {
         title: 'Gallery',
@@ -90,9 +109,10 @@ const getComponent = link => {
 };
 
 const getPage = route => {
-    const { title, link } = route;
+    const { title, link, exact } = route;
+    const url = exact || getPath(title);
     return {
-        path: getPath(title),
+        path: url,
         component: getComponent(link)
     };
 };
@@ -117,8 +137,8 @@ const getPages = () => {
     const results = [];
     for (const route of getRoutes()) {
         const { items } = route;
-        if (items) results.push(...items);
-        else results.push(route);
+        if (items) results.push(...items.filter(item => !item.hidden));
+        else if (!route.hidden) results.push(route);
     }
     return results.slice(1);
 };

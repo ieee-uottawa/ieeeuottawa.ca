@@ -72,7 +72,7 @@ const Execs_2019_2020 = () => (
                         gutterBottom
                         className="center-horizontal"
                     >
-                        {translate('Our Execs')}
+                        {translate('Our Execs')} 2019/2020
                     </Typography>
                     <GridList cols={5} style={{ margin: '0 5% 0' }}>
                         {nodes.map(({ name, position, image, email }) => (

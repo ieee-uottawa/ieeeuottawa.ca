@@ -2,7 +2,8 @@ const defaultState = {
     users: 'heree',
     votes: 'votes',
     voted: null,
-    sessionExpired: false
+    sessionExpired: false,
+    electionResults: null
 };
 
 export default function actionReducer(state = defaultState, action) {
@@ -18,6 +19,10 @@ export default function actionReducer(state = defaultState, action) {
         }
         case 'getVotedSuccess': {
             newState.voted = action.payload.result;
+            return newState;
+        }
+        case 'getElectionResultsSuccess': {
+            newState.electionResults = action.payload;
             return newState;
         }
         case 'voteSuccess': {
