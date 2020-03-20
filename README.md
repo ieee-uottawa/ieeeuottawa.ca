@@ -34,6 +34,10 @@ cd backend && yarn install && yarn start
 sh run.sh
 ```
 
+## Contributors
+1. Rushil Perera (Webmaster 2018-2019)
+2. Nevin WS Ganesan (Webmaster 2019-2020)
+
 ## Built with Gatsby
 
 For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
