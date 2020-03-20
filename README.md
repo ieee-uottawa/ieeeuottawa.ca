@@ -14,11 +14,25 @@
 npm install --global gatsby-cli
 ```
 
-2. Run it by:
+2. Run frontend (Gatsby.js) by running these commands:
 ```sh
-gatsby develop
+cd frontend && yarn install && yarn start
 ```
 
+3. Run backend (Express.js) by running these commands:
+```sh
+cd backend && yarn install && yarn start
+```
+
+4. Alternatively:
+```sh
+(cd frontend && yarn install && yarn start) & (cd backend && yarn install && yarn start)
+```
+
+5. OR
+```sh
+sh run.sh
+```
 
 ## Built with Gatsby
 
