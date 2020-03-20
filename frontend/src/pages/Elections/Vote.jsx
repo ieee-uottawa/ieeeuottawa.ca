@@ -197,7 +197,8 @@ class Vote extends Component {
             email: '',
             username: '',
             voted: false,
-            loading: false
+            sessionExpired: false,
+            loading: true
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -207,7 +208,6 @@ class Vote extends Component {
     }
 
     componentDidMount() {
-        this.setState({ loading: true });
         const { actions } = this.props;
         actions.getVotes().then(() => {
             const { votes } = this.props;
@@ -216,10 +216,10 @@ class Vote extends Component {
         });
     }
 
-    getVoted(email) {
+    login(googleToken) {
         const { actions } = this.props;
         this.setState({ loading: true });
-        actions.getVoted(email).then(() => {
+        actions.login(googleToken).then(() => {
             const { voted } = this.props;
             this.setState({ voted, loading: false });
             if (voted === true) this.handleLogout();
@@ -228,13 +228,12 @@ class Vote extends Component {
 
     vote() {
         const { actions } = this.props;
-        const { form, email } = this.state;
+        const { form } = this.state;
         this.setState({ loading: true });
-        actions.vote(form, email).then(() => {
-            this.setState({ loading: false });
-            if (!isServerSideRendering()) {
-                this.getVoted(email);
-            }
+        actions.vote(form).then(() => {
+            const { voted, sessionExpired } = this.props;
+            this.setState({ voted, sessionExpired, loading: false });
+            if (voted || sessionExpired) this.handleLogout();
         });
     }
 
@@ -274,6 +273,7 @@ class Vote extends Component {
 
     handleLogin(response) {
         if (response) {
+            const googleToken = response.tokenId;
             const { email, givenName, familyName } = response.profileObj;
             if (this.isSchoolEmail(email)) {
                 this.setState({
@@ -282,7 +282,7 @@ class Vote extends Component {
                     email,
                     username: `${givenName} ${familyName}`
                 });
-                this.getVoted(email);
+                this.login(googleToken);
             } else {
                 this.setState({ displayForm: false, loggedIn: false });
             }
@@ -290,6 +290,7 @@ class Vote extends Component {
     }
 
     handleLogout() {
+        localStorage.removeItem('token');
         this.setState({ displayForm: false, loggedIn: false });
     }
 
@@ -435,25 +436,43 @@ class Vote extends Component {
     }
 
     renderLoginButton() {
-        const { loggedIn, displayForm, voted } = this.state;
+        const { loggedIn, displayForm, voted, sessionExpired } = this.state;
         return (
-            !loggedIn &&
-            !isFacebookApp() && (
-                <div style={{ textAlign: 'center' }}>
-                    <GoogleLogin
-                        clientId={process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID}
-                        buttonText="Log in with your uOttawa email"
-                        hostedDomain="uottawa.ca"
-                        onSuccess={this.handleLogin}
-                        onFailure={responseGoogle}
-                        cookiePolicy="single_host_origin"
-                        isSignedIn={this.handleLogin}
-                    />
-                    <div style={{ marginTop: '30px' }}>
-                        {!displayForm && !voted && this.renderLoginPage()}
-                    </div>
-                </div>
-            )
+            <>
+                {sessionExpired && (
+                    <Typography
+                        variant="body1"
+                        style={{
+                            textAlign: 'center',
+                            marginBottom: '20px',
+                            marginTop: '20px'
+                        }}
+                    >
+                        Your session expired so you need to log in again
+                    </Typography>
+                )}
+                {!loggedIn &&
+                    !isFacebookApp() && (
+                        <div style={{ textAlign: 'center' }}>
+                            <GoogleLogin
+                                clientId={
+                                    process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID
+                                }
+                                buttonText="Log in with your uOttawa email"
+                                hostedDomain="uottawa.ca"
+                                onSuccess={this.handleLogin}
+                                onFailure={responseGoogle}
+                                cookiePolicy="single_host_origin"
+                                isSignedIn={this.handleLogin}
+                            />
+                            <div style={{ marginTop: '30px' }}>
+                                {!displayForm &&
+                                    !voted &&
+                                    this.renderLoginPage()}
+                            </div>
+                        </div>
+                    )}
+            </>
         );
     }
 
@@ -534,21 +553,25 @@ class Vote extends Component {
                                 </div>
                             )}
                             {this.renderVoted()}
-                            <div style={{ marginTop: '30px' }}>
-                                {this.renderUnsupportedBrowser()}
-                                <Grid container justify="center">
-                                    {displayForm && (
-                                        <Paper
-                                            style={{
-                                                width: '400px',
-                                                marginBottom: '30px'
-                                            }}
-                                        >
-                                            {this.renderForm(candidatesSorted)}
-                                        </Paper>
-                                    )}
-                                </Grid>
-                            </div>
+                            {!loading && (
+                                <div style={{ marginTop: '30px' }}>
+                                    {this.renderUnsupportedBrowser()}
+                                    <Grid container justify="center">
+                                        {displayForm && (
+                                            <Paper
+                                                style={{
+                                                    width: '400px',
+                                                    marginBottom: '30px'
+                                                }}
+                                            >
+                                                {this.renderForm(
+                                                    candidatesSorted
+                                                )}
+                                            </Paper>
+                                        )}
+                                    </Grid>
+                                </div>
+                            )}
                         </>
                     );
                 }}
@@ -560,19 +583,23 @@ class Vote extends Component {
 Vote.defaultProps = {
     actions: null,
     votes: null,
-    voted: null
+    voted: null,
+    sessionExpired: false
 };
 
 Vote.propTypes = {
     actions: PropTypes.any,
     votes: PropTypes.any,
-    voted: PropTypes.any
+    voted: PropTypes.any,
+    sessionExpired: PropTypes.bool
 };
 
 const mapStateToProps = ({ actionReducer }) => {
     return {
         votes: actionReducer.votes,
-        voted: actionReducer.voted
+        login: actionReducer.login,
+        voted: actionReducer.voted,
+        sessionExpired: actionReducer.sessionExpired
     };
 };
 
