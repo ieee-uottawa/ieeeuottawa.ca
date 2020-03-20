@@ -19,6 +19,10 @@ export default function actionReducer(state = defaultState, action) {
             newState.voted = action.payload.result;
             return newState;
         }
+        case 'voteSuccess': {
+            newState.voted = true;
+            return newState;
+        }
         default:
             return newState;
     }

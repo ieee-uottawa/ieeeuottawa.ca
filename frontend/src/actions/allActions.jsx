@@ -3,7 +3,7 @@ import axios from 'axios';
 const httpClient = axios.create();
 httpClient.defaults.timeout = 600000;
 
-const BACKEND_URL = process.env.GATSBY_BACKEND_URL_PROD;
+const BACKEND_URL = process.env.BACKEND_URL_DEV;
 
 export function getUsers() {
     return dispatch => {
@@ -36,15 +36,32 @@ export function getVotes() {
     };
 }
 
-export function getVoted(email) {
+export function login(googleToken) {
     return dispatch => {
         return axios
-            .get(`${BACKEND_URL}/vote/voted?email=${email}`)
+            .post(`${BACKEND_URL}/users/login`, undefined, {
+                headers: { Authorization: googleToken }
+            })
             .then(response => {
-                dispatch({ type: 'getVotedSuccess', payload: response.data });
+                dispatch({ type: 'loginSuccess', payload: response.data });
             })
             .catch(error => {
-                dispatch({ type: 'getVotedFailed', payload: error });
+                console.log(error.response);
+                if (error.response) {
+                    const { status } = error.response;
+                    if (status === 401) {
+                        dispatch({
+                            type: 'loginFailed',
+                            payload: { invalidLogin: true }
+                        });
+                        return;
+                    }
+                    if (status === 409) {
+                        dispatch({ type: 'voteSuccess' });
+                        return;
+                    }
+                }
+                dispatch({ type: 'loginFailed', payload: { error } });
                 throw error;
             });
     };

@@ -197,7 +197,7 @@ class Vote extends Component {
             email: '',
             username: '',
             voted: false,
-            loading: false
+            loading: true
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -207,7 +207,6 @@ class Vote extends Component {
     }
 
     componentDidMount() {
-        this.setState({ loading: true });
         const { actions } = this.props;
         actions.getVotes().then(() => {
             const { votes } = this.props;
@@ -216,10 +215,10 @@ class Vote extends Component {
         });
     }
 
-    getVoted(email) {
+    login(googleToken) {
         const { actions } = this.props;
         this.setState({ loading: true });
-        actions.getVoted(email).then(() => {
+        actions.login(googleToken).then(() => {
             const { voted } = this.props;
             this.setState({ voted, loading: false });
             if (voted === true) this.handleLogout();
@@ -233,7 +232,7 @@ class Vote extends Component {
         actions.vote(form, email).then(() => {
             this.setState({ loading: false });
             if (!isServerSideRendering()) {
-                this.getVoted(email);
+                this.login(email);
             }
         });
     }
@@ -274,6 +273,7 @@ class Vote extends Component {
 
     handleLogin(response) {
         if (response) {
+            const googleToken = response.tokenId;
             const { email, givenName, familyName } = response.profileObj;
             if (this.isSchoolEmail(email)) {
                 this.setState({
@@ -282,7 +282,7 @@ class Vote extends Component {
                     email,
                     username: `${givenName} ${familyName}`
                 });
-                this.getVoted(email);
+                this.login(googleToken);
             } else {
                 this.setState({ displayForm: false, loggedIn: false });
             }
@@ -534,21 +534,25 @@ class Vote extends Component {
                                 </div>
                             )}
                             {this.renderVoted()}
-                            <div style={{ marginTop: '30px' }}>
-                                {this.renderUnsupportedBrowser()}
-                                <Grid container justify="center">
-                                    {displayForm && (
-                                        <Paper
-                                            style={{
-                                                width: '400px',
-                                                marginBottom: '30px'
-                                            }}
-                                        >
-                                            {this.renderForm(candidatesSorted)}
-                                        </Paper>
-                                    )}
-                                </Grid>
-                            </div>
+                            {!loading && (
+                                <div style={{ marginTop: '30px' }}>
+                                    {this.renderUnsupportedBrowser()}
+                                    <Grid container justify="center">
+                                        {displayForm && (
+                                            <Paper
+                                                style={{
+                                                    width: '400px',
+                                                    marginBottom: '30px'
+                                                }}
+                                            >
+                                                {this.renderForm(
+                                                    candidatesSorted
+                                                )}
+                                            </Paper>
+                                        )}
+                                    </Grid>
+                                </div>
+                            )}
                         </>
                     );
                 }}
@@ -572,6 +576,7 @@ Vote.propTypes = {
 const mapStateToProps = ({ actionReducer }) => {
     return {
         votes: actionReducer.votes,
+        login: actionReducer.login,
         voted: actionReducer.voted
     };
 };
