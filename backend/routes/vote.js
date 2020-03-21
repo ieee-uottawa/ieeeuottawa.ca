@@ -14,18 +14,6 @@ router.get('/', (req, res, next) => {
     return handleSuccess(res, `Success`, { result: results });
 });
 
-router.get('/results', (req, res, next) => {
-    voteDb
-        .get('election-results')
-        .then(responseDoc => {
-            const results = responseDoc.candidates;
-            return handleSuccess(res, `Success`, { result: results });
-        })
-        .catch(error => {
-            return handleSuccess(res, `Error`, { result: error });
-        });
-});
-
 router.post('/', verifyToken, canVote, async (req, res, next) => {
     const email = req.user;
     const { form } = req.body;
