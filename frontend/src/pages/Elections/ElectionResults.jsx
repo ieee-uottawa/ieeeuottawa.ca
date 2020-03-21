@@ -1,26 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { isServerSideRendering } from '../../utils/util';
-import { mapDispatchToProps } from '../../helpers/actions';
 import { translate } from '../../helpers/translation';
 import { Title } from '../../helpers/components';
 import { Typography, Card, CardContent } from '../../helpers/material-ui';
-import { electionResults } from '../../helpers/elections';
+import { electionResults as electionResultsData } from '../../helpers/elections';
 
 class ElectionResults extends Component {
     constructor(props) {
         super(props);
-        this.state = { electionResults };
+        this.state = { electionResults: electionResultsData };
     }
-
-    // componentDidMount() {
-    //     const { actions } = this.props;
-    //     actions.getElectionResults().then(() => {
-    //         const { electionResults } = this.props;
-    //         this.setState({ electionResults });
-    //     });
-    // }
 
     renderHeading() {
         const url = '/execs-2020-2021';
@@ -104,7 +92,6 @@ class ElectionResults extends Component {
 
     render() {
         const { electionResults } = this.state;
-        console.log(electionResults);
         if (!electionResults) return <></>;
         return (
             <div>
@@ -121,25 +108,4 @@ class ElectionResults extends Component {
     }
 }
 
-ElectionResults.defaultProps = {
-    actions: null,
-    electionResults: null
-};
-
-ElectionResults.propTypes = {
-    actions: PropTypes.any,
-    electionResults: PropTypes.any
-};
-
-const mapStateToProps = ({ actionReducer }) => {
-    return {
-        electionResults: actionReducer.electionResults
-    };
-};
-
-export default (isServerSideRendering()
-    ? ElectionResults
-    : connect(
-          mapStateToProps,
-          mapDispatchToProps
-      )(ElectionResults));
+export default ElectionResults;
