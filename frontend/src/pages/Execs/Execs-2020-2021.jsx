@@ -15,14 +15,14 @@ const Execs_2020_2021 = () => (
                         email
                         image {
                             childImageSharp {
-                                fixed(width: 166, height: 166) {
+                                fixed(width: 200, height: 200) {
                                     ...GatsbyImageSharpFixed_withWebp
                                 }
                             }
                         }
                     }
                 }
-                allComs20192020Json {
+                allComs20202021Json {
                     edges {
                         node {
                             name
@@ -30,7 +30,7 @@ const Execs_2020_2021 = () => (
                             email
                             image {
                                 childImageSharp {
-                                    fixed(width: 166, height: 166) {
+                                    fixed(width: 200, height: 200) {
                                         ...GatsbyImageSharpFixed_withWebp
                                     }
                                 }
@@ -41,15 +41,15 @@ const Execs_2020_2021 = () => (
             }
         `}
         render={({
-            allExecs20202021Json: { nodes }
-            // allComs20192020Json: { edges }
+            allExecs20202021Json: { nodes },
+            allComs20202021Json: { edges }
         }) => {
             return (
                 <div>
                     <Title variant="h5" gutterBottom className="title">
                         {translate('About Us')}
                     </Title>
-                    <div style={{ margin: '0 5% 0' }}>
+                    <div style={{ margin: '0 5% 2%' }}>
                         <Typography variant="body1" className="p-margins">
                             {translate(
                                 'The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS.'
@@ -60,11 +60,6 @@ const Execs_2020_2021 = () => (
                                 'The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment.'
                             )}
                         </Typography>
-                        <Typography variant="body1" className="p-margins">
-                            {translate(
-                                '*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.'
-                            )}
-                        </Typography>
                     </div>
 
                     <Typography
@@ -72,7 +67,7 @@ const Execs_2020_2021 = () => (
                         gutterBottom
                         className="center-horizontal"
                     >
-                        {translate('Our Execs')} 2020/2021
+                        {translate('Our Execs')} (2020/2021)
                     </Typography>
                     <GridList cols={5} style={{ margin: '0 5% 0' }}>
                         {nodes.map(({ name, position, image, email }) => (
@@ -85,8 +80,7 @@ const Execs_2020_2021 = () => (
                             />
                         ))}
                     </GridList>
-                    {/* TODO after AGM */}
-                    {/* <Typography
+                    <Typography
                         variant="h6"
                         gutterBottom
                         className="center-horizontal"
@@ -105,7 +99,16 @@ const Execs_2020_2021 = () => (
                                 />
                             )
                         )}
-                    </GridList> */}
+                    </GridList>
+                    <div style={{ margin: '5% 5% 5%', textAlign: 'center' }}>
+                        <Typography variant="body1" className="p-margins">
+                            <i>
+                                {translate(
+                                    '*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.'
+                                )}
+                            </i>
+                        </Typography>
+                    </div>
                 </div>
             );
         }}

@@ -16,7 +16,7 @@ const Execs_2018_2019 = () => (
                             email
                             image {
                                 childImageSharp {
-                                    fixed(width: 166, height: 166) {
+                                    fixed(width: 200, height: 200) {
                                         ...GatsbyImageSharpFixed_withWebp
                                     }
                                 }
@@ -32,7 +32,7 @@ const Execs_2018_2019 = () => (
                     <Title variant="h5" gutterBottom className="title">
                         {translate('About Us')}
                     </Title>
-                    <div style={{ margin: '0 5% 0' }}>
+                    <div style={{ margin: '0 5% 2%' }}>
                         <Typography variant="body1" className="p-margins">
                             {translate(
                                 'The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS.'
@@ -41,11 +41,6 @@ const Execs_2018_2019 = () => (
                         <Typography variant="body1" className="p-margins">
                             {translate(
                                 'The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment.'
-                            )}
-                        </Typography>
-                        <Typography variant="body1" className="p-margins">
-                            {translate(
-                                '*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.'
                             )}
                         </Typography>
                     </div>
@@ -70,6 +65,15 @@ const Execs_2018_2019 = () => (
                             )
                         )}
                     </GridList>
+                    <div style={{ margin: '5% 5% 5%', textAlign: 'center' }}>
+                        <Typography variant="body1" className="p-margins">
+                            <i>
+                                {translate(
+                                    '*Disclaimer: The opinions and content carried by this page are those of its owners or operators, not of IEEE.'
+                                )}
+                            </i>
+                        </Typography>
+                    </div>
                 </div>
             );
         }}

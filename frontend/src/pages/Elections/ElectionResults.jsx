@@ -1,38 +1,43 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Typography, Card, CardContent } from '@material-ui/core';
 import { isServerSideRendering } from '../../utils/util';
 import { mapDispatchToProps } from '../../helpers/actions';
-// import platforms from '../../data/election-platforms-2020-2021.json';
-
+import { translate } from '../../helpers/translation';
 import { Title } from '../../helpers/components';
+import { Typography, Card, CardContent } from '../../helpers/material-ui';
+import { electionResults } from '../../helpers/elections';
 
 class ElectionResults extends Component {
     constructor(props) {
         super(props);
-        this.state = { electionResults: null };
+        this.state = { electionResults };
     }
 
-    componentDidMount() {
-        const { actions } = this.props;
-        actions.getElectionResults().then(() => {
-            const { electionResults } = this.props;
-            this.setState({ electionResults });
-        });
-    }
+    // componentDidMount() {
+    //     const { actions } = this.props;
+    //     actions.getElectionResults().then(() => {
+    //         const { electionResults } = this.props;
+    //         this.setState({ electionResults });
+    //     });
+    // }
 
     renderHeading() {
+        const url = '/execs-2020-2021';
         return (
             <Typography
                 variant="body1"
                 className="p-margins"
                 style={{ textAlign: 'center' }}
             >
-                Congratulations to elected Candidates and a huge thank you to
-                all of you who came out voted – we had the highest recorded
-                voter turnout this year!
-                <br /> <br />
+                {translate(
+                    'Congratulations to elected candidates and a huge thank you to all of you who came out voted!'
+                )}
+                <a href={url}>
+                    <Typography color="secondary">
+                        Click here to view our new execs and vacant positions!
+                    </Typography>
+                </a>
             </Typography>
         );
     }
@@ -41,14 +46,10 @@ class ElectionResults extends Component {
         return (
             <Typography variant="body1" className="p-margins">
                 <i>
-                    For the individuals who did not get elected, there are still
-                    many ways to stay involved with the IEEE, both locally and
-                    on an international scope! Everyone is welcome to attend our
-                    Annual General Meeting (open to all students), where we will
-                    be holding by-elections for vacant executive positions, and
-                    discussing other important topics –
+                    {translate(
+                        'For the individuals who did not get elected, there are still many ways to stay involved with the IEEE, both locally and on an international scope! Everyone is welcome to attend our Annual General Meeting (open to all students), where we will be holding by-elections for vacant executive positions, and discussing other important topics'
+                    )}
                 </i>
-                {/* <a href="https://tinyurl.com/IEEEUOAGM2018"> see details </a> */}
                 <br />
             </Typography>
         );
@@ -70,7 +71,7 @@ class ElectionResults extends Component {
                                         gutterBottom
                                         className="title"
                                     >
-                                        {position}
+                                        {translate(position)}
                                     </Title>
                                     <div style={{ textAlign: 'center' }}>
                                         {candidates.map(candidate => {
@@ -103,13 +104,14 @@ class ElectionResults extends Component {
 
     render() {
         const { electionResults } = this.state;
-        if (!electionResults) return <>Loading...</>;
+        console.log(electionResults);
+        if (!electionResults) return <></>;
         return (
             <div>
                 <Title variant="h5" gutterBottom className="title">
-                    Election Results
+                    {translate('Election Results')}
                 </Title>
-                <div style={{ padding: '20px' }}>
+                <div style={{ padding: '15px' }}>
                     {this.renderHeading()}
                     {this.renderCandidates(electionResults)}
                     <div style={{ marginTop: '30px' }}>{this.renderAGM()}</div>

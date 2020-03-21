@@ -1,7 +1,8 @@
 const loader = require('path');
 
-const march21st12pmEST = 1584806400;
-const currentTime = new Date().getTime() / 1000;
+// const march21st12pmEST = 1584806400;
+// const currentTime = new Date().getTime() / 1000;
+// const hide = currentTime > march21st12pmEST;
 
 const routes = [
     {
@@ -13,8 +14,7 @@ const routes = [
         items: [
             {
                 title: 'Execs 2020-2021',
-                link: '/Execs/Execs-2020-2021',
-                hidden: currentTime < march21st12pmEST
+                link: '/Execs/Execs-2020-2021'
             },
             {
                 title: 'Execs 2019-2020',
@@ -38,18 +38,17 @@ const routes = [
                 link: '/Elections/Elections',
                 exact: '/elections'
             },
-            {
-                title: 'Vote',
-                link: '/Elections/VoteMain'
-            },
+            // {
+            //     title: 'Vote',
+            //     link: '/Elections/VoteMain'
+            // },
             {
                 title: 'Election Platforms',
                 link: '/Elections/ElectionPlatforms'
             },
             {
                 title: 'Election Results',
-                link: '/Elections/ElectionResults',
-                hidden: currentTime < march21st12pmEST
+                link: '/Elections/ElectionResults'
             }
         ]
     },
