@@ -17,6 +17,10 @@ const menuItems = {
         EN: 'Election Platforms',
         FR: 'Plateformes'
     },
+    'Election Results': {
+        EN: 'Election Results',
+        FR: 'Résultats des élections'
+    },
     Events: {
         EN: 'Events',
         FR: 'Évènements'
@@ -88,11 +92,27 @@ const roles = {
     'ELG Commissioner': { EN: 'ELG Commissioner', FR: 'Commissaire ELG' }
 };
 
+const elections = {
+    'Congratulations to elected candidates and a huge thank you to all of you who came out voted!': {
+        EN:
+            'Congratulations to elected candidates and a huge thank you to all of you who came out voted!',
+        FR:
+            'Félicitations aux candidats élus et un immense merci à tous ceux qui sont venus voter!'
+    },
+    'For the individuals who did not get elected, there are still many ways to stay involved with the IEEE, both locally and on an international scope! Everyone is welcome to attend our Annual General Meeting (open to all students), where we will be holding by-elections for vacant executive positions, and discussing other important topics': {
+        EN:
+            'For the individuals who did not get elected, there are still many ways to stay involved with the IEEE, both locally and on an international scope! Everyone is welcome to attend our Annual General Meeting (open to all students), where we will be holding by-elections for vacant executive positions, and discussing other important topics',
+        FR:
+            "Pour les personnes qui n'ont pas été élues, il existe encore de nombreuses façons de rester impliqué avec l'IEEE, à la fois localement et à l'international! Tout le monde est le bienvenu à notre assemblée générale annuelle (ouverte à tous les étudiants), où nous tiendrons des élections partielles pour les postes de direction vacants et discuterons d'autres sujets importants"
+    }
+};
+
 const languages = {
     ...menuItems,
     ...gallery,
     ...execs,
     ...roles,
+    ...elections,
     'to be redirected there now.': {
         EN: 'to be redirected there now.',
         FR: 'pour y être redirigé maintenant.'

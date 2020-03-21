@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Michal Ridner",
+        "position": "Chair",
+        "image": "../../static/images/execs-2020-2021/chair.jpg",
+        "email": "chair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Madison Smrtka",
+        "position": "Vice Chair",
+        "image": "../../static/images/execs-2020-2021/vice-chair.jpg",
+        "email": "vicechair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Sanat Nayar",
+        "position": "Treasurer",
+        "image": "../../static/images/execs-2020-2021/treasurer.jpg",
+        "email": "treasurer@ieeeuottawa.ca"
+    },
+    {
+        "name": "Mohit Kapur",
+        "position": "VP Social",
+        "image": "../../static/images/execs-2020-2021/social.jpg",
+        "email": "social@ieeeuottawa.ca"
+    },
+    {
+        "name": "Alois Clerc",
+        "position": "VP Internal",
+        "image": "../../static/images/execs-2020-2021/internal.jpg",
+        "email": "internal@ieeeuottawa.ca"
+    },
+    {
+        "name": "Nicholas Morin",
+        "position": "VP Communications",
+        "image": "../../static/images/execs-2020-2021/communications.jpg",
+        "email": "communications@ieeeuottawa.ca"
+    },
+    {
+        "name": "Vladislav Jidkov",
+        "position": "VP Academic",
+        "image": "../../static/images/execs-2020-2021/academic.jpg",
+        "email": "academic@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "VP External",
+        "image": "../../static/images/execs-2020-2021/external.jpg",
+        "email": "external@ieeeuottawa.ca"
+    },
+    {
+        "name": "Ryan Fleck",
+        "position": "VP Webmaster",
+        "image": "../../static/images/execs-2020-2021/webmaster.jpg",
+        "email": "webmaster@ieeeuottawa.ca"
+    },
+    {
+        "name": "Shriya Gundala",
+        "position": "WIE Chair",
+        "image": "../../static/images/execs-2020-2021/wie-chair.jpg",
+        "email": "wie-chair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Marla Jazzar",
+        "position": "WIE Vice Chair",
+        "image": "../../static/images/execs-2020-2021/wie-vice-chair.jpg",
+        "email": "wie-vicechair@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "Secretary",
+        "image": "../../static/images/execs-2020-2021/secretary.jpg",
+        "email": "secretary@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "McNaughton Centre Director",
+        "image": "../../static/images/execs-2020-2021/mcnaughton-director.jpg",
+        "email": "mcnaughton@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "Photonics Chair ",
+        "image": "../../static/images/execs-2020-2021/mcnaughton-director.jpg",
+        "email": "(Grad Students Only)"
+    },
+    {
+        "name": "VACANT",
+        "position": "Photonics Vice-Chair ",
+        "image": "../../static/images/execs-2020-2021/mcnaughton-director.jpg",
+        "email": "(Grad Students Only)"
+    }
+]

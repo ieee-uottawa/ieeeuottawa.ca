@@ -1,5 +1,7 @@
 import {
     Button,
+    Card,
+    CardContent,
     CircularProgress,
     FormControl,
     Grid,
@@ -23,6 +25,8 @@ import { isWidthDown, isWidthUp } from '@material-ui/core/withWidth';
 
 export {
     Button,
+    Card,
+    CardContent,
     CircularProgress,
     FormControl,
     Grid,

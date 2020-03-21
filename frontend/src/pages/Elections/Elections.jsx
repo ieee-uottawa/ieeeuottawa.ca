@@ -35,9 +35,9 @@ const ElectionsEN = () => {
                     March 11th 12:00pm: Nomination period ends <br />
                     March 11th 5:30pm or 8:30pm: Mandatory candidates meeting
                     <br />
+                    March 16th 12:00am - March 19th 11:59pm: Campaigning period
+                    <br />
                 </s>
-                March 16th 12:00am - March 19th 11:59pm: Campaigning period
-                <br />
                 March 20th 12:00am - March 21st 12:00pm: Election Period! <br />
             </div>
             <br />
@@ -109,9 +109,9 @@ const ElectionsFR = () => {
                     11 Mars, 17 h 30 ou 20 h 30 : Réunion obligatoire des
                     candidats
                     <br />
+                    12 Mars, 0 h - 19 Mars, 23 h 59: Période de campagne
+                    <br />
                 </s>
-                12 Mars, 0 h - 19 Mars, 23 h 59: Période de campagne
-                <br />
                 20 Mars, 0 h - 21 Mars, 12 h: Période d’élection
                 <br />
             </div>

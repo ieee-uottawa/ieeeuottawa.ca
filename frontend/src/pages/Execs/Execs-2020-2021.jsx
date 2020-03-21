@@ -4,11 +4,25 @@ import { graphql, StaticQuery } from 'gatsby';
 import { ExecCard, Title } from '../../helpers/components';
 import { translate } from '../../helpers/translation';
 
-const Execs_2018_2019 = () => (
+const Execs_2020_2021 = () => (
     <StaticQuery
         query={graphql`
             query {
-                allExecs20182019Json {
+                allExecs20202021Json {
+                    nodes {
+                        name
+                        position
+                        email
+                        image {
+                            childImageSharp {
+                                fixed(width: 200, height: 200) {
+                                    ...GatsbyImageSharpFixed_withWebp
+                                }
+                            }
+                        }
+                    }
+                }
+                allComs20202021Json {
                     edges {
                         node {
                             name
@@ -26,7 +40,10 @@ const Execs_2018_2019 = () => (
                 }
             }
         `}
-        render={({ allExecs20182019Json: { edges } }) => {
+        render={({
+            allExecs20202021Json: { nodes },
+            allComs20202021Json: { edges }
+        }) => {
             return (
                 <div>
                     <Title variant="h5" gutterBottom className="title">
@@ -50,7 +67,25 @@ const Execs_2018_2019 = () => (
                         gutterBottom
                         className="center-horizontal"
                     >
-                        {translate('Our Execs')} 2018/2019
+                        {translate('Our Execs')} (2020/2021)
+                    </Typography>
+                    <GridList cols={5} style={{ margin: '0 5% 0' }}>
+                        {nodes.map(({ name, position, image, email }) => (
+                            <ExecCard
+                                name={name}
+                                email={email}
+                                key={email}
+                                position={translate(position)}
+                                image={image}
+                            />
+                        ))}
+                    </GridList>
+                    <Typography
+                        variant="h6"
+                        gutterBottom
+                        className="center-horizontal"
+                    >
+                        {translate('Our Commissioners')}
                     </Typography>
                     <GridList cols={5} style={{ margin: '0 5% 0' }}>
                         {edges.map(
@@ -80,4 +115,4 @@ const Execs_2018_2019 = () => (
     />
 );
 
-export default Execs_2018_2019;
+export default Execs_2020_2021;
