@@ -35,8 +35,9 @@ sh run.sh
 ```
 
 ## Contributors
-1. Rushil Perera (Webmaster 2018-2019)
-2. Nevin WS Ganesan (Webmaster 2019-2020)
+1. Rushil Perera (Webmaster 2018/2019)
+2. Nevin WS Ganesan (Webmaster 2019/2020)
+3. Ryan Fleck (Webmaster 2020/2021)
 
 ## Built with Gatsby
 
