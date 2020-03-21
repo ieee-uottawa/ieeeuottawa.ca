@@ -39,6 +39,11 @@ sh run.sh
 2. Nevin WS Ganesan (Webmaster 2019/2020)
 3. Ryan Fleck (Webmaster 2020/2021)
 
+### Past Webmasters
+1. Tamer Sherif (Webmaster 2017/2018)
+2. Rushil Perera (Webmaster 2018/2019)
+3. Nevin WS Ganesan (Webmaster 2019/2020)
+
 ## Built with Gatsby
 
 For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
