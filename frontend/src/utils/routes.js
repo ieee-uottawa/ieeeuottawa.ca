@@ -1,9 +1,5 @@
 const loader = require('path');
 
-// const march21st12pmEST = 1584806400;
-// const currentTime = new Date().getTime() / 1000;
-// const hide = currentTime > march21st12pmEST;
-
 const routes = [
     {
         title: 'Home',
@@ -38,10 +34,6 @@ const routes = [
                 link: '/Elections/Elections',
                 exact: '/elections'
             },
-            // {
-            //     title: 'Vote',
-            //     link: '/Elections/VoteMain'
-            // },
             {
                 title: 'Election Platforms',
                 link: '/Elections/ElectionPlatforms'

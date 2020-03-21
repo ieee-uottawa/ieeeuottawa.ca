@@ -19,23 +19,6 @@ export function getUsers() {
     };
 }
 
-export function getElectionResults() {
-    return dispatch => {
-        return axios
-            .get(`${BACKEND_URL}/vote/results`)
-            .then(response => {
-                dispatch({
-                    type: 'getElectionResultsSuccess',
-                    payload: response.data.result
-                });
-            })
-            .catch(error => {
-                dispatch({ type: 'getElectionResultsFailed', payload: error });
-                throw error;
-            });
-    };
-}
-
 export function getVotes() {
     return dispatch => {
         return axios
