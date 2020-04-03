@@ -1,13 +1,28 @@
+<table align="center"><tr><td align="center" width="9999">
+<img width="200" align="center" alt="logo" src="frontend/static/images/ieee_logo_circle.png">
+
 # IEEE uOttawa Student Branch Website
-<!-- p align="center" style="font-size: 800px;">
-  <b> IEEE uOttawa Student Branch Website </b>
-</p -->
+
+</td></tr></table>
+
 
 <p align="center">
-  <img width="200" alt="portfolio_view" src="frontend/static/images/ieee_logo_circle.png">
+  <img width="800" alt="portfolio_view" src="assets/IEEE-uOttawa-Architecture.png">
 </p>
 
-## Install
+
+## Contributors
+1. Rushil Perera (Webmaster 2018/2019)
+2. Nevin WS Ganesan (Webmaster 2019/2020)
+3. Ryan Fleck (Webmaster 2020/2021)
+
+### Past Webmasters
+1. Tamer Sherif (Webmaster 2017/2018)
+2. Rushil Perera (Webmaster 2018/2019)
+3. Nevin WS Ganesan (Webmaster 2019/2020)
+
+
+## Installation
 
 1. Make sure that you have the Gatsby CLI program installed:
 ```sh
@@ -33,17 +48,3 @@ cd backend && yarn install && yarn start
 ```sh
 sh run.sh
 ```
-
-## Contributors
-1. Rushil Perera (Webmaster 2018/2019)
-2. Nevin WS Ganesan (Webmaster 2019/2020)
-3. Ryan Fleck (Webmaster 2020/2021)
-
-### Past Webmasters
-1. Tamer Sherif (Webmaster 2017/2018)
-2. Rushil Perera (Webmaster 2018/2019)
-3. Nevin WS Ganesan (Webmaster 2019/2020)
-
-## Built with Gatsby
-
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
