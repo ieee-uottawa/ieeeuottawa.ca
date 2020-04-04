@@ -19,7 +19,7 @@ import favicon from '../../static/images/ieee_logo_circle.png';
 // import cart from '../redux/reducers/cart_reducers';
 // const store = createStore(cart);
 
-import store from '../utils/store';
+import store from '../redux/store';
 
 if (!isDevEnvironment) {
     init({

@@ -3,7 +3,7 @@ import {
     ClearCart,
     RemoveFromCart,
     UpdateInCart
-} from '../actions/types/cart_action_types';
+} from '../types/cart_action_types';
 
 // TODO: If state grows to more than items, apply reducer composition pattern
 
@@ -97,16 +97,19 @@ function cart(state = initialState, action) {
 
     if (type === AddToCart) {
         return updateOrAdd(state, action);
-    } else if (type === UpdateInCart) {
+    }
+    if (type === UpdateInCart) {
         const index = state.items.findIndex(
             ({ id: productID }) => id === productID
         );
 
         if (index === -1) return state;
         return updateOrAdd(state, action);
-    } else if (type === RemoveFromCart) {
+    }
+    if (type === RemoveFromCart) {
         return remove(state, action);
-    } else if (type === ClearCart) {
+    }
+    if (type === ClearCart) {
         return Object.assign({}, state, { items: [] });
     }
 

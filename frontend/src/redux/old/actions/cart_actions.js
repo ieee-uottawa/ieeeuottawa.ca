@@ -3,7 +3,7 @@ import {
     ClearCart,
     RemoveFromCart,
     UpdateInCart
-} from './types/cart_action_types';
+} from '../types/cart_action_types';
 
 function addItemToCart(id, name, imageURL, price, quantity, options) {
     return {
