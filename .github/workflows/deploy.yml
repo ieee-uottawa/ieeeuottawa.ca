@@ -1,0 +1,27 @@
+name: Deploy 
+
+# Run on a push or pull request to master.
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2 
+    - uses: actions/setup-node@v1
+
+    - name: Build Frontend
+      run: |
+        cd frontend
+        yarn install
+        yarn build
+
+    - name: Install Firebase Tools 
+      run: yarn install firebase-tools
+
+#   - name: Deploy to Firebase 
+#     run: firebase deploy 

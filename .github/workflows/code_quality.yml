@@ -1,0 +1,24 @@
+name: Deploy 
+
+# Run on a push or pull request to master.
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2 
+    - uses: actions/setup-node@v1
+
+    - name: Test Frontend 
+      run: |
+        cd frontend
+        yarn install 
+        yarn test 
+    
+    - name: Test Backend 
+      run: |
+        cd backend 
+        yarn install 
+        yarn test 
