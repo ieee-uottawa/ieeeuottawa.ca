@@ -81,7 +81,8 @@
         "prettier": "1.14.3"
     },
     "resolutions": {
-        "material-ui/react-popper/popper.js": "1.14.1"
+        "material-ui/react-popper/popper.js": "1.14.1",
+        "babel-plugin-remove-graphql-queries": "2.9.17"
     },
     "repository": {
         "type": "git",
