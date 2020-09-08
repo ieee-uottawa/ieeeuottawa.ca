@@ -8,7 +8,7 @@ class OfficeHours extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            screenWidth: 713
+            screenWidth: 713,
         };
         this.updateDimensions = this.updateDimensions.bind(this);
     }
@@ -37,18 +37,18 @@ class OfficeHours extends Component {
             maxWidth: width > 712 ? '100%' : 'calc(100% - 32px)',
             margin: width > 712 ? '0 auto 16px' : '0 16px 16px',
             height: '70%',
-            width: '70%'
+            width: '70%',
         };
 
         return (
             <>
-                <Title variant="h5" gutterBottom className="title">
+                <Title variant='h5' gutterBottom className='title'>
                     {translate('Office Hours')}
                 </Title>
                 <div style={{ textAlign: 'center' }}>
                     <img
                         src={officeHoursImg}
-                        alt="IEEE Office Hours"
+                        alt='IEEE Office Hours'
                         style={imgStyle}
                     />
                 </div>

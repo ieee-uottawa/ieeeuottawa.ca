@@ -14,15 +14,15 @@ class ElectionResults extends Component {
         const url = '/execs-2020-2021';
         return (
             <Typography
-                variant="body1"
-                className="p-margins"
+                variant='body1'
+                className='p-margins'
                 style={{ textAlign: 'center' }}
             >
                 {translate(
                     'Congratulations to elected candidates and a huge thank you to all of you who came out voted!'
                 )}
                 <a href={url}>
-                    <Typography color="secondary">
+                    <Typography color='secondary'>
                         Click here to view our new execs and vacant positions!
                     </Typography>
                 </a>
@@ -32,7 +32,7 @@ class ElectionResults extends Component {
 
     renderAGM() {
         return (
-            <Typography variant="body1" className="p-margins">
+            <Typography variant='body1' className='p-margins'>
                 <i>
                     {translate(
                         'For the individuals who did not get elected, there are still many ways to stay involved with the IEEE, both locally and on an international scope! Everyone is welcome to attend our Annual General Meeting (open to all students), where we will be holding by-elections for vacant executive positions, and discussing other important topics'
@@ -47,7 +47,7 @@ class ElectionResults extends Component {
         const positions = Object.keys(electionResults);
         return (
             <>
-                {positions.map(position => {
+                {positions.map((position) => {
                     const candidatesKeys = electionResults[position];
                     const candidates = Object.keys(candidatesKeys);
                     return (
@@ -55,19 +55,19 @@ class ElectionResults extends Component {
                             <Card style={{ margin: '8px' }}>
                                 <CardContent>
                                     <Title
-                                        variant="h5"
+                                        variant='h5'
                                         gutterBottom
-                                        className="title"
+                                        className='title'
                                     >
                                         {translate(position)}
                                     </Title>
                                     <div style={{ textAlign: 'center' }}>
-                                        {candidates.map(candidate => {
+                                        {candidates.map((candidate) => {
                                             return (
                                                 <div key={candidate}>
                                                     <Typography
-                                                        variant="body1"
-                                                        className="p-margins"
+                                                        variant='body1'
+                                                        className='p-margins'
                                                     >
                                                         {candidate} (
                                                         {
@@ -95,7 +95,7 @@ class ElectionResults extends Component {
         if (!electionResults) return <></>;
         return (
             <div>
-                <Title variant="h5" gutterBottom className="title">
+                <Title variant='h5' gutterBottom className='title'>
                     {translate('Election Results')}
                 </Title>
                 <div style={{ padding: '15px' }}>

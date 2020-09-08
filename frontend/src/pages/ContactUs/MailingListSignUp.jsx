@@ -3,8 +3,8 @@ import ExternalRedirect from '../../components/Routers/ExternalRedirect';
 
 const MailingListSignUp = () => (
     <ExternalRedirect
-        url="http://eepurl.com/dKDAJE"
-        urlDescription="Mailing List Signup Form"
+        url='http://eepurl.com/dKDAJE'
+        urlDescription='Mailing List Signup Form'
     />
 );
 

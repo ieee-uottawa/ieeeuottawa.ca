@@ -18,7 +18,7 @@ import {
     TableRow,
     Typography,
     withStyles,
-    withWidth
+    withWidth,
 } from '@material-ui/core';
 
 import { isWidthDown, isWidthUp } from '@material-ui/core/withWidth';
@@ -45,5 +45,5 @@ export {
     isWidthDown,
     isWidthUp,
     withStyles,
-    withWidth
+    withWidth,
 };

@@ -9,7 +9,7 @@ class ForcedExternalRedirect extends Component {
         super(props);
         this.state = {
             seconds: props.seconds,
-            intervalID: null
+            intervalID: null,
         };
     }
 
@@ -38,8 +38,8 @@ class ForcedExternalRedirect extends Component {
         const { url, urlDescription, forceExternal } = this.props;
         const description = urlDescription || url;
         return (
-            <div className="p-margins center-horizontal center-vertical">
-                <Typography variant="h4" gutterBottom>
+            <div className='p-margins center-horizontal center-vertical'>
+                <Typography variant='h4' gutterBottom>
                     <Link
                         to={url}
                         href={url}
@@ -50,7 +50,7 @@ class ForcedExternalRedirect extends Component {
                             event({
                                 category: 'Waiting',
                                 action: 'Clicked link early',
-                                label: description
+                                label: description,
                             })
                         }
                     />
@@ -63,14 +63,14 @@ class ForcedExternalRedirect extends Component {
 ForcedExternalRedirect.defaultProps = {
     forceExternal: false,
     urlDescription: null,
-    seconds: 5
+    seconds: 5,
 };
 
 ForcedExternalRedirect.propTypes = {
     forceExternal: PropTypes.bool,
     url: PropTypes.string.isRequired,
     urlDescription: PropTypes.string,
-    seconds: PropTypes.number
+    seconds: PropTypes.number,
 };
 
 export default ForcedExternalRedirect;

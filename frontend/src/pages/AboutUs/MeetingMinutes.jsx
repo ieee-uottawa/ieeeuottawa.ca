@@ -4,7 +4,7 @@ import {
     Table,
     TableBody,
     TableCell,
-    TableRow
+    TableRow,
 } from '../../helpers/material-ui';
 import { Title } from '../../helpers/components';
 import { pdfs, pdfMap } from '../../helpers/meeting-minutes';
@@ -12,8 +12,8 @@ import { translate } from '../../helpers/translation';
 
 const MeetingMinutes = () => {
     return (
-        <div className="center-horizontal" style={{ padding: '20px' }}>
-            <Title variant="h5" gutterBottom className="title">
+        <div className='center-horizontal' style={{ padding: '20px' }}>
+            <Title variant='h5' gutterBottom className='title'>
                 {translate('Meeting Minutes')}
             </Title>
             <Paper
@@ -21,14 +21,14 @@ const MeetingMinutes = () => {
                     padding: '10px',
                     width: '40%',
                     marginLeft: '30%',
-                    marginRight: '30%'
+                    marginRight: '30%',
                 }}
             >
-                <Table aria-label="simple table">
+                <Table aria-label='simple table'>
                     <TableBody>
-                        {pdfs.map(item => (
+                        {pdfs.map((item) => (
                             <TableRow key={item}>
-                                <TableCell component="th" scope="row">
+                                <TableCell component='th' scope='row'>
                                     <a
                                         href={pdfMap[item]}
                                         style={{ color: '#3498db' }}

@@ -18,7 +18,7 @@ class Shop extends Component {
         this.messageQueue = [];
         this.state = {
             showSnackbar: false,
-            messageInfo: {}
+            messageInfo: {},
         };
 
         this.onAddToCart = this.onAddToCart.bind(this);
@@ -31,13 +31,13 @@ class Shop extends Component {
         this.messageQueue.push({
             message: `Added ${quantity} x ${name} (${Object.keys(options)
                 .filter(
-                    option =>
+                    (option) =>
                         price.length > 1 ||
                         (price.length === 1 && option !== 'quantity')
                 )
-                .map(key2 => `${capitalize(key2)}: ${options[key2]}`)
+                .map((key2) => `${capitalize(key2)}: ${options[key2]}`)
                 .join(', ')})`.replace(' ()', ''),
-            key
+            key,
         });
         const { showSnackbar } = this.state;
         if (showSnackbar) {
@@ -51,7 +51,7 @@ class Shop extends Component {
         if (this.messageQueue.length > 0) {
             this.setState({
                 messageInfo: this.messageQueue.shift(),
-                showSnackbar: true
+                showSnackbar: true,
             });
         }
     }
@@ -99,10 +99,10 @@ class Shop extends Component {
                     <div
                         style={{
                             marginLeft: '16px',
-                            marginRight: '16px'
+                            marginRight: '16px',
                         }}
                     >
-                        <Title variant="h5" gutterBottom className="title">
+                        <Title variant='h5' gutterBottom className='title'>
                             Shop
                         </Title>
                         <GridList style={{ justifyContent: 'space-evenly' }}>
@@ -122,8 +122,8 @@ class Shop extends Component {
                                             price,
                                             expiry,
                                             image,
-                                            options
-                                        }
+                                            options,
+                                        },
                                     }) => (
                                         <GridListTile
                                             style={{
@@ -131,7 +131,7 @@ class Shop extends Component {
                                                 height: 'inherit',
                                                 padding: 'inherit',
                                                 flexDirection: 'column',
-                                                alignSelf: 'center'
+                                                alignSelf: 'center',
                                             }}
                                         >
                                             <ProductCard
@@ -151,17 +151,17 @@ class Shop extends Component {
                             key={messageInfo.key}
                             anchorOrigin={{
                                 vertical: 'bottom',
-                                horizontal: 'left'
+                                horizontal: 'left',
                             }}
                             open={showSnackbar}
                             autoHideDuration={2000}
                             onClose={this.handleSnackbarClose}
                             onExited={this.handleSnackbarExit}
                             ContentProps={{
-                                'aria-describedby': 'message-id'
+                                'aria-describedby': 'message-id',
                             }}
                             message={
-                                <span id="message-id">
+                                <span id='message-id'>
                                     {messageInfo.message}
                                 </span>
                             }
@@ -169,7 +169,7 @@ class Shop extends Component {
                                 // eslint-disable-next-line react/jsx-wrap-multilines
                                 <Button
                                     component={Link}
-                                    to="/cart"
+                                    to='/cart'
                                     style={{ color: 'white' }}
                                 >
                                     Go to cart

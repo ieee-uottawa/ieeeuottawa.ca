@@ -15,7 +15,7 @@ const getPageContext = require('./src/utils/getPageContext');
 function replaceRenderer({
     bodyComponent,
     replaceBodyHTMLString,
-    setHeadComponents
+    setHeadComponents,
 }) {
     // Get the context of the page to collected side effects.
     // Ternary to support Gatsby@1 and Gatsby@2 at the same time.
@@ -32,13 +32,13 @@ function replaceRenderer({
     replaceBodyHTMLString(bodyHTML);
     setHeadComponents([
         <style
-            type="text/css"
-            id="server-side-jss"
-            key="server-side-jss"
+            type='text/css'
+            id='server-side-jss'
+            key='server-side-jss'
             dangerouslySetInnerHTML={{
-                __html: muiPageContext.sheetsRegistry.toString()
+                __html: muiPageContext.sheetsRegistry.toString(),
             }}
-        />
+        />,
     ]);
 }
 

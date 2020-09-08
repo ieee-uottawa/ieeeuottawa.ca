@@ -21,7 +21,7 @@ import {
     FlaskIcon,
     LeadPencilIcon,
     LightBulbIcon,
-    MenuIcon
+    MenuIcon,
 } from '../components/Icons/icons';
 
 export {
@@ -47,5 +47,5 @@ export {
     Parallax,
     ServiceItem,
     Title,
-    Toggle
+    Toggle,
 };

@@ -6,7 +6,7 @@ const Constitution = () => (
     <ExternalRedirect
         forceExternal
         url={constitutionPDF}
-        urlDescription="our constitution"
+        urlDescription='our constitution'
     />
 );
 

@@ -6,7 +6,7 @@ httpClient.defaults.timeout = 600000;
 const BACKEND_URL = process.env.GATSBY_BACKEND_URL_PROD;
 
 export function getUsers() {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             const response = await axios.get(`${BACKEND_URL}/users`);
             dispatch({ type: 'getUsersSuccess', payload: response.data });
@@ -18,12 +18,12 @@ export function getUsers() {
 }
 
 export function getVotes() {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             const response = await axios.get(`${BACKEND_URL}/vote`);
             dispatch({
                 type: 'getVotesSuccess',
-                payload: response.data.result
+                payload: response.data.result,
             });
         } catch (error) {
             dispatch({ type: 'getVotesFailed', payload: error });
@@ -33,13 +33,13 @@ export function getVotes() {
 }
 
 export function login(googleToken) {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             const response = await axios.post(
                 `${BACKEND_URL}/users/login`,
                 undefined,
                 {
-                    headers: { Authorization: googleToken }
+                    headers: { Authorization: googleToken },
                 }
             );
             localStorage.setItem('token', response.data);
@@ -50,7 +50,7 @@ export function login(googleToken) {
                 if (status === 401) {
                     dispatch({
                         type: 'loginFailed',
-                        payload: { invalidLogin: true }
+                        payload: { invalidLogin: true },
                     });
                     return;
                 }
@@ -67,10 +67,10 @@ export function login(googleToken) {
 
 export function vote(form, email) {
     const data = { form, email };
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             const response = await axios.post(`${BACKEND_URL}/vote`, data, {
-                headers: { Authorization: localStorage.getItem('token') }
+                headers: { Authorization: localStorage.getItem('token') },
             });
             dispatch({ type: 'voteSuccess', payload: response });
         } catch (error) {
@@ -79,7 +79,7 @@ export function vote(form, email) {
                 if (status === 401) {
                     dispatch({
                         type: 'loginInvalid',
-                        payload: { sessionExpired: true }
+                        payload: { sessionExpired: true },
                     });
                     return;
                 }

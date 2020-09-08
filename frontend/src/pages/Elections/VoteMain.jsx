@@ -16,7 +16,7 @@ const VoteMain = () => {
                 <ForcedExternalRedirect
                     url={browserUrlAndroid}
                     seconds={2}
-                    urlDescription=""
+                    urlDescription=''
                 />
             )}
             {/* iOS */}
@@ -24,7 +24,7 @@ const VoteMain = () => {
                 <ForcedExternalRedirect
                     url={browserUrliOS}
                     seconds={3}
-                    urlDescription=""
+                    urlDescription=''
                 />
             )}
         </>

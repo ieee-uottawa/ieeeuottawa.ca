@@ -29,7 +29,7 @@ class Form extends Component {
     }
 
     handleChange(label) {
-        return function({ target: { value } }) {
+        return function ({ target: { value } }) {
             this.setState({ [label]: value });
         }.bind(this);
     }
@@ -43,7 +43,7 @@ class Form extends Component {
             const { [key]: value } = this.state;
             if (!value || value === '') {
                 this.setState({
-                    error: "You haven't entered some required information!"
+                    error: "You haven't entered some required information!",
                 });
                 return;
             }
@@ -55,7 +55,7 @@ class Form extends Component {
         const { inputs } = this.props;
         const { error } = this.state;
         return (
-            <Card id="form-card">
+            <Card id='form-card'>
                 <CardContent>
                     <List>
                         {inputs.map(
@@ -64,7 +64,7 @@ class Form extends Component {
                                 items,
                                 key: labelKey,
                                 isRequired,
-                                type = 'short'
+                                type = 'short',
                             }) => {
                                 const key =
                                     labelKey ||
@@ -74,9 +74,9 @@ class Form extends Component {
                                     case 'radio':
                                         return (
                                             <ListItem>
-                                                <FormControl component="fieldset">
+                                                <FormControl component='fieldset'>
                                                     <FormLabel
-                                                        component="legend"
+                                                        component='legend'
                                                         required={isRequired}
                                                     >
                                                         {label}
@@ -89,7 +89,7 @@ class Form extends Component {
                                                             key
                                                         )}
                                                     >
-                                                        {items.map(item => (
+                                                        {items.map((item) => (
                                                             <FormControlLabel
                                                                 value={item}
                                                                 key={item}
@@ -110,7 +110,7 @@ class Form extends Component {
                                             <ListItem
                                                 style={{
                                                     flexDirection: 'column',
-                                                    alignItems: 'flex-start'
+                                                    alignItems: 'flex-start',
                                                 }}
                                             >
                                                 <FormLabel
@@ -138,7 +138,7 @@ class Form extends Component {
                     <Button onClick={this.submitForm}>Submit</Button>
                     {error && (
                         <Typography
-                            variant="subtitle2"
+                            variant='subtitle2'
                             style={{ marginTop: '16px', color: 'red' }}
                         >
                             {error}
@@ -152,7 +152,7 @@ class Form extends Component {
 
 Form.propTypes = {
     inputs: PropTypes.array.isRequired,
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
 };
 
 export default Form;

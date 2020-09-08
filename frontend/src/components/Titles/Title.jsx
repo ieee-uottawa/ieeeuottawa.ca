@@ -6,7 +6,7 @@ const stylePropType = require('react-style-proptype');
 
 const Title = ({ children, classes, style }) => (
     <Typography
-        variant="h5"
+        variant='h5'
         gutterBottom
         className={`title ${classes.root}`}
         style={style}
@@ -15,24 +15,24 @@ const Title = ({ children, classes, style }) => (
     </Typography>
 );
 
-const styles = theme => ({
+const styles = (theme) => ({
     root: {
         '&:after': {
-            borderBottom: `2px solid ${theme.palette.text.primary}`
-        }
-    }
+            borderBottom: `2px solid ${theme.palette.text.primary}`,
+        },
+    },
 });
 
 Title.defaultProps = {
     children: null,
     classes: null,
-    style: null
+    style: null,
 };
 
 Title.propTypes = {
     children: PropTypes.string,
     classes: PropTypes.any,
-    style: stylePropType
+    style: stylePropType,
 };
 
 export default withStyles(styles)(Title);

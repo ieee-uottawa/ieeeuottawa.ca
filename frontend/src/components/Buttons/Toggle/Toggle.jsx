@@ -30,7 +30,7 @@ class Toggle extends PureComponent {
         this.previouslyChecked = !!(checked || defaultChecked);
         this.state = {
             checked: !!(checked || defaultChecked),
-            hasFocus: false
+            hasFocus: false,
         };
     }
 
@@ -159,27 +159,27 @@ class Toggle extends PureComponent {
                 onTouchEnd={this.handleTouchEnd}
                 onTouchCancel={this.handleTouchCancel}
             >
-                <div className="react-toggle-track">
-                    <div className="react-toggle-track-check">
+                <div className='react-toggle-track'>
+                    <div className='react-toggle-track-check'>
                         {this.getIcon('checked')}
                     </div>
-                    <div className="react-toggle-track-x">
+                    <div className='react-toggle-track-x'>
                         {this.getIcon('unchecked')}
                     </div>
                 </div>
-                <div className="react-toggle-thumb" />
+                <div className='react-toggle-thumb' />
 
                 <input
                     {...inputprops}
-                    ref={ref => {
+                    ref={(ref) => {
                         this.input = ref;
                     }}
                     onFocus={this.handleFocus}
                     onBlur={this.handleBlur}
                     readOnly
-                    className="react-toggle-screenreader-only"
-                    type="checkbox"
-                    aria-label="Switch between Dark and Light mode"
+                    className='react-toggle-screenreader-only'
+                    type='checkbox'
+                    aria-label='Switch between Dark and Light mode'
                 />
             </div>
         );
@@ -193,7 +193,7 @@ Toggle.defaultProps = {
     icons: null,
     inputprops: null,
     onBlur: null,
-    onFocus: null
+    onFocus: null,
 };
 
 Toggle.propTypes = {
@@ -203,7 +203,7 @@ Toggle.propTypes = {
     icons: PropTypes.object,
     inputprops: PropTypes.any,
     onBlur: PropTypes.func,
-    onFocus: PropTypes.func
+    onFocus: PropTypes.func,
 };
 
 export default Toggle;

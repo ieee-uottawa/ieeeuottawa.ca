@@ -5,7 +5,7 @@ import { Form, Title } from '../../helpers/components';
 import { isServerSideRendering } from '../../utils/util';
 
 const FormStyle = {
-    width: '200px'
+    width: '200px',
 };
 
 class Volunteers extends Component {
@@ -17,8 +17,8 @@ class Volunteers extends Component {
             showSnackbar: false,
             messageInfo: {
                 key: '',
-                message: ''
-            }
+                message: '',
+            },
         };
         this.onSubmit = this.onSubmit.bind(this);
         this.sendSnackbarMsg = this.sendSnackbarMsg.bind(this);
@@ -94,7 +94,7 @@ class Volunteers extends Component {
         if (this.messageQueue.length > 0) {
             this.setState({
                 messageInfo: this.messageQueue.shift(),
-                showSnackbar: true
+                showSnackbar: true,
             });
         }
     }
@@ -109,21 +109,21 @@ class Volunteers extends Component {
         const inputs = [
             {
                 label: 'Name',
-                isRequired: true
+                isRequired: true,
             },
             {
                 label: 'Program',
-                isRequired: true
+                isRequired: true,
             },
             {
                 label: 'Email',
-                isRequired: true
+                isRequired: true,
             },
             {
                 label: 'Year',
                 items: ['1', '2', '3', '4', '5+'],
                 type: 'radio',
-                isRequired: true
+                isRequired: true,
             },
             {
                 label: 'How would you like to get involved?',
@@ -133,20 +133,20 @@ class Volunteers extends Component {
                     'Women in Engineering Wine and Cheese',
                     'Raspberry Pi Jam',
                     'Social Events (WII Nights, Trivia Nights, EngiBEERing, etc.)',
-                    'Academic Events (WIE Tech Panel, Workshops, Cookies n Cram)'
+                    'Academic Events (WIE Tech Panel, Workshops, Cookies n Cram)',
                 ],
                 type: 'radio',
                 isRequired: true,
-                key: 'involvement'
-            }
+                key: 'involvement',
+            },
         ];
 
         return (
             <div>
                 <Title> Volunteer Sign-Up!</Title>
                 <Typography
-                    className="center-horizontal"
-                    variant="body1"
+                    className='center-horizontal'
+                    variant='body1'
                     style={{ marginTop: '16px' }}
                 >
                     <strong>
@@ -155,11 +155,11 @@ class Volunteers extends Component {
                     </strong>
                 </Typography>
                 <Typography
-                    className="center-horizontal"
-                    variant="body1"
+                    className='center-horizontal'
+                    variant='body1'
                     style={{
                         marginTop: '1x',
-                        marginBottom: '15px'
+                        marginBottom: '15px',
                     }}
                 >
                     <strong>
@@ -171,7 +171,7 @@ class Volunteers extends Component {
                     <Form
                         inputs={inputs}
                         style={FormStyle}
-                        onSubmit={values => this.onSubmit(values)}
+                        onSubmit={(values) => this.onSubmit(values)}
                     />
                 )}
                 {isLoading && <CircularProgress />}
@@ -179,14 +179,14 @@ class Volunteers extends Component {
                     key={messageInfo.key}
                     anchorOrigin={{
                         vertical: 'bottom',
-                        horizontal: 'left'
+                        horizontal: 'left',
                     }}
                     open={showSnackbar}
                     autoHideDuration={2000}
                     onClose={this.handleSnackbarClose}
                     onExited={this.handleSnackbarExit}
                     ContentProps={{ 'aria-describedby': 'message-id' }}
-                    message={<span id="message-id">{messageInfo.message}</span>}
+                    message={<span id='message-id'>{messageInfo.message}</span>}
                 />
             </div>
         );

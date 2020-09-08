@@ -3,8 +3,8 @@ import ExternalRedirect from '../../components/Routers/ExternalRedirect';
 
 const Photos = () => (
     <ExternalRedirect
-        url="http://www.instagram.com/ieeeuottawa"
-        urlDescription="our Instagram page"
+        url='http://www.instagram.com/ieeeuottawa'
+        urlDescription='our Instagram page'
     />
 );
 

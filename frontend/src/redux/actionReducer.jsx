@@ -3,7 +3,7 @@ const defaultState = {
     votes: 'votes',
     voted: null,
     sessionExpired: false,
-    electionResults: null
+    electionResults: null,
 };
 
 export default function actionReducer(state = defaultState, action) {

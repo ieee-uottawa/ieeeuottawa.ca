@@ -25,7 +25,7 @@ const pdfMap = {
     '6. IEEE Meeting  Agenda (Oct 2nd).pdf': pdf9,
     '7. IEEE Meeting Agenda (October 2nd).pdf': pdf10,
     '8. IEEE Meeting Agenda (October 21st).pdf': pdf11,
-    '9. IEEE Meeting Agenda (November 4th) .pdf': pdf12
+    '9. IEEE Meeting Agenda (November 4th) .pdf': pdf12,
 };
 
 const pdfs = Object.keys(pdfMap);

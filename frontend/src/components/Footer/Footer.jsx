@@ -5,23 +5,21 @@ import { Link } from '../../helpers/components';
 import { translate } from '../../helpers/translation';
 import './footer.scss';
 
-const query = graphql`
-    query {
-        allSocialMediaJson {
-            edges {
-                node {
-                    link
-                    title
-                }
-            }
-        }
-    }
-`;
-
 const Footer = () => {
     return (
         <StaticQuery
-            query={query}
+            query={graphql`
+                query {
+                    allSocialMediaJson {
+                        edges {
+                            node {
+                                link
+                                title
+                            }
+                        }
+                    }
+                }
+            `}
             render={({ allSocialMediaJson: { edges: socialMedia } }) => (
                 <footer
                     style={{
@@ -29,19 +27,19 @@ const Footer = () => {
                         overflow: 'auto',
                         backgroundColor: '#1f2021',
                         flexShrink: '0',
-                        height: '250px'
+                        height: '250px',
                     }}
                 >
                     <Grid
                         container
                         style={{
                             margin: '0 auto',
-                            maxWidth: '1100px'
+                            maxWidth: '1100px',
                         }}
                     >
                         <Grid xs={4} item>
-                            <section className="column">
-                                <Typography variant="h6">
+                            <section className='column'>
+                                <Typography variant='h6'>
                                     {translate('Call Us!')}
                                 </Typography>
                                 <Typography style={{ color: '#bdc3c7' }}>
@@ -50,8 +48,8 @@ const Footer = () => {
                             </section>
                         </Grid>
                         <Grid xs={4} item>
-                            <section className="column">
-                                <Typography variant="h6">
+                            <section className='column'>
+                                <Typography variant='h6'>
                                     {translate('Visit Our Office')}
                                 </Typography>
                                 <Typography style={{ color: '#bdc3c7' }}>
@@ -61,8 +59,8 @@ const Footer = () => {
                             </section>
                         </Grid>
                         <Grid xs={4} item>
-                            <section className="column">
-                                <Typography variant="h6">
+                            <section className='column'>
+                                <Typography variant='h6'>
                                     {translate('Social Media!')}
                                 </Typography>
                                 <ul style={{ margin: '0', color: '#bdc3c7' }}>
@@ -73,9 +71,9 @@ const Footer = () => {
                                                     <Link
                                                         to={link}
                                                         eventlabel={`Going to ${title} page`}
-                                                        className="footer-url-txt"
+                                                        className='footer-url-txt'
                                                         style={{
-                                                            color: '#bdc3c7'
+                                                            color: '#bdc3c7',
                                                         }}
                                                     >
                                                         {title}
@@ -87,13 +85,13 @@ const Footer = () => {
                                 </ul>
                             </section>
                         </Grid>
-                        <Grid xs={12} className="center-horizontal" item>
+                        <Grid xs={12} className='center-horizontal' item>
                             <Typography
                                 style={{ color: '#bdc3c7' }}
-                                id="copyright-txt"
+                                id='copyright-txt'
                             >
                                 Copyright ©{` ${new Date().getFullYear()}`}{' '}
-                                <Link to="/" id="copyright-link">
+                                <Link to='/' id='copyright-link'>
                                     IEEE uOttawa Student Branch
                                 </Link>
                                 .

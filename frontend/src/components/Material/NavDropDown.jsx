@@ -8,7 +8,7 @@ class NavDropDown extends Component {
         super(props);
         this.state = {
             isOpen: false,
-            anchorEl: null
+            anchorEl: null,
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -18,14 +18,14 @@ class NavDropDown extends Component {
         const { isOpen } = this.state;
         this.setState({
             anchorEl: currentTarget,
-            isOpen: !isOpen
+            isOpen: !isOpen,
         });
     }
 
     handleClose() {
         this.setState({
             anchorEl: null,
-            isOpen: false
+            isOpen: false,
         });
     }
 
@@ -36,7 +36,7 @@ class NavDropDown extends Component {
             children,
             items,
             clickbubbledown,
-            component: DropdownComponent
+            component: DropdownComponent,
         } = this.props;
         const icon = isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
 
@@ -44,7 +44,7 @@ class NavDropDown extends Component {
             <span>
                 <DropdownComponent
                     {...this.props}
-                    onClick={e => {
+                    onClick={(e) => {
                         if (clickbubbledown || !onClick) this.handleClick(e);
                         if (onClick) onClick(e);
                     }}
@@ -69,7 +69,7 @@ NavDropDown.defaultProps = {
     clickbubbledown: `false`,
     component: null,
     items: null,
-    onClick: null
+    onClick: null,
 };
 
 NavDropDown.propTypes = {
@@ -77,7 +77,7 @@ NavDropDown.propTypes = {
     clickbubbledown: PropTypes.any,
     component: PropTypes.func,
     items: PropTypes.any,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
 };
 
 export default NavDropDown;

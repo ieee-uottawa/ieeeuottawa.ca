@@ -6,22 +6,6 @@ import { GalleryCard, Title } from '../../helpers/components';
 import { getPhotos } from '../../helpers/gallery';
 import { translate } from '../../helpers/translation';
 
-const query = graphql`
-    query {
-        allGalleryJson {
-            nodes {
-                image {
-                    childImageSharp {
-                        fixed(width: 240, height: 240) {
-                            ...GatsbyImageSharpFixed_withWebp
-                        }
-                    }
-                }
-            }
-        }
-    }
-`;
-
 class Gallery extends Component {
     constructor(props) {
         super(props);
@@ -37,13 +21,27 @@ class Gallery extends Component {
     render() {
         return (
             <StaticQuery
-                query={query}
+                query={graphql`
+                    query {
+                        allGalleryJson {
+                            nodes {
+                                image {
+                                    childImageSharp {
+                                        fixed(width: 240, height: 240) {
+                                            ...GatsbyImageSharpFixed_withWebp
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                `}
                 render={({ allGalleryJson: { nodes } }) => {
                     const photos = getPhotos(nodes);
                     const { modalIsOpen } = this.state;
                     return (
-                        <div className="center-horizontal">
-                            <Title variant="h5" gutterBottom className="title">
+                        <div className='center-horizontal'>
+                            <Title variant='h5' gutterBottom className='title'>
                                 {translate('Gallery')}
                             </Title>
                             <Button onClick={this.toggleModal}>

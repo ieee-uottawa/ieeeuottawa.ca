@@ -5,38 +5,36 @@ import {
     TableCell,
     TableHead,
     TableRow,
-    Typography
+    Typography,
 } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
 
 import { moneyFormatter } from '../../utils/util';
 import Title from '../../components/Titles/Title';
 
-const query = graphql`
-    query {
-        allServicesJson {
-            edges {
-                node {
-                    name
-                    cost
-                    suffix
-                }
-            }
-        }
-    }
-`;
-
 const McNaughtonCentre = () => (
     <StaticQuery
-        query={query}
+        query={graphql`
+            query {
+                allServicesJson {
+                    edges {
+                        node {
+                            name
+                            cost
+                            suffix
+                        }
+                    }
+                }
+            }
+        `}
         render={({ allServicesJson: { edges } }) => (
             <div>
-                <Title variant="h5" gutterBottom className="title">
+                <Title variant='h5' gutterBottom className='title'>
                     McNaughton Centre
                 </Title>
                 <Typography
-                    variant="body1"
-                    className="p-margins"
+                    variant='body1'
+                    className='p-margins'
                     style={{ margin: '15px' }}
                 >
                     Located in SITE 4026, the McNaughton Centre is intended to
@@ -49,8 +47,8 @@ const McNaughtonCentre = () => (
                     most distinguished electrical engineers.
                 </Typography>
                 <Typography
-                    variant="body1"
-                    className="p-margins"
+                    variant='body1'
+                    className='p-margins'
                     style={{ margin: '15px' }}
                 >
                     The McNaughton Centre at uOttawa is proud to announce
@@ -76,7 +74,7 @@ const McNaughtonCentre = () => (
 
                             return (
                                 <TableRow key={name}>
-                                    <TableCell component="th" scope="row">
+                                    <TableCell component='th' scope='row'>
                                         {name}
                                     </TableCell>
                                     <TableCell>{costStr}</TableCell>

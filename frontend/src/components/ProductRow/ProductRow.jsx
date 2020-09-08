@@ -5,7 +5,7 @@ import {
     IconButton,
     Typography,
     Hidden,
-    Button
+    Button,
 } from '@material-ui/core';
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { CloseIcon } from '../Icons/icons';
@@ -13,7 +13,7 @@ import {
     calculatePrice,
     capitalize,
     moneyFormatter,
-    showPricing
+    showPricing,
 } from '../../utils/util';
 import './product-row.scss';
 
@@ -24,28 +24,28 @@ const ProductRow = ({
     options,
     price,
     quantity,
-    width
+    width,
 }) => {
     let horizontalCellClass = 'hide-border';
     if (isWidthDown('xs', width)) horizontalCellClass += ' center-horizontal';
 
     return (
-        <Grid container alignItems="center" style={{ padding: '16px 0' }}>
+        <Grid container alignItems='center' style={{ padding: '16px 0' }}>
             <Grid
                 item
                 xs={6}
                 sm={3}
-                className="hide-border"
+                className='hide-border'
                 style={{ display: 'flex' }}
             >
-                <img id="row-product-img" src={imageURL} alt={name} />
+                <img id='row-product-img' src={imageURL} alt={name} />
             </Grid>
-            <Grid item xs={6} sm={3} className="hide-border">
-                <Typography variant="h6">{name}</Typography>
+            <Grid item xs={6} sm={3} className='hide-border'>
+                <Typography variant='h6'>{name}</Typography>
                 {Object.keys(options)
-                    .filter(key => key !== 'quantity')
-                    .map(key => (
-                        <Typography variant="caption">
+                    .filter((key) => key !== 'quantity')
+                    .map((key) => (
+                        <Typography variant='caption'>
                             {capitalize(key)}: {options[key]}
                         </Typography>
                     ))}
@@ -54,7 +54,7 @@ const ProductRow = ({
                 container
                 xs={12}
                 sm={6}
-                alignItems="center"
+                alignItems='center'
                 style={{ padding: '8px 0 0' }}
             >
                 <Grid item xs={3} sm={4} className={horizontalCellClass}>
@@ -65,12 +65,12 @@ const ProductRow = ({
                     </Typography>
                 </Grid>
                 <Hidden smUp>
-                    <Grid item xs={1} className="center-horizontal">
-                        <Typography variant="caption">x</Typography>
+                    <Grid item xs={1} className='center-horizontal'>
+                        <Typography variant='caption'>x</Typography>
                     </Grid>
                 </Hidden>
                 <Grid item xs={2} sm={2} className={horizontalCellClass}>
-                    <Typography variant="body2">{quantity}</Typography>
+                    <Typography variant='body2'>{quantity}</Typography>
                 </Grid>
                 <Grid
                     item
@@ -86,7 +86,7 @@ const ProductRow = ({
                     </Typography>
                 </Grid>
                 <Hidden xsDown>
-                    <Grid item sm={2} className="hide-border center-horizontal">
+                    <Grid item sm={2} className='hide-border center-horizontal'>
                         <IconButton
                             onClick={() => handleDeleteClick()}
                             style={{ alignSelf: 'center' }}
@@ -98,7 +98,7 @@ const ProductRow = ({
                 <Hidden smUp>
                     <Grid item xs={6}>
                         <Button
-                            size="small"
+                            size='small'
                             onClick={() => handleDeleteClick()}
                         >
                             Delete
@@ -112,7 +112,7 @@ const ProductRow = ({
 
 ProductRow.defaultProps = {
     handleDeleteClick: () => {},
-    options: {}
+    options: {},
 };
 
 ProductRow.propTypes = {
@@ -120,12 +120,12 @@ ProductRow.propTypes = {
     name: PropTypes.string.isRequired,
     options: PropTypes.shape({
         size: PropTypes.string.isRequired,
-        colour: PropTypes.string.isRequired
+        colour: PropTypes.string.isRequired,
     }),
     price: PropTypes.number.isRequired,
     quantity: PropTypes.number.isRequired,
     handleDeleteClick: PropTypes.func,
-    width: PropTypes.number.isRequired
+    width: PropTypes.number.isRequired,
 };
 
 export default withWidth()(ProductRow);

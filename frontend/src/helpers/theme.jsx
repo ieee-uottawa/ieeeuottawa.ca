@@ -15,5 +15,5 @@ export {
     logo2,
     mailingListImg,
     moon,
-    sun
+    sun,
 };
