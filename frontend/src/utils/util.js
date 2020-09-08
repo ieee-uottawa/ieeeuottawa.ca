@@ -13,10 +13,10 @@ const renderUnsupportedBrowser = () => {
     return (
         isFacebookApp() && (
             <div style={{ textAlign: 'center', margin: '30px' }}>
-                <Typography variant="h5" gutterBottom color="secondary">
+                <Typography variant='h5' gutterBottom color='secondary'>
                     Unsupported Browser
                 </Typography>
-                <Typography variant="h5" gutterBottom color="secondary">
+                <Typography variant='h5' gutterBottom color='secondary'>
                     Please open in another browser
                 </Typography>
             </div>
@@ -26,11 +26,12 @@ const renderUnsupportedBrowser = () => {
 
 const moneyFormatter = new Intl.NumberFormat('en-CA', {
     currency: 'CAD',
-    style: 'currency'
+    style: 'currency',
 });
 const isDevEnvironment = process.env.NODE_ENV === 'development';
 
-const capitalize = str => str.substring(0, 1).toUpperCase() + str.substring(1);
+const capitalize = (str) =>
+    str.substring(0, 1).toUpperCase() + str.substring(1);
 
 // const ArrayLikeToString = arg => Array.prototype.toString.call(arg);
 
@@ -65,7 +66,7 @@ const capitalize = str => str.substring(0, 1).toUpperCase() + str.substring(1);
 //     return feature1 && feature2 && compareFeatures(feature1, feature2);
 // };
 
-const flattenDeep = arr =>
+const flattenDeep = (arr) =>
     arr.reduce(
         (acc, val) =>
             Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val),
@@ -107,5 +108,5 @@ export {
     isServerSideRendering,
     renderUnsupportedBrowser,
     moneyFormatter,
-    showPricing
+    showPricing,
 };

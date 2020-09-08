@@ -2,7 +2,7 @@ import {
     AddToCart,
     ClearCart,
     RemoveFromCart,
-    UpdateInCart
+    UpdateInCart,
 } from '../types/cart_action_types';
 
 function addItemToCart(id, name, imageURL, price, quantity, options) {
@@ -13,7 +13,7 @@ function addItemToCart(id, name, imageURL, price, quantity, options) {
         imageURL,
         price,
         quantity,
-        options
+        options,
     };
 }
 
@@ -21,7 +21,7 @@ function removeItemFromCart(id, options) {
     return {
         type: RemoveFromCart,
         id,
-        options
+        options,
     };
 }
 
@@ -33,7 +33,7 @@ function updateItemInCart(id, name, imageURL, price, quantity, options) {
         imageURL,
         price,
         quantity,
-        options
+        options,
     };
 }
 
