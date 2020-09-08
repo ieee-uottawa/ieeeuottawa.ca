@@ -31,7 +31,7 @@ const routes = [
             },
             {
                 title: 'Big Eng Little Eng Signup',
-                link: '/AboutUs/BigEngLittleEng2020'
+                link: '/Events/BigEngLittleEng2020'
             }
         ]
     },
