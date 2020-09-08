@@ -24,7 +24,16 @@ const routes = [
     },
     {
         title: 'Events',
-        link: '/Events/Events'
+        items: [
+            {
+                title: 'Event Calendar',
+                link: '/Events/Events'
+            },
+            {
+                title: 'Big Eng Little Eng Signup',
+                link: '/AboutUs/BigEngLittleEng2020'
+            }
+        ]
     },
     {
         title: 'Elections',
