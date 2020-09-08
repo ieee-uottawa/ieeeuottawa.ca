@@ -7,7 +7,7 @@
         },
         "imageFile": {
             "id": "big-eng-little-eng",
-            "image": "../../static/images/big-eng-little-eng-wide.png",
+            "image": "../../static/images/big-eng-little-eng-wide.jpg",
             "style": {
                 "backgroundPositionY": "-300px"
             }
