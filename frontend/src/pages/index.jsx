@@ -164,14 +164,16 @@ const IndexPage = props => {
                                                     </Typography>
                                                 )}
                                                 <IEEEButton
-                                                    variant="outlined"
-                                                    color="secondary"
-                                                    className="white-btn white-url-txt"
-                                                    component={Link}
-                                                    to={button.url}
-                                                    style={{
-                                                        marginTop: '32px'
-                                                    }}
+                                                        variant="outlined"
+                                                        color="secondary"
+                                                        className="white-btn white-url-txt"
+                                                        component={Link}
+                                                        to={button.url}
+                                                        style={{
+                                                            marginTop: '32px',
+                                                            background: '#0005',
+                                                            border: '3px solid white',
+                                                        }}
                                                 >
                                                     {translate(button.text)}
                                                 </IEEEButton>
