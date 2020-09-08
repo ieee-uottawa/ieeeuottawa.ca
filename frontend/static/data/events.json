@@ -294,7 +294,7 @@
         "FR": "La 11 ième annuelle soirée Vin et Fromage (organisée par IEEE Women In Engineering) est une excellente opportunité pour les étudiants d'établir des connexions avec des professionnels de l'industrie en provenance de partout en Ottawa.  ",
         "url": "https://www.facebook.com/events/1526709784147976/",
         "image": "../images/events/2019-2020/2020-03-05-Wine-and-Cheese.jpg"
-    }
+    },
     {
         "id": "2020-09-23-big-eng-little-eng",
         "name": "Big Eng, Little Eng",
@@ -302,5 +302,5 @@
         "FR": "Commencez votre eng (Ines) et accélérez votre carrière académique en rencontrant des étudiants et des professionnels innovants en ingénierie! \n\nhttps://forms.gle/NomAoGHnossk8LZC7",
         "url": "https://www.facebook.com/events/975552946253213/",
         "image": "../images/events/2020-2021/big-eng-little-eng.png"
-    },
+    }
 ]
