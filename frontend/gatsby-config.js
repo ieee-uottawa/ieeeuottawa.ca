@@ -13,7 +13,6 @@ module.exports = {
         'gatsby-plugin-postcss',
         'gatsby-plugin-layout',
         'gatsby-transformer-json',
-        'gatsby-plugin-jss',
         {
             resolve: 'gatsby-source-filesystem',
             options: {
