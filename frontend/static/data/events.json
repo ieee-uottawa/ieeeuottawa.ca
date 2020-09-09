@@ -294,5 +294,21 @@
         "FR": "La 11 ième annuelle soirée Vin et Fromage (organisée par IEEE Women In Engineering) est une excellente opportunité pour les étudiants d'établir des connexions avec des professionnels de l'industrie en provenance de partout en Ottawa.  ",
         "url": "https://www.facebook.com/events/1526709784147976/",
         "image": "../images/events/2019-2020/2020-03-05-Wine-and-Cheese.jpg"
+    },
+    {
+        "id": "2020-09-23-big-eng-little-eng",
+        "name": "Big Eng, Little Eng",
+        "description": "EVERYONE is welcome to attend this event (mentorship applications not required to attend). If you are interested in signing up for Big Eng Little Eng Mentorship (all students welcome): https://forms.gle/NomAoGHnossk8LZC7 \n\nDon't know what Big Eng Little Eng is? Fear not! You've come to the right place. BELE is a mentorship program for first-year students to get adjusted to life at university. All first years get paired up with an upper year (ideally in the same discipline) so they've got someone to help guide them through the craziness that is first-year engineering. Big eng, Little eng also prepares you with a list of online tools and tips that students only discover after a year at uni!",
+        "FR": "Commencez votre eng (Ines) et accélérez votre carrière académique en rencontrant des étudiants et des professionnels innovants en ingénierie! \n\nhttps://forms.gle/NomAoGHnossk8LZC7",
+        "url": "https://www.facebook.com/events/975552946253213/",
+        "image": "../images/events/2020-2021/big-eng-little-eng.png"
+    },
+    {
+        "id": "2020-09-26-wiehack613",
+        "name": "WIEHACK613",
+        "description": "New to Hackathons? Is this your first hackathon? IEEE WIE Ottawa and CU Hacking presents the first ever Mock Hackathon for IEEEXterme! Register for the event and mentorship program from FREE!! And also win exciting Prizes!",
+        "FR": "Vous êtes nouveau aux Hackathons? IEEE WIE Ottawa et CU Hacking présente le tout premier Mock Hackathon à Ottawa pour IEEEXtreme! Enregistrez-vous pour l'évènement et du mentorat GRATUIT!! Vous courez la chance de gagner des prix passionnants!",
+        "url": "https://wie.ieeeottawa.ca/wiehack613/",
+        "image": "../images/events/2020-2021/hack.jpg"
     }
 ]
