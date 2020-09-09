@@ -1,7 +1,7 @@
 import { SheetsRegistry } from 'jss';
 import {
     createGenerateClassName,
-    createMuiTheme,
+    createMuiTheme
 } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
 
@@ -10,14 +10,14 @@ export function getCurrentTheme(mode) {
     return createMuiTheme({
         palette: {
             primary: {
-                main: '#FFFFFF',
+                main: '#FFFFFF'
             },
             secondary: blue,
-            type: currentMode,
+            type: currentMode
         },
         typography: {
-            useNextVariants: true,
-        },
+            useNextVariants: true
+        }
     });
 }
 
@@ -35,7 +35,7 @@ function createPageContext() {
         // This is needed in order to inject the critical CSS.
         sheetsRegistry: new SheetsRegistry(),
         // The standard class name generator.
-        generateClassName: createGenerateClassName(),
+        generateClassName: createGenerateClassName()
     };
 }
 

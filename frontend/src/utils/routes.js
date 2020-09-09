@@ -3,37 +3,37 @@ const loader = require('path');
 const routes = [
     {
         title: 'Home',
-        path: '/',
+        path: '/'
     },
     {
         title: 'Execs',
         items: [
             {
                 title: 'Execs 2020-2021',
-                link: '/Execs/Execs-2020-2021',
+                link: '/Execs/Execs-2020-2021'
             },
             {
                 title: 'Execs 2019-2020',
-                link: '/Execs/Execs-2019-2020',
+                link: '/Execs/Execs-2019-2020'
             },
             {
                 title: 'Execs 2018-2019',
-                link: '/Execs/Execs-2018-2019',
-            },
-        ],
+                link: '/Execs/Execs-2018-2019'
+            }
+        ]
     },
     {
         title: 'Events',
         items: [
             {
                 title: 'Event Calendar',
-                link: '/Events/Events',
+                link: '/Events/Events'
             },
             {
                 title: 'Big Eng Little Eng Signup',
-                link: '/Events/BigEngLittleEng2020',
-            },
-        ],
+                link: '/Events/BigEngLittleEng2020'
+            }
+        ]
     },
     {
         title: 'Elections',
@@ -41,79 +41,79 @@ const routes = [
             {
                 title: 'Election Info',
                 link: '/Elections/Elections',
-                exact: '/elections',
+                exact: '/elections'
             },
             {
                 title: 'Election Platforms',
-                link: '/Elections/ElectionPlatforms',
+                link: '/Elections/ElectionPlatforms'
             },
             {
                 title: 'Election Results',
-                link: '/Elections/ElectionResults',
-            },
-        ],
+                link: '/Elections/ElectionResults'
+            }
+        ]
     },
     {
         title: 'Gallery',
-        link: '/Gallery/Gallery',
+        link: '/Gallery/Gallery'
     },
     {
         title: 'WIE',
-        link: '/WIE/WIE',
+        link: '/WIE/WIE'
     },
     {
         title: 'Office Hours',
-        link: '/OfficeHours/OfficeHours',
+        link: '/OfficeHours/OfficeHours'
     },
     {
         title: 'About Us',
         items: [
             {
                 title: 'Budget',
-                link: '/AboutUs/Budget',
+                link: '/AboutUs/Budget'
             },
             {
                 title: 'Volunteer',
-                link: '/Volunteer/volunteer',
+                link: '/Volunteer/volunteer'
             },
             {
                 title: 'Mailing List',
-                link: '/AboutUs/MailingListSignUp',
+                link: '/AboutUs/MailingListSignUp'
             },
             {
                 title: 'Constitution',
-                link: '/AboutUs/Constitution',
+                link: '/AboutUs/Constitution'
             },
             {
                 title: 'IEEE Code of Conduct',
-                link: '/AboutUs/IEEECodeOfConduct',
+                link: '/AboutUs/IEEECodeOfConduct'
             },
             {
                 title: 'Meeting Minutes',
-                link: '/AboutUs/MeetingMinutes',
+                link: '/AboutUs/MeetingMinutes'
             },
             {
                 title: 'McNaughton Centre',
-                link: '/AboutUs/McNaughtonCentre',
-            },
-        ],
-    },
+                link: '/AboutUs/McNaughtonCentre'
+            }
+        ]
+    }
 ];
 
-const getPath = (title) => {
+const getPath = title => {
     return `/${title.replace(/\s+/g, '-').toLowerCase()}`;
 };
 
-const getComponent = (link) => {
+const getComponent = link => {
     return loader.resolve(`./src/pages/${link}.jsx`);
 };
 
-const getPage = (route) => {
+const getPage = route => {
     const { title, link, exact } = route;
     const url = exact || getPath(title);
     return {
         path: url,
-        component: getComponent(link),
+        component: getComponent(link)
     };
 };
 
@@ -137,7 +137,7 @@ const getPages = () => {
     const results = [];
     for (const route of getRoutes()) {
         const { items } = route;
-        if (items) results.push(...items.filter((item) => !item.hidden));
+        if (items) results.push(...items.filter(item => !item.hidden));
         else if (!route.hidden) results.push(route);
     }
     return results.slice(1);
@@ -145,5 +145,5 @@ const getPages = () => {
 
 module.exports = {
     routes: getRoutes(),
-    getPages,
+    getPages
 };

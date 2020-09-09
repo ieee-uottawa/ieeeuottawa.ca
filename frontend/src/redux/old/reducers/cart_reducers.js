@@ -2,13 +2,13 @@ import {
     AddToCart,
     ClearCart,
     RemoveFromCart,
-    UpdateInCart,
+    UpdateInCart
 } from '../types/cart_action_types';
 
 // TODO: If state grows to more than items, apply reducer composition pattern
 
 const initialState = {
-    items: [],
+    items: []
 };
 
 function updateOrAdd(state, { id, name, imageURL, price, quantity, options }) {
@@ -23,9 +23,9 @@ function updateOrAdd(state, { id, name, imageURL, price, quantity, options }) {
         options: [
             {
                 ...options,
-                quantity,
-            },
-        ],
+                quantity
+            }
+        ]
     };
 
     if (index > -1) {
@@ -39,7 +39,7 @@ function updateOrAdd(state, { id, name, imageURL, price, quantity, options }) {
         } else {
             item.options.push({
                 ...options,
-                quantity,
+                quantity
             });
         }
 
@@ -47,13 +47,13 @@ function updateOrAdd(state, { id, name, imageURL, price, quantity, options }) {
             items: [
                 ...state.items.slice(0, index),
                 item,
-                ...state.items.slice(index + 1),
-            ],
+                ...state.items.slice(index + 1)
+            ]
         });
     }
 
     return Object.assign({}, state, {
-        items: [...state.items, item],
+        items: [...state.items, item]
     });
 }
 
@@ -64,9 +64,9 @@ function remove(state, { id, options }) {
     if (index === -1) return state;
 
     const item = JSON.parse(JSON.stringify(state.items[index]));
-    const optionsIndex = item.options.findIndex((option) =>
+    const optionsIndex = item.options.findIndex(option =>
         Object.keys(option).some(
-            (key) =>
+            key =>
                 Object.prototype.hasOwnProperty.call(options, key) &&
                 option[key] === options[key]
         )
@@ -76,22 +76,19 @@ function remove(state, { id, options }) {
         if (optionsIndex > -1) {
             item.options = [
                 ...item.options.slice(0, optionsIndex),
-                ...item.options.slice(optionsIndex + 1),
+                ...item.options.slice(optionsIndex + 1)
             ];
         }
         return Object.assign({}, state, {
             items: [
                 ...state.items.slice(0, index),
                 item,
-                ...state.items.slice(index + 1),
-            ],
+                ...state.items.slice(index + 1)
+            ]
         });
     }
     return Object.assign({}, state, {
-        items: [
-            ...state.items.slice(0, index),
-            ...state.items.slice(index + 1),
-        ],
+        items: [...state.items.slice(0, index), ...state.items.slice(index + 1)]
     });
 }
 
