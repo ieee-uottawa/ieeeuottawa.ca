@@ -1,6 +1,5 @@
 cd frontend
 yarn install
-yarn run gatsby clean
 yarn build
 
 if [ $? -ne 0 ]; then
