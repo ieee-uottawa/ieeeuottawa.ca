@@ -302,5 +302,13 @@
         "FR": "Commencez votre eng (Ines) et accélérez votre carrière académique en rencontrant des étudiants et des professionnels innovants en ingénierie! \n\nhttps://forms.gle/NomAoGHnossk8LZC7",
         "url": "https://www.facebook.com/events/975552946253213/",
         "image": "../images/events/2020-2021/big-eng-little-eng.png"
+    },
+    {
+        "id": "2020-09-26-wiehack613",
+        "name": "WIEHACK613",
+        "description": "New to Hackathons? Is this your first hackathon? IEEE WIE Ottawa and CU Hacking presents the first ever Mock Hackathon for IEEEXterme! Register for the event and mentorship program from FREE!! And also win exciting Prizes!",
+        "FR": "Translation pending.",
+        "url": "https://wie.ieeeottawa.ca/wiehack613/",
+        "image": "../images/events/2020-2021/wie-hack.png"
     }
 ]
