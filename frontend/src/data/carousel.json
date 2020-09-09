@@ -2,14 +2,14 @@
     {
         "message": "",
         "button": {
-            "text": "Sign Up for Big Eng, Little Eng",
+            "text": "Sign Up",
             "url": "big-eng-little-eng-signup"
         },
         "imageFile": {
             "id": "big-eng-little-eng",
             "image": "../../static/images/big-eng-little-eng-wide.png",
             "style": {
-                "backgroundPositionY": "-300px"
+                "backgroundPositionY": "-175px"
             }
         }
     },
