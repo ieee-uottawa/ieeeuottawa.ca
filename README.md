@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/ieee-uottawa/ieeeuottawa.ca.svg?branch=master)](https://travis-ci.com/ieee-uottawa/ieeeuottawa.ca)
+
 <table align="center"><tr><td align="center" width="9999">
 <img width="200" align="center" alt="logo" src="frontend/static/images/ieee_logo_circle.png">
 
