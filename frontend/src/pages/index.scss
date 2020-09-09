@@ -1,56 +1,56 @@
 .bg-image #image-overlay {
-    height: 600px;
-    position: relative;
+  height: 600px;
+  position: relative;
 }
 
 #image-overlay {
-    background: rgba(0, 0, 0, 0.3);
-    width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
 .santa-pic::before {
-    background-position-y: -75px;
+  background-position-y: -75px;
 }
 
 .volunteer-cover-pic::before {
-    background-position-y: -175px;
+  background-position-y: -175px;
 }
 
 @media only screen and (min-width: 1047px) {
-    #text-container {
-        width: 60%;
-    }
+  #text-container {
+    width: 60%;
+  }
 
-    #services-row {
-        margin: 32px;
-    }
+  #services-row {
+    margin: 32px;
+  }
 }
 
 @media only screen and (max-width: 1047px) {
-    #text-container {
-        width: 80%;
-    }
+  #text-container {
+    width: 80%;
+  }
 }
 
 #about-us-image-text {
-    color: white;
+  color: white;
 }
 
 .white-btn:not(:hover) {
-    border: 3px solid white;
+  border: 3px solid white;
 }
 
 .white-btn:hover {
-    border: 3px solid transparent;
+  border: 3px solid transparent;
 }
 
 #services-row {
-    margin: 32px 0;
-    text-align: center;
+  margin: 32px 0;
+  text-align: center;
 }
 
 .icon {
-    height: 36px !important;
-    width: 36px !important;
-    margin: 28px;
+  height: 36px !important;
+  width: 36px !important;
+  margin: 28px;
 }

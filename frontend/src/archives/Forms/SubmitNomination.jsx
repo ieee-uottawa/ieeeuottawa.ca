@@ -14,7 +14,7 @@ class SubmitNomination extends Component {
         this.state = {
             isLoading: false,
             showSnackbar: false,
-            messageInfo: { key: '', message: '' },
+            messageInfo: { key: '', message: '' }
         };
 
         this.onSubmit = this.onSubmit.bind(this);
@@ -75,7 +75,7 @@ class SubmitNomination extends Component {
     sendSnackbarMsg(key, message, processQueue = true) {
         this.messageQueue.push({
             key,
-            message,
+            message
         });
         if (processQueue) this.processQueue();
     }
@@ -84,7 +84,7 @@ class SubmitNomination extends Component {
         if (this.messageQueue.length > 0) {
             this.setState({
                 messageInfo: this.messageQueue.shift(),
-                showSnackbar: true,
+                showSnackbar: true
             });
         }
     }
@@ -108,7 +108,7 @@ class SubmitNomination extends Component {
                 label: 'Year',
                 items: ['1', '2', '3', '4', '5+'],
                 type: 'radio',
-                isRequired: true,
+                isRequired: true
             },
             {
                 label: 'Position',
@@ -127,22 +127,22 @@ class SubmitNomination extends Component {
                     'WIE Chair',
                     'WIE Vice Chair',
                     'Photonics Chair',
-                    'Photonics Vice Chair',
+                    'Photonics Vice Chair'
                 ],
                 type: 'radio',
-                isRequired: true,
-            },
+                isRequired: true
+            }
         ];
 
         return (
             <div>
-                <Typography variant='h5' gutterBottom className='title'>
+                <Typography variant="h5" gutterBottom className="title">
                     IEEE Executive Nomination Form
                 </Typography>
-                <p className='center-horizontal' style={{ marginTop: '16px' }}>
+                <p className="center-horizontal" style={{ marginTop: '16px' }}>
                     <strong>IMPORTANT! PLEASE READ</strong>
                 </p>
-                <p className='p-margins'>
+                <p className="p-margins">
                     IEEE Elections: <br />
                     March 13th: First day to apply for positions/nomination
                     period begins <br />
@@ -151,7 +151,7 @@ class SubmitNomination extends Component {
                     March 27th - April 2nd: Campaigning period <br />
                     April 3rd: Election Day!
                 </p>
-                <p className='p-margins'>
+                <p className="p-margins">
                     Positions: <br />
                     -Chair(One year experience as an exec on the IEEE student
                     association required) <br />
@@ -173,16 +173,16 @@ class SubmitNomination extends Component {
                     -Photonics Chair (Grad Students Only) <br />
                     -Photonics Vice-Chair (Grad Students Only) <br />
                 </p>
-                <p className='p-margins'>
+                <p className="p-margins">
                     <strong>
                         Send your 200-500 word platform to{' '}
-                        <a href='mailto:chair@ieeeuottawa'>chair@ieeeuottawa</a>
+                        <a href="mailto:chair@ieeeuottawa">chair@ieeeuottawa</a>
                     </strong>
                 </p>
                 {!isLoading && (
                     <Form
                         inputs={inputs}
-                        onSubmit={(values) => this.onSubmit(values)}
+                        onSubmit={values => this.onSubmit(values)}
                     />
                 )}
                 {isLoading && <CircularProgress />}
@@ -190,14 +190,14 @@ class SubmitNomination extends Component {
                     key={messageInfo.key}
                     anchorOrigin={{
                         vertical: 'bottom',
-                        horizontal: 'left',
+                        horizontal: 'left'
                     }}
                     open={showSnackbar}
                     autoHideDuration={2000}
                     onClose={this.handleSnackbarClose}
                     onExited={this.handleSnackbarExit}
                     ContentProps={{ 'aria-describedby': 'message-id' }}
-                    message={<span id='message-id'>{messageInfo.message}</span>}
+                    message={<span id="message-id">{messageInfo.message}</span>}
                 />
             </div>
         );

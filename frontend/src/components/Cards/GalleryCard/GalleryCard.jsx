@@ -4,7 +4,7 @@ import { CardMedia, CardContent } from '@material-ui/core';
 import Img from 'gatsby-image';
 import '../ExecCard/exec-card.scss';
 
-const GalleryCard = (props) => {
+const GalleryCard = props => {
     const imageStyle = {
         margin: '16px auto 0',
         borderRadius: '20%',
@@ -14,7 +14,7 @@ const GalleryCard = (props) => {
         display: 'block',
         WebkitBorderRadius: '25%',
         WebkitBoxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
-        boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
+        boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)'
     };
     const { image, name } = props;
 
@@ -28,8 +28,8 @@ const GalleryCard = (props) => {
         />
     ) : (
         <CardMedia
-            component='img'
-            height='166'
+            component="img"
+            height="166"
             image={`http://identicon.org/?t=${name}&s=166`}
             src={`http://identicon.org/?t=${name}&s=166`}
             title={name}
@@ -42,12 +42,12 @@ const GalleryCard = (props) => {
 
 GalleryCard.defaultProps = {
     image: null,
-    name: null,
+    name: null
 };
 
 GalleryCard.propTypes = {
     image: PropTypes.object,
-    name: PropTypes.string,
+    name: PropTypes.string
 };
 
 export default GalleryCard;

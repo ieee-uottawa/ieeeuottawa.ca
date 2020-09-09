@@ -7,7 +7,7 @@ import {
     Typography,
     isWidthDown,
     isWidthUp,
-    withWidth,
+    withWidth
 } from '../helpers/material-ui';
 import { Carousel, BackgroundImage, mailingListImg } from '../helpers/theme';
 import {
@@ -21,18 +21,62 @@ import {
     Link,
     Parallax,
     ServiceItem,
-    Title,
+    Title
 } from '../helpers/components';
 import { translate, translateDescription } from '../helpers/translation';
 import './index.scss';
 
+const query = graphql`
+    query {
+        allCarouselJson {
+            edges {
+                node {
+                    message
+                    button {
+                        text
+                        url
+                    }
+                    imageFile {
+                        id
+                        image {
+                            childImageSharp {
+                                fluid(maxWidth: 4160, quality: 100) {
+                                    ...GatsbyImageSharpFluid_withWebp
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        allEventsJson(limit: 4, sort: { fields: id, order: DESC }) {
+            edges {
+                node {
+                    id
+                    name
+                    description
+                    FR
+                    url
+                    image {
+                        childImageSharp {
+                            fixed(width: 230, height: 230) {
+                                ...GatsbyImageSharpFixed_withWebp
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
+
 const iconStyle = {
     color: 'white',
     height: '48px',
-    width: '48px',
+    width: '48px'
 };
 
-const IndexPage = (props) => {
+const IndexPage = props => {
     const { width } = props;
     let gridStyle = { margin: '0 25%' };
     if (isWidthUp('lg', width, true) || isWidthDown('sm', width, false))
@@ -40,56 +84,11 @@ const IndexPage = (props) => {
 
     return (
         <StaticQuery
-            query={graphql`
-                query {
-                    allCarouselJson {
-                        edges {
-                            node {
-                                message
-                                button {
-                                    text
-                                    url
-                                }
-                                imageFile {
-                                    id
-                                    image {
-                                        childImageSharp {
-                                            fluid(
-                                                maxWidth: 4160
-                                                quality: 100
-                                            ) {
-                                                ...GatsbyImageSharpFluid_withWebp
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    allEventsJson(limit: 4, sort: { fields: id, order: DESC }) {
-                        edges {
-                            node {
-                                id
-                                name
-                                description
-                                FR
-                                url
-                                image {
-                                    childImageSharp {
-                                        fixed(width: 230, height: 230) {
-                                            ...GatsbyImageSharpFixed_withWebp
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            `}
-            render={(queryProps) => {
+            query={query}
+            render={queryProps => {
                 const {
                     allEventsJson: { edges: eventEdges },
-                    allCarouselJson: { edges: carouselEdges },
+                    allCarouselJson: { edges: carouselEdges }
                 } = queryProps;
 
                 return (
@@ -102,7 +101,7 @@ const IndexPage = (props) => {
                             enableKeyboardControls
                             swiping
                             renderCenterLeftControls={({
-                                previousSlide: goToPrevious,
+                                previousSlide: goToPrevious
                             }) => (
                                 <ChevronLeftIcon
                                     onClick={goToPrevious}
@@ -110,7 +109,7 @@ const IndexPage = (props) => {
                                 />
                             )}
                             renderCenterRightControls={({
-                                nextSlide: goToNext,
+                                nextSlide: goToNext
                             }) => (
                                 <ChevronRightIcon
                                     onClick={goToNext}
@@ -126,12 +125,12 @@ const IndexPage = (props) => {
                                             button,
                                             imageFile: {
                                                 image: {
-                                                    childImageSharp: { fluid },
+                                                    childImageSharp: { fluid }
                                                 },
                                                 id: imageID,
-                                                style: imageStyle,
-                                            },
-                                        },
+                                                style: imageStyle
+                                            }
+                                        }
                                     },
                                     key
                                 ) => (
@@ -141,16 +140,16 @@ const IndexPage = (props) => {
                                         fluid={fluid}
                                         style={imageStyle}
                                     >
-                                        <div id='image-overlay'>
+                                        <div id="image-overlay">
                                             <div
-                                                id='text-container'
-                                                className='center'
+                                                id="text-container"
+                                                className="center"
                                             >
                                                 {message && (
                                                     <Typography
-                                                        variant='h3'
-                                                        className='uppercase'
-                                                        id='about-us-image-text'
+                                                        variant="h3"
+                                                        className="uppercase"
+                                                        id="about-us-image-text"
                                                     >
                                                         <Link
                                                             to={button.url}
@@ -158,24 +157,23 @@ const IndexPage = (props) => {
                                                             eventlabel={
                                                                 button.url
                                                             }
-                                                            className='white-url-txt'
+                                                            className="white-url-txt"
                                                         >
                                                             {translate(message)}
                                                         </Link>
                                                     </Typography>
                                                 )}
                                                 <IEEEButton
-                                                    variant='outlined'
-                                                    color='secondary'
-                                                    className='white-btn white-url-txt'
-                                                    component={Link}
-                                                    to={button.url}
-                                                    style={{
-                                                        marginTop: '32px',
-                                                        background: '#0005',
-                                                        border:
-                                                            '3px solid white',
-                                                    }}
+                                                        variant="outlined"
+                                                        color="secondary"
+                                                        className="white-btn white-url-txt"
+                                                        component={Link}
+                                                        to={button.url}
+                                                        style={{
+                                                            marginTop: '32px',
+                                                            background: '#0005',
+                                                            border: '3px solid white',
+                                                        }}
                                                 >
                                                     {translate(button.text)}
                                                 </IEEEButton>
@@ -190,17 +188,17 @@ const IndexPage = (props) => {
                             {translate('Why come to our office?')}
                         </Title>
                         <Typography
-                            variant='subtitle1'
-                            className='center-horizontal'
+                            variant="subtitle1"
+                            className="center-horizontal"
                         >
                             {translate(
                                 'Check out all the services we offer in our office!'
                             )}
                         </Typography>
-                        <Grid id='services-row' container>
+                        <Grid id="services-row" container>
                             <Grid item xs={12} sm={6} lg={4}>
                                 <ServiceItem
-                                    icon={<FlaskIcon className='icon' />}
+                                    icon={<FlaskIcon className="icon" />}
                                     title={translate('Purchase Lab Supplies')}
                                     body={translate(
                                         'Check out what we have for sale on our Services page, under About Us.'
@@ -209,7 +207,7 @@ const IndexPage = (props) => {
                             </Grid>
                             <Grid item xs={12} sm={6} lg={4}>
                                 <ServiceItem
-                                    icon={<LightBulbIcon className='icon' />}
+                                    icon={<LightBulbIcon className="icon" />}
                                     title={translate('Homework Help')}
                                     body={translate(
                                         'Is there a course you are struggling with? Contact the VP Academic to find out how we can help you succeed.'
@@ -218,7 +216,7 @@ const IndexPage = (props) => {
                             </Grid>
                             <Grid item xs={12} lg={4} style={gridStyle}>
                                 <ServiceItem
-                                    icon={<LeadPencilIcon className='icon' />}
+                                    icon={<LeadPencilIcon className="icon" />}
                                     title={translate('Study')}
                                     body={translate(
                                         'Need a chill place to study? Come make use of our library and study in the office anytime we are open.'
@@ -229,19 +227,19 @@ const IndexPage = (props) => {
                         <Title style={{ margin: '32px 0 16px' }}>
                             {translate('Latest Events')}
                         </Title>
-                        <GridList id='event-grid' cols={2}>
+                        <GridList id="event-grid" cols={2}>
                             {eventEdges.map(
                                 ({
                                     node: {
                                         id,
                                         image: {
-                                            childImageSharp: { fixed: image },
+                                            childImageSharp: { fixed: image }
                                         },
                                         name,
                                         description: EN,
                                         FR,
-                                        url,
-                                    },
+                                        url
+                                    }
                                 }) => (
                                     <Event
                                         key={id}
@@ -263,7 +261,7 @@ const IndexPage = (props) => {
                                 "Don't Miss Out! Join The Mailing List Today!"
                             )}
                             buttonText={translate('Subscribe')}
-                            buttonURL='/mailing-list'
+                            buttonURL="/mailing-list"
                         />
                     </div>
                 );
@@ -273,7 +271,7 @@ const IndexPage = (props) => {
 };
 
 IndexPage.propTypes = {
-    width: PropTypes.any.isRequired,
+    width: PropTypes.any.isRequired
 };
 
 export default withWidth()(IndexPage);

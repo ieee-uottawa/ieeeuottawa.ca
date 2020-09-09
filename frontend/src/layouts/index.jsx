@@ -24,7 +24,7 @@ import store from '../redux/store';
 if (!isDevEnvironment) {
     init({
         dsn: process.env.GATSBY_SENTRY_DSN,
-        environment: process.env.NODE_ENV,
+        environment: process.env.NODE_ENV
     });
 }
 
@@ -36,8 +36,8 @@ if (!isServerSideRendering()) {
             exclude: [],
             sampleRate: 100,
             siteSpeedSampleRate: 50,
-            storeGac: false,
-        },
+            storeGac: false
+        }
     });
 }
 
@@ -46,9 +46,9 @@ const Layout = ({
     theme = 'light',
     toggleTheme,
     language = getCurrentLanguage(),
-    toggleLanguage,
+    toggleLanguage
 }) => {
-    const AddExtraProps = (Component) => {
+    const AddExtraProps = Component => {
         return <Component.type {...Component.props} language={language} />;
     };
     const newComponent = AddExtraProps(children);
@@ -59,34 +59,34 @@ const Layout = ({
                 style={{
                     minHeight: '100%',
                     display: 'flex',
-                    flexDirection: 'column',
+                    flexDirection: 'column'
                 }}
             >
                 <Helmet
-                    title='IEEE uOttawa Student Branch'
+                    title="IEEE uOttawa Student Branch"
                     link={[
                         {
                             rel: 'shortcut icon',
                             type: 'image/png',
-                            href: `${favicon}`,
-                        },
+                            href: `${favicon}`
+                        }
                     ]}
                 >
                     <meta
-                        property='og:image'
+                        property="og:image"
                         content={`https://ieeeuottawa.ca${logo}`}
                     />
                     <meta
-                        property='og:title'
-                        content='IEEE uOttawa Student Branch'
+                        property="og:title"
+                        content="IEEE uOttawa Student Branch"
                     />
                     <meta
-                        property='og:description'
-                        content='The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment.'
+                        property="og:description"
+                        content="The IEEE uOttawa Student Branch is the official student branch for the University of Ottawa and the official Sub-Association for ELG/CEG/SEG under the ESS. The University of Ottawa’s IEEE Student Branch was established to provide professional services to improve each student’s experience on campus. This includes accommodating students with access to up-to-date equipment, internet access, textbooks and a quiet work environment."
                     />
-                    <meta property='og:url' content='https://ieeeuottawa.ca/' />
-                    <meta name='twitter:card' content='summary_large_image' />
-                    <meta name='twitter:site' content='@ieeeuottawa' />
+                    <meta property="og:url" content="https://ieeeuottawa.ca/" />
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:site" content="@ieeeuottawa" />
                 </Helmet>
                 <Header
                     theme={theme}
@@ -100,7 +100,7 @@ const Layout = ({
                         paddingTop: '0',
                         flex: '1 0 auto',
                         width: '100%',
-                        minHeight: 'calc(100vh - 386px)',
+                        minHeight: 'calc(100vh - 386px)'
                     }}
                 >
                     {newComponent}
@@ -114,7 +114,7 @@ const Layout = ({
 Layout.defaultProps = {
     children: null,
     theme: 'light',
-    language: 'EN',
+    language: 'EN'
 };
 
 Layout.propTypes = {
@@ -122,7 +122,7 @@ Layout.propTypes = {
     theme: PropTypes.string,
     language: PropTypes.string,
     toggleTheme: PropTypes.func.isRequired,
-    toggleLanguage: PropTypes.func.isRequired,
+    toggleLanguage: PropTypes.func.isRequired
 };
 
 export default withRoot(Layout);

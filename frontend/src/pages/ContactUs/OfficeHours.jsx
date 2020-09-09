@@ -38,12 +38,12 @@ class OfficeHours extends Component {
 
         return (
             <>
-                <Title variant='h5' gutterBottom className='title'>
+                <Title variant="h5" gutterBottom className="title">
                     {translate('Office Hours')}
                 </Title>
                 <img
                     src={officeHoursImg}
-                    alt='IEEE Office Hours'
+                    alt="IEEE Office Hours"
                     style={imgStyle}
                 />
             </>

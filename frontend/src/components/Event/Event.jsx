@@ -8,28 +8,28 @@ import './event.scss';
 
 const Event = ({ id, url, name, description, image }) => {
     return (
-        <GridListTile cols={1} id='container'>
+        <GridListTile cols={1} id="container">
             <Link to={url} href={url} eventlabel={`Clicked ${name}`}>
-                <Img fixed={image} className='event-img' />
+                <Img fixed={image} className="event-img" />
             </Link>
             <Link to={url} href={url} eventlabel={`Clicked ${name}`}>
-                <Typography variant='h5' style={{ paddingBottom: '8px' }}>
+                <Typography variant="h5" style={{ paddingBottom: '8px' }}>
                     {name}
                 </Typography>
             </Link>
             <Calendar id={id} />
-            <Typography variant='subtitle1' style={{ whiteSpace: 'pre-line' }}>
+            <Typography variant="subtitle1" style={{ whiteSpace: 'pre-line' }}>
                 {`${description.substring(0, 250).trim()}\u2026`}
             </Typography>
             <br />
             <IEEEButton
-                variant='outlined'
-                color='secondary'
+                variant="outlined"
+                color="secondary"
                 component={Link}
                 to={url}
                 eventlabel={`Clicked ${name}`}
             >
-                <Typography variant='button'>
+                <Typography variant="button">
                     {translate('Read More')}
                 </Typography>
             </IEEEButton>
@@ -42,7 +42,7 @@ Event.propTypes = {
     image: PropTypes.object.isRequired,
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
 };
 
 export default Event;

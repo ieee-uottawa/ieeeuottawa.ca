@@ -10,7 +10,7 @@ class ExternalRedirect extends Component {
         super(props);
         this.state = {
             seconds: 5,
-            intervalID: null,
+            intervalID: null
         };
     }
 
@@ -40,11 +40,11 @@ class ExternalRedirect extends Component {
         const { seconds } = this.state;
         const description = urlDescription || url;
         return (
-            <div className='p-margins center-horizontal center-vertical'>
-                <Typography variant='h4' gutterBottom>
+            <div className="p-margins center-horizontal center-vertical">
+                <Typography variant="h4" gutterBottom>
                     {translateRedirect(description, seconds)}
                 </Typography>
-                <Typography variant='h4' gutterBottom>
+                <Typography variant="h4" gutterBottom>
                     <Link
                         to={url}
                         href={url}
@@ -55,7 +55,7 @@ class ExternalRedirect extends Component {
                             event({
                                 category: 'Waiting',
                                 action: 'Clicked link early',
-                                label: description,
+                                label: description
                             })
                         }
                     >
@@ -70,13 +70,13 @@ class ExternalRedirect extends Component {
 
 ExternalRedirect.defaultProps = {
     forceExternal: false,
-    urlDescription: null,
+    urlDescription: null
 };
 
 ExternalRedirect.propTypes = {
     forceExternal: PropTypes.bool,
     url: PropTypes.string.isRequired,
-    urlDescription: PropTypes.string,
+    urlDescription: PropTypes.string
 };
 
 export default ExternalRedirect;

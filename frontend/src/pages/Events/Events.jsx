@@ -4,48 +4,50 @@ import { graphql, StaticQuery } from 'gatsby';
 import { Event, Title } from '../../helpers/components';
 import { translate, translateDescription } from '../../helpers/translation';
 
-const Events = () => (
-    <StaticQuery
-        query={graphql`
-            query {
-                allEventsJson(sort: { fields: id, order: DESC }) {
-                    edges {
-                        node {
-                            id
-                            name
-                            description
-                            FR
-                            url
-                            image {
-                                childImageSharp {
-                                    fixed(width: 230, height: 230) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
+const query = graphql`
+    query {
+        allEventsJson(sort: { fields: id, order: DESC }) {
+            edges {
+                node {
+                    id
+                    name
+                    description
+                    FR
+                    url
+                    image {
+                        childImageSharp {
+                            fixed(width: 230, height: 230) {
+                                ...GatsbyImageSharpFixed_withWebp
                             }
                         }
                     }
                 }
             }
-        `}
+        }
+    }
+`;
+
+const Events = () => (
+    <StaticQuery
+        query={query}
         render={({ allEventsJson: { edges } }) => (
             <div>
-                <Title variant='h5' gutterBottom className='title'>
+                <Title variant="h5" gutterBottom className="title">
                     {translate('Events')}
                 </Title>
-                <GridList id='event-grid' cols={2}>
+                <GridList id="event-grid" cols={2}>
                     {edges.map(
                         ({
                             node: {
                                 id,
                                 image: {
-                                    childImageSharp: { fixed: image },
+                                    childImageSharp: { fixed: image }
                                 },
                                 name,
                                 description: EN,
                                 FR,
-                                url,
-                            },
+                                url
+                            }
                         }) => (
                             <Event
                                 key={String(id)}

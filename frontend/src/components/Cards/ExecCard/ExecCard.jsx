@@ -6,12 +6,12 @@ import {
     CardMedia,
     FormControlLabel,
     IconButton,
-    Typography,
+    Typography
 } from '@material-ui/core';
 import Img from 'gatsby-image';
 import './exec-card.scss';
 
-const ExecCard = (props) => {
+const ExecCard = props => {
     const imageStyle = {
         margin: '16px auto 0',
         borderRadius: '50%',
@@ -21,7 +21,7 @@ const ExecCard = (props) => {
         display: 'block',
         WebkitBorderRadius: '50%',
         WebkitBoxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
-        boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)',
+        boxShadow: '0 0 0 8px rgba(0, 0, 0, 0.06)'
     };
 
     const { image, name, position, email } = props;
@@ -36,8 +36,8 @@ const ExecCard = (props) => {
         />
     ) : (
         <CardMedia
-            component='img'
-            height='166'
+            component="img"
+            height="166"
             image={`http://identicon.org/?t=${name}&s=166`}
             src={`http://identicon.org/?t=${name}&s=166`}
             title={name}
@@ -45,20 +45,20 @@ const ExecCard = (props) => {
         />
     );
 
-    const openEmail = (email_) => (
-        <div className='center-horizontal'>
+    const openEmail = email_ => (
+        <div className="center-horizontal">
             <FormControlLabel
                 control={
                     <a
-                        target='_top'
-                        rel='noopener noreferrer'
+                        target="_top"
+                        rel="noopener noreferrer"
                         href={`mailto:${email_}`}
                     >
-                        <IconButton color='primary' />
+                        <IconButton color="primary" />
                     </a>
                 }
                 label={email_}
-                labelPlacement='end'
+                labelPlacement="end"
             />
         </div>
     );
@@ -67,19 +67,19 @@ const ExecCard = (props) => {
         <Card
             style={{
                 margin: '16px 16px',
-                width: '280px',
+                width: '280px'
             }}
         >
             {imageComponent}
             <CardContent>
                 <Typography
                     gutterBottom
-                    variant='h5'
-                    className='center-horizontal'
+                    variant="h5"
+                    className="center-horizontal"
                 >
                     {name}
                 </Typography>
-                <Typography component='p' className='center-horizontal'>
+                <Typography component="p" className="center-horizontal">
                     {position}
                 </Typography>
                 {email && openEmail(email)}
@@ -90,14 +90,14 @@ const ExecCard = (props) => {
 
 ExecCard.defaultProps = {
     image: null,
-    email: null,
+    email: null
 };
 
 ExecCard.propTypes = {
     email: PropTypes.string,
     image: PropTypes.object,
     name: PropTypes.string.isRequired,
-    position: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired
 };
 
 export default ExecCard;

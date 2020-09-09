@@ -17,7 +17,7 @@ const getVoteURL = () => {
 const ElectionsEN = () => {
     return (
         <Typography
-            variant='h5'
+            variant="h5"
             style={{ paddingBottom: '8px', textAlign: 'center' }}
         >
             IEEE Elections are here! <br /> <br />
@@ -80,7 +80,7 @@ const ElectionsEN = () => {
 const ElectionsFR = () => {
     return (
         <Typography
-            variant='h5'
+            variant="h5"
             style={{ paddingBottom: '8px', textAlign: 'center' }}
         >
             Les Élections de l’IEEE sont arrivées!
@@ -158,17 +158,17 @@ const ElectionsFR = () => {
 const Elections = () => {
     return (
         <div>
-            <Title variant='h5' gutterBottom className='title'>
+            <Title variant="h5" gutterBottom className="title">
                 {translate('Elections')}
             </Title>
             <div style={{ textAlign: 'center' }}>
                 <img
                     src={voteImg}
-                    alt='vote'
+                    alt="vote"
                     style={{
                         borderRadius: '25px',
                         height: '40%',
-                        width: '40%',
+                        width: '40%'
                     }}
                 />
             </div>

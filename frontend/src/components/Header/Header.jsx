@@ -8,7 +8,7 @@ import {
     MenuIcon,
     NavButton,
     NavDropDown,
-    Toggle,
+    Toggle
 } from '../../helpers/components';
 import { sun, moon, logo2 as logo } from '../../helpers/theme';
 import { translate, getCurrentLanguage } from '../../helpers/translation';
@@ -19,7 +19,7 @@ class Header extends Component {
         super(props);
         this.state = {
             isOpen: false,
-            anchorEl: null,
+            anchorEl: null
         };
         this.handleMenuClick = this.handleMenuClick.bind(this);
         this.handleMenuClose = this.handleMenuClose.bind(this);
@@ -34,29 +34,29 @@ class Header extends Component {
     handleMenuClick({ currentTarget }) {
         this.setState({
             isOpen: true,
-            anchorEl: currentTarget,
+            anchorEl: currentTarget
         });
     }
 
     handleMenuClose() {
         this.setState({
             isOpen: false,
-            anchorEl: null,
+            anchorEl: null
         });
     }
 
     renderLogo() {
         return (
-            <Link to='/' href='/' style={{ flexGrow: 1 }}>
+            <Link to="/" href="/" style={{ flexGrow: 1 }}>
                 <img
                     src={logo}
-                    alt='IEEE uOttawa Logo'
+                    alt="IEEE uOttawa Logo"
                     style={{
                         maxWidth: '140px',
                         paddingTop: '15px',
                         paddingLeft: '32px',
                         display: 'flex',
-                        justifyContent: 'space-between',
+                        justifyContent: 'space-between'
                     }}
                 />
             </Link>
@@ -80,9 +80,9 @@ class Header extends Component {
                     return (
                         <NavDropDown
                             key={title}
-                            color='inherit'
+                            color="inherit"
                             items={items}
-                            clickbubbledown='true'
+                            clickbubbledown="true"
                             component={Button}
                         >
                             {translate(title)}
@@ -106,7 +106,7 @@ class Header extends Component {
                         items={routes.map(({ title, path: link, items }) => ({
                             title: translate(title),
                             link,
-                            items,
+                            items
                         }))}
                         isOpen={isOpen}
                         onClose={this.handleMenuClose}
@@ -120,11 +120,11 @@ class Header extends Component {
         return (
             <img
                 src={icon}
-                width='16'
-                height='16'
-                alt='presentation'
+                width="16"
+                height="16"
+                alt="presentation"
                 style={{
-                    pointerEvents: 'none',
+                    pointerEvents: 'none'
                 }}
             />
         );
@@ -136,7 +136,7 @@ class Header extends Component {
             <Toggle
                 icons={{
                     checked: this.renderThemeIcon(moon),
-                    unchecked: this.renderThemeIcon(sun),
+                    unchecked: this.renderThemeIcon(sun)
                 }}
                 checked={theme === 'dark'}
                 onClick={this.handleMenuTheme}
@@ -152,8 +152,8 @@ class Header extends Component {
     render() {
         return (
             <AppBar
-                color='default'
-                position='sticky'
+                color="default"
+                position="sticky"
                 style={{ padding: '0px 0 0' }}
             >
                 <Toolbar>
@@ -175,13 +175,13 @@ class Header extends Component {
 }
 
 Header.defaultProps = {
-    theme: null,
+    theme: null
 };
 
 Header.propTypes = {
     theme: PropTypes.string,
     toggleTheme: PropTypes.func.isRequired,
-    toggleLanguage: PropTypes.func.isRequired,
+    toggleLanguage: PropTypes.func.isRequired
 };
 
 export default Header;

@@ -5,7 +5,7 @@ import {
     FormControl,
     InputLabel,
     MenuItem,
-    Select,
+    Select
 } from '../../helpers/material-ui';
 
 class MaterialSelect extends Component {
@@ -28,7 +28,7 @@ class MaterialSelect extends Component {
 
         return (
             <FormControl required={isRequired} style={style}>
-                <InputLabel shrink htmlFor='select-placeholder'>
+                <InputLabel shrink htmlFor="select-placeholder">
                     {label}
                 </InputLabel>
                 <Select
@@ -36,11 +36,11 @@ class MaterialSelect extends Component {
                     onChange={this.handleChange}
                     inputProps={{
                         name,
-                        id: `${name}-input`,
+                        id: `${name}-input`
                     }}
                     name={name}
                 >
-                    {Object.values(items).map((value) => (
+                    {Object.values(items).map(value => (
                         <MenuItem value={value}>{value}</MenuItem>
                     ))}
                 </Select>
@@ -54,18 +54,18 @@ MaterialSelect.propTypes = {
     items: PropTypes.arrayOf(
         PropTypes.exact({
             key: PropTypes.string.isRequired,
-            value: PropTypes.any.isRequired,
+            value: PropTypes.any.isRequired
         })
     ).isRequired,
     isRequired: PropTypes.bool,
     onChange: PropTypes.func,
-    style: stylePropType,
+    style: stylePropType
 };
 
 MaterialSelect.defaultProps = {
     isRequired: false,
     onChange: () => {},
-    style: {},
+    style: {}
 };
 
 export default MaterialSelect;

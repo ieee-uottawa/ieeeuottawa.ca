@@ -14,7 +14,7 @@ import {
     flattenDeep,
     isDevEnvironment,
     moneyFormatter,
-    isServerSideRendering,
+    isServerSideRendering
 } from '../../utils/util';
 import { removeItemFromCart } from '../../redux/actions/cart_actions';
 import Title from '../Titles/Title';
@@ -22,7 +22,7 @@ import Title from '../Titles/Title';
 import sadEmoji from '../../../static/images/emoji_sad.svg';
 import './cart.scss';
 
-const optionsSum = (price) => (sum, { quantity }) =>
+const optionsSum = price => (sum, { quantity }) =>
     sum + calculatePrice(price, quantity);
 
 class Cart extends Component {
@@ -60,7 +60,7 @@ class Cart extends Component {
         } else {
             this.state = {
                 ...this.state,
-                ...state,
+                ...state
             };
         }
     }
@@ -79,27 +79,26 @@ class Cart extends Component {
         );
         const cart = flattenDeep(
             items.map(({ id, name, imageURL, price, options }) =>
-                options.map((itemOptions) => {
+                options.map(itemOptions => {
                     // console.log(itemOptions);
                     return {
                         id,
                         description: `${name} (${Object.keys(itemOptions)
                             .filter(
-                                (option) =>
+                                option =>
                                     price.length > 1 ||
                                     (price.length === 1 &&
                                         option !== 'quantity')
                             )
                             .map(
-                                (key) =>
-                                    `${capitalize(key)}: ${itemOptions[key]}`
+                                key => `${capitalize(key)}: ${itemOptions[key]}`
                             )
                             .join(', ')})`.replace(' ()', ''),
                         name,
                         imageURL: imageURL.childImageSharp.resolutions.src,
                         price,
                         options: itemOptions,
-                        quantity: itemOptions.quantity,
+                        quantity: itemOptions.quantity
                     };
                 })
             )
@@ -121,7 +120,7 @@ class Cart extends Component {
                                 style={{ padding: '16px' }}
                             >
                                 <Hidden xsDown>
-                                    <Grid container direction='row'>
+                                    <Grid container direction="row">
                                         <Grid sm={3} />
                                         <Grid sm={3}>
                                             <Typography>Product</Typography>
@@ -146,7 +145,7 @@ class Cart extends Component {
                                             imageURL,
                                             price,
                                             options,
-                                            quantity,
+                                            quantity
                                         }) => (
                                             <ProductRow
                                                 key={`${id}-${Object.values(
@@ -178,19 +177,19 @@ class Cart extends Component {
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     padding: total > 0 ? '0' : '32px',
-                                    background: 'rgba(0, 0, 0, 0.08)',
+                                    background: 'rgba(0, 0, 0, 0.08)'
                                 }}
                             >
                                 <Typography
-                                    className='center-horizontal'
-                                    variant='h6'
+                                    className="center-horizontal"
+                                    variant="h6"
                                     style={{ margin: '32px 16px 16px' }}
                                 >
                                     Cart Total
                                 </Typography>
                                 <Typography
-                                    className='center-horizontal'
-                                    variant='h4'
+                                    className="center-horizontal"
+                                    variant="h4"
                                     style={{ margin: '0 16px' }}
                                 >
                                     {moneyFormatter.format(total)}
@@ -214,16 +213,16 @@ class Cart extends Component {
                         <div>
                             <img
                                 src={sadEmoji}
-                                alt='Sad emoji'
-                                height='200'
+                                alt="Sad emoji"
+                                height="200"
                                 style={{
                                     display: 'block',
-                                    margin: '0 auto',
+                                    margin: '0 auto'
                                 }}
                             />
                             <Typography
-                                className='center-horizontal'
-                                variant='h4'
+                                className="center-horizontal"
+                                variant="h4"
                             >
                                 Your cart is empty
                             </Typography>
@@ -240,7 +239,7 @@ Cart.contextTypes = {
 };
 
 Cart.propTypes = {
-    dispatch: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired
 };
 
 export default connect()(Cart);

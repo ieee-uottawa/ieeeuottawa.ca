@@ -16,7 +16,170 @@ import { mapDispatchToProps } from '../../helpers/actions';
 import { isServerSideRendering, isFacebookApp } from '../../utils/util';
 import { candidates, sortPositions } from '../../helpers/elections';
 
-const responseGoogle = (response) => {
+const query = graphql`
+    query {
+        allDataJson {
+            nodes {
+                VP_Communications {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                        fr
+                    }
+                }
+                Vice_Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                        fr
+                    }
+                }
+                McNaughton_Centre_Director {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                VP_External {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                        fr
+                    }
+                }
+                Treasurer {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                Secretary {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                VP_Internal {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                WIE_Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                WIE_Vice_Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                VP_Social {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                VP_Academic {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                Webmaster {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                        fr
+                    }
+                }
+                Photonics_Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+                Photonics_Vice_Chair {
+                    name
+                    program
+                    LinkedIn
+                    FB
+                    profile
+                    platform {
+                        en
+                    }
+                }
+            }
+        }
+    }
+`;
+
+const responseGoogle = response => {
     // eslint-disable-next-line no-console
     console.log('failure', response);
 };
@@ -34,7 +197,7 @@ class Vote extends Component {
             username: '',
             voted: false,
             sessionExpired: false,
-            loading: true,
+            loading: true
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -121,7 +284,7 @@ class Vote extends Component {
                     displayForm: true,
                     loggedIn: true,
                     email,
-                    username: `${givenName} ${familyName}`,
+                    username: `${givenName} ${familyName}`
                 });
                 this.login(googleToken);
             } else {
@@ -150,7 +313,7 @@ class Vote extends Component {
     renderLoginPage() {
         return (
             <div style={{ textAlign: 'center' }}>
-                <Typography variant='h5' gutterBottom>
+                <Typography variant="h5" gutterBottom>
                     Please log in to continue
                 </Typography>
             </div>
@@ -161,11 +324,11 @@ class Vote extends Component {
         return (
             isFacebookApp() && (
                 <div style={{ textAlign: 'center' }}>
-                    <Typography variant='h5' gutterBottom color='secondary'>
+                    <Typography variant="h5" gutterBottom color="secondary">
                         Unsupported Browser
                     </Typography>
                     <a href={browserUrl}>
-                        <Typography variant='h5' gutterBottom color='secondary'>
+                        <Typography variant="h5" gutterBottom color="secondary">
                             ieeeuottawa.ca/vote
                         </Typography>
                     </a>
@@ -179,13 +342,13 @@ class Vote extends Component {
             fontSize: '30px',
             color: '#000000',
             textAlign: 'left',
-            marginBottom: '20px',
+            marginBottom: '20px'
         };
         const pictureMap = this.obtainPics(json);
         const positions = Object.keys(candidates);
         return (
             <div style={{ padding: '10px' }}>
-                {positions.map((position) => {
+                {positions.map(position => {
                     const currentCandidates = candidates[position];
                     const hasCandidates = currentCandidates.length > 0;
                     return (
@@ -193,22 +356,22 @@ class Vote extends Component {
                             <div key={position} style={{ margin: '30px' }}>
                                 <FormControl>
                                     <FormLabel
-                                        component='legend'
-                                        color='primary'
+                                        component="legend"
+                                        color="primary"
                                         style={formLabelStyle}
                                     >
-                                        <Typography variant='h5' gutterBottom>
+                                        <Typography variant="h5" gutterBottom>
                                             {position}
                                         </Typography>
                                     </FormLabel>
                                     <RadioGroup
                                         aria-label={position}
                                         name={position}
-                                        onChange={(event) =>
+                                        onChange={event =>
                                             this.handleChange(position, event)
                                         }
                                     >
-                                        {currentCandidates.map((candidate) => {
+                                        {currentCandidates.map(candidate => {
                                             let imgSrc = null;
                                             if (candidate in pictureMap)
                                                 imgSrc = pictureMap[candidate];
@@ -220,7 +383,7 @@ class Vote extends Component {
                                                         <div>
                                                             {imgSrc && (
                                                                 <img
-                                                                    alt='pic'
+                                                                    alt="pic"
                                                                     style={{
                                                                         borderRadius:
                                                                             '25%',
@@ -229,7 +392,7 @@ class Vote extends Component {
                                                                         width:
                                                                             '70px',
                                                                         marginRight:
-                                                                            '10px',
+                                                                            '10px'
                                                                     }}
                                                                     src={imgSrc}
                                                                 />
@@ -238,7 +401,7 @@ class Vote extends Component {
                                                         </div>
                                                     }
                                                     control={
-                                                        <Radio color='secondary' />
+                                                        <Radio color="secondary" />
                                                     }
                                                 />
                                             );
@@ -257,9 +420,9 @@ class Vote extends Component {
                     <Button
                         disabled={!this.isFormCompleted()}
                         onClick={this.handleSubmit}
-                        size='large'
-                        variant='contained'
-                        color='secondary'
+                        size="large"
+                        variant="contained"
+                        color="secondary"
                     >
                         SUBMIT
                     </Button>
@@ -273,7 +436,7 @@ class Vote extends Component {
             <FormControlLabel
                 value={value}
                 label={value}
-                control={<Radio color='secondary' />}
+                control={<Radio color="secondary" />}
             />
         );
     }
@@ -284,32 +447,37 @@ class Vote extends Component {
             <>
                 {sessionExpired && (
                     <Typography
-                        variant='body1'
+                        variant="body1"
                         style={{
                             textAlign: 'center',
                             marginBottom: '20px',
-                            marginTop: '20px',
+                            marginTop: '20px'
                         }}
                     >
                         Your session expired so you need to log in again
                     </Typography>
                 )}
-                {!loggedIn && !isFacebookApp() && (
-                    <div style={{ textAlign: 'center' }}>
-                        <GoogleLogin
-                            clientId={process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID}
-                            buttonText='Log in with your uOttawa email'
-                            hostedDomain='uottawa.ca'
-                            onSuccess={this.handleLogin}
-                            onFailure={responseGoogle}
-                            cookiePolicy='single_host_origin'
-                            isSignedIn={this.handleLogin}
-                        />
-                        <div style={{ marginTop: '30px' }}>
-                            {!displayForm && !voted && this.renderLoginPage()}
+                {!loggedIn &&
+                    !isFacebookApp() && (
+                        <div style={{ textAlign: 'center' }}>
+                            <GoogleLogin
+                                clientId={
+                                    process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID
+                                }
+                                buttonText="Log in with your uOttawa email"
+                                hostedDomain="uottawa.ca"
+                                onSuccess={this.handleLogin}
+                                onFailure={responseGoogle}
+                                cookiePolicy="single_host_origin"
+                                isSignedIn={this.handleLogin}
+                            />
+                            <div style={{ marginTop: '30px' }}>
+                                {!displayForm &&
+                                    !voted &&
+                                    this.renderLoginPage()}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
             </>
         );
     }
@@ -322,12 +490,12 @@ class Vote extends Component {
                 <div style={{ textAlign: 'center' }}>
                     <GoogleLogout
                         clientId={process.env.GATSBY_GOOGLE_SIGNIN_CLIENTID}
-                        buttonText='Logout'
+                        buttonText="Logout"
                         onLogoutSuccess={this.handleLogout}
                     />
 
                     <Typography
-                        variant='h5'
+                        variant="h5"
                         gutterBottom
                         style={{ margin: '20px' }}
                     >
@@ -335,7 +503,7 @@ class Vote extends Component {
                     </Typography>
 
                     <Typography
-                        variant='h5'
+                        variant="h5"
                         gutterBottom
                         style={{ margin: '20px' }}
                     >
@@ -352,7 +520,7 @@ class Vote extends Component {
             voted && (
                 <div style={{ textAlign: 'center' }}>
                     <Typography
-                        variant='h5'
+                        variant="h5"
                         gutterBottom
                         style={{ margin: '20px' }}
                     >
@@ -367,175 +535,14 @@ class Vote extends Component {
         const { displayForm, loading } = this.state;
         return (
             <StaticQuery
-                query={graphql`
-                    query {
-                        allDataJson {
-                            nodes {
-                                VP_Communications {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                        fr
-                                    }
-                                }
-                                Vice_Chair {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                        fr
-                                    }
-                                }
-                                McNaughton_Centre_Director {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                                VP_External {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                        fr
-                                    }
-                                }
-                                Treasurer {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                                Secretary {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                                VP_Internal {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                                WIE_Chair {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                                WIE_Vice_Chair {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                                Chair {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                                VP_Social {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                                VP_Academic {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                                Webmaster {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                        fr
-                                    }
-                                }
-                                Photonics_Chair {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                                Photonics_Vice_Chair {
-                                    name
-                                    program
-                                    LinkedIn
-                                    FB
-                                    profile
-                                    platform {
-                                        en
-                                    }
-                                }
-                            }
-                        }
-                    }
-                `}
+                query={query}
                 render={({ allDataJson }) => {
                     const dataJson = allDataJson.nodes[0];
                     if (!dataJson) return null;
                     const candidatesSorted = sortPositions(dataJson);
                     return (
                         <>
-                            <Title variant='h5' gutterBottom className='title'>
+                            <Title variant="h5" gutterBottom className="title">
                                 Vote
                             </Title>
                             {this.renderLoginButton()}
@@ -543,10 +550,10 @@ class Vote extends Component {
 
                             {loading && (
                                 <div style={{ textAlign: 'center' }}>
-                                    <Grid container justify='center'>
+                                    <Grid container justify="center">
                                         <ReactLoading
-                                            type='spin'
-                                            color='#3498db'
+                                            type="spin"
+                                            color="#3498db"
                                         />
                                     </Grid>
                                 </div>
@@ -555,12 +562,12 @@ class Vote extends Component {
                             {!loading && (
                                 <div style={{ marginTop: '30px' }}>
                                     {this.renderUnsupportedBrowser()}
-                                    <Grid container justify='center'>
+                                    <Grid container justify="center">
                                         {displayForm && (
                                             <Paper
                                                 style={{
                                                     width: '400px',
-                                                    marginBottom: '30px',
+                                                    marginBottom: '30px'
                                                 }}
                                             >
                                                 {this.renderForm(
@@ -583,14 +590,14 @@ Vote.defaultProps = {
     actions: null,
     votes: null,
     voted: null,
-    sessionExpired: false,
+    sessionExpired: false
 };
 
 Vote.propTypes = {
     actions: PropTypes.any,
     votes: PropTypes.any,
     voted: PropTypes.any,
-    sessionExpired: PropTypes.bool,
+    sessionExpired: PropTypes.bool
 };
 
 const mapStateToProps = ({ actionReducer }) => {
@@ -598,10 +605,13 @@ const mapStateToProps = ({ actionReducer }) => {
         votes: actionReducer.votes,
         login: actionReducer.login,
         voted: actionReducer.voted,
-        sessionExpired: actionReducer.sessionExpired,
+        sessionExpired: actionReducer.sessionExpired
     };
 };
 
-export default isServerSideRendering()
+export default (isServerSideRendering()
     ? Vote
-    : connect(mapStateToProps, mapDispatchToProps)(Vote);
+    : connect(
+          mapStateToProps,
+          mapDispatchToProps
+      )(Vote));

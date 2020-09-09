@@ -11,9 +11,9 @@ const Parallax = ({ buttonText, buttonURL, imageURL, messageText }) => {
         if (buttonURL != null) {
             button = (
                 <IEEEButton
-                    variant='outlined'
-                    color='secondary'
-                    className='white-btn white-url-txt'
+                    variant="outlined"
+                    color="secondary"
+                    className="white-btn white-url-txt"
                     style={{ margin: '20px 16px' }}
                     component={Link}
                     to={buttonURL}
@@ -25,9 +25,9 @@ const Parallax = ({ buttonText, buttonURL, imageURL, messageText }) => {
         } else {
             button = (
                 <IEEEButton
-                    variant='outlined'
-                    color='secondary'
-                    className='white-btn'
+                    variant="outlined"
+                    color="secondary"
+                    className="white-btn"
                     style={{ margin: '20px 16px' }}
                 >
                     {buttonText}
@@ -45,12 +45,12 @@ const Parallax = ({ buttonText, buttonURL, imageURL, messageText }) => {
                 backgroundAttachment: 'fixed',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                position: 'relative',
+                position: 'relative'
             }}
         >
-            <div className='center'>
+            <div className="center">
                 {messageText != null && (
-                    <Typography variant='h5' style={{ color: 'white' }}>
+                    <Typography variant="h5" style={{ color: 'white' }}>
                         {messageText}
                         {button != null && button}
                     </Typography>
@@ -63,14 +63,14 @@ const Parallax = ({ buttonText, buttonURL, imageURL, messageText }) => {
 Parallax.defaultProps = {
     buttonText: null,
     buttonURL: null,
-    messageText: null,
+    messageText: null
 };
 
 Parallax.propTypes = {
     buttonText: PropTypes.string,
     buttonURL: PropTypes.string,
     imageURL: PropTypes.string.isRequired,
-    messageText: PropTypes.string,
+    messageText: PropTypes.string
 };
 
 export default Parallax;

@@ -27,7 +27,7 @@ class PaypalButton extends Component {
                 {
                     amount: {
                         total,
-                        currency: 'CAD',
+                        currency: 'CAD'
                     },
                     item_list: {
                         items: cart.map(
@@ -45,13 +45,13 @@ class PaypalButton extends Component {
                                             ? quantity
                                             : quantity -
                                               Math.floor(quantity / 3),
-                                    currency: 'CAD',
+                                    currency: 'CAD'
                                 };
                             }
-                        ),
-                    },
-                },
-            ],
+                        )
+                    }
+                }
+            ]
         });
     }
 
@@ -61,7 +61,7 @@ class PaypalButton extends Component {
             const Paypal = require('paypal-checkout');
             const PayPalButton = Paypal.Button.driver('react', {
                 React,
-                ReactDOM,
+                ReactDOM
             });
             const { env, cart, total, ...props } = this.props;
             return (
@@ -70,11 +70,11 @@ class PaypalButton extends Component {
                     env={env}
                     client={{
                         sandbox: process.env.GATSBY_PAYPAL_DEV_KEY,
-                        production: process.env.GATSBY_PAYPAL_PROD_KEY,
+                        production: process.env.GATSBY_PAYPAL_PROD_KEY
                     }}
                     payment={this.payment}
                     onAuthorize={this.onAuthorize}
-                    locale='en_CA'
+                    locale="en_CA"
                 />
             );
         }
@@ -86,7 +86,7 @@ PaypalButton.propTypes = {
     env: PropTypes.oneOf(['sandbox', 'production']).isRequired,
     cart: PropTypes.arrayOf.isRequired,
     total: PropTypes.number.isRequired,
-    dispatch: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired
 };
 
 const paypalButton = connect()(PaypalButton);

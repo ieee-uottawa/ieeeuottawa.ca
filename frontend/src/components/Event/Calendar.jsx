@@ -8,12 +8,12 @@ const theme = {
     calendarIcon: {
         textColor: 'white',
         primaryColor: '#3498db',
-        backgroundColor: '#ecf0f1',
-    },
+        backgroundColor: '#ecf0f1'
+    }
 };
 
 const styles = {
-    color: '#3498db',
+    color: '#3498db'
 };
 
 const Calendar = ({ id }) => {
@@ -24,7 +24,7 @@ const Calendar = ({ id }) => {
         header: { weekday: 'long' },
         footer: { month: 'short', year: 'numeric' },
         value: { day: '2-digit' },
-        locale: getCurrentLocale(),
+        locale: getCurrentLocale()
     };
     return (
         <div styles={styles}>
@@ -40,11 +40,11 @@ const Calendar = ({ id }) => {
 };
 
 Calendar.defaultProps = {
-    id: null,
+    id: null
 };
 
 Calendar.propTypes = {
-    id: PropTypes.string,
+    id: PropTypes.string
 };
 
 export default Calendar;

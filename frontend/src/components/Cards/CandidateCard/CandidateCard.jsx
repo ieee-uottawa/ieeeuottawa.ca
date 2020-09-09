@@ -18,7 +18,7 @@ class CandidateCard extends Component {
         const currentIndex = this.languages.indexOf(currentLanguage);
         this.setState({
             currentLanguage: this.languages[(currentIndex + 1) % 2],
-            otherLanguage: this.languages[currentIndex],
+            otherLanguage: this.languages[currentIndex]
         });
     }
 
@@ -32,13 +32,13 @@ class CandidateCard extends Component {
             <div style={{ textAlign: 'center' }}>
                 <img
                     src={src}
-                    alt='profile'
+                    alt="profile"
                     style={{
                         borderRadius: '50%',
                         // float: mobile ? null : 'left',
                         height: '200px',
                         width: '200px',
-                        marginRight: '2%',
+                        marginRight: '2%'
                     }}
                 />
             </div>
@@ -77,26 +77,26 @@ class CandidateCard extends Component {
                 <CardContent>
                     <div style={{ display: 'flex' }}>
                         <Typography
-                            variant='body1'
-                            color='textPrimary'
+                            variant="body1"
+                            color="textPrimary"
                             gutterBottom
                             style={{
                                 flexGrow: 1,
                                 paddingTop: '8px',
                                 fontWeight: 'bold',
-                                verticalAlign: 'middle',
+                                verticalAlign: 'middle'
                             }}
                         >
                             {name}
                         </Typography>
 
                         <Typography
-                            variant='body1'
-                            color='textPrimary'
+                            variant="body1"
+                            color="textPrimary"
                             gutterBottom
                             style={{
                                 paddingTop: '8px',
-                                fontWeight: 'bold',
+                                fontWeight: 'bold'
                             }}
                         >
                             {program}
@@ -112,10 +112,10 @@ class CandidateCard extends Component {
                     {this.renderSocial(LinkedIn, FB)}
                     {profile && this.renderProfileImage(profile)}
                     <Typography
-                        component='div'
+                        component="div"
                         gutterBottom
                         dangerouslySetInnerHTML={{
-                            __html: platform[currentLanguage],
+                            __html: platform[currentLanguage]
                         }}
                     />
                 </CardContent>
@@ -130,7 +130,7 @@ CandidateCard.propTypes = {
     program: PropTypes.string.isRequired,
     profile: PropTypes.string.isRequired,
     LinkedIn: PropTypes.string.isRequired,
-    FB: PropTypes.string.isRequired,
+    FB: PropTypes.string.isRequired
 };
 
 export default CandidateCard;

@@ -12,7 +12,7 @@ exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
     if (stage.startsWith('develop') && config.resolve) {
         config.resolve.alias = {
             ...config.resolve.alias,
-            'react-dom': '@hot-loader/react-dom',
+            'react-dom': '@hot-loader/react-dom'
         };
     }
 };
@@ -31,7 +31,7 @@ exports.createPages = ({ actions }) => {
             fromPath,
             toPath: redirectMap[fromPath],
             redirectInBrowser: true,
-            isPermanent: true,
+            isPermanent: true
         });
     }
 };

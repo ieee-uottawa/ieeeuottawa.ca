@@ -7,7 +7,7 @@ import {
     CardContent,
     CardMedia,
     TextField,
-    Typography,
+    Typography
 } from '@material-ui/core';
 import { connect } from 'react-redux';
 import dayjs from 'dayjs';
@@ -42,7 +42,7 @@ class ProductCard extends Component {
     }
 
     handleChange(name) {
-        return (event) => {
+        return event => {
             const { target } = event;
             let { value } = target;
 
@@ -53,7 +53,7 @@ class ProductCard extends Component {
             // console.log(`value: ${value}`);
             this.setState({ [name]: value }, () => {
                 this.setState({
-                    isValidForm: this.isValidForm(),
+                    isValidForm: this.isValidForm()
                 });
             });
         };
@@ -66,7 +66,7 @@ class ProductCard extends Component {
             count > 0 &&
             (!options ||
                 Object.keys(options).some(
-                    (option) => Object.keys(this.state).indexOf(option) > -1
+                    option => Object.keys(this.state).indexOf(option) > -1
                 ))
         );
     }
@@ -77,7 +77,7 @@ class ProductCard extends Component {
             name,
             imageURL,
             price,
-            onAddToCart: addToCart,
+            onAddToCart: addToCart
         } = this.props;
         const { count, isValidForm, unsubscribe, ...options } = this.state;
 
@@ -89,7 +89,7 @@ class ProductCard extends Component {
                 quantity: count,
                 options,
                 price,
-                key: new Date().getTime(),
+                key: new Date().getTime()
             });
         }
     }
@@ -98,29 +98,29 @@ class ProductCard extends Component {
         const { name, imageURL, price, expiry, options } = this.props;
         const { count, isValidForm } = this.state;
         return (
-            <Card id='product-card'>
+            <Card id="product-card">
                 <CardMedia
-                    id='product-img'
-                    component='img'
+                    id="product-img"
+                    component="img"
                     title={name}
                     image={imageURL.childImageSharp.resolutions.src}
                 />
                 <CardContent>
                     <Typography
                         gutterBottom
-                        variant='h5'
-                        className='center-horizontal'
+                        variant="h5"
+                        className="center-horizontal"
                     >
                         {name}
                     </Typography>
-                    <Typography component='p' className='center-horizontal'>
+                    <Typography component="p" className="center-horizontal">
                         {showPricing(price)}
                     </Typography>
                     {expiry && (
                         <Typography
-                            component='p'
-                            variant='caption'
-                            className='center-horizontal'
+                            component="p"
+                            variant="caption"
+                            className="center-horizontal"
                         >
                             LIMITED TIME! Get your {name} before{' '}
                             {dayjs(expiry).format('MMMM D')}!
@@ -134,9 +134,9 @@ class ProductCard extends Component {
                                 <MaterialSelect
                                     style={{
                                         margin,
-                                        minWidth: '72px',
+                                        minWidth: '72px'
                                     }}
-                                    label={key.replace(/^\w/, (c) =>
+                                    label={key.replace(/^\w/, c =>
                                         c.toUpperCase()
                                     )}
                                     items={options[key]}
@@ -148,16 +148,16 @@ class ProductCard extends Component {
                 </CardContent>
                 <CardActions>
                     <TextField
-                        id='product-count'
+                        id="product-count"
                         value={count}
                         onChange={this.handleChange('count')}
-                        type='number'
+                        type="number"
                         InputLabelProps={{ shrink: true }}
-                        margin='normal'
+                        margin="normal"
                     />
                     <span style={{ flexGrow: 1 }} />
                     <Button
-                        size='small'
+                        size="small"
                         disabled={!isValidForm}
                         onClick={this.handleAddToCartClick}
                     >
@@ -174,7 +174,7 @@ ProductCard.defaultProps = {
     expiry: null,
     itemCount: 1,
     onAddToCart: () => {},
-    options: null,
+    options: null
 };
 
 ProductCard.propTypes = {
@@ -188,13 +188,13 @@ ProductCard.propTypes = {
     price: PropTypes.arrayOf(
         PropTypes.shape({
             quantity: PropTypes.number.isRequired,
-            price: PropTypes.number.isRequired,
+            price: PropTypes.number.isRequired
         })
-    ).isRequired,
+    ).isRequired
 };
 
 ProductCard.contextTypes = {
-    store: PropTypes.object,
+    store: PropTypes.object
 };
 
 export default connect()(ProductCard);
