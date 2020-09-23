@@ -13,25 +13,19 @@
     },
     {
         "name": "VACANT",
-        "position": "Translation Commissioner",
-        "image": "../../static/images/execs-2020-2021/translation.jpg",
-        "email": "translation@ieeeuottawa.ca"
-    },
-    {
-        "name": "VACANT",
-        "position": "CEG Commissioner",
+        "position": "Computer Engineering",
         "image": "../../static/images/execs-2020-2021/ceg-com.jpg",
         "email": "ceg@ieeeuottawa.ca"
     },
     {
         "name": "VACANT",
-        "position": "SEG Commissioner",
+        "position": "Software Engineering",
         "image": "../../static/images/execs-2020-2021/seg-com.jpg",
         "email": "seg@ieeeuottawa.ca"
     },
     {
         "name": "VACANT",
-        "position": "ELG Commissioner",
+        "position": "Electrical Engineering",
         "image": "../../static/images/execs-2020-2021/elg-com.jpg",
         "email": "elg@ieeeuottawa.ca"
     }
