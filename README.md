@@ -26,6 +26,21 @@
 
 ## Installation
 
+**Requirements:**
+
+- `nvm` Node version manager for Windows, OSX, or Linux
+- `yarn` package manager
+
+
+**Steps:**
+
+0. Ensure your Node.js version is the latest build of node 10.x:
+
+```sh
+nvm install 10.22.1
+nvm use 10.22.1
+```
+
 1. Make sure that you have the Gatsby CLI program installed:
 ```sh
 npm install --global gatsby-cli
