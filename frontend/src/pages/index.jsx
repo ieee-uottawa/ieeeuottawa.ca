@@ -91,6 +91,10 @@ const IndexPage = props => {
                     allCarouselJson: { edges: carouselEdges }
                 } = queryProps;
 
+                // Get yesterday's date.
+                const now = new Date();
+                now.setDate(now.getDate() - 1);
+
                 return (
                     <div style={{ marginTop: '-1em' }}>
                         <Carousel
@@ -238,19 +242,30 @@ const IndexPage = props => {
                                         FR,
                                         url
                                     }
-                                }) => (
-                                    <Event
-                                        key={id}
-                                        id={id}
-                                        image={image}
-                                        name={name}
-                                        description={translateDescription(
-                                            EN,
-                                            FR
-                                        )}
-                                        url={url}
-                                    />
-                                )
+                                }) => {
+                                    const date_string = String(id)
+                                        .split('-')
+                                        .slice(0, 3)
+                                        .join('-');
+                                    const date = Date.parse(date_string);
+                                    if (date > now) {
+                                        return (
+                                            <Event
+                                                key={id}
+                                                id={id}
+                                                image={image}
+                                                name={name}
+                                                description={translateDescription(
+                                                    EN,
+                                                    FR
+                                                )}
+                                                url={url}
+                                            />
+                                        );
+                                    } else {
+                                        return null;
+                                    }
+                                }
                             )}
                         </GridList>
                         <Parallax
