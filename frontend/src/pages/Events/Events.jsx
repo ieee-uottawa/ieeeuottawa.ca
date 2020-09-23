@@ -30,38 +30,103 @@ const query = graphql`
 const Events = () => (
     <StaticQuery
         query={query}
-        render={({ allEventsJson: { edges } }) => (
-            <div>
-                <Title variant="h5" gutterBottom className="title">
-                    {translate('Events')}
-                </Title>
-                <GridList id="event-grid" cols={2}>
-                    {edges.map(
-                        ({
-                            node: {
-                                id,
-                                image: {
-                                    childImageSharp: { fixed: image }
-                                },
-                                name,
-                                description: EN,
-                                FR,
-                                url
+        render={({ allEventsJson: { edges } }) => {
+
+            // Get yesterday's date.
+            const now = new Date();
+            now.setDate(now.getDate()-1);
+
+            return (
+                <div>
+                    <Title variant="h5" gutterBottom className="title">
+                        {translate('Upcoming Events')}
+                    </Title>
+                    <GridList id="event-grid" cols={2}>
+                        {edges.map(
+                            ({
+                                node: {
+                                    id,
+                                    image: {
+                                        childImageSharp: { fixed: image }
+                                    },
+                                    name,
+                                    description: EN,
+                                    FR,
+                                    url
+                                }
+                            }) => {
+                                const date_string = String(id)
+                                    .split('-')
+                                    .slice(0, 3)
+                                    .join('-');
+                                const date = Date.parse(date_string);
+                                if (date > now) {
+                                    return (
+                                        <Event
+                                            key={String(id)}
+                                            id={String(id)}
+                                            image={image}
+                                            name={name}
+                                            description={translateDescription(
+                                                EN,
+                                                FR
+                                            )}
+                                            url={url}
+                                        />
+                                    );
+                                } else {
+                                    return null;
+                                }
                             }
-                        }) => (
-                            <Event
-                                key={String(id)}
-                                id={String(id)}
-                                image={image}
-                                name={name}
-                                description={translateDescription(EN, FR)}
-                                url={url}
-                            />
-                        )
-                    )}
-                </GridList>
-            </div>
-        )}
+                        )}
+                    </GridList>
+                    <br />
+                    <hr />
+                    <Title variant="h5" gutterBottom className="title">
+                        {translate('Past Events')}
+                    </Title>
+                    <GridList id="event-grid" cols={2}>
+                        {edges.map(
+                            ({
+                                node: {
+                                    id,
+                                    image: {
+                                        childImageSharp: { fixed: image }
+                                    },
+                                    name,
+                                    description: EN,
+                                    FR,
+                                    url
+                                }
+                            }) => {
+                                const date_string = String(id)
+                                    .split('-')
+                                    .slice(0, 3)
+                                    .join('-');
+                                const date = Date.parse(date_string);
+                                if (date < now) {
+                                    return (
+                                        <Event
+                                            key={String(id)}
+                                            id={String(id)}
+                                            image={image}
+                                            name={name}
+                                            description={translateDescription(
+                                                EN,
+                                                FR
+                                            )}
+                                            url={url}
+                                        />
+                                    );
+                                } else {
+                                    return null;
+                                }
+                            }
+                        )}
+                    </GridList>
+                </div>
+            );
+        }}
     />
 );
 
