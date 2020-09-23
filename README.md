@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/ieee-uottawa/ieeeuottawa.ca.svg?branch=master)](https://travis-ci.com/ieee-uottawa/ieeeuottawa.ca)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4d27cfd2d9054248838a2bc3dfb1045b)](https://www.codacy.com/gh/ieee-uottawa/ieeeuottawa.ca/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ieee-uottawa/ieeeuottawa.ca&amp;utm_campaign=Badge_Grade)
 
 <table align="center"><tr><td align="center" width="9999">
 <img width="200" align="center" alt="logo" src="frontend/static/images/ieee_logo_circle.png">
