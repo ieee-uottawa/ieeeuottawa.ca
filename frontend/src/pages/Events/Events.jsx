@@ -31,15 +31,14 @@ const Events = () => (
     <StaticQuery
         query={query}
         render={({ allEventsJson: { edges } }) => {
-
             // Get yesterday's date.
             const now = new Date();
-            now.setDate(now.getDate()-1);
+            now.setDate(now.getDate() - 1);
 
             return (
                 <div>
                     <Title variant="h5" gutterBottom className="title">
-                        {translate('Upcoming Events')}
+                        {translate('Current Events')}
                     </Title>
                     <GridList id="event-grid" cols={2}>
                         {edges.map(
