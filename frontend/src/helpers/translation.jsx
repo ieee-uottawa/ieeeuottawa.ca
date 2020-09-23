@@ -21,6 +21,14 @@ const menuItems = {
         EN: 'Election Results',
         FR: 'Résultats des élections'
     },
+    'Current Events': {
+        EN: 'Current Events',
+        FR: 'Évènements actuels'
+    },
+    'Past Events': {
+        EN: 'Past Events',
+        FR: 'Évènements passés'
+    },
     Events: {
         EN: 'Events',
         FR: 'Évènements'
