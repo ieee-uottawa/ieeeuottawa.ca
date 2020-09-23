@@ -32,7 +32,7 @@ class OfficeHours extends Component {
         const imgStyle = {
             display: 'block',
             borderRadius: '12px',
-            maxWidth: width > 712 ? '100%' : 'calc(100% - 32px)',
+            maxWidth: width > 712 ? '100%' : 'calc(100% - 32px)'
             // margin: width > 712 ? '0 auto 16px' : '0 16px 16px'
         };
 
