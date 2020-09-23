@@ -92,9 +92,16 @@ const Footer = () => {
                                 style={{ color: '#bdc3c7' }}
                                 id="copyright-txt"
                             >
-                                Copyright ©{` ${new Date().getFullYear()}`}{' '}
+                                Copyright © 2018
                                 <Link to="/" id="copyright-link">
-                                    IEEE uOttawa Student Branch
+                                    {" IEEE uOttawa Student Branch"}
+                                </Link>
+                                . View site
+                                <Link
+                                    to="https://github.com/ieee-uottawa/ieeeuottawa.ca"
+                                    id="source-code-link"
+                                >
+                                    {" source code"}
                                 </Link>
                                 .
                             </Typography>
