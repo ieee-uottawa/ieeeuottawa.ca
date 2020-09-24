@@ -310,5 +310,21 @@
         "FR": "Vous êtes nouveau aux Hackathons? IEEE WIE Ottawa et CU Hacking présente le tout premier Mock Hackathon à Ottawa pour IEEEXtreme! Enregistrez-vous pour l'évènement et du mentorat GRATUIT!! Vous courez la chance de gagner des prix passionnants!",
         "url": "https://wie.ieeeottawa.ca/wiehack613/",
         "image": "../images/events/2020-2021/hack.jpg"
+    },
+    {
+        "id": "2020-10-03-agm",
+        "name": "IEEE uOttawa AGM",
+        "description": "The IEEE uOttawa Student Branch will be continuing our Annual General Meeting to discuss by-elections and constitution changes.",
+        "FR": "La Branche Étudiante de l'IEEE à uOttawa continuera son Assemblée générale annuelle afin de mener des élections partielles et d'aborder des changements proposées à sa Constitution.",
+        "url": "https://www.facebook.com/events/1549348598605650/",
+        "image": "../images/events/2020-2021/agm.jpg"
+    },
+    {
+        "id": "2020-09-30-resume-roast",
+        "name": "Resume Roast",
+        "description": "Connect with your peers, discover new ideas and receive constructive criticism to build your best resume.",
+        "FR": "Entrez en contact avec vos pairs, découvrez de nouvelles idées et recevez des critiques constructives pour construire votre meilleur CV.",
+        "url": "https://www.facebook.com/events/1252791901749919/",
+        "image": "../images/events/2020-2021/roast.jpg"
     }
 ]
