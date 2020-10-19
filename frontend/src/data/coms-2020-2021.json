@@ -1,30 +1,12 @@
 [
     {
-        "name": "VACANT",
-        "position": "Design",
-        "image": "../../static/images/execs-2020-2021/design.jpg",
-        "email": "design@ieeeuottawa.ca"
-    },
-    {
-        "name": "VACANT",
-        "position": "WIE Design",
-        "image": "../../static/images/execs-2020-2021/wie-design.jpg",
-        "email": "wie-design@ieeeuottawa.ca"
-    },
-    {
-        "name": "VACANT",
+        "name": "Sirjan Singh Rekhi",
         "position": "Computer Engineering",
         "image": "../../static/images/execs-2020-2021/ceg-com.jpg",
         "email": "ceg@ieeeuottawa.ca"
     },
     {
-        "name": "VACANT",
-        "position": "Software Engineering",
-        "image": "../../static/images/execs-2020-2021/seg-com.jpg",
-        "email": "seg@ieeeuottawa.ca"
-    },
-    {
-        "name": "VACANT",
+        "name": "Erik Cassidy",
         "position": "Electrical Engineering",
         "image": "../../static/images/execs-2020-2021/elg-com.jpg",
         "email": "elg@ieeeuottawa.ca"
