@@ -18,56 +18,61 @@ const ElectionsEN = () => {
     return (
         <Typography
             variant="h5"
-            style={{
-                padding: '8px',
-                textAlign: 'left',
-                maxWidth: '600px',
-                margin: '0 auto',
-                fontSize: '18px'
-            }}
+            style={{ paddingBottom: '8px', textAlign: 'center' }}
         >
-            <h1>IEEE Elections</h1>
-            <p>
-                The new voting system is in development. Please check back here
-                regularly for updates.
-            </p>
-            <p>
-                Elections begin in <b>February 2021</b>.
-            </p>
-            <p>A link to the new platform will be posted here.</p>
+            IEEE Elections are here! <br /> <br />
+            Who can apply: Anyone in Computer Science, Engineering or Science!{' '}
+            <br /> <br />
+            How can you apply? <br />
+            At the following link: <br />
+            {getVoteURL()} <br /> <br />
+            <b>IEEE Elections: </b> <br />
+            <div style={{ display: 'inline-block', textAlign: 'left' }}>
+                Feb 26th: First day to apply for positions/nomination period
+                begins
+                <br />
+                March 11th 12:00pm: Nomination period ends <br />
+                March 11th 5:30pm or 8:30pm: Mandatory candidates meeting
+                <br />
+                March 16th 12:00am - March 19th 11:59pm: Campaigning period
+                <br />
+                March 20th 12:00am - March 21st 12:00pm: Election Period! <br />
+            </div>
             <br />
-            <h2>Positions</h2>
-            <ul>
-                <li>
-                    Chair (One year experience as an exec on the IEEE student
-                    association required)
-                </li>
-                <li>
-                    Vice Chair (One year experience as an exec on the IEEE
-                    student association required)
-                </li>
-                <li>Treasurer</li>
-                <li>Secretary</li>
-                <li>VP Academic</li>
-                <li>VP Communications</li>
-                <li>VP External</li>
-                <li>VP Internal</li>
-                <li>VP Social</li>
-                <li>Webmaster</li>
-                <li>McNaughton Center Director</li>
-            </ul>
             <br />
-            <h3>WIE Positions</h3>
-            <ul>
-                <li>WIE Chair</li>
-                <li>WIE Vice-Chair</li>
-            </ul>
+            <b>Positions: </b>
             <br />
-            <h3>Photonics Positions</h3>
-            <ul>
-                <li>Photonics Chair (Grad Students Only)</li>
-                <li>Photonics Vice-Chair (Grad Students Only)</li>
-            </ul>
+            Chair(One year experience as an exec on the IEEE student association
+            required) <br />
+            Vice Chair (One year experience as an exec on the IEEE student
+            association required) <br />
+            Treasurer <br />
+            Secretary <br />
+            VP Academic <br />
+            VP Communications <br />
+            VP External
+            <br />
+            VP Internal
+            <br />
+            VP Social
+            <br />
+            Webmaster
+            <br />
+            McNaughton Center Director
+            <br />
+            -----
+            <br />
+            WIE Chair
+            <br />
+            WIE Vice-Chair
+            <br />
+            -----
+            <br />
+            Photonics Chair (Grad Students Only)
+            <br />
+            Photonics Vice-Chair (Grad Students Only)
+            <br />
+            <br />
         </Typography>
     );
 };
@@ -76,12 +81,7 @@ const ElectionsFR = () => {
     return (
         <Typography
             variant="h5"
-            style={{
-                padding: '8px',
-                textAlign: 'left',
-                maxWidth: '600px',
-                margin: '0 auto'
-            }}
+            style={{ paddingBottom: '8px', textAlign: 'center' }}
         >
             Les Élections de l’IEEE sont arrivées!
             <br />

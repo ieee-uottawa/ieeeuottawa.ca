@@ -28,21 +28,7 @@ const routes = [
     },
     {
         title: 'Elections',
-        items: [
-            {
-                title: 'Election Info',
-                link: '/Elections/Elections',
-                exact: '/elections'
-            },
-            {
-                title: 'Election Platforms',
-                link: '/Elections/ElectionPlatforms'
-            },
-            {
-                title: 'Election Results',
-                link: '/Elections/ElectionResults'
-            }
-        ]
+        link: '/Elections/Elections'
     },
     {
         title: 'Gallery',
