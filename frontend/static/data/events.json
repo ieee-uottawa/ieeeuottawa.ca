@@ -326,5 +326,13 @@
         "FR": "Entrez en contact avec vos pairs, découvrez de nouvelles idées et recevez des critiques constructives pour construire votre meilleur CV.",
         "url": "https://www.facebook.com/events/1252791901749919/",
         "image": "../images/events/2020-2021/roast.jpg"
+    },
+    {
+        "id": "2020-09-30-skribblio-night",
+        "name": "Skribbl.io Night",
+        "description": "Take a break from your hard work to de-stress, connect with peers, and most importantly have fun with Skribblio! Who knows, maybe you’ll be the next Da Vinci!",
+        "FR": "Prenez une pause de votre travail pour relaxer, parler avec des amis et le plus important, amusez vous avec Skribblio! Peut être que vous êtes le prochain Da Vinci!",
+        "url": "https://www.facebook.com/events/1112704919163086/",
+        "image": "../images/events/2020-2021/skribbl_io.jpg"
     }
 ]
