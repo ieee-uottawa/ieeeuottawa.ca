@@ -31,6 +31,10 @@ const routes = [
         link: '/Elections/Elections'
     },
     {
+        title: 'VR Campus',
+        link: '/VR_Campus/VR_Campus'
+    },
+    {
         title: 'Gallery',
         link: '/Gallery/Gallery'
     },
