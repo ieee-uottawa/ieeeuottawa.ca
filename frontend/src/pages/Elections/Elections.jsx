@@ -80,77 +80,54 @@ const ElectionsFR = () => {
                 padding: '8px',
                 textAlign: 'left',
                 maxWidth: '600px',
-                margin: '0 auto'
+                margin: '0 auto',
+                fontSize: '18px'
             }}
         >
-            Les Élections de l’IEEE sont arrivées!
+            <h1>Élections IEEE</h1>
+            <p>
+                The new voting system is in development. Please check back here
+                regularly for updates.
+            </p>
+            <p>
+                Elections begin in <b>February 2021</b>.
+            </p>
+            <p>A link to the new platform will be posted here.</p>
             <br />
+            <h2>Positions</h2>
+            <ul>
+                <li>
+                    Président (Une année d’expérience au sein de l’association
+                    étudiante de l’IEEE requise)
+                </li>
+                <li>
+                    Vice-Président (Une année d’expérience au sein de
+                    l’association étudiante de l’IEEE requise)
+                </li>
+                <li>Trésorier</li>
+                <li>Secrétaire</li>
+                <li>VP Académique</li>
+                <li>VP Communications</li>
+                <li>VP Externe</li>
+                <li>VP Interne</li>
+                <li>VP Social</li>
+                <li>Webmaster</li>
+                <li>Directeur du centre McNaughton</li>
+            </ul>
             <br />
-            Qui peut postuler: Étudiants en Informatique, Ingénierie ou Science
+            <h3>WIE</h3>
+            <ul>
+                <li>Présidente WIE</li>
+                <li>Vice-Présidente WIE</li>
+            </ul>
             <br />
-            <br />
-            Comment postuler?
-            <br />
-            Aux lien suivants:
-            <br />
-            {getVoteURL()}
-            <br /> <br />
-            <b>Élections IEEE: </b>
-            <br />
-            <div style={{ display: 'inline-block', textAlign: 'left' }}>
-                26 Févr. : Premier jour pour postuler/Période de nomination
-                débute
-                <br />
-                11 Mars, 12 h : Période de nomination termine
-                <br />
-                11 Mars, 17 h 30 ou 20 h 30 : Réunion obligatoire des candidats
-                <br />
-                12 Mars, 0 h - 19 Mars, 23 h 59: Période de campagne
-                <br />
-                20 Mars, 0 h - 21 Mars, 12 h: Période d’élection
-                <br />
-            </div>
-            <br />
-            <br />
-            <b>Positions: </b>
-            <br />
-            Président (Une année d’expérience au sein de l’association étudiante
-            de l’IEEE requise)
-            <br />
-            Vice-Président (Une année d’expérience au sein de l’association
-            étudiante de l’IEEE requise)
-            <br />
-            Trésorier
-            <br />
-            Secrétaire
-            <br />
-            VP Académique
-            <br />
-            VP Communications
-            <br />
-            VP Externe
-            <br />
-            VP Interne
-            <br />
-            VP Social
-            <br />
-            Webmaster
-            <br />
-            Directeur du centre McNaughton
-            <br />
-            -----
-            <br />
-            Présidente WIE
-            <br />
-            Vice-Présidente WIE
-            <br />
-            -----
-            <br />
-            Président de photonique (étudiants diplômés uniquement)
-            <br />
-            Vice-Président de photonique (étudiants diplômés uniquement)
-            <br />
-            <br />
+            <h3>Photonique</h3>
+            <ul>
+                <li>Président de photonique (étudiants diplômés uniquement)</li>
+                <li>
+                    Vice-Président de photonique (étudiants diplômés uniquement)
+                </li>
+            </ul>
         </Typography>
     );
 };
