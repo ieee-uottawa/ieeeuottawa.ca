@@ -6,14 +6,6 @@ import voteImg from '../../../static/images/events/2019-2020/vote-ieee.jpg';
 
 const voteUrl = 'https://forms.gle/WZfBzf49KeU2bZVv5';
 
-const getVoteURL = () => {
-    return (
-        <a href={voteUrl} style={{ color: '#3498db' }}>
-            <s> {voteUrl}</s>
-        </a>
-    );
-};
-
 const ElectionsEN = () => {
     return (
         <Typography
