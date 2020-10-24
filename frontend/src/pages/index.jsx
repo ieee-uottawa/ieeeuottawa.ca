@@ -185,6 +185,35 @@ const IndexPage = props => {
                                 )
                             )}
                         </Carousel>
+                        <div
+                            style={{
+                                background: 'black',
+                                padding: '10px',
+                                margin: '0px'
+                            }}
+                        >
+                            <Typography
+                                variant="title"
+                                style={{
+                                    color: 'white',
+                                    textAlign: 'center',
+                                    margin: '10px'
+                                }}
+                            >
+                                Experience the IEEE uOttawa 
+                                <IEEEButton
+                                    variant="outlined"
+                                    color="secondary"
+                                    className="white-btn white-url-txt"
+                                    style={{ margin: '20px 16px' }}
+                                    component={Link}
+                                    to={'vr-campus'}
+                                    eventlabel={'vr-campus'}
+                                >
+                                    Virtual Campus Tour
+                                </IEEEButton>
+                            </Typography>
+                        </div>
 
                         <Title style={{ margin: '32px 0 16px' }}>
                             {translate('Why come to our office?')}
