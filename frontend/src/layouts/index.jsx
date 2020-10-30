@@ -57,7 +57,7 @@ const Layout = ({
     return (
         <div>
             {vr ? (
-                <div />
+                <div>{newComponent}</div>
             ) : (
                 <Provider store={store}>
                     <div

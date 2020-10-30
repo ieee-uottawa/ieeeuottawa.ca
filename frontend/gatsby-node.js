@@ -36,38 +36,41 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
 
     // Generate VR pages
-    const vrTemplate = require.resolve(`./src/templates/vrTemplate.js`);
-    const result = await graphql(`
+    const vrImageTemplate = require.resolve(
+        `./src/templates/vrImageTemplate.js`
+    );
+    const result_vr = await graphql(`
         {
-            allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___date] }
-                limit: 1000
-            ) {
+            allFile(filter: { relativeDirectory: { eq: "vr-photo-spheres" } }) {
                 edges {
                     node {
-                        frontmatter {
-                            slug
-                        }
+                        name
+                        publicURL
+                        relativePath
                     }
                 }
             }
         }
     `);
+    console.log('Result:');
+    console.log(result_vr);
     // Handle errors
-    if (result.errors) {
+    if (result_vr.errors) {
         reporter.panicOnBuild(`Error while running GraphQL query.`);
         return;
     }
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+    result_vr.data.allFile.edges.forEach(({ node }) => {
+        console.log('Creating page for:');
+        console.log(node);
         createPage({
-            vr: true,
-            path: node.frontmatter.slug,
-            component: vrTemplate,
+            path: `/vr/${node.name}`,
+            component: vrImageTemplate,
             context: {
-                layout: null,
                 vr: true,
-                // additional data can be passed via context
-                slug: node.frontmatter.slug
+                name: node.name,
+                relativePath: node.relativePath,
+                imageUrl: node.publicURL
             }
         });
     });
