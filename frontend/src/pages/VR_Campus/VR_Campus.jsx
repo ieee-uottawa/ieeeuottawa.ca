@@ -27,7 +27,7 @@ const VR_Campus = () => (
                             publicURL
                             relativePath
                             childImageSharp {
-                                fixed(width: 400) {
+                                fixed(width: 300) {
                                     src
                                 }
                             }
@@ -56,25 +56,23 @@ const VR_Campus = () => (
                             spheres.
                         </Typography>
                         <br />
-                        <ol>
-                            {edges.map(({ node }) => {
-                                // Every node delineates the category. It should be
-                                // sorted before this point so the categories are in order.
-                                console.log(node.childImageSharp);
-                                return (
-                                    <li>
-                                        <a href={`/vr/${node.name}`}>
-                                            <Typography>
-                                                {fixName(node.name)}
-                                            </Typography>
-                                        </a>
+                        {edges.map(({ node }) => {
+                            // Every node delineates the category. It should be
+                            // sorted before this point so the categories are in order.
+                            console.log(node.childImageSharp);
+                            return (
+                                <div>
+                                    <a href={`/vr/${node.name}`}>
+                                        <Typography variant="h5">
+                                            {fixName(node.name)}
+                                        </Typography>
                                         <img
                                             src={node.childImageSharp.fixed.src}
                                         />
-                                    </li>
-                                );
-                            })}
-                        </ol>
+                                    </a>
+                                </div>
+                            );
+                        })}
                         <br />
                     </div>
                 </div>

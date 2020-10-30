@@ -26,7 +26,8 @@ export default function Template({ data }) {
     return (
         <div className="blog-post-container">
             <div className="blog-post">
-                <h1>{fixName(name)}</h1>
+                <h1>Loading {fixName(name)}</h1>
+                <h4>Source file: {publicURL}</h4>
                 <a-scene>
                     <a-sky src={publicURL} />
                     <a-text
