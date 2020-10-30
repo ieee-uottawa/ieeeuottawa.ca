@@ -1,27 +1,75 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { Typography, GridList } from '@material-ui/core';
+import { graphql, StaticQuery } from 'gatsby';
+import { ExecCard, Title } from '../../helpers/components';
+import { translate } from '../../helpers/translation';
 
-const VR_Campus = () => {
-    return (
-        <div>
-            <Typography
-                variant="h5"
-                style={{
-                    padding: '8px',
-                    textAlign: 'left',
-                    maxWidth: '600px',
-                    margin: '0 auto',
-                    fontSize: '18px'
-                }}
-            >
-                <h1>VR Campus</h1>
-                <p>
-                    Check back soon for a selection of 360-degree photos of the
-                    uOttawa SITE/CBY buildings.
-                </p>
-            </Typography>
-        </div>
-    );
-};
+function fixName(name) {
+    name = name.replace('--', ': ');
+    name = name.replace('-', ' ');
+    return name
+        .trim()
+        .toLowerCase()
+        .replace(/\w\S*/g, w => w.replace(/^\w/, c => c.toUpperCase()));
+}
+
+const VR_Campus = () => (
+    <StaticQuery
+        query={graphql`
+            {
+                allFile(
+                    filter: { relativeDirectory: { eq: "vr-photo-spheres" } }
+                ) {
+                    edges {
+                        node {
+                            name
+                            publicURL
+                            relativePath
+                        }
+                    }
+                }
+            }
+        `}
+        render={({ allFile: { edges } }) => {
+            console.log(edges);
+            return (
+                <div>
+                    <div
+                        style={{
+                            margin: '2rem auto',
+                            maxWidth: '600px'
+                        }}
+                    >
+                        <Title variant="h5" gutterBottom className="title">
+                            {translate('VR Campus')}
+                        </Title>
+                        <br />
+                        <Typography>
+                            Welcome to IEEE uOtttawa's virtual campus photo
+                            spheres.
+                        </Typography>
+                        <br />
+                        <ol>
+                            {edges.map(({ node }) => {
+                                // Every node delineates the category. It should be
+                                // sorted before this point so the categories are in order.
+                                return (
+                                    <li>
+                                        <a href={`/vr/${node.name}`}>
+                                            <Typography>
+                                                {fixName(node.name)}
+                                            </Typography>
+                                        </a>
+                                    </li>
+                                );
+                            })}
+                        </ol>
+                        <br />
+                    </div>
+                </div>
+            );
+        }}
+    />
+);
 
 export default VR_Campus;

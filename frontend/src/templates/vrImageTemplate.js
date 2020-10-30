@@ -1,6 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+function fixName(name) {
+    name = name.replace('--', ': ');
+    name = name.replace('-', ' ');
+    return name
+        .trim()
+        .toLowerCase()
+        .replace(/\w\S*/g, w => w.replace(/^\w/, c => c.toUpperCase()));
+}
+
 // The 'data' prop will be injected by the GraphQL query below.
 export default function Template({ data }) {
     const { allFile } = data;
@@ -16,7 +25,7 @@ export default function Template({ data }) {
     return (
         <div className="blog-post-container">
             <div className="blog-post">
-                <h1>{name}</h1>
+                <h1>{fixName(name)}</h1>
                 <img src={publicURL} />
             </div>
         </div>
