@@ -19,7 +19,7 @@ exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
 
 const { getPages } = require(`./src/utils/routes`);
 
-exports.createPages = ({ actions }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage, createRedirect } = actions;
     const redirectMap = { '/home': '/' };
     for (const { page, path, link } of getPages()) {
@@ -34,4 +34,41 @@ exports.createPages = ({ actions }) => {
             isPermanent: true
         });
     }
+
+    // Generate VR pages
+    const vrTemplate = require.resolve(`./src/templates/vrTemplate.js`);
+    const result = await graphql(`
+        {
+            allMarkdownRemark(
+                sort: { order: DESC, fields: [frontmatter___date] }
+                limit: 1000
+            ) {
+                edges {
+                    node {
+                        frontmatter {
+                            slug
+                        }
+                    }
+                }
+            }
+        }
+    `);
+    // Handle errors
+    if (result.errors) {
+        reporter.panicOnBuild(`Error while running GraphQL query.`);
+        return;
+    }
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+            vr: true,
+            path: node.frontmatter.slug,
+            component: vrTemplate,
+            context: {
+                layout: null,
+                vr: true,
+                // additional data can be passed via context
+                slug: node.frontmatter.slug
+            }
+        });
+    });
 };

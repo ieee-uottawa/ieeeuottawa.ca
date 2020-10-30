@@ -34,8 +34,16 @@ module.exports = {
                 path: path.join(__dirname, 'static/images')
             }
         },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'markdown-pages',
+                path: path.join(__dirname, 'src/vr-pages')
+            }
+        },
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
+        `gatsby-transformer-remark`,
         'gatsby-plugin-sitemap',
         'gatsby-plugin-dark-mode',
         `gatsby-plugin-remove-trailing-slashes`
