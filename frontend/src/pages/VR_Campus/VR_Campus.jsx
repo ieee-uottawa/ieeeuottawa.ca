@@ -1,8 +1,9 @@
 import React from 'react';
-import { Typography, GridList } from '@material-ui/core';
+import { Typography, GridList, CardMedia } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
 import { ExecCard, Title } from '../../helpers/components';
 import { translate } from '../../helpers/translation';
+import Img from 'gatsby-image';
 
 function fixName(name) {
     name = name.replace('--', ': ');
@@ -25,6 +26,11 @@ const VR_Campus = () => (
                             name
                             publicURL
                             relativePath
+                            childImageSharp {
+                                fixed(width: 400) {
+                                    src
+                                }
+                            }
                         }
                     }
                 }
@@ -54,6 +60,7 @@ const VR_Campus = () => (
                             {edges.map(({ node }) => {
                                 // Every node delineates the category. It should be
                                 // sorted before this point so the categories are in order.
+                                console.log(node.childImageSharp);
                                 return (
                                     <li>
                                         <a href={`/vr/${node.name}`}>
@@ -61,6 +68,9 @@ const VR_Campus = () => (
                                                 {fixName(node.name)}
                                             </Typography>
                                         </a>
+                                        <img
+                                            src={node.childImageSharp.fixed.src}
+                                        />
                                     </li>
                                 );
                             })}
