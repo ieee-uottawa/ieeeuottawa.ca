@@ -6,6 +6,7 @@
     "dependencies": {
         "@material-ui/core": "^3.2.2",
         "@sentry/browser": "^4.1.1",
+        "aframe": "^1.0.4",
         "axios": "^0.19.2",
         "dayjs": "^1.7.7",
         "eslint-config-prettier": "^6.5.0",

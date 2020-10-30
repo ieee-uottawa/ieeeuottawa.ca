@@ -44,6 +44,7 @@ const VR_Campus = () => (
                             {translate('VR Campus')}
                         </Title>
                         <br />
+
                         <Typography>
                             Welcome to IEEE uOtttawa's virtual campus photo
                             spheres.

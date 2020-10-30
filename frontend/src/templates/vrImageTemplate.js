@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import 'aframe';
 
 function fixName(name) {
     name = name.replace('--', ': ');
@@ -26,7 +27,17 @@ export default function Template({ data }) {
         <div className="blog-post-container">
             <div className="blog-post">
                 <h1>{fixName(name)}</h1>
-                <img src={publicURL} />
+                <a-scene>
+                    <a-sky src={publicURL} />
+                    <a-text
+                        font="kelsonsans"
+                        value={fixName(name)}
+                        width="6"
+                        position="-3 1 -3"
+                        rotation="0 15 0"
+                        text=""
+                    />
+                </a-scene>
             </div>
         </div>
     );
