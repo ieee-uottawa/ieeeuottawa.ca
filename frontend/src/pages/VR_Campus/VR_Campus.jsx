@@ -1,7 +1,13 @@
 import React from 'react';
-import { Typography, GridList, CardMedia } from '@material-ui/core';
+import {
+    Typography,
+    GridList,
+    GridListTile,
+    GridListTileBar,
+    withTheme
+} from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
-import { ExecCard, Title } from '../../helpers/components';
+import { ChevronRightIcon, ExecCard, Title } from '../../helpers/components';
 import { translate } from '../../helpers/translation';
 import Img from 'gatsby-image';
 
@@ -27,7 +33,7 @@ const VR_Campus = () => (
                             publicURL
                             relativePath
                             childImageSharp {
-                                fixed(width: 300) {
+                                fixed(width: 300, height: 200) {
                                     src
                                 }
                             }
@@ -36,48 +42,86 @@ const VR_Campus = () => (
                 }
             }
         `}
-        render={({ allFile: { edges } }) => {
-            console.log(edges);
-            return (
-                <div>
+        render={({ allFile: { edges } }) => (
+            <div>
+                <div
+                    style={{
+                        margin: '2rem auto',
+                        maxWidth: '910px',
+                        textAlign: 'center'
+                    }}
+                >
+                    <Title variant="h5" gutterBottom className="title">
+                        {translate('VR Campus')}
+                    </Title>
+                    <br />
+
+                    <Typography>
+                        Welcome to IEEE uOtttawa's virtual campus photo spheres.
+                    </Typography>
+                    <br />
                     <div
                         style={{
-                            margin: '2rem auto',
-                            maxWidth: '600px'
+                            display: 'inline-grid',
+                            gridTemplateColumns: 'repeat(auto-fit, 300px)',
+                            justifyContent: 'center',
+                            width: '100%'
                         }}
                     >
-                        <Title variant="h5" gutterBottom className="title">
-                            {translate('VR Campus')}
-                        </Title>
-                        <br />
-
-                        <Typography>
-                            Welcome to IEEE uOtttawa's virtual campus photo
-                            spheres.
-                        </Typography>
-                        <br />
-                        {edges.map(({ node }) => {
+                        {edges.map(({ node, i }) => {
                             // Every node delineates the category. It should be
                             // sorted before this point so the categories are in order.
-                            console.log(node.childImageSharp);
                             return (
-                                <div>
-                                    <a href={`/vr/${node.name}`}>
-                                        <Typography variant="h5">
-                                            {fixName(node.name)}
-                                        </Typography>
+                                <div
+                                    style={{
+                                        padding: '4px',
+                                        position: 'relative'
+                                    }}
+                                    key={i}
+                                >
+                                    <a
+                                        href={`/vr/${node.name}`}
+                                        style={{
+                                            padding: '0',
+                                            margin: '0'
+                                        }}
+                                    >
                                         <img
                                             src={node.childImageSharp.fixed.src}
+                                            alt={`/vr/${node.name}`}
+                                            style={{
+                                                display: 'block',
+                                                width: '300px',
+                                                height: '200px',
+                                                borderRadius: '10px'
+                                            }}
                                         />
+                                        <div
+                                            style={{
+                                                position: 'absolute',
+                                                bottom: '30px',
+                                                left: '10px'
+                                            }}
+                                        >
+                                            <p
+                                                style={{
+                                                    color: 'white',
+                                                    textShadow:
+                                                        '-2px 2px 2px black'
+                                                }}
+                                            >
+                                                {fixName(node.name)}
+                                            </p>
+                                        </div>
                                     </a>
                                 </div>
                             );
                         })}
-                        <br />
                     </div>
+                    <br />
                 </div>
-            );
-        }}
+            </div>
+        )}
     />
 );
 
