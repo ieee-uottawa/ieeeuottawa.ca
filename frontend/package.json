@@ -4,6 +4,7 @@
     "version": "2.0.1",
     "author": "Ryan Fleck | Nevin WS Ganesan | Rushil Perera",
     "dependencies": {
+        "@loadable/component": "^5.14.1",
         "@material-ui/core": "^3.2.2",
         "@sentry/browser": "^4.1.1",
         "aframe": "^1.0.4",

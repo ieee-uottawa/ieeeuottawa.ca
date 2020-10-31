@@ -1,7 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import 'aframe';
 import { Typography } from '@material-ui/core';
+import loadable from '@loadable/component';
+
+const VRImage = loadable(() => import('./AFrameWrapper'));
 
 function fixName(name) {
     name = name.replace('--', ': ');
@@ -32,17 +34,7 @@ export default function Template({ data }) {
                     Loading Source file: {publicURL}
                 </Typography>
                 <Typography>Thank you for your patience!</Typography>
-                <a-scene>
-                    <a-sky src={publicURL} />
-                    <a-text
-                        font="kelsonsans"
-                        value={fixName(name)}
-                        width="6"
-                        position="-3 1 -3"
-                        rotation="0 15 0"
-                        text=""
-                    />
-                </a-scene>
+                <VRImage name={name} publicURL={publicURL} />
             </div>
         </div>
     );
