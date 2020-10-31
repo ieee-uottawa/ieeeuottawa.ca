@@ -168,7 +168,7 @@ const IndexPage = props => {
                                                     </Typography>
                                                 )}
                                                 <IEEEButton
-                                                    variant="outlined"
+                                                    variant="primary"
                                                     color="secondary"
                                                     className="white-btn white-url-txt"
                                                     component={Link}
@@ -193,16 +193,16 @@ const IndexPage = props => {
                             }}
                         >
                             <Typography
-                                variant="title"
+                                variant="h6"
                                 style={{
                                     color: 'white',
                                     textAlign: 'center',
                                     margin: '10px'
                                 }}
                             >
-                                Experience the IEEE uOttawa 
+                                Experience the IEEE uOttawa
                                 <IEEEButton
-                                    variant="outlined"
+                                    variant="primary"
                                     color="secondary"
                                     className="white-btn white-url-txt"
                                     style={{ margin: '20px 16px' }}

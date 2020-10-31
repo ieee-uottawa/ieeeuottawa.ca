@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import 'aframe';
+import { Typography } from '@material-ui/core';
 
 function fixName(name) {
     name = name.replace('--', ': ');
@@ -26,8 +27,11 @@ export default function Template({ data }) {
     return (
         <div className="blog-post-container">
             <div className="blog-post">
-                <h1>Loading {fixName(name)}</h1>
-                <h4>Source file: {publicURL}</h4>
+                <Typography variant="h1">{fixName(name)}</Typography>
+                <Typography variant="h5">
+                    Loading Source file: {publicURL}
+                </Typography>
+                <Typography>Thank you for your patience!</Typography>
                 <a-scene>
                     <a-sky src={publicURL} />
                     <a-text
