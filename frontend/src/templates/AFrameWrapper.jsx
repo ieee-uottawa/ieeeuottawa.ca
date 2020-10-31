@@ -11,7 +11,6 @@ function fixName(name) {
 }
 
 export default function AFrameWrapper({ publicURL, name }) {
-    console.log(`Rendering ${publicURL} = ${name}`);
     return (
         <a-scene>
             <a-sky src={publicURL} />

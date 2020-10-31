@@ -52,8 +52,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             }
         }
     `);
-    console.log('Result:');
-    console.log(result_vr);
     // Handle errors
     if (result_vr.errors) {
         reporter.panicOnBuild(`Error while running GraphQL query.`);
@@ -61,8 +59,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
 
     result_vr.data.allFile.edges.forEach(({ node }) => {
-        console.log('Creating page for:');
-        console.log(node);
         createPage({
             path: `/vr/${node.name}`,
             component: vrImageTemplate,

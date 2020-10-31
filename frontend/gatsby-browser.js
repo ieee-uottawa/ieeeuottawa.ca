@@ -16,7 +16,6 @@ module.exports.onRouteUpdate = ({ location }) => {
                 path.substring(0, lastSlashPos) +
                 path.substring(lastSlashPos + 1, path.length);
         }
-        // console.log(path);
         GA.pageview(path);
     }
 };
@@ -26,6 +25,5 @@ module.exports.onClientEntry = () => {
     if (typeof window.IntersectionObserver === 'undefined') {
         // eslint-disable-next-line global-require
         require('intersection-observer');
-        // console.log('# IntersectionObserver is polyfilled!');
     }
 };
