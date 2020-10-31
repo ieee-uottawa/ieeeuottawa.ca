@@ -57,9 +57,12 @@ const VR_Campus = () => (
                     <br />
 
                     <Typography>
-                        Welcome to IEEE uOtttawa's virtual campus photo spheres.
+                        {translate(
+                            "Welcome to IEEE uOtttawa's virtual campus photo spheres."
+                        )}
                     </Typography>
                     <br />
+                    {/** CSS Grid used here because I was having problems with Material Grid */}
                     <div
                         style={{
                             display: 'inline-grid',
@@ -69,7 +72,7 @@ const VR_Campus = () => (
                         }}
                     >
                         {edges.map(({ node, i }) => {
-                            // Every node delineates the category. It should be
+                            // Every node name delineates the category. It should be
                             // sorted before this point so the categories are in order.
                             return (
                                 <div
@@ -79,13 +82,7 @@ const VR_Campus = () => (
                                     }}
                                     key={i}
                                 >
-                                    <a
-                                        href={`/vr/${node.name}`}
-                                        style={{
-                                            padding: '0',
-                                            margin: '0'
-                                        }}
-                                    >
+                                    <a href={`/vr/${node.name}`}>
                                         <img
                                             src={node.childImageSharp.fixed.src}
                                             alt={`/vr/${node.name}`}
