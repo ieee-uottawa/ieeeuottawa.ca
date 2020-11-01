@@ -12,7 +12,7 @@ import {
 import { connect } from 'react-redux';
 import dayjs from 'dayjs';
 import MaterialSelect from '../../Material/MaterialSelect';
-import { addItemToCart } from '../../../redux/actions/cart_actions';
+import { addItemToCart } from '../../../redux/old/actions/cart_actions';
 import { showPricing, isServerSideRendering } from '../../../utils/util';
 import '../ExecCard/exec-card.scss';
 

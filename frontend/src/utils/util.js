@@ -1,7 +1,21 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { Typography } from '../helpers/material-ui';
 
 const isServerSideRendering = () => typeof window === 'undefined';
+
+const { warn } = console;
+export function logWarning(...warnings) {
+    let showWarning = true;
+    const filter = ['UNSAFE_', 'SourceMap', 'DevTools', 'release'];
+    warnings.forEach(warning => {
+        for (const item of filter)
+            if (warning.includes(item)) showWarning = false;
+    });
+    if (showWarning) warn(...warnings);
+}
+
+console.warn = logWarning;
 
 const isFacebookApp = () => {
     if (isServerSideRendering()) return false;
