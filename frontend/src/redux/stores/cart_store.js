@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 import { createStore } from 'redux';
 
-import cart from '../reducers/cart_reducers';
+import cart from '../old/reducers/cart_reducers';
 import {
     addItemToCart,
     removeItemFromCart,
     updateItemInCart
-} from '../actions/cart_actions';
+} from '../old/actions/cart_actions';
 
 const store = createStore(cart);
 

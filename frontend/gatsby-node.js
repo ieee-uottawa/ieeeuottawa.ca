@@ -19,7 +19,7 @@ exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
 
 const { getPages } = require(`./src/utils/routes`);
 
-exports.createPages = ({ actions }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage, createRedirect } = actions;
     const redirectMap = { '/home': '/' };
     for (const { page, path, link } of getPages()) {
@@ -34,4 +34,42 @@ exports.createPages = ({ actions }) => {
             isPermanent: true
         });
     }
+
+    // Generate VR pages
+    const vrImageTemplate = require.resolve(
+        `./src/templates/vrImageTemplate.js`
+    );
+    const result_vr = await graphql(`
+        {
+            allFile(filter: { relativeDirectory: { eq: "vr-photo-spheres" } }) {
+                edges {
+                    node {
+                        name
+                        publicURL
+                        relativePath
+                    }
+                }
+            }
+        }
+    `);
+    // Handle errors
+    if (result_vr.errors) {
+        reporter.panicOnBuild(
+            `Error while running GraphQL query related to VR pages.`
+        );
+        return;
+    }
+
+    result_vr.data.allFile.edges.forEach(({ node }) => {
+        createPage({
+            path: `/vr/${node.name}`,
+            component: vrImageTemplate,
+            context: {
+                vr: true,
+                name: node.name,
+                relativePath: node.relativePath,
+                imageUrl: node.publicURL
+            }
+        });
+    });
 };

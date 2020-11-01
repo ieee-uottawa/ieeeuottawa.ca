@@ -3,6 +3,7 @@ import GridList from '@material-ui/core/GridList';
 import { graphql, StaticQuery } from 'gatsby';
 import { Event, Title } from '../../helpers/components';
 import { translate, translateDescription } from '../../helpers/translation';
+import { isCurrentEvent, isPastEvent } from '../../utils/util';
 
 const query = graphql`
     query {
@@ -53,30 +54,20 @@ const Events = () => (
                                     FR,
                                     url
                                 }
-                            }) => {
-                                const date_string = String(id)
-                                    .split('-')
-                                    .slice(0, 3)
-                                    .join('-');
-                                const date = Date.parse(date_string);
-                                if (date > now) {
-                                    return (
-                                        <Event
-                                            key={String(id)}
-                                            id={String(id)}
-                                            image={image}
-                                            name={name}
-                                            description={translateDescription(
-                                                EN,
-                                                FR
-                                            )}
-                                            url={url}
-                                        />
-                                    );
-                                } else {
-                                    return null;
-                                }
-                            }
+                            }) =>
+                                isCurrentEvent(id) && (
+                                    <Event
+                                        key={String(id)}
+                                        id={String(id)}
+                                        image={image}
+                                        name={name}
+                                        description={translateDescription(
+                                            EN,
+                                            FR
+                                        )}
+                                        url={url}
+                                    />
+                                )
                         )}
                     </GridList>
                     <br />
@@ -97,30 +88,20 @@ const Events = () => (
                                     FR,
                                     url
                                 }
-                            }) => {
-                                const date_string = String(id)
-                                    .split('-')
-                                    .slice(0, 3)
-                                    .join('-');
-                                const date = Date.parse(date_string);
-                                if (date < now) {
-                                    return (
-                                        <Event
-                                            key={String(id)}
-                                            id={String(id)}
-                                            image={image}
-                                            name={name}
-                                            description={translateDescription(
-                                                EN,
-                                                FR
-                                            )}
-                                            url={url}
-                                        />
-                                    );
-                                } else {
-                                    return null;
-                                }
-                            }
+                            }) =>
+                                isPastEvent(id) && (
+                                    <Event
+                                        key={String(id)}
+                                        id={String(id)}
+                                        image={image}
+                                        name={name}
+                                        description={translateDescription(
+                                            EN,
+                                            FR
+                                        )}
+                                        url={url}
+                                    />
+                                )
                         )}
                     </GridList>
                 </div>

@@ -6,7 +6,7 @@ import { Link } from '../../helpers/components';
 
 class ForcedExternalRedirect extends Component {
     constructor(props) {
-        super(props);
+        super();
         this.state = {
             seconds: props.seconds,
             intervalID: null

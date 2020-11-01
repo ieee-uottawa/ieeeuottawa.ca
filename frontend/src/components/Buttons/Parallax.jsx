@@ -25,7 +25,7 @@ const Parallax = ({ buttonText, buttonURL, imageURL, messageText }) => {
         } else {
             button = (
                 <IEEEButton
-                    variant="outlined"
+                    variant="primary"
                     color="secondary"
                     className="white-btn"
                     style={{ margin: '20px 16px' }}

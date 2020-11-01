@@ -24,6 +24,7 @@ import {
     Title
 } from '../helpers/components';
 import { translate, translateDescription } from '../helpers/translation';
+import { isCurrentEvent } from '../utils/util';
 import './index.scss';
 
 const query = graphql`
@@ -90,11 +91,6 @@ const IndexPage = props => {
                     allEventsJson: { edges: eventEdges },
                     allCarouselJson: { edges: carouselEdges }
                 } = queryProps;
-
-                // Get yesterday's date.
-                const now = new Date();
-                now.setDate(now.getDate() - 1);
-
                 return (
                     <div style={{ marginTop: '-1em' }}>
                         <Carousel
@@ -185,6 +181,35 @@ const IndexPage = props => {
                                 )
                             )}
                         </Carousel>
+                        <div
+                            style={{
+                                background: 'black',
+                                padding: '10px',
+                                margin: '0px'
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                style={{
+                                    color: 'white',
+                                    textAlign: 'center',
+                                    margin: '10px'
+                                }}
+                            >
+                                Experience the IEEE uOttawa
+                                <IEEEButton
+                                    variant="outlined"
+                                    color="secondary"
+                                    className="white-btn white-url-txt"
+                                    style={{ margin: '20px 16px' }}
+                                    component={Link}
+                                    to="vr-campus"
+                                    eventlabel="vr-campus"
+                                >
+                                    Virtual Campus Tour
+                                </IEEEButton>
+                            </Typography>
+                        </div>
 
                         <Title style={{ margin: '32px 0 16px' }}>
                             {translate('Why come to our office?')}
@@ -242,30 +267,20 @@ const IndexPage = props => {
                                         FR,
                                         url
                                     }
-                                }) => {
-                                    const date_string = String(id)
-                                        .split('-')
-                                        .slice(0, 3)
-                                        .join('-');
-                                    const date = Date.parse(date_string);
-                                    if (date > now) {
-                                        return (
-                                            <Event
-                                                key={id}
-                                                id={id}
-                                                image={image}
-                                                name={name}
-                                                description={translateDescription(
-                                                    EN,
-                                                    FR
-                                                )}
-                                                url={url}
-                                            />
-                                        );
-                                    } else {
-                                        return null;
-                                    }
-                                }
+                                }) =>
+                                    isCurrentEvent(id) && (
+                                        <Event
+                                            key={id}
+                                            id={id}
+                                            image={image}
+                                            name={name}
+                                            description={translateDescription(
+                                                EN,
+                                                FR
+                                            )}
+                                            url={url}
+                                        />
+                                    )
                             )}
                         </GridList>
                         <Parallax
