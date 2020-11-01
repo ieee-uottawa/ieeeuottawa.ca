@@ -6,8 +6,8 @@ import { Link } from '../../helpers/components';
 import { translateRedirect, translate } from '../../helpers/translation';
 
 class ExternalRedirect extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             seconds: 5,
             intervalID: null
@@ -42,6 +42,7 @@ class ExternalRedirect extends Component {
         return (
             <div className="p-margins center-horizontal center-vertical">
                 <Typography variant="h4" gutterBottom>
+                    ,,,,
                     {translateRedirect(description, seconds)}
                 </Typography>
                 <Typography variant="h4" gutterBottom>

@@ -70,7 +70,9 @@ const VR_Campus = () => (
                                     <a href={`/vr/${node.name}`}>
                                         <img
                                             src={node.childImageSharp.fixed.src}
-                                            alt={`/vr/${node.name}`}
+                                            alt={`/vr/${vrformatName(
+                                                node.name
+                                            )}`}
                                             style={{
                                                 display: 'block',
                                                 width: '300px',

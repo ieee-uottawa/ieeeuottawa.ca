@@ -92,7 +92,7 @@ const Footer = () => {
                                 style={{ color: '#bdc3c7' }}
                                 id="copyright-txt"
                             >
-                                Copyright © 2018
+                                Copyright © {new Date().getFullYear()}
                                 <Link to="/" id="copyright-link">
                                     {' IEEE uOttawa Student Branch'}
                                 </Link>
