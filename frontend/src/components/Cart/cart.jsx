@@ -16,7 +16,7 @@ import {
     moneyFormatter,
     isServerSideRendering
 } from '../../utils/util';
-import { removeItemFromCart } from '../../redux/actions/cart_actions';
+import { removeItemFromCart } from '../../redux/old/actions/cart_actions';
 import Title from '../Titles/Title';
 
 import sadEmoji from '../../../static/images/emoji_sad.svg';

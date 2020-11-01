@@ -1,18 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Typography } from '@material-ui/core';
 import loadable from '@loadable/component';
+import { vrformatName } from '../utils/util';
 
-const VRImage = loadable(() => import('./AFrameWrapper'));
-
-function fixName(name) {
-    name = name.replace('--', ': ');
-    name = name.replace('-', ' ');
-    return name
-        .trim()
-        .toLowerCase()
-        .replace(/\w\S*/g, w => w.replace(/^\w/, c => c.toUpperCase()));
-}
+const AFrameWrapper = loadable(() => import('./AFrameWrapper'));
 
 // The 'data' prop will be injected by the GraphQL query below.
 export default function Template({ data }) {
@@ -20,25 +13,30 @@ export default function Template({ data }) {
 
     // Get the image data.
     const { edges } = allFile;
-    const node = edges[0].node;
+    const { node } = edges[0];
     const { name, publicURL } = node;
-
-    console.log(`Rendering ${publicURL}`);
-    console.log(node);
 
     return (
         <div className="blog-post-container">
             <div className="blog-post">
-                <Typography variant="h1">{fixName(name)}</Typography>
+                <Typography variant="h1">{vrformatName(name)}</Typography>
                 <Typography variant="h5">
                     Loading Source file: {publicURL}
                 </Typography>
                 <Typography>Thank you for your patience!</Typography>
-                <VRImage name={name} publicURL={publicURL} />
+                <AFrameWrapper name={name} publicURL={publicURL} />
             </div>
         </div>
     );
 }
+
+Template.defaultProps = {
+    data: null
+};
+
+Template.propTypes = {
+    data: PropTypes.any
+};
 
 export const pageQuery = graphql`
     query($relativePath: String!) {

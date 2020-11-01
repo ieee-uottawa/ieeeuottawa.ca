@@ -94,14 +94,14 @@ const Footer = () => {
                             >
                                 Copyright © 2018
                                 <Link to="/" id="copyright-link">
-                                    {" IEEE uOttawa Student Branch"}
+                                    {' IEEE uOttawa Student Branch'}
                                 </Link>
                                 . View site
                                 <Link
                                     to="https://github.com/ieee-uottawa/ieeeuottawa.ca"
                                     id="source-code-link"
                                 >
-                                    {" source code"}
+                                    {' source code'}
                                 </Link>
                                 .
                             </Typography>

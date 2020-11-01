@@ -4,11 +4,11 @@ import { Title } from '../../helpers/components';
 import { translate, getCurrentLanguage } from '../../helpers/translation';
 import voteImg from '../../../static/images/events/2019-2020/vote-ieee.jpg';
 
-const voteUrl = 'https://forms.gle/WZfBzf49KeU2bZVv5';
-
 const ElectionsEN = () => {
+    // const voteUrl = 'https://forms.gle/WZfBzf49KeU2bZVv5';
     return (
         <Typography
+            component="span"
             variant="h5"
             style={{
                 padding: '8px',

@@ -98,6 +98,15 @@ const calculatePrice = (price, qty) => {
     return total;
 };
 
+const vrformatName = name => {
+    return name
+        .replace('--', ': ')
+        .replace('-', ' ')
+        .trim()
+        .toLowerCase()
+        .replace(/\w\S*/g, w => w.replace(/^\w/, c => c.toUpperCase()));
+};
+
 export {
     calculatePrice,
     capitalize,
@@ -107,5 +116,6 @@ export {
     isServerSideRendering,
     renderUnsupportedBrowser,
     moneyFormatter,
-    showPricing
+    showPricing,
+    vrformatName
 };

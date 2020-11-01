@@ -168,7 +168,7 @@ const IndexPage = props => {
                                                     </Typography>
                                                 )}
                                                 <IEEEButton
-                                                    variant="primary"
+                                                    variant="outlined"
                                                     color="secondary"
                                                     className="white-btn white-url-txt"
                                                     component={Link}
@@ -202,13 +202,13 @@ const IndexPage = props => {
                             >
                                 Experience the IEEE uOttawa
                                 <IEEEButton
-                                    variant="primary"
+                                    variant="outlined"
                                     color="secondary"
                                     className="white-btn white-url-txt"
                                     style={{ margin: '20px 16px' }}
                                     component={Link}
-                                    to={'vr-campus'}
-                                    eventlabel={'vr-campus'}
+                                    to="vr-campus"
+                                    eventlabel="vr-campus"
                                 >
                                     Virtual Campus Tour
                                 </IEEEButton>
@@ -291,9 +291,8 @@ const IndexPage = props => {
                                                 url={url}
                                             />
                                         );
-                                    } else {
-                                        return null;
                                     }
+                                    return null;
                                 }
                             )}
                         </GridList>

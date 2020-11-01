@@ -1,24 +1,9 @@
 import React from 'react';
-import {
-    Typography,
-    GridList,
-    GridListTile,
-    GridListTileBar,
-    withTheme
-} from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { graphql, StaticQuery } from 'gatsby';
-import { ChevronRightIcon, ExecCard, Title } from '../../helpers/components';
+import { Title } from '../../helpers/components';
 import { translate } from '../../helpers/translation';
-import Img from 'gatsby-image';
-
-function fixName(name) {
-    name = name.replace('--', ': ');
-    name = name.replace('-', ' ');
-    return name
-        .trim()
-        .toLowerCase()
-        .replace(/\w\S*/g, w => w.replace(/^\w/, c => c.toUpperCase()));
-}
+import { vrformatName } from '../../utils/util';
 
 const VR_Campus = () => (
     <StaticQuery
@@ -58,7 +43,7 @@ const VR_Campus = () => (
 
                     <Typography>
                         {translate(
-                            "Welcome to IEEE uOtttawa's virtual campus photo spheres."
+                            "Welcome to IEEE uOttawa's virtual campus photo spheres."
                         )}
                     </Typography>
                     <br />
@@ -71,7 +56,7 @@ const VR_Campus = () => (
                             width: '100%'
                         }}
                     >
-                        {edges.map(({ node, i }) => {
+                        {edges.map(({ node }) => {
                             // Every node name delineates the category. It should be
                             // sorted before this point so the categories are in order.
                             return (
@@ -80,7 +65,7 @@ const VR_Campus = () => (
                                         padding: '4px',
                                         position: 'relative'
                                     }}
-                                    key={i}
+                                    key={node.name}
                                 >
                                     <a href={`/vr/${node.name}`}>
                                         <img
@@ -107,7 +92,7 @@ const VR_Campus = () => (
                                                         '-2px 2px 2px black'
                                                 }}
                                             >
-                                                {fixName(node.name)}
+                                                {vrformatName(node.name)}
                                             </p>
                                         </div>
                                     </a>
