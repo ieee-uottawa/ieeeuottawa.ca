@@ -32,39 +32,6 @@ const isDevEnvironment = process.env.NODE_ENV === 'development';
 
 const capitalize = str => str.substring(0, 1).toUpperCase() + str.substring(1);
 
-// const ArrayLikeToString = arg => Array.prototype.toString.call(arg);
-
-// const getTextFeature = (text, color) => {
-//     try {
-//         const canvas = document.createElement('canvas');
-//         canvas.width = 1;
-//         canvas.height = 1;
-
-//         const ctx = canvas.getContext('2d');
-//         ctx.textBaseline = 'top';
-//         ctx.font = '100px -no-font-family-here-';
-//         ctx.fillStyle = color;
-//         ctx.scale(0.01, 0.01);
-//         ctx.fillText(text, 0, 0);
-
-//         return ctx.getImageData(0, 0, 1, 1).data;
-//     } catch (e) {
-//         return false;
-//     }
-// };
-
-// const compareFeatures = (feature1, feature2) => {
-//     const feature1Str = ArrayLikeToString(feature1);
-//     const feature2Str = ArrayLikeToString(feature2);
-//     return feature1Str === feature2Str && feature1Str !== '0,0,0,0';
-// };
-
-// const isEmojiSupported = text => {
-//     const feature1 = getTextFeature(text, '#000');
-//     const feature2 = getTextFeature(text, '#fff');
-//     return feature1 && feature2 && compareFeatures(feature1, feature2);
-// };
-
 const flattenDeep = arr =>
     arr.reduce(
         (acc, val) =>
@@ -107,14 +74,34 @@ const vrformatName = name => {
         .replace(/\w\S*/g, w => w.replace(/^\w/, c => c.toUpperCase()));
 };
 
+const parseDateString = id => {
+    const date_string = String(id)
+        .split('-')
+        .slice(0, 3)
+        .join('-');
+    return Date.parse(date_string);
+};
+
+const yesterdayDate = () => {
+    const now = new Date();
+    now.setDate(now.getDate() - 1);
+    return now;
+};
+
+const isCurrentEvent = id => parseDateString(id) > yesterdayDate();
+const isPastEvent = id => parseDateString(id) < yesterdayDate();
+
 export {
     calculatePrice,
     capitalize,
     flattenDeep,
+    isCurrentEvent,
     isDevEnvironment,
     isFacebookApp,
+    isPastEvent,
     isServerSideRendering,
     renderUnsupportedBrowser,
+    parseDateString,
     moneyFormatter,
     showPricing,
     vrformatName

@@ -547,7 +547,6 @@ class Vote extends Component {
                             </Title>
                             {this.renderLoginButton()}
                             {this.renderLogoutButton()}
-
                             {loading && (
                                 <div style={{ textAlign: 'center' }}>
                                     <Grid container justify="center">
