@@ -42,7 +42,6 @@ class ExternalRedirect extends Component {
         return (
             <div className="p-margins center-horizontal center-vertical">
                 <Typography variant="h4" gutterBottom>
-                    ,,,,
                     {translateRedirect(description, seconds)}
                 </Typography>
                 <Typography variant="h4" gutterBottom>

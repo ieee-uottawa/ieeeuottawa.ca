@@ -66,11 +66,14 @@
     "license": "MIT",
     "scripts": {
         "build": "gatsby build",
+        "clean-build": "rm -rf node_modules && yarn install && yarn build",
         "develop": "gatsby develop",
         "start": "gatsby develop",
         "format": "prettier --write './src/**/*.js'",
         "test": "echo \"Error: no test specified\"",
-        "clean": "rm -rf node_modules && yarn install && yarn start"
+        "clean": "gatsby clean",
+        "serve": "gatsby serve",
+        "prod": "yarn build && yarn serve"
     },
     "devDependencies": {
         "@hot-loader/react-dom": "^16.12.0",
