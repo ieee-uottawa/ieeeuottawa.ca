@@ -18,6 +18,12 @@
         "email": "treasurer@ieeeuottawa.ca"
     },
     {
+        "name": "Ryan Fleck",
+        "position": "VP Webmaster",
+        "image": "../../static/images/execs-2020-2021/webmaster.jpg",
+        "email": "webmaster@ieeeuottawa.ca"
+    },
+    {
         "name": "Mohit Kapur",
         "position": "VP Social",
         "image": "../../static/images/execs-2020-2021/social.jpg",
@@ -48,12 +54,6 @@
         "email": "external@ieeeuottawa.ca"
     },
     {
-        "name": "Ryan Fleck",
-        "position": "VP Webmaster",
-        "image": "../../static/images/execs-2020-2021/webmaster.jpg",
-        "email": "webmaster@ieeeuottawa.ca"
-    },
-    {
         "name": "Shriya Gundala",
         "position": "WIE Chair",
         "image": "../../static/images/execs-2020-2021/wie-chair.jpg",
@@ -76,5 +76,17 @@
         "position": "McNaughton Centre Director",
         "image": "../../static/images/execs-2020-2021/mcnaughton-director.jpg",
         "email": "mcnaughton@ieeeuottawa.ca"
+    },
+    {
+        "name": "Could Be You!",
+        "position": "Photonics Chair",
+        "image": "../../static/images/execs-2020-2021/vacant.jpg",
+        "email": "photonics-chair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Now Hiring",
+        "position": "Photonics Vice-Chair",
+        "image": "../../static/images/execs-2020-2021/vacant.jpg",
+        "email": "photonics-vicechair@ieeeuottawa.ca"
     }
 ]

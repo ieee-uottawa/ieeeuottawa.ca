@@ -6,9 +6,27 @@
         "email": "ceg@ieeeuottawa.ca"
     },
     {
-        "name": "Erik Cassidy",
+        "name": "Up For Election",
         "position": "Electrical Engineering",
         "image": "../../static/images/execs-2020-2021/elg-com.jpg",
         "email": "elg@ieeeuottawa.ca"
+    },
+    {
+        "name": "Vacant",
+        "position": "Design",
+        "image": "../../static/images/execs-2020-2021/design.jpg",
+        "email": "design@ieeeuottawa.ca"
+    },
+    {
+        "name": "Empty",
+        "position": "WIE Design",
+        "image": "../../static/images/execs-2020-2021/wie-design.jpg",
+        "email": "wie-design@ieeeuottawa.ca"
+    },
+    {
+        "name": "Apply Now!",
+        "position": "Software Engineering",
+        "image": "../../static/images/execs-2020-2021/seg-com.jpg",
+        "email": "seg@ieeeuottawa.ca"
     }
 ]
