@@ -14,7 +14,8 @@ IEEEButton.propTypes = {
 const styles = theme => ({
     root: {
         '&:hover': {
-            background: theme.palette.secondary.main
+            background: theme.palette.secondary.main,
+            border: '3px solid transparent'
         }
     },
     label: {
