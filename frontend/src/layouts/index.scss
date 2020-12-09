@@ -773,3 +773,9 @@ a {
     justify-content: center;
     margin: 0 !important;
 }
+
+/* Fix for Carousel Backgrounds */
+.background-fix::before {
+    background-size: cover !important;
+    background-position-y: top !important;
+}

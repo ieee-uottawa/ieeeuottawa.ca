@@ -91,6 +91,9 @@ const IndexPage = props => {
                     allEventsJson: { edges: eventEdges },
                     allCarouselJson: { edges: carouselEdges }
                 } = queryProps;
+
+                // TODO: ImageStyle is not currently applied to carousel images.
+                // This has been temporarily fixed with the background-fix class.
                 return (
                     <div style={{ marginTop: '-1em' }}>
                         <Carousel
@@ -136,7 +139,7 @@ const IndexPage = props => {
                                 ) => (
                                     <BackgroundImage
                                         key={String(key)}
-                                        className={`bg-image ${imageID}`}
+                                        className={`bg-image ${imageID} background-fix`}
                                         fluid={fluid}
                                         style={imageStyle}
                                     >
