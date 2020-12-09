@@ -7,7 +7,7 @@
         },
         "imageFile": {
             "id": "santa-pic",
-            "image": "../../static/images/ieeesantapic-2.jpg",
+            "image": "../../static/images/christmas/christmas2020.png",
             "style": {
                 "backgroundPositionY": "-175px"
             }
