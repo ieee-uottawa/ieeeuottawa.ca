@@ -1,5 +1,19 @@
 [
     {
+        "message": "Join Us On Discord",
+        "button": {
+            "text": "Office Hours",
+            "url": "/office-hours"
+        },
+        "imageFile": {
+            "id": "santa-pic",
+            "image": "../../static/images/csme-site.jpg",
+            "style": {
+                "backgroundPositionY": "-175px"
+            }
+        }
+    },
+    {
         "message": "Powering Your Student Experience",
         "button": {
             "text": "About Us",
