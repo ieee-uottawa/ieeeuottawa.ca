@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { isServerSideRendering } from '../../utils/util';
-import Title from '../../components/Titles/Title';
-import officeHoursImg from '../../../static/images/office-hours/office-hours.png';
-import { translate } from '../../helpers/translation';
-
 import { DataGrid } from '@material-ui/data-grid';
 import { Typography } from '@material-ui/core';
+import Title from '../../components/Titles/Title';
+import officeHoursImg from '../../../static/images/office-hours/office-hours-w2021.png';
+import { translate } from '../../helpers/translation';
+import { isServerSideRendering } from '../../utils/util';
 
 class OfficeHours extends Component {
     constructor(props) {
@@ -36,12 +35,13 @@ class OfficeHours extends Component {
         const { screenWidth: width } = this.state;
         const imgStyle = {
             display: 'block',
-            borderRadius: '12px',
-            maxWidth: width > 712 ? '100%' : 'calc(100% - 32px)',
+            borderRadius: '3px',
             margin: width > 712 ? '0 auto 16px' : '0 16px 16px',
-            height: '70%',
-            width: '70%'
+            maxWidth: '800px',
+            width: '100%'
         };
+
+        /*
         const columns = [
             { field: 'name', headerName: 'Name', width: 150 },
             { field: 'discord', headerName: 'Discord Tag', width: 200 },
@@ -65,6 +65,7 @@ class OfficeHours extends Component {
                 bilingual: false
             }
         ];
+        */
 
         return (
             <div
@@ -87,7 +88,13 @@ class OfficeHours extends Component {
                         </Typography>
                     </span>
                 </div>
-                <div
+                <br />
+                <img
+                    src={officeHoursImg}
+                    alt="IEEE Office Hours"
+                    style={imgStyle}
+                />
+                {/* <div
                     style={{
                         width: '100%',
                         height: '500px',
@@ -100,12 +107,8 @@ class OfficeHours extends Component {
                         pageSize={5}
                         autoHeight
                     />
-                </div>
-                {/*<img
-                    src={officeHoursImg}
-                    alt="IEEE Office Hours"
-                    style={imgStyle}
-                />*/}
+                </div> */}
+                <br />
             </div>
         );
     }
