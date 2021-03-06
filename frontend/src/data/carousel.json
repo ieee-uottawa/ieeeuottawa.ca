@@ -1,5 +1,19 @@
 [
     {
+        "message": "ELECTIONS 2021",
+        "button": {
+            "text": "REGISTER AS A CANDIDATE",
+            "url": "/elections"
+        },
+        "imageFile": {
+            "id": "santa-pic",
+            "image": "../../static/images/events/2019-2020/vote-ieee.jpg",
+            "style": {
+
+            }
+        }
+    },
+    {
         "message": "Join Us On Discord",
         "button": {
             "text": "Office Hours",
