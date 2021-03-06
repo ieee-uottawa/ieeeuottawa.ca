@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import { Title } from '../../helpers/components';
+import { Title, Link } from '../../helpers/components';
 import { translate, getCurrentLanguage } from '../../helpers/translation';
 import voteImg from '../../../static/images/events/2019-2020/vote-ieee.jpg';
 
@@ -88,7 +88,8 @@ const ElectionsEN = () => {
             <br />
             <p>
                 For more information on what each of our positions entail, see
-                our constitution.
+                our {'  '}
+                <Link to="/constitution">constitution</Link>
             </p>
         </Typography>
     );
@@ -115,7 +116,8 @@ const ElectionsFR = () => {
                 <li>
                     Veuillez envoyer un courriel à elections@ieeeuottawa.ca
                     contenant votre nom complet, votre numéro étudiant, votre
-                    programme d'études et année académique
+                    programme {"d'études"}
+                    et année académique
                 </li>
                 <li>
                     Veuillez soumettre votre plateforme de 200~500 mots pour la
@@ -170,7 +172,10 @@ const ElectionsFR = () => {
             <br />
             <p>
                 Pour de plus amples informations sur les tâches qui incombent à
-                chaque poste, veuillez consulter notre constitution.
+                chaque poste, veuillez consulter notre {'  '}
+                <Link to="/constitution" color="inherit">
+                    constitution
+                </Link>
             </p>
         </Typography>
     );
