@@ -7,26 +7,51 @@ import voteImg from '../../../static/images/events/2019-2020/vote-ieee.jpg';
 const ElectionsEN = () => {
     // const voteUrl = 'https://forms.gle/WZfBzf49KeU2bZVv5';
     return (
-        <Typography
-            component="span"
-            variant="h5"
-            style={{
-                padding: '8px',
-                textAlign: 'left',
-                maxWidth: '600px',
-                margin: '0 auto',
-                fontSize: '18px'
-            }}
-        >
+        <Typography>
             <h1>IEEE Elections</h1>
             <p>
-                The new voting system is in development. Please check back here
-                regularly for updates.
+                Elections are currently live on the{' '}
+                <b>
+                    <a
+                        href="https://democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        style={{ color: 'inherit' }}
+                    >
+                        Democracy Platform
+                    </a>
+                </b>
             </p>
             <p>
-                Elections begin in <b>February 2021</b>.
+                Nominations for the new 2021-2022 executive positions have
+                opened and will end on March 18th at 12:00pm.
             </p>
-            <p>A link to the new platform will be posted here.</p>
+
+            <p>
+                Who can apply: Students in Computer Science, Engineering or
+                Science.
+            </p>
+
+            <p>
+                <b>To apply:</b>
+            </p>
+            <li>
+                Email elections@ieeeuottawa.ca your full name, student number,
+                program and year of study
+            </li>
+            <li>
+                Submit your 200-500 word platform for the position you’re
+                applying to at
+                {'  '}
+                <a
+                    href="https://democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    style={{ color: 'inherit' }}
+                >
+                    democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec
+                </a>
+            </li>
             <br />
             <h2>Positions</h2>
             <ul>
@@ -60,31 +85,53 @@ const ElectionsEN = () => {
                 <li>Photonics Chair (Grad Students Only)</li>
                 <li>Photonics Vice-Chair (Grad Students Only)</li>
             </ul>
+            <br />
+            <p>
+                For more information on what each of our positions entail, see
+                our constitution.
+            </p>
         </Typography>
     );
 };
 
 const ElectionsFR = () => {
     return (
-        <Typography
-            variant="h5"
-            style={{
-                padding: '8px',
-                textAlign: 'left',
-                maxWidth: '600px',
-                margin: '0 auto',
-                fontSize: '18px'
-            }}
-        >
+        <Typography>
             <h1>Élections IEEE</h1>
+
             <p>
-                The new voting system is in development. Please check back here
-                regularly for updates.
+                Les candidatures pour les postes de l’exécutif sont maintenant
+                ouvertes, et se termineront le 18 mars à 12h00.
             </p>
             <p>
-                Elections begin in <b>February 2021</b>.
+                Qui peut postuler: Étudiants en Informatique, Ingénierie ou
+                Science
             </p>
-            <p>A link to the new platform will be posted here.</p>
+
+            <p>
+                <b>Pour postuler:</b>
+            </p>
+            <ul>
+                <li>
+                    Veuillez envoyer un courriel à elections@ieeeuottawa.ca
+                    contenant votre nom complet, votre numéro étudiant, votre
+                    programme d'études et année académique
+                </li>
+                <li>
+                    Veuillez soumettre votre plateforme de 200~500 mots pour la
+                    position à laquelle vous souhaitez vous porter candidat au
+                    {'  '}
+                    <a
+                        href="https://democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        style={{ color: 'inherit' }}
+                    >
+                        democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec
+                    </a>
+                </li>
+            </ul>
+
             <br />
             <h2>Positions</h2>
             <ul>
@@ -120,6 +167,11 @@ const ElectionsFR = () => {
                     Vice-Président de photonique (étudiants diplômés uniquement)
                 </li>
             </ul>
+            <br />
+            <p>
+                Pour de plus amples informations sur les tâches qui incombent à
+                chaque poste, veuillez consulter notre constitution.
+            </p>
         </Typography>
     );
 };
@@ -141,7 +193,24 @@ const Elections = () => {
                     }}
                 />
             </div>
-            {getCurrentLanguage() === 'EN' ? <ElectionsEN /> : <ElectionsFR />}
+            <br />
+            <div
+                style={{
+                    padding: '8px',
+                    textAlign: 'left',
+                    maxWidth: '600px',
+                    margin: '0 auto',
+                    fontSize: '18px'
+                }}
+            >
+                {getCurrentLanguage() === 'EN' ? (
+                    <ElectionsEN />
+                ) : (
+                    <ElectionsFR />
+                )}
+            </div>
+            <br />
+            <br />
         </div>
     );
 };
