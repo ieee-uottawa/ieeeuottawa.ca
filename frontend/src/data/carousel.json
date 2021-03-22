@@ -2,7 +2,7 @@
     {
         "message": "ELECTIONS 2021",
         "button": {
-            "text": "REGISTER AS A CANDIDATE",
+            "text": "PARTICIPATE",
             "url": "/elections"
         },
         "imageFile": {

@@ -1,8 +1,49 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
+import Gravatar from 'react-gravatar';
 import { Title, Link } from '../../helpers/components';
 import { translate, getCurrentLanguage } from '../../helpers/translation';
 import voteImg from '../../../static/images/events/2019-2020/vote-ieee.jpg';
+import platforms from '../../data/election-ballot-2021.json';
+
+const Platforms = () => {
+    return (
+        <div>
+            <br />
+            <h1>Applicants</h1>
+            {platforms.positions.map(position => (
+                <div>
+                    <br />
+                    <br />
+                    <h2 style={{ textDecoration: 'underline' }}>
+                        {position.title}
+                    </h2>
+                    {position.candidates.map(candidate => (
+                        <div>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center'
+                                }}
+                            >
+                                <Gravatar
+                                    email={candidate.user.email}
+                                    style={{ borderRadius: '50%' }}
+                                />
+                                <h3 style={{ padding: '1rem' }}>
+                                    {candidate.user.name}
+                                </h3>
+                            </div>
+                            {candidate.platform.split('\n').map(line => (
+                                <p>{line}</p>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            ))}
+        </div>
+    );
+};
 
 const ElectionsEN = () => {
     // const voteUrl = 'https://forms.gle/WZfBzf49KeU2bZVv5';
@@ -213,9 +254,10 @@ const Elections = () => {
                 ) : (
                     <ElectionsFR />
                 )}
+                <br />
+                <Platforms />
+                <br />
             </div>
-            <br />
-            <br />
         </div>
     );
 };

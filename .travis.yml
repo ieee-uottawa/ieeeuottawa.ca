@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '10'
+  - "10"
 cache: yarn
 script: bash scripts/build.sh
 branches:
@@ -9,4 +9,4 @@ branches:
 before_script:
   - npm install -g gatsby-cli
 before_install:
-- echo $secret_decrypt_key | gpg --passphrase-fd 0 frontend/.env.production.gpg
+  - echo $secret_decrypt_key | gpg --passphrase-fd 0 frontend/.env.production.gpg
