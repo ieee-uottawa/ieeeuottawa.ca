@@ -64,6 +64,11 @@ const ElectionsEN = () => {
                 </b>
             </p>
             <p>
+                Nominations for the new 2021-2022 executive positions are in and
+                the campaigning period has started. Elections will take place
+                from <b>March 27th 12:00am - March 28th 12:00pm!</b>
+            </p>
+            {/* <p>
                 Nominations for the new 2021-2022 executive positions have
                 opened and will end on March 18th at 12:00pm.
             </p>
@@ -92,7 +97,17 @@ const ElectionsEN = () => {
                 >
                     democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec
                 </a>
-            </li>
+            </li> */}
+            <p>
+                <a
+                    href="https://democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    style={{ color: 'rgb(38 110 168)' }}
+                >
+                    democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec
+                </a>
+            </p>
             <br />
             <h2>Positions</h2>
             <ul>
@@ -142,6 +157,14 @@ const ElectionsFR = () => {
             <h1>Élections IEEE</h1>
 
             <p>
+                La période de soumission des candidatures pour les positions
+                exécutives de l’année 2021-2021 est terminée! Il est maintenant
+                temps de passer à la période des campagnes électorales. Les
+                élections auront lieu du{' '}
+                <b>27 mars à minuit jusqu’au 28 mars à midi!</b>
+            </p>
+
+            {/* <p>
                 Les candidatures pour les postes de l’exécutif sont maintenant
                 ouvertes, et se termineront le 18 mars à 12h00.
             </p>
@@ -173,7 +196,17 @@ const ElectionsFR = () => {
                         democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec
                     </a>
                 </li>
-            </ul>
+            </ul> */}
+            <p>
+                <a
+                    href="https://democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    style={{ color: 'rgb(38 110 168)' }}
+                >
+                    democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec
+                </a>
+            </p>
 
             <br />
             <h2>Positions</h2>
