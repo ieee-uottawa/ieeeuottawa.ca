@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+// import { Typography } from '@material-ui/core';
 import Gravatar from 'react-gravatar';
 import { Title, Link } from '../../helpers/components';
 import { translate, getCurrentLanguage } from '../../helpers/translation';
@@ -12,14 +12,14 @@ const Platforms = () => {
             <br />
             <h1>Applicants</h1>
             {platforms.positions.map(position => (
-                <div>
+                <div key={position.id}>
                     <br />
                     <br />
                     <h2 style={{ textDecoration: 'underline' }}>
                         {position.title}
                     </h2>
                     {position.candidates.map(candidate => (
-                        <div>
+                        <div key={candidate.id}>
                             <div
                                 style={{
                                     display: 'flex',
@@ -48,7 +48,7 @@ const Platforms = () => {
 const ElectionsEN = () => {
     // const voteUrl = 'https://forms.gle/WZfBzf49KeU2bZVv5';
     return (
-        <Typography>
+        <div>
             <h1>IEEE Elections</h1>
 
             <div className="condense-paragraphs">
@@ -218,13 +218,13 @@ const ElectionsEN = () => {
                 our {'  '}
                 <Link to="/constitution">constitution</Link>
             </p>
-        </Typography>
+        </div>
     );
 };
 
 const ElectionsFR = () => {
     return (
-        <Typography>
+        <div>
             <h1>Élections IEEE</h1>
 
             <div className="condense-paragraphs">
@@ -396,7 +396,7 @@ const ElectionsFR = () => {
                     constitution
                 </Link>
             </p>
-        </Typography>
+        </div>
     );
 };
 
