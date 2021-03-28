@@ -780,3 +780,8 @@ a {
     background-size: cover !important;
     background-position-y: top !important;
 }
+
+.condense-paragraphs > p {
+    line-height: 1rem;
+    margin-bottom: 0.7rem;
+}
