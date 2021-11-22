@@ -2,7 +2,7 @@ import pdf1 from '../../static/files/meeting-minutes/1. IEEE Executive Meeting M
 import pdf2 from '../../static/files/meeting-minutes/2. IEEE Executive Meeting Minutes (2021-10-06).pdf';
 import pdf3 from '../../static/files/meeting-minutes/3. IEEE Executive Meeting Minutes (2021-10-24).pdf';
 import pdf4 from '../../static/files/meeting-minutes/4. IEEE Executive Meeting Minutes (2021-11-03).pdf';
-// import pdf5 from '../../static/files/meeting-minutes/3. IEEE Executive Meeting Agenda (August 21).pdf';
+import pdf5 from '../../static/files/meeting-minutes/5. IEEE Executive Meeting Minutes (2021-11-21).pdf';
 // import pdf6 from '../../static/files/meeting-minutes/3.1 IEEE Executive Meeting Minutes .pdf';
 // import pdf7 from '../../static/files/meeting-minutes/4. IEEE Executive Meeting Agenda (Sept 16th).pdf';
 // import pdf8 from '../../static/files/meeting-minutes/5. IEEE Executive Meeting Agenda (Sept22nd).pdf';
@@ -16,8 +16,8 @@ const pdfMap = {
     '1. IEEE Executive Meeting Minutes (2021-09-19).pdf': pdf1,
     '2. IEEE Executive Meeting Minutes (2021-10-06).pdf': pdf2,
     '3. IEEE Executive Meeting Minutes (2021-10-24).pdf': pdf3,
-    '4. IEEE Executive Meeting Minutes (2021-11-03).pdf': pdf4
-    // '5. IEEE Executive Meeting Agenda (Sept22nd).pdf': pdf8,
+    '4. IEEE Executive Meeting Minutes (2021-11-03).pdf': pdf4,
+    '5. IEEE Executive Meeting Minutes (2021-11-21).pdf': pdf5
     // 'IEEE AGM Meeting Agenda (Sept 23rd).pdf': pdfAGM,
     // '6. IEEE Meeting  Agenda (Oct 2nd).pdf': pdf9,
     // '7. IEEE Meeting Agenda (October 2nd).pdf': pdf10,
