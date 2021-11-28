@@ -1,21 +1,33 @@
 [
     {
         "name": "Gianluca Coletti",
-        "position": "Computer Engineering",
+        "position": "CEG Commissioner",
         "image": "../../static/images/execs-2021-2022/ceg-com.jpg",
         "email": "ceg@ieeeuottawa.ca"
     },
     {
         "name": "Juan Hiedra Primera",
-        "position": "Electrical Engineering",
+        "position": "ELG Commissioner",
         "image": "../../static/images/execs-2021-2022/elg-com.jpg",
         "email": "elg@ieeeuottawa.ca"
     },
     {
         "name": "Is'Haaq Ahamed",
-        "position": "Software Engineering",
+        "position": "SEG Commissioner",
         "image": "../../static/images/execs-2021-2022/seg-com.jpg",
         "email": "seg@ieeeuottawa.ca"
+    },
+    {
+        "name": "Valerie Grant",
+        "position": "Design Commissioner",
+        "image": "../../static/images/execs-2021-2022/design-com.jpg",
+        "email": "commissioner-design@ieeeuottawa.ca"
+    },
+    {
+        "name": "Avneesh Chaudhary",
+        "position": "Equity Commissioner",
+        "image": "../../static/images/execs-2021-2022/equity-com.png",
+        "email": "commissioner-equity@ieeeuottawa.ca"
     },
     {
         "name": "VACANT",
