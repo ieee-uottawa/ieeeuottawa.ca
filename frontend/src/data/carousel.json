@@ -21,7 +21,7 @@
         },
         "imageFile": {
             "id": "santa-pic",
-            "image": "../../static/images/christmas/christmas2020.png",
+            "image": "../../static/images/christmas/christmas2021.png",
             "style": {
                 "backgroundPositionY": "-175px"
             }
