@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Gianluca Coletti",
+        "position": "CEG Commissioner",
+        "image": "../../static/images/execs-2021-2022/ceg-com.jpg",
+        "email": "commissioner-ceg@ieeeuottawa.ca"
+    },
+    {
+        "name": "Ethan Bowering",
+        "position": "ELG Commissioner",
+        "image": "../../static/images/execs-2021-2022/elg-com.png",
+        "email": "commissioner-elg@ieeeuottawa.ca"
+    },
+    {
+        "name": "Is'Haaq Ahamed",
+        "position": "SEG Commissioner",
+        "image": "../../static/images/execs-2021-2022/seg-com.jpg",
+        "email": "commissioner-seg@ieeeuottawa.ca"
+    },
+    {
+        "name": "Valerie Grant",
+        "position": "Design Commissioner",
+        "image": "../../static/images/execs-2021-2022/design-com.jpg",
+        "email": "commissioner-design@ieeeuottawa.ca"
+    },
+    {
+        "name": "Avneesh Chaudhary",
+        "position": "Equity Commissioner",
+        "image": "../../static/images/execs-2021-2022/equity-com.png",
+        "email": "commissioner-equity@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "Translation Commissioner",
+        "image": "../../static/images/execs-2021-2022/translation-com.jpg",
+        "email": "translation@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "WIE Design",
+        "image": "../../static/images/execs-2021-2022/wie-design.jpg",
+        "email": "wie-design@ieeeuottawa.ca"
+    }
+]

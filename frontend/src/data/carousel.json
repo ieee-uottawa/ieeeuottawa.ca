@@ -1,13 +1,27 @@
 [
     {
-        "message": "Powering Your Student Experience",
+        "message": "Join Us On Discord",
         "button": {
-            "text": "About Us",
-            "url": "execs-2020-2021"
+            "text": "Office Hours",
+            "url": "/office-hours"
         },
         "imageFile": {
             "id": "santa-pic",
-            "image": "../../static/images/ieeesantapic-2.jpg",
+            "image": "../../static/images/csme-site.jpg",
+            "style": {
+                "backgroundPositionY": "-175px"
+            }
+        }
+    },
+    {
+        "message": "Powering Your Student Experience",
+        "button": {
+            "text": "About Us",
+            "url": "execs-2021-2022"
+        },
+        "imageFile": {
+            "id": "santa-pic",
+            "image": "../../static/images/christmas/christmas2021.png",
             "style": {
                 "backgroundPositionY": "-175px"
             }

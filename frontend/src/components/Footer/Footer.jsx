@@ -29,7 +29,7 @@ const Footer = () => {
                         overflow: 'auto',
                         backgroundColor: '#1f2021',
                         flexShrink: '0',
-                        height: '250px'
+                        minHeight: '270px'
                     }}
                 >
                     <Grid
@@ -87,7 +87,12 @@ const Footer = () => {
                                 </ul>
                             </section>
                         </Grid>
-                        <Grid xs={12} className="center-horizontal" item>
+                        <Grid
+                            xs={12}
+                            className="center-horizontal"
+                            item
+                            style={{ marginTop: '20px' }}
+                        >
                             <Typography
                                 style={{ color: '#bdc3c7' }}
                                 id="copyright-txt"

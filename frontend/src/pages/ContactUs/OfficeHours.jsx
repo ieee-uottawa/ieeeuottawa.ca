@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { isServerSideRendering } from '../../utils/util';
 import Title from '../../components/Titles/Title';
-import officeHoursImg from '../../../static/images/office-hours/office-hours.png';
+// import officeHoursImg from '../../../static/images/office-hours/office-hours.png';
 import { translate } from '../../helpers/translation';
 
 class OfficeHours extends Component {
@@ -41,11 +41,6 @@ class OfficeHours extends Component {
                 <Title variant="h5" gutterBottom className="title">
                     {translate('Office Hours')}
                 </Title>
-                <img
-                    src={officeHoursImg}
-                    alt="IEEE Office Hours"
-                    style={imgStyle}
-                />
             </>
         );
     }

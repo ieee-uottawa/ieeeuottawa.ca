@@ -757,6 +757,7 @@ pre tt:after {
 
 .white-url-txt {
     color: #fff !important;
+    text-shadow: 0 0 20px black;
 }
 
 .p-margins {
@@ -772,4 +773,15 @@ a {
     display: flex;
     justify-content: center;
     margin: 0 !important;
+}
+
+/* Fix for Carousel Backgrounds */
+.background-fix::before {
+    background-size: cover !important;
+    background-position-y: top !important;
+}
+
+.condense-paragraphs > p {
+    line-height: 1rem;
+    margin-bottom: 0.7rem;
 }

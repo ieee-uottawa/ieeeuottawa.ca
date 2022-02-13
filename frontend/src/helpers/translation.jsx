@@ -60,6 +60,14 @@ const gallery = {
 };
 
 const execs = {
+    'Execs 2021-2022': {
+        EN: 'Execs 2021-2022',
+        FR: 'Directeurs 2021-2022'
+    },
+    'Execs 2020-2021': {
+        EN: 'Execs 2020-2021',
+        FR: 'Directeurs 2020-2021'
+    },
     'Execs 2019-2020': {
         EN: 'Execs 2019-2020',
         FR: 'Directeurs 2019-2020'
