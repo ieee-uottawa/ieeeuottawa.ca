@@ -89,7 +89,8 @@
         "prettier": "1.14.3"
     },
     "resolutions": {
-        "material-ui/react-popper/popper.js": "1.14.1"
+        "material-ui/react-popper/popper.js": "1.14.1",
+        "winston": "^3.5.0"
     },
     "repository": {
         "type": "git",
