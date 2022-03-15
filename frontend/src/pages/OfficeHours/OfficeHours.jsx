@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { DataGrid } from '@material-ui/data-grid';
 import { Typography } from '@material-ui/core';
 import Title from '../../components/Titles/Title';
-import officeHoursImg from '../../../static/images/office-hours/Office_Hours_Fall.jpg';
+import officeHoursImg from '../../../static/images/office-hours/Office_Hours_W_2022.jpg';
 import { translate } from '../../helpers/translation';
 import { isServerSideRendering } from '../../utils/util';
 
