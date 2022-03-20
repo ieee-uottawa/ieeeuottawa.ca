@@ -1,6 +1,34 @@
 [
     {
-        "message": "Join Us On Discord",
+        "message": "Wine and Cheese Is Back In Person",
+        "button": {
+            "text": "Get Your Tickets",
+            "url": "https://ieee-uottawa.square.site/s/shop"
+        },
+        "imageFile": {
+            "id": "volunteer-cover-pic",
+            "image": "../../static/images/volunteer_cover.jpg",
+            "style": {
+                "backgroundPositionY": "-275px"
+            }
+        }
+    },
+    {
+        "message": "Nominations for Next Year's Execs Team Are Now Open",
+        "button": {
+            "text": "Apply",
+            "url": "https://democracy.smallminds.dev/election/62fc7012-9a20-45f6-8ede-533e8c590cba"
+        },
+        "imageFile": {
+            "id": "election-cover-pic",
+            "image": "../../static/images/events/2019-2020/vote-ieee.jpg",
+            "style": {
+                "backgroundPositionY": "-275px"
+            }
+        }
+    },        
+    {
+        "message": "Come Visit Us During Office Hours",
         "button": {
             "text": "Office Hours",
             "url": "/office-hours"
@@ -24,20 +52,6 @@
             "image": "../../static/images/christmas/christmas2021.png",
             "style": {
                 "backgroundPositionY": "-175px"
-            }
-        }
-    },
-    {
-        "message": "Want to get involved with us?",
-        "button": {
-            "text": "Get Involved!",
-            "url": "/volunteer"
-        },
-        "imageFile": {
-            "id": "volunteer-cover-pic",
-            "image": "../../static/images/volunteer_cover.jpg",
-            "style": {
-                "backgroundPositionY": "-275px"
             }
         }
     }

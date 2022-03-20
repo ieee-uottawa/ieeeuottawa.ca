@@ -1,49 +1,49 @@
 import React from 'react';
 // import { Typography } from '@material-ui/core';
-import Gravatar from 'react-gravatar';
+// import Gravatar from 'react-gravatar';
 import { Title, Link } from '../../helpers/components';
 import { translate, getCurrentLanguage } from '../../helpers/translation';
 import voteImg from '../../../static/images/events/2019-2020/vote-ieee.jpg';
-import platforms from '../../data/election-ballot-2021.json';
+// import platforms from '../../data/election-ballot-2021.json';
 
-const Platforms = () => {
-    return (
-        <div>
-            <br />
-            <h1>Applicants</h1>
-            {platforms.positions.map(position => (
-                <div key={position.id}>
-                    <br />
-                    <br />
-                    <h2 style={{ textDecoration: 'underline' }}>
-                        {position.title}
-                    </h2>
-                    {position.candidates.map(candidate => (
-                        <div key={candidate.id}>
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center'
-                                }}
-                            >
-                                <Gravatar
-                                    email={candidate.user.email}
-                                    style={{ borderRadius: '50%' }}
-                                />
-                                <h3 style={{ padding: '1rem' }}>
-                                    {candidate.user.name}
-                                </h3>
-                            </div>
-                            {candidate.platform.split('\n').map(line => (
-                                <p>{line}</p>
-                            ))}
-                        </div>
-                    ))}
-                </div>
-            ))}
-        </div>
-    );
-};
+// const Platforms = () => {
+//     return (
+//         <div>
+//             <br />
+//             <h1>Applicants</h1>
+//             {platforms.positions.map(position => (
+//                 <div key={position.id}>
+//                     <br />
+//                     <br />
+//                     <h2 style={{ textDecoration: 'underline' }}>
+//                         {position.title}
+//                     </h2>
+//                     {position.candidates.map(candidate => (
+//                         <div key={candidate.id}>
+//                             <div
+//                                 style={{
+//                                     display: 'flex',
+//                                     alignItems: 'center'
+//                                 }}
+//                             >
+//                                 <Gravatar
+//                                     email={candidate.user.email}
+//                                     style={{ borderRadius: '50%' }}
+//                                 />
+//                                 <h3 style={{ padding: '1rem' }}>
+//                                     {candidate.user.name}
+//                                 </h3>
+//                             </div>
+//                             {candidate.platform.split('\n').map(line => (
+//                                 <p>{line}</p>
+//                             ))}
+//                         </div>
+//                     ))}
+//                 </div>
+//             ))}
+//         </div>
+//     );
+// };
 
 const ElectionsEN = () => {
     // const voteUrl = 'https://forms.gle/WZfBzf49KeU2bZVv5';
@@ -51,9 +51,9 @@ const ElectionsEN = () => {
         <div>
             <h1>IEEE Elections</h1>
 
-            <div className="condense-paragraphs">
+            {/* <div className="condense-paragraphs">
                 <p>
-                    Thank you all for voting in the 2021-2022 IEEE Student
+                    Thank you all for voting in the 2022-2023 IEEE Student
                     Branch elections! You can find the results of the elections
                     below:
                 </p>
@@ -119,7 +119,7 @@ const ElectionsEN = () => {
                     Branch stay tuned to our facebook page as information about
                     by-elections will be coming up in the next few days.
                 </p>
-            </div>
+            </div> */}
 
             {/* <p>
                 Elections are currently live on the{' '}
@@ -135,13 +135,13 @@ const ElectionsEN = () => {
                 </b>
             </p>
             <p>
-                Nominations for the new 2021-2022 executive positions are in and
+                Nominations for the new 2022-2023 executive positions are in and
                 the campaigning period has started. Elections will take place
                 from <b>March 27th 12:00am - March 28th 12:00pm!</b>
             </p> */}
-            {/* <p>
-                Nominations for the new 2021-2022 executive positions have
-                opened and will end on March 18th at 12:00pm.
+            <p>
+                Nominations for the new 2022-2023 executive positions have
+                opened and will end on March 24th at 11:59pm.
             </p>
 
             <p>
@@ -158,27 +158,16 @@ const ElectionsEN = () => {
             </li>
             <li>
                 Submit your 200-500 word platform for the position you’re
-                applying to at
+                applying for at
                 {'  '}
                 <a
                     href="https://democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec"
                     target="_blank"
                     rel="noreferrer noopener"
-                    style={{ color: 'inherit' }}
                 >
-                    democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec
+                    democracy.smallminds.dev
                 </a>
-            </li> */}
-            <p>
-                <a
-                    href="https://democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    style={{ color: 'rgb(38 110 168)' }}
-                >
-                    democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec
-                </a>
-            </p>
+            </li>
             <br />
             <h2>Positions</h2>
             <ul>
@@ -227,7 +216,7 @@ const ElectionsFR = () => {
         <div>
             <h1>Élections IEEE</h1>
 
-            <div className="condense-paragraphs">
+            {/* <div className="condense-paragraphs">
                 <p>
                     Un grand merci &agrave; tous d&#39;avoir vot&eacute; lors
                     des &eacute;lections de la branche &eacute;tudiante de
@@ -299,7 +288,7 @@ const ElectionsFR = () => {
                     les informations concernant les &eacute;lections partielles
                     seront partag&eacute;es dans les jours qui suivent.
                 </p>
-            </div>
+            </div> */}
 
             {/* <p>
                 La période de soumission des candidatures pour les positions
@@ -309,9 +298,9 @@ const ElectionsFR = () => {
                 <b>27 mars à minuit jusqu’au 28 mars à midi!</b>
             </p> */}
 
-            {/* <p>
+            <p>
                 Les candidatures pour les postes de l’exécutif sont maintenant
-                ouvertes, et se termineront le 18 mars à 12h00.
+                ouvertes, et se termineront le 24 mars à 23h59.
             </p>
             <p>
                 Qui peut postuler: Étudiants en Informatique, Ingénierie ou
@@ -325,33 +314,21 @@ const ElectionsFR = () => {
                 <li>
                     Veuillez envoyer un courriel à elections@ieeeuottawa.ca
                     contenant votre nom complet, votre numéro étudiant, votre
-                    programme {"d'études"}
-                    et année académique
+                    programme d&apos;études et année académique
                 </li>
                 <li>
                     Veuillez soumettre votre plateforme de 200~500 mots pour la
                     position à laquelle vous souhaitez vous porter candidat au
                     {'  '}
                     <a
-                        href="https://democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec"
+                        href="https://democracy.smallminds.dev/election/62fc7012-9a20-45f6-8ede-533e8c590cba"
                         target="_blank"
                         rel="noreferrer noopener"
-                        style={{ color: 'inherit' }}
                     >
-                        democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec
+                        https://democracy.smallminds.dev/
                     </a>
                 </li>
-            </ul> */}
-            <p>
-                <a
-                    href="https://democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    style={{ color: 'rgb(38 110 168)' }}
-                >
-                    democracy.smallminds.dev/election/1878a916-d33a-47a7-83fa-18ec357899ec
-                </a>
-            </p>
+            </ul>
 
             <br />
             <h2>Positions</h2>
@@ -433,7 +410,7 @@ const Elections = () => {
                     <ElectionsFR />
                 )}
                 <br />
-                <Platforms />
+                {/* <Platforms /> */}
                 <br />
             </div>
         </div>

@@ -133,15 +133,43 @@ const languages = {
         EN: 'to be redirected there now.',
         FR: 'pour y être redirigé maintenant.'
     },
-    'Powering Your Student Experience': {
-        EN: 'Powering Your Student Experience',
-        FR: 'Électrifier votre expérience étudiante'
-    },
 
     'Visit Our Office': {
         EN: 'Visit Our Office',
         FR: 'Visitez notre bureau!'
     },
+
+    'Wine and Cheese Is Back In Person': {
+        EN: 'Wine and Cheese Is Back In Person',
+        FR: 'Wine and Cheese est de retour en personne'
+    },
+
+    "Nominations for Next Year's Execs Team Are Now Open": {
+        EN: "Nominations for Next Year's Execs Team Are Now Open",
+        FR:
+            'Les candidatures pour les postes de l&#233;exécutif sont maintenant ouvertes'
+    },
+
+    'Learn More': {
+        EN: 'Learn More',
+        FR: 'En apprendre plus'
+    },
+
+    Apply: {
+        EN: 'Apply',
+        FR: 'Appliquer'
+    },
+
+    'Come Visit Us During Office Hours': {
+        EN: 'Come Visit Us During Office Hours',
+        FR: 'Venez nous visitez pendant nos heures de bureau'
+    },
+
+    'Get Your Tickets': {
+        EN: 'Get Your Tickets',
+        FR: 'Achetez vos tickets'
+    },
+
     'Why come to our office?': {
         EN: 'Why come to our office?',
         FR: 'Pourquoi venir à notre bureau?'
