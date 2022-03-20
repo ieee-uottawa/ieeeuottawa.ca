@@ -147,7 +147,7 @@ const languages = {
     "Nominations for Next Year's Execs Team Are Now Open": {
         EN: "Nominations for Next Year's Execs Team Are Now Open",
         FR:
-            'Les candidatures pour les postes de l&#233;exécutif sont maintenant ouvertes'
+            "Les candidatures pour les postes de l'exécutif sont maintenant ouvertes"
     },
 
     'Learn More': {
