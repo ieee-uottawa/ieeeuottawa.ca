@@ -49,7 +49,7 @@
         },
         "imageFile": {
             "id": "santa-pic",
-            "image": "../../static/images/christmas/christmas2021.png",
+            "image": "../../static/images/hackathon-staff.jpg",
             "style": {
                 "backgroundPositionY": "-175px"
             }
