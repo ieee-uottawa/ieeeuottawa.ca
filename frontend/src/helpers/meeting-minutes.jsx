@@ -23,8 +23,8 @@ const pdfMap = {
     '6. IEEE Executive Meeting Minutes (2021-12-01).pdf': pdf6,
     '7. IEEE Executive Meeting Minutes (2022-01-23).pdf': pdf7,
     '8. IEEE Executive Meeting Minutes (2022-02-02).pdf': pdf8,
-    '9. IEEE Executive Meeting Minutes (2022-02-02).pdf': pdf9,
-    '10. IEEE Executive Meeting Minutes (2022-02-02).pdf': pdf10,
+    '9. IEEE Executive Meeting Minutes (2022-02-13).pdf': pdf9,
+    '10. IEEE Executive Meeting Minutes (2022-03-09).pdf': pdf10,
     '11. IEEE Executive Meeting Minutes (2022-03-20).pdf': pdf11
     // 'IEEE AGM Meeting Agenda (Sept 23rd).pdf': pdfAGM,
     // '6. IEEE Meeting  Agenda (Oct 2nd).pdf': pdf9,
