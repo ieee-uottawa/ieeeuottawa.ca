@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Rikki Romana",
+        "position": "Chair",
+        "image": "../../static/images/execs/rikki-romana.jpg",
+        "email": "chair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Alae Boufarrachene",
+        "position": "Vice Chair",
+        "image": "../../static/images/execs/alae-boufarrachene.jpg",
+        "email": "vicechair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Benjamin Flynn",
+        "position": "Treasurer",
+        "image": "../../static/images/execs/benjamin-flynn.jpg",
+        "email": "treasurer@ieeeuottawa.ca"
+    },
+    {
+        "name": "Nizar Zariouh",
+        "position": "Secretary",
+        "image": "../../static/images/execs/nizar-zariouh.png",
+        "email": "secretary@ieeeuottawa.ca"
+    },
+    {
+        "name": "Disala de Silva",
+        "position": "VP External",
+        "image": "../../static/images/execs/placeholder.jpeg",
+        "email": "external@ieeeuottawa.ca"
+    },
+    {
+        "name": "Mingye Chen",
+        "position": "VP Internal",
+        "image": "../../static/images/execs/placeholder.jpeg",
+        "email": "internal@ieeeuottawa.ca"
+    },
+    {
+        "name": "Stefan Todorovic",
+        "position": "VP Academic",
+        "image": "../../static/images/execs/placeholder.jpeg",
+        "email": "academic@ieeeuottawa.ca"
+    },
+    {
+        "name": "Ethan Bowering",
+        "position": "VP Social",
+        "image": "../../static/images/execs/ethan-bowering.png",
+        "email": "social@ieeeuottawa.ca"
+    },
+    {
+        "name": "Pavly Saleh",
+        "position": "VP Communications",
+        "image": "../../static/images/execs/pavly-saleh.jpg",
+        "email": "communications@ieeeuottawa.ca"
+    },
+    {
+        "name": "Jean Loic Kandikandi",
+        "position": "VP Webmaster",
+        "image": "../../static/images/execs/jean-loic-kandikandi.jpg",
+        "email": "webmaster@ieeeuottawa.ca"
+    },
+    {
+        "name": "Sophie Tomlin",
+        "position": "WIE Chair",
+        "image": "../../static/images/execs/placeholder.jpeg",
+        "email": "wie-chair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Kaitlyn Dompaul",
+        "position": "WIE Vice Chair",
+        "image": "../../static/images/execs/kaitlyn-dompaul.jpg",
+        "email": "wie-vicechair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Juan Hiedra Primera",
+        "position": "McNaughton Centre Director",
+        "image": "../../static/images/execs/juan-hiedra-primera.jpg",
+        "email": "mcnaughton@ieeeuottawa.ca"
+    },
+    {
+        "name": "Omid Mozafar",
+        "position": "Photonics Chair",
+        "image": "../../static/images/execs/placeholder.jpeg",
+        "email": "photonics-chair@ieeeuottawa.ca"
+    },
+    {
+        "name": "Maryam Abbasi",
+        "position": "Photonics Vice-Chair",
+        "image": "../../static/images/execs/placeholder.jpeg",
+        "email": "photonics-chair@ieeeuottawa.ca"
+    }
+]

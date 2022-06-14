@@ -1,0 +1,44 @@
+[
+    {
+        "name": "VACANT",
+        "position": "CEG Commissioner",
+        "image": "../../static/images/execs/vacant.jpg",
+        "email": "commissioner-ceg@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "ELG Commissioner",
+        "image": "../../static/images/execs/vacant.jpg",
+        "email": "commissioner-elg@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "SEG Commissioner",
+        "image": "../../static/images/execs/vacant.jpg",
+        "email": "commissioner-seg@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "Design Commissioner",
+        "image": "../../static/images/execs/vacant.jpg",
+        "email": "commissioner-design@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "Equity Commissioner",
+        "image": "../../static/images/execs/vacant.jpg",
+        "email": "commissioner-equity@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "Translation Commissioner",
+        "image": "../../static/images/execs/vacant.jpg",
+        "email": "translation@ieeeuottawa.ca"
+    },
+    {
+        "name": "VACANT",
+        "position": "WIE Design",
+        "image": "../../static/images/execs/vacant.jpg",
+        "email": "wie-design@ieeeuottawa.ca"
+    }
+]
