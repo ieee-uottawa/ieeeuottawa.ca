@@ -2,91 +2,73 @@
     {
         "name": "Vlad Jidkov",
         "position": "Chair",
-        "image": "../../static/images/execs-2021-2022/chair.jpg",
+        "image": "../../static/images/execs/vladislav-jidkov.jpg",
         "email": "chair@ieeeuottawa.ca"
     },
     {
         "name": "Madison Smrtka",
         "position": "Vice Chair",
-        "image": "../../static/images/execs-2021-2022/vice-chair.jpg",
+        "image": "../../static/images/execs/madison-smrtka.jpg",
         "email": "vicechair@ieeeuottawa.ca"
     },
     {
         "name": "Benjamin Flynn",
         "position": "Treasurer",
-        "image": "../../static/images/execs-2021-2022/treasurer.jpg",
+        "image": "../../static/images/execs/benjamin-flynn.jpg",
         "email": "treasurer@ieeeuottawa.ca"
     },
     {
         "name": "Pavly Saleh",
         "position": "Secretary",
-        "image": "../../static/images/execs-2021-2022/secretary.jpg",
+        "image": "../../static/images/execs/pavly-saleh.jpg",
         "email": "secretary@ieeeuottawa.ca"
-    },
-    {
-        "name": "Vacant",
-        "position": "VP External",
-        "image": "../../static/images/execs-2021-2022/vacant.jpg",
-        "email": "external@ieeeuottawa.ca"
     },
     {
         "name": "Steven Li",
         "position": "VP Internal",
-        "image": "../../static/images/execs-2021-2022/internal.jpg",
+        "image": "../../static/images/execs/steven-li.jpg",
         "email": "internal@ieeeuottawa.ca"
     },
     {
         "name": "Rikki Romana",
         "position": "VP Academic",
-        "image": "../../static/images/execs-2021-2022/academic.jpg",
+        "image": "../../static/images/execs/rikki-romana.jpg",
         "email": "academic@ieeeuottawa.ca"
     },
     {
         "name": "Sultan Oloyede",
         "position": "VP Social",
-        "image": "../../static/images/execs-2021-2022/social.jpg",
+        "image": "../../static/images/execs/sultan-oloyede.jpg",
         "email": "social@ieeeuottawa.ca"
     },
     {
         "name": "Alae Boufarrachene",
         "position": "VP Communications",
-        "image": "../../static/images/execs-2021-2022/communications.jpg",
+        "image": "../../static/images/execs/alae-boufarrachene.jpg",
         "email": "communications@ieeeuottawa.ca"
     },
     {
         "name": "Jean Loic Kandikandi",
         "position": "VP Webmaster",
-        "image": "../../static/images/execs-2021-2022/webmaster.jpg",
+        "image": "../../static/images/execs/jean-loic-kandikandi.jpg",
         "email": "webmaster@ieeeuottawa.ca"
     },
     {
         "name": "Victoria Hough",
         "position": "WIE Chair",
-        "image": "../../static/images/execs-2021-2022/wie-chair.jpg",
+        "image": "../../static/images/execs/victoria-hough.jpg",
         "email": "wie-chair@ieeeuottawa.ca"
     },
     {
         "name": "Eda Su Bicer",
         "position": "WIE Vice Chair",
-        "image": "../../static/images/execs-2021-2022/wie-vice-chair.jpg",
+        "image": "../../static/images/execs/eda-su-bicer.jpg",
         "email": "wie-vicechair@ieeeuottawa.ca"
     },
     {
         "name": "Juan Hiedra Primera",
         "position": "McNaughton Centre Director",
-        "image": "../../static/images/execs-2021-2022/mcnaughton-director.jpg",
+        "image": "../../static/images/execs/juan-hiedra-primera.jpg",
         "email": "mcnaughton@ieeeuottawa.ca"
-    },
-    {
-        "name": "VACANT",
-        "position": "Photonics Chair",
-        "image": "../../static/images/execs-2021-2022/photonics-chair.jpg",
-        "email": "photonics-chair@ieeeuottawa.ca"
-    },
-    {
-        "name": "VACANT",
-        "position": "Photonics Vice-Chair",
-        "image": "../../static/images/execs-2021-2022/photonics-vice-chair.jpg",
-        "email": "photonics-chair@ieeeuottawa.ca"
     }
 ]

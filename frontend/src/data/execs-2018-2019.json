@@ -2,79 +2,79 @@
     {
         "name": "Heemel Saha",
         "position": "Chair",
-        "image": "../../static/images/execs-2018-2019/chair.jpg",
+        "image": "../../static/images/execs/heemel-saha.jpg",
         "email": "chair@ieeeuottawa.ca"
     },
     {
         "name": "Amar Jasarbasic",
         "position": "Vice Chair",
-        "image": "../../static/images/execs-2018-2019/vice-chair.jpg",
+        "image": "../../static/images/execs/amar-jasarbasic.jpg",
         "email": "vicechair@ieeeuottawa.ca"
     },
     {
         "name": "Robert Conrad",
         "position": "Treasurer",
-        "image": "../../static/images/execs-2018-2019/finance.jpg",
+        "image": "../../static/images/execs/robert-conrad.jpg",
         "email": "treasurer@ieeeuottawa.ca"
     },
     {
         "name": "John Zhao",
         "position": "VP Social",
-        "image": "../../static/images/execs-2018-2019/social.jpg",
+        "image": "../../static/images/execs/john-zhao.jpg",
         "email": "social@ieeeuottawa.ca"
     },
     {
         "name": "Anushka Paliwal",
         "position": "VP Internal",
-        "image": "../../static/images/execs-2018-2019/internal.jpg",
+        "image": "../../static/images/execs/anushka-paliwal.jpg",
         "email": "internal@ieeeuottawa.ca"
     },
     {
         "name": "Madison Smrtka",
         "position": "VP Communications",
-        "image": "../../static/images/execs-2018-2019/communications.jpg",
+        "image": "../../static/images/execs/madison-smrtka.jpg",
         "email": "communications@ieeeuottawa.ca"
     },
     {
         "name": "Melody Habbouche",
         "position": "VP Academic",
-        "image": "../../static/images/execs-2018-2019/academic.jpg",
+        "image": "../../static/images/execs/melody-habbouche.jpg",
         "email": "academic@ieeeuottawa.ca"
     },
     {
         "name": "Aly Abdelrahman",
         "position": "VP External",
-        "image": "../../static/images/execs-2018-2019/external.jpg",
+        "image": "../../static/images/execs/aly-abdelrahman.jpg",
         "email": "external@ieeeuottawa.ca"
     },
     {
         "name": "Linda Tang",
         "position": "WIE Chair",
-        "image": "../../static/images/execs-2018-2019/wie-chair.jpg",
+        "image": "../../static/images/execs/linda-tang.jpg",
         "email": "wie-chair@ieeeuottawa.ca"
     },
     {
         "name": "Mikeli Habash",
         "position": "WIE Vice Chair",
-        "image": "../../static/images/execs-2018-2019/wie-vice-chair.jpg",
+        "image": "../../static/images/execs/mikeli-habash.jpg",
         "email": "wie-vicechair@ieeeuottawa.ca"
     },
     {
         "name": "Rushil Perera",
         "position": "VP Webmaster",
-        "image": "../../static/images/execs-2018-2019/webmaster.jpg",
+        "image": "../../static/images/execs/rushil-perera.jpg",
         "email": "webmaster@ieeeuottawa.ca"
     },
     {
         "name": "Michal Ridner",
         "position": "Secretary",
-        "image": "../../static/images/execs-2018-2019/secretary.jpg",
+        "image": "../../static/images/execs/michal-ridner.jpg",
         "email": "secretary@ieeeuottawa.ca"
     },
     {
         "name": "Ivor Benderavage",
         "position": "McNaughton Centre Director",
-        "image": "../../static/images/execs-2018-2019/mcnaughton-director.jpg",
+        "image": "../../static/images/execs/ivor-benderavage.jpg",
         "email": "mcnaughton@ieeeuottawa.ca"
     }
 ]

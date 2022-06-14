@@ -2,37 +2,37 @@
     {
         "name": "Ellie Rumsey",
         "position": "Design",
-        "image": "../../static/images/execs-2019-2020/design.jpg",
+        "image": "../../static/images/execs/ellie-rumsey.jpg",
         "email": "design@ieeeuottawa.ca"
     },
     {
         "name": "Michelle Tang",
         "position": "WIE Design",
-        "image": "../../static/images/execs-2019-2020/wie-design.jpg",
+        "image": "../../static/images/execs/michelle-tang.jpg",
         "email": "wie-design@ieeeuottawa.ca"
     },
     {
         "name": "Nicholas Morin",
         "position": "Translation Commissioner",
-        "image": "../../static/images/execs-2019-2020/translation.jpg",
+        "image": "../../static/images/execs/nicholas-morin.jpg",
         "email": "translation@ieeeuottawa.ca"
     },
     {
         "name": "Erik Cassidy",
         "position": "CEG Commissioner",
-        "image": "../../static/images/execs-2019-2020/ceg-com.jpg",
+        "image": "../../static/images/execs/erik-cassidy.jpg",
         "email": "ceg@ieeeuottawa.ca"
     },
     {
         "name": "Alois Clerc",
         "position": "SEG Commissioner",
-        "image": "../../static/images/execs-2019-2020/seg-com.jpg",
+        "image": "../../static/images/execs/alois-clerc.jpg",
         "email": "seg@ieeeuottawa.ca"
     },
     {
         "name": "Reethi Paul",
         "position": "ELG Commissioner",
-        "image": "../../static/images/execs-2019-2020/elg-com.jpg",
+        "image": "../../static/images/execs/reethi-paul.jpg",
         "email": "elg@ieeeuottawa.ca"
     }
 ]

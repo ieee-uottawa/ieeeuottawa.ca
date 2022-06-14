@@ -2,31 +2,31 @@
     {
         "name": "Sirjan Singh Rekhi",
         "position": "Computer Engineering",
-        "image": "../../static/images/execs-2020-2021/ceg-com.jpg",
+        "image": "../../static/images/execs/sirjan-singh-rekhi.jpg",
         "email": "ceg@ieeeuottawa.ca"
     },
     {
         "name": "Erik Cassidy",
         "position": "Electrical Engineering",
-        "image": "../../static/images/execs-2020-2021/elg-com.jpg",
+        "image": "../../static/images/execs/erik-cassidy.jpg",
         "email": "elg@ieeeuottawa.ca"
     },
     {
         "name": "Justin Proulx",
         "position": "Software Engineering",
-        "image": "../../static/images/execs-2020-2021/seg-com.jpg",
+        "image": "../../static/images/execs/justin-proulx.jpg",
         "email": "seg@ieeeuottawa.ca"
     },
     {
         "name": "Alae Boufarrachene",
         "position": "Translation Commissioner",
-        "image": "../../static/images/execs-2020-2021/translation-com.jpg",
+        "image": "../../static/images/execs/alae-boufarrachene.jpg",
         "email": "translation@ieeeuottawa.ca"
     },
     {
         "name": "Elma Khandaker",
         "position": "WIE Design",
-        "image": "../../static/images/execs-2020-2021/wie-design.jpg",
+        "image": "../../static/images/execs/elma-khandaker.jpg",
         "email": "wie-design@ieeeuottawa.ca"
     }
 ]

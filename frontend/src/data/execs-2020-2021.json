@@ -2,91 +2,91 @@
     {
         "name": "Michal Ridner",
         "position": "Chair",
-        "image": "../../static/images/execs-2020-2021/chair.jpg",
+        "image": "../../static/images/execs/michal-ridner.jpg",
         "email": "chair@ieeeuottawa.ca"
     },
     {
         "name": "Madison Smrtka",
         "position": "Vice Chair",
-        "image": "../../static/images/execs-2020-2021/vice-chair.jpg",
+        "image": "../../static/images/execs/madison-smrtka.jpg",
         "email": "vicechair@ieeeuottawa.ca"
     },
     {
         "name": "Ryan Fleck",
         "position": "VP Webmaster",
-        "image": "../../static/images/execs-2020-2021/webmaster.jpg",
+        "image": "../../static/images/execs/ryan-fleck.jpg",
         "email": "webmaster@ieeeuottawa.ca"
     },
     {
         "name": "Sanat Nayar",
         "position": "Treasurer",
-        "image": "../../static/images/execs-2020-2021/treasurer.jpg",
+        "image": "../../static/images/execs/sanat-nayar.jpg",
         "email": "treasurer@ieeeuottawa.ca"
     },
     {
         "name": "Mohit Kapur",
         "position": "VP Social",
-        "image": "../../static/images/execs-2020-2021/social.jpg",
+        "image": "../../static/images/execs/mohit-kapur.jpg",
         "email": "social@ieeeuottawa.ca"
     },
     {
         "name": "Ali Jafri",
         "position": "VP Internal",
-        "image": "../../static/images/execs-2020-2021/internal.jpg",
+        "image": "../../static/images/execs/ali-jafri.jpg",
         "email": "internal@ieeeuottawa.ca"
     },
     {
         "name": "Nicholas Morin",
         "position": "VP Communications",
-        "image": "../../static/images/execs-2020-2021/communications.jpg",
+        "image": "../../static/images/execs/nicholas-morin.jpg",
         "email": "communications@ieeeuottawa.ca"
     },
     {
         "name": "Vladislav Jidkov",
         "position": "VP Academic",
-        "image": "../../static/images/execs-2020-2021/academic.jpg",
+        "image": "../../static/images/execs/vladislav-jidkov.jpg",
         "email": "academic@ieeeuottawa.ca"
     },
     {
         "name": "Alois Clerc",
         "position": "VP External",
-        "image": "../../static/images/execs-2020-2021/external.jpg",
+        "image": "../../static/images/execs/alois-clerc.jpg",
         "email": "external@ieeeuottawa.ca"
     },
     {
         "name": "Shriya Gundala",
         "position": "WIE Chair",
-        "image": "../../static/images/execs-2020-2021/wie-chair.jpg",
+        "image": "../../static/images/execs/shriya-gundala.jpg",
         "email": "wie-chair@ieeeuottawa.ca"
     },
     {
         "name": "Marla Jazzar",
         "position": "WIE Vice Chair",
-        "image": "../../static/images/execs-2020-2021/wie-vice-chair.jpg",
+        "image": "../../static/images/execs/marla-jazzar.jpg",
         "email": "wie-vicechair@ieeeuottawa.ca"
     },
     {
         "name": "Victoria Hough",
         "position": "Secretary",
-        "image": "../../static/images/execs-2020-2021/secretary.jpg",
+        "image": "../../static/images/execs/victoria-hough.jpg",
         "email": "secretary@ieeeuottawa.ca"
     },
     {
         "name": "Omer Abubaker",
         "position": "McNaughton Centre Director",
-        "image": "../../static/images/execs-2020-2021/mcnaughton-director.jpg",
+        "image": "../../static/images/execs/omer-abubaker.jpg",
         "email": "mcnaughton@ieeeuottawa.ca"
     },
     {
         "name": "Khaled Atia",
         "position": "Photonics Chair",
-        "image": "../../static/images/execs-2020-2021/photonics-chair.jpg",
+        "image": "../../static/images/execs/khaled-atia.jpg",
         "email": "photonics-chair@ieeeuottawa.ca"
     },
     {
         "name": "Neda Nouri",
         "position": "Photonics Vice-Chair",
-        "image": "../../static/images/execs-2020-2021/photonics-vice-chair.jpg",
+        "image": "../../static/images/execs/neda-nouri.jpg",
         "email": "photonics-vicechair@ieeeuottawa.ca"
     }
 ]
