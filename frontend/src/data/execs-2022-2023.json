@@ -20,13 +20,13 @@
     {
         "name": "Nizar Zariouh",
         "position": "Secretary",
-        "image": "../../static/images/execs/nizar-zariouh.png",
+        "image": "../../static/images/execs/nizar-zariouh.jpg",
         "email": "secretary@ieeeuottawa.ca"
     },
     {
         "name": "Disala de Silva",
         "position": "VP External",
-        "image": "../../static/images/execs/placeholder.jpeg",
+        "image": "../../static/images/execs/disala-de-silva.png",
         "email": "external@ieeeuottawa.ca"
     },
     {
@@ -38,7 +38,7 @@
     {
         "name": "Stefan Todorovic",
         "position": "VP Academic",
-        "image": "../../static/images/execs/placeholder.jpeg",
+        "image": "../../static/images/execs/stefan-todorovic.jpeg",
         "email": "academic@ieeeuottawa.ca"
     },
     {
@@ -62,7 +62,7 @@
     {
         "name": "Sophie Tomlin",
         "position": "WIE Chair",
-        "image": "../../static/images/execs/placeholder.jpeg",
+        "image": "../../static/images/execs/sophie-tomlin.JPEG",
         "email": "wie-chair@ieeeuottawa.ca"
     },
     {
