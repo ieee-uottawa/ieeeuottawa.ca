@@ -2,7 +2,7 @@
     {
         "name": "Rikki Romana",
         "position": "Chair",
-        "image": "../../static/images/execs/rikki-romana.jpg",
+        "image": "../../static/images/execs/rikki-romana.jpeg",
         "email": "chair@ieeeuottawa.ca"
     },
     {
@@ -32,7 +32,7 @@
     {
         "name": "Mingye Chen",
         "position": "VP Internal",
-        "image": "../../static/images/execs/placeholder.jpeg",
+        "image": "../../static/images/execs/mingye-chen.jpg",
         "email": "internal@ieeeuottawa.ca"
     },
     {
@@ -80,7 +80,7 @@
     {
         "name": "Omid Mozafar",
         "position": "Photonics Chair",
-        "image": "../../static/images/execs/placeholder.jpeg",
+        "image": "../../static/images/execs/omid-mozafar.jpg",
         "email": "photonics-chair@ieeeuottawa.ca"
     },
     {
