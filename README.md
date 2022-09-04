@@ -23,6 +23,7 @@
 1. Tamer Sherif (Webmaster 2017/2018)
 2. Rushil Perera (Webmaster 2018/2019)
 3. Nevin WS Ganesan (Webmaster 2019/2020)
+4. Loic Kandikandi (Webmaster 2021/2022, 2022/2023)
 
 ## Installation
 
