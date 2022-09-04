@@ -17,6 +17,7 @@
 1. Rushil Perera (Webmaster 2018/2019)
 2. Nevin WS Ganesan (Webmaster 2019/2020)
 3. Ryan Fleck (Webmaster 2020/2021)
+4. Loic Kandikandi (Webmaster 2021/2022, 2022/2023)
 
 ### Past Webmasters
 
